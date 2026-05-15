@@ -11,6 +11,7 @@
   --color-azul: #1F4E8C;            /* Azul principal: confianza, tecnología */
   --color-azul-claro: #4DA3DF;      /* Azul claro: cercanía */
   --color-amarillo: #FFC233;        /* Amarillo Mi: energía, optimismo, acento IA */
+  --color-naranja: #f29100;         /* Naranja brandbook: subrayado del logo, sparkles cálidos */
   --color-azul-profundo: #0B2E63;   /* Azul profundo: títulos, autoridad */
   --color-blanco-calido: #FAFCFF;   /* Fondo principal */
 
@@ -2615,6 +2616,110 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
+}
+
+/* ---------- Brand graphics: sparkles + arrow + waves (brandbook §19) ---------- */
+
+/*
+   Sparkle = estrella de 4 puntas con lóbulos cóncavos curvos.
+   Símbolo distintivo de la marca (ver design.md §19.1).
+   Uso inline: <svg class="sparkle"><use href="#sparkle-shape"/></svg>
+   o pega el path completo: ver `.sparkle__path`.
+   Por defecto hereda color del padre vía currentColor.
+*/
+.sparkle {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  color: var(--color-azul-profundo);
+  flex-shrink: 0;
+}
+
+.sparkle--small  { width: 16px; height: 16px; }
+.sparkle--large  { width: 64px; height: 64px; }
+.sparkle--xl     { width: 96px; height: 96px; }
+
+.sparkle--azul     { color: var(--color-azul-profundo); }
+.sparkle--amarillo { color: var(--color-amarillo); }
+.sparkle--naranja  { color: var(--color-naranja, #f29100); }
+.sparkle--blanco   { color: #FFFFFF; }
+
+/* Constellation: agrupa varios sparkles con tamaños mixtos para fondo decorativo. */
+.sparkle-constellation {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Hero con sparkles de fondo: pseudo-element con SVG repetido como background. */
+.hero--sparkles { position: relative; overflow: hidden; }
+.hero--sparkles::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><g fill='%2328467e' opacity='0.06'><path d='M30 10 L33 26 L49 30 L33 34 L30 50 L27 34 L11 30 L27 26 Z'/><path d='M150 60 L154 80 L174 84 L154 88 L150 108 L146 88 L126 84 L146 80 Z' opacity='0.7'/><path d='M80 130 L82 142 L94 144 L82 146 L80 158 L78 146 L66 144 L78 142 Z'/><path d='M170 160 L172 170 L182 172 L172 174 L170 184 L168 174 L158 172 L168 170 Z' opacity='0.6'/></g></svg>");
+  background-size: 600px 600px;
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero--sparkles > .container { position: relative; z-index: 1; }
+
+/*
+   Brand arrow = flecha amarilla horizontal, trazo grueso, esquinas suaves.
+   Inline SVG via class. Apunta a la derecha por defecto.
+*/
+.brand-arrow {
+  display: inline-block;
+  width: clamp(120px, 30vw, 240px);
+  height: auto;
+  vertical-align: middle;
+  color: var(--color-amarillo);
+  flex-shrink: 0;
+}
+
+.brand-arrow--small { width: clamp(80px, 18vw, 140px); }
+.brand-arrow--azul  { color: var(--color-azul-profundo); }
+
+/*
+   Brand waves = líneas onduladas decorativas, naranja/amarillo.
+   Útiles como divisor de sección o textura sutil.
+*/
+.brand-waves {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 32px;
+  color: var(--color-naranja, #f29100);
+  margin: 18px auto;
+}
+
+.brand-waves--amarillo { color: var(--color-amarillo); }
+
+/* Divider semántico: usar como <hr class="brand-divider"> */
+.brand-divider {
+  border: 0;
+  height: 28px;
+  margin: 36px 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 28' preserveAspectRatio='xMidYMid meet'><path d='M0 14 Q25 0 50 14 T100 14 T150 14 T200 14' stroke='%23f29100' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 200px 28px;
+}
+
+@media print {
+  .hero--sparkles::before,
+  .brand-divider,
+  .sparkle,
+  .brand-arrow,
+  .brand-waves { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparkle, .brand-arrow, .brand-waves { transition: none; }
 }
 
 /* ---------- Footer ---------- */
