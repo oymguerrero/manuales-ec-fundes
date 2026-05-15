@@ -13,13 +13,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700;800&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
 
 :root {
-  /* Marca — colores principales */
-  --color-azul: #1F4E8C;            /* Azul principal: confianza, tecnología */
-  --color-azul-claro: #4DA3DF;      /* Azul claro: cercanía */
-  --color-amarillo: #FFC233;        /* Amarillo Mi: energía, optimismo, acento IA */
-  --color-naranja: #f29100;         /* Naranja brandbook: subrayado del logo, sparkles cálidos */
-  --color-azul-profundo: #0B2E63;   /* Azul profundo: títulos, autoridad */
-  --color-blanco-calido: #FAFCFF;   /* Fondo principal */
+  /* Marca — colores principales (alineados al brandbook §2.1) */
+  --color-azul-profundo: #28467e;   /* OFICIAL brandbook · azul profundo · títulos · "iA" del logo */
+  --color-azul-claro:    #529ed7;   /* OFICIAL brandbook · "compañ" del logo · acentos decorativos */
+  --color-amarillo:      #f7c031;   /* OFICIAL brandbook · "Mi" del logo · botón CTA */
+  --color-naranja:       #f29100;   /* OFICIAL brandbook · subrayado del logo · sparkles cálidos */
+  --color-azul:          #1F4E8C;   /* Utilitario web (no brandbook) · azul medio para hierarchy intermedia entre claro y profundo */
+  --color-blanco-calido: #FAFCFF;   /* Fondo principal · variante con tinte azul mínimo del #f2f2f2 brandbook */
 
   /* Marca — secundarios */
   --color-verde: #3FA35B;           /* Verde impacto: resultados */
@@ -884,9 +884,9 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   align-items: center;
   gap: 10px;
   padding: 8px 10px 8px 8px;
-  background: var(--color-azul, #0B2E63);
+  background: var(--color-azul-profundo, #28467e);
   color: #FAFCFF;
-  border: 2px solid var(--color-amarillo, #FFC233);
+  border: 2px solid var(--color-amarillo, #f7c031);
   border-radius: 999px;
   box-shadow: 0 12px 32px rgba(11, 46, 99, 0.32);
   transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.2s ease;
@@ -915,8 +915,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .audio-floating__play {
   width: 40px;
   height: 40px;
-  background: var(--color-amarillo, #FFC233);
-  color: var(--color-azul, #0B2E63);
+  background: var(--color-amarillo, #f7c031);
+  color: var(--color-azul-profundo, #28467e);
 }
 .audio-floating__play:hover {
   background: #FFD466;
@@ -951,7 +951,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   font-family: inherit;
 }
 .audio-floating__title:hover {
-  color: var(--color-amarillo, #FFC233);
+  color: var(--color-amarillo, #f7c031);
 }
 .audio-floating__icon-head {
   width: 18px;

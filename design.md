@@ -60,25 +60,29 @@ Para infografías, ilustraciones complementarias y materiales que requieran ampl
 | Turquesa      | `#26b69c`  | C:75 M:1 Y:43 K:0   | Variación de avance/éxito           |
 | Lila          | `#bdacd3`  | C:27 M:32 Y:0 K:0   | Acento secundario suave             |
 
-### 2.3 Tokens web implementados (`assets/styles.css`)
+### 2.3 Tokens web implementados (`assets/styles.css`) — alineados al brandbook
 
-La implementación web parte de la paleta primaria del brandbook y añade tokens utilitarios (sombras, fondos suaves, grises de texto) para cumplir contraste WCAG AA. **Estos valores son los que vives en el sitio**:
+A partir de la migración de paleta, los tokens críticos coinciden con los HEX oficiales del brandbook §2.1. Todos los pares principales pasan **WCAG AA ≥ 4.5:1** sobre fondo blanco cálido (validado con cálculo de luminancia relativa).
 
-| Token                 | HEX       | Equivalencia brandbook | Uso                          |
-| --------------------- | --------- | ---------------------- | ---------------------------- |
-| `--color-azul`        | `#1F4E8C` | Variante derivada del azul profundo `#28467e` con más luminosidad | Azul de UI medio · botones |
-| `--color-azul-profundo` | `#0B2E63` | Variante más oscura para títulos | Headings · navegación |
-| `--color-azul-claro`  | `#4DA3DF` | Aproxima `#529ed7` brandbook | Acentos · enlaces |
-| `--color-amarillo`    | `#FFC233` | Aproxima `#f7c031` brandbook | Botón primario · acentos `<span class="ia">` |
-| `--color-naranja`     | `#f29100` | Idéntico al brandbook  | Subrayado decorativo · sparkles cálidos |
-| `--color-verde`       | `#3FA35B` | (Utilitario web) Verde de avance · check completado | Estados de éxito · botón "Marcar como leído" |
-| `--color-blanco-calido` | `#FAFCFF` | Equivalente al `#f2f2f2` brandbook con tinte azul mínimo | Fondo principal |
-| `--color-gris-texto`  | `#4B5563` | (Utilitario web)        | Texto secundario · meta |
-| `--color-gris-linea`  | `#D9E4F2` | (Utilitario web)        | Bordes · separadores suaves |
-| `--color-azul-suave`  | `#EAF4FF` | (Utilitario web)        | Fondos de tarjeta · hover |
-| `--color-amarillo-suave` | `#FFF3CC` | (Utilitario web)      | Fondos de callout informativo |
+| Token                   | HEX       | Origen        | Contraste s/ blanco cálido | Uso                          |
+| ----------------------- | --------- | ------------- | -------------------------- | ---------------------------- |
+| `--color-azul-profundo` | `#28467e` | OFICIAL brandbook | 9.01:1 ✓ AAA           | Títulos · navegación · "iA" del logo |
+| `--color-azul-claro`    | `#529ed7` | OFICIAL brandbook | 2.83:1 (decorativo)    | Acentos · enlaces · "compañ" del logo |
+| `--color-amarillo`      | `#f7c031` | OFICIAL brandbook | 1.89:1 (decorativo · texto azul profundo encima da 5.53:1 ✓) | Botón CTA · "Mi" del logo · acentos `<span class="ia">` |
+| `--color-naranja`       | `#f29100` | OFICIAL brandbook | 2.30:1 (decorativo)    | Subrayado del logo · sparkles cálidos · líneas onduladas |
+| `--color-azul`          | `#1F4E8C` | Utilitario web (no brandbook) · azul medio | 8.09:1 ✓ AAA | Botones · azul medio en hierarchy entre claro y profundo |
+| `--color-verde`         | `#3FA35B` | Utilitario web | 3.34:1 (decorativo · botón con texto blanco da 6.30:1 ✓) | Estados de éxito · check completado de lesson-tabs |
+| `--color-blanco-calido` | `#FAFCFF` | Equivalente `#f2f2f2` con tinte azul mínimo | n/a | Fondo principal del body |
+| `--color-gris-texto`    | `#4B5563` | Utilitario web | 8.06:1 ✓ AAA           | Texto secundario · meta |
+| `--color-gris-linea`    | `#D9E4F2` | Utilitario web | 1.21:1 (separador)     | Bordes suaves · separadores |
+| `--color-azul-suave`    | `#EAF4FF` | Utilitario web | 1.07:1 (fondo)         | Fondos de tarjeta · hover |
+| `--color-amarillo-suave`| `#FFF3CC` | Utilitario web | 1.16:1 (fondo)         | Fondos de callout informativo |
 
-> **Deuda técnica documentada:** los tokens web (`#1F4E8C`, `#0B2E63`, `#FFC233`, `#4DA3DF`) son variantes ligeramente desplazadas de la paleta primaria del brandbook (`#28467e`, `#529ed7`, `#f7c031`). Esto se hizo en la implementación inicial para optimizar contraste WCAG AA sobre fondo blanco cálido. **Antes de imprimir/exportar piezas oficiales, usar los HEX del brandbook (§2.1), no los tokens web.** En el sitio se mantienen los tokens actuales mientras no haya migración formal.
+**Notas:**
+
+- Los tokens "decorativos" (azul claro, amarillo, naranja, verde) **no se usan para texto sobre blanco**. Se usan como fondos, bordes, acentos o textos sobre fondo de contraste alto (ej. azul profundo sobre amarillo en botones CTA pasa 5.53:1).
+- El antes había un `--color-azul-profundo: #0B2E63` (12.89:1) que sobrepasaba ampliamente el AAA. El nuevo `#28467e` brandbook sigue en zona AAA (9.01:1) — más fiel a marca, mismo cumplimiento WCAG.
+- `--color-azul: #1F4E8C` se mantiene como **token utilitario** (no es del brandbook) porque hace de azul medio entre el `--color-azul-claro` y el `--color-azul-profundo`. Útil para hierarchy visual de UI.
 
 ### 2.4 Contraste mínimo (WCAG AA)
 
