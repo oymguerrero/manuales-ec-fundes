@@ -29,7 +29,8 @@
   <div class="container">
     <span class="sub-nav__label">Manual Maestro</span>
     <a href="index.html">Bienvenida</a>
-    <a href="que-es.html">Qué es y cómo se evalúa</a>
+    <a href="que-es.html">Qué es la certificación</a>
+    <a href="como-se-evalua.html">Cómo se evalúa</a>
     <a href="proceso.html" class="active">Proceso paso a paso</a>
     <a href="cuatro-estandares.html">Los 4 estándares</a>
     <a href="recursos.html">FAQ y recursos</a>
@@ -38,8 +39,9 @@
 
 <div class="maestro-progress" aria-label="Progreso del Manual Maestro">
   <div class="container">
-    <span class="maestro-progress__label">Capítulo 3 de 5 · Proceso paso a paso</span>
+    <span class="maestro-progress__label">Capítulo 4 de 6 · Proceso paso a paso</span>
     <div class="maestro-progress__bar" role="presentation">
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
       <span class="maestro-progress__dot maestro-progress__dot--done"></span>
       <span class="maestro-progress__dot maestro-progress__dot--done"></span>
       <span class="maestro-progress__dot maestro-progress__dot--current"></span>
@@ -51,7 +53,7 @@
 
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">Capítulo 3 · El recorrido completo</div>
+    <div class="eyebrow">Capítulo 4 · El recorrido completo</div>
     <h1>Tu evaluación, paso a paso</h1>
     <p>Este capítulo describe el recorrido que realizarás desde que te postulas hasta que recibes tu Certificado. La secuencia es común a los cuatro estándares; las particularidades de cada EC se detallan en su Manual del Estándar.</p>
   </div>
@@ -60,11 +62,49 @@
 <main>
   <div class="container">
 
-    <a class="back-link" href="que-es.html">Volver al capítulo anterior</a>
+    <a class="back-link" href="como-se-evalua.html">Volver al capítulo anterior</a>
 
-    <section id="mapa">
-      <h2>3.1 Mapa completo del proceso</h2>
+    <div class="lesson-tabs" data-progress-key="maestro-cap4-proceso">
+    <div class="accordion accordion--modules" aria-label="Mapa y 6 pasos del proceso">
+
+      <details class="accordion__item" id="mapa" open>
+        <summary>
+          <span class="accordion__num">4.1</span>
+          <span class="accordion__title-main">Mapa completo del proceso</span>
+          <span class="accordion__meta">Vista panorámica · audio narrado · timeline · 4 min</span>
+        </summary>
+        <div class="accordion__body">
       <p>El proceso se compone de seis pasos. Aquí tienes una vista panorámica para que sitúes mentalmente el recorrido completo antes de profundizar en cada etapa.</p>
+
+      <div class="audio-narration">
+        <div class="audio-narration__header">
+          <button class="audio-narration__toggle" type="button" aria-expanded="false" aria-controls="audio-proceso-mapa">
+            Escuchar el recorrido completo
+          </button>
+          <span class="audio-narration__meta">2 min 20 seg · voz Alice · narración alternativa al texto</span>
+        </div>
+        <div class="audio-narration__player" id="audio-proceso-mapa" hidden>
+          <audio controls preload="none">
+            <source src="../media/audio-proceso-mapa.mp3" type="audio/mpeg" />
+            Tu navegador no soporta audio HTML5. <a href="../media/audio-proceso-mapa.mp3">Descarga el archivo MP3</a>.
+          </audio>
+        </div>
+        <details class="audio-narration__transcript">
+          <summary>Ver transcripción</summary>
+          <div class="audio-narration__transcript-body">
+            <p>El proceso de evaluación tiene seis pasos. Vamos a recorrerlos rápido para que tengas una imagen clara antes de profundizar en cada uno.</p>
+            <p><strong>Paso uno: la evaluación diagnóstica.</strong> Tu evaluador te aplica un instrumento corto que estima tus probabilidades de éxito en el proceso completo. No es una prueba que se apruebe o repruebe. Es un instrumento orientador.</p>
+            <p><strong>Paso dos: el plan de evaluación.</strong> El evaluador te entrega un documento donde te explica con precisión qué se te pedirá demostrar, cuándo y cómo. Es tu última oportunidad para hacer preguntas operativas. Aprovéchala.</p>
+            <p><strong>Paso tres: las sesiones de evaluación.</strong> Aquí pasa lo importante. Tu evaluador aplica el Instrumento de Evaluación: cuestionarios de conocimiento, observación de tus desempeños, revisión de tus productos, y observación de tus actitudes durante el proceso.</p>
+            <p><strong>Paso cuatro: el cierre de evaluación.</strong> El evaluador integra tu portafolio, recolecta firmas y agenda contigo la entrega de resultados. Hasta aquí tu evaluador conduce el proceso.</p>
+            <p><em>Importante saber:</em> a partir del paso cinco, el actor cambia. Ya no es tu evaluador sino la cadena institucional.</p>
+            <p><strong>Paso cinco: la entrega de resultados.</strong> Recibes tu cédula de evaluación con la retroalimentación detallada. Tu evaluador te explica qué se logró y qué áreas de oportunidad quedan.</p>
+            <p><strong>Paso seis: el dictamen y la emisión del Certificado.</strong> La Entidad de Certificación revisa la calidad de tu evaluación. Si todo está en orden, el CONOCER tramita y la Secretaría de Educación Pública emite tu Certificado oficial.</p>
+            <p>El plazo administrativo aproximado son noventa días naturales desde la entrega de tu cédula.</p>
+            <p>Seis pasos. Cuatro los conduce tu evaluador. Dos los conduce la institución. Ahora puedes profundizar en cada uno con tranquilidad.</p>
+          </div>
+        </details>
+      </div>
 
       <p style="font-size: 0.92rem; color: var(--color-gris-texto); margin: 12px 0 18px;">El color y la etiqueta de cada paso indican <strong>quién es el actor protagonista</strong>:</p>
 
@@ -179,10 +219,16 @@
         </g>
       </svg>
       <p class="diagram-caption">Los pasos 1-5 los conduce tu evaluador; el paso 6 lo tramita la institución. La cédula del paso 5 te llega antes del Certificado oficial.</p>
-    </section>
+        </div>
+      </details>
 
-    <section id="paso-1">
-      <h2>3.2 Paso 1 · Evaluación diagnóstica</h2>
+      <details class="accordion__item" id="paso-1">
+        <summary>
+          <span class="accordion__num">4.2</span>
+          <span class="accordion__title-main">Paso 1 · Evaluación diagnóstica</span>
+          <span class="accordion__meta">Conducido por tu evaluador · instrumento orientador</span>
+        </summary>
+        <div class="accordion__body">
       <p>Antes de iniciar el proceso formal de evaluación con fines de certificación, tu evaluador te aplicará una evaluación diagnóstica. Es un instrumento corto, generalmente escrito, cuyo propósito es estimar tus probabilidades de éxito en el proceso completo.</p>
 
       <h3>Qué evalúa</h3>
@@ -193,10 +239,16 @@
 
       <h3>Qué pasa si tienes altas probabilidades de éxito</h3>
       <p>Si el diagnóstico muestra que tienes altas probabilidades de demostrar la competencia, el evaluador te recomendará continuar con el proceso. En ese caso, ambos avanzarán al siguiente paso: la elaboración del Plan de evaluación.</p>
-    </section>
+        </div>
+      </details>
 
-    <section id="paso-2">
-      <h2>3.3 Paso 2 · Plan de evaluación</h2>
+      <details class="accordion__item" id="paso-2">
+        <summary>
+          <span class="accordion__num">4.3</span>
+          <span class="accordion__title-main">Paso 2 · Plan de evaluación</span>
+          <span class="accordion__meta">Tu última oportunidad de hacer preguntas operativas</span>
+        </summary>
+        <div class="accordion__body">
       <p>El Plan de evaluación es el documento que estructura formalmente tu proceso. Lo elabora el evaluador y te lo explica con detalle antes de iniciar las sesiones. Es importante que lo comprendas a fondo, porque <strong>una vez iniciadas las sesiones no podrás interactuar con tu evaluador para resolver dudas sobre el contenido o el procedimiento</strong>.</p>
 
       <h3>Qué contiene el Plan</h3>
@@ -217,10 +269,16 @@
         <span class="callout__label">Importante</span>
         <div class="callout__body">El Plan de evaluación incluirá los mismos criterios de evaluación que el estándar establece. El Manual del Estándar al que te postulas reproduce esos mismos criterios. Si has estudiado a fondo tu manual específico, no habrá sorpresas en el Plan: simplemente verás reflejado, en formato de plan operativo, lo que ya conoces.</div>
       </aside>
-    </section>
+        </div>
+      </details>
 
-    <section id="paso-3">
-      <h2>3.4 Paso 3 · Sesiones de evaluación</h2>
+      <details class="accordion__item" id="paso-3">
+        <summary>
+          <span class="accordion__num">4.4</span>
+          <span class="accordion__title-main">Paso 3 · Sesiones de evaluación</span>
+          <span class="accordion__meta">El corazón del proceso · presencial o remoto</span>
+        </summary>
+        <div class="accordion__body">
       <p>Las sesiones son <strong>el corazón del proceso</strong>. En ellas se aplica efectivamente el Instrumento de Evaluación de Competencia (IEC), que es el conjunto de herramientas con las que el evaluador recoge tus evidencias. La evaluación se realiza en una situación real de trabajo o, dependiendo de las características de la función, en una situación laboral simulada <a href="recursos.html#referencias" class="cite">[7]</a>. La duración total varía según el estándar y queda especificada en el F21 del EC correspondiente.</p>
 
       <h3>Componentes habituales de las sesiones</h3>
@@ -241,10 +299,16 @@
         <li>Acceso a información clave de una MiPyME real sobre la cual ejecutar las actividades.</li>
         <li>Para evaluaciones remotas, una plataforma de videoconferencia que permita interacción por audio y video.</li>
       </ul>
-    </section>
+        </div>
+      </details>
 
-    <section id="paso-4">
-      <h2>3.5 Paso 4 · Cierre de evaluación</h2>
+      <details class="accordion__item" id="paso-4">
+        <summary>
+          <span class="accordion__num">4.5</span>
+          <span class="accordion__title-main">Paso 4 · Cierre de evaluación</span>
+          <span class="accordion__meta">Aquí termina la conducción del evaluador</span>
+        </summary>
+        <div class="accordion__body">
       <p>Una vez concluidas las actividades evaluativas, el evaluador procede a integrar el portafolio de evidencias. Esta actividad la realiza él, no tú; el portafolio contiene todos los registros generados durante el proceso y constituirá el fundamento documental del dictamen posterior.</p>
 
       <h3>Qué se hace en el cierre</h3>
@@ -253,10 +317,16 @@
         <li>Programación de la cita en la cual recibirás los resultados. El evaluador te comunicará día y hora con precisión.</li>
         <li>Recolección de firmas requeridas. Firmarás algunos formatos que dejan constancia de tu participación y de la entrega de productos. Pregúntale al evaluador qué firma cada documento si tienes dudas.</li>
       </ol>
-    </section>
+        </div>
+      </details>
 
-    <section id="paso-5">
-      <h2>3.6 Paso 5 · Entrega de resultados</h2>
+      <details class="accordion__item" id="paso-5">
+        <summary>
+          <span class="accordion__num">4.6</span>
+          <span class="accordion__title-main">Paso 5 · Entrega de resultados</span>
+          <span class="accordion__meta">Recibirás tu cédula de evaluación</span>
+        </summary>
+        <div class="accordion__body">
       <p>En la fecha y hora acordadas, el evaluador te comunicará el resultado obtenido. Como se explicó en el capítulo anterior, este resultado será <strong>Competente</strong> o <strong>Todavía no competente</strong>.</p>
 
       <h3>La cédula de evaluación</h3>
@@ -270,10 +340,16 @@
       </ul>
 
       <p>La cédula es un documento valioso. <strong>Aún si tu resultado fue <em>Competente</em></strong>, te ofrecerá un mapa preciso de lo que tu evaluador identificó como tus puntos fuertes y tus áreas de mejora. Tenla a mano para tus siguientes desarrollos profesionales.</p>
-    </section>
+        </div>
+      </details>
 
-    <section id="paso-6">
-      <h2>3.7 Paso 6 · Dictamen y emisión del Certificado</h2>
+      <details class="accordion__item" id="paso-6">
+        <summary>
+          <span class="accordion__num">4.7</span>
+          <span class="accordion__title-main">Paso 6 · Dictamen y emisión del Certificado</span>
+          <span class="accordion__meta">Cadena institucional ECE → CONOCER → SEP · ~90 días</span>
+        </summary>
+        <div class="accordion__body">
       <p>La conclusión de las sesiones de evaluación no significa todavía la emisión del Certificado. Resta un paso institucional importante.</p>
 
       <h3>Revisión por la Entidad de Certificación y Evaluación</h3>
@@ -288,7 +364,11 @@
         <span class="callout__label">Importante</span>
         <div class="callout__body">Conforme a la información publicada por entidades acreditadas, el plazo administrativo aproximado para la entrega del Certificado es de <strong>90 días naturales</strong> contados a partir de la entrega de la cédula de evaluación al usuario <a href="recursos.html#referencias" class="cite">[9]</a>. Este plazo puede variar y te será comunicado de manera precisa por tu ECE.</div>
       </aside>
-    </section>
+        </div>
+      </details>
+
+    </div>
+    </div>
 
     <figure class="figure">
       <img src="../img/certificado-moment.jpg" alt="Profesional mexicana sosteniendo su Certificado de Competencia oficial en su oficina" loading="lazy" width="1920" height="1080" />
@@ -315,7 +395,7 @@
       <p>Ya conoces el sistema y el proceso. El siguiente capítulo presenta los cuatro estándares disponibles y te ayuda a identificar cuál corresponde a tu trayectoria profesional.</p>
       <div class="hero-actions">
         <a href="cuatro-estandares.html" class="btn btn-primary">Continuar: Los 4 estándares →</a>
-        <a href="que-es.html" class="btn btn-secondary">← Volver al capítulo anterior</a>
+        <a href="como-se-evalua.html" class="btn btn-secondary">← Volver al capítulo anterior</a>
       </div>
     </section>
 

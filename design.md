@@ -712,7 +712,7 @@ Antes de crear uno nuevo, revisa estos 13 ejemplos canónicos:
 |---|---|---|
 | `maestro/que-es.html` | Arquitectura SNC (3 niveles + Tú) | Jerárquico vertical |
 | `maestro/que-es.html` | Pirámide niveles SNC | Pirámide |
-| `maestro/que-es.html` | 5 evidencias → portafolio | Flujo convergente |
+| `maestro/como-se-evalua.html` | 5 evidencias → portafolio | Flujo convergente |
 | `maestro/proceso.html` | Timeline 6 pasos | Timeline horizontal |
 | `maestro/cuatro-estandares.html` | Ciclo 4 estándares + MiPyME | Radial |
 | `estandar-a/index.html` | Mapa funcional Estándar A | Jerárquico horizontal |
@@ -911,6 +911,6 @@ Estado de la biblioteca compartida en `assets/styles.css` + `assets/interactive.
 | Comparison slider | Analizar | ⏳ pendiente |
 | Hotspot diagram | Recordar/Aplicar | ⏳ pendiente |
 | Microvideo embed | variable | ⏳ pendiente |
-| Audio narration | variable | ⏳ pendiente |
+| Audio narration | variable | ✅ (ElevenLabs vía `scripts/tts-elevenlabs.ps1` · voz Alice) |
 
 > **Cuando se implemente un componente nuevo, mueve su fila de pendiente a implementado y actualiza esta tabla.**

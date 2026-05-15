@@ -203,27 +203,452 @@
     const toggle = container.querySelector('.audio-narration__toggle');
     const player = container.querySelector('.audio-narration__player');
     const audio = container.querySelector('audio');
-    if (!toggle || !player) return;
+    if (!toggle || !player || !audio) return;
 
+    const labelClosed = toggle.dataset.labelClosed || toggle.textContent.trim() || 'Escuchar esta sección';
+    const labelOpen = toggle.dataset.labelOpen || 'Ocultar reproductor';
+
+    // El toggle solo controla visibilidad del player. NO pausa el audio.
+    // El audio se controla con los botones nativos del <audio> o desde el mini-bar flotante.
     toggle.addEventListener('click', function () {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
       if (expanded) {
-        // Pausar y ocultar
-        if (audio && !audio.paused) audio.pause();
         toggle.setAttribute('aria-expanded', 'false');
         player.hidden = true;
-        toggle.firstChild && (toggle.lastChild.textContent = toggle.dataset.labelClosed || 'Escuchar esta sección');
+        toggle.textContent = labelClosed;
       } else {
         toggle.setAttribute('aria-expanded', 'true');
         player.hidden = false;
-        if (audio) {
-          audio.play().catch(function () { /* el usuario debe pulsar play en el control */ });
-        }
-        if (toggle.dataset.labelOpen) {
-          toggle.lastChild.textContent = toggle.dataset.labelOpen;
+        toggle.textContent = labelOpen;
+        if (audio.paused) {
+          audio.play().catch(function () { /* el usuario debe pulsar play manualmente */ });
         }
       }
     });
+
+    // Al terminar, restablece el estado inicial
+    audio.addEventListener('ended', function () {
+      toggle.setAttribute('aria-expanded', 'false');
+      player.hidden = true;
+      toggle.textContent = labelClosed;
+    });
+
+    // ---- Mini-bar flotante ----
+    // Toma el título de la sección padre (h2/h3 más cercano)
+    const section = container.closest('section') || container.parentElement;
+    const titleEl = section && section.querySelector('h1, h2, h3');
+    const title = titleEl ? titleEl.textContent.trim() : 'Narración de audio';
+
+    const bar = createFloatingBar(audio, container, title);
+
+    let inView = true;
+    let userClosed = false;
+
+    const obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { inView = e.isIntersecting; });
+      updateBar();
+    }, { threshold: 0 });
+    obs.observe(container);
+
+    audio.addEventListener('play', function () { userClosed = false; updateBar(); });
+    audio.addEventListener('pause', updateBar);
+    audio.addEventListener('ended', function () { hideBar(); });
+
+    bar.dataset.audioRef = ''; // marker
+
+    bar.querySelector('.audio-floating__play').addEventListener('click', function () {
+      if (audio.paused) audio.play().catch(function () {});
+      else audio.pause();
+    });
+    bar.querySelector('.audio-floating__title').addEventListener('click', function () {
+      container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    bar.querySelector('.audio-floating__close').addEventListener('click', function () {
+      audio.pause();
+      userClosed = true;
+      hideBar();
+    });
+
+    function updateBar() {
+      if (userClosed) { hideBar(); return; }
+      if (!audio.paused && !inView) {
+        showBar(true);
+      } else if (inView) {
+        // Volvió a la vista: ocultar bar pero NO cerrar el audio
+        hideBar();
+      } else if (audio.paused) {
+        // Pausado y fuera de vista: mantener bar visible con ícono de play
+        showBar(false);
+      }
+    }
+
+    function showBar(isPlaying) {
+      bar.classList.add('audio-floating--visible');
+      const btn = bar.querySelector('.audio-floating__play');
+      btn.setAttribute('aria-label', isPlaying ? 'Pausar narración' : 'Reanudar narración');
+      btn.dataset.state = isPlaying ? 'playing' : 'paused';
+    }
+    function hideBar() {
+      bar.classList.remove('audio-floating--visible');
+    }
+  }
+
+  function createFloatingBar(audio, container, title) {
+    const bar = document.createElement('div');
+    bar.className = 'audio-floating';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Reproductor de audio flotante');
+    bar.innerHTML =
+      '<button class="audio-floating__play" type="button" data-state="playing" aria-label="Pausar narración">' +
+        '<svg class="audio-floating__icon-play" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>' +
+        '<svg class="audio-floating__icon-pause" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><rect x="6" y="5" width="4" height="14" fill="currentColor"/><rect x="14" y="5" width="4" height="14" fill="currentColor"/></svg>' +
+      '</button>' +
+      '<button class="audio-floating__title" type="button" aria-label="Ir a la sección del audio en la página">' +
+        '<svg class="audio-floating__icon-head" aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M12 3a8 8 0 0 0-8 8v6a2 2 0 0 0 2 2h2v-7H6v-1a6 6 0 0 1 12 0v1h-2v7h2a2 2 0 0 0 2-2v-6a8 8 0 0 0-8-8z"/></svg>' +
+        '<span class="audio-floating__text">' + title + '</span>' +
+      '</button>' +
+      '<button class="audio-floating__close" type="button" aria-label="Detener narración y cerrar">' +
+        '<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>' +
+      '</button>';
+    document.body.appendChild(bar);
+    return bar;
+  }
+
+  // ---------- Accordion modules: sincronización con TOC + controles globales ----------
+  // - Click en anchor (TOC u otro link interno) que apunte a un .accordion__item:
+  //   abre el details, hace scroll suave, resalta con animación.
+  // - Botón "Expandir todo" / "Colapsar todo": abre o cierra todos los <details>
+  //   del grupo .accordion--modules más cercano.
+  function initAccordionModules() {
+    // Sincronizar clicks de anchors que apuntan a .accordion__item
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const targetId = link.getAttribute('href').slice(1);
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      // Si el target es un <details> (.accordion__item), abrirlo
+      let detailsEl = null;
+      if (target.tagName === 'DETAILS') {
+        detailsEl = target;
+      } else {
+        // También buscar si el target está dentro de un <details>
+        detailsEl = target.closest('details.accordion__item');
+      }
+      if (detailsEl) {
+        detailsEl.open = true;
+        // Pequeño delay para que se aplique el layout abierto antes del scroll
+        e.preventDefault();
+        requestAnimationFrame(function () {
+          detailsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          detailsEl.classList.add('is-highlighted');
+          setTimeout(function () {
+            detailsEl.classList.remove('is-highlighted');
+          }, 1300);
+        });
+      }
+    });
+
+    // Controles "Expandir todo" / "Colapsar todo"
+    document.querySelectorAll('.accordion-controls').forEach(function (controls) {
+      const group = controls.parentElement.querySelector('.accordion--modules')
+                 || document.querySelector(controls.dataset.target || '.accordion--modules');
+      if (!group) return;
+      const expandBtn = controls.querySelector('[data-action="expand"]');
+      const collapseBtn = controls.querySelector('[data-action="collapse"]');
+      if (expandBtn) {
+        expandBtn.addEventListener('click', function () {
+          group.querySelectorAll('details.accordion__item').forEach(function (d) {
+            d.open = true;
+          });
+        });
+      }
+      if (collapseBtn) {
+        collapseBtn.addEventListener('click', function () {
+          group.querySelectorAll('details.accordion__item').forEach(function (d) {
+            d.open = false;
+          });
+        });
+      }
+    });
+
+    // Si la URL llega con hash que apunta a un module: abrirlo al cargar
+    if (window.location.hash) {
+      const id = window.location.hash.slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        const detailsEl = target.tagName === 'DETAILS' ? target : target.closest('details.accordion__item');
+        if (detailsEl) {
+          detailsEl.open = true;
+          requestAnimationFrame(function () {
+            detailsEl.scrollIntoView({ behavior: 'auto', block: 'start' });
+            detailsEl.classList.add('is-highlighted');
+            setTimeout(function () { detailsEl.classList.remove('is-highlighted'); }, 1300);
+          });
+        }
+      }
+    }
+  }
+
+  // ---------- Lesson Tabs (LMS-style: sidebar + panel + tracking de avance) ----------
+  // Transforma un .accordion.accordion--modules en layout sidebar + panel:
+  // - sidebar listado clickeable con check de avance
+  // - panel principal con un solo módulo visible
+  // - localStorage persiste los módulos marcados como completados
+  // - botones "Marcar como leído y continuar →" + "← Anterior"
+  // El markup HTML original (details/summary) se mantiene intacto para
+  // accesibilidad, Ctrl+F y print. El comportamiento visual es controlado por JS+CSS.
+  function initLessonTabs(container) {
+    const items = Array.from(container.querySelectorAll('details.accordion__item'));
+    if (!items.length) return;
+
+    // Storage key: data-progress-key o derivado del path
+    const storageKey = 'mi-compania-lessons::' +
+      (container.dataset.progressKey ||
+       (location.pathname.replace(/[^a-z0-9-]/gi, '_') + '::' + (container.getAttribute('aria-label') || 'modules')));
+
+    // Lee estado previo
+    let completed = new Set();
+    try {
+      const raw = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      if (Array.isArray(raw)) completed = new Set(raw);
+    } catch (e) { /* localStorage bloqueado: degradación silenciosa */ }
+
+    function persist() {
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(Array.from(completed)));
+      } catch (e) { /* nop */ }
+    }
+
+    // Construir UI del header (progress) + layout (sidebar + panel)
+    // Insertar el header ANTES del container; el layout reemplaza al container interno
+    const header = document.createElement('div');
+    header.className = 'lesson-tabs__header';
+    header.innerHTML =
+      '<span class="lesson-tabs__progress-text">' +
+        '<strong class="lesson-tabs__count">0</strong> de ' + items.length + ' módulos completados' +
+      '</span>' +
+      '<div class="lesson-tabs__progress-bar" role="progressbar" aria-label="Avance del capítulo" aria-valuemin="0" aria-valuemax="' + items.length + '" aria-valuenow="0">' +
+        '<div class="lesson-tabs__progress-fill"></div>' +
+      '</div>' +
+      '<button type="button" class="lesson-tabs__reset" aria-label="Reiniciar el avance de este capítulo">Reiniciar</button>';
+
+    const layout = document.createElement('div');
+    layout.className = 'lesson-tabs__layout';
+
+    const sidebar = document.createElement('nav');
+    sidebar.className = 'lesson-tabs__sidebar';
+    sidebar.setAttribute('aria-label', 'Lista de módulos del capítulo');
+
+    const panel = document.createElement('div');
+    panel.className = 'lesson-tabs__panel';
+
+    const panelCard = document.createElement('article');
+    panelCard.className = 'lesson-tabs__panel-card';
+
+    const panelHeader = document.createElement('div');
+    panelHeader.className = 'lesson-tabs__panel-header';
+    panelHeader.innerHTML =
+      '<span class="lesson-tabs__panel-num"></span>' +
+      '<div style="flex:1 1 auto; min-width:0;">' +
+        '<h2 class="lesson-tabs__panel-title"></h2>' +
+        '<span class="lesson-tabs__panel-meta"></span>' +
+      '</div>';
+
+    const panelContent = document.createElement('div');
+    panelContent.className = 'lesson-tabs__panel-content';
+
+    const panelFooter = document.createElement('div');
+    panelFooter.className = 'lesson-tabs__panel-footer';
+    panelFooter.innerHTML =
+      '<button type="button" class="lesson-tabs__nav-btn lesson-tabs__nav-btn--prev" data-action="prev">' +
+        '<span aria-hidden="true">←</span> Anterior' +
+      '</button>' +
+      '<button type="button" class="lesson-tabs__nav-btn lesson-tabs__nav-btn--complete" data-action="complete">' +
+        '<span aria-hidden="true">✓</span> Marcar como leído y continuar' +
+      '</button>';
+
+    panelCard.appendChild(panelHeader);
+    panelCard.appendChild(panelContent);
+    panelCard.appendChild(panelFooter);
+    panel.appendChild(panelCard);
+
+    layout.appendChild(sidebar);
+    layout.appendChild(panel);
+
+    // Inyectar header y layout DENTRO del container (.lesson-tabs)
+    container.insertBefore(header, container.firstChild);
+    container.appendChild(layout);
+
+    // Mover el .accordion accordion--modules wrapper (con todos los <details>) DENTRO del panelContent
+    // pero solo para tener los <details> como source de contenido; los items se muestran en el panel.
+    const sourceWrapper = container.querySelector('.accordion.accordion--modules')
+                       || container.querySelector('.accordion--modules');
+    if (sourceWrapper && sourceWrapper.parentElement !== panelContent) {
+      panelContent.appendChild(sourceWrapper);
+    }
+
+    // Quitar controles "expandir/colapsar" si existieran (no aplican aquí)
+    const oldControls = container.querySelector('.accordion-controls');
+    if (oldControls) oldControls.remove();
+
+    // Construir items del sidebar: replicar info de cada <summary>
+    items.forEach(function (det, index) {
+      const id = det.id || ('lesson-' + index);
+      if (!det.id) det.id = id;
+      const summary = det.querySelector('summary');
+      const num = (summary && summary.querySelector('.accordion__num')) ? summary.querySelector('.accordion__num').textContent.trim() : (index + 1);
+      const title = (summary && summary.querySelector('.accordion__title-main')) ? summary.querySelector('.accordion__title-main').textContent.trim() : ('Módulo ' + (index + 1));
+      const meta = (summary && summary.querySelector('.accordion__meta')) ? summary.querySelector('.accordion__meta').textContent.trim() : '';
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'lesson-tab-item';
+      btn.dataset.target = id;
+      btn.setAttribute('aria-controls', id);
+      btn.innerHTML =
+        '<span class="lesson-tab-item__indicator"><span class="lesson-tab-item__num-inside">' + (index + 1) + '</span></span>' +
+        '<span class="lesson-tab-item__num">' + num + '</span>' +
+        '<span class="lesson-tab-item__title">' + title + '</span>' +
+        (meta ? '<span class="lesson-tab-item__meta">' + meta + '</span>' : '');
+      sidebar.appendChild(btn);
+    });
+
+    function openItem(idx, options) {
+      options = options || {};
+      if (idx < 0 || idx >= items.length) return;
+      // Cerrar todos los demás
+      items.forEach(function (d, i) {
+        d.open = i === idx;
+      });
+      // Actualizar visualmente sidebar
+      const sidebarBtns = sidebar.querySelectorAll('.lesson-tab-item');
+      sidebarBtns.forEach(function (b, i) {
+        b.classList.toggle('is-active', i === idx);
+      });
+      // Actualizar header del panel desde el summary del item activo
+      const det = items[idx];
+      const summary = det.querySelector('summary');
+      const num = (summary && summary.querySelector('.accordion__num')) ? summary.querySelector('.accordion__num').textContent.trim() : (idx + 1);
+      const title = (summary && summary.querySelector('.accordion__title-main')) ? summary.querySelector('.accordion__title-main').textContent.trim() : ('Módulo ' + (idx + 1));
+      const meta = (summary && summary.querySelector('.accordion__meta')) ? summary.querySelector('.accordion__meta').textContent.trim() : '';
+      panelHeader.querySelector('.lesson-tabs__panel-num').textContent = num;
+      panelHeader.querySelector('.lesson-tabs__panel-title').textContent = title;
+      panelHeader.querySelector('.lesson-tabs__panel-meta').textContent = meta;
+      // Actualizar botones de navegación
+      const prevBtn = panelFooter.querySelector('[data-action="prev"]');
+      const completeBtn = panelFooter.querySelector('[data-action="complete"]');
+      prevBtn.disabled = idx === 0;
+      const isLast = idx === items.length - 1;
+      if (completed.has(items[idx].id)) {
+        completeBtn.innerHTML = (isLast
+          ? '<span aria-hidden="true">✓</span> Completado · Finalizar capítulo'
+          : '<span aria-hidden="true">✓</span> Ya completado · Continuar');
+        completeBtn.classList.remove('lesson-tabs__nav-btn--complete');
+        completeBtn.classList.add('lesson-tabs__nav-btn--next');
+      } else {
+        completeBtn.innerHTML = (isLast
+          ? '<span aria-hidden="true">✓</span> Marcar como leído y finalizar'
+          : '<span aria-hidden="true">✓</span> Marcar como leído y continuar');
+        completeBtn.classList.add('lesson-tabs__nav-btn--complete');
+        completeBtn.classList.remove('lesson-tabs__nav-btn--next');
+      }
+      // Scroll al inicio del panel (solo en mobile o si está fuera de vista)
+      if (options.scroll !== false) {
+        const scrollTarget = layout;
+        const rect = scrollTarget.getBoundingClientRect();
+        if (rect.top < 0 || rect.top > window.innerHeight * 0.5) {
+          scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+
+    function markComplete(idx) {
+      if (idx < 0 || idx >= items.length) return;
+      completed.add(items[idx].id);
+      persist();
+      renderProgress();
+    }
+    function unmarkComplete(idx) {
+      if (idx < 0 || idx >= items.length) return;
+      completed.delete(items[idx].id);
+      persist();
+      renderProgress();
+    }
+
+    function renderProgress() {
+      const total = items.length;
+      const done = items.filter(function (d) { return completed.has(d.id); }).length;
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      header.querySelector('.lesson-tabs__count').textContent = done;
+      header.querySelector('.lesson-tabs__progress-fill').style.width = pct + '%';
+      const bar = header.querySelector('.lesson-tabs__progress-bar');
+      bar.setAttribute('aria-valuenow', String(done));
+      // Actualizar visualmente cada sidebar item
+      sidebar.querySelectorAll('.lesson-tab-item').forEach(function (b, i) {
+        b.classList.toggle('is-done', completed.has(items[i].id));
+      });
+    }
+
+    // Click en sidebar item → abrir
+    sidebar.addEventListener('click', function (e) {
+      // Si click en el indicador (✓) de un item completed → desmarcar
+      const indicator = e.target.closest('.lesson-tab-item__indicator');
+      const btn = e.target.closest('.lesson-tab-item');
+      if (!btn) return;
+      const idx = Array.from(sidebar.children).indexOf(btn);
+      if (idx < 0) return;
+      if (indicator && btn.classList.contains('is-done')) {
+        // Desmarcar
+        unmarkComplete(idx);
+        // Re-render botones del panel si este es el active
+        if (btn.classList.contains('is-active')) openItem(idx, { scroll: false });
+        e.stopPropagation();
+        return;
+      }
+      openItem(idx);
+    });
+
+    // Botones del footer
+    panelFooter.addEventListener('click', function (e) {
+      const action = e.target.closest('[data-action]');
+      if (!action) return;
+      const currentIdx = items.findIndex(function (d) { return d.open; });
+      if (currentIdx < 0) return;
+      if (action.dataset.action === 'prev') {
+        if (currentIdx > 0) openItem(currentIdx - 1);
+      } else if (action.dataset.action === 'complete') {
+        markComplete(currentIdx);
+        if (currentIdx < items.length - 1) {
+          openItem(currentIdx + 1);
+        } else {
+          openItem(currentIdx, { scroll: false });
+        }
+      }
+    });
+
+    // Reset
+    header.querySelector('.lesson-tabs__reset').addEventListener('click', function () {
+      if (!window.confirm('¿Reiniciar tu avance en este capítulo? Esto borra los módulos marcados como completados (solo en este navegador).')) return;
+      completed = new Set();
+      persist();
+      renderProgress();
+      const activeIdx = items.findIndex(function (d) { return d.open; });
+      if (activeIdx >= 0) openItem(activeIdx, { scroll: false });
+    });
+
+    // Estado inicial: abrir el primer módulo que tiene [open] o el primero
+    let initialIdx = items.findIndex(function (d) { return d.open; });
+    if (initialIdx < 0) initialIdx = 0;
+    // Si la URL trae hash que coincide con un item, usarlo
+    if (window.location.hash) {
+      const hashId = window.location.hash.slice(1);
+      const hashIdx = items.findIndex(function (d) { return d.id === hashId; });
+      if (hashIdx >= 0) initialIdx = hashIdx;
+    }
+    renderProgress();
+    openItem(initialIdx, { scroll: false });
   }
 
   // ---------- Inicialización ----------
@@ -233,6 +658,9 @@
     document.querySelectorAll('.flipcard').forEach(initFlipcard);
     document.querySelectorAll('.quiz').forEach(initQuiz);
     document.querySelectorAll('.audio-narration').forEach(initAudioNarration);
+    document.querySelectorAll('.lesson-tabs').forEach(initLessonTabs);
+    // Solo aplicar el handler genérico de accordion modules si NO está dentro de lesson-tabs
+    initAccordionModules();
   }
 
   if (document.readyState === 'loading') {

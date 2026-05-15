@@ -1,0 +1,25 @@
+<speak>
+Bienvenido al Manual del Estándar de Implementación de Inteligencia Artificial para mipymes.
+<break time="700ms"/>
+Este manual está dedicado exclusivamente a este estándar. Es el documento que te acompañará a lo largo de tu preparación, y al que volverás una y otra vez hasta el día de tu evaluación.
+<break time="800ms"/>
+El estándar está dirigido a quienes acompañan a las mipymes en la incorporación de la inteligencia artificial a sus procesos cotidianos.
+<break time="500ms"/>
+No es un estándar para desarrolladores de software. Tampoco para creadores de contenido digital. Es para consultores. Profesionales que llegan a la mipyme, escuchan su operación, diagnostican dónde la inteligencia artificial puede aportar valor, proponen una hoja de ruta realista, ejecutan la implementación con las herramientas disponibles en el mercado, y al final, evalúan los resultados junto al emprendedor.
+<break time="800ms"/>
+Si tu trabajo cotidiano se parece a esto, si has facilitado talleres con personal de mipymes, has configurado herramientas de inteligencia artificial generativa para automatizar tareas administrativas, has capacitado a equipos pequeños, has medido el impacto de esas implementaciones, este es tu estándar.
+<break time="800ms"/>
+El Estándar de Implementación de Inteligencia Artificial para mipymes tiene tres elementos.
+<break time="400ms"/>
+Elemento uno: planear soluciones de inteligencia artificial alineadas a la mipyme. Es el más extenso del proyecto. Aquí diagnosticas, priorizas, construyes la hoja de ruta y validas la propuesta económica con el emprendedor.
+<break time="600ms"/>
+Elemento dos: ejecutar la implementación. Aquí configuras las herramientas en el entorno de la mipyme, las pruebas, presentas las soluciones al emprendedor y capacitas al personal para que opere autónomamente.
+<break time="600ms"/>
+Elemento tres: evaluar resultados e impacto. Aquí comparas indicadores antes y después, estimas el retorno de inversión, documentas lo aprendido y formalizas el cierre del proyecto.
+<break time="800ms"/>
+Para certificarte necesitas demostrar los tres elementos. No basta con dominar uno o dos.
+<break time="600ms"/>
+La evaluación no es teórica. Necesitas haber trabajado con una mipyme real. Si careces de esa experiencia, tu primer paso es obtenerla, no inscribirte a la evaluación.
+<break time="700ms"/>
+Este manual te guiará paso a paso. Te acompañamos en tu camino hacia la certificación.
+</speak>

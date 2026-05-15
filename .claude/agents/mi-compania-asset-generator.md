@@ -275,13 +275,66 @@ Cuando el `mi-compania-pedagogo` te pide audio narrado de una sección (para acc
 
 | Opción | Costo | Calidad | Cuándo usar |
 |---|---|---|---|
-| **Google Cloud TTS** (voces Neural2 / Studio en es-MX) | ~$16 USD por millón de chars | Alta · natural · es-MX nativo | Default · producción |
-| **ElevenLabs** | ~$5-22 USD/mes | Premium · clonación de voz | Casos especiales · narración larga |
-| **Web Speech API** (`SpeechSynthesisUtterance`) | Gratis · en navegador | Variable según OS del usuario | Fallback · accesibilidad rápida sin archivo |
-| **Higgsfield TTS** (si disponible en CLI) | Créditos | Bueno | Si ya estás en higgsfield workflow |
+| **ElevenLabs Multilingual v2** | $5/mes (30k chars) o free 10k chars/mes | **Excelente · casi humana** | **DEFAULT · narraciones del proyecto** |
+| **Google Cloud TTS** (Neural2 / Studio) | ~$16 USD por M chars | Alta · natural | Fallback para alto volumen (>100k chars/mes) |
+| **Web Speech API** (`SpeechSynthesisUtterance`) | Gratis · en navegador | Variable según OS | Fallback rápido sin archivo |
+| **Higgsfield TTS** (si disponible) | Créditos | Bueno | Si ya estás en higgsfield workflow |
 | **Grabación humana** | Tiempo del talento | Mejor calidad emocional | Pieza institucional · bienvenida del proyecto |
 
-### Default: Google Cloud TTS Neural2 / Studio voices
+**Decisión arquitectónica para Mi CompañIA:**
+
+ElevenLabs es el proveedor por defecto porque:
+- La **voz de marca** del proyecto es "cálida, cercana, esperanzadora" → necesita expresividad humana, no entonación neural neutra
+- El **volumen estimado** de audio del proyecto (10-30 narraciones de 2-5 min) está dentro del free tier o del plan Starter
+- La **API es más simple**: solo necesita la key, sin restricciones de proyecto/IP/API
+
+Google TTS queda como fallback para casos de alto volumen (>100k chars/mes), o cuando se necesite SSML avanzado.
+
+### Default: ElevenLabs Multilingual v2
+
+**Voces recomendadas para Mi CompañIA** (todas funcionan con `eleven_multilingual_v2`):
+
+| Voice ID | Nombre | Perfil | Cuándo usarla |
+|---|---|---|---|
+| `21m00Tcm4TlvDq8ikWAM` | Rachel | Femenina cálida | **Default · bienvenidas, conceptos** |
+| `EXAVITQu4vr4xnSDxMaL` | Bella | Femenina expresiva | Narración de casos, La Espiga |
+| `pNInz6obpgDQGcFmaJgB` | Adam | Masculina seria | Marco normativo, requisitos |
+| `TxGEqnHWrfWFTfGW9XjX` | Josh | Masculina joven | Tono consultor, ejemplos prácticos |
+
+Configuración recomendada para el proyecto:
+
+```json
+{
+  "model_id": "eleven_multilingual_v2",
+  "voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": true
+  }
+}
+```
+
+`stability 0.5` y `similarity_boost 0.75` son los valores recomendados por ElevenLabs para narración natural. Subir `stability` produce voz más monótona; bajar produce voz más expresiva pero menos consistente.
+
+### Pipeline ElevenLabs (DEFAULT)
+
+1. **Carga las variables**: `. .\scripts\load-env.ps1` (requiere `ELEVENLABS_API_KEY` en `.env`)
+2. **Prepara el texto** en `media/scripts/X.txt`. ElevenLabs acepta texto plano y SSML parcial (`<break time="500ms"/>` funciona; otras tags se ignoran).
+3. **Genera el audio**:
+   ```powershell
+   .\scripts\tts-elevenlabs.ps1 -InputFile media\scripts\X.txt -OutputFile media\audio-X.mp3
+   ```
+   Override puntual si quieres otra voz:
+   ```powershell
+   .\scripts\tts-elevenlabs.ps1 -InputFile media\scripts\X.txt -OutputFile media\audio-X.mp3 `
+     -VoiceId "EXAVITQu4vr4xnSDxMaL"
+   ```
+4. **Verifica el archivo** (debe pesar ~1 MB por minuto de audio).
+5. **Genera la transcripción** (texto que enviaste, sin tags SSML) y guárdala dentro del componente `.audio-narration__transcript`.
+6. **Integra en HTML** con la plantilla del `mi-compania-frontend`.
+
+### Pipeline Google TTS (FALLBACK)
 
 Voces recomendadas para Mi CompañIA (español de México):
 
