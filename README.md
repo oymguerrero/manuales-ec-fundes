@@ -1,23 +1,37 @@
-# Manuales EC — Componente 2 Fundes
+# Mi CompañIA — Manual Maestro y Estándar A
 
-Manuales interactivos en HTML de los 4 Estándares de Competencia (EC) sobre Inteligencia Artificial aplicada a MiPyMEs. Componente 2 de Fundes.
+Manuales interactivos en HTML del proyecto **Mi CompañIA** (iniciativa de FUNDES Latinoamérica con apoyo de Google.org) sobre Inteligencia Artificial aplicada a las MiPyMEs mexicanas. Este repositorio publica por ahora **dos manuales**: el Manual Maestro (general) y el Manual del Estándar A · Implementación.
 
 ## Estructura
 
 ```
 manuales-ec-fundes/
-├── index.html              Landing principal con los 4 ECs
-├── ec1.html                EC1 — Soluciones de IA alineadas a la MiPyME
-├── ec2.html                EC2 — Productos y servicios con IA
-├── ec3.html                EC3 — Marketing digital con IA
-├── ec4.html                EC4 — Transformación digital con IA
-├── flujo-trabajo.html      Infografía del flujo de trabajo en equipo
-├── flujo-trabajo.png       Infografía exportada como imagen (para compartir)
+├── index.html                       Landing principal
+├── maestro/                         Manual Maestro (6 capítulos)
+│   ├── index.html                   Cap 1 · Bienvenida y diagnóstico
+│   ├── que-es.html                  Cap 2 · Qué es la certificación CONOCER
+│   ├── como-se-evalua.html          Cap 3 · Cómo se evalúa por evidencias
+│   ├── proceso.html                 Cap 4 · Proceso paso a paso (6 etapas)
+│   ├── cuatro-estandares.html       Cap 5 · Los 4 estándares + finder
+│   └── recursos.html                Cap 6 · FAQ, glosario y referencias
+├── estandar-a/                      Manual del Estándar A
+│   ├── index.html                   Bienvenida + ficha técnica del Estándar A
+│   ├── elemento-1.html              Elemento 1 · Planear
+│   ├── elemento-2.html              Elemento 2 · Ejecutar
+│   ├── elemento-3.html              Elemento 3 · Evaluar
+│   ├── instrumento.html             Instrumento de Evaluación de Competencia (IEC)
+│   ├── ruta-preparacion.html        Ruta de preparación de 4 semanas
+│   └── recursos.html                FAQ, glosario y referencias R1-R24
+├── flujo-trabajo.html               Infografía del flujo de trabajo en equipo
+├── flujo-trabajo.png                Infografía exportada como imagen
 ├── assets/
-│   └── styles.css          Hojas de estilo compartidas
-├── img/
-│   └── logo.png            Logo del manual
-├── MiCompañIA_SistemaDiseno_Web.md   Sistema de diseño web (paleta, tipografía)
+│   ├── styles.css                   Sistema de diseño compartido
+│   └── interactive.js               Componentes interactivos (lesson tabs, audio, tabs, quiz)
+├── img/                             Imágenes (logo, heroes, certificado)
+├── media/                           Audios narrados + scripts SSML
+├── scripts/                         Helpers (TTS ElevenLabs/Google, carga de .env)
+├── design.md                        Sistema de diseño (paleta, tipografía, componentes)
+├── .env.example                     Plantilla de variables de entorno
 ├── README.md
 └── .gitignore
 ```
@@ -40,8 +54,8 @@ No hay ramas ni Pull Requests. Los demás verán tu aporte la próxima vez que t
 
 ### Para no pisarse
 
-- **Repártanse por archivo de EC**: una persona por `ecN.html` a la vez. Si nadie edita el mismo archivo, nunca hay choques.
-- **Avisen** antes de tocar `index.html` o `assets/styles.css` — los comparten los 4 manuales.
+- **Repártanse por archivo**: una persona por `maestro/Xxx.html` o `estandar-a/Xxx.html` a la vez. Si nadie edita el mismo archivo, nunca hay choques.
+- **Avisen** antes de tocar `index.html`, `assets/styles.css` o `assets/interactive.js` — los comparten todos los manuales.
 - **Suban seguido**, en cambios chicos: mientras menos tiempo pase entre traer y subir, menos posibilidad de cruzarse.
 - Si dos editan el mismo archivo casi a la vez, la IA junta el trabajo sola; solo pedirá ayuda en el caso raro de que dos cambien exactamente la misma línea.
 
@@ -49,12 +63,22 @@ Para una vista visual del proceso, abre `flujo-trabajo.html`.
 
 ## Estado actual de los manuales
 
-| EC | Elementos | Conocimientos | Estado |
-|----|-----------|---------------|--------|
-| EC1 | 3 | 14 | Desarrollado |
-| EC2 | 4 | 18 | Estructura + placeholders |
-| EC3 | 4 | 10 | Estructura + placeholders |
-| EC4 | 3 (+1 sin conocimientos) | 13 | Estructura + placeholders |
+| Manual | Capítulos / Elementos | Estado |
+|---|---|---|
+| **Manual Maestro** | 6 capítulos · audios narrados · quizzes · diagramas SVG | Desarrollado |
+| **Estándar A — Implementación** | 3 elementos · 14 conocimientos · 13 productos · caso La Espiga | Desarrollado |
+| Estándar B — Productos y servicios | — | En desarrollo |
+| Estándar C — Marketing digital | — | En desarrollo |
+| Estándar D — Transformación digital | — | En desarrollo |
+
+## Variables de entorno
+
+Algunos scripts (generación de audios TTS, imágenes con Higgsfield, etc.) requieren claves de API. Copia `.env.example` a `.env` y completa tus claves:
+
+```bash
+cp .env.example .env
+# Edita .env y agrega tus valores reales (NUNCA lo commitees: ya está en .gitignore)
+```
 
 ## Visibilidad del repositorio
 
@@ -64,10 +88,10 @@ GitHub Pages (publicar el manual en una URL) requiere un plan de pago para repos
 
 ## Fuentes
 
-El contenido proviene de los archivos base del proyecto Fundes Componente 2:
+El contenido proviene de los documentos oficiales del proyecto FUNDES Componente 2:
 
-- `EC1 COMPLETO.docx`, `EC2 COMPLETO.docx`, `EC3 COMPLETO.docx`, `EC4 COMPLETO.docx`
-- `Tabla de especificaciones EC1.xlsx` / `EC2.xls` / `EC3.xlsx` / `EC4.xlsx`
-- `Todos los conocimientos.xlsx`
+- `Manual_Maestro_v2.pdf` (base del Manual Maestro)
+- `Manual_Estandar_A_v2.pdf` (base del Manual del Estándar A)
+- Tablas de especificaciones, conocimientos y referencias R1-R24
 
 Si encuentras una inconsistencia entre el manual y la fuente, **la fuente manda**.

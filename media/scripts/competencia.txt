@@ -1,0 +1,37 @@
+<speak>
+Bienvenido a la sección sobre qué es una competencia laboral.
+<break time="600ms"/>
+La palabra competencia tiene muchos usos cotidianos.
+<break time="300ms"/>
+Pero en el sistema mexicano de certificación, tiene un significado preciso.
+<break time="700ms"/>
+Conforme a las Reglas Generales del Sistema Nacional de Competencias, una competencia laboral es el conjunto de conocimientos, habilidades, destrezas y actitudes que requiere una persona para realizar actividades en el mercado de trabajo.
+<break time="800ms"/>
+Tres palabras de esa definición son clave.
+<break time="500ms"/>
+Primera: <emphasis level="moderate">conjunto</emphasis>.
+<break time="400ms"/>
+La competencia no es un atributo aislado. Una persona competente no es solo alguien que conoce mucho. Es alguien que articula, al mismo tiempo, saberes, prácticas, decisiones y comportamientos. Saber programar no es lo mismo que ser competente para implementar inteligencia artificial en una MiPyME.
+<break time="800ms"/>
+Segunda: <emphasis level="moderate">función</emphasis>.
+<break time="400ms"/>
+La competencia está asociada a una función específica, no a tu currículum. Dos personas con biografías muy distintas pueden ser igualmente competentes en la misma función. La evaluación no se interesa por cómo llegaste a ser competente. Solo por demostrar que lo eres.
+<break time="800ms"/>
+Tercera: <emphasis level="moderate">criterios verificables</emphasis>.
+<break time="400ms"/>
+El sistema mexicano establece criterios públicos, escritos y aplicables de manera homogénea. Esos criterios están en el Estándar de Competencia. Toda evaluación se rige por ellos, y solo por ellos. Por eso puedes saber con anticipación exactamente qué se te pedirá.
+<break time="900ms"/>
+La competencia se evalúa por cuatro componentes.
+<break time="400ms"/>
+Conocimientos: lo que sabes.
+<break time="300ms"/>
+Habilidades: lo que sabes hacer.
+<break time="300ms"/>
+Destrezas: el componente fino, la ejecución precisa.
+<break time="300ms"/>
+Y actitudes, hábitos y valores: cómo te conduces durante el desempeño.
+<break time="700ms"/>
+Los cuatro componentes se evalúan juntos. Es lo que hace especial al modelo de CONOCER: no se trata solo de saber, sino de demostrar que sabes hacer, con calidad, en una función real.
+<break time="500ms"/>
+Continúa con la sección siguiente para entender cómo funciona el sistema en México.
+</speak>

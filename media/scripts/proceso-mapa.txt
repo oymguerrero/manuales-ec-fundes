@@ -1,0 +1,35 @@
+<speak>
+El proceso de evaluación tiene seis pasos.
+<break time="500ms"/>
+Vamos a recorrerlos rápido para que tengas una imagen clara antes de profundizar en cada uno.
+<break time="800ms"/>
+Paso uno: la evaluación diagnóstica.
+<break time="400ms"/>
+Tu evaluador te aplica un instrumento corto que estima tus probabilidades de éxito en el proceso completo. No es una prueba que se apruebe o repruebe. Es un instrumento orientador.
+<break time="700ms"/>
+Paso dos: el plan de evaluación.
+<break time="400ms"/>
+El evaluador te entrega un documento donde te explica con precisión qué se te pedirá demostrar, cuándo y cómo. Es tu última oportunidad para hacer preguntas operativas. Aprovéchala.
+<break time="700ms"/>
+Paso tres: las sesiones de evaluación.
+<break time="400ms"/>
+Aquí pasa lo importante. Tu evaluador aplica el Instrumento de Evaluación: cuestionarios de conocimiento, observación de tus desempeños, revisión de tus productos, y observación de tus actitudes durante el proceso.
+<break time="700ms"/>
+Paso cuatro: el cierre de evaluación.
+<break time="400ms"/>
+El evaluador integra tu portafolio, recolecta firmas y agenda contigo la entrega de resultados. Hasta aquí tu evaluador conduce el proceso.
+<break time="800ms"/>
+Importante saber: a partir del paso cinco, el actor cambia. Ya no es tu evaluador sino la cadena institucional.
+<break time="500ms"/>
+Paso cinco: la entrega de resultados.
+<break time="400ms"/>
+Recibes tu cédula de evaluación con la retroalimentación detallada. Tu evaluador te explica qué se logró y qué áreas de oportunidad quedan.
+<break time="600ms"/>
+Paso seis: el dictamen y la emisión del Certificado.
+<break time="400ms"/>
+La Entidad de Certificación revisa la calidad de tu evaluación. Si todo está en orden, el CONOCER tramita y la Secretaría de Educación Pública emite tu Certificado oficial.
+<break time="600ms"/>
+El plazo administrativo aproximado son noventa días naturales desde la entrega de tu cédula.
+<break time="800ms"/>
+Seis pasos. Cuatro los conduce tu evaluador. Dos los conduce la institución. Ahora puedes profundizar en cada uno con tranquilidad.
+</speak>
