@@ -28,40 +28,24 @@ Solo abre `index.html` con doble clic en cualquier navegador (Chrome, Edge, Fire
 
 ## Cómo colaborar
 
-Trabajamos **tres personas** sobre este repo: Oscar, Iván y Aide. Da igual el editor (Antigravity, Claude Code o VS Code) — por debajo todos usan el mismo Git y el mismo repositorio. La rama `main` es **el archivo final**: la única versión oficial.
+Trabajamos **tres personas** sobre este repo: Oscar, Iván y Aide. Da igual el editor (Antigravity o Claude Code) — por debajo todos usan el mismo Git y el mismo repositorio. La rama `main` es **el archivo final**: la única versión, y todos trabajan directamente sobre ella.
 
-### Reglas de oro
+Tu asistente de IA (Claude Code o Antigravity) hace todo el Git por ti. Tú solo conversas:
 
-1. **`git pull` antes de empezar y antes de subir.** Así trabajas siempre sobre lo último.
-2. **Nunca se trabaja directo sobre `main`.** Todo cambio entra por una rama y un Pull Request (PR).
-3. Un cambio es oficial **solo cuando su PR se mergea** a `main`.
+1. **"Trae lo último"** — la IA hace `git pull`; empiezas con la versión más reciente.
+2. **Pídele los cambios** — le dices qué desarrollar o corregir en el HTML; la IA edita.
+3. **"Sube los cambios"** — la IA hace `git commit` y `git push`; tu aporte queda en el archivo final.
 
-### Ciclo de trabajo (por cada tarea)
-
-```
-git switch main && git pull           # 1. partes de la última versión
-git switch -c ec2-conocimiento-1      # 2. creas tu rama (nómbrala por la tarea)
-   ...editas el HTML...
-git add ec2.html                      # 3. marcas qué entra
-git commit -m "EC2: desarrollar conocimiento 1 del Elemento 1"
-git push -u origin ec2-conocimiento-1 # 4. subes tu rama a GitHub
-```
-
-5. En GitHub, abre un **Pull Request** de tu rama hacia `main`.
-6. Otra persona del equipo lo revisa y le da **Merge**.
-7. Todos hacen `git pull` sobre `main` → todos quedan con el archivo final.
-
-> En Claude Code (Oscar e Iván) basta con pedirle el ciclo al asistente. En Antigravity (Aide), el panel *Source Control* tiene botones para pull, commit, push y abrir el PR.
+No hay ramas ni Pull Requests. Los demás verán tu aporte la próxima vez que traigan lo último.
 
 ### Para no pisarse
 
-- Repártanse el trabajo **por archivo de EC**: una persona por `ecN.html` a la vez.
-- Avisen al equipo antes de tocar `index.html` o `assets/styles.css` — los comparten los 4 manuales.
-- Commits pequeños y frecuentes, con mensaje claro:
-  - `EC2: desarrollar conocimiento 1 del Elemento 1`
-  - `EC3: corregir numeración del Elemento 2`
+- **Repártanse por archivo de EC**: una persona por `ecN.html` a la vez. Si nadie edita el mismo archivo, nunca hay choques.
+- **Avisen** antes de tocar `index.html` o `assets/styles.css` — los comparten los 4 manuales.
+- **Suban seguido**, en cambios chicos: mientras menos tiempo pase entre traer y subir, menos posibilidad de cruzarse.
+- Si dos editan el mismo archivo casi a la vez, la IA junta el trabajo sola; solo pedirá ayuda en el caso raro de que dos cambien exactamente la misma línea.
 
-Para una vista visual del proceso completo, abre `flujo-trabajo.html`.
+Para una vista visual del proceso, abre `flujo-trabajo.html`.
 
 ## Estado actual de los manuales
 

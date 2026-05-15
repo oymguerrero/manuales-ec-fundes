@@ -172,8 +172,8 @@
       <div class="desc">La única versión oficial. Vive en GitHub, no en la computadora de nadie.</div>
     </div>
     <div class="conector">
-      <span class="sube"><span class="flecha">&#8593;</span> subir: push / pull request</span>
-      <span class="baja"><span class="flecha">&#8595;</span> bajar: pull</span>
+      <span class="sube"><span class="flecha">&#8593;</span> subir: git push</span>
+      <span class="baja"><span class="flecha">&#8595;</span> bajar: git pull</span>
     </div>
     <div class="personas">
       <div class="persona">
@@ -197,59 +197,31 @@
 
   <section class="seccion">
     <div class="kicker">El ciclo</div>
-    <div class="titulo">Siete pasos, cada vez que trabajas una tarea</div>
+    <div class="titulo">Tres pasos, cada vez que aportas algo</div>
 
     <div class="paso">
       <div class="num">1</div>
       <div class="cuerpo">
-        <h3>Actualízate</h3>
-        <p><code>git pull</code> — Bajas a tu copia la última versión del archivo final.</p>
+        <h3>"Trae lo último"</h3>
+        <p>Le pides eso a tu IA y hace <code>git pull</code>. Empiezas con la versión más reciente del archivo final.</p>
       </div>
     </div>
     <div class="paso">
       <div class="num">2</div>
       <div class="cuerpo">
-        <h3>Crea tu rama</h3>
-        <p><code>git switch -c ec2-conocimiento-1</code> — Un espacio propio para trabajar sin estorbar a nadie.</p>
-      </div>
-    </div>
-    <div class="paso">
-      <div class="num">3</div>
-      <div class="cuerpo">
-        <h3>Edita</h3>
-        <p>Trabajas tu parte del HTML en tu editor (Antigravity o Claude Code).</p>
-      </div>
-    </div>
-    <div class="paso">
-      <div class="num">4</div>
-      <div class="cuerpo">
-        <h3>Guarda el avance</h3>
-        <p><code>git commit</code> — Registras un punto. Sigue solo en tu copia; nadie más lo ve aún.</p>
-      </div>
-    </div>
-    <div class="paso">
-      <div class="num">5</div>
-      <div class="cuerpo">
-        <h3>Sube tu rama</h3>
-        <p><code>git push</code> — Tu rama y tus commits viajan a GitHub.</p>
-      </div>
-    </div>
-    <div class="paso">
-      <div class="num">6</div>
-      <div class="cuerpo">
-        <h3>Abre un Pull Request</h3>
-        <p>Propones meter tu rama a <code>main</code>. El equipo ve exactamente qué cambiaste.</p>
+        <h3>Pide tus cambios</h3>
+        <p>Le dices a tu IA qué desarrollar o corregir en el HTML. La IA lo edita por ti.</p>
       </div>
     </div>
     <div class="paso final">
-      <div class="num">7</div>
+      <div class="num">3</div>
       <div class="cuerpo">
-        <h3>Merge</h3>
-        <p>Alguien revisa y aprueba. Tu cambio entra a <code>main</code>: ya es parte del archivo final.</p>
+        <h3>"Sube los cambios"</h3>
+        <p>Tu IA hace <code>git commit</code> y <code>git push</code>. Tu aporte ya está en el archivo final.</p>
       </div>
     </div>
 
-    <div class="vuelta">Todos hacen <code>git pull</code> y quedan iguales &#8594; y vuelta al paso 1 con la siguiente tarea.</div>
+    <div class="vuelta">Tú nunca escribes un comando: la IA hace el pull, el commit y el push. Tú solo conversas.</div>
   </section>
 
   <section class="seccion">
@@ -258,18 +230,18 @@
     <div class="reglas">
       <div class="regla">
         <div class="n">1</div>
-        <h3>Pull, siempre</h3>
-        <p>Antes de empezar y antes de subir. Trabajas sobre lo último y evitas choques.</p>
+        <h3>Trae antes de empezar</h3>
+        <p>Siempre arranca trayendo lo último. Así trabajas sobre la versión vigente, no sobre una vieja.</p>
       </div>
       <div class="regla">
         <div class="n">2</div>
-        <h3>Nunca toques main directo</h3>
-        <p>Todo cambio pasa por una rama y un PR. Así <code>main</code> se mantiene sano.</p>
+        <h3>Repártanse por archivo</h3>
+        <p>Cada quien un <code>ecN.html</code>. Si nadie toca el mismo archivo, nunca hay choques.</p>
       </div>
       <div class="regla">
         <div class="n">3</div>
-        <h3>Final = mergeado</h3>
-        <p>Un cambio no es oficial hasta que su PR se mergea. Antes, es solo una propuesta.</p>
+        <h3>Sube seguido</h3>
+        <p>Cambios chicos y frecuentes. Mientras menos tiempo entre traer y subir, menos cruces.</p>
       </div>
     </div>
   </section>
@@ -282,8 +254,8 @@
       <p>Aide trabaja en <strong>Google Antigravity</strong>; Oscar e Iván en <strong>Claude Code</strong>. Da igual: por debajo es el mismo Git y el mismo repositorio. Lo que cambia son los botones, no el flujo — los tres llegan al mismo <code>main</code>.</p>
     </div>
     <div class="nota amarilla">
-      <h3>Para no pisarse</h3>
-      <p>Repártanse el trabajo <strong>por archivo de EC</strong> (una persona por <code>ecN.html</code> a la vez) y avisen al equipo antes de tocar <code>index.html</code> o <code>styles.css</code>, que los comparten los 4 manuales. Así casi nunca hay conflictos.</p>
+      <h3>Si dos se cruzan</h3>
+      <p>Si dos editan el mismo archivo casi a la vez, la IA <strong>junta el trabajo sola</strong> al traer lo último. Solo en el caso raro de que dos cambien exactamente la misma línea te pedirá elegir cuál versión queda.</p>
     </div>
   </section>
 
