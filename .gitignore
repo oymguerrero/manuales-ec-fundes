@@ -33,3 +33,9 @@ media/raw/
 # Archivos de logs locales
 *.log
 logs/
+
+# Claude Code / Cowork
+.claude/
+
+# Playwright MCP
+.playwright-mcp/

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flujo de trabajo en equipo — manuales-ec-fundes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul-principal:#1F4E8C;
+    --azul-claro:#4DA3DF;
+    --amarillo:#FFC233;
+    --azul-profundo:#0B2E63;
+    --blanco-calido:#FAFCFF;
+    --verde:#3FA35B;
+    --azul-suave:#EAF4FF;
+    --amarillo-suave:#FFF3CC;
+    --gris-texto:#4B5563;
+    --gris-linea:#D9E4F2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    background:var(--azul-suave);
+    color:var(--azul-profundo);
+    line-height:1.55;
+    padding:40px 16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .hoja{
+    max-width:1040px;margin:0 auto;background:var(--blanco-calido);
+    border-radius:24px;overflow:hidden;
+    box-shadow:0 18px 50px rgba(11,46,99,.18);
+  }
+
+  /* Cabecera */
+  .cabecera{
+    background:linear-gradient(135deg,#0B2E63,#1F4E8C 70%,#4DA3DF);
+    color:#fff;padding:46px 50px;
+  }
+  .cabecera .etiqueta{
+    display:inline-block;background:var(--amarillo);color:var(--azul-profundo);
+    font-weight:700;font-size:12px;letter-spacing:.6px;text-transform:uppercase;
+    padding:6px 13px;border-radius:999px;margin-bottom:16px;
+  }
+  .cabecera h1{font-size:35px;font-weight:800;line-height:1.18;letter-spacing:-.5px;}
+  .cabecera p{font-size:16px;color:#cfe2f7;margin-top:10px;max-width:640px;}
+
+  /* Secciones */
+  .seccion{padding:40px 50px;border-top:1px solid var(--gris-linea);}
+  .kicker{
+    font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+    color:var(--azul-principal);
+  }
+  .titulo{font-size:24px;font-weight:800;margin:6px 0 24px;letter-spacing:-.3px;}
+
+  /* La idea */
+  .repo-box{
+    background:linear-gradient(135deg,var(--azul-principal),var(--azul-claro));
+    color:#fff;border-radius:16px;padding:24px;text-align:center;
+    box-shadow:0 8px 22px rgba(31,78,140,.28);
+  }
+  .repo-box .et{
+    font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+    color:#d6e8fb;
+  }
+  .repo-box .nombre{font-size:22px;font-weight:800;margin:4px 0 2px;}
+  .repo-box .desc{font-size:14px;color:#e4f0fc;}
+  .conector{
+    display:flex;justify-content:center;gap:48px;padding:14px 0;
+    font-size:13px;font-weight:700;
+  }
+  .conector span{display:flex;align-items:center;gap:6px;}
+  .flecha{font-size:18px;}
+  .sube{color:var(--azul-principal);}
+  .baja{color:var(--verde);}
+  .personas{display:flex;gap:16px;}
+  .persona{
+    flex:1;background:var(--azul-suave);border:1px solid var(--gris-linea);
+    border-radius:14px;padding:20px 14px;text-align:center;
+  }
+  .persona .avatar{
+    width:48px;height:48px;border-radius:50%;background:var(--azul-profundo);
+    color:#fff;font-weight:800;font-size:18px;
+    display:flex;align-items:center;justify-content:center;margin:0 auto 10px;
+  }
+  .persona .nom{font-weight:700;font-size:16px;}
+  .persona .editor{
+    display:inline-block;margin-top:8px;font-size:12px;font-weight:600;
+    background:#fff;border:1px solid var(--gris-linea);
+    padding:4px 10px;border-radius:999px;color:var(--gris-texto);
+  }
+  .pie-idea{font-size:14px;color:var(--gris-texto);margin-top:16px;text-align:center;}
+
+  /* El ciclo */
+  .paso{display:flex;gap:20px;padding-bottom:26px;position:relative;}
+  .paso:last-child{padding-bottom:0;}
+  .paso::before{
+    content:"";position:absolute;left:22px;top:48px;bottom:-2px;
+    width:2px;background:var(--gris-linea);
+  }
+  .paso:last-child::before{display:none;}
+  .paso .num{
+    flex:none;width:46px;height:46px;border-radius:50%;
+    background:var(--azul-principal);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:19px;z-index:1;
+  }
+  .paso.final .num{background:var(--verde);}
+  .paso .cuerpo{padding-top:4px;}
+  .paso .cuerpo h3{font-size:17px;font-weight:700;}
+  .paso .cuerpo p{font-size:14.5px;color:var(--gris-texto);margin-top:3px;}
+  code{
+    background:var(--azul-suave);color:var(--azul-principal);
+    font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;
+    font-size:13px;padding:2px 7px;border-radius:5px;font-weight:600;
+  }
+  .vuelta{
+    margin-top:22px;background:var(--azul-suave);border-radius:10px;
+    padding:13px 18px;font-size:14px;font-weight:600;color:var(--azul-principal);
+    text-align:center;
+  }
+
+  /* Reglas */
+  .reglas{display:flex;gap:16px;}
+  .regla{
+    flex:1;background:#fff;border:1.5px solid var(--gris-linea);
+    border-radius:14px;padding:22px 20px;
+  }
+  .regla .n{
+    width:38px;height:38px;border-radius:50%;background:var(--amarillo);
+    color:var(--azul-profundo);font-weight:800;font-size:18px;
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  }
+  .regla h3{font-size:16px;font-weight:700;margin-bottom:5px;}
+  .regla p{font-size:14px;color:var(--gris-texto);}
+
+  /* Notas */
+  .nota{border-radius:14px;padding:20px 24px;}
+  .nota + .nota{margin-top:14px;}
+  .nota.azul{background:var(--azul-suave);border:1px solid var(--gris-linea);}
+  .nota.amarilla{background:var(--amarillo-suave);border:1px solid #f0d98a;}
+  .nota h3{font-size:16px;font-weight:800;margin-bottom:6px;}
+  .nota p{font-size:14.5px;color:var(--gris-texto);}
+  .nota strong{color:var(--azul-profundo);}
+
+  /* Pie */
+  .pie{
+    background:var(--azul-profundo);color:#9fb8d9;
+    padding:20px 50px;font-size:12.5px;text-align:center;
+  }
+  .pie strong{color:#fff;}
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header class="cabecera">
+    <span class="etiqueta">manuales-ec-fundes &middot; Componente 2 Fundes</span>
+    <h1>Flujo de trabajo en equipo</h1>
+    <p>Cómo Oscar, Iván y Aide construyen juntos los manuales sin pisarse — con un solo archivo final.</p>
+  </header>
+
+  <section class="seccion">
+    <div class="kicker">La idea</div>
+    <div class="titulo">Un solo lugar manda: GitHub</div>
+    <div class="repo-box">
+      <div class="et">Repositorio en GitHub &middot; rama main</div>
+      <div class="nombre">EL ARCHIVO FINAL</div>
+      <div class="desc">La única versión oficial. Vive en GitHub, no en la computadora de nadie.</div>
+    </div>
+    <div class="conector">
+      <span class="sube"><span class="flecha">&#8593;</span> subir: git push</span>
+      <span class="baja"><span class="flecha">&#8595;</span> bajar: git pull</span>
+    </div>
+    <div class="personas">
+      <div class="persona">
+        <div class="avatar">O</div>
+        <div class="nom">Oscar</div>
+        <div class="editor">Claude Code</div>
+      </div>
+      <div class="persona">
+        <div class="avatar">I</div>
+        <div class="nom">Iván</div>
+        <div class="editor">Claude Code</div>
+      </div>
+      <div class="persona">
+        <div class="avatar">A</div>
+        <div class="nom">Aide</div>
+        <div class="editor">Google Antigravity</div>
+      </div>
+    </div>
+    <p class="pie-idea">Cada quien tiene su <strong>copia local</strong>. Git mantiene las copias en sincronía con el archivo final.</p>
+  </section>
+
+  <section class="seccion">
+    <div class="kicker">El ciclo</div>
+    <div class="titulo">Tres pasos, cada vez que aportas algo</div>
+
+    <div class="paso">
+      <div class="num">1</div>
+      <div class="cuerpo">
+        <h3>"Trae lo último"</h3>
+        <p>Le pides eso a tu IA y hace <code>git pull</code>. Empiezas con la versión más reciente del archivo final.</p>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="num">2</div>
+      <div class="cuerpo">
+        <h3>Pide tus cambios</h3>
+        <p>Le dices a tu IA qué desarrollar o corregir en el HTML. La IA lo edita por ti.</p>
+      </div>
+    </div>
+    <div class="paso final">
+      <div class="num">3</div>
+      <div class="cuerpo">
+        <h3>"Sube los cambios"</h3>
+        <p>Tu IA hace <code>git commit</code> y <code>git push</code>. Tu aporte ya está en el archivo final.</p>
+      </div>
+    </div>
+
+    <div class="vuelta">Tú nunca escribes un comando: la IA hace el pull, el commit y el push. Tú solo conversas.</div>
+  </section>
+
+  <section class="seccion">
+    <div class="kicker">Reglas de oro</div>
+    <div class="titulo">Tres reglas que evitan el 90% de los problemas</div>
+    <div class="reglas">
+      <div class="regla">
+        <div class="n">1</div>
+        <h3>Trae antes de empezar</h3>
+        <p>Siempre arranca trayendo lo último. Así trabajas sobre la versión vigente, no sobre una vieja.</p>
+      </div>
+      <div class="regla">
+        <div class="n">2</div>
+        <h3>Repártanse por archivo</h3>
+        <p>Cada quien un <code>ecN.html</code>. Si nadie toca el mismo archivo, nunca hay choques.</p>
+      </div>
+      <div class="regla">
+        <div class="n">3</div>
+        <h3>Sube seguido</h3>
+        <p>Cambios chicos y frecuentes. Mientras menos tiempo entre traer y subir, menos cruces.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="kicker">Para que funcione</div>
+    <div class="titulo">Dos cosas más que conviene saber</div>
+    <div class="nota azul">
+      <h3>El editor no importa</h3>
+      <p>Aide trabaja en <strong>Google Antigravity</strong>; Oscar e Iván en <strong>Claude Code</strong>. Da igual: por debajo es el mismo Git y el mismo repositorio. Lo que cambia son los botones, no el flujo — los tres llegan al mismo <code>main</code>.</p>
+    </div>
+    <div class="nota amarilla">
+      <h3>Si dos se cruzan</h3>
+      <p>Si dos editan el mismo archivo casi a la vez, la IA <strong>junta el trabajo sola</strong> al traer lo último. Solo en el caso raro de que dos cambien exactamente la misma línea te pedirá elegir cuál versión queda.</p>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <strong>manuales-ec-fundes</strong> — Flujo de trabajo del equipo &middot; Componente 2 Fundes
+  </footer>
+
+</div>
+</body>
+</html>
