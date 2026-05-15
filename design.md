@@ -1298,11 +1298,36 @@ El logo debe respetar un **margen mínimo de 1 módulo de su altura** en todos l
 
 ### 18.5 Implementación en el sitio web
 
-Actualmente el logo vive como **`img/logo.png`**. Aplica al `<header class="site-header">` y al `<footer class="site-footer">` con altura controlada por CSS. Tareas pendientes documentadas:
+Activos disponibles en `img/`:
 
-- [ ] Crear las 5 variantes oficiales como SVG vectoriales separadas (`img/logo-color.svg`, `img/logo-mono-azul.svg`, `img/logo-mono-naranja.svg`, `img/logo-negro.svg`, `img/logo-blanco.svg`).
-- [ ] Variante institucional con FUNDES como SVG separado (`img/logo-fundes.svg`).
-- [ ] Sustituir `img/logo.png` por SVG color principal para mejor escalado y peso.
+| Archivo | Variante | Uso |
+|---|---|---|
+| `img/logo.png` | Color (raster) | Default actual del sitio. Mantener como fallback |
+| `img/logo-color.svg` | Color (vectorial) | Default oficial. Usar para nuevas implementaciones |
+| `img/logo-mono-azul.svg` | Mono `#28467e` | Sobre fondos claros sin espacio para multicolor |
+| `img/logo-mono-naranja.svg` | Mono `#f29100` | Contexto cálido/optimista, fondos claros |
+| `img/logo-negro.svg` | Mono `#000000` | Impresión 1 tinta, grabados, sellos |
+| `img/logo-blanco.svg` | Mono `#FFFFFF` | Versión en bloque sobre azul profundo o negro |
+| `img/logo-fundes-color.svg` | Color + atribución FUNDES | Materiales formales, certificados |
+
+**Nota sobre los SVG actuales:** son una **versión web funcional** basada en `<text>` con la fuente Afacad/Inter. Para piezas oficiales impresas o de alta resolución, **reemplazar por el SVG vectorial original del diseñador** cuando esté disponible (los `<text>` actuales se renderizan con la fuente disponible en el sistema; el SVG oficial debe tener los glyphs convertidos a paths).
+
+Para usar en HTML:
+
+```html
+<!-- Logo color (default web) -->
+<img src="img/logo-color.svg" alt="Mi CompañIA" width="180" height="100" />
+
+<!-- Logo blanco sobre fondo azul (footer del sitio) -->
+<img src="img/logo-blanco.svg" alt="Mi CompañIA" width="160" height="90" />
+
+<!-- Logo institucional con FUNDES (PDF descargables, certificados) -->
+<img src="img/logo-fundes-color.svg" alt="Mi CompañIA · Una iniciativa de FUNDES" width="200" height="130" />
+```
+
+Pendiente:
+- [ ] Decidir si migrar `img/logo.png` → `img/logo-color.svg` en headers del sitio (mejor escalado, peso menor) o mantener PNG por compatibilidad cross-browser estricta.
+- [ ] Reemplazar SVG actuales con la versión vectorial oficial del diseñador cuando esté lista.
 
 ---
 
