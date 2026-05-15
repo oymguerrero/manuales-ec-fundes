@@ -1,10 +1,16 @@
 # Sistema de Diseño Web — Mi CompañIA
 
+> **Fuente oficial:** `micompania_brandbook.pdf`. Este documento es la implementación web del brandbook. Cuando haya conflicto entre este .md y el brandbook, **manda el brandbook**.
+
 ## 1. Identidad visual
 
 ### Nombre
 
 Mi CompañIA
+
+### Misión (texto oficial del brandbook)
+
+Iniciativa nacional que busca cerrar la brecha digital de las MIPYMES mexicanas mediante la adopción progresiva de herramientas de Inteligencia Artificial. A través de sensibilización, formación de técnicos certificados, acompañamiento sectorial y alianzas estratégicas, el proyecto fortalecerá la productividad, competitividad y sostenibilidad de **más de 10 mil MIPYMES en México**.
 
 ### Concepto central
 
@@ -22,31 +28,59 @@ Mi CompañIA
 
 Hablamos como un amigo que sabe: claro, humano, útil y sin tecnicismos innecesarios.
 
+### Atribución institucional
+
+Mi CompañIA es **una iniciativa de FUNDES** (Latinoamérica) con apoyo de Google.org. En materiales formales se usa la variante del logo con atribución "Una iniciativa de FUNDES" (ver §18.2).
+
 ---
 
 ## 2. Paleta de color
 
-### Colores principales
+### 2.1 Paleta primaria oficial (brandbook)
 
-| Nombre         | Uso                               | HEX       |
-| -------------- | --------------------------------- | --------- |
-| Azul principal | Confianza, tecnología, estructura | `#1F4E8C` |
-| Azul claro     | Cercanía, accesibilidad           | `#4DA3DF` |
-| Amarillo Mi    | Energía, optimismo, acción        | `#FFC233` |
-| Azul profundo  | Títulos, contraste, autoridad     | `#0B2E63` |
-| Blanco cálido  | Fondo principal                   | `#FAFCFF` |
+Es la fuente de verdad para piezas de marca (impresos, video, social, etc.):
 
-### Colores secundarios
+| Nombre              | HEX       | CMYK                          | Uso                                |
+| ------------------- | --------- | ----------------------------- | ---------------------------------- |
+| Amarillo            | `#f7c031` | C:3 M:25 Y:92 K:0             | "Mi" del logo · acentos · CTA      |
+| Naranja             | `#f29100` | C:2 M:50 Y:100 K:0            | Subrayado del logo · sparkles cálidos · líneas onduladas |
+| Azul claro          | `#529ed7` | C:65 M:26 Y:0 K:0             | "compañ" del logo · enlaces       |
+| Azul profundo       | `#28467e` | C:96 M:81 Y:23 K:8            | "iA" del logo · títulos · sparkles brand |
+| Gris claro          | `#f2f2f2` | C:4 M:2 Y:2 K:0               | Fondos neutros                     |
+| Negro               | `#000000` | C:75 M:68 Y:67 K:90           | Variante mono · texto extremo      |
 
-| Nombre         | Uso                | HEX       |
-| -------------- | ------------------ | --------- |
-| Verde impacto  | Resultados, avance | `#3FA35B` |
-| Azul suave     | Fondos de tarjetas | `#EAF4FF` |
-| Amarillo suave | Fondos de énfasis  | `#FFF3CC` |
-| Gris texto     | Texto secundario   | `#4B5563` |
-| Gris línea     | Bordes suaves      | `#D9E4F2` |
+### 2.2 Paleta secundaria oficial (brandbook · uso restringido)
 
-### Contraste mínimo (WCAG AA)
+Para infografías, ilustraciones complementarias y materiales que requieran ampliar el rango de color. **No reemplazan la paleta primaria** en componentes UI principales.
+
+| Nombre        | HEX (aprox)| CMYK                | Uso                                 |
+| ------------- | ---------- | ------------------- | ----------------------------------- |
+| Rosa palo     | `#d9a59a`  | C:14 M:38 Y:30 K:0  | Tonos suaves · ilustración humana   |
+| Granate       | `#822d3f`  | C:32 M:98 Y:62 K:27 | Énfasis serio · advertencias graves |
+| Turquesa      | `#26b69c`  | C:75 M:1 Y:43 K:0   | Variación de avance/éxito           |
+| Lila          | `#bdacd3`  | C:27 M:32 Y:0 K:0   | Acento secundario suave             |
+
+### 2.3 Tokens web implementados (`assets/styles.css`)
+
+La implementación web parte de la paleta primaria del brandbook y añade tokens utilitarios (sombras, fondos suaves, grises de texto) para cumplir contraste WCAG AA. **Estos valores son los que vives en el sitio**:
+
+| Token                 | HEX       | Equivalencia brandbook | Uso                          |
+| --------------------- | --------- | ---------------------- | ---------------------------- |
+| `--color-azul`        | `#1F4E8C` | Variante derivada del azul profundo `#28467e` con más luminosidad | Azul de UI medio · botones |
+| `--color-azul-profundo` | `#0B2E63` | Variante más oscura para títulos | Headings · navegación |
+| `--color-azul-claro`  | `#4DA3DF` | Aproxima `#529ed7` brandbook | Acentos · enlaces |
+| `--color-amarillo`    | `#FFC233` | Aproxima `#f7c031` brandbook | Botón primario · acentos `<span class="ia">` |
+| `--color-naranja`     | `#f29100` | Idéntico al brandbook  | Subrayado decorativo · sparkles cálidos |
+| `--color-verde`       | `#3FA35B` | (Utilitario web) Verde de avance · check completado | Estados de éxito · botón "Marcar como leído" |
+| `--color-blanco-calido` | `#FAFCFF` | Equivalente al `#f2f2f2` brandbook con tinte azul mínimo | Fondo principal |
+| `--color-gris-texto`  | `#4B5563` | (Utilitario web)        | Texto secundario · meta |
+| `--color-gris-linea`  | `#D9E4F2` | (Utilitario web)        | Bordes · separadores suaves |
+| `--color-azul-suave`  | `#EAF4FF` | (Utilitario web)        | Fondos de tarjeta · hover |
+| `--color-amarillo-suave` | `#FFF3CC` | (Utilitario web)      | Fondos de callout informativo |
+
+> **Deuda técnica documentada:** los tokens web (`#1F4E8C`, `#0B2E63`, `#FFC233`, `#4DA3DF`) son variantes ligeramente desplazadas de la paleta primaria del brandbook (`#28467e`, `#529ed7`, `#f7c031`). Esto se hizo en la implementación inicial para optimizar contraste WCAG AA sobre fondo blanco cálido. **Antes de imprimir/exportar piezas oficiales, usar los HEX del brandbook (§2.1), no los tokens web.** En el sitio se mantienen los tokens actuales mientras no haya migración formal.
+
+### 2.4 Contraste mínimo (WCAG AA)
 
 | Combinación                              | Ratio mínimo | Uso                  |
 | ---------------------------------------- | ------------ | -------------------- |
@@ -61,23 +95,59 @@ Verificar todos los pares de color en producción con herramienta WCAG antes de 
 
 ## 3. Tipografía
 
-### Fuente principal
+### 3.1 Tipografía oficial del brandbook
 
-Inter
+**Primaria · Afacad**
+
+Sans-serif moderna y cálida. *"Combina modernidad y cercanía en un solo trazo. Su diseño sans-serif limpio y equilibrado transmite innovación y profesionalismo, mientras que sus formas abiertas y cálidas generan confianza y accesibilidad."*
+
+| Peso       | Uso                |
+| ---------- | ------------------ |
+| `regular`  | Cuerpo de texto    |
+| `italic`   | Anotaciones        |
+| `semibold` | Subtítulos         |
+| `bold`     | Títulos / H1-H2    |
 
 ```css
-font-family: 'Inter', sans-serif;
+/* Afacad desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+font-family: 'Afacad', sans-serif;
 ```
 
-### Fuente alternativa
+**Secundaria · Open Sans Condensed**
 
-DM Sans
+Para mensajes secundarios y disclaimers. *"Aporta simplicidad y legibilidad, funcionando como soporte perfecto para mensajes secundarios y cuerpos de texto. Su diseño estilizado y compacto optimiza el espacio sin perder claridad."*
+
+| Peso                       | Uso                       |
+| -------------------------- | ------------------------- |
+| Condensed Regular          | Anotaciones secundarias   |
+| Condensed Light Italic     | Disclaimers · pie de imagen |
 
 ```css
-font-family: 'DM Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
 ```
 
-### Jerarquía tipográfica — Desktop
+### 3.2 Implementación web actual
+
+**El sitio aún usa Inter** como fuente principal, no Afacad. Esto es **deuda técnica documentada**: cuando la implementación inicial se hizo, Afacad no estaba estandarizada como tipografía oficial; Inter se eligió por disponibilidad inmediata en Google Fonts y excelente legibilidad multiplataforma. Las dos tipografías son sans-serif geométricas con propiedades visuales muy similares, por lo que **el cambio entre Inter y Afacad en pantalla es sutil** y no rompe layouts.
+
+```css
+/* Stack actual del sitio (assets/styles.css) */
+font-family: 'Inter', sans-serif;        /* Primaria — TO DO: migrar a Afacad */
+font-family: 'DM Sans', sans-serif;      /* Alternativa — TO DO: migrar a Open Sans Condensed */
+```
+
+**Plan de migración cuando se aplique:**
+
+1. Cambiar el `@import` en `assets/styles.css` a la URL de Afacad + Open Sans Condensed.
+2. Reemplazar todas las referencias `'Inter'` por `'Afacad'` y `'DM Sans'` por `'Open Sans Condensed'`.
+3. Validar tamaños/espaciados: Afacad tiene métricas ligeramente diferentes — verificar que H1/H2 no se desborden y que el cuerpo de texto siga legible.
+4. Validar peso `bold` en sub-nav y badges (Afacad bold puede verse más fino que Inter 800).
+
+> Para **piezas impresas, video o social media oficiales**, usar siempre Afacad + Open Sans Condensed conforme al brandbook. El sitio web es la única excepción mientras se migra.
+
+### 3.3 Jerarquía tipográfica — Desktop
 
 | Elemento        | Tamaño   | Peso |
 | --------------- | -------- | ---- |
@@ -89,7 +159,7 @@ font-family: 'DM Sans', sans-serif;
 | Texto pequeño   | 13–14 px | 500  |
 | Botones         | 16 px    | 700  |
 
-### Jerarquía tipográfica — Móvil (≤ 768px)
+### 3.4 Jerarquía tipográfica — Móvil (≤ 768px)
 
 | Elemento        | Tamaño   | Peso |
 | --------------- | -------- | ---- |
@@ -335,7 +405,7 @@ min-height: 44px;
 * Estética sci-fi
 * Exceso de hologramas
 * Visuales corporativos rígidos
-* Sparkles genéricos de IA
+* Sparkles genéricos de IA (✨ random, brillos amorfos) — **NO confundir con el sparkle de marca**, que es un elemento gráfico oficial (estrella de 4 puntas en azul profundo `#28467e` o naranja `#f29100`). Ver §19.1.
 
 ---
 
@@ -1172,3 +1242,140 @@ es independiente del lesson-tabs pero se integra dentro del `.accordion__body`.
 > **Cuando agregues un nuevo capítulo extenso al manual, considera si debe
 > heredar este patrón. Si lo aplicas, recuerda asignar un `data-progress-key`
 > único y actualizar esta lista.**
+
+---
+
+## 18. Logo · variantes, atribución y reglas de uso
+
+> Fuente: `micompania_brandbook.pdf` páginas 3-7.
+
+### 18.1 Variantes principales
+
+El logo de **Mi CompañIA** se compone de tres bloques tipográficos: "Mi" (amarillo), subrayado curvo (naranja), "compañ" (azul claro) e "iA" dentro de un cuadro (azul profundo, con sparkles decorativos integrados).
+
+| Variante         | Cuándo usar                                                | Notas                                              |
+| ---------------- | ---------------------------------------------------------- | -------------------------------------------------- |
+| **Color**        | Default. Sobre fondos blancos o muy claros                 | Cuatro colores oficiales (amarillo · naranja · azul claro · azul profundo) |
+| **Color sólido azul** (`#28467e`) | Sobre fondos claros cuando no hay espacio para multicolor (favicon mediano, sello) | Toda la marca en un único tono azul profundo |
+| **Color sólido naranja** (`#f29100`) | Sobre fondos claros, contexto cálido/optimista | Variante mono naranja, mismo principio |
+| **Negro** (`#000000`) | Impresión a una tinta · grabados · sellos             | Solo cuando no se pueda imprimir color             |
+| **Versión en bloque (claro)** | Sobre fondos `#28467e` o azul de marca         | Logo blanco sobre fondo azul (alta presencia)      |
+| **Versión en bloque (negro)** | Sobre fondos negros o muy oscuros               | Logo blanco sobre fondo negro                       |
+
+### 18.2 Logo con atribución institucional
+
+Cuando se usa en materiales que requieren atribución a **FUNDES**, debajo del logo va el texto "Una iniciativa de **FUNDES**" en azul profundo (o blanco si la versión es en bloque). Existen las mismas variantes:
+
+- Color · sólido · versión en bloque (con fondo de color)
+
+La atribución FUNDES es **obligatoria** en:
+- Materiales impresos oficiales
+- Documentos formales (PDFs descargables, certificados, plantillas)
+- Piezas dirigidas a aliados institucionales
+
+En el sitio web ya aparece en el footer; no requiere repetirse en cada componente.
+
+### 18.3 Área de seguridad
+
+El logo debe respetar un **margen mínimo de 1 módulo de su altura** en todos los lados. Un "módulo" es la altura del bloque "Mi" (el amarillo superior). Cuadrícula de referencia: 8×8 módulos centrados en el logo.
+
+**Implicación práctica:**
+
+- No pongas el logo pegado al borde del lienzo.
+- No pongas otros logos, texto o elementos visuales dentro del área de seguridad.
+- En cabeceras/footers del sitio, mantén padding generoso alrededor del `<img>` del logo.
+
+### 18.4 Usos incorrectos (antipatrones)
+
+❌ **NO hagas estas cuatro cosas con el logo** (brandbook pág. 7):
+
+| Antipatrón | Por qué está prohibido |
+|---|---|
+| **Distorsión** (estirar horizontal/vertical) | Rompe la proporción del trazo tipográfico — el logo debe escalarse proporcionalmente siempre |
+| **Colores fuera de la paleta** (rojo, verde brillante, magenta…) | Las únicas variantes monocromáticas válidas son las del §18.1. Nunca recolorear "creativamente" |
+| **Uso incompleto** (mostrar solo "Mi" o solo "compañiA", o cortar partes) | El logo se usa entero. Para favicons pequeños, usar la versión cuadrada compacta (no recortar la versión completa) |
+| **Efectos de transparencia o reducir opacidad** | El logo siempre va 100% opaco. Si el fondo no permite legibilidad, cambia a la variante en bloque (§18.1) |
+
+### 18.5 Implementación en el sitio web
+
+Actualmente el logo vive como **`img/logo.png`**. Aplica al `<header class="site-header">` y al `<footer class="site-footer">` con altura controlada por CSS. Tareas pendientes documentadas:
+
+- [ ] Crear las 5 variantes oficiales como SVG vectoriales separadas (`img/logo-color.svg`, `img/logo-mono-azul.svg`, `img/logo-mono-naranja.svg`, `img/logo-negro.svg`, `img/logo-blanco.svg`).
+- [ ] Variante institucional con FUNDES como SVG separado (`img/logo-fundes.svg`).
+- [ ] Sustituir `img/logo.png` por SVG color principal para mejor escalado y peso.
+
+---
+
+## 19. Elementos gráficos distintivos
+
+> Fuente: `micompania_brandbook.pdf` página 12.
+
+La marca tiene **tres elementos gráficos propios** que aparecen como decoración recurrente. Úsalos con moderación: refuerzan la identidad cuando están bien dosificados, abruman cuando se abusan.
+
+### 19.1 Sparkles (estrella de 4 puntas)
+
+**Forma:** estrella de 4 puntas con lóbulos cóncavos curvados (no es una estrella geométrica simple — los bordes hacia adentro son curvos, dándole calidez orgánica). Es el mismo símbolo que aparece junto a la "iA" del logo.
+
+**Tamaños recomendados:** mezclar pequeño · mediano · grande en una misma composición para generar ritmo visual ("constelación").
+
+**Colores válidos:**
+- `#28467e` (azul profundo) — variante principal, neutra
+- `#f29100` (naranja) o `#f7c031` (amarillo) — variante cálida, para acentos
+- Blanco sobre fondos oscuros
+
+**Cuándo usar:**
+- Como elemento decorativo de fondo en heroes/landing
+- Para puntuar transiciones o headings importantes
+- Junto a frases ancla o llamadas a la acción
+
+**NO confundir con sparkles genéricos de IA** (✨ emoji, brillos random de stock art). Ver §7. El sparkle de marca es **un símbolo específico**, no un efecto decorativo abstracto.
+
+```css
+/* Ejemplo de sparkle SVG (simplificado, lóbulos cóncavos) */
+<svg viewBox="0 0 24 24" fill="#28467e">
+  <path d="M12 2 C13 9, 15 11, 22 12 C15 13, 13 15, 12 22 C11 15, 9 13, 2 12 C9 11, 11 9, 12 2 Z"/>
+</svg>
+```
+
+### 19.2 Flecha amarilla
+
+**Forma:** flecha horizontal masiva amarilla (`#f7c031`), trazo grueso, esquinas ligeramente redondeadas, apunta hacia la derecha (avance / progreso).
+
+**Cuándo usar:**
+- Marcar dirección de un proceso (antes → después, paso A → paso B)
+- En diagramas de flujo, infografías de proceso
+- Como acento visual para "continúa hacia..." o "siguiente capítulo →"
+
+**Cuándo NO usar:**
+- Como botón ordinario (los botones tienen su propio estilo, §5)
+- En densidad alta — máximo 1-2 por sección
+
+### 19.3 Líneas onduladas
+
+**Forma:** ondas horizontales suaves naranja / amarillo (`#f29100` o `#f7c031`), trazo medio. Curvas amplias, no apretadas. Pueden ir en pares paralelos o solas.
+
+**Cuándo usar:**
+- Como divisor de sección decorativo (separar grandes bloques sin línea recta rígida)
+- En el pie de página (ya aparecen en algunas piezas del brandbook)
+- Como textura sutil de fondo (con muy baja opacidad)
+
+**Cuándo NO usar:**
+- Como separador entre items pequeños (usar `border-bottom` normal)
+- Dentro de párrafos o cerca de texto fino (compiten visualmente)
+
+### 19.4 Reglas de combinación
+
+- **Sparkles + flecha**: OK juntos en heros/landings con harto espacio.
+- **Sparkles + líneas onduladas**: OK como ambiente decorativo de fondo (sparkles arriba, ondas abajo).
+- **Flecha + líneas onduladas**: evitar en el mismo viewport — compiten por atención.
+- **Los tres a la vez en un mismo bloque**: solo si hay espacio sobrado y un diseñador supervisa. Lo más común y limpio es usar **uno solo** por sección.
+
+### 19.5 Implementación en el sitio web
+
+Estado actual:
+
+- [ ] Sparkles como SVG reutilizable (`<svg class="sparkle">`) — pendiente de implementar.
+- [ ] Flecha amarilla como componente CSS o SVG — pendiente.
+- [ ] Líneas onduladas como background SVG sutil para secciones decorativas — pendiente.
+
+**Si los implementas:** define los SVG en `assets/styles.css` como background-image data-URI o como SVG sprite en una carpeta `img/decor/`, y permite que tres-cuatro componentes los compongan vía clases utilitarias (`.has-sparkles`, `.has-waves`).
