@@ -16,3 +16,20 @@ desktop.ini
 
 # OneDrive
 *.lnk
+
+# Secretos · credenciales · variables de entorno
+# IMPORTANTE: el archivo .env.example SÍ se commitea (es plantilla sin valores reales)
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+service-account*.json
+
+# Media intermedia (clips crudos de higgsfield antes de ensamblar)
+media/raw/
+
+# Archivos de logs locales
+*.log
+logs/

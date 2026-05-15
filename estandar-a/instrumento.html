@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Instrumento de Evaluación · Estándar A · Mi CompañIA</title>
+<meta name="description" content="Cómo se aplica el Instrumento de Evaluación de Competencia (IEC) del Estándar A: 126 reactivos, 100.17 puntos, ponderación, AHV negativos, Evidencia Histórica. Calculadora interactiva." />
+<link rel="icon" type="image/png" href="../img/logo.png" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/interactive.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="brand-text">Mi CompañIA</span>
+    </a>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../maestro/index.html">Manual Maestro</a>
+      <a href="index.html">Estándar A</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="sub-nav" aria-label="Capítulos del Manual del Estándar A">
+  <div class="container">
+    <span class="sub-nav__label">Estándar A</span>
+    <a href="index.html">Inicio</a>
+    <a href="elemento-1.html">Elemento 1 · Planear</a>
+    <a href="elemento-2.html">Elemento 2 · Ejecutar</a>
+    <a href="elemento-3.html">Elemento 3 · Evaluar</a>
+    <a href="instrumento.html" class="active">Instrumento</a>
+    <a href="ruta-preparacion.html">Ruta de preparación</a>
+    <a href="recursos.html">FAQ y recursos</a>
+  </div>
+</nav>
+
+<div class="maestro-progress">
+  <div class="container">
+    <span class="maestro-progress__label">Capítulo 5 de 7 · Instrumento de Evaluación</span>
+    <div class="maestro-progress__bar" role="presentation">
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--current"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Capítulo 5 · Mecánica del IEC</div>
+    <h1>Cómo se aplica el Instrumento de Evaluación</h1>
+    <p>126 reactivos · 100.17 puntos totales · Tres pesos de ponderación · AHV con valores negativos · Opción de Evidencia Histórica para 13 productos. Conocer la mecánica del IEC te permite anticipar el ritmo de la sesión y aprovechar la facilidad de presentar productos previos.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <a class="back-link" href="elemento-3.html">Volver al Elemento 3</a>
+
+    <section id="estructura">
+      <h2>5.1 Estructura del Instrumento de Evaluación de Competencia</h2>
+      <p>El IEC del Estándar A se compone de tres tipos de instrumentos que tu evaluador aplicará a lo largo del proceso. Cada uno está diseñado para captar un tipo distinto de evidencia.</p>
+
+      <table class="prose-table">
+        <thead><tr><th>Instrumento</th><th>Qué recoge</th><th>Reactivos</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Guías de Observación</strong></td><td>Desempeños observables en situaciones reales o simuladas. El evaluador registra si cumples con cada reactivo a partir de lo que observa.</td><td>4 guías · <strong>35 reactivos</strong></td></tr>
+          <tr><td><strong>Listas de Cotejo</strong></td><td>Productos entregables. Para cada producto, el evaluador verifica si las características del F21 están presentes y cumplen.</td><td>4 listas · <strong>77 reactivos</strong></td></tr>
+          <tr><td><strong>Cuestionarios</strong></td><td>Conocimientos. Preguntas que verifican el dominio aplicado de los conocimientos exigidos.</td><td>3 cuestionarios · <strong>14 reactivos</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p>Los tres instrumentos suman <strong>126 reactivos</strong>. No todos pesan lo mismo:</p>
+
+      <h3>Ponderación de los reactivos</h3>
+      <ul>
+        <li><strong>Peso menor:</strong> 59 reactivos × 0.32 puntos cada uno = 18.88 pts</li>
+        <li><strong>Peso medio:</strong> 46 reactivos × 0.62 puntos cada uno = 28.52 pts</li>
+        <li><strong>Peso mayor:</strong> 15 reactivos × 3.33 puntos cada uno = 49.95 pts (las características más críticas)</li>
+      </ul>
+
+      <p>Total máximo posible: <strong>~100.17 puntos</strong> (el excedente sobre 100 se origina por el uso de decimales en cada reactivo).</p>
+
+      <svg class="diagram" viewBox="0 0 900 460" role="img" aria-labelledby="svg-donut-title svg-donut-desc">
+        <title id="svg-donut-title">Distribución de los 126 reactivos y de los 100.17 puntos del IEC</title>
+        <desc id="svg-donut-desc">Visualización dual. En cantidad de reactivos: 59 son de peso menor (47%), 46 de peso medio (37%) y 15 de peso mayor (12%); además existen 6 reactivos de AHV que restan. En aporte de puntos: peso menor aporta 18.88 puntos (19%), peso medio aporta 28.52 puntos (28%) y peso mayor —solo 15 reactivos— aporta 49.95 puntos (50%). Conclusión: los 15 reactivos de peso mayor son donde se gana o pierde la evaluación.</desc>
+
+        <!-- Donut 1: Cantidad de reactivos -->
+        <g transform="translate(50, 30)">
+          <text x="170" y="20" text-anchor="middle" fill="#0B2E63" font-family="Inter, sans-serif" font-size="14" font-weight="700">Cantidad de reactivos</text>
+          <text x="170" y="38" text-anchor="middle" fill="#4B5563" font-family="Inter, sans-serif" font-size="11" font-style="italic">126 totales</text>
+
+          <!-- Donut SVG (paths) -->
+          <!-- 59/126 = 46.83% -> 168.6 grados; ángulo inicial 0 (arriba) -->
+          <!-- Anillo: r=110, stroke=44, cx=170, cy=200 -->
+          <g transform="translate(170, 200)">
+            <!-- Peso menor (azul claro): 59 reactivos -->
+            <circle r="90" fill="none" stroke="#4DA3DF" stroke-width="44" stroke-dasharray="265.0 565.5" transform="rotate(-90)"/>
+            <!-- Peso medio (azul): 46 reactivos. Empieza después del menor (265.0 unidades de circunferencia) -->
+            <circle r="90" fill="none" stroke="#1F4E8C" stroke-width="44" stroke-dasharray="206.6 565.5" stroke-dashoffset="-265.0" transform="rotate(-90)"/>
+            <!-- Peso mayor (amarillo): 15 reactivos -->
+            <circle r="90" fill="none" stroke="#FFC233" stroke-width="44" stroke-dasharray="67.4 565.5" stroke-dashoffset="-471.6" transform="rotate(-90)"/>
+            <!-- AHV negativos (rojo): 6 reactivos -->
+            <circle r="90" fill="none" stroke="#9F2929" stroke-width="44" stroke-dasharray="26.9 565.5" stroke-dashoffset="-538.9" transform="rotate(-90)"/>
+
+            <!-- Centro -->
+            <text x="0" y="-6" text-anchor="middle" fill="#0B2E63" font-family="Inter, sans-serif" font-size="32" font-weight="800">126</text>
+            <text x="0" y="14" text-anchor="middle" fill="#4B5563" font-family="Inter, sans-serif" font-size="11">reactivos</text>
+          </g>
+
+          <!-- Leyenda -->
+          <g transform="translate(0, 330)" font-family="Inter, sans-serif" font-size="11">
+            <rect x="0" y="0" width="14" height="14" fill="#4DA3DF"/>
+            <text x="22" y="11" fill="#0B2E63" font-weight="600">Peso menor (×0.32)</text>
+            <text x="280" y="11" text-anchor="end" fill="#0B2E63" font-weight="700">59 · 47%</text>
+
+            <rect x="0" y="22" width="14" height="14" fill="#1F4E8C"/>
+            <text x="22" y="33" fill="#0B2E63" font-weight="600">Peso medio (×0.62)</text>
+            <text x="280" y="33" text-anchor="end" fill="#0B2E63" font-weight="700">46 · 37%</text>
+
+            <rect x="0" y="44" width="14" height="14" fill="#FFC233"/>
+            <text x="22" y="55" fill="#0B2E63" font-weight="600">Peso mayor (×3.33)</text>
+            <text x="280" y="55" text-anchor="end" fill="#0B2E63" font-weight="700">15 · 12%</text>
+
+            <rect x="0" y="66" width="14" height="14" fill="#9F2929"/>
+            <text x="22" y="77" fill="#0B2E63" font-weight="600">AHV negativos</text>
+            <text x="280" y="77" text-anchor="end" fill="#0B2E63" font-weight="700">6 · 5%</text>
+          </g>
+        </g>
+
+        <!-- Donut 2: Puntos -->
+        <g transform="translate(490, 30)">
+          <text x="170" y="20" text-anchor="middle" fill="#0B2E63" font-family="Inter, sans-serif" font-size="14" font-weight="700">Aporte de puntos</text>
+          <text x="170" y="38" text-anchor="middle" fill="#4B5563" font-family="Inter, sans-serif" font-size="11" font-style="italic">~100.17 puntos máximos</text>
+
+          <g transform="translate(170, 200)">
+            <!-- circunferencia = 2*pi*90 ≈ 565.5 -->
+            <!-- Peso menor: 18.88/100.17 = 18.85% -> 106.6 -->
+            <circle r="90" fill="none" stroke="#4DA3DF" stroke-width="44" stroke-dasharray="106.6 565.5" transform="rotate(-90)"/>
+            <!-- Peso medio: 28.52/100.17 = 28.47% -> 161.0 -->
+            <circle r="90" fill="none" stroke="#1F4E8C" stroke-width="44" stroke-dasharray="161.0 565.5" stroke-dashoffset="-106.6" transform="rotate(-90)"/>
+            <!-- Peso mayor: 49.95/100.17 = 49.86% -> 281.97 -->
+            <circle r="90" fill="none" stroke="#FFC233" stroke-width="44" stroke-dasharray="281.97 565.5" stroke-dashoffset="-267.6" transform="rotate(-90)"/>
+
+            <text x="0" y="-6" text-anchor="middle" fill="#0B2E63" font-family="Inter, sans-serif" font-size="32" font-weight="800">100.17</text>
+            <text x="0" y="14" text-anchor="middle" fill="#4B5563" font-family="Inter, sans-serif" font-size="11">puntos</text>
+          </g>
+
+          <!-- Leyenda -->
+          <g transform="translate(0, 330)" font-family="Inter, sans-serif" font-size="11">
+            <rect x="0" y="0" width="14" height="14" fill="#4DA3DF"/>
+            <text x="22" y="11" fill="#0B2E63" font-weight="600">Peso menor</text>
+            <text x="280" y="11" text-anchor="end" fill="#0B2E63" font-weight="700">18.88 pts · 19%</text>
+
+            <rect x="0" y="22" width="14" height="14" fill="#1F4E8C"/>
+            <text x="22" y="33" fill="#0B2E63" font-weight="600">Peso medio</text>
+            <text x="280" y="33" text-anchor="end" fill="#0B2E63" font-weight="700">28.52 pts · 28%</text>
+
+            <rect x="0" y="44" width="14" height="14" fill="#FFC233"/>
+            <text x="22" y="55" fill="#0B2E63" font-weight="700">Peso mayor</text>
+            <text x="280" y="55" text-anchor="end" fill="#0B2E63" font-weight="800">49.95 pts · 50%</text>
+
+            <text x="0" y="78" fill="#B07700" font-weight="700" font-style="italic">↑ 15 reactivos críticos = la mitad del puntaje</text>
+          </g>
+        </g>
+      </svg>
+      <p class="diagram-caption">Asimetría clave: los <strong>15 reactivos de peso mayor</strong> (12% de los reactivos) aportan el <strong>50% del puntaje</strong>. Identificarlos y prepararlos con prioridad es la mejor inversión de tu tiempo.</p>
+
+      <aside class="callout callout--important" role="note">
+        <span class="callout__label">Importante · AHV en negativo</span>
+        <div class="callout__body">Las actitudes/hábitos/valores se evalúan de manera <strong>negativa</strong>: no suman al puntaje, pero <strong>RESTAN</strong> si no las demuestras. Seis reactivos del IEC corresponden a AHV: tres con valor <strong>−0.32</strong> y tres con valor <strong>−0.62</strong>. En la práctica, demostrar AHV es la norma; lo evaluado es <em>si no lo haces</em>. La falta de AHV puede penalizar significativamente tu resultado.</div>
+      </aside>
+    </section>
+
+    <section id="calculadora">
+      <h2>Calculadora interactiva de puntaje</h2>
+      <p>Simula tu puntaje estimado del IEC marcando cuántos reactivos de cada peso tienes preparados o demostrarías hoy. <strong>No se guarda en ningún servidor</strong>: solo te orienta sobre tu nivel actual.</p>
+
+      <div class="diagnostic" style="border-color: var(--color-azul);">
+        <h3 class="diagnostic__title">Mi puntaje estimado del IEC</h3>
+        <p class="diagnostic__intro">Ajusta cada valor según los reactivos que crees que cumplirías hoy. El resultado se actualiza en vivo.</p>
+
+        <div style="display: grid; gap: 20px; margin-top: 16px;">
+          <div>
+            <label style="display: block; font-weight: 600; color: var(--color-azul-profundo); margin-bottom: 6px;">
+              Peso menor (×0.32) — máximo 59 reactivos
+            </label>
+            <input type="number" id="iec-low" min="0" max="59" value="0" style="width: 90px; padding: 8px; font-size: 1rem; border: 1px solid var(--color-gris-linea); border-radius: var(--radius-sm); font-family: var(--font-sans);" />
+            <span id="iec-low-value" style="margin-left: 12px; color: var(--color-gris-texto); font-size: 0.92rem;">0 × 0.32 = 0.00 pts</span>
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; color: var(--color-azul-profundo); margin-bottom: 6px;">
+              Peso medio (×0.62) — máximo 46 reactivos
+            </label>
+            <input type="number" id="iec-mid" min="0" max="46" value="0" style="width: 90px; padding: 8px; font-size: 1rem; border: 1px solid var(--color-gris-linea); border-radius: var(--radius-sm); font-family: var(--font-sans);" />
+            <span id="iec-mid-value" style="margin-left: 12px; color: var(--color-gris-texto); font-size: 0.92rem;">0 × 0.62 = 0.00 pts</span>
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; color: var(--color-azul-profundo); margin-bottom: 6px;">
+              Peso mayor (×3.33) — máximo 15 reactivos críticos
+            </label>
+            <input type="number" id="iec-high" min="0" max="15" value="0" style="width: 90px; padding: 8px; font-size: 1rem; border: 1px solid var(--color-gris-linea); border-radius: var(--radius-sm); font-family: var(--font-sans);" />
+            <span id="iec-high-value" style="margin-left: 12px; color: var(--color-gris-texto); font-size: 0.92rem;">0 × 3.33 = 0.00 pts</span>
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; color: #B85800; margin-bottom: 6px;">
+              AHV NO demostradas (×−0.32) — máximo 3 reactivos
+            </label>
+            <input type="number" id="iec-neg-low" min="0" max="3" value="0" style="width: 90px; padding: 8px; font-size: 1rem; border: 1px solid var(--color-gris-linea); border-radius: var(--radius-sm); font-family: var(--font-sans);" />
+            <span id="iec-neg-low-value" style="margin-left: 12px; color: #B85800; font-size: 0.92rem;">0 × −0.32 = 0.00 pts</span>
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: 600; color: #B85800; margin-bottom: 6px;">
+              AHV NO demostradas (×−0.62) — máximo 3 reactivos
+            </label>
+            <input type="number" id="iec-neg-mid" min="0" max="3" value="0" style="width: 90px; padding: 8px; font-size: 1rem; border: 1px solid var(--color-gris-linea); border-radius: var(--radius-sm); font-family: var(--font-sans);" />
+            <span id="iec-neg-mid-value" style="margin-left: 12px; color: #B85800; font-size: 0.92rem;">0 × −0.62 = 0.00 pts</span>
+          </div>
+        </div>
+
+        <div id="iec-result" class="diagnostic__result diagnostic__result--ready" style="margin-top: 20px; font-size: 1.1rem;">
+          <strong>Puntaje estimado:</strong> <span id="iec-total">0.00</span> de 100.17 puntos · <span id="iec-pct">0%</span>
+        </div>
+      </div>
+
+      <aside class="callout callout--tip" role="note">
+        <span class="callout__label">Para tener presente</span>
+        <div class="callout__body">El estándar no publica un <em>puntaje mínimo</em> único para dictamen <em>Competente</em>; el dictamen integra el cumplimiento de los criterios de cada elemento. Esta calculadora te orienta sobre tu estado relativo, <strong>no es un predictor oficial</strong>. Si has trabajado el manual con disciplina y tienes todos los productos completos, los desempeños practicados y los conocimientos consolidados, tu puntaje estimado debería estar por encima del 85%.</div>
+      </aside>
+    </section>
+
+    <section id="evidencia-historica">
+      <h2>5.2 Evidencia Histórica: una opción importante para ti</h2>
+      <p>El IEC del Estándar A permite explícitamente que los productos del proyecto se presenten al evaluador como <strong>Evidencia Histórica</strong>. Esto significa que los productos pueden provenir de consultorías que ya ejecutaste en el pasado, <strong>no necesariamente de un proyecto que se realice durante la propia evaluación</strong>. Es una facilidad importante para quienes ya tienen trayectoria.</p>
+
+      <h3>Qué productos pueden presentarse como Evidencia Histórica</h3>
+      <p>Los <strong>trece productos siguientes</strong> pueden presentarse como evidencia de consultorías previas:</p>
+
+      <div class="accordion">
+        <details class="accordion__item">
+          <summary>Productos del Elemento 1 (8 productos)</summary>
+          <div class="accordion__body">
+            <ul>
+              <li>Reporte de evaluación inicial de la MiPyME</li>
+              <li>Informe de disponibilidad y calidad de los datos</li>
+              <li>Informe de diagnóstico de procesos, actividades y áreas de trabajo</li>
+              <li>Reporte de madurez digital y disposición al cambio</li>
+              <li>Matriz de impacto, viabilidad y esfuerzo</li>
+              <li>Hoja de ruta de implementación de soluciones de IA</li>
+              <li>Propuesta final de implementación de soluciones de IA</li>
+              <li>Propuesta económica de consultoría</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion__item">
+          <summary>Productos del Elemento 2 (3 productos)</summary>
+          <div class="accordion__body">
+            <ul>
+              <li>Soluciones de Inteligencia Artificial implementadas</li>
+              <li>Informe técnico de configuración de las soluciones</li>
+              <li>Material de capacitación para la adopción de soluciones</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="accordion__item">
+          <summary>Productos del Elemento 3 (2 productos)</summary>
+          <div class="accordion__body">
+            <ul>
+              <li>Reporte de evaluación de resultados de la implementación</li>
+              <li>Acta de cierre del proyecto de implementación</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <h3>Cómo se verifica la autenticidad</h3>
+      <p>Para usar productos como Evidencia Histórica, el evaluador aplica un procedimiento de verificación <strong>antes</strong> de revisarlos contra las listas de cotejo:</p>
+
+      <article class="process-step">
+        <div class="process-step__badge">A4</div>
+        <div class="process-step__content">
+          <h4 class="process-step__title">Anexo 4 del IEC — Lineamientos para verificación</h4>
+          <div class="process-step__body">El evaluador aplica indicaciones específicas para comprobar que la autoría de los productos corresponde efectivamente al candidato y que los productos no han sido fabricados a propósito de la evaluación.</div>
+        </div>
+      </article>
+
+      <article class="process-step">
+        <div class="process-step__badge">A5</div>
+        <div class="process-step__content">
+          <h4 class="process-step__title">Anexo 5 del IEC — Reporte de Comprobación de Autenticidad</h4>
+          <div class="process-step__body">El evaluador requisita este formato y lo integra al portafolio de evidencias del candidato. Es la constancia documental de que la verificación se realizó.</div>
+        </div>
+      </article>
+
+      <p>Solo después de aplicar el Anexo 4 y completar el Anexo 5, el evaluador procede a revisar el producto histórico contra las características del F21 que correspondan.</p>
+
+      <aside class="callout callout--tip" role="note">
+        <span class="callout__label">Para tener presente</span>
+        <div class="callout__body">Si cuentas con proyectos previos completos y bien documentados, la Evidencia Histórica <strong>puede simplificar enormemente tu preparación</strong>: en lugar de elaborar productos nuevos, presentas los que ya tienes. Pero la verificación es rigurosa: el evaluador querrá ver documentos con fechas, firmas y trazas verificables de tu autoría. <strong>Documentos fabricados ad hoc se detectan con facilidad y comprometen el dictamen.</strong><br><br>Si la consultoría histórica no produjo formalmente alguno de los productos exigidos —por ejemplo, nunca formalizaron un acuerdo de confidencialidad— tienes dos opciones: elaborar el producto faltante <strong>de manera retrospectiva con el cliente real</strong> (y obtener firma actual), o presentar un proyecto distinto en el que sí cuentes con todos los productos. Inventar firmas o fabricar documentos retroactivos sin la participación del cliente real es <strong>inadmisible</strong>.<br><br>Para evaluaciones aplicadas en línea, tu evaluador podrá pedirte que registres tus respuestas al cuestionario de conocimientos en el <strong>Anexo 6 del IEC</strong>, una hoja de respuestas del candidato. <strong>No hay tiempo límite</strong> para resolver el cuestionario.</div>
+      </aside>
+    </section>
+
+    <aside class="callout callout--reflection" role="note">
+      <span class="callout__label">Pausa de reflexión</span>
+      <div class="callout__body">¿Qué porcentaje de tus 13 productos podrías presentar como <strong>Evidencia Histórica</strong> con autoría verificable? Si la respuesta es alto (>80%), tu ruta de preparación se acorta. Si es bajo, tu prioridad es completar productos con tu MiPyME actual.</div>
+    </aside>
+
+    <aside class="key-points" aria-label="Puntos clave del IEC">
+      <p class="key-points__title">Puntos clave del IEC</p>
+      <ul>
+        <li>El IEC tiene <strong>126 reactivos</strong> distribuidos en pesos 0.32 / 0.62 / 3.33.</li>
+        <li>Los <strong>15 reactivos de peso mayor</strong> (3.33 pts) son las características más críticas — concéntrate en ellas.</li>
+        <li>Las <strong>AHV restan</strong> (−0.32 y −0.62): demostrarlas es la norma, no demostrarlas penaliza.</li>
+        <li>Los <strong>13 productos admiten Evidencia Histórica</strong> con verificación de autoría (Anexos 4 y 5 del IEC).</li>
+        <li>El cuestionario de conocimientos se aplica con la <strong>hoja del Anexo 6</strong> y no tiene tiempo límite.</li>
+      </ul>
+    </aside>
+
+    <section id="siguiente">
+      <h2>¿Listo para planificar tu preparación?</h2>
+      <p>Ahora que entiendes la mecánica del IEC, conviene tener un plan operativo. El siguiente capítulo te propone una <strong>ruta de 4 semanas</strong> con checklist final.</p>
+      <div class="hero-actions">
+        <a href="ruta-preparacion.html" class="btn btn-primary">Continuar: Ruta de preparación →</a>
+        <a href="elemento-3.html" class="btn btn-secondary">← Volver al Elemento 3</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="footer-tag">Estándar A · Instrumento</span>
+    </div>
+    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const inputs = {
+    low: document.getElementById('iec-low'),
+    mid: document.getElementById('iec-mid'),
+    high: document.getElementById('iec-high'),
+    negLow: document.getElementById('iec-neg-low'),
+    negMid: document.getElementById('iec-neg-mid')
+  };
+  const labels = {
+    low: document.getElementById('iec-low-value'),
+    mid: document.getElementById('iec-mid-value'),
+    high: document.getElementById('iec-high-value'),
+    negLow: document.getElementById('iec-neg-low-value'),
+    negMid: document.getElementById('iec-neg-mid-value')
+  };
+  const total = document.getElementById('iec-total');
+  const pct = document.getElementById('iec-pct');
+  const result = document.getElementById('iec-result');
+  if (!inputs.low) return;
+
+  function clampInt(el, min, max) {
+    let v = parseInt(el.value, 10);
+    if (isNaN(v)) v = 0;
+    v = Math.max(min, Math.min(max, v));
+    el.value = v;
+    return v;
+  }
+
+  function recalc() {
+    const low = clampInt(inputs.low, 0, 59);
+    const mid = clampInt(inputs.mid, 0, 46);
+    const high = clampInt(inputs.high, 0, 15);
+    const negLow = clampInt(inputs.negLow, 0, 3);
+    const negMid = clampInt(inputs.negMid, 0, 3);
+
+    const lowPts = low * 0.32;
+    const midPts = mid * 0.62;
+    const highPts = high * 3.33;
+    const negLowPts = negLow * -0.32;
+    const negMidPts = negMid * -0.62;
+
+    labels.low.textContent = low + ' × 0.32 = ' + lowPts.toFixed(2) + ' pts';
+    labels.mid.textContent = mid + ' × 0.62 = ' + midPts.toFixed(2) + ' pts';
+    labels.high.textContent = high + ' × 3.33 = ' + highPts.toFixed(2) + ' pts';
+    labels.negLow.textContent = negLow + ' × −0.32 = ' + negLowPts.toFixed(2) + ' pts';
+    labels.negMid.textContent = negMid + ' × −0.62 = ' + negMidPts.toFixed(2) + ' pts';
+
+    const totalScore = lowPts + midPts + highPts + negLowPts + negMidPts;
+    const pctScore = Math.max(0, Math.min(100, (totalScore / 100.17) * 100));
+    total.textContent = totalScore.toFixed(2);
+    pct.textContent = pctScore.toFixed(1) + '%';
+
+    result.className = 'diagnostic__result';
+    if (pctScore >= 85) {
+      result.className += ' diagnostic__result--ready';
+    } else if (pctScore >= 60) {
+      result.className += ' diagnostic__result--prep';
+    } else {
+      result.className += ' diagnostic__result--reroute';
+    }
+  }
+
+  Object.values(inputs).forEach(function (el) {
+    el.addEventListener('input', recalc);
+    el.addEventListener('change', recalc);
+  });
+  recalc();
+})();
+</script>
+
+</body>
+</html>
