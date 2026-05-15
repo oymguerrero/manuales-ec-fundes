@@ -894,23 +894,281 @@ Estado de la biblioteca compartida en `assets/styles.css` + `assets/interactive.
 
 | Componente | Patrón Bloom | Estado |
 |---|---|---|
+| **Lesson Tabs LMS** (sidebar + panel + progress + check) | Estructura de lección | ✅ (ver §17) |
+| **Accordion modules** (`<details>` con badge + meta) | Recordar | ✅ (base del Lesson Tabs) |
 | Tabs ARIA accesibles | Recordar/Comprender | ✅ |
-| Accordion (`<details>`) | Recordar | ✅ nativo |
+| Accordion FAQ (`<details>`) | Recordar | ✅ nativo |
 | Checklist con localStorage | Aplicar (autoevaluación) | ✅ |
 | Mini-diagnóstico | Evaluar | ✅ |
 | Finder cuestionario | Aplicar (decisión) | ✅ |
-| Calculadora IEC | Aplicar (simulación) | ✅ |
 | Glosario filtrable | Recordar | ✅ |
 | Reflection prompt (callout--reflection) | Crear/Evaluar | ✅ |
 | Key points (recapitulación) | Comprender | ✅ |
 | Flip cards | Recordar | ✅ |
 | Quiz multiple choice | Comprender/Aplicar | ✅ |
+| **Audio narration con mini-bar flotante** | UDL (vía auditiva) | ✅ (ElevenLabs · voz Alice · ver §17.7) |
 | Decision scenario | Aplicar/Analizar | ⏳ pendiente |
 | Sort drag-drop | Aplicar/Analizar | ⏳ pendiente |
 | Sequence drag-drop | Aplicar | ⏳ pendiente |
 | Comparison slider | Analizar | ⏳ pendiente |
 | Hotspot diagram | Recordar/Aplicar | ⏳ pendiente |
 | Microvideo embed | variable | ⏳ pendiente |
-| Audio narration | variable | ✅ (ElevenLabs vía `scripts/tts-elevenlabs.ps1` · voz Alice) |
 
 > **Cuando se implemente un componente nuevo, mueve su fila de pendiente a implementado y actualiza esta tabla.**
+
+---
+
+## 17. Navegación de capítulos: Lesson Tabs (LMS-style)
+
+Patrón principal para presentar **capítulos del manual** que tienen 3 o más
+secciones. Inspirado en Coursera / LinkedIn Learning / Moodle: sidebar
+vertical con la lista de módulos + panel principal con el contenido +
+tracking de avance visible. El HTML semántico sigue siendo `<details>/<summary>`
+para que Ctrl+F, screen readers y print sigan funcionando.
+
+### 17.1 Cuándo usar este patrón
+
+Aplica `.lesson-tabs` cuando:
+
+- La página representa un **capítulo de lectura secuencial** con 3+ secciones
+  conceptuales independientes (no son pasos en cadena, son temas paralelos
+  o agrupados temáticamente).
+- El aspirante se beneficia de **ver dónde está parado** y cuánto le falta.
+- Hace sentido permitir **marcar como leído** y persistir el avance entre
+  visitas (un manual de estudio largo, no una página de referencia).
+
+**NO uses lesson-tabs cuando:**
+
+- La página es referencial (FAQ, glosario, recursos) → usa accordion FAQ.
+- La página tiene una sola sección larga → estructura normal con headings.
+- La página tiene contenido secuencial obligatorio paso-a-paso → considera
+  un stepper dedicado en lugar de tabs.
+
+### 17.2 Anatomía del componente
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  ▰▰▰░░░░  3 de 6 módulos completados              [Reiniciar]   │  ← header
+├──────────────────┬──────────────────────────────────────────────┤
+│  ✓ 1.1 ¿Por qué  │  ┌─ 1.3 Cómo funciona el sistema en México ┐│
+│  ✓ 1.2 ¿Qué es   │  │  [contenido completo del módulo]         ││  ← panel
+│  ▶ 1.3 Cómo fun  │  │                                          ││
+│    1.4 ¿Qué es   │  │  ← Anterior  · ✓ Marcar y continuar →    ││
+│    1.5 Mitos y   │  └──────────────────────────────────────────┘│
+│    1.6 Quién pue │                                              │
+└──────────────────┴──────────────────────────────────────────────┘
+   ↑ sidebar             ↑ panel-card
+```
+
+Tres estados visuales en cada item del sidebar:
+- **○ pendiente** (gris) — aún no abierto
+- **▶ activo** (azul con borde lateral) — módulo abierto actualmente
+- **✓ completado** (verde) — marcado como leído
+
+### 17.3 Estructura HTML mínima
+
+El wrapper `<div class="lesson-tabs">` envuelve un `<div class="accordion accordion--modules">`
+que a su vez contiene una serie de `<details class="accordion__item">`. El JS
+construye dinámicamente el header, sidebar, panel y footer.
+
+```html
+<div class="lesson-tabs" data-progress-key="manual-X-cap-Y">
+  <div class="accordion accordion--modules" aria-label="Módulos del Capítulo Y">
+
+    <details class="accordion__item" id="anchor-1" open>
+      <summary>
+        <span class="accordion__num">1.1</span>
+        <span class="accordion__title-main">Título del módulo</span>
+        <span class="accordion__meta">Quizzes · audio · 5 min</span>
+      </summary>
+      <div class="accordion__body">
+        <!-- Contenido normal: párrafos, imágenes, callouts, quizzes, SVG... -->
+      </div>
+    </details>
+
+    <details class="accordion__item" id="anchor-2">
+      <summary>
+        <span class="accordion__num">1.2</span>
+        <span class="accordion__title-main">Otro módulo</span>
+        <span class="accordion__meta">3 min</span>
+      </summary>
+      <div class="accordion__body">…</div>
+    </details>
+
+    <!-- N módulos más -->
+  </div>
+</div>
+```
+
+**Reglas para el markup:**
+
+| Regla | Por qué |
+|---|---|
+| `data-progress-key` debe ser único por capítulo (ej. `maestro-cap2-que-es`) | Es la key de `localStorage`. Si dos capítulos comparten key, comparten avance |
+| Solo UN `<details>` con `open` al inicio | Define qué módulo se muestra al cargar la página |
+| `id` único por módulo | Permite deep-linking (`/que-es.html#sistema` abre directamente ese módulo) |
+| El `<summary>` debe tener `.accordion__num`, `.accordion__title-main`, `.accordion__meta` | El JS los replica al sidebar y al panel header |
+| Numerar `N.M` por convención (capítulo.módulo) | Da contexto inmediato al lector |
+| No incluir botones "Expandir/Colapsar todos" | El layout es tab, no acordeón. El JS los remueve si los encuentra |
+
+### 17.4 Comportamiento JS automático
+
+`assets/interactive.js` expone `initLessonTabs()` que se ejecuta sobre cada
+`.lesson-tabs` automáticamente al cargar la página:
+
+1. **Lee `localStorage`** con la key `mi-compania-lessons::<data-progress-key>` →
+   array de IDs de módulos completados.
+2. **Construye el header** con progreso (`N de M módulos · X%`) + botón "Reiniciar".
+3. **Construye el sidebar** clonando los datos de cada `<summary>` como botones
+   clickeables.
+4. **Mueve los `<details>` originales** dentro del panel principal. La visibilidad
+   de cada uno la controla el atributo `open` (mutual exclusion: solo uno
+   abierto a la vez).
+5. **Conecta eventos**: click en sidebar item, botones `← Anterior` y
+   `✓ Marcar y continuar`, hover sobre check para desmarcar.
+6. **Si la URL incluye un hash** que coincide con el `id` de un módulo, abre
+   ese módulo en lugar del primer `[open]`.
+
+### 17.5 Estados visuales y semántica
+
+- **Activo**: el módulo `[open]` actual. CSS aplica borde lateral azul y badge
+  azul con icono `▶`. Solo uno a la vez.
+- **Completado**: añadido al set `completed`. CSS aplica badge verde con `✓`.
+  Persistente entre visitas.
+- **Pendiente**: estado por defecto. Badge gris con el número.
+- **Hover sobre badge completado**: cambia a rojo con `×` → click desmarca.
+
+Transiciones:
+```
+Pendiente → click sidebar → Activo
+Activo → click "✓ Marcar y continuar" → Completado + abre siguiente como Activo
+Completado → click sidebar → Activo (sigue completado al fondo)
+Completado → click sobre badge ✓ → Pendiente
+```
+
+### 17.6 Tracking de avance (localStorage)
+
+- **Storage key**: `mi-compania-lessons::<data-progress-key>`
+- **Formato**: array JSON de IDs de módulos completados.
+- **Scope**: por navegador y por usuario; no se sincroniza con servidor.
+- **Privacidad**: el botón "Reiniciar" exige `confirm()` antes de borrar.
+- **Degradación**: si `localStorage` está bloqueado, el componente sigue
+  funcionando pero sin persistir avance entre sesiones.
+
+Convención de naming para `data-progress-key`:
+
+| Manual | Patrón | Ejemplos |
+|---|---|---|
+| Manual Maestro | `maestro-capN-<slug>` | `maestro-cap2-que-es`, `maestro-cap4-proceso` |
+| Estándar A | `estandar-a-<seccion>` | `estandar-a-elemento-1`, `estandar-a-elemento-2` |
+
+### 17.7 Audio narration con mini-bar flotante
+
+Patrón complementario para **UDL (Universal Design for Learning)**: cualquier
+módulo extenso puede tener una narración alternativa al texto. El componente
+es independiente del lesson-tabs pero se integra dentro del `.accordion__body`.
+
+**Markup:**
+
+```html
+<div class="audio-narration">
+  <div class="audio-narration__header">
+    <button class="audio-narration__toggle" type="button"
+            aria-expanded="false" aria-controls="audio-X">
+      Escuchar esta sección
+    </button>
+    <span class="audio-narration__meta">2 min 30 seg · voz Alice · narración alternativa al texto</span>
+  </div>
+  <div class="audio-narration__player" id="audio-X" hidden>
+    <audio controls preload="none">
+      <source src="../media/audio-X.mp3" type="audio/mpeg" />
+      Tu navegador no soporta audio HTML5. <a href="../media/audio-X.mp3">Descarga el archivo MP3</a>.
+    </audio>
+  </div>
+  <details class="audio-narration__transcript">
+    <summary>Ver transcripción</summary>
+    <div class="audio-narration__transcript-body">
+      <!-- Transcripción limpia del audio, sin tags SSML -->
+    </div>
+  </details>
+</div>
+```
+
+**Comportamiento:**
+
+- El botón `Toggle` **solo muestra/oculta** el reproductor visual. Nunca pausa
+  el audio (decisión deliberada: muchos usuarios lo confundían con pause).
+- Click → cambia texto a "Ocultar reproductor".
+- `audio.ended` restablece el estado inicial.
+- **Mini-bar flotante**: aparece automáticamente al hacer scroll fuera del
+  contenedor mientras el audio se reproduce. Permite pausar y volver al
+  reproductor original con scroll suave. `IntersectionObserver` detecta
+  visibilidad.
+- El botón `×` del mini-bar pausa el audio y oculta el bar.
+- Mobile (<560px): bar full-width abajo. Desktop: pill centrado abajo.
+
+**Voz y guion:**
+
+- Generación: **ElevenLabs Multilingual v2** (`scripts/tts-elevenlabs.ps1`).
+- Voz por defecto: **Alice** (`Xb7hH8MSUJpSbSDYk0k2`), "Clear, Engaging Educator".
+- Idioma: español de México.
+- SSML soportado: `<break time>`, `<emphasis>`, prosody básico.
+- **Pronunciación "mipyme"**: escribir en SSML en minúscula (`mipyme`,
+  `mipymes`) para forzar lectura como palabra, no acrónimo deletreado.
+- Capacidad ElevenLabs free: ~10,000 chars/mes; planificar.
+- Scripts viven en `media/scripts/*.txt` (SSML), audios en `media/audio-*.mp3`.
+
+### 17.8 Accesibilidad, print y mobile
+
+| Aspecto | Comportamiento |
+|---|---|
+| **Ctrl+F** | Funciona en TODOS los módulos (texto en DOM, no oculto por JS) |
+| **Screen reader** | Cada item del sidebar es `<button>` con `aria-controls` al `<details>` correspondiente. El header tiene `role="progressbar"` con `aria-valuenow` actualizado |
+| **Keyboard** | Tab navega los items del sidebar; Enter/Space activa; Tab continúa en el panel |
+| **`@media print`** | Esconde header + sidebar + footer; expande TODOS los módulos como flujo lineal con `<summary>` visible |
+| **Mobile <900px** | Sidebar pasa a stack vertical arriba del panel. Padding reducido |
+| **`prefers-reduced-motion`** | Animaciones de transición desactivadas, pero la funcionalidad intacta |
+
+### 17.9 Decisiones de UX consolidadas
+
+1. **TOC clásico arriba se elimina** cuando se usa `.lesson-tabs`. El sidebar
+   cumple esa función con valor añadido (estados de avance).
+2. **El click en un módulo del sidebar marca como activo, NO como completado**.
+   El completado requiere acción explícita (botón "Marcar y continuar") para
+   no inflar falsamente el avance.
+3. **Solo un módulo abierto a la vez** (mutual exclusion). Reduce carga
+   cognitiva. Para imprimir o leer todo de corrido, `@media print` expone todo.
+4. **`open` inicial en el primer módulo** del primer capítulo de cada manual.
+   Los capítulos posteriores también abren su primer módulo, pero el usuario
+   puede preferir saltar a uno específico vía hash.
+5. **Sin barra global de navegación entre capítulos dentro del lesson-tabs**.
+   La navegación entre capítulos se maneja vía:
+   - sub-nav del manual (top, persistente)
+   - `<section id="siguiente">` al final de cada página (link al cap siguiente)
+6. **Reiniciar requiere confirm**. Borrar el avance es destructivo desde la
+   perspectiva del usuario.
+
+### 17.10 Antipatrones (qué NO hacer)
+
+| ❌ Antipatrón | ✅ En lugar de eso |
+|---|---|
+| Anidar `lesson-tabs` dentro de `lesson-tabs` | Un capítulo = un `.lesson-tabs`. Si necesitas sub-temas, usa Tabs ARIA o accordion FAQ dentro del módulo |
+| Reusar el mismo `data-progress-key` en dos páginas | Cada capítulo único debe tener key única, si no, el avance se mezcla |
+| Poner contenido importante FUERA del `lesson-tabs` (entre el header y el wrapper) | El usuario tab-navegando puede perderlo. Si es contexto general, ponlo en el hero o en el primer módulo |
+| Usar `lesson-tabs` para una página con solo 2 módulos | Sobrecarga visual. Para 2 módulos, prosa lineal o tabs horizontales bastan |
+| Marcar todos los módulos como completados automáticamente al cargar | Falsea el progreso del usuario. La marca solo se aplica con su acción explícita |
+| Eliminar el `<summary>` de los `<details>` originales pensando que el sidebar reemplaza | El `<summary>` sigue siendo necesario para Ctrl+F, print y screen readers. El JS lo oculta visualmente vía CSS, no del DOM |
+
+### 17.11 Páginas que actualmente implementan este patrón
+
+- `maestro/que-es.html` — 6 módulos (Cap 2)
+- `maestro/como-se-evalua.html` — 4 módulos (Cap 3)
+- `maestro/proceso.html` — 7 módulos (mapa + 6 pasos, Cap 4)
+- `maestro/cuatro-estandares.html` — 4 módulos (Cap 5)
+- `estandar-a/elemento-1.html` — 7 módulos
+- `estandar-a/elemento-2.html` — 7 módulos
+- `estandar-a/elemento-3.html` — 7 módulos
+
+> **Cuando agregues un nuevo capítulo extenso al manual, considera si debe
+> heredar este patrón. Si lo aplicas, recuerda asignar un `data-progress-key`
+> único y actualizar esta lista.**
