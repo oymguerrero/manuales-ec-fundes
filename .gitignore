@@ -16,3 +16,9 @@ desktop.ini
 
 # OneDrive
 *.lnk
+
+# Claude Code / Cowork
+.claude/
+
+# Playwright MCP
+.playwright-mcp/

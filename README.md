@@ -6,13 +6,18 @@ Manuales interactivos en HTML de los 4 Estándares de Competencia (EC) sobre Int
 
 ```
 manuales-ec-fundes/
-├── index.html        Landing principal con los 4 ECs
-├── ec1.html          EC1 — Soluciones de IA alineadas a la MiPyME (DESARROLLADO)
-├── ec2.html          EC2 — Productos y servicios con IA (borrador)
-├── ec3.html          EC3 — Marketing digital con IA (borrador)
-├── ec4.html          EC4 — Transformación digital con IA (borrador)
+├── index.html              Landing principal con los 4 ECs
+├── ec1.html                EC1 — Soluciones de IA alineadas a la MiPyME
+├── ec2.html                EC2 — Productos y servicios con IA
+├── ec3.html                EC3 — Marketing digital con IA
+├── ec4.html                EC4 — Transformación digital con IA
+├── flujo-trabajo.html      Infografía del flujo de trabajo en equipo
+├── flujo-trabajo.png       Infografía exportada como imagen (para compartir)
 ├── assets/
-│   └── styles.css    Hojas de estilo compartidas
+│   └── styles.css          Hojas de estilo compartidas
+├── img/
+│   └── logo.png            Logo del manual
+├── MiCompañIA_SistemaDiseno_Web.md   Sistema de diseño web (paleta, tipografía)
 ├── README.md
 └── .gitignore
 ```
@@ -23,12 +28,40 @@ Solo abre `index.html` con doble clic en cualquier navegador (Chrome, Edge, Fire
 
 ## Cómo colaborar
 
-1. **Clona o abre el repo** en Antigravity (o VS Code, o cualquier editor con Git).
-2. **Edita** el archivo HTML del EC en el que estés trabajando — los placeholders están marcados con clase `.placeholder` y dicen "pendiente desarrollar".
-3. **Haz commit** con mensaje claro:
-   - `EC2: desarrollar conocimiento 1 del Elemento 1`
-   - `EC3: corregir numeración del Elemento 2`
-4. **Push** al repositorio para que el resto del equipo vea los cambios.
+Trabajamos **tres personas** sobre este repo: Oscar, Iván y Aide. Da igual el editor (Antigravity, Claude Code o VS Code) — por debajo todos usan el mismo Git y el mismo repositorio. La rama `main` es **el archivo final**: la única versión oficial.
+
+### Reglas de oro
+
+1. **`git pull` antes de empezar y antes de subir.** Así trabajas siempre sobre lo último.
+2. **Nunca se trabaja directo sobre `main`.** Todo cambio entra por una rama y un Pull Request (PR).
+3. Un cambio es oficial **solo cuando su PR se mergea** a `main`.
+
+### Ciclo de trabajo (por cada tarea)
+
+```
+git switch main && git pull           # 1. partes de la última versión
+git switch -c ec2-conocimiento-1      # 2. creas tu rama (nómbrala por la tarea)
+   ...editas el HTML...
+git add ec2.html                      # 3. marcas qué entra
+git commit -m "EC2: desarrollar conocimiento 1 del Elemento 1"
+git push -u origin ec2-conocimiento-1 # 4. subes tu rama a GitHub
+```
+
+5. En GitHub, abre un **Pull Request** de tu rama hacia `main`.
+6. Otra persona del equipo lo revisa y le da **Merge**.
+7. Todos hacen `git pull` sobre `main` → todos quedan con el archivo final.
+
+> En Claude Code (Oscar e Iván) basta con pedirle el ciclo al asistente. En Antigravity (Aide), el panel *Source Control* tiene botones para pull, commit, push y abrir el PR.
+
+### Para no pisarse
+
+- Repártanse el trabajo **por archivo de EC**: una persona por `ecN.html` a la vez.
+- Avisen al equipo antes de tocar `index.html` o `assets/styles.css` — los comparten los 4 manuales.
+- Commits pequeños y frecuentes, con mensaje claro:
+  - `EC2: desarrollar conocimiento 1 del Elemento 1`
+  - `EC3: corregir numeración del Elemento 2`
+
+Para una vista visual del proceso completo, abre `flujo-trabajo.html`.
 
 ## Estado actual de los manuales
 
@@ -39,13 +72,11 @@ Solo abre `index.html` con doble clic en cualquier navegador (Chrome, Edge, Fire
 | EC3 | 4 | 10 | Estructura + placeholders |
 | EC4 | 3 (+1 sin conocimientos) | 13 | Estructura + placeholders |
 
-## Publicar como sitio (opcional)
+## Visibilidad del repositorio
 
-Para que el equipo pueda abrir el manual desde una URL sin clonar el repo, activa **GitHub Pages**:
+Este repositorio es **privado**: solo el equipo (Oscar, Iván y Aide) puede verlo y editarlo. Para sumar a alguien más, el dueño lo agrega en *Settings → Collaborators*.
 
-1. Ve a *Settings → Pages* en el repo de GitHub.
-2. En *Source*, selecciona la rama `main` y carpeta `/ (root)`.
-3. Guarda. En ~1 minuto el sitio estará en `https://<usuario>.github.io/<nombre-repo>/`.
+GitHub Pages (publicar el manual en una URL) requiere un plan de pago para repos privados, así que por ahora el manual se revisa abriéndolo localmente.
 
 ## Fuentes
 
