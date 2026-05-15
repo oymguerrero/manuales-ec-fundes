@@ -128,24 +128,35 @@ Para mensajes secundarios y disclaimers. *"Aporta simplicidad y legibilidad, fun
 font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
 ```
 
-### 3.2 Implementación web actual
+### 3.2 Implementación web (migrada al brandbook)
 
-**El sitio aún usa Inter** como fuente principal, no Afacad. Esto es **deuda técnica documentada**: cuando la implementación inicial se hizo, Afacad no estaba estandarizada como tipografía oficial; Inter se eligió por disponibilidad inmediata en Google Fonts y excelente legibilidad multiplataforma. Las dos tipografías son sans-serif geométricas con propiedades visuales muy similares, por lo que **el cambio entre Inter y Afacad en pantalla es sutil** y no rompe layouts.
+A partir del commit de migración tipográfica, **el sitio carga Afacad como tipografía principal** con Inter como fallback gracioso, y **Open Sans Condensed** disponible para anotaciones secundarias y disclaimers.
+
+**Stack actual en `assets/styles.css`:**
 
 ```css
-/* Stack actual del sitio (assets/styles.css) */
-font-family: 'Inter', sans-serif;        /* Primaria — TO DO: migrar a Afacad */
-font-family: 'DM Sans', sans-serif;      /* Alternativa — TO DO: migrar a Open Sans Condensed */
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700;800&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+
+/* Tokens */
+--font-sans: 'Afacad', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+--font-condensed: 'Open Sans Condensed', 'Open Sans', -apple-system, sans-serif;
 ```
 
-**Plan de migración cuando se aplique:**
+**Cómo se aplica:**
 
-1. Cambiar el `@import` en `assets/styles.css` a la URL de Afacad + Open Sans Condensed.
-2. Reemplazar todas las referencias `'Inter'` por `'Afacad'` y `'DM Sans'` por `'Open Sans Condensed'`.
-3. Validar tamaños/espaciados: Afacad tiene métricas ligeramente diferentes — verificar que H1/H2 no se desborden y que el cuerpo de texto siga legible.
-4. Validar peso `bold` en sub-nav y badges (Afacad bold puede verse más fino que Inter 800).
+- `body`, headings y todos los componentes UI heredan `--font-sans` (Afacad → Inter fallback).
+- Para anotaciones secundarias o disclaimers, aplicar `font-family: var(--font-condensed)` explícitamente.
+- Los SVG inline (`<text>` dentro de diagramas, mapas, timelines) usan el atributo `font-family="Afacad, Inter, sans-serif"` directamente porque las CSS vars no siempre heredan dentro de `<svg>` en todos los navegadores.
 
-> Para **piezas impresas, video o social media oficiales**, usar siempre Afacad + Open Sans Condensed conforme al brandbook. El sitio web es la única excepción mientras se migra.
+**Verificación visual recomendada tras la migración:**
+
+- Headings (H1 hero, H2 secciones, H3 módulos) — Afacad bold puede tener glyphs ligeramente más anchos que Inter 800.
+- Badges del lesson-tabs (`accordion__num`, `lesson-tab-item__num`) — verificar que números 2 dígitos (`5.1`, `3.7`) caben.
+- Botones primarios y CTAs — el peso semibold/bold de Afacad es slightly different.
+- SVG `<text>` dentro de diagramas — Afacad debería renderizar similar a Inter (ambas geométricas).
+
+Si Afacad **no carga** (CDN bloqueado, offline), Inter se usa automáticamente sin colapso visual.
 
 ### 3.3 Jerarquía tipográfica — Desktop
 
