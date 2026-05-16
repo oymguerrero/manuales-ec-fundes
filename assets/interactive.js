@@ -407,7 +407,15 @@
   // El markup HTML original (details/summary) se mantiene intacto para
   // accesibilidad, Ctrl+F y print. El comportamiento visual es controlado por JS+CSS.
   function initLessonTabs(container) {
-    const items = Array.from(container.querySelectorAll('details.accordion__item'));
+    // Solo los <details> que son módulos directos del wrapper .accordion--modules.
+    // Sin :scope > selector, los <details> ANIDADOS dentro del contenido (ej. los
+    // de las preguntas FAQ del módulo) se tomarían erróneamente como módulos
+    // del sidebar y aparecerían como entradas vacías.
+    const wrapper = container.querySelector('.accordion.accordion--modules')
+                  || container.querySelector('.accordion--modules');
+    const items = wrapper
+      ? Array.from(wrapper.querySelectorAll(':scope > details.accordion__item'))
+      : Array.from(container.querySelectorAll('details.accordion__item'));
     if (!items.length) return;
 
     // Storage key: data-progress-key o derivado del path
@@ -692,7 +700,9 @@
     if (!terms.length) return;
 
     function norm(s) {
-      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      // Normaliza: lowercase + sin diacríticos (acentos, tilde de ñ→n, etc).
+      // ̀-ͯ es el rango Unicode de "Combining Diacritical Marks".
+      return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
     // Asigna data-letter a cada término basado en su nombre
