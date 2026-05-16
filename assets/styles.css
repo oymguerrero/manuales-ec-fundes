@@ -2817,6 +2817,103 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   margin-top: 28px;
 }
 
+/* ---------- Templates descargables (Word .doc) ---------- */
+.template-downloads {
+  background: linear-gradient(135deg, #fff8e6 0%, var(--color-amarillo-suave) 100%);
+  border: 1.5px solid var(--color-amarillo);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin: 20px 0 28px;
+}
+
+.template-downloads__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-azul-profundo);
+  margin: 0 0 6px;
+}
+
+.template-downloads__title svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-azul-profundo);
+}
+
+.template-downloads__intro {
+  margin: 0 0 14px;
+  font-size: 0.92rem;
+  color: var(--color-gris-texto);
+}
+
+.template-downloads__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+}
+
+.template-downloads__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--color-blanco-calido);
+  border: 1px solid var(--color-gris-linea);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--color-azul-profundo);
+  font-size: 0.88rem;
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  font-weight: 500;
+}
+
+.template-downloads__item:hover {
+  border-color: var(--color-azul);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+
+.template-downloads__item-icon {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  background: #2b579a;
+  color: white;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.template-downloads__item-num {
+  font-weight: 800;
+  color: var(--color-azul);
+  margin-right: 4px;
+}
+
+.template-downloads__item-name {
+  flex: 1 1 auto;
+  line-height: 1.3;
+}
+
+.template-downloads__item-arrow {
+  flex: 0 0 auto;
+  color: var(--color-azul);
+  font-size: 1rem;
+  opacity: 0.5;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.template-downloads__item:hover .template-downloads__item-arrow {
+  transform: translateX(2px);
+  opacity: 1;
+}
+
 /* ---------- Checklist actions (botón imprimir/PDF + hint) ---------- */
 .checklist-actions {
   display: flex;

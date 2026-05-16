@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<meta name="Originator" content="Microsoft Word">
+<title>1.4.6 · Hoja de ruta de implementación de soluciones de IA</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.5cm 2cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 12pt;
+  margin-bottom: 24pt;
+}
+.brand-header table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+.brand-header td {
+  border: none;
+  vertical-align: middle;
+  padding: 0;
+}
+.brand-header h1 {
+  color: #28467e;
+  font-size: 18pt;
+  margin: 0 0 4pt 0;
+  font-weight: bold;
+}
+.brand-header .subtitle {
+  color: #666;
+  font-size: 10pt;
+  margin: 0;
+}
+.brand-header .meta {
+  text-align: right;
+  font-size: 9pt;
+  color: #666;
+}
+.product-num {
+  display: inline-block;
+  background: #f7c031;
+  color: #28467e;
+  padding: 4pt 10pt;
+  border-radius: 4pt;
+  font-weight: bold;
+  font-size: 10pt;
+  margin-bottom: 10pt;
+}
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 22pt;
+  margin-bottom: 12pt;
+}
+h3 {
+  color: #1F4E8C;
+  font-size: 12pt;
+  margin-top: 16pt;
+  margin-bottom: 8pt;
+}
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+  color: #555;
+}
+.section {
+  margin-bottom: 18pt;
+}
+.section-letter {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 24pt;
+  height: 24pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  line-height: 24pt;
+  vertical-align: middle;
+  margin-right: 6pt;
+}
+.section-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 12pt;
+}
+.section-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 4pt 0 8pt 32pt;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 18pt;
+  margin: 6pt 0 0 32pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 24pt 0;
+  border-radius: 4pt;
+}
+.product-data table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.product-data td {
+  padding: 4pt 8pt;
+  font-size: 10pt;
+  border: none;
+}
+.product-data td:first-child {
+  font-weight: bold;
+  color: #28467e;
+  width: 30%;
+}
+.product-data .blank {
+  border-bottom: 1pt solid #999;
+  display: inline-block;
+  min-width: 200pt;
+}
+.footer {
+  margin-top: 40pt;
+  padding-top: 12pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+.required-badge {
+  background: #FFE0E0;
+  color: #C0392B;
+  font-size: 9pt;
+  font-weight: bold;
+  padding: 2pt 8pt;
+  border-radius: 3pt;
+  margin-left: 8pt;
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;">
+<!-- Logo placeholder. En la versión web, el logo se inserta como imagen. -->
+<div style="background: #28467e; color: #f7c031; font-weight: bold; font-size: 14pt; padding: 14pt 8pt; text-align: center; border-radius: 6pt;">Mi<br>CompañIA</div>
+</td>
+<td style="padding-left: 14pt;">
+<h1>Hoja de ruta de implementación de soluciones de IA</h1>
+<p class="subtitle">Manual de Implementar IA · Producto del Elemento 1 · Planear</p>
+</td>
+<td class="meta" style="width: 140pt;">
+<strong>Producto 1.4.6</strong><br>
+Template editable<br>
+<em>Mi CompañIA · FUNDES</em>
+</td>
+</tr>
+</table>
+</div>
+
+<div class="intro">
+<strong>Sobre este template.</strong> Plan operativo con fases, hitos y entregables del proyecto de implementación. Llena cada sección con los datos reales de tu MiPyME. El evaluador revisará que cada característica del F21 esté cubierta — usa este template como guía, pero adapta el contenido a tu proyecto real. <strong>Documentos fabricados ad hoc se detectan con facilidad.</strong>
+</div>
+
+<div class="product-data">
+<table>
+<tr><td>Nombre del proyecto</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Fecha del documento</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Características del producto (F21)</h2>
+
+<div class="section">
+<div>
+<span class="section-letter">a</span>
+<span class="section-title">Fases del proyecto</span>
+</div>
+<div class="section-help">Diagnóstico, diseño, configuración, prueba piloto, capacitación, despliegue, evaluación. Tiempos por fase.</div>
+<div class="fill-area">[Llena aquí el contenido de la característica a. Borra esta línea cuando empieces a escribir.]</div>
+</div>
+
+<div class="section">
+<div>
+<span class="section-letter">b</span>
+<span class="section-title">Hitos clave</span>
+</div>
+<div class="section-help">Eventos críticos del proyecto: kick-off, validación de propuesta, primera demo, go-live, cierre.</div>
+<div class="fill-area">[Llena aquí el contenido de la característica b. Borra esta línea cuando empieces a escribir.]</div>
+</div>
+
+<div class="section">
+<div>
+<span class="section-letter">c</span>
+<span class="section-title">Entregables por fase</span>
+</div>
+<div class="section-help">Qué documento o producto se entrega al cliente al cierre de cada fase.</div>
+<div class="fill-area">[Llena aquí el contenido de la característica c. Borra esta línea cuando empieces a escribir.]</div>
+</div>
+
+<div class="section">
+<div>
+<span class="section-letter">d</span>
+<span class="section-title">Dependencias y riesgos</span>
+</div>
+<div class="section-help">Tareas que dependen de otras. Riesgos identificados y planes de mitigación.</div>
+<div class="fill-area">[Llena aquí el contenido de la característica d. Borra esta línea cuando empieces a escribir.]</div>
+</div>
+
+<div class="section">
+<div>
+<span class="section-letter">e</span>
+<span class="section-title">Cronograma visual</span>
+</div>
+<div class="section-help">Diagrama Gantt o timeline simple con fechas tentativas.</div>
+<div class="fill-area">[Llena aquí el contenido de la característica e. Borra esta línea cuando empieces a escribir.]</div>
+</div>
+
+<div class="section">
+<div>
+<span class="section-letter">f</span>
+<span class="section-title">Roles y responsabilidades</span>
+</div>
+<div class="section-help">Quién hace qué de tu lado y del cliente. RACI simplificado.</div>
+<div class="fill-area">[Llena aquí el contenido de la característica f. Borra esta línea cuando empieces a escribir.]</div>
+</div>
+
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Template descargable del Manual de Implementar IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+</div>
+
+</body>
+</html>
