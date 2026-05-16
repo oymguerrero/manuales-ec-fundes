@@ -2817,6 +2817,119 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   margin-top: 28px;
 }
 
+/* ---------- Checklist actions (botón imprimir/PDF + hint) ---------- */
+.checklist-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.checklist-actions__hint {
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+  flex: 1 1 240px;
+  min-width: 200px;
+}
+
+/* Modo impresión optimizado para checklist como PDF descargable.
+   Se activa con .body--printing-checklist (añadido por JS al pulsar el botón).
+   Esconde TODO menos el checklist + un encabezado con logo + footer mini. */
+@media print {
+  body.body--printing-checklist {
+    background: white !important;
+  }
+  body.body--printing-checklist > *:not(.print-cover):not(.print-only-host) {
+    display: none !important;
+  }
+  body.body--printing-checklist .print-cover {
+    display: block !important;
+    padding: 0;
+    margin: 0;
+  }
+  body.body--printing-checklist .print-cover__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--color-amarillo);
+    margin-bottom: 24px;
+  }
+  body.body--printing-checklist .print-cover__header img {
+    width: 80px;
+    height: auto;
+  }
+  body.body--printing-checklist .print-cover__title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-azul-profundo);
+    margin: 0 0 4px;
+  }
+  body.body--printing-checklist .print-cover__subtitle {
+    font-size: 0.95rem;
+    color: var(--color-gris-texto);
+    margin: 0;
+  }
+  body.body--printing-checklist .print-cover__date {
+    margin-left: auto;
+    font-size: 0.82rem;
+    color: var(--color-gris-texto);
+    text-align: right;
+  }
+  body.body--printing-checklist .printable-checklist {
+    background: white !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    page-break-inside: auto;
+  }
+  body.body--printing-checklist .printable-checklist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+  body.body--printing-checklist .printable-checklist li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+    page-break-inside: avoid;
+  }
+  body.body--printing-checklist .printable-checklist label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  body.body--printing-checklist .printable-checklist input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--color-azul-profundo);
+  }
+  body.body--printing-checklist .printable-checklist .checklist__progress {
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 2px solid var(--color-amarillo);
+    font-weight: 700;
+    color: var(--color-azul-profundo);
+  }
+  body.body--printing-checklist .printable-checklist .checklist__bar {
+    width: 100%;
+    height: 8px;
+  }
+  body.body--printing-checklist .print-cover__footer {
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid #ddd;
+    font-size: 0.75rem;
+    color: var(--color-gris-texto);
+    text-align: center;
+    font-style: italic;
+  }
+  @page {
+    margin: 18mm 15mm;
+  }
+}
+
 /* ---------- Brand graphics: sparkles + arrow + waves (brandbook §19) ---------- */
 
 /*
@@ -2989,17 +3102,99 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 /* ---------- Mobile ---------- */
+/* ---------- Tablet (768-1024px) ---------- */
+@media (max-width: 1024px) {
+  .site-header .container,
+  .sub-nav .container,
+  .maestro-progress .container {
+    max-width: 100%;
+  }
+  .sub-nav {
+    /* Permite scroll horizontal de items si no caben */
+    padding: 12px 0;
+  }
+  .sub-nav .container {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px;
+    /* Fade en bordes para indicar "hay más contenido" */
+    mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+    /* Ocultar scrollbar horizontal feo en webkit pero conservar funcionalidad */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-azul) transparent;
+  }
+  .sub-nav .container::-webkit-scrollbar { height: 4px; }
+  .sub-nav .container::-webkit-scrollbar-thumb { background: var(--color-azul); border-radius: 2px; }
+  .sub-nav__label,
+  .sub-nav a {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Mobile (≤768px) ---------- */
 @media (max-width: 768px) {
   body { font-size: 16px; }
-  .hero { padding: 56px 20px 48px; }
-  .hero h1 { font-size: clamp(1.7rem, 6vw, 2.2rem); }
-  .hero p { font-size: 1rem; }
-  main { padding: 40px 20px 56px; }
-  .site-header { padding: 12px 20px; }
-  .site-header nav { gap: 14px; }
-  .site-header nav a { font-size: 0.88rem; }
-  .site-header .brand img { height: 44px; }
+  .hero { padding: 48px 20px 44px; min-height: auto; }
+  .hero h1 { font-size: clamp(1.6rem, 6vw, 2.1rem); }
+  .hero p { font-size: 0.98rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { text-align: center; }
+  main { padding: 32px 16px 48px; }
+  .site-header { padding: 10px 16px; }
+  .site-header .container {
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .site-header .brand img { height: 38px; }
+  .site-header nav {
+    gap: 10px;
+    flex-shrink: 1;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .site-header nav::-webkit-scrollbar { display: none; }
+  .site-header nav a {
+    font-size: 0.84rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 4px 8px;
+  }
+  .sub-nav { padding: 10px 0; }
+  .sub-nav .container { padding: 0 16px; gap: 6px; }
+  .sub-nav__label { font-size: 0.72rem; margin-right: 4px; }
+  .sub-nav a { font-size: 0.84rem; padding: 5px 10px; }
+  .maestro-progress { padding: 10px 0; }
+  .maestro-progress .container { padding: 0 16px; gap: 8px; }
+  .maestro-progress__label { font-size: 0.78rem; }
   .element, .ec-card { padding: 22px; }
   .stat .num { font-size: 1.7rem; }
+  .site-footer { padding: 28px 20px; }
   .site-footer .container { flex-direction: column; align-items: flex-start; text-align: left; }
+
+  /* Lesson tabs ya son responsive — solo refinamientos */
+  .lesson-tabs__header {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .lesson-tabs__progress-text { min-width: 100%; }
+  .lesson-tabs__panel-header { gap: 10px; }
+  .lesson-tabs__panel-num { min-width: 48px; height: 36px; font-size: 0.85rem; }
+}
+
+/* ---------- Small mobile (≤480px) ---------- */
+@media (max-width: 480px) {
+  .site-header .brand img { height: 34px; }
+  .site-header nav a { font-size: 0.8rem; padding: 4px 6px; }
+  .sub-nav a { font-size: 0.8rem; padding: 4px 9px; }
+  .hero { padding: 40px 16px 36px; }
+  .hero h1 { font-size: 1.5rem; }
+  main { padding: 24px 14px 40px; }
+  .lesson-tabs__panel-card { padding: 18px 14px; }
+  .lesson-tabs__panel-title { font-size: 1.05rem; }
 }

@@ -220,7 +220,15 @@
         <div class="accordion__body">
       <p>Antes de presentarte a la evaluación, verifica que cuentas con cada elemento. Tu progreso se guarda en este navegador, así que puedes volver a revisarlo en cualquier momento.</p>
 
-      <div class="checklist" data-storage-key="estandar-a-checklist-final">
+      <div class="checklist-actions" role="group" aria-label="Acciones del checklist" style="margin: 16px 0 24px;">
+        <button type="button" class="btn btn-secondary" data-action="print-checklist">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" style="vertical-align: -2px; margin-right: 6px;"><path fill="currentColor" d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+          Descargar checklist como PDF
+        </button>
+        <span class="checklist-actions__hint">El navegador abrirá el diálogo de impresión. Selecciona <strong>"Guardar como PDF"</strong> como destino.</span>
+      </div>
+
+      <div class="checklist printable-checklist" data-storage-key="estandar-a-checklist-final" id="checklist-final-imprimible">
         <p style="margin-bottom: 14px; font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Productos del Elemento 1 (8)</p>
         <ul>
           <li><label><input type="checkbox" /><span class="checklist__text">1.4.1 · Reporte de evaluación inicial de la MiPyME (perfil empresarial, contacto, áreas de mejora, objetivos, indicadores, metas, recursos, tiempos)</span></label></li>

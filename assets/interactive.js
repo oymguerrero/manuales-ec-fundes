@@ -789,6 +789,72 @@
     applyFilter('');
   }
 
+  // ---------- Print checklist como PDF ----------
+  // Botón [data-action="print-checklist"] → activa modo de impresión que oculta
+  // todo el sitio menos el checklist + un encabezado con logo + fecha + footer
+  // institucional. El usuario elige "Guardar como PDF" en el diálogo del navegador.
+  function initPrintChecklist() {
+    document.querySelectorAll('[data-action="print-checklist"]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        // Localiza el checklist destino: el más cercano al botón
+        const checklist = btn.closest('.checklist-actions') &&
+          btn.closest('.checklist-actions').nextElementSibling &&
+          btn.closest('.checklist-actions').nextElementSibling.classList.contains('printable-checklist')
+            ? btn.closest('.checklist-actions').nextElementSibling
+            : document.querySelector('.printable-checklist');
+        if (!checklist) {
+          window.print();
+          return;
+        }
+
+        // Construye el cover dinámicamente con logo + título + fecha
+        const today = new Date().toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
+        const pageTitle = document.title.split('·')[0].trim() || 'Mi CompañIA';
+        // Detecta ruta del logo según profundidad del documento
+        const logoPath = (location.pathname.split('/').filter(Boolean).length > 1) ? '../img/logo.png' : 'img/logo.png';
+
+        const cover = document.createElement('div');
+        cover.className = 'print-cover';
+        cover.innerHTML =
+          '<div class="print-cover__header">' +
+            '<img src="' + logoPath + '" alt="Mi CompañIA" />' +
+            '<div>' +
+              '<h1 class="print-cover__title">Lista de verificación · Implementar IA</h1>' +
+              '<p class="print-cover__subtitle">' + pageTitle + ' · Manual del Aspirante</p>' +
+            '</div>' +
+            '<div class="print-cover__date">Generado<br>' + today + '</div>' +
+          '</div>' +
+          '<p class="print-cover__intro" style="margin-bottom: 18px; color: #4B5563; font-style: italic;">Marca cada elemento conforme lo tengas resuelto. Esta es una vista descargable; el progreso interactivo se sigue guardando en el navegador.</p>';
+
+        // Mueve el checklist al cover temporalmente
+        const placeholder = document.createComment('checklist-placeholder');
+        checklist.parentNode.replaceChild(placeholder, checklist);
+        cover.appendChild(checklist);
+        cover.insertAdjacentHTML('beforeend',
+          '<div class="print-cover__footer">' +
+            'Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org · ' +
+            location.hostname + location.pathname +
+          '</div>'
+        );
+        document.body.appendChild(cover);
+        document.body.classList.add('body--printing-checklist');
+
+        function restore() {
+          document.body.classList.remove('body--printing-checklist');
+          if (placeholder.parentNode) {
+            placeholder.parentNode.replaceChild(checklist, placeholder);
+          }
+          if (cover.parentNode) cover.parentNode.removeChild(cover);
+          window.removeEventListener('afterprint', restore);
+        }
+        window.addEventListener('afterprint', restore);
+
+        // Pequeño delay para que el navegador aplique los estilos
+        setTimeout(function () { window.print(); }, 50);
+      });
+    });
+  }
+
   // ---------- Inicialización ----------
   function init() {
     document.querySelectorAll('.tabs').forEach(initTabs);
@@ -798,6 +864,7 @@
     document.querySelectorAll('.audio-narration').forEach(initAudioNarration);
     document.querySelectorAll('.lesson-tabs').forEach(initLessonTabs);
     document.querySelectorAll('.glossary--rich').forEach(initGlossaryRich);
+    initPrintChecklist();
     // Solo aplicar el handler genérico de accordion modules si NO está dentro de lesson-tabs
     initAccordionModules();
   }
