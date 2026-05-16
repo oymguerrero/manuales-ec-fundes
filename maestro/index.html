@@ -68,9 +68,18 @@
 
     <a class="back-link" href="../index.html">Volver al inicio</a>
 
-    <section id="mini-diagnostico" aria-labelledby="diag-title">
+    <div class="lesson-tabs" data-progress-key="maestro-cap1-bienvenida">
+    <div class="accordion accordion--modules" aria-label="Módulos del Capítulo 1">
+
+      <details class="accordion__item" id="mini-diagnostico" open>
+        <summary>
+          <span class="accordion__num">0</span>
+          <span class="accordion__title-main">Antes de empezar: ¿dónde estás parado?</span>
+          <span class="accordion__meta">3 preguntas en 30 seg · orientación inicial</span>
+        </summary>
+        <div class="accordion__body">
+
       <div class="diagnostic">
-        <h2 class="diagnostic__title" id="diag-title">Antes de empezar: ¿dónde estás parado?</h2>
         <p class="diagnostic__intro">Responde tres preguntas en 30 segundos. La respuesta no se guarda en ningún servidor — es solo para orientarte hacia el siguiente paso adecuado.</p>
 
         <fieldset>
@@ -96,12 +105,10 @@
         <button type="button" id="diag-submit" class="btn btn-primary">Ver resultado</button>
         <div id="diag-result" class="diagnostic__result" aria-live="polite"></div>
       </div>
-    </section>
+        </div>
+      </details>
 
-    <div class="lesson-tabs" data-progress-key="maestro-cap1-bienvenida">
-    <div class="accordion accordion--modules" aria-label="Módulos del Capítulo 1">
-
-      <details class="accordion__item" id="bienvenida" open>
+      <details class="accordion__item" id="bienvenida">
         <summary>
           <span class="accordion__num">1.1</span>
           <span class="accordion__title-main">Bienvenida</span>

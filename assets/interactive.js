@@ -518,6 +518,30 @@
     function openItem(idx, options) {
       options = options || {};
       if (idx < 0 || idx >= items.length) return;
+      // Pausa audios de los módulos que se van a cerrar (audio scoped al módulo activo).
+      // Sin esto, un audio iniciado en el módulo 1.1 seguiría sonando al cambiar a 1.3
+      // y dispararía el mini-bar flotante de forma molesta (el contenedor original
+      // queda oculto vía display:none, IntersectionObserver lo detecta como "fuera").
+      items.forEach(function (d, i) {
+        if (i !== idx) {
+          d.querySelectorAll('audio').forEach(function (a) {
+            if (!a.paused) {
+              a.pause();
+              // Restablece el toggle del .audio-narration si estaba expandido
+              const container = a.closest('.audio-narration');
+              if (container) {
+                const toggle = container.querySelector('.audio-narration__toggle');
+                const player = container.querySelector('.audio-narration__player');
+                if (toggle && toggle.getAttribute('aria-expanded') === 'true') {
+                  toggle.setAttribute('aria-expanded', 'false');
+                  if (player) player.hidden = true;
+                  toggle.textContent = toggle.dataset.labelClosed || 'Escuchar esta sección';
+                }
+              }
+            }
+          });
+        }
+      });
       // Cerrar todos los demás
       items.forEach(function (d, i) {
         d.open = i === idx;
