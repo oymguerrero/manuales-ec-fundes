@@ -2673,7 +2673,10 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   pointer-events: none;
   z-index: 0;
 }
-.hero--sparkles > .container { position: relative; z-index: 1; }
+/* z-index: 3 para garantizar que quede arriba tanto del ::before de sparkles
+   (z-index implícito 0) como del overlay azul de .hero--photo::after (z-index: 1)
+   y del container base de .hero--photo (z-index: 2). */
+.hero--sparkles > .container { position: relative; z-index: 3; }
 
 /*
    Brand arrow = flecha amarilla horizontal, trazo grueso, esquinas suaves.
