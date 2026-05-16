@@ -640,7 +640,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   border-bottom: none;
 }
 
-/* ---------- Glosario (definitions list) ---------- */
+/* ---------- Glosario (definitions list base) ---------- */
 .glossary {
   margin: 24px 0;
 }
@@ -670,7 +670,193 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   line-height: 1.6;
 }
 
-/* ---------- Filtro de glosario ---------- */
+/* ---------- Glosario rico (.glossary--rich) ---------- */
+/* Variante con índice alfabético + filtro en vivo + cards.
+   El JS detecta .glossary--rich y construye el toolkit automáticamente. */
+.glossary--rich {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.glossary--rich .glossary__term {
+  border: 1px solid var(--color-gris-linea);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px 18px;
+  background: var(--color-blanco-calido);
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+  margin: 0;
+}
+
+.glossary--rich .glossary__term::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--color-amarillo);
+  letter-spacing: 0.06em;
+  background: var(--color-azul-profundo);
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.glossary--rich .glossary__term:hover {
+  border-color: var(--color-azul);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.glossary--rich .glossary__term:target {
+  background: var(--color-amarillo-suave);
+  margin: 0;
+  padding: 16px 18px 18px;
+  animation: glossary-pulse 1.2s ease;
+}
+
+@keyframes glossary-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 194, 51, 0.55); }
+  50%  { box-shadow: 0 0 0 8px rgba(255, 194, 51, 0.18); }
+  100% { box-shadow: var(--shadow-sm); }
+}
+
+.glossary--rich .glossary__name {
+  padding-right: 30px; /* deja espacio para el badge de letra */
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.glossary--rich .glossary__def {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* Hidden tarjetas que no pasan el filtro */
+.glossary--rich .glossary__term[hidden] {
+  display: none !important;
+}
+
+/* ---------- Toolkit del glosario (filtro + índice + contador) ---------- */
+.glossary-toolkit {
+  background: var(--color-blanco-calido);
+  border: 1px solid var(--color-gris-linea);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 20px 0;
+  display: grid;
+  gap: 14px;
+}
+
+.glossary-toolkit__filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.glossary-toolkit__input {
+  flex: 1 1 240px;
+  min-width: 200px;
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  border: 1.5px solid var(--color-gris-linea);
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+}
+
+.glossary-toolkit__input:focus {
+  outline: none;
+  border-color: var(--color-azul);
+  box-shadow: 0 0 0 3px rgba(31, 78, 140, 0.12);
+}
+
+.glossary-toolkit__count {
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.glossary-toolkit__count strong {
+  color: var(--color-azul-profundo);
+}
+
+.glossary-toolkit__index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.glossary-toolkit__index-label {
+  font-size: 0.78rem;
+  color: var(--color-gris-texto);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.glossary-toolkit__letter {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--color-azul-profundo);
+  background: transparent;
+  border: 1px solid var(--color-gris-linea);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.12s ease;
+}
+
+.glossary-toolkit__letter:hover {
+  background: var(--color-azul);
+  color: #FFFFFF;
+  border-color: var(--color-azul);
+  transform: scale(1.06);
+}
+
+.glossary-toolkit__letter[aria-disabled="true"] {
+  opacity: 0.32;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.glossary-toolkit__letter.is-active {
+  background: var(--color-amarillo);
+  color: var(--color-azul-profundo);
+  border-color: var(--color-amarillo);
+}
+
+/* Empty state cuando el filtro no encuentra nada */
+.glossary-toolkit__empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--color-gris-texto);
+  background: var(--color-azul-suave);
+  border-radius: var(--radius-sm);
+  margin-top: 8px;
+  font-style: italic;
+  display: none;
+}
+
+.glossary-toolkit__empty.is-visible {
+  display: block;
+}
+
+/* Compatibilidad: el input legacy .glossary-filter sigue funcionando */
 .glossary-filter {
   width: 100%;
   padding: 12px 16px;
@@ -685,6 +871,12 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .glossary-filter:focus {
   outline: 2px solid var(--color-azul);
   outline-offset: 2px;
+}
+
+@media print {
+  .glossary-toolkit { display: none; }
+  .glossary--rich { display: block; }
+  .glossary--rich .glossary__term[hidden] { display: block !important; }
 }
 
 /* ---------- Referencias ---------- */

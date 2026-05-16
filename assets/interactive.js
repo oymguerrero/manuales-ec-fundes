@@ -271,14 +271,21 @@
 
     function updateBar() {
       if (userClosed) { hideBar(); return; }
+      // Si el .audio-narration vive dentro de un <details> que NO está abierto
+      // (módulo no activo del lesson-tabs), nunca mostramos el mini-bar.
+      // Solo aparece cuando el usuario está en el módulo donde vive el audio
+      // y ha hecho scroll fuera del reproductor mientras el audio suena.
+      const parentDetails = container.closest('details.accordion__item');
+      if (parentDetails && !parentDetails.open) {
+        hideBar();
+        return;
+      }
       if (!audio.paused && !inView) {
         showBar(true);
-      } else if (inView) {
-        // Volvió a la vista: ocultar bar pero NO cerrar el audio
+      } else {
+        // En todos los demás casos (en vista, pausado, o ambos) ocultamos.
+        // El reproductor original ya es visible/accesible; no necesitamos un bar.
         hideBar();
-      } else if (audio.paused) {
-        // Pausado y fuera de vista: mantener bar visible con ícono de play
-        showBar(false);
       }
     }
 
@@ -675,6 +682,113 @@
     openItem(initialIdx, { scroll: false });
   }
 
+  // ---------- Glosario rico (índice alfabético + filtro en vivo + contador) ----------
+  // Auto-construye el toolkit a partir de un <dl class="glossary glossary--rich">.
+  // No requiere markup adicional en HTML — el JS genera el toolkit, el data-letter
+  // de cada término y el contador. Filtra por nombre y por definición (case insensitive
+  // + acentos normalizados).
+  function initGlossaryRich(dl) {
+    const terms = Array.from(dl.querySelectorAll('.glossary__term'));
+    if (!terms.length) return;
+
+    function norm(s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+
+    // Asigna data-letter a cada término basado en su nombre
+    const lettersInUse = new Set();
+    terms.forEach(function (term) {
+      const nameEl = term.querySelector('.glossary__name');
+      const firstChar = (nameEl ? nameEl.textContent.trim().charAt(0) : '?').toUpperCase();
+      const letter = /[A-ZÑ]/.test(firstChar) ? firstChar : '#';
+      term.dataset.letter = letter;
+      lettersInUse.add(letter);
+      // Genera ID si no tiene (para anchoring por letra)
+      if (!term.id) {
+        const slug = norm(nameEl.textContent.trim()).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        term.id = 'glossary-' + slug.slice(0, 60);
+      }
+    });
+
+    // Construye toolkit
+    const toolkit = document.createElement('div');
+    toolkit.className = 'glossary-toolkit';
+    const allLetters = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('');
+    toolkit.innerHTML =
+      '<div class="glossary-toolkit__filter-row">' +
+        '<input type="search" class="glossary-toolkit__input" ' +
+          'placeholder="Buscar término o palabra de la definición…" ' +
+          'aria-label="Filtrar términos del glosario" />' +
+        '<span class="glossary-toolkit__count"><strong class="js-count">' + terms.length + '</strong> términos</span>' +
+      '</div>' +
+      '<nav class="glossary-toolkit__index" aria-label="Saltar a letra">' +
+        '<span class="glossary-toolkit__index-label">Ir a:</span>' +
+        allLetters.map(function (l) {
+          const disabled = !lettersInUse.has(l);
+          return '<a href="#" class="glossary-toolkit__letter' + (disabled ? '' : '') + '" ' +
+                 'data-letter="' + l + '" ' +
+                 (disabled ? 'aria-disabled="true" tabindex="-1"' : '') +
+                 '>' + l + '</a>';
+        }).join('') +
+      '</nav>' +
+      '<p class="glossary-toolkit__empty">No se encontraron términos con ese filtro. Prueba con otra palabra o limpia el campo.</p>';
+
+    dl.parentNode.insertBefore(toolkit, dl);
+
+    const input = toolkit.querySelector('.glossary-toolkit__input');
+    const countEl = toolkit.querySelector('.js-count');
+    const emptyEl = toolkit.querySelector('.glossary-toolkit__empty');
+    const letterLinks = toolkit.querySelectorAll('.glossary-toolkit__letter');
+
+    function applyFilter(query) {
+      const q = norm(query);
+      let visible = 0;
+      terms.forEach(function (term) {
+        const nameEl = term.querySelector('.glossary__name');
+        const defEl = term.querySelector('.glossary__def');
+        const haystack = norm((nameEl ? nameEl.textContent : '') + ' ' + (defEl ? defEl.textContent : ''));
+        const matches = !q || haystack.indexOf(q) >= 0;
+        term.hidden = !matches;
+        if (matches) visible++;
+      });
+      countEl.textContent = visible;
+      emptyEl.classList.toggle('is-visible', visible === 0);
+      // Actualiza estado disabled de letras según términos visibles por letra
+      const visibleLetters = new Set();
+      terms.forEach(function (t) { if (!t.hidden) visibleLetters.add(t.dataset.letter); });
+      letterLinks.forEach(function (link) {
+        const l = link.dataset.letter;
+        const disable = lettersInUse.has(l) ? !visibleLetters.has(l) : true;
+        link.setAttribute('aria-disabled', disable ? 'true' : 'false');
+        if (disable) link.setAttribute('tabindex', '-1');
+        else link.removeAttribute('tabindex');
+      });
+    }
+
+    input.addEventListener('input', function () { applyFilter(input.value); });
+
+    letterLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (link.getAttribute('aria-disabled') === 'true') return;
+        const l = link.dataset.letter;
+        // Encuentra el primer término visible con esa letra
+        const target = terms.find(function (t) { return t.dataset.letter === l && !t.hidden; });
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Highlight efímero
+          target.id && (window.location.hash = target.id);
+        }
+        // Toggle visual: marca como activa
+        letterLinks.forEach(function (b) { b.classList.remove('is-active'); });
+        link.classList.add('is-active');
+      });
+    });
+
+    // Estado inicial
+    applyFilter('');
+  }
+
   // ---------- Inicialización ----------
   function init() {
     document.querySelectorAll('.tabs').forEach(initTabs);
@@ -683,6 +797,7 @@
     document.querySelectorAll('.quiz').forEach(initQuiz);
     document.querySelectorAll('.audio-narration').forEach(initAudioNarration);
     document.querySelectorAll('.lesson-tabs').forEach(initLessonTabs);
+    document.querySelectorAll('.glossary--rich').forEach(initGlossaryRich);
     // Solo aplicar el handler genérico de accordion modules si NO está dentro de lesson-tabs
     initAccordionModules();
   }
