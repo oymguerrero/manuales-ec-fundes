@@ -39,3 +39,11 @@ logs/
 
 # Playwright MCP
 .playwright-mcp/
+
+# Office: carpetas auxiliares que Word/Excel/PowerPoint crean al previsualizar HTML-en-extensión-ofimática (legacy)
+*.files/
+~$*
+
+# Python
+__pycache__/
+*.pyc
