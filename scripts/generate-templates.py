@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 """
-Genera los 13 templates de los productos del estándar Implementar IA en
-archivos OFIMÁTICOS REALES: .docx (Word), .xlsx (Excel), .pptx (PowerPoint).
-
-Antes se usaba HTML con extensión .doc/.xls/.ppt, lo que provocaba el
-warning "el formato no coincide con la extensión" en Office y, en el
-caso de PowerPoint, que el archivo simplemente no abriera (PowerPoint
-2010+ ya no importa HTML). Ahora se usan python-docx, openpyxl y
-python-pptx para producir los formatos OOXML modernos.
+Genera los 13 templates de los productos del estándar Implementar IA
+como HTML estilizado con extensión ofimática: Word (.doc), Excel (.xls)
+y una variante "Word guía visual" (.doc con saltos de página tipo
+lámina). Office los abre nativamente (Word/Excel muestran un warning
+una sola vez por archivo; en el caso de PowerPoint moderno NO abre HTML
+con extensión .ppt, por eso evitamos ese formato).
 
 Filosofía pedagógica: NO darle la solución al aspirante. Cada template
 muestra el criterio F21 oficial + un ejemplo breve del caso La Espiga
@@ -15,70 +13,24 @@ muestra el criterio F21 oficial + un ejemplo breve del caso La Espiga
 aspirante responde con datos de SU MiPyME real.
 
 Uso:
-    python scripts/generate-templates.py
+    python3 scripts/generate-templates.py
 
-Requiere:
-    pip install python-docx openpyxl python-pptx
-
-Salida: estandar-a/templates/<num>-<slug>.{docx|xlsx|pptx}
+Salida: estandar-a/templates/<num>-<slug>.{doc|xls|ppt}
 """
 
+import os
 from pathlib import Path
-
-from docx import Document
-from docx.enum.table import WD_ALIGN_VERTICAL
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.oxml.ns import qn
-from docx.oxml import OxmlElement
-from docx.shared import Cm, Pt, RGBColor
-
-from openpyxl import Workbook
-from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
-from openpyxl.utils import get_column_letter
-
-from pptx import Presentation
-from pptx.dml.color import RGBColor as PPTColor
-from pptx.enum.shapes import MSO_SHAPE
-from pptx.enum.text import PP_ALIGN
-from pptx.util import Inches, Pt as PPTPt
 
 ROOT = Path(__file__).parent.parent
 OUT = ROOT / "estandar-a" / "templates"
 OUT.mkdir(parents=True, exist_ok=True)
 
-# -----------------------------------------------------------------------------
-# Colores y constantes de marca Mi CompañIA
-# -----------------------------------------------------------------------------
-COLOR_AZUL = "28467E"
-COLOR_AMARILLO = "F7C031"
-COLOR_AZUL_CLARO = "F0F7FF"
-COLOR_AMARILLO_CLARO = "FFF3CC"
-COLOR_TAX_BG = "FFE0E0"
-COLOR_TAX_FG = "C0392B"
-COLOR_GRIS_BG = "FAFAFA"
-COLOR_GRIS_BORDE = "DDDDDD"
-
-# Para python-docx y python-pptx (necesitan tupla RGB o RGBColor)
-RGB_AZUL = RGBColor(0x28, 0x46, 0x7E)
-RGB_AMARILLO = RGBColor(0xF7, 0xC0, 0x31)
-RGB_GRIS_TXT = RGBColor(0x66, 0x66, 0x66)
-RGB_TAX = RGBColor(0xC0, 0x39, 0x2B)
-RGB_BLANCO = RGBColor(0xFF, 0xFF, 0xFF)
-RGB_NEGRO_TXT = RGBColor(0x33, 0x33, 0x33)
-
-PPT_AZUL = PPTColor(0x28, 0x46, 0x7E)
-PPT_AMARILLO = PPTColor(0xF7, 0xC0, 0x31)
-PPT_AMARILLO_CLARO = PPTColor(0xFF, 0xF3, 0xCC)
-PPT_AZUL_CLARO = PPTColor(0xF0, 0xF7, 0xFF)
-PPT_BLANCO = PPTColor(0xFF, 0xFF, 0xFF)
-PPT_GRIS = PPTColor(0x66, 0x66, 0x66)
-PPT_TAX = PPTColor(0xC0, 0x39, 0x2B)
-
-
-# =============================================================================
-# DATOS DE LOS 13 PRODUCTOS (criterio F21 + caso Espiga + preguntas guía)
-# =============================================================================
-
+# Cada producto define su formato óptimo basado en la naturaleza del contenido:
+#   "word"        → reportes narrativos, manuales técnicos, actas
+#   "excel"       → matrices, cronogramas, tablas comparativas de indicadores
+#   "word_guide"  → guía operativa estilo "lámina por paso" (Word, no PPT,
+#                   porque PowerPoint moderno NO abre HTML como .ppt y la
+#                   guía es más útil en Word para imprimir/anotar)
 PRODUCTS = [
     {
         "num": "1.4.1", "slug": "reporte-evaluacion-inicial", "format": "word",
@@ -300,9 +252,9 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "3.4.3", "slug": "material-capacitacion", "format": "ppt",
+        "num": "3.4.3", "slug": "material-capacitacion", "format": "word_guide",
         "elemento": "2 · Ejecutar", "title": "Material de capacitación al personal",
-        "intro": "Presentación visual que el personal de la MiPyME usará para operar las soluciones de forma autónoma. Por eso es PowerPoint, no Word: el personal aprende mejor con visuales paso a paso.",
+        "intro": "Guía operativa estilo manual visual: una lámina por paso, espacio para captura, prompts destacados, tabla de errores comunes. La entregamos en Word para que el personal pueda imprimirla y dejarla en mostrador, y para que tú puedas adaptarla sin perder el formato. Si necesitas una sesión presencial, conviertes cada sección en lámina de PowerPoint en 10 minutos.",
         "f21": [
             "Contiene las instrucciones paso a paso para operar cada herramienta de IA implementada",
             "Incluye ejemplos de uso aplicados al contexto específico de la MiPyME",
@@ -313,13 +265,13 @@ PRODUCTS = [
         ],
         "espiga": "Material de La Espiga: presentación de 12 láminas + 3 prompts pre-cargados. Pensada para encargadas con uso intermedio de smartphone pero sin experiencia previa con asistentes de IA. Lenguaje sencillo, capturas grandes, lista de 'qué hacer si algo no funciona'.",
         "preguntas": [
-            ("Bienvenida y objetivos del material", "¿Qué van a aprender? ¿Cuánto tiempo tomará? ¿Para qué les servirá en su día a día?"),
-            ("Instrucciones paso a paso por herramienta", "Por cada herramienta: capturas numeradas con el flujo completo de uso. Si la herramienta tiene 5 botones importantes, dedica 1 lámina por botón. Visual antes que texto."),
+            ("Lámina 1 · Bienvenida y objetivos del material", "¿Qué van a aprender? ¿Cuánto tiempo tomará? ¿Para qué les servirá en su día a día?"),
+            ("Láminas 2-N · Instrucciones paso a paso por herramienta", "Por cada herramienta: capturas numeradas con el flujo completo de uso. Si la herramienta tiene 5 botones importantes, dedica 1 lámina por botón. Visual antes que texto."),
             ("Ejemplos aplicados al contexto de la MiPyME", "Por cada herramienta: 2-3 ejemplos REALES de la MiPyME (no ejemplos genéricos). El personal debe poder decir 'ah, eso lo hago yo el lunes en la mañana'."),
             ("Prompts recomendados", "Lista de 5-10 prompts que ya funcionan para los casos típicos. El personal los copia/pega; no se les pide redactar prompts desde cero."),
             ("Errores frecuentes y qué hacer", "Tabla con: error común → cómo identificarlo → cómo resolverlo → cuándo escalar al consultor o a Carlos/Doña Beatriz."),
             ("Adaptación al nivel digital del personal", "Si el personal no maneja tecnicismos, usa lenguaje cotidiano. Si están acostumbrados a apps, puedes ir más rápido."),
-            ("Recursos y soporte", "¿A quién acudir si algo falla? ¿Dónde encontrar este material después? ¿Cuándo se actualiza?"),
+            ("Lámina final · Recursos y soporte", "¿A quién acudir si algo falla? ¿Dónde encontrar este material después? ¿Cuándo se actualiza?"),
         ],
     },
     {
@@ -371,930 +323,657 @@ PRODUCTS = [
 ]
 
 
-# =============================================================================
-# UTILIDADES python-docx
-# =============================================================================
-
-def _shade_cell(cell, hex_color):
-    """Aplica color de fondo a una celda de tabla Word."""
-    tc_pr = cell._tc.get_or_add_tcPr()
-    shd = OxmlElement('w:shd')
-    shd.set(qn('w:val'), 'clear')
-    shd.set(qn('w:color'), 'auto')
-    shd.set(qn('w:fill'), hex_color)
-    tc_pr.append(shd)
-
-
-def _set_cell_border(cell, color="DDDDDD", sz=4):
-    """Bordes delgados a las celdas."""
-    tc_pr = cell._tc.get_or_add_tcPr()
-    tc_borders = OxmlElement('w:tcBorders')
-    for edge in ('top', 'left', 'bottom', 'right'):
-        b = OxmlElement(f'w:{edge}')
-        b.set(qn('w:val'), 'single')
-        b.set(qn('w:sz'), str(sz))
-        b.set(qn('w:color'), color)
-        tc_borders.append(b)
-    tc_pr.append(tc_borders)
-
-
-def _add_brand_header(doc, prod):
-    """Encabezado de marca: bloque azul/amarillo + título + meta."""
-    table = doc.add_table(rows=1, cols=3)
-    table.autofit = False
-    widths = (Cm(2.6), Cm(11.5), Cm(3.5))
-    for col, w in zip(table.columns, widths):
-        col.width = w
-    for cell, w in zip(table.rows[0].cells, widths):
-        cell.width = w
-        cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
-
-    brand_cell, title_cell, meta_cell = table.rows[0].cells
-    _shade_cell(brand_cell, COLOR_AZUL)
-    p = brand_cell.paragraphs[0]
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run = p.add_run("Mi\nCompañIA")
-    run.font.color.rgb = RGB_AMARILLO
-    run.font.bold = True
-    run.font.size = Pt(11)
-
-    p_t = title_cell.paragraphs[0]
-    run = p_t.add_run(prod["title"])
-    run.font.color.rgb = RGB_AZUL
-    run.font.bold = True
-    run.font.size = Pt(15)
-    p_sub = title_cell.add_paragraph()
-    run = p_sub.add_run(f"Producto {prod['num']} · Elemento {prod['elemento']}")
-    run.font.color.rgb = RGB_GRIS_TXT
-    run.font.size = Pt(9.5)
-
-    p_m = meta_cell.paragraphs[0]
-    p_m.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    run = p_m.add_run(f"{prod['num']}\n")
-    run.font.color.rgb = RGB_AZUL
-    run.font.bold = True
-    run.font.size = Pt(11)
-    run = p_m.add_run("Estándar A · Implementar IA\nFUNDES · MiPyMEs")
-    run.font.color.rgb = RGB_GRIS_TXT
-    run.font.size = Pt(8.5)
-
-    # línea amarilla divisora
-    sep = doc.add_paragraph()
-    p_pr = sep._p.get_or_add_pPr()
-    p_bdr = OxmlElement('w:pBdr')
-    bottom = OxmlElement('w:bottom')
-    bottom.set(qn('w:val'), 'single')
-    bottom.set(qn('w:sz'), '18')
-    bottom.set(qn('w:space'), '1')
-    bottom.set(qn('w:color'), COLOR_AMARILLO)
-    p_bdr.append(bottom)
-    p_pr.append(p_bdr)
-
-
-def _add_project_data_block(doc):
-    """Bloque azul claro con datos del proyecto para llenar."""
-    table = doc.add_table(rows=4, cols=2)
-    table.autofit = False
-    widths = (Cm(4.5), Cm(13.0))
-    for col, w in zip(table.columns, widths):
-        col.width = w
-    rows_data = [
-        ("Nombre de la MiPyME:", ""),
-        ("Responsable del proyecto:", ""),
-        ("Fecha de elaboración:", ""),
-        ("Versión:", ""),
-    ]
-    for i, (label, value) in enumerate(rows_data):
-        cells = table.rows[i].cells
-        for c in cells:
-            _shade_cell(c, COLOR_AZUL_CLARO)
-            _set_cell_border(c, color="CCE0F5", sz=4)
-        cells[0].width = widths[0]
-        cells[1].width = widths[1]
-        p = cells[0].paragraphs[0]
-        r = p.add_run(label)
-        r.font.bold = True
-        r.font.color.rgb = RGB_AZUL
-        r.font.size = Pt(10)
-        cells[1].paragraphs[0].add_run("__________________________________________________").font.color.rgb = RGBColor(0x99, 0x99, 0x99)
-    doc.add_paragraph()
-
-
-def _add_intro_box(doc, text):
-    """Caja amarilla suave con la introducción."""
-    t = doc.add_table(rows=1, cols=1)
-    t.autofit = False
-    t.columns[0].width = Cm(17.5)
-    cell = t.rows[0].cells[0]
-    cell.width = Cm(17.5)
-    _shade_cell(cell, COLOR_AMARILLO_CLARO)
-    tc_pr = cell._tc.get_or_add_tcPr()
-    tc_borders = OxmlElement('w:tcBorders')
-    left = OxmlElement('w:left')
-    left.set(qn('w:val'), 'single')
-    left.set(qn('w:sz'), '18')
-    left.set(qn('w:color'), COLOR_AMARILLO)
-    tc_borders.append(left)
-    tc_pr.append(tc_borders)
-    p = cell.paragraphs[0]
-    r = p.add_run(text)
-    r.font.size = Pt(10)
-    r.font.color.rgb = RGBColor(0x55, 0x55, 0x55)
-    doc.add_paragraph()
-
-
-def _add_f21_box(doc, criterios):
-    """Caja con el criterio F21 literal del estándar."""
-    t = doc.add_table(rows=1, cols=1)
-    t.autofit = False
-    t.columns[0].width = Cm(17.5)
-    cell = t.rows[0].cells[0]
-    _shade_cell(cell, COLOR_AZUL_CLARO)
-    tc_pr = cell._tc.get_or_add_tcPr()
-    tc_borders = OxmlElement('w:tcBorders')
-    left = OxmlElement('w:left')
-    left.set(qn('w:val'), 'single')
-    left.set(qn('w:sz'), '18')
-    left.set(qn('w:color'), '1F4E8C')
-    tc_borders.append(left)
-    tc_pr.append(tc_borders)
-
-    p = cell.paragraphs[0]
-    r = p.add_run("CRITERIO F21 · LO QUE EL EVALUADOR VERIFICA")
-    r.font.bold = True
-    r.font.color.rgb = RGB_AZUL
-    r.font.size = Pt(10)
-    for c in criterios:
-        para = cell.add_paragraph()
-        para.paragraph_format.left_indent = Cm(0.4)
-        is_tax = "REQUISITO TAXATIVO" in c
-        clean = c.replace("(REQUISITO TAXATIVO)", "").strip()
-        bullet = para.add_run("•  ")
-        bullet.font.color.rgb = RGB_AZUL
-        bullet.font.bold = True
-        bullet.font.size = Pt(10)
-        run = para.add_run(clean)
-        run.font.size = Pt(10)
-        run.font.color.rgb = RGB_NEGRO_TXT
-        if is_tax:
-            para.add_run("  ")
-            tax_run = para.add_run(" REQUISITO TAXATIVO ")
-            tax_run.font.bold = True
-            tax_run.font.color.rgb = RGB_BLANCO
-            tax_run.font.size = Pt(8)
-            # fondo rojo al run mediante shading no es trivial — usamos
-            # caracteres y un color de fuente fuerte para llamar la atención
-            # adicional con un fondo amarillo del run:
-            rPr = tax_run._r.get_or_add_rPr()
-            shd = OxmlElement('w:shd')
-            shd.set(qn('w:val'), 'clear')
-            shd.set(qn('w:color'), 'auto')
-            shd.set(qn('w:fill'), COLOR_TAX_FG)
-            rPr.append(shd)
-    doc.add_paragraph()
-
-
-def _add_espiga_box(doc, text):
-    """Caja crema con el caso La Espiga (solo ilustrativo)."""
-    t = doc.add_table(rows=1, cols=1)
-    t.autofit = False
-    t.columns[0].width = Cm(17.5)
-    cell = t.rows[0].cells[0]
-    _shade_cell(cell, "FDF6E3")
-    _set_cell_border(cell, color="D4A40E", sz=4)
-    p = cell.paragraphs[0]
-    r = p.add_run("Ejemplo orientativo (caso La Espiga) — NO copies esto a tu MiPyME")
-    r.font.bold = True
-    r.font.color.rgb = RGB_AZUL
-    r.font.size = Pt(9.5)
-    para = cell.add_paragraph()
-    r = para.add_run(text)
-    r.font.italic = True
-    r.font.size = Pt(10)
-    r.font.color.rgb = RGBColor(0x6A, 0x52, 0x08)
-    doc.add_paragraph()
-
-
-def _add_question_block(doc, idx, title, help_text):
-    """Bloque pregunta con número, título, ayuda y zona para llenar."""
-    p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(10)
-    n = p.add_run(f"  {idx}  ")
-    n.font.bold = True
-    n.font.color.rgb = RGB_BLANCO
-    n.font.size = Pt(11)
-    rPr = n._r.get_or_add_rPr()
-    shd = OxmlElement('w:shd')
-    shd.set(qn('w:val'), 'clear')
-    shd.set(qn('w:color'), 'auto')
-    shd.set(qn('w:fill'), COLOR_AZUL)
-    rPr.append(shd)
-    sp = p.add_run("  ")
-    sp.font.size = Pt(11)
-    t = p.add_run(title)
-    t.font.bold = True
-    t.font.color.rgb = RGB_AZUL
-    t.font.size = Pt(12)
-
-    h = doc.add_paragraph()
-    h.paragraph_format.left_indent = Cm(1.0)
-    h_r = h.add_run(help_text)
-    h_r.font.italic = True
-    h_r.font.size = Pt(10)
-    h_r.font.color.rgb = RGB_GRIS_TXT
-
-    # zona para llenar (tabla 1x1 con fondo gris suave)
-    t = doc.add_table(rows=1, cols=1)
-    t.autofit = False
-    t.columns[0].width = Cm(16.5)
-    cell = t.rows[0].cells[0]
-    cell.width = Cm(16.5)
-    _shade_cell(cell, COLOR_GRIS_BG)
-    _set_cell_border(cell, color=COLOR_GRIS_BORDE, sz=4)
-    p_in = cell.paragraphs[0]
-    p_in.paragraph_format.left_indent = Cm(0.3)
-    r = p_in.add_run("[ Escribe aquí la respuesta para TU MiPyME. Borra este marcador antes de presentar. ]")
-    r.font.italic = True
-    r.font.color.rgb = RGBColor(0xAA, 0xAA, 0xAA)
-    r.font.size = Pt(10)
-    # añadir altura mínima al bloque vía 3 párrafos vacíos
-    for _ in range(3):
-        cell.add_paragraph()
-    doc.add_paragraph()
-
-
-def _add_footer(doc, prod):
-    p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p.paragraph_format.space_before = Pt(20)
-    r = p.add_run(f"Producto {prod['num']} · Mi CompañIA · FUNDES · Iniciativa AIxMiPyMEs")
-    r.font.size = Pt(8)
-    r.font.italic = True
-    r.font.color.rgb = RGBColor(0x99, 0x99, 0x99)
-
-
-# =============================================================================
-# GENERADOR WORD (.docx)
-# =============================================================================
-
-def generate_word(prod):
-    doc = Document()
-    # margenes
-    for section in doc.sections:
-        section.top_margin = Cm(2.0)
-        section.bottom_margin = Cm(2.0)
-        section.left_margin = Cm(1.8)
-        section.right_margin = Cm(1.8)
-
-    _add_brand_header(doc, prod)
-    _add_project_data_block(doc)
-    _add_intro_box(doc, prod["intro"])
-    _add_f21_box(doc, prod["f21"])
-    _add_espiga_box(doc, prod["espiga"])
-
-    h = doc.add_paragraph()
-    r = h.add_run("Preguntas guía para construir el producto")
-    r.font.bold = True
-    r.font.size = Pt(13)
-    r.font.color.rgb = RGB_AZUL
-    p_pr = h._p.get_or_add_pPr()
-    p_bdr = OxmlElement('w:pBdr')
-    bottom = OxmlElement('w:bottom')
-    bottom.set(qn('w:val'), 'single')
-    bottom.set(qn('w:sz'), '8')
-    bottom.set(qn('w:color'), COLOR_AMARILLO)
-    p_bdr.append(bottom)
-    p_pr.append(p_bdr)
-
-    for i, (title, help_text) in enumerate(prod["preguntas"], start=1):
-        _add_question_block(doc, i, title, help_text)
-
-    _add_footer(doc, prod)
-    return doc
-
-
-# =============================================================================
-# UTILIDADES openpyxl
-# =============================================================================
-
-THIN = Side(style="thin", color="DDDDDD")
-BORDER_ALL = Border(left=THIN, right=THIN, top=THIN, bottom=THIN)
-BORDER_NONE = Border()
-FILL_AZUL = PatternFill("solid", fgColor=COLOR_AZUL)
-FILL_AZUL_CLARO = PatternFill("solid", fgColor=COLOR_AZUL_CLARO)
-FILL_AMARILLO = PatternFill("solid", fgColor=COLOR_AMARILLO)
-FILL_AMARILLO_CLARO = PatternFill("solid", fgColor=COLOR_AMARILLO_CLARO)
-FILL_GRIS = PatternFill("solid", fgColor=COLOR_GRIS_BG)
-FILL_ESPIGA = PatternFill("solid", fgColor="FDF6E3")
-FILL_TAX = PatternFill("solid", fgColor=COLOR_TAX_FG)
-FILL_F21 = PatternFill("solid", fgColor=COLOR_AZUL_CLARO)
-ALIGN_WRAP = Alignment(wrap_text=True, vertical="top")
-ALIGN_WRAP_CENTER = Alignment(wrap_text=True, vertical="center", horizontal="center")
-
-FONT_TITULO = Font(name="Calibri", size=16, bold=True, color=COLOR_AZUL)
-FONT_SUB = Font(name="Calibri", size=10, color="666666")
-FONT_HEADER = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
-FONT_BOLD_AZUL = Font(name="Calibri", size=11, bold=True, color=COLOR_AZUL)
-FONT_NORMAL = Font(name="Calibri", size=10, color="333333")
-FONT_HELP = Font(name="Calibri", size=9, italic=True, color="666666")
-FONT_BRAND = Font(name="Calibri", size=11, bold=True, color=COLOR_AMARILLO)
-
-
-def _ws_brand_header(ws, prod, total_cols=8):
-    """Bloque de encabezado de marca en hoja de Excel."""
-    ws.merge_cells(start_row=1, start_column=1, end_row=2, end_column=1)
-    cell = ws.cell(row=1, column=1, value="Mi\nCompañIA")
-    cell.fill = FILL_AZUL
-    cell.font = FONT_BRAND
-    cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
-    ws.column_dimensions["A"].width = 11
-
-    ws.merge_cells(start_row=1, start_column=2, end_row=1, end_column=total_cols)
-    cell = ws.cell(row=1, column=2, value=prod["title"])
-    cell.font = FONT_TITULO
-    cell.alignment = Alignment(horizontal="left", vertical="center")
-
-    ws.merge_cells(start_row=2, start_column=2, end_row=2, end_column=total_cols)
-    cell = ws.cell(row=2, column=2, value=f"Producto {prod['num']} · Elemento {prod['elemento']} · Estándar A · Implementar IA")
-    cell.font = FONT_SUB
-    cell.alignment = Alignment(horizontal="left", vertical="center")
-
-    ws.row_dimensions[1].height = 28
-    ws.row_dimensions[2].height = 18
-
-    # franja amarilla
-    ws.row_dimensions[3].height = 6
-    for c in range(1, total_cols + 1):
-        ws.cell(row=3, column=c).fill = FILL_AMARILLO
-
-
-def _ws_meta_block(ws, start_row, total_cols=8):
-    """Bloque de datos del proyecto."""
-    row = start_row
-    labels = ["Nombre de la MiPyME:", "Responsable del proyecto:", "Fecha de elaboración:", "Versión:"]
-    for i, label in enumerate(labels):
-        ws.cell(row=row + i, column=1, value=label).font = FONT_BOLD_AZUL
-        ws.cell(row=row + i, column=1).fill = FILL_AZUL_CLARO
-        ws.merge_cells(start_row=row + i, start_column=2, end_row=row + i, end_column=total_cols)
-        c = ws.cell(row=row + i, column=2, value="")
-        c.fill = FILL_AZUL_CLARO
-        c.border = Border(bottom=Side(style="thin", color="999999"))
-        ws.row_dimensions[row + i].height = 22
-    return row + len(labels)
-
-
-def _ws_intro(ws, start_row, text, total_cols=8):
-    ws.merge_cells(start_row=start_row, start_column=1, end_row=start_row, end_column=total_cols)
-    c = ws.cell(row=start_row, column=1, value=text)
-    c.fill = FILL_AMARILLO_CLARO
-    c.font = Font(name="Calibri", size=10, italic=True, color="555555")
-    c.alignment = Alignment(wrap_text=True, vertical="center", horizontal="left", indent=1)
-    ws.row_dimensions[start_row].height = 50
-    return start_row + 1
-
-
-def _ws_f21(ws, start_row, criterios, total_cols=8):
-    ws.merge_cells(start_row=start_row, start_column=1, end_row=start_row, end_column=total_cols)
-    c = ws.cell(row=start_row, column=1, value="CRITERIO F21 · LO QUE EL EVALUADOR VERIFICA")
-    c.font = Font(name="Calibri", size=10, bold=True, color=COLOR_AZUL)
-    c.fill = FILL_F21
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
-    ws.row_dimensions[start_row].height = 20
-    start_row += 1
-    for crit in criterios:
-        ws.merge_cells(start_row=start_row, start_column=1, end_row=start_row, end_column=total_cols)
-        is_tax = "REQUISITO TAXATIVO" in crit
-        clean = "•  " + crit.replace("(REQUISITO TAXATIVO)", "").strip()
-        if is_tax:
-            clean += "   ⚠ REQUISITO TAXATIVO"
-        c = ws.cell(row=start_row, column=1, value=clean)
-        c.fill = FILL_F21
-        c.font = Font(name="Calibri", size=10, bold=is_tax, color=COLOR_TAX_FG if is_tax else "333333")
-        c.alignment = Alignment(wrap_text=True, vertical="center", indent=1)
-        ws.row_dimensions[start_row].height = 30 if is_tax else 22
-        start_row += 1
-    return start_row + 1
-
-
-def _ws_espiga(ws, start_row, text, total_cols=8):
-    ws.merge_cells(start_row=start_row, start_column=1, end_row=start_row, end_column=total_cols)
-    c = ws.cell(row=start_row, column=1, value="Ejemplo orientativo (caso La Espiga) — NO copies esto a tu MiPyME")
-    c.font = Font(name="Calibri", size=9, bold=True, color=COLOR_AZUL)
-    c.fill = FILL_ESPIGA
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
-    ws.row_dimensions[start_row].height = 18
-    start_row += 1
-    ws.merge_cells(start_row=start_row, start_column=1, end_row=start_row, end_column=total_cols)
-    c = ws.cell(row=start_row, column=1, value=text)
-    c.font = Font(name="Calibri", size=10, italic=True, color="6A5208")
-    c.fill = FILL_ESPIGA
-    c.alignment = Alignment(wrap_text=True, vertical="top", indent=1)
-    ws.row_dimensions[start_row].height = 60
-    return start_row + 1
-
-
-# =============================================================================
-# GENERADOR EXCEL (.xlsx) — 3 productos con hojas a la medida
-# =============================================================================
-
-def generate_excel_1_4_5(prod):
-    """Matriz impacto/viabilidad — con fórmula de prioridad."""
-    wb = Workbook()
-    # Hoja 1: Instructivo
-    ws = wb.active
-    ws.title = "Instructivo"
-    _ws_brand_header(ws, prod, total_cols=8)
-    r = _ws_meta_block(ws, 4, total_cols=8) + 1
-    r = _ws_intro(ws, r, prod["intro"], total_cols=8) + 1
-    r = _ws_f21(ws, r, prod["f21"], total_cols=8)
-    r = _ws_espiga(ws, r, prod["espiga"], total_cols=8) + 1
-    ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-    c = ws.cell(row=r, column=1, value="Preguntas guía → llena la pestaña 'Matriz' con tus oportunidades reales")
-    c.font = FONT_BOLD_AZUL
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
-    r += 1
-    for i, (q, help_text) in enumerate(prod["preguntas"], start=1):
-        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-        c = ws.cell(row=r, column=1, value=f"{i}. {q}")
-        c.font = Font(name="Calibri", size=11, bold=True, color=COLOR_AZUL)
-        c.alignment = Alignment(wrap_text=True, vertical="center", indent=1)
-        ws.row_dimensions[r].height = 20
-        r += 1
-        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-        c = ws.cell(row=r, column=1, value=help_text)
-        c.font = FONT_HELP
-        c.alignment = Alignment(wrap_text=True, vertical="top", indent=2)
-        ws.row_dimensions[r].height = 32
-        r += 1
-
-    # Hoja 2: Matriz (la útil)
-    ws2 = wb.create_sheet("Matriz")
-    _ws_brand_header(ws2, prod, total_cols=8)
-    headers = ["#", "Oportunidad detectada", "Herramienta sugerida", "Impacto (1-5)", "Viabilidad (1-5)", "Esfuerzo (1-5)", "Score = I+V+E", "Beneficio esperado"]
-    widths = [5, 30, 25, 12, 12, 12, 13, 35]
-    for i, (h, w) in enumerate(zip(headers, widths), start=1):
-        c = ws2.cell(row=4, column=i, value=h)
-        c.fill = FILL_AZUL
-        c.font = FONT_HEADER
-        c.alignment = ALIGN_WRAP_CENTER
-        c.border = BORDER_ALL
-        ws2.column_dimensions[get_column_letter(i)].width = w
-    ws2.row_dimensions[4].height = 30
-
-    # 8 filas de oportunidades vacías + fórmula
-    for i in range(5, 13):
-        ws2.cell(row=i, column=1, value=i - 4).alignment = ALIGN_WRAP_CENTER
-        ws2.cell(row=i, column=7, value=f"=SUM(D{i}:F{i})")
-        for col in range(1, 9):
-            cell = ws2.cell(row=i, column=col)
-            cell.border = BORDER_ALL
-            cell.alignment = ALIGN_WRAP if col not in (1, 4, 5, 6, 7) else ALIGN_WRAP_CENTER
-            cell.font = FONT_NORMAL
-        ws2.row_dimensions[i].height = 36
-
-    # Sección de priorización debajo
-    pr_row = 15
-    ws2.merge_cells(start_row=pr_row, start_column=1, end_row=pr_row, end_column=8)
-    c = ws2.cell(row=pr_row, column=1, value="Priorización final — escribe aquí qué oportunidades llevas a primera fase y por qué")
-    c.font = FONT_BOLD_AZUL
-    c.fill = FILL_AMARILLO_CLARO
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
-    ws2.row_dimensions[pr_row].height = 22
-    for r in range(pr_row + 1, pr_row + 6):
-        ws2.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-        c = ws2.cell(row=r, column=1, value="")
-        c.fill = FILL_GRIS
-        c.border = Border(bottom=THIN)
-
-    return wb
-
-
-def generate_excel_1_4_6(prod):
-    """Hoja de ruta con Gantt por semanas."""
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "Instructivo"
-    _ws_brand_header(ws, prod, total_cols=10)
-    r = _ws_meta_block(ws, 4, total_cols=10) + 1
-    r = _ws_intro(ws, r, prod["intro"], total_cols=10) + 1
-    r = _ws_f21(ws, r, prod["f21"], total_cols=10)
-    r = _ws_espiga(ws, r, prod["espiga"], total_cols=10) + 1
-    ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=10)
-    c = ws.cell(row=r, column=1, value="Preguntas guía → llena la pestaña 'Gantt' con las fases reales de tu proyecto")
-    c.font = FONT_BOLD_AZUL
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
-    r += 1
-    for i, (q, h) in enumerate(prod["preguntas"], start=1):
-        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=10)
-        ws.cell(row=r, column=1, value=f"{i}. {q}").font = Font(name="Calibri", size=11, bold=True, color=COLOR_AZUL)
-        ws.cell(row=r, column=1).alignment = Alignment(wrap_text=True, vertical="center", indent=1)
-        ws.row_dimensions[r].height = 20
-        r += 1
-        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=10)
-        ws.cell(row=r, column=1, value=h).font = FONT_HELP
-        ws.cell(row=r, column=1).alignment = Alignment(wrap_text=True, vertical="top", indent=2)
-        ws.row_dimensions[r].height = 32
-        r += 1
-
-    # Hoja 2: Gantt
-    ws2 = wb.create_sheet("Gantt")
-    _ws_brand_header(ws2, prod, total_cols=12)
-    headers = ["Fase", "Actividad", "Responsable"] + [f"S{i}" for i in range(1, 9)] + ["Notas"]
-    widths = [12, 30, 18] + [5] * 8 + [25]
-    for i, (h, w) in enumerate(zip(headers, widths), start=1):
-        c = ws2.cell(row=4, column=i, value=h)
-        c.fill = FILL_AZUL
-        c.font = FONT_HEADER
-        c.alignment = ALIGN_WRAP_CENTER
-        c.border = BORDER_ALL
-        ws2.column_dimensions[get_column_letter(i)].width = w
-    ws2.row_dimensions[4].height = 30
-    # 15 filas vacías
-    for i in range(5, 20):
-        for col in range(1, 13):
-            cell = ws2.cell(row=i, column=col)
-            cell.border = BORDER_ALL
-            cell.alignment = ALIGN_WRAP if col in (1, 2, 3, 12) else ALIGN_WRAP_CENTER
-            cell.font = FONT_NORMAL
-        ws2.row_dimensions[i].height = 24
-
-    # Hoja 3: Recursos
-    ws3 = wb.create_sheet("Recursos")
-    _ws_brand_header(ws3, prod, total_cols=5)
-    headers = ["Tipo", "Recurso", "Cantidad", "Costo estimado (MXN)", "Notas"]
-    widths = [18, 30, 12, 22, 35]
-    for i, (h, w) in enumerate(zip(headers, widths), start=1):
-        c = ws3.cell(row=4, column=i, value=h)
-        c.fill = FILL_AZUL
-        c.font = FONT_HEADER
-        c.alignment = ALIGN_WRAP_CENTER
-        c.border = BORDER_ALL
-        ws3.column_dimensions[get_column_letter(i)].width = w
-    ws3.row_dimensions[4].height = 30
-    tipos = ["Tecnológico", "Tecnológico", "Tecnológico", "Humano", "Humano", "Financiero", "Financiero"]
-    for i, t in enumerate(tipos, start=5):
-        ws3.cell(row=i, column=1, value=t).font = FONT_BOLD_AZUL
-        for col in range(1, 6):
-            ws3.cell(row=i, column=col).border = BORDER_ALL
-            ws3.cell(row=i, column=col).alignment = ALIGN_WRAP if col != 4 else ALIGN_WRAP_CENTER
-        ws3.row_dimensions[i].height = 24
-
-    return wb
-
-
-def generate_excel_4_4_1(prod):
-    """Reporte de resultados con tabla comparativa antes/después."""
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "Instructivo"
-    _ws_brand_header(ws, prod, total_cols=8)
-    r = _ws_meta_block(ws, 4, total_cols=8) + 1
-    r = _ws_intro(ws, r, prod["intro"], total_cols=8) + 1
-    r = _ws_f21(ws, r, prod["f21"], total_cols=8)
-    r = _ws_espiga(ws, r, prod["espiga"], total_cols=8) + 1
-    ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-    c = ws.cell(row=r, column=1, value="Llena la pestaña 'Indicadores' con tus métricas reales. Usa 'Incidencias' para el registro de fallos, 'Adopción' para el uso del personal.")
-    c.font = FONT_BOLD_AZUL
-    c.alignment = Alignment(wrap_text=True, vertical="center", indent=1)
-    ws.row_dimensions[r].height = 30
-    r += 1
-    for i, (q, h) in enumerate(prod["preguntas"], start=1):
-        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-        ws.cell(row=r, column=1, value=f"{i}. {q}").font = Font(name="Calibri", size=11, bold=True, color=COLOR_AZUL)
-        ws.cell(row=r, column=1).alignment = Alignment(wrap_text=True, vertical="center", indent=1)
-        ws.row_dimensions[r].height = 20
-        r += 1
-        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=8)
-        ws.cell(row=r, column=1, value=h).font = FONT_HELP
-        ws.cell(row=r, column=1).alignment = Alignment(wrap_text=True, vertical="top", indent=2)
-        ws.row_dimensions[r].height = 32
-        r += 1
-
-    # Hoja 2: Indicadores
-    ws2 = wb.create_sheet("Indicadores")
-    _ws_brand_header(ws2, prod, total_cols=6)
-    headers = ["#", "Indicador", "Unidad", "Línea base (antes)", "Valor actual (después)", "Variación %"]
-    widths = [5, 32, 12, 20, 20, 14]
-    for i, (h, w) in enumerate(zip(headers, widths), start=1):
-        c = ws2.cell(row=4, column=i, value=h)
-        c.fill = FILL_AZUL
-        c.font = FONT_HEADER
-        c.alignment = ALIGN_WRAP_CENTER
-        c.border = BORDER_ALL
-        ws2.column_dimensions[get_column_letter(i)].width = w
-    ws2.row_dimensions[4].height = 30
-    for i in range(5, 13):
-        ws2.cell(row=i, column=1, value=i - 4).alignment = ALIGN_WRAP_CENTER
-        ws2.cell(row=i, column=6, value=f'=IFERROR((E{i}-D{i})/D{i}, "")')
-        ws2.cell(row=i, column=6).number_format = "0.0%"
-        for col in range(1, 7):
-            ws2.cell(row=i, column=col).border = BORDER_ALL
-            ws2.cell(row=i, column=col).alignment = ALIGN_WRAP if col == 2 else ALIGN_WRAP_CENTER
-            ws2.cell(row=i, column=col).font = FONT_NORMAL
-        ws2.row_dimensions[i].height = 30
-
-    # bloque ROI
-    roi_row = 15
-    ws2.merge_cells(start_row=roi_row, start_column=1, end_row=roi_row, end_column=6)
-    c = ws2.cell(row=roi_row, column=1, value="Cálculo de ROI")
-    c.font = FONT_BOLD_AZUL
-    c.fill = FILL_AMARILLO_CLARO
-    c.alignment = Alignment(horizontal="left", vertical="center", indent=1)
-    pairs = [("Beneficio total estimado (MXN)", "B17"), ("Costo total del proyecto (MXN)", "B18"), ("ROI estimado (%)", "B19")]
-    for i, (label, ref) in enumerate(pairs, start=16):
-        ws2.cell(row=i + 1, column=1, value=label).font = FONT_BOLD_AZUL
-        ws2.cell(row=i + 1, column=2, value=0).fill = FILL_GRIS
-        ws2.cell(row=i + 1, column=2).border = BORDER_ALL
-    ws2.cell(row=19, column=2, value="=IFERROR((B17-B18)/B18, \"\")")
-    ws2.cell(row=19, column=2).number_format = "0.0%"
-
-    # Hoja 3: Incidencias
-    ws3 = wb.create_sheet("Incidencias")
-    _ws_brand_header(ws3, prod, total_cols=5)
-    headers = ["Fecha", "¿Qué ocurrió?", "Impacto", "Acción correctiva", "Aprendizaje"]
-    widths = [14, 35, 18, 35, 30]
-    for i, (h, w) in enumerate(zip(headers, widths), start=1):
-        c = ws3.cell(row=4, column=i, value=h)
-        c.fill = FILL_AZUL
-        c.font = FONT_HEADER
-        c.alignment = ALIGN_WRAP_CENTER
-        c.border = BORDER_ALL
-        ws3.column_dimensions[get_column_letter(i)].width = w
-    ws3.row_dimensions[4].height = 30
-    for i in range(5, 13):
-        for col in range(1, 6):
-            ws3.cell(row=i, column=col).border = BORDER_ALL
-            ws3.cell(row=i, column=col).alignment = ALIGN_WRAP
-            ws3.cell(row=i, column=col).font = FONT_NORMAL
-        ws3.row_dimensions[i].height = 30
-
-    # Hoja 4: Adopción
-    ws4 = wb.create_sheet("Adopción")
-    _ws_brand_header(ws4, prod, total_cols=5)
-    headers = ["Solución", "Personal capacitado", "Personal que la usa activamente", "% adopción", "Evidencia (log, encuesta, etc.)"]
-    widths = [25, 18, 24, 12, 35]
-    for i, (h, w) in enumerate(zip(headers, widths), start=1):
-        c = ws4.cell(row=4, column=i, value=h)
-        c.fill = FILL_AZUL
-        c.font = FONT_HEADER
-        c.alignment = ALIGN_WRAP_CENTER
-        c.border = BORDER_ALL
-        ws4.column_dimensions[get_column_letter(i)].width = w
-    ws4.row_dimensions[4].height = 30
-    for i in range(5, 10):
-        ws4.cell(row=i, column=4, value=f'=IFERROR(C{i}/B{i}, "")')
-        ws4.cell(row=i, column=4).number_format = "0.0%"
-        for col in range(1, 6):
-            ws4.cell(row=i, column=col).border = BORDER_ALL
-            ws4.cell(row=i, column=col).alignment = ALIGN_WRAP if col in (1, 5) else ALIGN_WRAP_CENTER
-            ws4.cell(row=i, column=col).font = FONT_NORMAL
-        ws4.row_dimensions[i].height = 30
-
-    return wb
-
-
-EXCEL_GENERATORS = {
-    "1.4.5": generate_excel_1_4_5,
-    "1.4.6": generate_excel_1_4_6,
-    "4.4.1": generate_excel_4_4_1,
+# ===========================================================================
+# PLANTILLAS POR FORMATO
+# ===========================================================================
+
+BASE_STYLES = """
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
 }
 
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+.f21-box .taxativo { background: #FFE0E0; color: #C0392B; font-weight: bold; padding: 1pt 6pt; border-radius: 3pt; font-size: 9pt; margin-left: 4pt; }
 
-# =============================================================================
-# GENERADOR POWERPOINT (.pptx)
-# =============================================================================
+.espiga-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.espiga-box strong { color: #28467e; font-style: normal; }
 
-def _ppt_fill_solid(shape, color):
-    shape.fill.solid()
-    shape.fill.fore_color.rgb = color
-    shape.line.fill.background()
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+"""
+
+WORD_TEMPLATE = """<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<title>{num} · {title}</title>
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
+<![endif]-->
+<style>{base_styles}</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>{title}</h1>
+<p class="subtitle">Manual de Implementar IA · Producto del Elemento {elemento}</p>
+</td>
+<td class="meta"><strong>Producto {num}</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> {intro} Tu evaluador no busca que llenes el template — busca que respondas con datos de TU MiPyME real. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul>{f21_html}</ul>
+</div>
+
+<div class="espiga-box"><strong>Caso pedagógico La Espiga (ilustrativo, NO es tu solución):</strong> {espiga}</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Fecha del documento</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+{questions_html}
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Template del Manual de Implementar IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+</div>
+
+</body>
+</html>
+"""
+
+EXCEL_TEMPLATE = """<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:x="urn:schemas-microsoft-com:office:excel"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Excel.Sheet">
+<meta name="Generator" content="Microsoft Excel">
+<title>{num} · {title}</title>
+<!--[if gte mso 9]>
+<xml><x:ExcelWorkbook><x:ExcelWorksheets>
+<x:ExcelWorksheet><x:Name>{num}</x:Name><x:WorksheetOptions><x:Panes><x:Pane><x:Number>3</x:Number></x:Pane></x:Panes></x:WorksheetOptions></x:ExcelWorksheet>
+</x:ExcelWorksheets></x:ExcelWorkbook></xml>
+<![endif]-->
+<style>{base_styles}
+table.matrix {{ border-collapse: collapse; width: 100%; margin: 10pt 0; font-size: 10pt; }}
+table.matrix th, table.matrix td {{ border: 1pt solid #999; padding: 6pt 8pt; vertical-align: top; }}
+table.matrix th {{ background: #28467e; color: white; font-weight: bold; text-align: left; }}
+table.matrix tr.score th {{ background: #f7c031; color: #28467e; }}
+table.matrix td.fill {{ background: #fffbe6; min-height: 22pt; height: 22pt; color: #aaa; font-style: italic; }}
+table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>{title}</h1>
+<p class="subtitle">Manual de Implementar IA · Producto del Elemento {elemento} · Excel</p>
+</td>
+<td class="meta"><strong>Producto {num}</strong><br>Hoja editable · Excel<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> {intro} Excel es el formato natural para esta clase de producto: te permite añadir filas conforme detectes más oportunidades, ordenar por puntaje y generar gráficas. <strong>Llénalo con datos de TU MiPyME real.</strong></div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul>{f21_html}</ul>
+</div>
+
+<div class="espiga-box"><strong>Caso pedagógico La Espiga (ilustrativo):</strong> {espiga}</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME</td><td><span class="blank">&nbsp;</span></td><td>Fecha</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor</td><td><span class="blank">&nbsp;</span></td><td>Responsable MiPyME</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+{questions_html}
+
+{matrix_html}
+
+<div class="footer">
+Mi CompañIA · FUNDES Latinoamérica con el apoyo de Google.org · Template Excel del Manual de Implementar IA
+</div>
+
+</body>
+</html>
+"""
+
+WORD_GUIDE_TEMPLATE = """<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<title>{num} · {title}</title>
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
+<![endif]-->
+<style>{base_styles}
+.lamina {{
+  page-break-before: always;
+  page-break-inside: avoid;
+  padding: 18pt 6pt;
+  position: relative;
+}}
+.lamina:first-of-type {{ page-break-before: avoid; }}
+.lamina-num {{
+  display: inline-block;
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 11pt;
+  padding: 4pt 14pt;
+  border-radius: 14pt;
+  letter-spacing: 0.08em;
+}}
+.lamina h2 {{
+  font-size: 26pt;
+  color: #28467e;
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 8pt;
+  margin: 10pt 0 18pt 0;
+  line-height: 1.15;
+}}
+.lamina-help {{
+  font-size: 11.5pt;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 16pt;
+  line-height: 1.55;
+}}
+.captura-box {{
+  border: 1.5pt dashed #cce0f5;
+  background: #f5f9ff;
+  padding: 28pt 18pt;
+  margin: 12pt 0 16pt;
+  text-align: center;
+  color: #6d8db6;
+  font-style: italic;
+  font-size: 10pt;
+  min-height: 110pt;
+}}
+.prompt-box {{
+  background: #fff7d6;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 16pt 0;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 10pt;
+  color: #5a4400;
+  line-height: 1.55;
+}}
+.prompt-label {{
+  display: block;
+  font-family: 'Calibri', sans-serif;
+  font-weight: bold;
+  color: #28467e;
+  font-size: 10pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6pt;
+}}
+.errors-table {{
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12pt 0;
+  font-size: 10pt;
+}}
+.errors-table th, .errors-table td {{
+  border: 1pt solid #ccc;
+  padding: 8pt 10pt;
+  vertical-align: top;
+}}
+.errors-table th {{
+  background: #28467e;
+  color: white;
+  text-align: left;
+}}
+.errors-table td.fill {{ background: #fafafa; color: #aaa; font-style: italic; min-height: 28pt; }}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>{title}</h1>
+<p class="subtitle">Manual de Implementar IA · Producto del Elemento {elemento} · Guía visual</p>
+</td>
+<td class="meta"><strong>Producto {num}</strong><br>Guía editable · Word<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre esta guía.</strong> {intro}</div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul>{f21_html}</ul>
+</div>
+
+<div class="espiga-box"><strong>Caso pedagógico La Espiga (ilustrativo, NO es tu material):</strong> {espiga}</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Personal capacitado (nombres + cargo)</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Fecha de la capacitación</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Soluciones cubiertas en esta guía</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2 style="page-break-after: avoid;">Estructura de la guía · una lámina por sección</h2>
+<p style="font-size: 10pt; color: #666; margin-bottom: 18pt;">Cada bloque a continuación es una lámina maquetada (cada una imprime en su propia página). Reemplaza los marcadores con tu contenido. Si quieres convertirla en presentación, copia cada lámina como diapositiva de PowerPoint y la conversión queda en minutos.</p>
+
+{questions_html}
+
+<div class="footer">
+Mi CompañIA · FUNDES Latinoamérica con el apoyo de Google.org · Guía visual del Manual de Implementar IA
+</div>
+
+</body>
+</html>
+"""
 
 
-def _ppt_textbox(slide, left, top, width, height, text, *, size=18, bold=False, color=PPT_AZUL, align=PP_ALIGN.LEFT, italic=False):
-    tb = slide.shapes.add_textbox(left, top, width, height)
-    tf = tb.text_frame
-    tf.word_wrap = True
-    p = tf.paragraphs[0]
-    p.alignment = align
-    run = p.add_run()
-    run.text = text
-    run.font.size = PPTPt(size)
-    run.font.bold = bold
-    run.font.italic = italic
-    run.font.color.rgb = color
-    return tb
+# ===========================================================================
+# RENDERIZADORES
+# ===========================================================================
 
-
-def generate_pptx(prod):
-    prs = Presentation()
-    prs.slide_width = Inches(13.333)
-    prs.slide_height = Inches(7.5)
-    SLIDE_W = prs.slide_width
-    SLIDE_H = prs.slide_height
-    blank = prs.slide_layouts[6]
-
-    # ---- Slide 1: portada ----
-    s = prs.slides.add_slide(blank)
-    bg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, SLIDE_W, SLIDE_H)
-    _ppt_fill_solid(bg, PPT_AZUL)
-    # bloque amarillo abajo
-    band = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, Inches(6.7), SLIDE_W, Inches(0.8))
-    _ppt_fill_solid(band, PPT_AMARILLO)
-    # bloque Mi CompañIA
-    badge = s.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.6), Inches(0.5), Inches(1.6), Inches(1.0))
-    _ppt_fill_solid(badge, PPT_AMARILLO)
-    tf = badge.text_frame
-    tf.word_wrap = True
-    tf.margin_left = tf.margin_right = Inches(0.05)
-    p = tf.paragraphs[0]
-    p.alignment = PP_ALIGN.CENTER
-    run = p.add_run()
-    run.text = "Mi CompañIA"
-    run.font.size = PPTPt(14)
-    run.font.bold = True
-    run.font.color.rgb = PPT_AZUL
-
-    _ppt_textbox(s, Inches(0.6), Inches(2.5), Inches(12), Inches(1.0),
-                 f"PRODUCTO {prod['num']}", size=18, bold=True, color=PPT_AMARILLO)
-    _ppt_textbox(s, Inches(0.6), Inches(3.0), Inches(12), Inches(2.0),
-                 prod["title"], size=40, bold=True, color=PPT_BLANCO)
-    _ppt_textbox(s, Inches(0.6), Inches(5.2), Inches(12), Inches(0.8),
-                 f"Elemento {prod['elemento']}  ·  Estándar A · Implementar IA", size=16, color=PPT_BLANCO)
-    _ppt_textbox(s, Inches(0.6), Inches(6.9), Inches(12), Inches(0.4),
-                 "FUNDES Latinoamérica  ·  Iniciativa AIxMiPyMEs", size=11, bold=True, color=PPT_AZUL)
-
-    # ---- Slide 2: datos del proyecto ----
-    s = prs.slides.add_slide(blank)
-    _ppt_header_bar(s, prod, SLIDE_W)
-    _ppt_textbox(s, Inches(0.5), Inches(1.2), Inches(12), Inches(0.6),
-                 "Datos del proyecto — completa antes de capacitar", size=24, bold=True, color=PPT_AZUL)
-    fields = [
-        "Nombre de la MiPyME:",
-        "Personal asistente (nombres + cargos):",
-        "Fecha de la capacitación:",
-        "Duración estimada:",
-        "Soluciones cubiertas en esta capacitación:",
-    ]
-    for i, label in enumerate(fields):
-        top = Inches(2.2 + i * 0.75)
-        box = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.5), top, Inches(12.3), Inches(0.55))
-        _ppt_fill_solid(box, PPT_AZUL_CLARO)
-        tf = box.text_frame
-        tf.margin_left = Inches(0.2)
-        tf.vertical_anchor = 3
-        p = tf.paragraphs[0]
-        run = p.add_run()
-        run.text = label
-        run.font.size = PPTPt(14)
-        run.font.bold = True
-        run.font.color.rgb = PPT_AZUL
-
-    # ---- Slide 3: Criterio F21 ----
-    s = prs.slides.add_slide(blank)
-    _ppt_header_bar(s, prod, SLIDE_W)
-    _ppt_textbox(s, Inches(0.5), Inches(1.2), Inches(12.3), Inches(0.6),
-                 "Criterio F21 — lo que el evaluador verifica", size=24, bold=True, color=PPT_AZUL)
-    box = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.5), Inches(2.0), Inches(12.3), Inches(5.0))
-    _ppt_fill_solid(box, PPT_AZUL_CLARO)
-    tf = box.text_frame
-    tf.word_wrap = True
-    tf.margin_left = Inches(0.3)
-    tf.margin_top = Inches(0.2)
-    for i, crit in enumerate(prod["f21"]):
-        is_tax = "REQUISITO TAXATIVO" in crit
-        clean = crit.replace("(REQUISITO TAXATIVO)", "").strip()
-        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
-        p.space_after = PPTPt(8)
-        r = p.add_run()
-        r.text = "• " + clean
-        r.font.size = PPTPt(13)
-        r.font.color.rgb = PPT_AZUL if not is_tax else PPT_TAX
-        r.font.bold = is_tax
+def render_f21(criterios):
+    html = ""
+    for c in criterios:
+        is_tax = "REQUISITO TAXATIVO" in c
+        text = c.replace(" (REQUISITO TAXATIVO)", "")
         if is_tax:
-            r2 = p.add_run()
-            r2.text = "   ⚠ REQUISITO TAXATIVO"
-            r2.font.size = PPTPt(11)
-            r2.font.bold = True
-            r2.font.color.rgb = PPT_TAX
-
-    # ---- Slide 4: Caso La Espiga ----
-    s = prs.slides.add_slide(blank)
-    _ppt_header_bar(s, prod, SLIDE_W)
-    _ppt_textbox(s, Inches(0.5), Inches(1.2), Inches(12.3), Inches(0.6),
-                 "Ejemplo del caso La Espiga (orientativo, NO copies)", size=22, bold=True, color=PPT_AZUL)
-    box = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.5), Inches(2.0), Inches(12.3), Inches(4.5))
-    _ppt_fill_solid(box, PPTColor(0xFD, 0xF6, 0xE3))
-    tf = box.text_frame
-    tf.word_wrap = True
-    tf.margin_left = Inches(0.3)
-    tf.margin_top = Inches(0.3)
-    p = tf.paragraphs[0]
-    r = p.add_run()
-    r.text = prod["espiga"]
-    r.font.size = PPTPt(16)
-    r.font.italic = True
-    r.font.color.rgb = PPTColor(0x6A, 0x52, 0x08)
-
-    # ---- Slides por cada pregunta guía ----
-    for i, (title, help_text) in enumerate(prod["preguntas"], start=1):
-        s = prs.slides.add_slide(blank)
-        _ppt_header_bar(s, prod, SLIDE_W)
-        # número grande
-        circle = s.shapes.add_shape(MSO_SHAPE.OVAL, Inches(0.5), Inches(1.2), Inches(0.9), Inches(0.9))
-        _ppt_fill_solid(circle, PPT_AZUL)
-        tf = circle.text_frame
-        tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = Inches(0)
-        p = tf.paragraphs[0]
-        p.alignment = PP_ALIGN.CENTER
-        r = p.add_run()
-        r.text = str(i)
-        r.font.size = PPTPt(28)
-        r.font.bold = True
-        r.font.color.rgb = PPT_BLANCO
-        # título
-        _ppt_textbox(s, Inches(1.6), Inches(1.2), Inches(11.2), Inches(1.0),
-                     title, size=26, bold=True, color=PPT_AZUL)
-        # ayuda
-        _ppt_textbox(s, Inches(1.6), Inches(2.2), Inches(11.2), Inches(1.0),
-                     help_text, size=14, italic=True, color=PPT_GRIS)
-        # caja para llenar
-        box = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.5), Inches(3.6), Inches(12.3), Inches(3.4))
-        _ppt_fill_solid(box, PPTColor(0xFA, 0xFA, 0xFA))
-        tf = box.text_frame
-        tf.word_wrap = True
-        tf.margin_left = Inches(0.3)
-        tf.margin_top = Inches(0.3)
-        p = tf.paragraphs[0]
-        r = p.add_run()
-        r.text = "[ Escribe aquí el contenido para TU MiPyME. Borra este marcador antes de presentar. ]"
-        r.font.size = PPTPt(13)
-        r.font.italic = True
-        r.font.color.rgb = PPTColor(0xAA, 0xAA, 0xAA)
-
-    # ---- Slide de cierre ----
-    s = prs.slides.add_slide(blank)
-    bg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, SLIDE_W, SLIDE_H)
-    _ppt_fill_solid(bg, PPT_AZUL)
-    _ppt_textbox(s, Inches(0.5), Inches(2.8), Inches(12.3), Inches(1.5),
-                 "¿Dudas durante la operación?", size=36, bold=True, color=PPT_AMARILLO, align=PP_ALIGN.CENTER)
-    _ppt_textbox(s, Inches(0.5), Inches(4.2), Inches(12.3), Inches(1.0),
-                 "Contacta a tu consultor — los datos están en el Acta de cierre (producto 4.4.2)", size=18, color=PPT_BLANCO, align=PP_ALIGN.CENTER)
-    band = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, Inches(6.7), SLIDE_W, Inches(0.8))
-    _ppt_fill_solid(band, PPT_AMARILLO)
-    _ppt_textbox(s, Inches(0.5), Inches(6.85), Inches(12.3), Inches(0.5),
-                 "Mi CompañIA  ·  FUNDES Latinoamérica  ·  AIxMiPyMEs", size=13, bold=True, color=PPT_AZUL, align=PP_ALIGN.CENTER)
-
-    return prs
+            html += f'<li>{text} <span class="taxativo">REQUISITO TAXATIVO</span></li>\n'
+        else:
+            html += f'<li>{text}</li>\n'
+    return html
 
 
-def _ppt_header_bar(slide, prod, slide_w):
-    """Barra superior tipo header en cada slide."""
-    band = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, slide_w, Inches(0.55))
-    _ppt_fill_solid(band, PPT_AZUL)
-    line = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, Inches(0.55), slide_w, Inches(0.08))
-    _ppt_fill_solid(line, PPT_AMARILLO)
-    _ppt_textbox(slide, Inches(0.4), Inches(0.08), Inches(8), Inches(0.5),
-                 f"Mi CompañIA  ·  {prod['title']}", size=12, bold=True, color=PPT_AMARILLO)
-    _ppt_textbox(slide, Inches(9), Inches(0.08), Inches(4), Inches(0.5),
-                 f"Producto {prod['num']}", size=12, bold=True, color=PPT_AMARILLO, align=PP_ALIGN.RIGHT)
+def render_questions_word(preguntas):
+    html = ""
+    for i, (title, help_text) in enumerate(preguntas, 1):
+        html += (
+            f'<div class="question-block">\n'
+            f'<div><span class="question-num">{i}</span><span class="question-title">{title}</span></div>\n'
+            f'<div class="question-help">{help_text}</div>\n'
+            f'<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>\n'
+            f'</div>\n'
+        )
+    return html
 
 
-# =============================================================================
-# CLEANUP: borra archivos legacy (.doc/.xls/.ppt) que ya migramos a OOXML
-# =============================================================================
+def render_questions_excel(preguntas):
+    html = '<table class="matrix">\n<tr><th style="width: 4%;">#</th><th style="width: 28%;">Pregunta guía</th><th>Tu respuesta (llena con datos de TU MiPyME)</th></tr>\n'
+    for i, (title, help_text) in enumerate(preguntas, 1):
+        html += (
+            f'<tr>\n'
+            f'<td style="text-align: center; font-weight: bold; color: #28467e;">{i}</td>\n'
+            f'<td><strong>{title}</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">{help_text}</span></td>\n'
+            f'<td class="fill">&nbsp;</td>\n'
+            f'</tr>\n'
+        )
+    html += '</table>\n'
+    return html
 
-def cleanup_legacy():
-    for ext in (".doc", ".xls", ".ppt"):
-        for f in OUT.glob(f"*{ext}"):
-            print(f"  [del legacy] {f.name}")
-            f.unlink()
+
+def render_matrix_example(num):
+    """Para 1.4.5 (matriz impacto/viabilidad), añade una hoja de cálculo pre-armada."""
+    if num != "1.4.5":
+        return ""
+    rows = ""
+    for i in range(1, 9):
+        rows += (
+            f'<tr>\n'
+            f'<td style="text-align:center;color:#28467e;font-weight:bold;">{i}</td>\n'
+            f'<td class="fill">&nbsp;</td><td class="fill">&nbsp;</td>\n'
+            f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
+            f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
+            f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
+            f'<td class="fill" style="text-align:center;color:#999;">=I*V/E</td>\n'
+            f'<td class="fill">&nbsp;</td>\n'
+            f'</tr>\n'
+        )
+    return f"""
+<h2>Hoja de matriz · oportunidades de IA priorizadas</h2>
+<p style="font-size: 10pt; color: #666;">Añade tantas filas como oportunidades hayas detectado. Llena impacto (I), viabilidad (V) y esfuerzo (E) con valores 1-5. El score relativo (I × V / E) te orienta sobre cuál priorizar.</p>
+<table class="matrix">
+<tr><th style="width:4%;">#</th><th style="width:22%;">Oportunidad</th><th style="width:16%;">Herramienta sugerida</th><th style="width:9%;">Impacto (1-5)</th><th style="width:9%;">Viabilidad (1-5)</th><th style="width:9%;">Esfuerzo (1-5)</th><th style="width:9%;">Score</th><th>Beneficio esperado</th></tr>
+{rows}
+</table>
+<p style="font-size:9pt;color:#999;margin-top:8pt;font-style:italic;">Convención: I y V altos suman, esfuerzo alto resta (por eso aparece en el denominador). No hay fórmula universal — adapta el cálculo a tu criterio profesional.</p>
+"""
 
 
-# =============================================================================
-# MAIN
-# =============================================================================
+def render_gantt_example(num):
+    """Para 1.4.6 (hoja de ruta), añade un cronograma Gantt vacío."""
+    if num != "1.4.6":
+        return ""
+    weeks_header = ''.join(f'<th style="width:5%;text-align:center;">S{i}</th>' for i in range(1, 13))
+    rows = ""
+    for i in range(1, 9):
+        empty_cells = ''.join('<td class="fill" style="text-align:center;">&nbsp;</td>' for _ in range(12))
+        rows += (
+            f'<tr>\n'
+            f'<td style="text-align:center;color:#28467e;font-weight:bold;">{i}</td>\n'
+            f'<td class="fill">&nbsp;</td>\n'
+            f'<td class="fill">&nbsp;</td>\n'
+            f'{empty_cells}\n'
+            f'</tr>\n'
+        )
+    return f"""
+<h2>Cronograma Gantt · semanas del proyecto</h2>
+<p style="font-size: 10pt; color: #666;">Marca con X (o con un color en Excel) las semanas en las que se ejecuta cada actividad. Adapta el número de semanas a tu proyecto.</p>
+<table class="matrix">
+<tr><th style="width:4%;">#</th><th style="width:24%;">Actividad</th><th style="width:14%;">Responsable</th>{weeks_header}</tr>
+{rows}
+</table>
+"""
+
+
+def render_indicators_example(num):
+    """Para 4.4.1 (reporte de evaluación de resultados), añade tabla antes/después."""
+    if num != "4.4.1":
+        return ""
+    rows = ""
+    for i in range(1, 7):
+        rows += (
+            f'<tr>\n'
+            f'<td style="text-align:center;color:#28467e;font-weight:bold;">{i}</td>\n'
+            f'<td class="fill">&nbsp;</td>\n'
+            f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
+            f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
+            f'<td class="fill" style="text-align:center;color:#999;">=(actual-base)/base</td>\n'
+            f'<td class="fill">&nbsp;</td>\n'
+            f'</tr>\n'
+        )
+    return f"""
+<h2>Tabla antes/después de indicadores</h2>
+<p style="font-size: 10pt; color: #666;">Por cada indicador del proyecto, registra la línea base, el valor actual y la variación. Cumple con el primer criterio del F21 explícitamente.</p>
+<table class="matrix">
+<tr><th style="width:4%;">#</th><th style="width:30%;">Indicador</th><th style="width:14%;">Línea base</th><th style="width:14%;">Valor actual</th><th style="width:14%;">Variación %</th><th>Observación</th></tr>
+{rows}
+</table>
+<h2 style="margin-top:24pt;">Registro de incidencias</h2>
+<table class="matrix">
+<tr><th style="width:4%;">#</th><th style="width:14%;">Fecha</th><th style="width:30%;">Incidencia</th><th style="width:24%;">Acción correctiva</th><th>Lección aprendida</th></tr>
+{''.join(f'<tr><td style="text-align:center;color:#28467e;font-weight:bold;">{i}</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>' for i in range(1, 5))}
+</table>
+"""
+
+
+def render_laminas_word_guide(preguntas):
+    """Cada pregunta se renderiza como una lámina con encabezado, ayuda,
+    espacio para captura y zona de notas. Las láminas que mencionan
+    'prompts' o 'errores' reciben tratamiento especial (caja de prompt
+    o tabla de errores) para que el F21 quede explícitamente cubierto."""
+    html = ""
+    for i, (title, help_text) in enumerate(preguntas, 1):
+        title_lower = title.lower()
+        is_prompt = "prompt" in title_lower
+        is_errors = "error" in title_lower or "qué hacer" in title_lower
+
+        block = f'<div class="lamina">\n'
+        block += f'<span class="lamina-num">Lámina {i}</span>\n'
+        block += f'<h2>{title}</h2>\n'
+        block += f'<div class="lamina-help">{help_text}</div>\n'
+
+        if is_prompt:
+            block += (
+                '<div class="prompt-box">\n'
+                '<span class="prompt-label">Prompt sugerido (reemplaza con uno real de tu MiPyME)</span>\n'
+                '[ Pega aquí el prompt completo. Recomendación: empieza con un rol ("Eres asistente de…"), '
+                'añade el contexto de la MiPyME, especifica el formato de salida y un ejemplo. ]\n'
+                '</div>\n'
+                '<div class="prompt-box" style="background:#f7faff;border-left-color:#28467e;color:#28467e;">\n'
+                '<span class="prompt-label">Otro prompt</span>\n'
+                '[ Añade tantos como necesite el personal. Ideal: 5–10 prompts listos para copiar/pegar. ]\n'
+                '</div>\n'
+            )
+        elif is_errors:
+            block += (
+                '<table class="errors-table">\n'
+                '<tr><th style="width:24%;">Error frecuente</th>'
+                '<th style="width:20%;">Cómo identificarlo</th>'
+                '<th style="width:32%;">Cómo resolverlo</th>'
+                '<th>Cuándo escalar</th></tr>\n'
+            )
+            for _ in range(4):
+                block += (
+                    '<tr><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td>'
+                    '<td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>\n'
+                )
+            block += '</table>\n'
+        else:
+            block += (
+                '<div class="captura-box">[ Inserta aquí la captura de pantalla del paso. '
+                'Sugerencia: numera con un círculo rojo cada zona importante. ]</div>\n'
+                '<div class="fill-area">[ Escribe aquí el contenido de la lámina para TU MiPyME. '
+                'Borra este marcador cuando empieces. ]</div>\n'
+            )
+
+        block += '</div>\n'
+        html += block
+    return html
+
+
+def render_product(p):
+    f21_html = render_f21(p["f21"])
+    extension_by_format = {"word": "doc", "excel": "xls", "word_guide": "doc"}
+    ext = extension_by_format[p["format"]]
+
+    if p["format"] == "word":
+        questions_html = render_questions_word(p["preguntas"])
+        html = WORD_TEMPLATE.format(
+            num=p["num"], title=p["title"], elemento=p["elemento"], intro=p["intro"],
+            espiga=p["espiga"], f21_html=f21_html, questions_html=questions_html,
+            base_styles=BASE_STYLES,
+        )
+    elif p["format"] == "excel":
+        questions_html = render_questions_excel(p["preguntas"])
+        matrix_html = render_matrix_example(p["num"]) + render_gantt_example(p["num"]) + render_indicators_example(p["num"])
+        html = EXCEL_TEMPLATE.format(
+            num=p["num"], title=p["title"], elemento=p["elemento"], intro=p["intro"],
+            espiga=p["espiga"], f21_html=f21_html, questions_html=questions_html,
+            matrix_html=matrix_html, base_styles=BASE_STYLES,
+        )
+    elif p["format"] == "word_guide":
+        questions_html = render_laminas_word_guide(p["preguntas"])
+        html = WORD_GUIDE_TEMPLATE.format(
+            num=p["num"], title=p["title"], elemento=p["elemento"], intro=p["intro"],
+            espiga=p["espiga"], f21_html=f21_html, questions_html=questions_html,
+            base_styles=BASE_STYLES,
+        )
+    return html, ext
+
 
 def main():
-    cleanup_legacy()
-    for prod in PRODUCTS:
-        fmt = prod["format"]
-        if fmt == "word":
-            doc = generate_word(prod)
-            path = OUT / f"{prod['num'].replace('.', '-')}-{prod['slug']}.docx"
-            doc.save(path)
-            print(f"  [ok] {path.name}  (WORD)")
-        elif fmt == "excel":
-            wb = EXCEL_GENERATORS[prod["num"]](prod)
-            path = OUT / f"{prod['num'].replace('.', '-')}-{prod['slug']}.xlsx"
-            wb.save(path)
-            print(f"  [ok] {path.name}  (EXCEL)")
-        elif fmt == "ppt":
-            prs = generate_pptx(prod)
-            path = OUT / f"{prod['num'].replace('.', '-')}-{prod['slug']}.pptx"
-            prs.save(path)
-            print(f"  [ok] {path.name}  (PPTX)")
-        else:
-            raise ValueError(f"Formato desconocido: {fmt}")
+    # Borrar archivos legacy: OOXML generados antes (.docx/.xlsx/.pptx)
+    # y carpetas auxiliares que Word/Excel crean al previsualizar HTML.
+    for ext in (".docx", ".xlsx", ".pptx"):
+        for f in OUT.glob(f"*{ext}"):
+            f.unlink()
+            print(f"  [del legacy] {f.name}")
+    for d in OUT.glob("*.files"):
+        if d.is_dir():
+            import shutil
+            shutil.rmtree(d)
+            print(f"  [del legacy dir] {d.name}")
+
+    for p in PRODUCTS:
+        html, ext = render_product(p)
+        filename = f"{p['num'].replace('.', '-')}-{p['slug']}.{ext}"
+        filepath = OUT / filename
+        filepath.write_text(html, encoding="utf-8")
+        print(f"  [ok] {filename}  ({p['format'].upper()})")
     print(f"\nGenerados {len(PRODUCTS)} templates en {OUT}/")
 
 
