@@ -19,15 +19,15 @@
     </a>
     <nav>
       <a href="../index.html">Inicio</a>
-      <a href="../maestro/index.html">Manual Maestro</a>
-      <a href="index.html">Estándar A</a>
+      <a href="../maestro/index.html">Tu primera CompañIA</a>
+      <a href="index.html">Implementar IA</a>
     </nav>
   </div>
 </header>
 
 <nav class="sub-nav" aria-label="Capítulos del Manual del Estándar A">
   <div class="container">
-    <span class="sub-nav__label">Estándar A</span>
+    <span class="sub-nav__label">Implementar IA</span>
     <a href="index.html">Inicio</a>
     <a href="elemento-1.html">Elemento 1 · Planear</a>
     <a href="elemento-2.html">Elemento 2 · Ejecutar</a>
@@ -55,7 +55,7 @@
 
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">Capítulo 5 · Mecánica del IEC</div>
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Capítulo 5 · Mecánica del IEC</div>
     <h1>Cómo se aplica el Instrumento de Evaluación</h1>
     <p>126 reactivos · 100.17 puntos totales · Tres pesos de ponderación · AHV con valores negativos · Opción de Evidencia Histórica para 13 productos. Conocer la mecánica del IEC te permite anticipar el ritmo de la sesión y aprovechar la facilidad de presentar productos previos.</p>
   </div>
@@ -66,8 +66,16 @@
 
     <a class="back-link" href="elemento-3.html">Volver al Elemento 3</a>
 
-    <section id="estructura">
-      <h2>5.1 Estructura del Instrumento de Evaluación de Competencia</h2>
+    <div class="lesson-tabs" data-progress-key="estandar-a-instrumento">
+    <div class="accordion accordion--modules" aria-label="Módulos del Capítulo 5 · Instrumento">
+
+      <details class="accordion__item" id="estructura" open>
+        <summary>
+          <span class="accordion__num">5.1</span>
+          <span class="accordion__title-main">Estructura del Instrumento de Evaluación de Competencia</span>
+          <span class="accordion__meta">126 reactivos · ponderación · AHV negativos · 8 min</span>
+        </summary>
+        <div class="accordion__body">
       <p>El IEC del Estándar A se compone de tres tipos de instrumentos que tu evaluador aplicará a lo largo del proceso. Cada uno está diseñado para captar un tipo distinto de evidencia.</p>
 
       <table class="prose-table">
@@ -96,78 +104,78 @@
 
         <!-- Donut 1: Cantidad de reactivos -->
         <g transform="translate(50, 30)">
-          <text x="170" y="20" text-anchor="middle" fill="#0B2E63" font-family="Inter, sans-serif" font-size="14" font-weight="700">Cantidad de reactivos</text>
-          <text x="170" y="38" text-anchor="middle" fill="#4B5563" font-family="Inter, sans-serif" font-size="11" font-style="italic">126 totales</text>
+          <text x="170" y="20" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="14" font-weight="700">Cantidad de reactivos</text>
+          <text x="170" y="38" text-anchor="middle" fill="#4B5563" font-family="Afacad, Inter, sans-serif" font-size="11" font-style="italic">126 totales</text>
 
           <!-- Donut SVG (paths) -->
           <!-- 59/126 = 46.83% -> 168.6 grados; ángulo inicial 0 (arriba) -->
           <!-- Anillo: r=110, stroke=44, cx=170, cy=200 -->
           <g transform="translate(170, 200)">
             <!-- Peso menor (azul claro): 59 reactivos -->
-            <circle r="90" fill="none" stroke="#4DA3DF" stroke-width="44" stroke-dasharray="265.0 565.5" transform="rotate(-90)"/>
+            <circle r="90" fill="none" stroke="#529ed7" stroke-width="44" stroke-dasharray="265.0 565.5" transform="rotate(-90)"/>
             <!-- Peso medio (azul): 46 reactivos. Empieza después del menor (265.0 unidades de circunferencia) -->
             <circle r="90" fill="none" stroke="#1F4E8C" stroke-width="44" stroke-dasharray="206.6 565.5" stroke-dashoffset="-265.0" transform="rotate(-90)"/>
             <!-- Peso mayor (amarillo): 15 reactivos -->
-            <circle r="90" fill="none" stroke="#FFC233" stroke-width="44" stroke-dasharray="67.4 565.5" stroke-dashoffset="-471.6" transform="rotate(-90)"/>
+            <circle r="90" fill="none" stroke="#f7c031" stroke-width="44" stroke-dasharray="67.4 565.5" stroke-dashoffset="-471.6" transform="rotate(-90)"/>
             <!-- AHV negativos (rojo): 6 reactivos -->
             <circle r="90" fill="none" stroke="#9F2929" stroke-width="44" stroke-dasharray="26.9 565.5" stroke-dashoffset="-538.9" transform="rotate(-90)"/>
 
             <!-- Centro -->
-            <text x="0" y="-6" text-anchor="middle" fill="#0B2E63" font-family="Inter, sans-serif" font-size="32" font-weight="800">126</text>
-            <text x="0" y="14" text-anchor="middle" fill="#4B5563" font-family="Inter, sans-serif" font-size="11">reactivos</text>
+            <text x="0" y="-6" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="32" font-weight="800">126</text>
+            <text x="0" y="14" text-anchor="middle" fill="#4B5563" font-family="Afacad, Inter, sans-serif" font-size="11">reactivos</text>
           </g>
 
           <!-- Leyenda -->
-          <g transform="translate(0, 330)" font-family="Inter, sans-serif" font-size="11">
-            <rect x="0" y="0" width="14" height="14" fill="#4DA3DF"/>
-            <text x="22" y="11" fill="#0B2E63" font-weight="600">Peso menor (×0.32)</text>
-            <text x="280" y="11" text-anchor="end" fill="#0B2E63" font-weight="700">59 · 47%</text>
+          <g transform="translate(0, 330)" font-family="Afacad, Inter, sans-serif" font-size="11">
+            <rect x="0" y="0" width="14" height="14" fill="#529ed7"/>
+            <text x="22" y="11" fill="#28467e" font-weight="600">Peso menor (×0.32)</text>
+            <text x="280" y="11" text-anchor="end" fill="#28467e" font-weight="700">59 · 47%</text>
 
             <rect x="0" y="22" width="14" height="14" fill="#1F4E8C"/>
-            <text x="22" y="33" fill="#0B2E63" font-weight="600">Peso medio (×0.62)</text>
-            <text x="280" y="33" text-anchor="end" fill="#0B2E63" font-weight="700">46 · 37%</text>
+            <text x="22" y="33" fill="#28467e" font-weight="600">Peso medio (×0.62)</text>
+            <text x="280" y="33" text-anchor="end" fill="#28467e" font-weight="700">46 · 37%</text>
 
-            <rect x="0" y="44" width="14" height="14" fill="#FFC233"/>
-            <text x="22" y="55" fill="#0B2E63" font-weight="600">Peso mayor (×3.33)</text>
-            <text x="280" y="55" text-anchor="end" fill="#0B2E63" font-weight="700">15 · 12%</text>
+            <rect x="0" y="44" width="14" height="14" fill="#f7c031"/>
+            <text x="22" y="55" fill="#28467e" font-weight="600">Peso mayor (×3.33)</text>
+            <text x="280" y="55" text-anchor="end" fill="#28467e" font-weight="700">15 · 12%</text>
 
             <rect x="0" y="66" width="14" height="14" fill="#9F2929"/>
-            <text x="22" y="77" fill="#0B2E63" font-weight="600">AHV negativos</text>
-            <text x="280" y="77" text-anchor="end" fill="#0B2E63" font-weight="700">6 · 5%</text>
+            <text x="22" y="77" fill="#28467e" font-weight="600">AHV negativos</text>
+            <text x="280" y="77" text-anchor="end" fill="#28467e" font-weight="700">6 · 5%</text>
           </g>
         </g>
 
         <!-- Donut 2: Puntos -->
         <g transform="translate(490, 30)">
-          <text x="170" y="20" text-anchor="middle" fill="#0B2E63" font-family="Inter, sans-serif" font-size="14" font-weight="700">Aporte de puntos</text>
-          <text x="170" y="38" text-anchor="middle" fill="#4B5563" font-family="Inter, sans-serif" font-size="11" font-style="italic">~100.17 puntos máximos</text>
+          <text x="170" y="20" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="14" font-weight="700">Aporte de puntos</text>
+          <text x="170" y="38" text-anchor="middle" fill="#4B5563" font-family="Afacad, Inter, sans-serif" font-size="11" font-style="italic">~100.17 puntos máximos</text>
 
           <g transform="translate(170, 200)">
             <!-- circunferencia = 2*pi*90 ≈ 565.5 -->
             <!-- Peso menor: 18.88/100.17 = 18.85% -> 106.6 -->
-            <circle r="90" fill="none" stroke="#4DA3DF" stroke-width="44" stroke-dasharray="106.6 565.5" transform="rotate(-90)"/>
+            <circle r="90" fill="none" stroke="#529ed7" stroke-width="44" stroke-dasharray="106.6 565.5" transform="rotate(-90)"/>
             <!-- Peso medio: 28.52/100.17 = 28.47% -> 161.0 -->
             <circle r="90" fill="none" stroke="#1F4E8C" stroke-width="44" stroke-dasharray="161.0 565.5" stroke-dashoffset="-106.6" transform="rotate(-90)"/>
             <!-- Peso mayor: 49.95/100.17 = 49.86% -> 281.97 -->
-            <circle r="90" fill="none" stroke="#FFC233" stroke-width="44" stroke-dasharray="281.97 565.5" stroke-dashoffset="-267.6" transform="rotate(-90)"/>
+            <circle r="90" fill="none" stroke="#f7c031" stroke-width="44" stroke-dasharray="281.97 565.5" stroke-dashoffset="-267.6" transform="rotate(-90)"/>
 
-            <text x="0" y="-6" text-anchor="middle" fill="#0B2E63" font-family="Inter, sans-serif" font-size="32" font-weight="800">100.17</text>
-            <text x="0" y="14" text-anchor="middle" fill="#4B5563" font-family="Inter, sans-serif" font-size="11">puntos</text>
+            <text x="0" y="-6" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="32" font-weight="800">100.17</text>
+            <text x="0" y="14" text-anchor="middle" fill="#4B5563" font-family="Afacad, Inter, sans-serif" font-size="11">puntos</text>
           </g>
 
           <!-- Leyenda -->
-          <g transform="translate(0, 330)" font-family="Inter, sans-serif" font-size="11">
-            <rect x="0" y="0" width="14" height="14" fill="#4DA3DF"/>
-            <text x="22" y="11" fill="#0B2E63" font-weight="600">Peso menor</text>
-            <text x="280" y="11" text-anchor="end" fill="#0B2E63" font-weight="700">18.88 pts · 19%</text>
+          <g transform="translate(0, 330)" font-family="Afacad, Inter, sans-serif" font-size="11">
+            <rect x="0" y="0" width="14" height="14" fill="#529ed7"/>
+            <text x="22" y="11" fill="#28467e" font-weight="600">Peso menor</text>
+            <text x="280" y="11" text-anchor="end" fill="#28467e" font-weight="700">18.88 pts · 19%</text>
 
             <rect x="0" y="22" width="14" height="14" fill="#1F4E8C"/>
-            <text x="22" y="33" fill="#0B2E63" font-weight="600">Peso medio</text>
-            <text x="280" y="33" text-anchor="end" fill="#0B2E63" font-weight="700">28.52 pts · 28%</text>
+            <text x="22" y="33" fill="#28467e" font-weight="600">Peso medio</text>
+            <text x="280" y="33" text-anchor="end" fill="#28467e" font-weight="700">28.52 pts · 28%</text>
 
-            <rect x="0" y="44" width="14" height="14" fill="#FFC233"/>
-            <text x="22" y="55" fill="#0B2E63" font-weight="700">Peso mayor</text>
-            <text x="280" y="55" text-anchor="end" fill="#0B2E63" font-weight="800">49.95 pts · 50%</text>
+            <rect x="0" y="44" width="14" height="14" fill="#f7c031"/>
+            <text x="22" y="55" fill="#28467e" font-weight="700">Peso mayor</text>
+            <text x="280" y="55" text-anchor="end" fill="#28467e" font-weight="800">49.95 pts · 50%</text>
 
             <text x="0" y="78" fill="#B07700" font-weight="700" font-style="italic">↑ 15 reactivos críticos = la mitad del puntaje</text>
           </g>
@@ -179,10 +187,16 @@
         <span class="callout__label">Importante · AHV en negativo</span>
         <div class="callout__body">Las actitudes/hábitos/valores se evalúan de manera <strong>negativa</strong>: no suman al puntaje, pero <strong>RESTAN</strong> si no las demuestras. Seis reactivos del IEC corresponden a AHV: tres con valor <strong>−0.32</strong> y tres con valor <strong>−0.62</strong>. En la práctica, demostrar AHV es la norma; lo evaluado es <em>si no lo haces</em>. La falta de AHV puede penalizar significativamente tu resultado.</div>
       </aside>
-    </section>
+        </div>
+      </details>
 
-    <section id="evidencia-historica">
-      <h2>5.2 Evidencia Histórica: una opción importante para ti</h2>
+      <details class="accordion__item" id="evidencia-historica">
+        <summary>
+          <span class="accordion__num">5.2</span>
+          <span class="accordion__title-main">Evidencia Histórica</span>
+          <span class="accordion__meta">Productos de consultorías previas · verificación de autoría · 6 min</span>
+        </summary>
+        <div class="accordion__body">
       <p>El IEC del Estándar A permite explícitamente que los productos del proyecto se presenten al evaluador como <strong>Evidencia Histórica</strong>. Esto significa que los productos pueden provenir de consultorías que ya ejecutaste en el pasado, <strong>no necesariamente de un proyecto que se realice durante la propia evaluación</strong>. Es una facilidad importante para quienes ya tienen trayectoria.</p>
 
       <h3>Qué productos pueden presentarse como Evidencia Histórica</h3>
@@ -252,7 +266,11 @@
         <span class="callout__label">Para tener presente</span>
         <div class="callout__body">Si cuentas con proyectos previos completos y bien documentados, la Evidencia Histórica <strong>puede simplificar enormemente tu preparación</strong>: en lugar de elaborar productos nuevos, presentas los que ya tienes. Pero la verificación es rigurosa: el evaluador querrá ver documentos con fechas, firmas y trazas verificables de tu autoría. <strong>Documentos fabricados ad hoc se detectan con facilidad y comprometen el dictamen.</strong><br><br>Si la consultoría histórica no produjo formalmente alguno de los productos exigidos —por ejemplo, nunca formalizaron un acuerdo de confidencialidad— tienes dos opciones: elaborar el producto faltante <strong>de manera retrospectiva con el cliente real</strong> (y obtener firma actual), o presentar un proyecto distinto en el que sí cuentes con todos los productos. Inventar firmas o fabricar documentos retroactivos sin la participación del cliente real es <strong>inadmisible</strong>.<br><br>Para evaluaciones aplicadas en línea, tu evaluador podrá pedirte que registres tus respuestas al cuestionario de conocimientos en el <strong>Anexo 6 del IEC</strong>, una hoja de respuestas del candidato. <strong>No hay tiempo límite</strong> para resolver el cuestionario.</div>
       </aside>
-    </section>
+        </div>
+      </details>
+
+    </div>
+    </div>
 
     <aside class="callout callout--reflection" role="note">
       <span class="callout__label">Pausa de reflexión</span>
@@ -286,7 +304,7 @@
   <div class="container">
     <div class="footer-brand">
       <img src="../img/logo.png" alt="Mi CompañIA" />
-      <span class="footer-tag">Estándar A · Instrumento</span>
+      <span class="footer-tag">Implementar IA · Instrumento</span>
     </div>
     <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
   </div>

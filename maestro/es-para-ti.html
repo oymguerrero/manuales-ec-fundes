@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>¿Es para ti Implementar IA? · Tu primera CompañIA · Mi CompañIA</title>
+<meta name="description" content="Identifica si el Manual de Implementar IA corresponde a tu perfil profesional. Cuestionario rápido, alcance del estándar y diferenciación con perfiles que NO certifica." />
+<link rel="icon" type="image/png" href="../img/logo.png" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/interactive.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="brand-text">Mi CompañIA</span>
+    </a>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="index.html">Tu primera CompañIA</a>
+      <a href="../estandar-a/index.html">Implementar IA</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="sub-nav" aria-label="Capítulos de Tu primera CompañIA">
+  <div class="container">
+    <span class="sub-nav__label">Tu primera CompañIA</span>
+    <a href="index.html">Bienvenida</a>
+    <a href="que-es.html">Qué es la certificación</a>
+    <a href="como-se-evalua.html">Cómo se evalúa</a>
+    <a href="proceso.html">Proceso paso a paso</a>
+    <a href="es-para-ti.html" class="active">¿Es para ti?</a>
+    <a href="recursos.html">FAQ y recursos</a>
+  </div>
+</nav>
+
+<div class="maestro-progress" aria-label="Progreso de Tu primera CompañIA">
+  <div class="container">
+    <span class="maestro-progress__label">Capítulo 5 de 6 · ¿Es para ti?</span>
+    <div class="maestro-progress__bar" role="presentation">
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--current"></span>
+      <span class="maestro-progress__dot"></span>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Capítulo 5 · Antes de comprometerte</div>
+    <h1>¿Es Implementar <span class="ia">IA</span> el estándar correcto para ti?</h1>
+    <p>Tres preguntas rápidas, una mirada honesta al alcance del estándar y los casos en que <strong>no</strong> es para ti. Si llegas al final con un sí claro, el siguiente capítulo te da los recursos para preparar tu evaluación.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <a class="back-link" href="proceso.html">Volver al capítulo anterior</a>
+
+    <div class="lesson-tabs" data-progress-key="maestro-cap5-es-para-ti">
+    <div class="accordion accordion--modules" aria-label="Módulos del Capítulo 5">
+
+      <details class="accordion__item" id="cuestionario" open>
+        <summary>
+          <span class="accordion__num">5.1</span>
+          <span class="accordion__title-main">Cuestionario rápido · ¿Es para ti?</span>
+          <span class="accordion__meta">3 preguntas · respuesta inmediata · 2 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>El Manual de <strong>Implementar IA</strong> certifica la competencia para acompañar a una MiPyME en la planeación, ejecución y evaluación de soluciones de Inteligencia Artificial en sus procesos cotidianos. Responde con honestidad para saber si tu trabajo encaja con este estándar.</p>
+
+          <div class="finder">
+            <fieldset>
+              <legend>Pregunta 1 · ¿Trabajas directamente con MiPyMEs (micro, pequeñas o medianas empresas)?</legend>
+              <label><input type="radio" name="q1" value="yes" /> Sí, las MiPyMEs son mi cliente principal o frecuente</label>
+              <label><input type="radio" name="q1" value="no" /> No, trabajo con empresas grandes / corporativos / gobierno</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Pregunta 2 · ¿Tu trabajo incluye seleccionar y configurar herramientas de IA <em>existentes en el mercado</em> (ChatGPT, Claude, Copilot, Gemini, Zapier, plataformas con módulos de IA…) para procesos operativos de la MiPyME?</legend>
+              <label><input type="radio" name="q2" value="yes" /> Sí, configuro y aplico herramientas que ya existen</label>
+              <label><input type="radio" name="q2" value="develop" /> No, yo programo / desarrollo software a la medida</label>
+              <label><input type="radio" name="q2" value="content" /> No, yo genero contenido digital con IA (texto, imagen, video, audio)</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Pregunta 3 · ¿Tu rol incluye <strong>los tres momentos</strong> del proyecto: planear (diagnóstico + hoja de ruta), ejecutar (configurar + capacitar) y evaluar (medir resultados + cerrar)?</legend>
+              <label><input type="radio" name="q3" value="yes" /> Sí, hago el ciclo completo</label>
+              <label><input type="radio" name="q3" value="partial" /> Solo uno o dos de los tres momentos</label>
+              <label><input type="radio" name="q3" value="no" /> No, mi rol es muy distinto</label>
+            </fieldset>
+
+            <button type="button" id="finder-submit" class="btn btn-primary">Ver resultado</button>
+
+            <div id="finder-result" class="finder__result" aria-live="polite"></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion__item" id="que-certifica">
+        <summary>
+          <span class="accordion__num">5.2</span>
+          <span class="accordion__title-main">Qué certifica exactamente este estándar</span>
+          <span class="accordion__meta">Función oficial · 3 momentos · perfil profesional</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>El estándar de <strong>Implementar IA</strong> certifica la capacidad de un consultor para acompañar a una MiPyME en la incorporación de inteligencia artificial a sus procesos operativos. Es para profesionales que <strong>seleccionan, configuran y aplican herramientas de IA disponibles en el mercado</strong>, no para desarrolladores de software.</p>
+
+          <p>La función certificada se desagrega en tres elementos consecutivos:</p>
+
+          <article class="process-step">
+            <div class="process-step__badge">1</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Planear soluciones de IA alineadas a la MiPyME</h4>
+              <div class="process-step__body">Recopilas información sobre los procesos operativos, diagnosticas madurez digital, identificas oportunidades, priorizas con matriz de impacto y viabilidad, construyes la hoja de ruta y validas la propuesta económica con el emprendedor. Es el elemento más extenso: 8 productos documentales.</div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">2</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Ejecutar la implementación en el entorno de la MiPyME</h4>
+              <div class="process-step__body">Configuras las herramientas en el entorno tecnológico de la MiPyME, las pruebas, presentas las soluciones al emprendedor y capacitas al personal para que opere autónomamente.</div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">3</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Evaluar resultados e impacto de la implementación</h4>
+              <div class="process-step__body">Comparas indicadores antes/después, estimas el retorno de inversión, documentas incidencias y acciones correctivas, presentas resultados ante el emprendedor y formalizas el cierre del proyecto.</div>
+            </div>
+          </article>
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">Importante</span>
+            <div class="callout__body">Cada elemento se evalúa de manera integral (desempeños + productos + conocimientos + AHV). La persona competente es quien demuestra <strong>los tres elementos</strong>. Si solo cubres uno o dos, el dictamen será <em>Todavía no competente</em>.</div>
+          </aside>
+        </div>
+      </details>
+
+      <details class="accordion__item" id="no-es-para-ti">
+        <summary>
+          <span class="accordion__num">5.3</span>
+          <span class="accordion__title-main">Cuándo este estándar NO es para ti</span>
+          <span class="accordion__meta">Casos comunes de no-aplicación · alternativas en preparación</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>Es legítimo descubrir, al estudiar el manual, que tu perfil profesional <strong>no encaja con este estándar</strong>. Es mejor saberlo ahora que después de inscribirte. Estos son los casos más frecuentes:</p>
+
+          <article class="process-step">
+            <div class="process-step__badge">✗</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Programas código para construir software a la medida</h4>
+              <div class="process-step__body">Si tu trabajo incluye escribir código de programación para construir una solución de IA personalizada para la MiPyME, este estándar no aplica. Habrá un estándar específico para <em>Transformación digital con IA</em> que sí incluye desarrollo de software a la medida. Por ahora está <strong>en preparación</strong>.</div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">✗</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Generas contenido de marketing digital (textos, imágenes, audio, video) con IA</h4>
+              <div class="process-step__body">Si tu rol se centra en producir piezas de contenido para campañas o redes sociales con herramientas de IA generativa, este estándar no aplica. Habrá un estándar dedicado a <em>Marketing digital con IA</em>. Por ahora está <strong>en preparación</strong>.</div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">✗</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Conceptualizas y prototipas productos o servicios nuevos basados en IA</h4>
+              <div class="process-step__body">Si tu trabajo es ideación, validación con usuarios y prototipado de productos o servicios innovadores que aún no existen en el mercado, este estándar no aplica. Habrá un estándar específico para <em>Productos y servicios con IA</em>. Por ahora está <strong>en preparación</strong>.</div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">✗</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Trabajas exclusivamente con empresas grandes / corporativos / gobierno</h4>
+              <div class="process-step__body">Este estándar certifica el acompañamiento a <strong>MiPyMEs</strong>. La realidad operativa de una empresa grande es muy distinta y los criterios de evaluación están diseñados para el contexto de pequeña y mediana empresa. Si tu cartera de clientes no incluye MiPyMEs, este no es tu estándar.</div>
+            </div>
+          </article>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Para tener presente</span>
+            <div class="callout__body">Si tu perfil mezcla varios casos (por ejemplo, eres desarrollador <em>y</em> consultor que también configura herramientas existentes), puedes presentarte a más de un estándar conforme se vayan publicando. Por ahora, evalúa si el ciclo completo de <strong>Implementar IA</strong> describe lo que haces de manera predominante.</div>
+          </aside>
+        </div>
+      </details>
+
+      <details class="accordion__item" id="estandar-en-detalle">
+        <summary>
+          <span class="accordion__num">5.4</span>
+          <span class="accordion__title-main">Implementar IA · ficha rápida del estándar</span>
+          <span class="accordion__meta">Datos oficiales · nivel SNC · ocupaciones asociadas</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>Vista rápida de los datos oficiales del estándar. La ficha completa con todo el detalle de evidencias está en el Manual del Estándar.</p>
+
+          <table class="prose-table">
+            <tbody>
+              <tr><td><strong>Nombre oficial</strong></td><td>Implementación de soluciones con Inteligencia Artificial en los procesos de la MiPyME</td></tr>
+              <tr><td><strong>Nivel SNC</strong></td><td>3 (actividades programadas + impredecibles, recibe orientaciones generales, supervisa a otros trabajadores)</td></tr>
+              <tr><td><strong>Elementos</strong></td><td>3 — Planear · Ejecutar · Evaluar</td></tr>
+              <tr><td><strong>Evidencias totales</strong></td><td>5 desempeños · 13 productos · 14 conocimientos · 6 AHV observadas</td></tr>
+              <tr><td><strong>Perfil del candidato</strong></td><td>Consultor o consultora de implementación de IA en MiPyMEs, sin requisito de competencias de programación</td></tr>
+              <tr><td><strong>Modalidades</strong></td><td>Presencial o remota mediante videoconferencia</td></tr>
+              <tr><td><strong>Requisito de título profesional</strong></td><td>No requerido por disposición legal</td></tr>
+              <tr><td><strong>CGC que lo desarrolló</strong></td><td>FUNDES, con ALAPSI e IECA</td></tr>
+            </tbody>
+          </table>
+
+          <p style="margin-top: 20px;"><a href="../estandar-a/index.html" class="btn btn-secondary">Ir al Manual de Implementar IA →</a></p>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Otros estándares en preparación</span>
+            <div class="callout__body">El sistema CONOCER contempla estándares adicionales para perfiles distintos (transformación digital con desarrollo a la medida, marketing digital con IA, productos y servicios con IA). Por ahora <strong>este sitio publica únicamente Implementar IA</strong>. Si tu perfil corresponde a uno de los otros, te recomendamos esperar a que sus manuales se publiquen, o presentarte a Implementar IA si una parte de tu trabajo encaja en él.</div>
+          </aside>
+        </div>
+      </details>
+
+    </div>
+    </div>
+
+    <aside class="callout callout--reflection" role="note">
+      <span class="callout__label">Pausa de reflexión</span>
+      <div class="callout__body">Imagina la última vez que acompañaste a una MiPyME con IA. <strong>¿Cómo fue el cierre del proyecto?</strong> ¿Hubo un acta firmada, indicadores antes/después medidos, retroalimentación documentada del cliente? Si la respuesta es no, esa fase (Elemento 3) es donde más trabajo de preparación retrospectiva necesitarás para presentarte a la evaluación.</div>
+    </aside>
+
+    <section id="siguiente">
+      <h2>¿Listo para continuar?</h2>
+      <p>El siguiente capítulo recoge las preguntas más frecuentes sobre el proceso, el glosario, las referencias oficiales y los datos de contacto.</p>
+      <div class="hero-actions">
+        <a href="recursos.html" class="btn btn-primary">Continuar: FAQ y recursos →</a>
+        <a href="proceso.html" class="btn btn-secondary">← Volver al capítulo anterior</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="footer-tag">Tu primera CompañIA</span>
+    </div>
+    <div>
+      <svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="margin-right: 8px;"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg>
+      Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const submit = document.getElementById('finder-submit');
+  const result = document.getElementById('finder-result');
+  if (!submit || !result) return;
+
+  submit.addEventListener('click', function() {
+    const q1 = (document.querySelector('input[name="q1"]:checked') || {}).value;
+    const q2 = (document.querySelector('input[name="q2"]:checked') || {}).value;
+    const q3 = (document.querySelector('input[name="q3"]:checked') || {}).value;
+
+    if (!q1 || !q2 || !q3) {
+      result.innerHTML = '<strong>Responde las tres preguntas</strong> para ver tu resultado.';
+      return;
+    }
+
+    if (q1 === 'no') {
+      result.innerHTML = '<strong>Implementar IA probablemente NO es para ti.</strong> Este estándar certifica el acompañamiento a MiPyMEs. Si tu cartera son corporativos o gobierno, el contexto operativo y los criterios no encajarán con tu día a día.';
+      return;
+    }
+
+    if (q2 === 'develop') {
+      result.innerHTML = '<strong>Implementar IA NO es tu estándar.</strong> Si programas código para construir software a medida con IA, tu perfil corresponde al estándar de <em>Transformación digital con IA</em> (en preparación). Espera su publicación o, si una parte de tu trabajo también incluye configurar herramientas existentes, considera empezar por Implementar IA para esa fracción de tu actividad.';
+      return;
+    }
+
+    if (q2 === 'content') {
+      result.innerHTML = '<strong>Implementar IA NO es tu estándar.</strong> Si tu trabajo es generar contenido digital con IA (textos, imágenes, audio, video) para campañas o redes, tu perfil corresponde al estándar de <em>Marketing digital con IA</em> (en preparación).';
+      return;
+    }
+
+    if (q3 === 'no') {
+      result.innerHTML = '<strong>Implementar IA probablemente NO es para ti.</strong> El estándar evalúa el ciclo completo (planear + ejecutar + evaluar). Si tu rol es muy distinto a ese ciclo, otro estándar puede ajustarse mejor.';
+      return;
+    }
+
+    if (q3 === 'partial') {
+      result.innerHTML = '<strong>Implementar IA podría ser para ti, con preparación.</strong> El estándar exige demostrar los tres elementos como una unidad. Si actualmente cubres solo uno o dos, puedes elaborar productos y evidencias retrospectivas para el elemento faltante, o presentarte cuando hayas completado un ciclo completo con una MiPyME. Lee el <a href="../estandar-a/index.html">Manual de Implementar IA</a> para conocer las evidencias por elemento.';
+      return;
+    }
+
+    // q1=yes, q2=yes, q3=yes
+    result.innerHTML = '<strong>¡Implementar IA es tu estándar!</strong> Tu perfil encaja con la función certificada: trabajas con MiPyMEs, configuras herramientas de IA existentes y cubres el ciclo completo. Pasa al <a href="../estandar-a/index.html">Manual de Implementar IA</a> para conocer las evidencias específicas y empezar tu preparación.';
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:x="urn:schemas-microsoft-com:office:excel"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Excel.Sheet">
+<meta name="Generator" content="Microsoft Excel">
+<title>1.4.6 · Hoja de ruta de implementación de soluciones de IA</title>
+<!--[if gte mso 9]>
+<xml><x:ExcelWorkbook><x:ExcelWorksheets>
+<x:ExcelWorksheet><x:Name>1.4.6</x:Name><x:WorksheetOptions><x:Panes><x:Pane><x:Number>3</x:Number></x:Pane></x:Panes></x:WorksheetOptions></x:ExcelWorksheet>
+</x:ExcelWorksheets></x:ExcelWorkbook></xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+.f21-box .taxativo { background: #FFE0E0; color: #C0392B; font-weight: bold; padding: 1pt 6pt; border-radius: 3pt; font-size: 9pt; margin-left: 4pt; }
+
+.espiga-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.espiga-box strong { color: #28467e; font-style: normal; }
+
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+
+table.matrix { border-collapse: collapse; width: 100%; margin: 10pt 0; font-size: 10pt; }
+table.matrix th, table.matrix td { border: 1pt solid #999; padding: 6pt 8pt; vertical-align: top; }
+table.matrix th { background: #28467e; color: white; font-weight: bold; text-align: left; }
+table.matrix tr.score th { background: #f7c031; color: #28467e; }
+table.matrix td.fill { background: #fffbe6; min-height: 22pt; height: 22pt; color: #aaa; font-style: italic; }
+table.matrix tr:nth-child(even) td.fill { background: #fefbf0; }
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>Hoja de ruta de implementación de soluciones de IA</h1>
+<p class="subtitle">Manual de Implementar IA · Producto del Elemento 1 · Planear · Excel</p>
+</td>
+<td class="meta"><strong>Producto 1.4.6</strong><br>Hoja editable · Excel<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> Cronograma tipo Gantt con las fases, actividades, responsables y recursos del proyecto. Excel es el formato natural para esta clase de producto: te permite añadir filas conforme detectes más oportunidades, ordenar por puntaje y generar gráficas. <strong>Llénalo con datos de TU MiPyME real.</strong></div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>Contiene descritas las soluciones de IA seleccionadas para la MiPyME</li>
+<li>Contiene descritas la operación de los procesos con la solución de IA</li>
+<li>Incluye las fases/etapas de implementación del proyecto</li>
+<li>Incluye las actividades y responsables de cada etapa</li>
+<li>Contiene el cronograma con las actividades de implementación para cada etapa del proyecto</li>
+<li>Incluye los recursos tecnológicos, humanos y financieros requeridos</li>
+<li>Incluye indicadores para evaluar el avance de la implementación y darle seguimiento al proyecto</li>
+</ul>
+</div>
+
+<div class="espiga-box"><strong>Caso pedagógico La Espiga (ilustrativo):</strong> En La Espiga: 4 fases en 5 semanas. S1 configuración del chatbot + plantillas de respuestas FAQ; S2 configuración del reporte automatizado de pedidos; S3 piloto con sucursal principal; S4 expansión a las 3 sucursales + capacitación; S5 evaluación y ajustes.</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME</td><td><span class="blank">&nbsp;</span></td><td>Fecha</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor</td><td><span class="blank">&nbsp;</span></td><td>Responsable MiPyME</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+<table class="matrix">
+<tr><th style="width: 4%;">#</th><th style="width: 28%;">Pregunta guía</th><th>Tu respuesta (llena con datos de TU MiPyME)</th></tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">1</td>
+<td><strong>Soluciones seleccionadas (de la matriz 1.4.5)</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Lista las soluciones que efectivamente vas a implementar.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">2</td>
+<td><strong>Operación del proceso CON la solución</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Por cada solución: descripción de cómo quedará el proceso después de implementada.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">3</td>
+<td><strong>Fases del proyecto</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Cuántas fases tendrá el proyecto? Para cada una: nombre + objetivo + tiempo estimado.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">4</td>
+<td><strong>Actividades y responsables por fase</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Lista granular de actividades. Quién hace qué de tu lado + del lado de la MiPyME.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">5</td>
+<td><strong>Cronograma (Gantt)</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Tabla con actividades en filas y semanas/quincenas en columnas. Marca con X cuándo se ejecuta cada actividad.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">6</td>
+<td><strong>Recursos tecnológicos / humanos / financieros</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Equipo, suscripciones, plataformas, equipo humano, presupuesto desglosado por fase.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">7</td>
+<td><strong>Indicadores de seguimiento</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Cómo sabrás semana a semana si vas en tiempo y con calidad? Define indicadores de proceso.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+</table>
+
+
+
+<h2>Cronograma Gantt · semanas del proyecto</h2>
+<p style="font-size: 10pt; color: #666;">Marca con X (o con un color en Excel) las semanas en las que se ejecuta cada actividad. Adapta el número de semanas a tu proyecto.</p>
+<table class="matrix">
+<tr><th style="width:4%;">#</th><th style="width:24%;">Actividad</th><th style="width:14%;">Responsable</th><th style="width:5%;text-align:center;">S1</th><th style="width:5%;text-align:center;">S2</th><th style="width:5%;text-align:center;">S3</th><th style="width:5%;text-align:center;">S4</th><th style="width:5%;text-align:center;">S5</th><th style="width:5%;text-align:center;">S6</th><th style="width:5%;text-align:center;">S7</th><th style="width:5%;text-align:center;">S8</th><th style="width:5%;text-align:center;">S9</th><th style="width:5%;text-align:center;">S10</th><th style="width:5%;text-align:center;">S11</th><th style="width:5%;text-align:center;">S12</th></tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">1</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">2</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">3</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">4</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">5</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">6</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">7</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">8</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td><td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+
+</table>
+
+
+<div class="footer">
+Mi CompañIA · FUNDES Latinoamérica con el apoyo de Google.org · Template Excel del Manual de Implementar IA
+</div>
+
+</body>
+</html>

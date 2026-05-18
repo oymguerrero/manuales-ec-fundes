@@ -4,15 +4,22 @@
    FUNDES Latinoamérica · Componente 2
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/*
+   Tipografías oficiales del brandbook (design.md §3.1):
+   - Afacad: primaria (cuerpo, títulos)
+   - Open Sans Condensed: secundaria (anotaciones, disclaimers, pie de imagen)
+   Inter se mantiene en el stack como fallback gracioso si Afacad no carga.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700;800&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
 
 :root {
-  /* Marca — colores principales */
-  --color-azul: #1F4E8C;            /* Azul principal: confianza, tecnología */
-  --color-azul-claro: #4DA3DF;      /* Azul claro: cercanía */
-  --color-amarillo: #FFC233;        /* Amarillo Mi: energía, optimismo, acento IA */
-  --color-azul-profundo: #0B2E63;   /* Azul profundo: títulos, autoridad */
-  --color-blanco-calido: #FAFCFF;   /* Fondo principal */
+  /* Marca — colores principales (alineados al brandbook §2.1) */
+  --color-azul-profundo: #28467e;   /* OFICIAL brandbook · azul profundo · títulos · "iA" del logo */
+  --color-azul-claro:    #529ed7;   /* OFICIAL brandbook · "compañ" del logo · acentos decorativos */
+  --color-amarillo:      #f7c031;   /* OFICIAL brandbook · "Mi" del logo · botón CTA */
+  --color-naranja:       #f29100;   /* OFICIAL brandbook · subrayado del logo · sparkles cálidos */
+  --color-azul:          #1F4E8C;   /* Utilitario web (no brandbook) · azul medio para hierarchy intermedia entre claro y profundo */
+  --color-blanco-calido: #FAFCFF;   /* Fondo principal · variante con tinte azul mínimo del #f2f2f2 brandbook */
 
   /* Marca — secundarios */
   --color-verde: #3FA35B;           /* Verde impacto: resultados */
@@ -40,8 +47,9 @@
   --max-width: 1080px;
   --max-width-narrow: 760px;
 
-  /* Tipografía */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Tipografía (brandbook §3.1) */
+  --font-sans: 'Afacad', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-condensed: 'Open Sans Condensed', 'Open Sans', -apple-system, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -632,7 +640,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   border-bottom: none;
 }
 
-/* ---------- Glosario (definitions list) ---------- */
+/* ---------- Glosario (definitions list base) ---------- */
 .glossary {
   margin: 24px 0;
 }
@@ -662,7 +670,193 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   line-height: 1.6;
 }
 
-/* ---------- Filtro de glosario ---------- */
+/* ---------- Glosario rico (.glossary--rich) ---------- */
+/* Variante con índice alfabético + filtro en vivo + cards.
+   El JS detecta .glossary--rich y construye el toolkit automáticamente. */
+.glossary--rich {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.glossary--rich .glossary__term {
+  border: 1px solid var(--color-gris-linea);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px 18px;
+  background: var(--color-blanco-calido);
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+  margin: 0;
+}
+
+.glossary--rich .glossary__term::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--color-amarillo);
+  letter-spacing: 0.06em;
+  background: var(--color-azul-profundo);
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.glossary--rich .glossary__term:hover {
+  border-color: var(--color-azul);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.glossary--rich .glossary__term:target {
+  background: var(--color-amarillo-suave);
+  margin: 0;
+  padding: 16px 18px 18px;
+  animation: glossary-pulse 1.2s ease;
+}
+
+@keyframes glossary-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 194, 51, 0.55); }
+  50%  { box-shadow: 0 0 0 8px rgba(255, 194, 51, 0.18); }
+  100% { box-shadow: var(--shadow-sm); }
+}
+
+.glossary--rich .glossary__name {
+  padding-right: 30px; /* deja espacio para el badge de letra */
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.glossary--rich .glossary__def {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* Hidden tarjetas que no pasan el filtro */
+.glossary--rich .glossary__term[hidden] {
+  display: none !important;
+}
+
+/* ---------- Toolkit del glosario (filtro + índice + contador) ---------- */
+.glossary-toolkit {
+  background: var(--color-blanco-calido);
+  border: 1px solid var(--color-gris-linea);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 20px 0;
+  display: grid;
+  gap: 14px;
+}
+
+.glossary-toolkit__filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.glossary-toolkit__input {
+  flex: 1 1 240px;
+  min-width: 200px;
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  border: 1.5px solid var(--color-gris-linea);
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+}
+
+.glossary-toolkit__input:focus {
+  outline: none;
+  border-color: var(--color-azul);
+  box-shadow: 0 0 0 3px rgba(31, 78, 140, 0.12);
+}
+
+.glossary-toolkit__count {
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.glossary-toolkit__count strong {
+  color: var(--color-azul-profundo);
+}
+
+.glossary-toolkit__index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.glossary-toolkit__index-label {
+  font-size: 0.78rem;
+  color: var(--color-gris-texto);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.glossary-toolkit__letter {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--color-azul-profundo);
+  background: transparent;
+  border: 1px solid var(--color-gris-linea);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.12s ease;
+}
+
+.glossary-toolkit__letter:hover {
+  background: var(--color-azul);
+  color: #FFFFFF;
+  border-color: var(--color-azul);
+  transform: scale(1.06);
+}
+
+.glossary-toolkit__letter[aria-disabled="true"] {
+  opacity: 0.32;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.glossary-toolkit__letter.is-active {
+  background: var(--color-amarillo);
+  color: var(--color-azul-profundo);
+  border-color: var(--color-amarillo);
+}
+
+/* Empty state cuando el filtro no encuentra nada */
+.glossary-toolkit__empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--color-gris-texto);
+  background: var(--color-azul-suave);
+  border-radius: var(--radius-sm);
+  margin-top: 8px;
+  font-style: italic;
+  display: none;
+}
+
+.glossary-toolkit__empty.is-visible {
+  display: block;
+}
+
+/* Compatibilidad: el input legacy .glossary-filter sigue funcionando */
 .glossary-filter {
   width: 100%;
   padding: 12px 16px;
@@ -677,6 +871,12 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .glossary-filter:focus {
   outline: 2px solid var(--color-azul);
   outline-offset: 2px;
+}
+
+@media print {
+  .glossary-toolkit { display: none; }
+  .glossary--rich { display: block; }
+  .glossary--rich .glossary__term[hidden] { display: block !important; }
 }
 
 /* ---------- Referencias ---------- */
@@ -876,9 +1076,9 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   align-items: center;
   gap: 10px;
   padding: 8px 10px 8px 8px;
-  background: var(--color-azul, #0B2E63);
+  background: var(--color-azul-profundo, #28467e);
   color: #FAFCFF;
-  border: 2px solid var(--color-amarillo, #FFC233);
+  border: 2px solid var(--color-amarillo, #f7c031);
   border-radius: 999px;
   box-shadow: 0 12px 32px rgba(11, 46, 99, 0.32);
   transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.2s ease;
@@ -907,8 +1107,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .audio-floating__play {
   width: 40px;
   height: 40px;
-  background: var(--color-amarillo, #FFC233);
-  color: var(--color-azul, #0B2E63);
+  background: var(--color-amarillo, #f7c031);
+  color: var(--color-azul-profundo, #28467e);
 }
 .audio-floating__play:hover {
   background: #FFD466;
@@ -943,7 +1143,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   font-family: inherit;
 }
 .audio-floating__title:hover {
-  color: var(--color-amarillo, #FFC233);
+  color: var(--color-amarillo, #f7c031);
 }
 .audio-floating__icon-head {
   width: 18px;
@@ -1668,7 +1868,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   border-radius: var(--radius-pill);
   font-weight: 700;
   font-size: 0.92rem;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   letter-spacing: 0.01em;
   transition: background 0.18s ease, color 0.18s ease;
 }
@@ -2617,6 +2817,331 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   margin-top: 28px;
 }
 
+/* ---------- Templates descargables (Word .doc) ---------- */
+.template-downloads {
+  background: linear-gradient(135deg, #fff8e6 0%, var(--color-amarillo-suave) 100%);
+  border: 1.5px solid var(--color-amarillo);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin: 20px 0 28px;
+}
+
+.template-downloads__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-azul-profundo);
+  margin: 0 0 6px;
+}
+
+.template-downloads__title svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-azul-profundo);
+}
+
+.template-downloads__intro {
+  margin: 0 0 14px;
+  font-size: 0.92rem;
+  color: var(--color-gris-texto);
+}
+
+.template-downloads__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+}
+
+.template-downloads__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--color-blanco-calido);
+  border: 1px solid var(--color-gris-linea);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--color-azul-profundo);
+  font-size: 0.88rem;
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  font-weight: 500;
+}
+
+.template-downloads__item:hover {
+  border-color: var(--color-azul);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+
+.template-downloads__item-icon {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  background: #2b579a;
+  color: white;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.template-downloads__item-icon--xls {
+  background: #1F7244;
+}
+
+.template-downloads__item-icon--ppt {
+  background: #B7472A;
+}
+
+.template-downloads__item-num {
+  font-weight: 800;
+  color: var(--color-azul);
+  margin-right: 4px;
+}
+
+.template-downloads__item-name {
+  flex: 1 1 auto;
+  line-height: 1.3;
+}
+
+.template-downloads__item-arrow {
+  flex: 0 0 auto;
+  color: var(--color-azul);
+  font-size: 1rem;
+  opacity: 0.5;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.template-downloads__item:hover .template-downloads__item-arrow {
+  transform: translateX(2px);
+  opacity: 1;
+}
+
+/* ---------- Checklist actions (botón imprimir/PDF + hint) ---------- */
+.checklist-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.checklist-actions__hint {
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+  flex: 1 1 240px;
+  min-width: 200px;
+}
+
+/* Modo impresión optimizado para checklist como PDF descargable.
+   Se activa con .body--printing-checklist (añadido por JS al pulsar el botón).
+   Esconde TODO menos el checklist + un encabezado con logo + footer mini. */
+@media print {
+  body.body--printing-checklist {
+    background: white !important;
+  }
+  body.body--printing-checklist > *:not(.print-cover):not(.print-only-host) {
+    display: none !important;
+  }
+  body.body--printing-checklist .print-cover {
+    display: block !important;
+    padding: 0;
+    margin: 0;
+  }
+  body.body--printing-checklist .print-cover__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--color-amarillo);
+    margin-bottom: 24px;
+  }
+  body.body--printing-checklist .print-cover__header img {
+    width: 80px;
+    height: auto;
+  }
+  body.body--printing-checklist .print-cover__title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-azul-profundo);
+    margin: 0 0 4px;
+  }
+  body.body--printing-checklist .print-cover__subtitle {
+    font-size: 0.95rem;
+    color: var(--color-gris-texto);
+    margin: 0;
+  }
+  body.body--printing-checklist .print-cover__date {
+    margin-left: auto;
+    font-size: 0.82rem;
+    color: var(--color-gris-texto);
+    text-align: right;
+  }
+  body.body--printing-checklist .printable-checklist {
+    background: white !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    page-break-inside: auto;
+  }
+  body.body--printing-checklist .printable-checklist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+  body.body--printing-checklist .printable-checklist li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+    page-break-inside: avoid;
+  }
+  body.body--printing-checklist .printable-checklist label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  body.body--printing-checklist .printable-checklist input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--color-azul-profundo);
+  }
+  body.body--printing-checklist .printable-checklist .checklist__progress {
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 2px solid var(--color-amarillo);
+    font-weight: 700;
+    color: var(--color-azul-profundo);
+  }
+  body.body--printing-checklist .printable-checklist .checklist__bar {
+    width: 100%;
+    height: 8px;
+  }
+  body.body--printing-checklist .print-cover__footer {
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid #ddd;
+    font-size: 0.75rem;
+    color: var(--color-gris-texto);
+    text-align: center;
+    font-style: italic;
+  }
+  @page {
+    margin: 18mm 15mm;
+  }
+}
+
+/* ---------- Brand graphics: sparkles + arrow + waves (brandbook §19) ---------- */
+
+/*
+   Sparkle = estrella de 4 puntas con lóbulos cóncavos curvos.
+   Símbolo distintivo de la marca (ver design.md §19.1).
+   Uso inline: <svg class="sparkle"><use href="#sparkle-shape"/></svg>
+   o pega el path completo: ver `.sparkle__path`.
+   Por defecto hereda color del padre vía currentColor.
+*/
+.sparkle {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  color: var(--color-azul-profundo);
+  flex-shrink: 0;
+}
+
+.sparkle--small  { width: 16px; height: 16px; }
+.sparkle--large  { width: 64px; height: 64px; }
+.sparkle--xl     { width: 96px; height: 96px; }
+
+.sparkle--azul     { color: var(--color-azul-profundo); }
+.sparkle--amarillo { color: var(--color-amarillo); }
+.sparkle--naranja  { color: var(--color-naranja, #f29100); }
+.sparkle--blanco   { color: #FFFFFF; }
+
+/* Constellation: agrupa varios sparkles con tamaños mixtos para fondo decorativo. */
+.sparkle-constellation {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Hero con sparkles de fondo: pseudo-element con SVG repetido como background. */
+.hero--sparkles { position: relative; overflow: hidden; }
+.hero--sparkles::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><g fill='%2328467e' opacity='0.06'><path d='M30 10 L33 26 L49 30 L33 34 L30 50 L27 34 L11 30 L27 26 Z'/><path d='M150 60 L154 80 L174 84 L154 88 L150 108 L146 88 L126 84 L146 80 Z' opacity='0.7'/><path d='M80 130 L82 142 L94 144 L82 146 L80 158 L78 146 L66 144 L78 142 Z'/><path d='M170 160 L172 170 L182 172 L172 174 L170 184 L168 174 L158 172 L168 170 Z' opacity='0.6'/></g></svg>");
+  background-size: 600px 600px;
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+/* z-index: 3 para garantizar que quede arriba tanto del ::before de sparkles
+   (z-index implícito 0) como del overlay azul de .hero--photo::after (z-index: 1)
+   y del container base de .hero--photo (z-index: 2). */
+.hero--sparkles > .container { position: relative; z-index: 3; }
+
+/*
+   Brand arrow = flecha amarilla horizontal, trazo grueso, esquinas suaves.
+   Inline SVG via class. Apunta a la derecha por defecto.
+*/
+.brand-arrow {
+  display: inline-block;
+  width: clamp(120px, 30vw, 240px);
+  height: auto;
+  vertical-align: middle;
+  color: var(--color-amarillo);
+  flex-shrink: 0;
+}
+
+.brand-arrow--small { width: clamp(80px, 18vw, 140px); }
+.brand-arrow--azul  { color: var(--color-azul-profundo); }
+
+/*
+   Brand waves = líneas onduladas decorativas, naranja/amarillo.
+   Útiles como divisor de sección o textura sutil.
+*/
+.brand-waves {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 32px;
+  color: var(--color-naranja, #f29100);
+  margin: 18px auto;
+}
+
+.brand-waves--amarillo { color: var(--color-amarillo); }
+
+/* Divider semántico: usar como <hr class="brand-divider"> */
+.brand-divider {
+  border: 0;
+  height: 28px;
+  margin: 36px 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 28' preserveAspectRatio='xMidYMid meet'><path d='M0 14 Q25 0 50 14 T100 14 T150 14 T200 14' stroke='%23f29100' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 200px 28px;
+}
+
+@media print {
+  .hero--sparkles::before,
+  .brand-divider,
+  .sparkle,
+  .brand-arrow,
+  .brand-waves { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparkle, .brand-arrow, .brand-waves { transition: none; }
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--color-azul-profundo);
@@ -2682,17 +3207,99 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 /* ---------- Mobile ---------- */
+/* ---------- Tablet (768-1024px) ---------- */
+@media (max-width: 1024px) {
+  .site-header .container,
+  .sub-nav .container,
+  .maestro-progress .container {
+    max-width: 100%;
+  }
+  .sub-nav {
+    /* Permite scroll horizontal de items si no caben */
+    padding: 12px 0;
+  }
+  .sub-nav .container {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px;
+    /* Fade en bordes para indicar "hay más contenido" */
+    mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+    /* Ocultar scrollbar horizontal feo en webkit pero conservar funcionalidad */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-azul) transparent;
+  }
+  .sub-nav .container::-webkit-scrollbar { height: 4px; }
+  .sub-nav .container::-webkit-scrollbar-thumb { background: var(--color-azul); border-radius: 2px; }
+  .sub-nav__label,
+  .sub-nav a {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Mobile (≤768px) ---------- */
 @media (max-width: 768px) {
   body { font-size: 16px; }
-  .hero { padding: 56px 20px 48px; }
-  .hero h1 { font-size: clamp(1.7rem, 6vw, 2.2rem); }
-  .hero p { font-size: 1rem; }
-  main { padding: 40px 20px 56px; }
-  .site-header { padding: 12px 20px; }
-  .site-header nav { gap: 14px; }
-  .site-header nav a { font-size: 0.88rem; }
-  .site-header .brand img { height: 44px; }
+  .hero { padding: 48px 20px 44px; min-height: auto; }
+  .hero h1 { font-size: clamp(1.6rem, 6vw, 2.1rem); }
+  .hero p { font-size: 0.98rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { text-align: center; }
+  main { padding: 32px 16px 48px; }
+  .site-header { padding: 10px 16px; }
+  .site-header .container {
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .site-header .brand img { height: 38px; }
+  .site-header nav {
+    gap: 10px;
+    flex-shrink: 1;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .site-header nav::-webkit-scrollbar { display: none; }
+  .site-header nav a {
+    font-size: 0.84rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 4px 8px;
+  }
+  .sub-nav { padding: 10px 0; }
+  .sub-nav .container { padding: 0 16px; gap: 6px; }
+  .sub-nav__label { font-size: 0.72rem; margin-right: 4px; }
+  .sub-nav a { font-size: 0.84rem; padding: 5px 10px; }
+  .maestro-progress { padding: 10px 0; }
+  .maestro-progress .container { padding: 0 16px; gap: 8px; }
+  .maestro-progress__label { font-size: 0.78rem; }
   .element, .ec-card { padding: 22px; }
   .stat .num { font-size: 1.7rem; }
+  .site-footer { padding: 28px 20px; }
   .site-footer .container { flex-direction: column; align-items: flex-start; text-align: left; }
+
+  /* Lesson tabs ya son responsive — solo refinamientos */
+  .lesson-tabs__header {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .lesson-tabs__progress-text { min-width: 100%; }
+  .lesson-tabs__panel-header { gap: 10px; }
+  .lesson-tabs__panel-num { min-width: 48px; height: 36px; font-size: 0.85rem; }
+}
+
+/* ---------- Small mobile (≤480px) ---------- */
+@media (max-width: 480px) {
+  .site-header .brand img { height: 34px; }
+  .site-header nav a { font-size: 0.8rem; padding: 4px 6px; }
+  .sub-nav a { font-size: 0.8rem; padding: 4px 9px; }
+  .hero { padding: 40px 16px 36px; }
+  .hero h1 { font-size: 1.5rem; }
+  main { padding: 24px 14px 40px; }
+  .lesson-tabs__panel-card { padding: 18px 14px; }
+  .lesson-tabs__panel-title { font-size: 1.05rem; }
 }

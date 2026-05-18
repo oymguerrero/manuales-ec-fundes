@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Logo Mi CompañIA · variante color con atribución institucional FUNDES.
+  Obligatorio en materiales formales (impresos, certificados, plantillas).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-label="Mi CompañIA · Una iniciativa de FUNDES">
+  <!-- Logo principal idéntico a logo-color.svg -->
+  <text x="120" y="74" font-family="Afacad, Inter, system-ui, sans-serif" font-weight="800" font-size="62" fill="#f7c031" letter-spacing="-2">Mi</text>
+  <path d="M105 92 Q160 78, 215 92" stroke="#f29100" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <text x="20" y="160" font-family="Afacad, Inter, system-ui, sans-serif" font-weight="800" font-size="62" fill="#529ed7" letter-spacing="-2">compañ</text>
+  <rect x="245" y="115" width="86" height="56" rx="8" fill="none" stroke="#28467e" stroke-width="2.5"/>
+  <text x="288" y="160" font-family="Afacad, Inter, system-ui, sans-serif" font-weight="800" font-size="42" fill="#28467e" text-anchor="middle" letter-spacing="-1">iA</text>
+  <g fill="#28467e">
+    <path d="M340 108 L342 115 L349 117 L342 119 L340 126 L338 119 L331 117 L338 115 Z"/>
+    <path d="M353 122 L354 127 L359 128 L354 129 L353 134 L352 129 L347 128 L352 127 Z"/>
+  </g>
+
+  <!-- Atribución institucional -->
+  <text x="180" y="215" font-family="Afacad, Inter, system-ui, sans-serif" font-weight="500" font-size="18" fill="#28467e" text-anchor="middle">
+    Una iniciativa de <tspan font-weight="800">FUNDES</tspan>
+  </text>
+</svg>

@@ -271,14 +271,21 @@
 
     function updateBar() {
       if (userClosed) { hideBar(); return; }
+      // Si el .audio-narration vive dentro de un <details> que NO está abierto
+      // (módulo no activo del lesson-tabs), nunca mostramos el mini-bar.
+      // Solo aparece cuando el usuario está en el módulo donde vive el audio
+      // y ha hecho scroll fuera del reproductor mientras el audio suena.
+      const parentDetails = container.closest('details.accordion__item');
+      if (parentDetails && !parentDetails.open) {
+        hideBar();
+        return;
+      }
       if (!audio.paused && !inView) {
         showBar(true);
-      } else if (inView) {
-        // Volvió a la vista: ocultar bar pero NO cerrar el audio
+      } else {
+        // En todos los demás casos (en vista, pausado, o ambos) ocultamos.
+        // El reproductor original ya es visible/accesible; no necesitamos un bar.
         hideBar();
-      } else if (audio.paused) {
-        // Pausado y fuera de vista: mantener bar visible con ícono de play
-        showBar(false);
       }
     }
 
@@ -400,7 +407,15 @@
   // El markup HTML original (details/summary) se mantiene intacto para
   // accesibilidad, Ctrl+F y print. El comportamiento visual es controlado por JS+CSS.
   function initLessonTabs(container) {
-    const items = Array.from(container.querySelectorAll('details.accordion__item'));
+    // Solo los <details> que son módulos directos del wrapper .accordion--modules.
+    // Sin :scope > selector, los <details> ANIDADOS dentro del contenido (ej. los
+    // de las preguntas FAQ del módulo) se tomarían erróneamente como módulos
+    // del sidebar y aparecerían como entradas vacías.
+    const wrapper = container.querySelector('.accordion.accordion--modules')
+                  || container.querySelector('.accordion--modules');
+    const items = wrapper
+      ? Array.from(wrapper.querySelectorAll(':scope > details.accordion__item'))
+      : Array.from(container.querySelectorAll('details.accordion__item'));
     if (!items.length) return;
 
     // Storage key: data-progress-key o derivado del path
@@ -518,6 +533,30 @@
     function openItem(idx, options) {
       options = options || {};
       if (idx < 0 || idx >= items.length) return;
+      // Pausa audios de los módulos que se van a cerrar (audio scoped al módulo activo).
+      // Sin esto, un audio iniciado en el módulo 1.1 seguiría sonando al cambiar a 1.3
+      // y dispararía el mini-bar flotante de forma molesta (el contenedor original
+      // queda oculto vía display:none, IntersectionObserver lo detecta como "fuera").
+      items.forEach(function (d, i) {
+        if (i !== idx) {
+          d.querySelectorAll('audio').forEach(function (a) {
+            if (!a.paused) {
+              a.pause();
+              // Restablece el toggle del .audio-narration si estaba expandido
+              const container = a.closest('.audio-narration');
+              if (container) {
+                const toggle = container.querySelector('.audio-narration__toggle');
+                const player = container.querySelector('.audio-narration__player');
+                if (toggle && toggle.getAttribute('aria-expanded') === 'true') {
+                  toggle.setAttribute('aria-expanded', 'false');
+                  if (player) player.hidden = true;
+                  toggle.textContent = toggle.dataset.labelClosed || 'Escuchar esta sección';
+                }
+              }
+            }
+          });
+        }
+      });
       // Cerrar todos los demás
       items.forEach(function (d, i) {
         d.open = i === idx;
@@ -651,6 +690,181 @@
     openItem(initialIdx, { scroll: false });
   }
 
+  // ---------- Glosario rico (índice alfabético + filtro en vivo + contador) ----------
+  // Auto-construye el toolkit a partir de un <dl class="glossary glossary--rich">.
+  // No requiere markup adicional en HTML — el JS genera el toolkit, el data-letter
+  // de cada término y el contador. Filtra por nombre y por definición (case insensitive
+  // + acentos normalizados).
+  function initGlossaryRich(dl) {
+    const terms = Array.from(dl.querySelectorAll('.glossary__term'));
+    if (!terms.length) return;
+
+    function norm(s) {
+      // Normaliza: lowercase + sin diacríticos (acentos, tilde de ñ→n, etc).
+      // ̀-ͯ es el rango Unicode de "Combining Diacritical Marks".
+      return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    // Asigna data-letter a cada término basado en su nombre
+    const lettersInUse = new Set();
+    terms.forEach(function (term) {
+      const nameEl = term.querySelector('.glossary__name');
+      const firstChar = (nameEl ? nameEl.textContent.trim().charAt(0) : '?').toUpperCase();
+      const letter = /[A-ZÑ]/.test(firstChar) ? firstChar : '#';
+      term.dataset.letter = letter;
+      lettersInUse.add(letter);
+      // Genera ID si no tiene (para anchoring por letra)
+      if (!term.id) {
+        const slug = norm(nameEl.textContent.trim()).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        term.id = 'glossary-' + slug.slice(0, 60);
+      }
+    });
+
+    // Construye toolkit
+    const toolkit = document.createElement('div');
+    toolkit.className = 'glossary-toolkit';
+    const allLetters = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('');
+    toolkit.innerHTML =
+      '<div class="glossary-toolkit__filter-row">' +
+        '<input type="search" class="glossary-toolkit__input" ' +
+          'placeholder="Buscar término o palabra de la definición…" ' +
+          'aria-label="Filtrar términos del glosario" />' +
+        '<span class="glossary-toolkit__count"><strong class="js-count">' + terms.length + '</strong> términos</span>' +
+      '</div>' +
+      '<nav class="glossary-toolkit__index" aria-label="Saltar a letra">' +
+        '<span class="glossary-toolkit__index-label">Ir a:</span>' +
+        allLetters.map(function (l) {
+          const disabled = !lettersInUse.has(l);
+          return '<a href="#" class="glossary-toolkit__letter' + (disabled ? '' : '') + '" ' +
+                 'data-letter="' + l + '" ' +
+                 (disabled ? 'aria-disabled="true" tabindex="-1"' : '') +
+                 '>' + l + '</a>';
+        }).join('') +
+      '</nav>' +
+      '<p class="glossary-toolkit__empty">No se encontraron términos con ese filtro. Prueba con otra palabra o limpia el campo.</p>';
+
+    dl.parentNode.insertBefore(toolkit, dl);
+
+    const input = toolkit.querySelector('.glossary-toolkit__input');
+    const countEl = toolkit.querySelector('.js-count');
+    const emptyEl = toolkit.querySelector('.glossary-toolkit__empty');
+    const letterLinks = toolkit.querySelectorAll('.glossary-toolkit__letter');
+
+    function applyFilter(query) {
+      const q = norm(query);
+      let visible = 0;
+      terms.forEach(function (term) {
+        const nameEl = term.querySelector('.glossary__name');
+        const defEl = term.querySelector('.glossary__def');
+        const haystack = norm((nameEl ? nameEl.textContent : '') + ' ' + (defEl ? defEl.textContent : ''));
+        const matches = !q || haystack.indexOf(q) >= 0;
+        term.hidden = !matches;
+        if (matches) visible++;
+      });
+      countEl.textContent = visible;
+      emptyEl.classList.toggle('is-visible', visible === 0);
+      // Actualiza estado disabled de letras según términos visibles por letra
+      const visibleLetters = new Set();
+      terms.forEach(function (t) { if (!t.hidden) visibleLetters.add(t.dataset.letter); });
+      letterLinks.forEach(function (link) {
+        const l = link.dataset.letter;
+        const disable = lettersInUse.has(l) ? !visibleLetters.has(l) : true;
+        link.setAttribute('aria-disabled', disable ? 'true' : 'false');
+        if (disable) link.setAttribute('tabindex', '-1');
+        else link.removeAttribute('tabindex');
+      });
+    }
+
+    input.addEventListener('input', function () { applyFilter(input.value); });
+
+    letterLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (link.getAttribute('aria-disabled') === 'true') return;
+        const l = link.dataset.letter;
+        // Encuentra el primer término visible con esa letra
+        const target = terms.find(function (t) { return t.dataset.letter === l && !t.hidden; });
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Highlight efímero
+          target.id && (window.location.hash = target.id);
+        }
+        // Toggle visual: marca como activa
+        letterLinks.forEach(function (b) { b.classList.remove('is-active'); });
+        link.classList.add('is-active');
+      });
+    });
+
+    // Estado inicial
+    applyFilter('');
+  }
+
+  // ---------- Print checklist como PDF ----------
+  // Botón [data-action="print-checklist"] → activa modo de impresión que oculta
+  // todo el sitio menos el checklist + un encabezado con logo + fecha + footer
+  // institucional. El usuario elige "Guardar como PDF" en el diálogo del navegador.
+  function initPrintChecklist() {
+    document.querySelectorAll('[data-action="print-checklist"]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        // Localiza el checklist destino: el más cercano al botón
+        const checklist = btn.closest('.checklist-actions') &&
+          btn.closest('.checklist-actions').nextElementSibling &&
+          btn.closest('.checklist-actions').nextElementSibling.classList.contains('printable-checklist')
+            ? btn.closest('.checklist-actions').nextElementSibling
+            : document.querySelector('.printable-checklist');
+        if (!checklist) {
+          window.print();
+          return;
+        }
+
+        // Construye el cover dinámicamente con logo + título + fecha
+        const today = new Date().toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
+        const pageTitle = document.title.split('·')[0].trim() || 'Mi CompañIA';
+        // Detecta ruta del logo según profundidad del documento
+        const logoPath = (location.pathname.split('/').filter(Boolean).length > 1) ? '../img/logo.png' : 'img/logo.png';
+
+        const cover = document.createElement('div');
+        cover.className = 'print-cover';
+        cover.innerHTML =
+          '<div class="print-cover__header">' +
+            '<img src="' + logoPath + '" alt="Mi CompañIA" />' +
+            '<div>' +
+              '<h1 class="print-cover__title">Lista de verificación · Implementar IA</h1>' +
+              '<p class="print-cover__subtitle">' + pageTitle + ' · Manual del Aspirante</p>' +
+            '</div>' +
+            '<div class="print-cover__date">Generado<br>' + today + '</div>' +
+          '</div>' +
+          '<p class="print-cover__intro" style="margin-bottom: 18px; color: #4B5563; font-style: italic;">Marca cada elemento conforme lo tengas resuelto. Esta es una vista descargable; el progreso interactivo se sigue guardando en el navegador.</p>';
+
+        // Mueve el checklist al cover temporalmente
+        const placeholder = document.createComment('checklist-placeholder');
+        checklist.parentNode.replaceChild(placeholder, checklist);
+        cover.appendChild(checklist);
+        cover.insertAdjacentHTML('beforeend',
+          '<div class="print-cover__footer">' +
+            'Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org · ' +
+            location.hostname + location.pathname +
+          '</div>'
+        );
+        document.body.appendChild(cover);
+        document.body.classList.add('body--printing-checklist');
+
+        function restore() {
+          document.body.classList.remove('body--printing-checklist');
+          if (placeholder.parentNode) {
+            placeholder.parentNode.replaceChild(checklist, placeholder);
+          }
+          if (cover.parentNode) cover.parentNode.removeChild(cover);
+          window.removeEventListener('afterprint', restore);
+        }
+        window.addEventListener('afterprint', restore);
+
+        // Pequeño delay para que el navegador aplique los estilos
+        setTimeout(function () { window.print(); }, 50);
+      });
+    });
+  }
+
   // ---------- Inicialización ----------
   function init() {
     document.querySelectorAll('.tabs').forEach(initTabs);
@@ -659,6 +873,8 @@
     document.querySelectorAll('.quiz').forEach(initQuiz);
     document.querySelectorAll('.audio-narration').forEach(initAudioNarration);
     document.querySelectorAll('.lesson-tabs').forEach(initLessonTabs);
+    document.querySelectorAll('.glossary--rich').forEach(initGlossaryRich);
+    initPrintChecklist();
     // Solo aplicar el handler genérico de accordion modules si NO está dentro de lesson-tabs
     initAccordionModules();
   }

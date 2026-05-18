@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Logo Mi CompañIA · variante color (default).
+  Versión web funcional basada en <text>. Para piezas oficiales (impresos,
+  video, social), usar el SVG vectorial original del diseñador cuando esté
+  disponible. Ver design.md §18.5.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-label="Mi CompañIA">
+  <!-- "Mi" en amarillo -->
+  <text x="120" y="74" font-family="Afacad, Inter, system-ui, sans-serif" font-weight="800" font-size="62" fill="#f7c031" letter-spacing="-2">Mi</text>
+
+  <!-- Subrayado curvo naranja bajo "Mi" -->
+  <path d="M105 92 Q160 78, 215 92" stroke="#f29100" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- "compañ" en azul claro -->
+  <text x="20" y="160" font-family="Afacad, Inter, system-ui, sans-serif" font-weight="800" font-size="62" fill="#529ed7" letter-spacing="-2">compañ</text>
+
+  <!-- "iA" dentro de un rectángulo con bordes redondeados, azul profundo -->
+  <rect x="245" y="115" width="86" height="56" rx="8" fill="none" stroke="#28467e" stroke-width="2.5"/>
+  <text x="288" y="160" font-family="Afacad, Inter, system-ui, sans-serif" font-weight="800" font-size="42" fill="#28467e" text-anchor="middle" letter-spacing="-1">iA</text>
+
+  <!-- Sparkles arriba-derecha del cuadro de "iA" -->
+  <g fill="#28467e">
+    <path d="M340 108 L342 115 L349 117 L342 119 L340 126 L338 119 L331 117 L338 115 Z"/>
+    <path d="M353 122 L354 127 L359 128 L354 129 L353 134 L352 129 L347 128 L352 127 Z"/>
+  </g>
+</svg>

@@ -19,15 +19,15 @@
     </a>
     <nav>
       <a href="../index.html">Inicio</a>
-      <a href="../maestro/index.html">Manual Maestro</a>
-      <a href="index.html">Estándar A</a>
+      <a href="../maestro/index.html">Tu primera CompañIA</a>
+      <a href="index.html">Implementar IA</a>
     </nav>
   </div>
 </header>
 
 <nav class="sub-nav" aria-label="Capítulos del Manual del Estándar A">
   <div class="container">
-    <span class="sub-nav__label">Estándar A</span>
+    <span class="sub-nav__label">Implementar IA</span>
     <a href="index.html">Inicio</a>
     <a href="elemento-1.html">Elemento 1 · Planear</a>
     <a href="elemento-2.html">Elemento 2 · Ejecutar</a>
@@ -55,7 +55,7 @@
 
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">Capítulo 7 · Recursos del Estándar A</div>
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Capítulo 7 · Recursos del Estándar A</div>
     <h1>Preguntas frecuentes, glosario, referencias y contacto</h1>
     <p>Las dudas más comunes específicas del Estándar A, el glosario consolidado del F21, las 24 referencias bibliográficas que respaldan los conocimientos del estándar y los canales de soporte.</p>
   </div>
@@ -66,7 +66,7 @@
 
     <a class="back-link" href="ruta-preparacion.html">Volver a Ruta de preparación</a>
 
-    <aside class="toc" aria-label="En esta página">
+    <aside class="toc" aria-label="En esta página (redundante)" hidden>
       <p class="toc__title">En esta página</p>
       <ol>
         <li><a href="#faq">Preguntas frecuentes</a></li>
@@ -76,9 +76,19 @@
       </ol>
     </aside>
 
-    <section id="faq">
-      <h2>Preguntas frecuentes del Estándar A</h2>
-      <p>Las preguntas siguientes son específicas del Estándar A. Para preguntas sobre el marco general de la certificación, consulta el <a href="../maestro/recursos.html#faq">Manual Maestro</a>.</p>
+    <div class="lesson-tabs" data-progress-key="estandar-a-recursos">
+    <div class="accordion accordion--modules" aria-label="Módulos del Capítulo 7 · Recursos">
+
+      <details class="accordion__item" id="faq" open>
+        <summary>
+          <span class="accordion__num">7.1</span>
+          <span class="accordion__title-main">Preguntas frecuentes del Estándar A</span>
+          <span class="accordion__meta">FAQ específicas · alcance · productos · evaluación</span>
+        </summary>
+        <div class="accordion__body">
+
+      <h3>FAQ del estándar (preguntas específicas)</h3>
+      <p>Las preguntas siguientes son específicas del Estándar A. Para preguntas sobre el marco general de la certificación, consulta <a href="../maestro/recursos.html#faq">Tu primera CompañIA</a>.</p>
 
       <p class="accordion__group-title">Sobre el alcance del Estándar</p>
       <div class="accordion">
@@ -164,17 +174,25 @@
 
       <aside class="callout callout--tip" role="note">
         <span class="callout__label">¿Tu pregunta no está aquí?</span>
-        <div class="callout__body">Consulta la sección de <a href="#contacto">Contacto y soporte</a> al final de esta página o el <a href="../maestro/recursos.html#faq">FAQ general del Manual Maestro</a> para preguntas sobre el marco general de la certificación.</div>
+        <div class="callout__body">Consulta la sección de <a href="#contacto">Contacto y soporte</a> al final de esta página o el <a href="../maestro/recursos.html#faq">FAQ general de Tu primera CompañIA</a> para preguntas sobre el marco general de la certificación.</div>
       </aside>
     </section>
 
-    <section id="glosario">
-      <h2>Glosario consolidado del Estándar A</h2>
-      <p>Reúne las entradas de glosario establecidas en el F21 del Estándar A, organizadas alfabéticamente. Cada término proviene del documento oficial del estándar.</p>
+        </div>
+      </details>
 
-      <input type="search" id="glossary-filter" class="glossary-filter" placeholder="Filtrar términos del glosario..." aria-label="Filtrar términos" />
+      <details class="accordion__item" id="glosario">
+        <summary>
+          <span class="accordion__num">7.2</span>
+          <span class="accordion__title-main">Glosario consolidado del Estándar A</span>
+          <span class="accordion__meta">Términos del F21 · alfabético · con filtro</span>
+        </summary>
+        <div class="accordion__body">
 
-      <dl class="glossary" id="glossary-list">
+      <h3>Glosario alfabético</h3>
+      <p>Reúne las entradas de glosario establecidas en el F21 del Estándar A. Cada término proviene del documento oficial. Usa el buscador o salta a una letra del índice.</p>
+
+      <dl class="glossary glossary--rich" id="glossary-list">
         <div class="glossary__term" id="g-acta"><dt class="glossary__name">Acta de cierre</dt><dd class="glossary__def">Documento formal que registra la conclusión del proyecto de implementación, incluyendo resultados, compromisos y conformidad de las partes.</dd></div>
         <div class="glossary__term" id="g-acuerdo"><dt class="glossary__name">Acuerdo de confidencialidad</dt><dd class="glossary__def">Convenio legal mediante el cual las partes se comprometen a no divulgar ni utilizar indebidamente información privada o sensible compartida durante una relación profesional o comercial.</dd></div>
         <div class="glossary__term" id="g-alfabetizacion"><dt class="glossary__name">Alfabetización digital</dt><dd class="glossary__def">Conjunto de conocimientos y habilidades que permiten a las personas usar herramientas digitales y tecnologías de forma efectiva.</dd></div>
@@ -198,8 +216,18 @@
       </dl>
     </section>
 
-    <section id="referencias">
-      <h2>Referencias y fuentes consultadas</h2>
+        </div>
+      </details>
+
+      <details class="accordion__item" id="referencias">
+        <summary>
+          <span class="accordion__num">7.3</span>
+          <span class="accordion__title-main">Referencias y fuentes consultadas</span>
+          <span class="accordion__meta">R1-R24 · documentos oficiales CONOCER y FUNDES</span>
+        </summary>
+        <div class="accordion__body">
+
+      <h3>Fuentes oficiales del estándar</h3>
       <p>Las afirmaciones de carácter normativo, institucional o procedimental contenidas en el manual provienen de las fuentes que se relacionan a continuación.</p>
 
       <h3>Fuentes citadas en el cuerpo del manual</h3>
@@ -241,8 +269,18 @@
       </ol>
     </section>
 
-    <section id="contacto">
-      <h2>Datos de contacto y soporte</h2>
+        </div>
+      </details>
+
+      <details class="accordion__item" id="contacto">
+        <summary>
+          <span class="accordion__num">7.4</span>
+          <span class="accordion__title-main">Datos de contacto y soporte</span>
+          <span class="accordion__meta">FUNDES · CE/EI · CONOCER</span>
+        </summary>
+        <div class="accordion__body">
+
+      <h3>Canales de soporte</h3>
       <p>Para cualquier consulta relacionada con tu proceso de evaluación en el Estándar A —postulación, calendario, requerimientos, dudas operativas— FUNDES Latinoamérica pone a tu disposición los siguientes canales:</p>
 
       <h3>Soporte específico del Estándar A</h3>
@@ -253,7 +291,11 @@
 
       <h3>Información oficial del CONOCER</h3>
       <p>Para consultas relativas al marco institucional del Sistema Nacional de Competencias, al RENEC, al RENAP o al Padrón de Prestadores de Servicios: <a href="https://conocer.gob.mx" target="_blank" rel="noopener">conocer.gob.mx</a>.</p>
-    </section>
+        </div>
+      </details>
+
+    </div>
+    </div>
 
     <hr style="margin: 56px 0 32px; border: none; border-top: 2px solid var(--color-gris-linea);" />
 
@@ -273,7 +315,7 @@
   <div class="container">
     <div class="footer-brand">
       <img src="../img/logo.png" alt="Mi CompañIA" />
-      <span class="footer-tag">Estándar A · Recursos</span>
+      <span class="footer-tag">Implementar IA · Recursos</span>
     </div>
     <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
   </div>

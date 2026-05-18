@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FAQ, glosario y referencias · Manual Maestro · Mi CompañIA</title>
+<title>FAQ, glosario y referencias · Tu primera CompañIA · Mi CompañIA</title>
 <meta name="description" content="Preguntas frecuentes, glosario completo, referencias oficiales y datos de contacto del proyecto Mi CompañIA · Manual del Aspirante." />
 <link rel="icon" type="image/png" href="../img/logo.png" />
 <link rel="stylesheet" href="../assets/styles.css" />
@@ -19,25 +19,25 @@
     </a>
     <nav>
       <a href="../index.html">Inicio</a>
-      <a href="index.html">Manual Maestro</a>
+      <a href="index.html">Tu primera CompañIA</a>
       <a href="../index.html#estandares">Estándares</a>
     </nav>
   </div>
 </header>
 
-<nav class="sub-nav" aria-label="Capítulos del Manual Maestro">
+<nav class="sub-nav" aria-label="Capítulos de Tu primera CompañIA">
   <div class="container">
-    <span class="sub-nav__label">Manual Maestro</span>
+    <span class="sub-nav__label">Tu primera CompañIA</span>
     <a href="index.html">Bienvenida</a>
     <a href="que-es.html">Qué es la certificación</a>
     <a href="como-se-evalua.html">Cómo se evalúa</a>
     <a href="proceso.html">Proceso paso a paso</a>
-    <a href="cuatro-estandares.html">Los 4 estándares</a>
+    <a href="es-para-ti.html">¿Es para ti?</a>
     <a href="recursos.html" class="active">FAQ y recursos</a>
   </div>
 </nav>
 
-<div class="maestro-progress" aria-label="Progreso del Manual Maestro">
+<div class="maestro-progress" aria-label="Progreso de Tu primera CompañIA">
   <div class="container">
     <span class="maestro-progress__label">Capítulo 6 de 6 · FAQ y recursos</span>
     <div class="maestro-progress__bar" role="presentation">
@@ -53,7 +53,7 @@
 
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">Capítulo 5 · Recursos</div>
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Capítulo 5 · Recursos</div>
     <h1>Preguntas frecuentes, glosario y referencias</h1>
     <p>Las dudas más comunes de los aspirantes, el glosario completo de términos del Sistema Nacional de Competencias, las fuentes oficiales que respaldan este manual y los datos de contacto.</p>
   </div>
@@ -62,20 +62,20 @@
 <main>
   <div class="container">
 
-    <a class="back-link" href="cuatro-estandares.html">Volver al capítulo anterior</a>
+    <a class="back-link" href="es-para-ti.html">Volver al capítulo anterior</a>
 
-    <aside class="toc" aria-label="En esta página">
-      <p class="toc__title">En esta página</p>
-      <ol>
-        <li><a href="#faq">Preguntas frecuentes</a></li>
-        <li><a href="#glosario">Glosario maestro</a></li>
-        <li><a href="#referencias">Referencias y fuentes</a></li>
-        <li><a href="#contacto">Contacto y soporte</a></li>
-      </ol>
-    </aside>
+    <div class="lesson-tabs" data-progress-key="maestro-cap6-recursos">
+    <div class="accordion accordion--modules" aria-label="Módulos del Capítulo 6 · Recursos">
 
-    <section id="faq">
-      <h2>Preguntas frecuentes</h2>
+      <details class="accordion__item" id="faq" open>
+        <summary>
+          <span class="accordion__num">6.1</span>
+          <span class="accordion__title-main">Preguntas frecuentes</span>
+          <span class="accordion__meta">FAQ de Tu primera CompañIA · agrupadas por tema</span>
+        </summary>
+        <div class="accordion__body">
+
+      <h3>FAQ del Manual</h3>
       <p>Las dudas más comunes de los aspirantes, agrupadas por tema. Haz clic en cada pregunta para ver la respuesta.</p>
 
       <p class="accordion__group-title">Sobre la elegibilidad y los requisitos</p>
@@ -180,13 +180,25 @@
       </aside>
     </section>
 
-    <section id="glosario">
-      <h2>Glosario maestro</h2>
+        </div>
+      </details>
+
+      <details class="accordion__item" id="glosario">
+        <summary>
+          <span class="accordion__num">6.2</span>
+          <span class="accordion__title-main">Glosario maestro</span>
+          <span class="accordion__meta">Términos clave de la certificación · alfabético · con filtro</span>
+        </summary>
+        <div class="accordion__body">
+
+      <h3>Glosario alfabético</h3>
+      <p>Términos clave del marco institucional CONOCER y de la metodología de evaluación. Usa el buscador o salta a una letra del índice.</p>
+
       <p>Las definiciones que siguen corresponden a los conceptos institucionales y metodológicos comunes a los cuatro Estándares de Competencia. Las definiciones específicas de cada estándar se encuentran en su Manual respectivo.</p>
 
       <input type="search" id="glossary-filter" class="glossary-filter" placeholder="Filtrar términos del glosario..." aria-label="Filtrar términos del glosario" />
 
-      <dl class="glossary" id="glossary-list">
+      <dl class="glossary glossary--rich" id="glossary-list">
         <div class="glossary__term" id="g-ahv">
           <dt class="glossary__name">Actitudes, hábitos y valores (AHV)</dt>
           <dd class="glossary__def">Predisposición observable a actuar con un determinado comportamiento durante el ejercicio de la función. Generalmente se evalúan en conjunto con desempeños y productos.</dd>
@@ -329,9 +341,19 @@
       </dl>
     </section>
 
-    <section id="referencias">
-      <h2>Referencias y fuentes consultadas</h2>
-      <p>Las afirmaciones de carácter normativo, institucional o de procedimiento contenidas en el Manual Maestro provienen de las fuentes que se relacionan a continuación. Cuando una afirmación se basa en alguna de ellas, se identifica en el texto con el número entre corchetes correspondiente.</p>
+        </div>
+      </details>
+
+      <details class="accordion__item" id="referencias">
+        <summary>
+          <span class="accordion__num">6.3</span>
+          <span class="accordion__title-main">Referencias y fuentes consultadas</span>
+          <span class="accordion__meta">Fuentes oficiales · marco normativo · marcos internacionales</span>
+        </summary>
+        <div class="accordion__body">
+
+      <h3>Fuentes consultadas</h3>
+      <p>Las afirmaciones de carácter normativo, institucional o de procedimiento contenidas en Tu primera CompañIA provienen de las fuentes que se relacionan a continuación. Cuando una afirmación se basa en alguna de ellas, se identifica en el texto con el número entre corchetes correspondiente.</p>
 
       <h3>Fuentes oficiales</h3>
       <ol class="reference-list">
@@ -363,8 +385,18 @@
       </ol>
     </section>
 
-    <section id="contacto">
-      <h2>Datos de contacto y soporte</h2>
+        </div>
+      </details>
+
+      <details class="accordion__item" id="contacto">
+        <summary>
+          <span class="accordion__num">6.4</span>
+          <span class="accordion__title-main">Datos de contacto y soporte</span>
+          <span class="accordion__meta">Soporte general · aspirantes · recursos en línea · CONOCER</span>
+        </summary>
+        <div class="accordion__body">
+
+      <h3>Canales de soporte</h3>
       <p>Para cualquier consulta relacionada con tu proceso de evaluación —postulación, calendario, requerimientos, dudas operativas— FUNDES Latinoamérica pone a tu disposición los siguientes canales:</p>
 
       <h3>Soporte general</h3>
@@ -378,15 +410,19 @@
 
       <h3>Información oficial del CONOCER</h3>
       <p>Para consultas relativas al marco institucional del Sistema Nacional de Competencias, al RENEC, al RENAP o al Padrón de Prestadores de Servicios, consulta el portal institucional del CONOCER: <a href="https://conocer.gob.mx" target="_blank" rel="noopener">conocer.gob.mx</a>.</p>
-    </section>
+        </div>
+      </details>
+
+    </div>
+    </div>
 
     <hr style="margin: 56px 0 32px; border: none; border-top: 2px solid var(--color-gris-linea);" />
 
     <section id="cierre">
-      <p style="text-align: center; font-style: italic; color: var(--color-gris-texto);">— Fin del Manual Maestro —</p>
+      <p style="text-align: center; font-style: italic; color: var(--color-gris-texto);">— Fin de Tu primera CompañIA —</p>
       <p style="text-align: center;">Continúa con el Manual del Estándar que corresponde a tu perfil profesional.</p>
       <div class="hero-actions" style="justify-content: center;">
-        <a href="cuatro-estandares.html#finder" class="btn btn-primary">¿Cuál es mi estándar?</a>
+        <a href="es-para-ti.html#finder" class="btn btn-primary">¿Cuál es mi estándar?</a>
         <a href="../index.html" class="btn btn-secondary">Ir a los 4 estándares</a>
       </div>
     </section>
@@ -398,7 +434,7 @@
   <div class="container">
     <div class="footer-brand">
       <img src="../img/logo.png" alt="Mi CompañIA" />
-      <span class="footer-tag">Manual Maestro</span>
+      <span class="footer-tag">Tu primera CompañIA</span>
     </div>
     <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
   </div>

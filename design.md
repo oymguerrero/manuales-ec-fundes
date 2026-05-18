@@ -1,10 +1,16 @@
 # Sistema de Diseño Web — Mi CompañIA
 
+> **Fuente oficial:** `micompania_brandbook.pdf`. Este documento es la implementación web del brandbook. Cuando haya conflicto entre este .md y el brandbook, **manda el brandbook**.
+
 ## 1. Identidad visual
 
 ### Nombre
 
 Mi CompañIA
+
+### Misión (texto oficial del brandbook)
+
+Iniciativa nacional que busca cerrar la brecha digital de las MIPYMES mexicanas mediante la adopción progresiva de herramientas de Inteligencia Artificial. A través de sensibilización, formación de técnicos certificados, acompañamiento sectorial y alianzas estratégicas, el proyecto fortalecerá la productividad, competitividad y sostenibilidad de **más de 10 mil MIPYMES en México**.
 
 ### Concepto central
 
@@ -22,31 +28,63 @@ Mi CompañIA
 
 Hablamos como un amigo que sabe: claro, humano, útil y sin tecnicismos innecesarios.
 
+### Atribución institucional
+
+Mi CompañIA es **una iniciativa de FUNDES** (Latinoamérica) con apoyo de Google.org. En materiales formales se usa la variante del logo con atribución "Una iniciativa de FUNDES" (ver §18.2).
+
 ---
 
 ## 2. Paleta de color
 
-### Colores principales
+### 2.1 Paleta primaria oficial (brandbook)
 
-| Nombre         | Uso                               | HEX       |
-| -------------- | --------------------------------- | --------- |
-| Azul principal | Confianza, tecnología, estructura | `#1F4E8C` |
-| Azul claro     | Cercanía, accesibilidad           | `#4DA3DF` |
-| Amarillo Mi    | Energía, optimismo, acción        | `#FFC233` |
-| Azul profundo  | Títulos, contraste, autoridad     | `#0B2E63` |
-| Blanco cálido  | Fondo principal                   | `#FAFCFF` |
+Es la fuente de verdad para piezas de marca (impresos, video, social, etc.):
 
-### Colores secundarios
+| Nombre              | HEX       | CMYK                          | Uso                                |
+| ------------------- | --------- | ----------------------------- | ---------------------------------- |
+| Amarillo            | `#f7c031` | C:3 M:25 Y:92 K:0             | "Mi" del logo · acentos · CTA      |
+| Naranja             | `#f29100` | C:2 M:50 Y:100 K:0            | Subrayado del logo · sparkles cálidos · líneas onduladas |
+| Azul claro          | `#529ed7` | C:65 M:26 Y:0 K:0             | "compañ" del logo · enlaces       |
+| Azul profundo       | `#28467e` | C:96 M:81 Y:23 K:8            | "iA" del logo · títulos · sparkles brand |
+| Gris claro          | `#f2f2f2` | C:4 M:2 Y:2 K:0               | Fondos neutros                     |
+| Negro               | `#000000` | C:75 M:68 Y:67 K:90           | Variante mono · texto extremo      |
 
-| Nombre         | Uso                | HEX       |
-| -------------- | ------------------ | --------- |
-| Verde impacto  | Resultados, avance | `#3FA35B` |
-| Azul suave     | Fondos de tarjetas | `#EAF4FF` |
-| Amarillo suave | Fondos de énfasis  | `#FFF3CC` |
-| Gris texto     | Texto secundario   | `#4B5563` |
-| Gris línea     | Bordes suaves      | `#D9E4F2` |
+### 2.2 Paleta secundaria oficial (brandbook · uso restringido)
 
-### Contraste mínimo (WCAG AA)
+Para infografías, ilustraciones complementarias y materiales que requieran ampliar el rango de color. **No reemplazan la paleta primaria** en componentes UI principales.
+
+| Nombre        | HEX (aprox)| CMYK                | Uso                                 |
+| ------------- | ---------- | ------------------- | ----------------------------------- |
+| Rosa palo     | `#d9a59a`  | C:14 M:38 Y:30 K:0  | Tonos suaves · ilustración humana   |
+| Granate       | `#822d3f`  | C:32 M:98 Y:62 K:27 | Énfasis serio · advertencias graves |
+| Turquesa      | `#26b69c`  | C:75 M:1 Y:43 K:0   | Variación de avance/éxito           |
+| Lila          | `#bdacd3`  | C:27 M:32 Y:0 K:0   | Acento secundario suave             |
+
+### 2.3 Tokens web implementados (`assets/styles.css`) — alineados al brandbook
+
+A partir de la migración de paleta, los tokens críticos coinciden con los HEX oficiales del brandbook §2.1. Todos los pares principales pasan **WCAG AA ≥ 4.5:1** sobre fondo blanco cálido (validado con cálculo de luminancia relativa).
+
+| Token                   | HEX       | Origen        | Contraste s/ blanco cálido | Uso                          |
+| ----------------------- | --------- | ------------- | -------------------------- | ---------------------------- |
+| `--color-azul-profundo` | `#28467e` | OFICIAL brandbook | 9.01:1 ✓ AAA           | Títulos · navegación · "iA" del logo |
+| `--color-azul-claro`    | `#529ed7` | OFICIAL brandbook | 2.83:1 (decorativo)    | Acentos · enlaces · "compañ" del logo |
+| `--color-amarillo`      | `#f7c031` | OFICIAL brandbook | 1.89:1 (decorativo · texto azul profundo encima da 5.53:1 ✓) | Botón CTA · "Mi" del logo · acentos `<span class="ia">` |
+| `--color-naranja`       | `#f29100` | OFICIAL brandbook | 2.30:1 (decorativo)    | Subrayado del logo · sparkles cálidos · líneas onduladas |
+| `--color-azul`          | `#1F4E8C` | Utilitario web (no brandbook) · azul medio | 8.09:1 ✓ AAA | Botones · azul medio en hierarchy entre claro y profundo |
+| `--color-verde`         | `#3FA35B` | Utilitario web | 3.34:1 (decorativo · botón con texto blanco da 6.30:1 ✓) | Estados de éxito · check completado de lesson-tabs |
+| `--color-blanco-calido` | `#FAFCFF` | Equivalente `#f2f2f2` con tinte azul mínimo | n/a | Fondo principal del body |
+| `--color-gris-texto`    | `#4B5563` | Utilitario web | 8.06:1 ✓ AAA           | Texto secundario · meta |
+| `--color-gris-linea`    | `#D9E4F2` | Utilitario web | 1.21:1 (separador)     | Bordes suaves · separadores |
+| `--color-azul-suave`    | `#EAF4FF` | Utilitario web | 1.07:1 (fondo)         | Fondos de tarjeta · hover |
+| `--color-amarillo-suave`| `#FFF3CC` | Utilitario web | 1.16:1 (fondo)         | Fondos de callout informativo |
+
+**Notas:**
+
+- Los tokens "decorativos" (azul claro, amarillo, naranja, verde) **no se usan para texto sobre blanco**. Se usan como fondos, bordes, acentos o textos sobre fondo de contraste alto (ej. azul profundo sobre amarillo en botones CTA pasa 5.53:1).
+- El antes había un `--color-azul-profundo: #0B2E63` (12.89:1) que sobrepasaba ampliamente el AAA. El nuevo `#28467e` brandbook sigue en zona AAA (9.01:1) — más fiel a marca, mismo cumplimiento WCAG.
+- `--color-azul: #1F4E8C` se mantiene como **token utilitario** (no es del brandbook) porque hace de azul medio entre el `--color-azul-claro` y el `--color-azul-profundo`. Útil para hierarchy visual de UI.
+
+### 2.4 Contraste mínimo (WCAG AA)
 
 | Combinación                              | Ratio mínimo | Uso                  |
 | ---------------------------------------- | ------------ | -------------------- |
@@ -61,23 +99,70 @@ Verificar todos los pares de color en producción con herramienta WCAG antes de 
 
 ## 3. Tipografía
 
-### Fuente principal
+### 3.1 Tipografía oficial del brandbook
 
-Inter
+**Primaria · Afacad**
+
+Sans-serif moderna y cálida. *"Combina modernidad y cercanía en un solo trazo. Su diseño sans-serif limpio y equilibrado transmite innovación y profesionalismo, mientras que sus formas abiertas y cálidas generan confianza y accesibilidad."*
+
+| Peso       | Uso                |
+| ---------- | ------------------ |
+| `regular`  | Cuerpo de texto    |
+| `italic`   | Anotaciones        |
+| `semibold` | Subtítulos         |
+| `bold`     | Títulos / H1-H2    |
 
 ```css
-font-family: 'Inter', sans-serif;
+/* Afacad desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+font-family: 'Afacad', sans-serif;
 ```
 
-### Fuente alternativa
+**Secundaria · Open Sans Condensed**
 
-DM Sans
+Para mensajes secundarios y disclaimers. *"Aporta simplicidad y legibilidad, funcionando como soporte perfecto para mensajes secundarios y cuerpos de texto. Su diseño estilizado y compacto optimiza el espacio sin perder claridad."*
+
+| Peso                       | Uso                       |
+| -------------------------- | ------------------------- |
+| Condensed Regular          | Anotaciones secundarias   |
+| Condensed Light Italic     | Disclaimers · pie de imagen |
 
 ```css
-font-family: 'DM Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+font-family: 'Open Sans Condensed', 'Open Sans', sans-serif;
 ```
 
-### Jerarquía tipográfica — Desktop
+### 3.2 Implementación web (migrada al brandbook)
+
+A partir del commit de migración tipográfica, **el sitio carga Afacad como tipografía principal** con Inter como fallback gracioso, y **Open Sans Condensed** disponible para anotaciones secundarias y disclaimers.
+
+**Stack actual en `assets/styles.css`:**
+
+```css
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Inter:wght@400;500;600;700;800&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+
+/* Tokens */
+--font-sans: 'Afacad', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+--font-condensed: 'Open Sans Condensed', 'Open Sans', -apple-system, sans-serif;
+```
+
+**Cómo se aplica:**
+
+- `body`, headings y todos los componentes UI heredan `--font-sans` (Afacad → Inter fallback).
+- Para anotaciones secundarias o disclaimers, aplicar `font-family: var(--font-condensed)` explícitamente.
+- Los SVG inline (`<text>` dentro de diagramas, mapas, timelines) usan el atributo `font-family="Afacad, Inter, sans-serif"` directamente porque las CSS vars no siempre heredan dentro de `<svg>` en todos los navegadores.
+
+**Verificación visual recomendada tras la migración:**
+
+- Headings (H1 hero, H2 secciones, H3 módulos) — Afacad bold puede tener glyphs ligeramente más anchos que Inter 800.
+- Badges del lesson-tabs (`accordion__num`, `lesson-tab-item__num`) — verificar que números 2 dígitos (`5.1`, `3.7`) caben.
+- Botones primarios y CTAs — el peso semibold/bold de Afacad es slightly different.
+- SVG `<text>` dentro de diagramas — Afacad debería renderizar similar a Inter (ambas geométricas).
+
+Si Afacad **no carga** (CDN bloqueado, offline), Inter se usa automáticamente sin colapso visual.
+
+### 3.3 Jerarquía tipográfica — Desktop
 
 | Elemento        | Tamaño   | Peso |
 | --------------- | -------- | ---- |
@@ -89,7 +174,7 @@ font-family: 'DM Sans', sans-serif;
 | Texto pequeño   | 13–14 px | 500  |
 | Botones         | 16 px    | 700  |
 
-### Jerarquía tipográfica — Móvil (≤ 768px)
+### 3.4 Jerarquía tipográfica — Móvil (≤ 768px)
 
 | Elemento        | Tamaño   | Peso |
 | --------------- | -------- | ---- |
@@ -335,7 +420,7 @@ min-height: 44px;
 * Estética sci-fi
 * Exceso de hologramas
 * Visuales corporativos rígidos
-* Sparkles genéricos de IA
+* Sparkles genéricos de IA (✨ random, brillos amorfos) — **NO confundir con el sparkle de marca**, que es un elemento gráfico oficial (estrella de 4 puntas en azul profundo `#28467e` o naranja `#f29100`). Ver §19.1.
 
 ---
 
@@ -894,23 +979,443 @@ Estado de la biblioteca compartida en `assets/styles.css` + `assets/interactive.
 
 | Componente | Patrón Bloom | Estado |
 |---|---|---|
+| **Lesson Tabs LMS** (sidebar + panel + progress + check) | Estructura de lección | ✅ (ver §17) |
+| **Accordion modules** (`<details>` con badge + meta) | Recordar | ✅ (base del Lesson Tabs) |
 | Tabs ARIA accesibles | Recordar/Comprender | ✅ |
-| Accordion (`<details>`) | Recordar | ✅ nativo |
+| Accordion FAQ (`<details>`) | Recordar | ✅ nativo |
 | Checklist con localStorage | Aplicar (autoevaluación) | ✅ |
 | Mini-diagnóstico | Evaluar | ✅ |
 | Finder cuestionario | Aplicar (decisión) | ✅ |
-| Calculadora IEC | Aplicar (simulación) | ✅ |
 | Glosario filtrable | Recordar | ✅ |
 | Reflection prompt (callout--reflection) | Crear/Evaluar | ✅ |
 | Key points (recapitulación) | Comprender | ✅ |
 | Flip cards | Recordar | ✅ |
 | Quiz multiple choice | Comprender/Aplicar | ✅ |
+| **Audio narration con mini-bar flotante** | UDL (vía auditiva) | ✅ (ElevenLabs · voz Alice · ver §17.7) |
 | Decision scenario | Aplicar/Analizar | ⏳ pendiente |
 | Sort drag-drop | Aplicar/Analizar | ⏳ pendiente |
 | Sequence drag-drop | Aplicar | ⏳ pendiente |
 | Comparison slider | Analizar | ⏳ pendiente |
 | Hotspot diagram | Recordar/Aplicar | ⏳ pendiente |
 | Microvideo embed | variable | ⏳ pendiente |
-| Audio narration | variable | ✅ (ElevenLabs vía `scripts/tts-elevenlabs.ps1` · voz Alice) |
 
 > **Cuando se implemente un componente nuevo, mueve su fila de pendiente a implementado y actualiza esta tabla.**
+
+---
+
+## 17. Navegación de capítulos: Lesson Tabs (LMS-style)
+
+Patrón principal para presentar **capítulos del manual** que tienen 3 o más
+secciones. Inspirado en Coursera / LinkedIn Learning / Moodle: sidebar
+vertical con la lista de módulos + panel principal con el contenido +
+tracking de avance visible. El HTML semántico sigue siendo `<details>/<summary>`
+para que Ctrl+F, screen readers y print sigan funcionando.
+
+### 17.1 Cuándo usar este patrón
+
+Aplica `.lesson-tabs` cuando:
+
+- La página representa un **capítulo de lectura secuencial** con 3+ secciones
+  conceptuales independientes (no son pasos en cadena, son temas paralelos
+  o agrupados temáticamente).
+- El aspirante se beneficia de **ver dónde está parado** y cuánto le falta.
+- Hace sentido permitir **marcar como leído** y persistir el avance entre
+  visitas (un manual de estudio largo, no una página de referencia).
+
+**NO uses lesson-tabs cuando:**
+
+- La página es referencial (FAQ, glosario, recursos) → usa accordion FAQ.
+- La página tiene una sola sección larga → estructura normal con headings.
+- La página tiene contenido secuencial obligatorio paso-a-paso → considera
+  un stepper dedicado en lugar de tabs.
+
+### 17.2 Anatomía del componente
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  ▰▰▰░░░░  3 de 6 módulos completados              [Reiniciar]   │  ← header
+├──────────────────┬──────────────────────────────────────────────┤
+│  ✓ 1.1 ¿Por qué  │  ┌─ 1.3 Cómo funciona el sistema en México ┐│
+│  ✓ 1.2 ¿Qué es   │  │  [contenido completo del módulo]         ││  ← panel
+│  ▶ 1.3 Cómo fun  │  │                                          ││
+│    1.4 ¿Qué es   │  │  ← Anterior  · ✓ Marcar y continuar →    ││
+│    1.5 Mitos y   │  └──────────────────────────────────────────┘│
+│    1.6 Quién pue │                                              │
+└──────────────────┴──────────────────────────────────────────────┘
+   ↑ sidebar             ↑ panel-card
+```
+
+Tres estados visuales en cada item del sidebar:
+- **○ pendiente** (gris) — aún no abierto
+- **▶ activo** (azul con borde lateral) — módulo abierto actualmente
+- **✓ completado** (verde) — marcado como leído
+
+### 17.3 Estructura HTML mínima
+
+El wrapper `<div class="lesson-tabs">` envuelve un `<div class="accordion accordion--modules">`
+que a su vez contiene una serie de `<details class="accordion__item">`. El JS
+construye dinámicamente el header, sidebar, panel y footer.
+
+```html
+<div class="lesson-tabs" data-progress-key="manual-X-cap-Y">
+  <div class="accordion accordion--modules" aria-label="Módulos del Capítulo Y">
+
+    <details class="accordion__item" id="anchor-1" open>
+      <summary>
+        <span class="accordion__num">1.1</span>
+        <span class="accordion__title-main">Título del módulo</span>
+        <span class="accordion__meta">Quizzes · audio · 5 min</span>
+      </summary>
+      <div class="accordion__body">
+        <!-- Contenido normal: párrafos, imágenes, callouts, quizzes, SVG... -->
+      </div>
+    </details>
+
+    <details class="accordion__item" id="anchor-2">
+      <summary>
+        <span class="accordion__num">1.2</span>
+        <span class="accordion__title-main">Otro módulo</span>
+        <span class="accordion__meta">3 min</span>
+      </summary>
+      <div class="accordion__body">…</div>
+    </details>
+
+    <!-- N módulos más -->
+  </div>
+</div>
+```
+
+**Reglas para el markup:**
+
+| Regla | Por qué |
+|---|---|
+| `data-progress-key` debe ser único por capítulo (ej. `maestro-cap2-que-es`) | Es la key de `localStorage`. Si dos capítulos comparten key, comparten avance |
+| Solo UN `<details>` con `open` al inicio | Define qué módulo se muestra al cargar la página |
+| `id` único por módulo | Permite deep-linking (`/que-es.html#sistema` abre directamente ese módulo) |
+| El `<summary>` debe tener `.accordion__num`, `.accordion__title-main`, `.accordion__meta` | El JS los replica al sidebar y al panel header |
+| Numerar `N.M` por convención (capítulo.módulo) | Da contexto inmediato al lector |
+| No incluir botones "Expandir/Colapsar todos" | El layout es tab, no acordeón. El JS los remueve si los encuentra |
+
+### 17.4 Comportamiento JS automático
+
+`assets/interactive.js` expone `initLessonTabs()` que se ejecuta sobre cada
+`.lesson-tabs` automáticamente al cargar la página:
+
+1. **Lee `localStorage`** con la key `mi-compania-lessons::<data-progress-key>` →
+   array de IDs de módulos completados.
+2. **Construye el header** con progreso (`N de M módulos · X%`) + botón "Reiniciar".
+3. **Construye el sidebar** clonando los datos de cada `<summary>` como botones
+   clickeables.
+4. **Mueve los `<details>` originales** dentro del panel principal. La visibilidad
+   de cada uno la controla el atributo `open` (mutual exclusion: solo uno
+   abierto a la vez).
+5. **Conecta eventos**: click en sidebar item, botones `← Anterior` y
+   `✓ Marcar y continuar`, hover sobre check para desmarcar.
+6. **Si la URL incluye un hash** que coincide con el `id` de un módulo, abre
+   ese módulo en lugar del primer `[open]`.
+
+### 17.5 Estados visuales y semántica
+
+- **Activo**: el módulo `[open]` actual. CSS aplica borde lateral azul y badge
+  azul con icono `▶`. Solo uno a la vez.
+- **Completado**: añadido al set `completed`. CSS aplica badge verde con `✓`.
+  Persistente entre visitas.
+- **Pendiente**: estado por defecto. Badge gris con el número.
+- **Hover sobre badge completado**: cambia a rojo con `×` → click desmarca.
+
+Transiciones:
+```
+Pendiente → click sidebar → Activo
+Activo → click "✓ Marcar y continuar" → Completado + abre siguiente como Activo
+Completado → click sidebar → Activo (sigue completado al fondo)
+Completado → click sobre badge ✓ → Pendiente
+```
+
+### 17.6 Tracking de avance (localStorage)
+
+- **Storage key**: `mi-compania-lessons::<data-progress-key>`
+- **Formato**: array JSON de IDs de módulos completados.
+- **Scope**: por navegador y por usuario; no se sincroniza con servidor.
+- **Privacidad**: el botón "Reiniciar" exige `confirm()` antes de borrar.
+- **Degradación**: si `localStorage` está bloqueado, el componente sigue
+  funcionando pero sin persistir avance entre sesiones.
+
+Convención de naming para `data-progress-key`:
+
+| Manual | Patrón | Ejemplos |
+|---|---|---|
+| Manual Maestro | `maestro-capN-<slug>` | `maestro-cap2-que-es`, `maestro-cap4-proceso` |
+| Estándar A | `estandar-a-<seccion>` | `estandar-a-elemento-1`, `estandar-a-elemento-2` |
+
+### 17.7 Audio narration con mini-bar flotante
+
+Patrón complementario para **UDL (Universal Design for Learning)**: cualquier
+módulo extenso puede tener una narración alternativa al texto. El componente
+es independiente del lesson-tabs pero se integra dentro del `.accordion__body`.
+
+**Markup:**
+
+```html
+<div class="audio-narration">
+  <div class="audio-narration__header">
+    <button class="audio-narration__toggle" type="button"
+            aria-expanded="false" aria-controls="audio-X">
+      Escuchar esta sección
+    </button>
+    <span class="audio-narration__meta">2 min 30 seg · voz Alice · narración alternativa al texto</span>
+  </div>
+  <div class="audio-narration__player" id="audio-X" hidden>
+    <audio controls preload="none">
+      <source src="../media/audio-X.mp3" type="audio/mpeg" />
+      Tu navegador no soporta audio HTML5. <a href="../media/audio-X.mp3">Descarga el archivo MP3</a>.
+    </audio>
+  </div>
+  <details class="audio-narration__transcript">
+    <summary>Ver transcripción</summary>
+    <div class="audio-narration__transcript-body">
+      <!-- Transcripción limpia del audio, sin tags SSML -->
+    </div>
+  </details>
+</div>
+```
+
+**Comportamiento:**
+
+- El botón `Toggle` **solo muestra/oculta** el reproductor visual. Nunca pausa
+  el audio (decisión deliberada: muchos usuarios lo confundían con pause).
+- Click → cambia texto a "Ocultar reproductor".
+- `audio.ended` restablece el estado inicial.
+- **Mini-bar flotante**: aparece automáticamente al hacer scroll fuera del
+  contenedor mientras el audio se reproduce. Permite pausar y volver al
+  reproductor original con scroll suave. `IntersectionObserver` detecta
+  visibilidad.
+- El botón `×` del mini-bar pausa el audio y oculta el bar.
+- Mobile (<560px): bar full-width abajo. Desktop: pill centrado abajo.
+
+**Voz y guion:**
+
+- Generación: **ElevenLabs Multilingual v2** (`scripts/tts-elevenlabs.ps1`).
+- Voz por defecto: **Alice** (`Xb7hH8MSUJpSbSDYk0k2`), "Clear, Engaging Educator".
+- Idioma: español de México.
+- SSML soportado: `<break time>`, `<emphasis>`, prosody básico.
+- **Pronunciación "mipyme"**: escribir en SSML en minúscula (`mipyme`,
+  `mipymes`) para forzar lectura como palabra, no acrónimo deletreado.
+- Capacidad ElevenLabs free: ~10,000 chars/mes; planificar.
+- Scripts viven en `media/scripts/*.txt` (SSML), audios en `media/audio-*.mp3`.
+
+### 17.8 Accesibilidad, print y mobile
+
+| Aspecto | Comportamiento |
+|---|---|
+| **Ctrl+F** | Funciona en TODOS los módulos (texto en DOM, no oculto por JS) |
+| **Screen reader** | Cada item del sidebar es `<button>` con `aria-controls` al `<details>` correspondiente. El header tiene `role="progressbar"` con `aria-valuenow` actualizado |
+| **Keyboard** | Tab navega los items del sidebar; Enter/Space activa; Tab continúa en el panel |
+| **`@media print`** | Esconde header + sidebar + footer; expande TODOS los módulos como flujo lineal con `<summary>` visible |
+| **Mobile <900px** | Sidebar pasa a stack vertical arriba del panel. Padding reducido |
+| **`prefers-reduced-motion`** | Animaciones de transición desactivadas, pero la funcionalidad intacta |
+
+### 17.9 Decisiones de UX consolidadas
+
+1. **TOC clásico arriba se elimina** cuando se usa `.lesson-tabs`. El sidebar
+   cumple esa función con valor añadido (estados de avance).
+2. **El click en un módulo del sidebar marca como activo, NO como completado**.
+   El completado requiere acción explícita (botón "Marcar y continuar") para
+   no inflar falsamente el avance.
+3. **Solo un módulo abierto a la vez** (mutual exclusion). Reduce carga
+   cognitiva. Para imprimir o leer todo de corrido, `@media print` expone todo.
+4. **`open` inicial en el primer módulo** del primer capítulo de cada manual.
+   Los capítulos posteriores también abren su primer módulo, pero el usuario
+   puede preferir saltar a uno específico vía hash.
+5. **Sin barra global de navegación entre capítulos dentro del lesson-tabs**.
+   La navegación entre capítulos se maneja vía:
+   - sub-nav del manual (top, persistente)
+   - `<section id="siguiente">` al final de cada página (link al cap siguiente)
+6. **Reiniciar requiere confirm**. Borrar el avance es destructivo desde la
+   perspectiva del usuario.
+
+### 17.10 Antipatrones (qué NO hacer)
+
+| ❌ Antipatrón | ✅ En lugar de eso |
+|---|---|
+| Anidar `lesson-tabs` dentro de `lesson-tabs` | Un capítulo = un `.lesson-tabs`. Si necesitas sub-temas, usa Tabs ARIA o accordion FAQ dentro del módulo |
+| Reusar el mismo `data-progress-key` en dos páginas | Cada capítulo único debe tener key única, si no, el avance se mezcla |
+| Poner contenido importante FUERA del `lesson-tabs` (entre el header y el wrapper) | El usuario tab-navegando puede perderlo. Si es contexto general, ponlo en el hero o en el primer módulo |
+| Usar `lesson-tabs` para una página con solo 2 módulos | Sobrecarga visual. Para 2 módulos, prosa lineal o tabs horizontales bastan |
+| Marcar todos los módulos como completados automáticamente al cargar | Falsea el progreso del usuario. La marca solo se aplica con su acción explícita |
+| Eliminar el `<summary>` de los `<details>` originales pensando que el sidebar reemplaza | El `<summary>` sigue siendo necesario para Ctrl+F, print y screen readers. El JS lo oculta visualmente vía CSS, no del DOM |
+
+### 17.11 Páginas que actualmente implementan este patrón
+
+- `maestro/que-es.html` — 6 módulos (Cap 2)
+- `maestro/como-se-evalua.html` — 4 módulos (Cap 3)
+- `maestro/proceso.html` — 7 módulos (mapa + 6 pasos, Cap 4)
+- `maestro/cuatro-estandares.html` — 4 módulos (Cap 5)
+- `estandar-a/elemento-1.html` — 7 módulos
+- `estandar-a/elemento-2.html` — 7 módulos
+- `estandar-a/elemento-3.html` — 7 módulos
+
+> **Cuando agregues un nuevo capítulo extenso al manual, considera si debe
+> heredar este patrón. Si lo aplicas, recuerda asignar un `data-progress-key`
+> único y actualizar esta lista.**
+
+---
+
+## 18. Logo · variantes, atribución y reglas de uso
+
+> Fuente: `micompania_brandbook.pdf` páginas 3-7.
+
+### 18.1 Variantes principales
+
+El logo de **Mi CompañIA** se compone de tres bloques tipográficos: "Mi" (amarillo), subrayado curvo (naranja), "compañ" (azul claro) e "iA" dentro de un cuadro (azul profundo, con sparkles decorativos integrados).
+
+| Variante         | Cuándo usar                                                | Notas                                              |
+| ---------------- | ---------------------------------------------------------- | -------------------------------------------------- |
+| **Color**        | Default. Sobre fondos blancos o muy claros                 | Cuatro colores oficiales (amarillo · naranja · azul claro · azul profundo) |
+| **Color sólido azul** (`#28467e`) | Sobre fondos claros cuando no hay espacio para multicolor (favicon mediano, sello) | Toda la marca en un único tono azul profundo |
+| **Color sólido naranja** (`#f29100`) | Sobre fondos claros, contexto cálido/optimista | Variante mono naranja, mismo principio |
+| **Negro** (`#000000`) | Impresión a una tinta · grabados · sellos             | Solo cuando no se pueda imprimir color             |
+| **Versión en bloque (claro)** | Sobre fondos `#28467e` o azul de marca         | Logo blanco sobre fondo azul (alta presencia)      |
+| **Versión en bloque (negro)** | Sobre fondos negros o muy oscuros               | Logo blanco sobre fondo negro                       |
+
+### 18.2 Logo con atribución institucional
+
+Cuando se usa en materiales que requieren atribución a **FUNDES**, debajo del logo va el texto "Una iniciativa de **FUNDES**" en azul profundo (o blanco si la versión es en bloque). Existen las mismas variantes:
+
+- Color · sólido · versión en bloque (con fondo de color)
+
+La atribución FUNDES es **obligatoria** en:
+- Materiales impresos oficiales
+- Documentos formales (PDFs descargables, certificados, plantillas)
+- Piezas dirigidas a aliados institucionales
+
+En el sitio web ya aparece en el footer; no requiere repetirse en cada componente.
+
+### 18.3 Área de seguridad
+
+El logo debe respetar un **margen mínimo de 1 módulo de su altura** en todos los lados. Un "módulo" es la altura del bloque "Mi" (el amarillo superior). Cuadrícula de referencia: 8×8 módulos centrados en el logo.
+
+**Implicación práctica:**
+
+- No pongas el logo pegado al borde del lienzo.
+- No pongas otros logos, texto o elementos visuales dentro del área de seguridad.
+- En cabeceras/footers del sitio, mantén padding generoso alrededor del `<img>` del logo.
+
+### 18.4 Usos incorrectos (antipatrones)
+
+❌ **NO hagas estas cuatro cosas con el logo** (brandbook pág. 7):
+
+| Antipatrón | Por qué está prohibido |
+|---|---|
+| **Distorsión** (estirar horizontal/vertical) | Rompe la proporción del trazo tipográfico — el logo debe escalarse proporcionalmente siempre |
+| **Colores fuera de la paleta** (rojo, verde brillante, magenta…) | Las únicas variantes monocromáticas válidas son las del §18.1. Nunca recolorear "creativamente" |
+| **Uso incompleto** (mostrar solo "Mi" o solo "compañiA", o cortar partes) | El logo se usa entero. Para favicons pequeños, usar la versión cuadrada compacta (no recortar la versión completa) |
+| **Efectos de transparencia o reducir opacidad** | El logo siempre va 100% opaco. Si el fondo no permite legibilidad, cambia a la variante en bloque (§18.1) |
+
+### 18.5 Implementación en el sitio web
+
+Activos disponibles en `img/`:
+
+| Archivo | Variante | Uso |
+|---|---|---|
+| `img/logo.png` | Color (raster) | Default actual del sitio. Mantener como fallback |
+| `img/logo-color.svg` | Color (vectorial) | Default oficial. Usar para nuevas implementaciones |
+| `img/logo-mono-azul.svg` | Mono `#28467e` | Sobre fondos claros sin espacio para multicolor |
+| `img/logo-mono-naranja.svg` | Mono `#f29100` | Contexto cálido/optimista, fondos claros |
+| `img/logo-negro.svg` | Mono `#000000` | Impresión 1 tinta, grabados, sellos |
+| `img/logo-blanco.svg` | Mono `#FFFFFF` | Versión en bloque sobre azul profundo o negro |
+| `img/logo-fundes-color.svg` | Color + atribución FUNDES | Materiales formales, certificados |
+
+**Nota sobre los SVG actuales:** son una **versión web funcional** basada en `<text>` con la fuente Afacad/Inter. Para piezas oficiales impresas o de alta resolución, **reemplazar por el SVG vectorial original del diseñador** cuando esté disponible (los `<text>` actuales se renderizan con la fuente disponible en el sistema; el SVG oficial debe tener los glyphs convertidos a paths).
+
+Para usar en HTML:
+
+```html
+<!-- Logo color (default web) -->
+<img src="img/logo-color.svg" alt="Mi CompañIA" width="180" height="100" />
+
+<!-- Logo blanco sobre fondo azul (footer del sitio) -->
+<img src="img/logo-blanco.svg" alt="Mi CompañIA" width="160" height="90" />
+
+<!-- Logo institucional con FUNDES (PDF descargables, certificados) -->
+<img src="img/logo-fundes-color.svg" alt="Mi CompañIA · Una iniciativa de FUNDES" width="200" height="130" />
+```
+
+Pendiente:
+- [ ] Decidir si migrar `img/logo.png` → `img/logo-color.svg` en headers del sitio (mejor escalado, peso menor) o mantener PNG por compatibilidad cross-browser estricta.
+- [ ] Reemplazar SVG actuales con la versión vectorial oficial del diseñador cuando esté lista.
+
+---
+
+## 19. Elementos gráficos distintivos
+
+> Fuente: `micompania_brandbook.pdf` página 12.
+
+La marca tiene **tres elementos gráficos propios** que aparecen como decoración recurrente. Úsalos con moderación: refuerzan la identidad cuando están bien dosificados, abruman cuando se abusan.
+
+### 19.1 Sparkles (estrella de 4 puntas)
+
+**Forma:** estrella de 4 puntas con lóbulos cóncavos curvados (no es una estrella geométrica simple — los bordes hacia adentro son curvos, dándole calidez orgánica). Es el mismo símbolo que aparece junto a la "iA" del logo.
+
+**Tamaños recomendados:** mezclar pequeño · mediano · grande en una misma composición para generar ritmo visual ("constelación").
+
+**Colores válidos:**
+- `#28467e` (azul profundo) — variante principal, neutra
+- `#f29100` (naranja) o `#f7c031` (amarillo) — variante cálida, para acentos
+- Blanco sobre fondos oscuros
+
+**Cuándo usar:**
+- Como elemento decorativo de fondo en heroes/landing
+- Para puntuar transiciones o headings importantes
+- Junto a frases ancla o llamadas a la acción
+
+**NO confundir con sparkles genéricos de IA** (✨ emoji, brillos random de stock art). Ver §7. El sparkle de marca es **un símbolo específico**, no un efecto decorativo abstracto.
+
+```css
+/* Ejemplo de sparkle SVG (simplificado, lóbulos cóncavos) */
+<svg viewBox="0 0 24 24" fill="#28467e">
+  <path d="M12 2 C13 9, 15 11, 22 12 C15 13, 13 15, 12 22 C11 15, 9 13, 2 12 C9 11, 11 9, 12 2 Z"/>
+</svg>
+```
+
+### 19.2 Flecha amarilla
+
+**Forma:** flecha horizontal masiva amarilla (`#f7c031`), trazo grueso, esquinas ligeramente redondeadas, apunta hacia la derecha (avance / progreso).
+
+**Cuándo usar:**
+- Marcar dirección de un proceso (antes → después, paso A → paso B)
+- En diagramas de flujo, infografías de proceso
+- Como acento visual para "continúa hacia..." o "siguiente capítulo →"
+
+**Cuándo NO usar:**
+- Como botón ordinario (los botones tienen su propio estilo, §5)
+- En densidad alta — máximo 1-2 por sección
+
+### 19.3 Líneas onduladas
+
+**Forma:** ondas horizontales suaves naranja / amarillo (`#f29100` o `#f7c031`), trazo medio. Curvas amplias, no apretadas. Pueden ir en pares paralelos o solas.
+
+**Cuándo usar:**
+- Como divisor de sección decorativo (separar grandes bloques sin línea recta rígida)
+- En el pie de página (ya aparecen en algunas piezas del brandbook)
+- Como textura sutil de fondo (con muy baja opacidad)
+
+**Cuándo NO usar:**
+- Como separador entre items pequeños (usar `border-bottom` normal)
+- Dentro de párrafos o cerca de texto fino (compiten visualmente)
+
+### 19.4 Reglas de combinación
+
+- **Sparkles + flecha**: OK juntos en heros/landings con harto espacio.
+- **Sparkles + líneas onduladas**: OK como ambiente decorativo de fondo (sparkles arriba, ondas abajo).
+- **Flecha + líneas onduladas**: evitar en el mismo viewport — compiten por atención.
+- **Los tres a la vez en un mismo bloque**: solo si hay espacio sobrado y un diseñador supervisa. Lo más común y limpio es usar **uno solo** por sección.
+
+### 19.5 Implementación en el sitio web
+
+Estado actual:
+
+- [ ] Sparkles como SVG reutilizable (`<svg class="sparkle">`) — pendiente de implementar.
+- [ ] Flecha amarilla como componente CSS o SVG — pendiente.
+- [ ] Líneas onduladas como background SVG sutil para secciones decorativas — pendiente.
+
+**Si los implementas:** define los SVG en `assets/styles.css` como background-image data-URI o como SVG sprite en una carpeta `img/decor/`, y permite que tres-cuatro componentes los compongan vía clases utilitarias (`.has-sparkles`, `.has-waves`).
