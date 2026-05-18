@@ -6,21 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="ProgId" content="Word.Document">
 <meta name="Generator" content="Microsoft Word">
-<meta name="Originator" content="Microsoft Word">
 <title>1.4.1 · Reporte de evaluación inicial de la MiPyME</title>
 <!--[if gte mso 9]>
-<xml>
-<w:WordDocument>
-<w:View>Print</w:View>
-<w:Zoom>100</w:Zoom>
-<w:DoNotOptimizeForBrowser/>
-</w:WordDocument>
-</xml>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
 <![endif]-->
 <style>
 @page {
   size: 21.59cm 27.94cm;
-  margin: 2.5cm 2cm;
+  margin: 2.2cm 1.8cm;
 }
 body {
   font-family: 'Calibri', 'Arial', sans-serif;
@@ -30,148 +23,135 @@ body {
 }
 .brand-header {
   border-bottom: 3pt solid #f7c031;
-  padding-bottom: 12pt;
-  margin-bottom: 24pt;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
 }
-.brand-header table {
-  width: 100%;
-  border: none;
-  border-collapse: collapse;
-}
-.brand-header td {
-  border: none;
-  vertical-align: middle;
-  padding: 0;
-}
-.brand-header h1 {
-  color: #28467e;
-  font-size: 18pt;
-  margin: 0 0 4pt 0;
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
   font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
 }
-.brand-header .subtitle {
-  color: #666;
-  font-size: 10pt;
-  margin: 0;
-}
-.brand-header .meta {
-  text-align: right;
-  font-size: 9pt;
-  color: #666;
-}
-.product-num {
-  display: inline-block;
-  background: #f7c031;
-  color: #28467e;
-  padding: 4pt 10pt;
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
   border-radius: 4pt;
-  font-weight: bold;
-  font-size: 10pt;
-  margin-bottom: 10pt;
 }
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+.f21-box .taxativo { background: #FFE0E0; color: #C0392B; font-weight: bold; padding: 1pt 6pt; border-radius: 3pt; font-size: 9pt; margin-left: 4pt; }
+
+.espiga-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.espiga-box strong { color: #28467e; font-style: normal; }
+
 h2 {
   color: #28467e;
   font-size: 14pt;
   border-bottom: 1pt solid #f7c031;
   padding-bottom: 4pt;
-  margin-top: 22pt;
+  margin-top: 24pt;
   margin-bottom: 12pt;
 }
-h3 {
-  color: #1F4E8C;
-  font-size: 12pt;
-  margin-top: 16pt;
-  margin-bottom: 8pt;
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
 }
-.intro {
-  background: #FFF3CC;
-  border-left: 4pt solid #f7c031;
-  padding: 12pt 16pt;
-  margin: 16pt 0;
-  font-size: 10pt;
-  color: #555;
-}
-.section {
-  margin-bottom: 18pt;
-}
-.section-letter {
+.question-num {
   display: inline-block;
   background: #28467e;
   color: white;
-  width: 24pt;
-  height: 24pt;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
   text-align: center;
   border-radius: 50%;
   font-weight: bold;
   font-size: 11pt;
-  line-height: 24pt;
+  margin-right: 8pt;
   vertical-align: middle;
-  margin-right: 6pt;
 }
-.section-title {
+.question-title {
   font-weight: bold;
   color: #28467e;
-  font-size: 12pt;
+  font-size: 11.5pt;
 }
-.section-help {
+.question-help {
   color: #666;
   font-size: 10pt;
   font-style: italic;
-  margin: 4pt 0 8pt 32pt;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
 }
 .fill-area {
   border: 1pt dashed #ccc;
   background: #fafafa;
-  padding: 18pt;
-  margin: 6pt 0 0 32pt;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
   min-height: 60pt;
   color: #aaa;
   font-style: italic;
   font-size: 10pt;
 }
-.product-data {
-  background: #f5f9ff;
-  border: 1pt solid #cce0f5;
-  padding: 12pt 16pt;
-  margin: 0 0 24pt 0;
-  border-radius: 4pt;
-}
-.product-data table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.product-data td {
-  padding: 4pt 8pt;
-  font-size: 10pt;
-  border: none;
-}
-.product-data td:first-child {
-  font-weight: bold;
-  color: #28467e;
-  width: 30%;
-}
-.product-data .blank {
-  border-bottom: 1pt solid #999;
-  display: inline-block;
-  min-width: 200pt;
-}
+
 .footer {
-  margin-top: 40pt;
-  padding-top: 12pt;
+  margin-top: 36pt;
+  padding-top: 10pt;
   border-top: 1pt solid #ddd;
   font-size: 8pt;
   color: #999;
   text-align: center;
   font-style: italic;
-}
-.required-badge {
-  background: #FFE0E0;
-  color: #C0392B;
-  font-size: 9pt;
-  font-weight: bold;
-  padding: 2pt 8pt;
-  border-radius: 3pt;
-  margin-left: 8pt;
 }
 </style>
 </head>
@@ -180,30 +160,34 @@ h3 {
 <div class="brand-header">
 <table>
 <tr>
-<td style="width: 80pt;">
-<!-- Logo placeholder. En la versión web, el logo se inserta como imagen. -->
-<div style="background: #28467e; color: #f7c031; font-weight: bold; font-size: 14pt; padding: 14pt 8pt; text-align: center; border-radius: 6pt;">Mi<br>CompañIA</div>
-</td>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>Reporte de evaluación inicial de la MiPyME</h1>
 <p class="subtitle">Manual de Implementar IA · Producto del Elemento 1 · Planear</p>
 </td>
-<td class="meta" style="width: 140pt;">
-<strong>Producto 1.4.1</strong><br>
-Template editable<br>
-<em>Mi CompañIA · FUNDES</em>
-</td>
+<td class="meta"><strong>Producto 1.4.1</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
 </table>
 </div>
 
-<div class="intro">
-<strong>Sobre este template.</strong> Producto del Elemento 1 (Planear) que recoge el perfil empresarial, contactos clave, áreas de mejora identificadas, objetivos del proyecto, indicadores, metas, recursos disponibles y tiempos. Llena cada sección con los datos reales de tu MiPyME. El evaluador revisará que cada característica del F21 esté cubierta — usa este template como guía, pero adapta el contenido a tu proyecto real. <strong>Documentos fabricados ad hoc se detectan con facilidad.</strong>
+<div class="intro"><strong>Sobre este template.</strong> Es el primer producto del proyecto: una foto del estado actual de la MiPyME, sus objetivos y los recursos disponibles. Tu evaluador no busca que llenes el template — busca que respondas con datos de TU MiPyME real. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>Contiene el perfil empresarial de la MiPyME, giro y número de empleados</li>
+<li>Incluye el nombre de la MiPyME, ubicación, email y teléfono de contacto</li>
+<li>Contiene el resultado de las acciones aplicadas previamente por el cliente</li>
+<li>Contiene las áreas de mejora de oportunidades/problemas a resolver desde la perspectiva del cliente y antigüedad de ello</li>
+<li>Incluye los objetivos, indicadores y metas</li>
+<li>Indica los recursos, tiempos y entregas esperadas</li>
+<li>Se presenta de forma digital/físico sin errores ortográficos</li>
+</ul>
 </div>
+
+<div class="espiga-box"><strong>Caso pedagógico La Espiga (ilustrativo, NO es tu solución):</strong> Panadería La Espiga (caso pedagógico del manual): 3 sucursales en una ciudad media, 12 empleados, vende pan tradicional. Doña Beatriz (dueña) y Carlos (hijo, apoyo administrativo) quieren reducir el tiempo que las encargadas pasan respondiendo consultas repetitivas por WhatsApp.</div>
 
 <div class="product-data">
 <table>
-<tr><td>Nombre del proyecto</td><td><span class="blank">&nbsp;</span></td></tr>
 <tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
 <tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
 <tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
@@ -211,75 +195,43 @@ Template editable<br>
 </table>
 </div>
 
-<h2>Características del producto (F21)</h2>
+<h2>Tu turno · preguntas guía</h2>
 
-<div class="section">
-<div>
-<span class="section-letter">a</span>
-<span class="section-title">Perfil empresarial</span>
+<div class="question-block">
+<div><span class="question-num">1</span><span class="question-title">Perfil empresarial</span></div>
+<div class="question-help">¿Cómo describirías a la MiPyME en 2-3 líneas? Giro, número de empleados, antigüedad.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
 </div>
-<div class="section-help">Razón social, sector, antigüedad, número de empleados, sucursales, productos/servicios principales, mercado objetivo.</div>
-<div class="fill-area">[Llena aquí el contenido de la característica a. Borra esta línea cuando empieces a escribir.]</div>
+<div class="question-block">
+<div><span class="question-num">2</span><span class="question-title">Datos de contacto</span></div>
+<div class="question-help">Nombre legal, ubicación, persona responsable, correo y teléfono.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
 </div>
-
-<div class="section">
-<div>
-<span class="section-letter">b</span>
-<span class="section-title">Datos de contacto</span>
+<div class="question-block">
+<div><span class="question-num">3</span><span class="question-title">Acciones previas del cliente</span></div>
+<div class="question-help">¿Qué ha intentado hacer la MiPyME antes para resolver estos problemas? ¿Con qué resultados?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
 </div>
-<div class="section-help">Nombre del responsable principal, cargo, correo, teléfono, dirección de la matriz.</div>
-<div class="fill-area">[Llena aquí el contenido de la característica b. Borra esta línea cuando empieces a escribir.]</div>
+<div class="question-block">
+<div><span class="question-num">4</span><span class="question-title">Áreas de mejora desde la perspectiva del cliente</span></div>
+<div class="question-help">¿Qué problemas u oportunidades identifica la MiPyME? ¿Desde cuándo arrastran cada uno?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
 </div>
-
-<div class="section">
-<div>
-<span class="section-letter">c</span>
-<span class="section-title">Áreas de mejora identificadas</span>
+<div class="question-block">
+<div><span class="question-num">5</span><span class="question-title">Objetivos · indicadores · metas</span></div>
+<div class="question-help">¿Qué quiere lograr la MiPyME con este proyecto? Para cada objetivo, ¿qué indicador lo mide y cuál es la meta?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
 </div>
-<div class="section-help">Procesos, áreas operativas o problemas que la MiPyME desea mejorar con IA.</div>
-<div class="fill-area">[Llena aquí el contenido de la característica c. Borra esta línea cuando empieces a escribir.]</div>
-</div>
-
-<div class="section">
-<div>
-<span class="section-letter">d</span>
-<span class="section-title">Objetivos del proyecto</span>
-</div>
-<div class="section-help">Qué espera lograr la MiPyME con la implementación. Específicos, medibles, alineados al negocio.</div>
-<div class="fill-area">[Llena aquí el contenido de la característica d. Borra esta línea cuando empieces a escribir.]</div>
-</div>
-
-<div class="section">
-<div>
-<span class="section-letter">e</span>
-<span class="section-title">Indicadores y metas</span>
-</div>
-<div class="section-help">Métricas que se usarán para medir el éxito del proyecto. Línea base actual + meta esperada.</div>
-<div class="fill-area">[Llena aquí el contenido de la característica e. Borra esta línea cuando empieces a escribir.]</div>
-</div>
-
-<div class="section">
-<div>
-<span class="section-letter">f</span>
-<span class="section-title">Recursos disponibles</span>
-</div>
-<div class="section-help">Presupuesto estimado, equipo humano que participará, infraestructura tecnológica existente.</div>
-<div class="fill-area">[Llena aquí el contenido de la característica f. Borra esta línea cuando empieces a escribir.]</div>
-</div>
-
-<div class="section">
-<div>
-<span class="section-letter">g</span>
-<span class="section-title">Tiempos previstos</span>
-</div>
-<div class="section-help">Cronograma macro: fechas de inicio, hitos clave y cierre estimado.</div>
-<div class="fill-area">[Llena aquí el contenido de la característica g. Borra esta línea cuando empieces a escribir.]</div>
+<div class="question-block">
+<div><span class="question-num">6</span><span class="question-title">Recursos · tiempos · entregas esperadas</span></div>
+<div class="question-help">¿Con qué presupuesto, equipo humano y tiempos cuenta? ¿Qué entregables espera al cierre?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
 </div>
 
 
 <div class="footer">
 Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
-Template descargable del Manual de Implementar IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+Template del Manual de Implementar IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
 </div>
 
 </body>

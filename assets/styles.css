@@ -2890,6 +2890,14 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   letter-spacing: 0.04em;
 }
 
+.template-downloads__item-icon--xls {
+  background: #1F7244;
+}
+
+.template-downloads__item-icon--ppt {
+  background: #B7472A;
+}
+
 .template-downloads__item-num {
   font-weight: 800;
   color: var(--color-azul);
