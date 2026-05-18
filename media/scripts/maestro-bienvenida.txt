@@ -1,7 +1,7 @@
 <speak>
 Bienvenido al Manual Maestro de Mi Compañía.
 <break time="700ms"/>
-Si estás escuchando esto, es porque has decidido dar un paso importante en tu trayectoria profesional: convertir tu experiencia práctica en una credencial reconocida por el Estado mexicano.
+Si estás escuchando esto, es porque has decidido dar un paso importante en tu trayectoria profesional: demostrar tu experiencia práctica para obtener un certificado de competencia reconocido por el Estado mexicano.
 <break time="800ms"/>
 Mi Compañía nace de una constatación sencilla y a la vez urgente. El tejido productivo mexicano está formado, en su gran mayoría, por micro, pequeñas y medianas empresas. Y estas empresas necesitan acompañamiento experto para incorporar la inteligencia artificial a sus operaciones cotidianas.
 <break time="600ms"/>
