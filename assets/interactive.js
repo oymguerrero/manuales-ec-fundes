@@ -123,29 +123,33 @@
     });
   }
 
-  // ---------- Quiz multiple choice ----------
-  // Markup esperado:
-  // <div class="quiz" data-correct="b">
-  //   <p class="quiz__question">...</p>
-  //   <div class="quiz__options">
-  //     <button class="quiz__option" data-option="a">A</button>
-  //     <button class="quiz__option" data-option="b">B</button>
-  //   </div>
-  //   <div class="quiz__feedback quiz__feedback--correct" hidden>
-  //     <strong>✓ Correcto.</strong> ...
-  //   </div>
-  //   <div class="quiz__feedback quiz__feedback--wrong" hidden>
-  //     <strong>✗ Revisa.</strong> ...
-  //     <button class="quiz__retry" type="button">Intentar de nuevo</button>
-  //   </div>
-  // </div>
+  // ---------- Quiz (v2 — multi-tipo) ----------
+  // Tipos soportados:
+  //   sin data-type o data-type="mc": multiple choice (legacy markup con data-correct).
+  //   data-type="vf": verdadero/falso (mismo markup que mc, data-correct="v" o "f").
+  //   data-type="order": ordenar pasos. Markup:
+  //     <div class="quiz" data-type="order"><ol class="quiz__sortable">
+  //       <li class="quiz__item" data-correct-pos="1">Paso A</li>... </ol>
+  //       <button class="quiz__check" type="button">Verificar</button></div>
+  //   data-type="cloze": completar frase. Markup:
+  //     <p class="quiz__cloze">Un <span class="quiz__blank" data-answers="EC,estandar">__</span>...</p>
   function initQuiz(quiz) {
+    const type = quiz.dataset.type || 'mc';
+    const quizId = quiz.id || quiz.dataset.storageKey || 'quiz-' + Math.random().toString(36).slice(2, 8);
+
+    if (type === 'mc' || type === 'vf') return initQuizChoice(quiz, quizId);
+    if (type === 'order') return initQuizOrder(quiz, quizId);
+    if (type === 'cloze') return initQuizCloze(quiz, quizId);
+  }
+
+  function initQuizChoice(quiz, quizId) {
     const correct = quiz.dataset.correct;
     const options = quiz.querySelectorAll('.quiz__option');
     const feedbackCorrect = quiz.querySelector('.quiz__feedback--correct');
     const feedbackWrong = quiz.querySelector('.quiz__feedback--wrong');
     const retryBtn = quiz.querySelector('.quiz__retry');
     if (!correct || !options.length) return;
+    let attempts = 0;
 
     function reset() {
       options.forEach(function (o) {
@@ -154,30 +158,174 @@
       });
       if (feedbackCorrect) feedbackCorrect.hidden = true;
       if (feedbackWrong) feedbackWrong.hidden = true;
+      attempts = 0;
     }
 
     options.forEach(function (option) {
       option.addEventListener('click', function () {
+        attempts++;
         const isCorrect = option.dataset.option === correct;
         if (isCorrect) {
           option.setAttribute('data-state', 'correct');
-          options.forEach(function (o) {
-            if (o !== option) o.setAttribute('disabled', 'disabled');
-          });
+          options.forEach(function (o) { if (o !== option) o.setAttribute('disabled', 'disabled'); });
           if (feedbackCorrect) feedbackCorrect.hidden = false;
           if (feedbackWrong) feedbackWrong.hidden = true;
+          recordEvent('quiz', { quizId: quizId, type: quiz.dataset.type || 'mc', correct: true, attempts: attempts });
         } else {
           option.setAttribute('data-state', 'wrong');
           option.setAttribute('disabled', 'disabled');
           if (feedbackWrong) feedbackWrong.hidden = false;
           if (feedbackCorrect) feedbackCorrect.hidden = true;
+          recordEvent('quiz', { quizId: quizId, type: quiz.dataset.type || 'mc', correct: false, attempts: attempts });
         }
       });
     });
 
-    if (retryBtn) {
-      retryBtn.addEventListener('click', reset);
+    if (retryBtn) retryBtn.addEventListener('click', reset);
+  }
+
+  function initQuizOrder(quiz, quizId) {
+    const list = quiz.querySelector('.quiz__sortable');
+    const items = list ? Array.prototype.slice.call(list.querySelectorAll('.quiz__item')) : [];
+    const checkBtn = quiz.querySelector('.quiz__check');
+    const feedbackCorrect = quiz.querySelector('.quiz__feedback--correct');
+    const feedbackWrong = quiz.querySelector('.quiz__feedback--wrong');
+    const retryBtn = quiz.querySelector('.quiz__retry');
+    if (!list || items.length < 2) return;
+    let attempts = 0;
+
+    // Mezclar al inicio (Fisher-Yates) si data-shuffle="true" (default true)
+    const shuffle = quiz.dataset.shuffle !== 'false';
+    if (shuffle) {
+      const shuffled = items.slice();
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      list.innerHTML = '';
+      shuffled.forEach(function (it) { list.appendChild(it); });
     }
+
+    // Para cada item: controles ↑ ↓ y rol listitem
+    items.forEach(function (item, idx) {
+      item.setAttribute('tabindex', '0');
+      const controls = document.createElement('span');
+      controls.className = 'quiz__item-controls';
+      controls.innerHTML = '<button type="button" class="quiz__item-up" aria-label="Mover arriba">▲</button>' +
+        '<button type="button" class="quiz__item-down" aria-label="Mover abajo">▼</button>';
+      item.appendChild(controls);
+    });
+
+    list.addEventListener('click', function (e) {
+      const li = e.target.closest('.quiz__item');
+      if (!li) return;
+      if (e.target.classList.contains('quiz__item-up')) move(li, -1);
+      else if (e.target.classList.contains('quiz__item-down')) move(li, 1);
+    });
+
+    list.addEventListener('keydown', function (e) {
+      const li = e.target.closest('.quiz__item');
+      if (!li) return;
+      if (e.key === 'ArrowUp' && (e.altKey || e.metaKey)) { e.preventDefault(); move(li, -1); }
+      else if (e.key === 'ArrowDown' && (e.altKey || e.metaKey)) { e.preventDefault(); move(li, 1); }
+    });
+
+    function move(li, dir) {
+      const all = Array.prototype.slice.call(list.querySelectorAll('.quiz__item'));
+      const idx = all.indexOf(li);
+      const target = idx + dir;
+      if (target < 0 || target >= all.length) return;
+      if (dir < 0) list.insertBefore(li, all[target]);
+      else list.insertBefore(li, all[target].nextSibling);
+      li.focus();
+    }
+
+    function checkOrder() {
+      attempts++;
+      const current = Array.prototype.slice.call(list.querySelectorAll('.quiz__item'));
+      const ok = current.every(function (it, i) {
+        return String(it.dataset.correctPos) === String(i + 1);
+      });
+      current.forEach(function (it, i) {
+        it.setAttribute('data-state', String(it.dataset.correctPos) === String(i + 1) ? 'correct' : 'wrong');
+      });
+      if (ok) {
+        if (feedbackCorrect) feedbackCorrect.hidden = false;
+        if (feedbackWrong) feedbackWrong.hidden = true;
+        recordEvent('quiz', { quizId: quizId, type: 'order', correct: true, attempts: attempts });
+      } else {
+        if (feedbackWrong) feedbackWrong.hidden = false;
+        if (feedbackCorrect) feedbackCorrect.hidden = true;
+        recordEvent('quiz', { quizId: quizId, type: 'order', correct: false, attempts: attempts });
+      }
+    }
+
+    if (checkBtn) checkBtn.addEventListener('click', checkOrder);
+    if (retryBtn) retryBtn.addEventListener('click', function () {
+      items.forEach(function (it) { it.removeAttribute('data-state'); });
+      if (feedbackCorrect) feedbackCorrect.hidden = true;
+      if (feedbackWrong) feedbackWrong.hidden = true;
+      attempts = 0;
+    });
+  }
+
+  function initQuizCloze(quiz, quizId) {
+    const blanks = quiz.querySelectorAll('.quiz__blank');
+    const checkBtn = quiz.querySelector('.quiz__check');
+    const feedbackCorrect = quiz.querySelector('.quiz__feedback--correct');
+    const feedbackWrong = quiz.querySelector('.quiz__feedback--wrong');
+    const retryBtn = quiz.querySelector('.quiz__retry');
+    if (!blanks.length) return;
+    let attempts = 0;
+
+    // Convertir cada .quiz__blank en input
+    blanks.forEach(function (b) {
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.className = 'quiz__blank-input';
+      input.setAttribute('aria-label', 'Completar');
+      input.size = Math.max(8, (b.dataset.size || 10) * 1);
+      b.innerHTML = '';
+      b.appendChild(input);
+    });
+
+    function normalize(s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+    }
+
+    function checkCloze() {
+      attempts++;
+      let allOk = true;
+      blanks.forEach(function (b) {
+        const input = b.querySelector('.quiz__blank-input');
+        const value = normalize(input.value);
+        const answers = (b.dataset.answers || '').split('|').map(normalize);
+        const ok = answers.some(function (a) { return a && a === value; });
+        b.setAttribute('data-state', ok ? 'correct' : 'wrong');
+        if (!ok) allOk = false;
+      });
+      if (allOk) {
+        if (feedbackCorrect) feedbackCorrect.hidden = false;
+        if (feedbackWrong) feedbackWrong.hidden = true;
+        recordEvent('quiz', { quizId: quizId, type: 'cloze', correct: true, attempts: attempts });
+      } else {
+        if (feedbackWrong) feedbackWrong.hidden = false;
+        if (feedbackCorrect) feedbackCorrect.hidden = true;
+        recordEvent('quiz', { quizId: quizId, type: 'cloze', correct: false, attempts: attempts });
+      }
+    }
+
+    if (checkBtn) checkBtn.addEventListener('click', checkCloze);
+    if (retryBtn) retryBtn.addEventListener('click', function () {
+      blanks.forEach(function (b) {
+        b.removeAttribute('data-state');
+        const i = b.querySelector('.quiz__blank-input');
+        if (i) i.value = '';
+      });
+      if (feedbackCorrect) feedbackCorrect.hidden = true;
+      if (feedbackWrong) feedbackWrong.hidden = true;
+      attempts = 0;
+    });
   }
 
   // ---------- Audio narración ----------
@@ -865,12 +1013,340 @@
     });
   }
 
+  // ---------- recordEvent: métricas locales (sin backend) ----------
+  // Llamar como: recordEvent('quiz', { quizId: 'x', correct: true, attempts: 2 })
+  // Guarda los últimos 500 eventos en mi-compania-metrics::v1.
+  function recordEvent(type, payload) {
+    const KEY = 'mi-compania-metrics::v1';
+    try {
+      const raw = localStorage.getItem(KEY);
+      const arr = raw ? JSON.parse(raw) : [];
+      arr.push({ t: type, p: payload, ts: Date.now(), page: location.pathname });
+      while (arr.length > 500) arr.shift();
+      localStorage.setItem(KEY, JSON.stringify(arr));
+    } catch (e) { /* silenciosa: localStorage lleno o privacy mode */ }
+  }
+  window.miCompaniaRecordEvent = recordEvent;
+
+  function readJSONScript(container, selector) {
+    const node = container.querySelector(selector);
+    if (!node) return null;
+    try { return JSON.parse(node.textContent); }
+    catch (e) { console.warn('JSON inválido en', selector, e); return null; }
+  }
+
+  function escapeHTML(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  // ---------- Scenario Decision ----------
+  // Caso ramificado: contexto + pregunta + opciones (ok/risk/wrong) + feedback + wrap-up.
+  // Markup:
+  // <div class="scenario-decision" data-storage-key="esc-espiga-01">
+  //   <script type="application/json" class="scenario-decision__data">{...}</script>
+  //   <noscript>...</noscript>
+  // </div>
+  function initScenarioDecision(container) {
+    const data = readJSONScript(container, '.scenario-decision__data');
+    if (!data) return;
+    const key = 'mi-compania-scenario::v1::' + (container.dataset.storageKey || 'default');
+    let stored = {};
+    try { stored = JSON.parse(localStorage.getItem(key) || '{}'); } catch (e) {}
+
+    const optionsHTML = data.options.map(function (opt) {
+      return '<button type="button" class="scenario-decision__option" data-option-id="' + escapeHTML(opt.id) +
+        '" data-outcome="' + escapeHTML(opt.outcome) + '">' +
+        '<span class="scenario-decision__option-id">' + escapeHTML(opt.id.toUpperCase()) + '</span>' +
+        '<span class="scenario-decision__option-label">' + escapeHTML(opt.label) + '</span></button>';
+    }).join('');
+
+    const headerHTML =
+      (data.actor ? '<div class="scenario-decision__actor">' + escapeHTML(data.actor) + '</div>' : '') +
+      '<h3 class="scenario-decision__title">' + escapeHTML(data.title) + '</h3>' +
+      '<div class="scenario-decision__context">' + escapeHTML(data.context) + '</div>' +
+      (data.question ? '<p class="scenario-decision__question">' + escapeHTML(data.question) + '</p>' : '');
+
+    container.innerHTML =
+      '<div class="scenario-decision__inner">' +
+        headerHTML +
+        '<div class="scenario-decision__options" role="group" aria-label="Opciones de decisión">' + optionsHTML + '</div>' +
+        '<div class="scenario-decision__feedback" role="status" aria-live="polite" hidden></div>' +
+        (data.wrapUp ? '<div class="scenario-decision__wrapup" hidden><strong>Para llevar:</strong> ' + escapeHTML(data.wrapUp) + '</div>' : '') +
+        '<button type="button" class="scenario-decision__retry" hidden>Probar otra opción</button>' +
+      '</div>';
+
+    const optionBtns = container.querySelectorAll('.scenario-decision__option');
+    const feedbackBox = container.querySelector('.scenario-decision__feedback');
+    const wrapUpBox = container.querySelector('.scenario-decision__wrapup');
+    const retryBtn = container.querySelector('.scenario-decision__retry');
+
+    function showOption(optId) {
+      const opt = data.options.find(function (o) { return o.id === optId; });
+      if (!opt) return;
+      optionBtns.forEach(function (b) {
+        const isPicked = b.dataset.optionId === optId;
+        b.setAttribute('aria-pressed', isPicked ? 'true' : 'false');
+        b.setAttribute('disabled', 'disabled');
+        if (isPicked) b.setAttribute('data-state', opt.outcome);
+      });
+      const badge = opt.outcome === 'ok' ? '✓ Acertaste'
+        : opt.outcome === 'risk' ? '⚠ Funciona, pero con riesgos'
+        : '✗ Conviene reconsiderarlo';
+      feedbackBox.innerHTML =
+        '<div class="scenario-decision__badge scenario-decision__badge--' + escapeHTML(opt.outcome) + '">' + badge + '</div>' +
+        '<p class="scenario-decision__explain">' + escapeHTML(opt.feedback) + '</p>' +
+        (opt.criterio ? '<p class="scenario-decision__criterio"><strong>Criterio relacionado:</strong> ' + escapeHTML(opt.criterio) + '</p>' : '');
+      feedbackBox.hidden = false;
+      if (wrapUpBox) wrapUpBox.hidden = false;
+      if (retryBtn) retryBtn.hidden = false;
+      try {
+        stored = { picked: optId, outcome: opt.outcome, ts: Date.now() };
+        localStorage.setItem(key, JSON.stringify(stored));
+      } catch (e) {}
+      recordEvent('scenario', { storageKey: container.dataset.storageKey, picked: optId, outcome: opt.outcome });
+    }
+
+    optionBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () { showOption(btn.dataset.optionId); });
+    });
+    if (retryBtn) {
+      retryBtn.addEventListener('click', function () {
+        optionBtns.forEach(function (b) {
+          b.removeAttribute('disabled');
+          b.removeAttribute('data-state');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        feedbackBox.hidden = true;
+        feedbackBox.innerHTML = '';
+        if (wrapUpBox) wrapUpBox.hidden = true;
+        retryBtn.hidden = true;
+      });
+    }
+
+    // Restaurar respuesta previa (informa pero permite reintentar)
+    if (stored.picked) showOption(stored.picked);
+  }
+
+  // ---------- Flashcard Deck (con micro-SRS) ----------
+  // Markup:
+  // <div class="flashcard-deck" data-storage-key="deck-glosario-conocer">
+  //   <script type="application/json" class="flashcard-deck__data">[{front,back,tags},...]</script>
+  // </div>
+  function initFlashcardDeck(container) {
+    const cards = readJSONScript(container, '.flashcard-deck__data');
+    if (!cards || !cards.length) return;
+    const key = 'mi-compania-deck::v1::' + (container.dataset.storageKey || 'default');
+    let scores = {};
+    try { scores = JSON.parse(localStorage.getItem(key) || '{}'); } catch (e) {}
+
+    let order = cards.map(function (_, i) { return i; });
+    // Priorizar las marcadas como difíciles (score alto = más difícil)
+    order.sort(function (a, b) { return (scores[b] || 0) - (scores[a] || 0); });
+    let current = 0;
+    let flipped = false;
+
+    container.innerHTML =
+      '<div class="flashcard-deck__inner">' +
+        '<div class="flashcard-deck__meta">' +
+          '<span class="flashcard-deck__counter" aria-live="polite">1 / ' + cards.length + '</span>' +
+          '<button type="button" class="flashcard-deck__shuffle" aria-label="Mezclar mazo">🔀 Mezclar</button>' +
+        '</div>' +
+        '<div class="flashcard-deck__card" tabindex="0" role="button" aria-pressed="false" aria-label="Tarjeta, presiona para voltear">' +
+          '<div class="flashcard-deck__face flashcard-deck__face--front"></div>' +
+          '<div class="flashcard-deck__face flashcard-deck__face--back"></div>' +
+        '</div>' +
+        '<div class="flashcard-deck__controls" hidden>' +
+          '<p class="flashcard-deck__rate">¿Qué tan bien la sabías?</p>' +
+          '<button type="button" class="flashcard-deck__rate-btn" data-rate="3">Difícil</button>' +
+          '<button type="button" class="flashcard-deck__rate-btn" data-rate="1">Regular</button>' +
+          '<button type="button" class="flashcard-deck__rate-btn" data-rate="0">Fácil</button>' +
+        '</div>' +
+        '<div class="flashcard-deck__nav">' +
+          '<button type="button" class="flashcard-deck__prev" aria-label="Anterior">◀ Anterior</button>' +
+          '<button type="button" class="flashcard-deck__next" aria-label="Siguiente">Siguiente ▶</button>' +
+        '</div>' +
+      '</div>';
+
+    const card = container.querySelector('.flashcard-deck__card');
+    const frontFace = container.querySelector('.flashcard-deck__face--front');
+    const backFace = container.querySelector('.flashcard-deck__face--back');
+    const counter = container.querySelector('.flashcard-deck__counter');
+    const controls = container.querySelector('.flashcard-deck__controls');
+    const shuffleBtn = container.querySelector('.flashcard-deck__shuffle');
+
+    function render() {
+      const c = cards[order[current]];
+      frontFace.innerHTML = '<span class="flashcard-deck__face-label">Concepto</span><span class="flashcard-deck__face-text">' + escapeHTML(c.front) + '</span>';
+      backFace.innerHTML = '<span class="flashcard-deck__face-label">Definición</span><span class="flashcard-deck__face-text">' + escapeHTML(c.back) + '</span>';
+      counter.textContent = (current + 1) + ' / ' + cards.length;
+      card.setAttribute('aria-pressed', 'false');
+      flipped = false;
+      controls.hidden = true;
+    }
+
+    function flip() {
+      flipped = !flipped;
+      card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+      if (flipped) controls.hidden = false;
+    }
+
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); }
+    });
+
+    container.querySelector('.flashcard-deck__prev').addEventListener('click', function () {
+      current = (current - 1 + cards.length) % cards.length;
+      render();
+    });
+    container.querySelector('.flashcard-deck__next').addEventListener('click', function () {
+      current = (current + 1) % cards.length;
+      render();
+    });
+
+    container.querySelectorAll('.flashcard-deck__rate-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const rate = parseInt(btn.dataset.rate, 10);
+        const cardIdx = order[current];
+        scores[cardIdx] = (scores[cardIdx] || 0) + rate;
+        try { localStorage.setItem(key, JSON.stringify(scores)); } catch (e) {}
+        recordEvent('flashcard', { storageKey: container.dataset.storageKey, cardIdx: cardIdx, rate: rate });
+        // Avanzar
+        current = (current + 1) % cards.length;
+        render();
+      });
+    });
+
+    shuffleBtn.addEventListener('click', function () {
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      current = 0;
+      render();
+    });
+
+    render();
+  }
+
+  // ---------- Swipe Decide (tarjetas binarias) ----------
+  // Markup:
+  // <div class="swipe-decide" data-storage-key="..." data-left-label="Taxativo" data-right-label="Recomendación">
+  //   <script type="application/json" class="swipe-decide__data">[{text,answer:'left|right',explain},...]</script>
+  // </div>
+  function initSwipeDecide(container) {
+    const items = readJSONScript(container, '.swipe-decide__data');
+    if (!items || !items.length) return;
+    const leftLabel = container.dataset.leftLabel || 'A';
+    const rightLabel = container.dataset.rightLabel || 'B';
+    const key = 'mi-compania-swipe::v1::' + (container.dataset.storageKey || 'default');
+
+    let idx = 0, hits = 0, misses = 0;
+
+    container.innerHTML =
+      '<div class="swipe-decide__inner">' +
+        '<div class="swipe-decide__progress"><span class="swipe-decide__counter">1 / ' + items.length + '</span></div>' +
+        '<div class="swipe-decide__stage">' +
+          '<div class="swipe-decide__card" tabindex="0" role="article" aria-label="Tarjeta a evaluar"></div>' +
+          '<div class="swipe-decide__feedback" role="status" aria-live="polite" hidden></div>' +
+        '</div>' +
+        '<div class="swipe-decide__actions">' +
+          '<button type="button" class="swipe-decide__btn swipe-decide__btn--left" data-answer="left">' +
+            '<span class="swipe-decide__btn-hint">A · ←</span>' + escapeHTML(leftLabel) +
+          '</button>' +
+          '<button type="button" class="swipe-decide__btn swipe-decide__btn--right" data-answer="right">' +
+            escapeHTML(rightLabel) + '<span class="swipe-decide__btn-hint">L · →</span>' +
+          '</button>' +
+        '</div>' +
+        '<div class="swipe-decide__end" hidden>' +
+          '<p class="swipe-decide__summary"></p>' +
+          '<button type="button" class="swipe-decide__restart">Volver a empezar</button>' +
+        '</div>' +
+      '</div>';
+
+    const cardEl = container.querySelector('.swipe-decide__card');
+    const feedbackEl = container.querySelector('.swipe-decide__feedback');
+    const counterEl = container.querySelector('.swipe-decide__counter');
+    const buttons = container.querySelectorAll('.swipe-decide__btn');
+    const endEl = container.querySelector('.swipe-decide__end');
+    const summaryEl = container.querySelector('.swipe-decide__summary');
+    const restartBtn = container.querySelector('.swipe-decide__restart');
+
+    function render() {
+      if (idx >= items.length) return finish();
+      cardEl.innerHTML = '<p class="swipe-decide__text">' + escapeHTML(items[idx].text) + '</p>';
+      counterEl.textContent = (idx + 1) + ' / ' + items.length;
+      feedbackEl.hidden = true;
+      feedbackEl.innerHTML = '';
+      buttons.forEach(function (b) { b.removeAttribute('disabled'); });
+    }
+
+    function pick(answer) {
+      const item = items[idx];
+      const ok = item.answer === answer;
+      if (ok) hits++; else misses++;
+      cardEl.setAttribute('data-state', ok ? 'correct' : 'wrong');
+      const badge = ok ? '✓ Correcto' : '✗ No exactamente';
+      feedbackEl.innerHTML =
+        '<div class="swipe-decide__badge swipe-decide__badge--' + (ok ? 'ok' : 'wrong') + '">' + badge + '</div>' +
+        (item.explain ? '<p class="swipe-decide__explain">' + escapeHTML(item.explain) + '</p>' : '') +
+        '<button type="button" class="swipe-decide__next">Siguiente →</button>';
+      feedbackEl.hidden = false;
+      buttons.forEach(function (b) { b.setAttribute('disabled', 'disabled'); });
+      const nextBtn = feedbackEl.querySelector('.swipe-decide__next');
+      nextBtn.addEventListener('click', function () {
+        idx++;
+        cardEl.removeAttribute('data-state');
+        render();
+      });
+      nextBtn.focus();
+      recordEvent('swipe', { storageKey: container.dataset.storageKey, idx: idx, correct: ok });
+    }
+
+    function finish() {
+      cardEl.parentElement.style.display = 'none';
+      container.querySelector('.swipe-decide__actions').style.display = 'none';
+      endEl.hidden = false;
+      const total = hits + misses;
+      const pct = total ? Math.round(hits / total * 100) : 0;
+      summaryEl.innerHTML = '<strong>' + hits + ' / ' + total + ' aciertos (' + pct + '%).</strong> ' +
+        (pct >= 80 ? 'Excelente criterio.' : pct >= 60 ? 'Buen nivel, revisa las que fallaste.' : 'Vale la pena releer la sección y volver.');
+      try { localStorage.setItem(key, JSON.stringify({ hits: hits, misses: misses, ts: Date.now() })); } catch (e) {}
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { pick(b.dataset.answer); });
+    });
+
+    // Atajos de teclado A / L y flechas
+    container.addEventListener('keydown', function (e) {
+      const k = e.key.toLowerCase();
+      if (k === 'a' || e.key === 'ArrowLeft') { e.preventDefault(); if (idx < items.length) pick('left'); }
+      else if (k === 'l' || e.key === 'ArrowRight') { e.preventDefault(); if (idx < items.length) pick('right'); }
+    });
+
+    restartBtn.addEventListener('click', function () {
+      idx = 0; hits = 0; misses = 0;
+      cardEl.parentElement.style.display = '';
+      container.querySelector('.swipe-decide__actions').style.display = '';
+      endEl.hidden = true;
+      render();
+    });
+
+    render();
+  }
+
   // ---------- Inicialización ----------
   function init() {
     document.querySelectorAll('.tabs').forEach(initTabs);
     document.querySelectorAll('.checklist').forEach(initChecklist);
     document.querySelectorAll('.flipcard').forEach(initFlipcard);
     document.querySelectorAll('.quiz').forEach(initQuiz);
+    document.querySelectorAll('.scenario-decision').forEach(initScenarioDecision);
+    document.querySelectorAll('.flashcard-deck').forEach(initFlashcardDeck);
+    document.querySelectorAll('.swipe-decide').forEach(initSwipeDecide);
     document.querySelectorAll('.audio-narration').forEach(initAudioNarration);
     document.querySelectorAll('.lesson-tabs').forEach(initLessonTabs);
     document.querySelectorAll('.glossary--rich').forEach(initGlossaryRich);

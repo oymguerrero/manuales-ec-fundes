@@ -308,6 +308,23 @@
         <div class="accordion__body">
       <p>El Elemento 1 exige <strong>ocho productos documentales</strong>. Son el grueso de la evidencia documental del elemento; prepáralos con cuidado.</p>
 
+      <h3>Antes de descargar: ¿reconoces los 8?</h3>
+      <p>Repasa rápido los nombres y el propósito de cada producto. Cuando los tengas claros, baja a las descargas.</p>
+      <div class="flashcard-deck" data-storage-key="e1-productos">
+        <script type="application/json" class="flashcard-deck__data">
+        [
+          {"front":"1.4.1 · Reporte de evaluación inicial","back":"Foto del estado actual de la MiPyME: perfil, contacto, acciones previas del cliente, áreas de mejora, objetivos · indicadores · metas, recursos y tiempos."},
+          {"front":"1.4.2 · Disponibilidad y calidad de datos","back":"Inventario de las fuentes de información existentes, su completitud, necesidades de optimización/estructuración y hallazgos sobre calidad."},
+          {"front":"1.4.3 · Diagnóstico de procesos","back":"Mapa de procesos analizados, su clasificación por área funcional, cuellos de botella detectados y resistencias al cambio identificadas."},
+          {"front":"1.4.4 · Madurez digital y disposición al cambio","back":"Metodología y herramienta usada, resultados del test, nivel de madurez por dimensión, disposición al cambio del personal, recomendaciones y tablero base."},
+          {"front":"1.4.5 · Matriz de impacto, viabilidad y esfuerzo","back":"Excel con oportunidades detectadas + herramienta sugerida + puntajes I·V·E + beneficios esperados + priorización final para primera fase."},
+          {"front":"1.4.6 · Hoja de ruta","back":"Cronograma tipo Gantt con fases, actividades por responsable, recursos tecnológicos·humanos·financieros e indicadores de seguimiento."},
+          {"front":"1.4.7 · Propuesta final integrada","back":"Documento maestro que integra diagnóstico (1.4.3), madurez (1.4.4), matriz (1.4.5), hoja de ruta (1.4.6) y propuesta económica (1.4.8) en una narrativa coherente."},
+          {"front":"1.4.8 · Propuesta económica validada","back":"Inversión + REQUISITOS TAXATIVOS: visto bueno POR ESCRITO del emprendedor + acuerdo de confidencialidad firmado. Sin las dos firmas el producto no se da por cumplido."}
+        ]
+        </script>
+      </div>
+
       <div class="template-downloads">
         <h3 class="template-downloads__title">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
@@ -799,6 +816,44 @@
         <li>La propuesta económica (1.4.8) <strong>exige visto bueno POR ESCRITO y acuerdo de confidencialidad</strong>: no son opcionales.</li>
       </ul>
     </aside>
+
+    <h2 style="margin-top:36px;">Aplica el Elemento 1 · La Espiga te llama</h2>
+    <p>Doña Beatriz acaba de aprobar tu diagnóstico inicial. Ahora viene el momento clave: ¿con qué entregable de la <strong>matriz de impacto/viabilidad (1.4.5)</strong> regresas a la siguiente reunión? Tu decisión define el resto del proyecto.</p>
+
+    <div class="scenario-decision" data-storage-key="e1-cierre-matriz-espiga">
+      <script type="application/json" class="scenario-decision__data">
+      {
+        "actor": "Carlos · La Espiga",
+        "title": "\"¿Por dónde empezamos con la IA?\"",
+        "context": "Identificaste 5 oportunidades de IA en La Espiga: (a) chatbot WhatsApp para FAQ de pedidos, (b) reporte automatizado de pedidos a cocina, (c) predicción de demanda con histórico de 18 meses, (d) generador de copys para redes sociales, (e) clasificador de quejas por correo. Tienes 4 semanas y un presupuesto modesto.",
+        "question": "¿Qué priorización propones en la matriz 1.4.5?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Las 5 oportunidades en paralelo, una por semana. Demostramos volumen.",
+            "outcome": "wrong",
+            "feedback": "Volumen ≠ valor. El F21 de 1.4.5 pide priorizar por impacto/viabilidad/esfuerzo, no entregar todo. Doña Beatriz sin ROI claro va a desconfiar de la asesoría; Carlos no tendrá ancho de banda para acompañar 5 implementaciones a la vez.",
+            "criterio": "1.4.5 F21: \"Contiene la priorización de las oportunidades… y la viabilidad de la implementación\"."
+          },
+          {
+            "id": "b",
+            "label": "Solo (a) chatbot WhatsApp y (b) reporte automatizado: las dos con mayor impacto operativo + más viables con sus recursos.",
+            "outcome": "ok",
+            "feedback": "Excelente lectura. (a) y (b) tienen alto impacto (ahorran ~5 hrs/semana cada una) y son altamente viables con herramientas existentes. Carlos puede operarlas y Beatriz verá ROI medible en 4 semanas. Las otras 3 quedan en el roadmap del año.",
+            "criterio": "1.4.5 F21 cumplido: priorización con criterio + beneficios esperados explícitos."
+          },
+          {
+            "id": "c",
+            "label": "(c) Predicción de demanda: es la más impresionante técnicamente y diferenciaría a La Espiga.",
+            "outcome": "risk",
+            "feedback": "Técnicamente atractiva, pero requiere datos limpios de 18 meses (La Espiga lleva todo en libretas) y un modelo más sofisticado. Esfuerzo: alto. Viabilidad inmediata: baja. Puede ser un excelente Fase 2, pero arrancar por aquí te hace fallar el F21 de viabilidad.",
+            "criterio": "1.4.5 F21: la viabilidad pesa tanto como el impacto. Una solución brillante mal cronometrada NO es priorizable."
+          }
+        ],
+        "wrapUp": "El Elemento 1 NO premia el deslumbramiento técnico. Premia el JUICIO PROFESIONAL: detectar qué crea valor real ahora con los recursos reales de la MiPyME. Esa es la diferencia entre un consultor certificado y uno que solo sabe herramientas."
+      }
+      </script>
+    </div>
 
     <section id="siguiente">
       <h2>¿Listo para el Elemento 2?</h2>
