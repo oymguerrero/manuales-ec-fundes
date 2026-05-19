@@ -1486,21 +1486,25 @@
     loadCDN('https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js').then(function () {
       if (!window.Sortable) return;
       const groupName = 'drag-sort-' + (container.dataset.storageKey || 'default');
-      const sortableOpts = {
-        group: groupName,
-        animation: 150,
-        ghostClass: 'drag-sort__ghost',
-        chosenClass: 'drag-sort__chosen',
-        dragClass: 'drag-sort__dragging',
-        // Permitir drop en contenedores vacíos o casi vacíos:
-        emptyInsertThreshold: 20,
-        // Persistir tras cada movimiento:
-        onEnd: function () { persist(); }
-      };
-      window.Sortable.create(bank, sortableOpts);
+      // IMPORTANTE: pasar opts frescos a cada create. SortableJS muta el objeto
+      // (convierte group:'name' en group:{name,pull,put}); si reutilizo el
+      // mismo objeto, las zonas creadas después reciben un group mutado que
+      // rompe la comunicación bidireccional banco ↔ zona.
+      function makeOpts() {
+        return {
+          group: { name: groupName, pull: true, put: true },
+          animation: 150,
+          ghostClass: 'drag-sort__ghost',
+          chosenClass: 'drag-sort__chosen',
+          dragClass: 'drag-sort__dragging',
+          emptyInsertThreshold: 20,
+          onEnd: function () { persist(); }
+        };
+      }
+      window.Sortable.create(bank, makeOpts());
       zones.forEach(function (z) {
         const ul = z.querySelector('ul') || z;
-        window.Sortable.create(ul, sortableOpts);
+        window.Sortable.create(ul, makeOpts());
       });
     }).catch(function (e) { console.warn(e); });
 
