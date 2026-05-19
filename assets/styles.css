@@ -3856,27 +3856,46 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   border: 1.5px solid var(--color-gris-linea);
   border-radius: var(--radius);
 }
-.drag-sort__bank {
-  margin: 12px 0 22px;
-  padding: 14px 16px;
-  background: var(--color-amarillo-suave);
-  border: 2px dashed var(--color-amarillo);
-  border-radius: var(--radius-sm);
-  min-height: 70px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-content: flex-start;
-}
-.drag-sort__bank::before {
-  content: "Banco — arrástralos a su elemento";
-  width: 100%;
+.drag-sort__bank-label {
+  display: block;
   font-size: 0.85rem;
   color: var(--color-azul-profundo);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 4px;
+  margin: 4px 0 8px;
+}
+.drag-sort__bank {
+  margin: 4px 0 22px;
+  padding: 14px 16px;
+  background: var(--color-amarillo-suave);
+  border: 2px dashed var(--color-amarillo);
+  border-radius: var(--radius-sm);
+  min-height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+  /* Asegura área de drop incluso cuando está vacío: */
+  align-items: flex-start;
+}
+.drag-sort__bank:empty::after {
+  content: "Suelta aquí para devolver al banco";
+  color: var(--color-gris-texto);
+  font-style: italic;
+  font-size: 0.88rem;
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+}
+.drag-sort__zone-list:empty::after {
+  content: "Suelta aquí";
+  color: var(--color-gris-texto);
+  font-style: italic;
+  font-size: 0.85rem;
+  display: block;
+  text-align: center;
+  padding: 8px 0;
 }
 .drag-sort__targets {
   display: grid;

@@ -1485,12 +1485,17 @@
     // Cargar SortableJS para mouse/touch
     loadCDN('https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js').then(function () {
       if (!window.Sortable) return;
+      const groupName = 'drag-sort-' + (container.dataset.storageKey || 'default');
       const sortableOpts = {
-        group: 'drag-sort-' + (container.dataset.storageKey || 'default'),
+        group: groupName,
         animation: 150,
         ghostClass: 'drag-sort__ghost',
         chosenClass: 'drag-sort__chosen',
-        dragClass: 'drag-sort__dragging'
+        dragClass: 'drag-sort__dragging',
+        // Permitir drop en contenedores vacíos o casi vacíos:
+        emptyInsertThreshold: 20,
+        // Persistir tras cada movimiento:
+        onEnd: function () { persist(); }
       };
       window.Sortable.create(bank, sortableOpts);
       zones.forEach(function (z) {
