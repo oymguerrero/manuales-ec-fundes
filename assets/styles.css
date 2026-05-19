@@ -4266,6 +4266,12 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   margin: 18px 0 26px;
 }
 
+/* ---------- Utilidades de espaciado ---------- */
+/* Separa visualmente una nueva sección dentro de un .accordion__body o entre bloques de actividad. */
+.section-divider-top {
+  margin-top: 36px;
+}
+
 /* =========================================================
    Pedagogía dinámica (Fase 3) — progress-skill, chart-block
    ========================================================= */
