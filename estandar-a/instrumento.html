@@ -288,6 +288,71 @@
       </ul>
     </aside>
 
+    <h2 style="margin-top:36px;">Visualiza la distribución de los 126 reactivos</h2>
+    <p>Los reactivos del IEC se distribuyen en tres pesos. <strong>El 12% de los reactivos (los de peso mayor, 3.33 pts) concentra el ~50% del puntaje total</strong> — son los que más impacto tienen en el dictamen.</p>
+
+    <div class="chart-block" data-storage-key="iec-distribucion-pesos">
+      <h3 class="chart-block__title">Reactivos del IEC por peso</h3>
+      <div class="chart-block__canvas-wrap"><canvas></canvas></div>
+      <p class="chart-block__caption">Distribución de los 126 reactivos del Instrumento de Evaluación. Los reactivos de peso mayor son críticos: si fallas uno, descuenta tanto como ~10 de los de peso menor.</p>
+      <script type="application/json" class="chart-block__data">
+      {
+        "type": "doughnut",
+        "data": {
+          "labels": ["Peso menor (0.32 pts)", "Peso medio (0.62 pts)", "Peso mayor (3.33 pts) · críticos"],
+          "datasets": [{
+            "label": "Reactivos del IEC",
+            "data": [76, 35, 15],
+            "backgroundColor": ["#529ed7", "#28467e", "#f7c031"],
+            "borderColor": "#FAFCFF",
+            "borderWidth": 3
+          }]
+        },
+        "options": {
+          "responsive": true,
+          "maintainAspectRatio": false,
+          "plugins": {
+            "legend": { "position": "bottom" },
+            "tooltip": {
+              "callbacks": {}
+            }
+          },
+          "cutout": "55%"
+        }
+      }
+      </script>
+    </div>
+
+    <div class="chart-block" data-storage-key="iec-puntaje-aporte">
+      <h3 class="chart-block__title">Aporte de puntos por categoría de peso</h3>
+      <div class="chart-block__canvas-wrap"><canvas></canvas></div>
+      <p class="chart-block__caption">Cada categoría suma al puntaje total (100.17 pts). Los 15 reactivos de peso mayor aportan casi la mitad — descuídalos y el dictamen se complica aunque cumplas casi todos los demás.</p>
+      <script type="application/json" class="chart-block__data">
+      {
+        "type": "bar",
+        "data": {
+          "labels": ["Peso menor (76 × 0.32)", "Peso medio (35 × 0.62)", "Peso mayor (15 × 3.33)"],
+          "datasets": [{
+            "label": "Puntos aportados al total (100.17)",
+            "data": [24.32, 21.70, 49.95],
+            "backgroundColor": ["#529ed7", "#28467e", "#f7c031"],
+            "borderColor": "#28467e",
+            "borderWidth": 1
+          }]
+        },
+        "options": {
+          "responsive": true,
+          "maintainAspectRatio": false,
+          "indexAxis": "y",
+          "plugins": { "legend": { "display": false } },
+          "scales": {
+            "x": { "beginAtZero": true, "title": { "display": true, "text": "Puntos al total (100.17)" } }
+          }
+        }
+      }
+      </script>
+    </div>
+
     <h2 style="margin-top:36px;">Flujo del IEC · qué pasa con tu evidencia</h2>
     <p>Cada pieza de evidencia que entregas atraviesa este flujo. Conocerlo te ayuda a anticipar qué espera ver el evaluador en cada punto.</p>
 

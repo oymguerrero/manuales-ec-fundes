@@ -1674,6 +1674,175 @@
     show(0);
   }
 
+  // ---------- Progress Skill (Dashboard de progreso) ----------
+  // Lee todas las claves mi-compania-* de localStorage y muestra al
+  // usuario un panel con su propio recorrido.
+  // Markup:
+  // <div class="progress-skill" data-storage-key="dashboard-global">
+  //   <h3>Tu progreso</h3>
+  //   <!-- el JS rellena el resto -->
+  // </div>
+  function initProgressSkill(container) {
+    const data = collectProgress();
+
+    container.innerHTML =
+      '<div class="progress-skill__inner">' +
+        '<h3 class="progress-skill__title">Tu recorrido por Mi CompañIA</h3>' +
+        '<p class="progress-skill__subtitle">Lo que ya completaste en este navegador (solo tú lo ves — no hay backend).</p>' +
+        '<div class="progress-skill__metrics">' +
+          '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.modulesCompleted + '</span><span class="progress-skill__metric-label">módulos completados</span></div>' +
+          '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.quizzesAnswered + '</span><span class="progress-skill__metric-label">quizzes respondidos</span></div>' +
+          '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.firstTryPct + '%</span><span class="progress-skill__metric-label">aciertos al primer intento</span></div>' +
+          '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.scenariosResolved + '</span><span class="progress-skill__metric-label">escenarios resueltos</span></div>' +
+        '</div>' +
+        '<div class="progress-skill__chapters">' +
+          '<h4>Capítulos visitados</h4>' +
+          (data.chapters.length ? '<ul class="progress-skill__chapter-list">' + data.chapters.map(function (c) {
+            const pct = c.total ? Math.round(c.done / c.total * 100) : 0;
+            return '<li class="progress-skill__chapter">' +
+              '<span class="progress-skill__chapter-name">' + escapeHTML(c.label) + '</span>' +
+              '<div class="progress-skill__chapter-bar"><div class="progress-skill__chapter-fill" style="width:' + pct + '%"></div></div>' +
+              '<span class="progress-skill__chapter-pct">' + pct + '%</span>' +
+            '</li>';
+          }).join('') + '</ul>' : '<p class="progress-skill__empty">Aún no visitaste ningún capítulo. Empieza por <a href="' + (location.pathname.indexOf('maestro') >= 0 ? 'que-es.html' : 'maestro/index.html') + '">la bienvenida</a>.</p>') +
+        '</div>' +
+        '<div class="progress-skill__actions">' +
+          '<button type="button" class="progress-skill__export">Exportar mi progreso (JSON)</button>' +
+          '<button type="button" class="progress-skill__reset">Borrar mi progreso</button>' +
+        '</div>' +
+      '</div>';
+
+    container.querySelector('.progress-skill__export').addEventListener('click', function () {
+      const all = collectAllStorage();
+      const blob = new Blob([JSON.stringify(all, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'mi-compania-progreso-' + new Date().toISOString().slice(0, 10) + '.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+    container.querySelector('.progress-skill__reset').addEventListener('click', function () {
+      if (!confirm('Esto borra TODO tu progreso guardado en este navegador (checklists, quizzes, escenarios, decks). ¿Continuar?')) return;
+      const keys = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.indexOf('mi-compania') === 0) keys.push(k);
+      }
+      keys.forEach(function (k) { localStorage.removeItem(k); });
+      location.reload();
+    });
+  }
+
+  function collectProgress() {
+    const result = {
+      modulesCompleted: 0,
+      quizzesAnswered: 0,
+      quizzesCorrectFirstTry: 0,
+      firstTryPct: 0,
+      scenariosResolved: 0,
+      chapters: []
+    };
+    // chapters (lesson-tabs progress)
+    const chapterMap = {
+      'maestro-cap1-bienvenida': 'Maestro · Bienvenida',
+      'maestro-cap2-que-es': 'Maestro · Qué es la certificación',
+      'maestro-cap3-como-se-evalua': 'Maestro · Cómo se evalúa',
+      'maestro-cap4-proceso': 'Maestro · Proceso paso a paso',
+      'maestro-cap5-es-para-ti': 'Maestro · ¿Es para ti?',
+      'maestro-cap6-recursos': 'Maestro · Recursos',
+      'estandar-a-bienvenida': 'Implementar IA · Bienvenida',
+      'estandar-a-elemento-1': 'Implementar IA · Elemento 1',
+      'estandar-a-elemento-2': 'Implementar IA · Elemento 2',
+      'estandar-a-elemento-3': 'Implementar IA · Elemento 3',
+      'estandar-a-instrumento': 'Implementar IA · Instrumento',
+      'estandar-a-ruta': 'Implementar IA · Ruta de preparación',
+      'estandar-a-recursos': 'Implementar IA · Recursos'
+    };
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k) continue;
+        if (k.indexOf('mi-compania-lessons::') === 0) {
+          try {
+            const v = JSON.parse(localStorage.getItem(k) || '{}');
+            const key = k.replace('mi-compania-lessons::', '');
+            const label = chapterMap[key] || key;
+            const done = Object.keys(v).filter(function (id) { return v[id]; }).length;
+            const total = Object.keys(v).length;
+            if (total > 0) {
+              result.chapters.push({ label: label, done: done, total: total });
+              if (done === total) result.modulesCompleted += total;
+              else result.modulesCompleted += done;
+            }
+          } catch (e) {}
+        }
+      }
+      // metrics events
+      const metrics = JSON.parse(localStorage.getItem('mi-compania-metrics::v1') || '[]');
+      const quizEvents = metrics.filter(function (e) { return e.t === 'quiz'; });
+      result.quizzesAnswered = quizEvents.length;
+      result.quizzesCorrectFirstTry = quizEvents.filter(function (e) { return e.p && e.p.correct && e.p.attempts === 1; }).length;
+      if (quizEvents.length > 0) {
+        result.firstTryPct = Math.round(result.quizzesCorrectFirstTry / quizEvents.length * 100);
+      }
+      result.scenariosResolved = metrics.filter(function (e) { return e.t === 'scenario'; }).length;
+    } catch (e) {}
+    return result;
+  }
+
+  function collectAllStorage() {
+    const all = {};
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k || k.indexOf('mi-compania') !== 0) continue;
+        try { all[k] = JSON.parse(localStorage.getItem(k)); }
+        catch (e) { all[k] = localStorage.getItem(k); }
+      }
+    } catch (e) {}
+    return {
+      exported: new Date().toISOString(),
+      origin: location.origin,
+      entries: all
+    };
+  }
+
+  // ---------- Chart Block (wrapper Chart.js) ----------
+  // Markup:
+  // <div class="chart-block" data-storage-key="pesos-iec">
+  //   <h3 class="chart-block__title">Distribución de pesos en el IEC</h3>
+  //   <div class="chart-block__canvas-wrap"><canvas></canvas></div>
+  //   <script type="application/json" class="chart-block__data">
+  //     { "type": "doughnut", "data": { "labels": [...], "datasets": [{...}] }, "options": {...} }
+  //   </script>
+  // </div>
+  function initChartBlock(container) {
+    const config = readJSONScript(container, '.chart-block__data');
+    if (!config) return;
+    const canvas = container.querySelector('canvas');
+    if (!canvas) return;
+
+    loadCDN('https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js').then(function () {
+      if (!window.Chart) return;
+      // Defaults de marca
+      window.Chart.defaults.font.family = 'Afacad, Inter, sans-serif';
+      window.Chart.defaults.color = '#28467e';
+      // Paleta default
+      const brandPalette = ['#28467e', '#f7c031', '#529ed7', '#3FA35B', '#1F4E8C', '#f29100'];
+      if (config.data && config.data.datasets) {
+        config.data.datasets.forEach(function (ds) {
+          if (!ds.backgroundColor) ds.backgroundColor = brandPalette;
+          if (!ds.borderColor && config.type !== 'doughnut' && config.type !== 'pie') ds.borderColor = '#28467e';
+          if (ds.borderWidth === undefined) ds.borderWidth = 2;
+        });
+      }
+      try {
+        new window.Chart(canvas.getContext('2d'), config);
+      } catch (e) { console.warn('Chart.js render error:', e); }
+    }).catch(function (e) { console.warn(e); });
+  }
+
   // ---------- Inicialización ----------
   function init() {
     document.querySelectorAll('.tabs').forEach(initTabs);
@@ -1687,6 +1856,8 @@
     document.querySelectorAll('.case-lab').forEach(initCaseLab);
     document.querySelectorAll('.timeline-interactive').forEach(initTimelineInteractive);
     document.querySelectorAll('.diagram-mermaid').forEach(initDiagramMermaid);
+    document.querySelectorAll('.progress-skill').forEach(initProgressSkill);
+    document.querySelectorAll('.chart-block').forEach(initChartBlock);
     document.querySelectorAll('.audio-narration').forEach(initAudioNarration);
     document.querySelectorAll('.lesson-tabs').forEach(initLessonTabs);
     document.querySelectorAll('.glossary--rich').forEach(initGlossaryRich);

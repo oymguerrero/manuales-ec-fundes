@@ -4266,12 +4266,180 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   margin: 18px 0 26px;
 }
 
+/* =========================================================
+   Pedagogía dinámica (Fase 3) — progress-skill, chart-block
+   ========================================================= */
+
+/* ---------- Progress Skill (dashboard) ---------- */
+.progress-skill {
+  margin: 28px 0;
+  background: linear-gradient(135deg, var(--color-azul-profundo) 0%, var(--color-azul) 100%);
+  color: white;
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  box-shadow: var(--shadow-md);
+}
+.progress-skill__title {
+  color: var(--color-amarillo);
+  font-size: 1.4rem;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+.progress-skill__subtitle {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+  margin: 0 0 22px;
+  font-style: italic;
+}
+.progress-skill__metrics {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-bottom: 24px;
+}
+.progress-skill__metric {
+  background: rgba(255,255,255,0.10);
+  border: 1.5px solid rgba(247,192,49,0.30);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  text-align: center;
+}
+.progress-skill__metric-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-amarillo);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.progress-skill__metric-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.progress-skill__chapters h4 {
+  color: var(--color-amarillo);
+  margin: 0 0 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.progress-skill__chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.progress-skill__chapter {
+  display: grid;
+  grid-template-columns: 1fr 120px 50px;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.92rem;
+}
+@media (max-width: 640px) {
+  .progress-skill__chapter { grid-template-columns: 1fr 50px; }
+  .progress-skill__chapter-bar { grid-column: 1 / -1; }
+}
+.progress-skill__chapter-name { color: white; }
+.progress-skill__chapter-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.15);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.progress-skill__chapter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-amarillo), #ffd970);
+  transition: width 0.4s;
+}
+.progress-skill__chapter-pct {
+  text-align: right;
+  font-weight: 700;
+  color: var(--color-amarillo);
+  font-size: 0.88rem;
+}
+.progress-skill__empty {
+  background: rgba(255,255,255,0.08);
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+}
+.progress-skill__empty a {
+  color: var(--color-amarillo);
+  text-decoration: underline;
+}
+.progress-skill__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+.progress-skill__export, .progress-skill__reset {
+  background: transparent;
+  border: 1.5px solid rgba(247,192,49,0.5);
+  color: var(--color-amarillo);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.progress-skill__export:hover { background: rgba(247,192,49,0.10); }
+.progress-skill__reset {
+  border-color: rgba(255,255,255,0.30);
+  color: rgba(255,255,255,0.85);
+}
+.progress-skill__reset:hover { background: rgba(220,38,38,0.20); border-color: rgba(255,255,255,0.50); }
+
+/* ---------- Chart Block (Chart.js) ---------- */
+.chart-block {
+  margin: 28px 0;
+  background: white;
+  border: 1.5px solid var(--color-gris-linea);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+}
+.chart-block__title {
+  margin: 0 0 16px;
+  color: var(--color-azul-profundo);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.chart-block__canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 280px;
+}
+.chart-block__caption {
+  margin: 12px 0 0;
+  font-size: 0.88rem;
+  color: var(--color-gris-texto);
+  font-style: italic;
+  text-align: center;
+}
+
 /* ---------- Print: ocultar componentes interactivos ---------- */
 @media print {
   .scenario-decision,
   .flashcard-deck,
   .swipe-decide,
   .drag-sort,
+  .progress-skill,
+  .chart-block,
   .timeline-interactive__track,
   .case-lab__tabs,
   .quiz__sortable .quiz__item-controls,

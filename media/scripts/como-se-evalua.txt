@@ -1,0 +1,17 @@
+Bienvenido a la lección sobre cómo se evalúa.
+
+Si tu experiencia con evaluaciones se parece a la de la mayoría, posiblemente asocias la palabra evaluación con un examen escrito que mide cuánto recuerdas. La evaluación CONOCER opera con una lógica distinta. La pregunta de fondo no es "¿conoces la teoría de tal cosa?", sino "¿puedes realizar la función de tal cosa con calidad, en una situación real?".
+
+Esta diferencia tiene dos consecuencias prácticas importantes.
+
+Primera: para prepararte, estudiar el contenido del estándar no será suficiente. Necesitarás también demostrar que has aplicado ese contenido en una situación profesional concreta. Tu preparación combina dos rutas: consolidar conocimientos, y documentar tu ejercicio reciente con una MiPyME real.
+
+Segunda: tu evaluador no actuará como un interrogador que pregunta sobre teoría. Actuará, sobre todo, como un observador que constata si ejecutas la función conforme al estándar. Lo que sabes importa. Pero lo que haces, y lo que produces, es decisivo.
+
+La evaluación se construye recopilando cinco tipos de evidencia: desempeños observables, productos entregables, conocimientos aplicados, actitudes durante el proceso, y situaciones emergentes que el evaluador puede plantear. No todos los estándares usan los cinco. Cada estándar especifica los que aplican.
+
+Al final del proceso, dos resultados son posibles: competente, o aún no competente. En ambos casos recibes una cédula de evaluación con retroalimentación detallada. Si fuiste dictaminado competente, el CONOCER tramita y la Secretaría de Educación Pública emite tu certificado oficial.
+
+Una recomendación clave: <break time="0.5s"/> sin experiencia práctica reciente con una MiPyME real, la evaluación no puede salir bien. Si careces por completo de esa experiencia, ese es tu primer paso. Solo después tiene sentido inscribirte.
+
+Continúa con el contenido. Te recomendamos revisar el caso La Espiga, donde verás llenadas las cinco evidencias en un proyecto real.

@@ -1,0 +1,17 @@
+Bienvenido a la lección "¿Es para ti?".
+
+El estándar Implementar IA certifica a personas que acompañan a MiPyMEs en la planeación, ejecución y evaluación de soluciones de Inteligencia Artificial en sus procesos cotidianos. No certifica programadores. No certifica generadores de contenido. Certifica consultores e integradores que aplican herramientas existentes de IA al contexto operativo de una pequeña o mediana empresa.
+
+Hay tres preguntas que te ayudan a saber si este estándar es para ti.
+
+Primera: ¿trabajas directamente con MiPyMEs como tu cliente principal o frecuente? Si tu trabajo es con corporativos, gobierno o grandes empresas, probablemente otro estándar te calce mejor.
+
+Segunda: ¿configuras y aplicas herramientas de IA <break time="0.3s"/> que ya existen en el mercado? Como ChatGPT, Claude, Copilot, Zapier, plataformas con módulos de IA. Si en cambio tú programas software a medida, o generas contenido digital con IA, hay estándares de la misma familia diseñados para esos perfiles.
+
+Tercera: ¿tu rol cubre los tres momentos del proyecto? <break time="0.3s"/> Planear: diagnóstico y hoja de ruta. Ejecutar: configurar y capacitar. Evaluar: medir resultados y cerrar. Si solo cubres uno o dos momentos, este estándar te exigirá complementar tu experiencia antes de presentarte.
+
+Tres respuestas afirmativas significan que estás en el estándar correcto. Si alguna fue dudosa, vale la pena revisar la matriz comparativa de los cuatro estándares en este mismo capítulo.
+
+Un punto clave: <break time="0.5s"/> dos personas con biografías muy distintas pueden certificarse en el mismo estándar. La competencia es de la función, no de tu currículum. Lo que importa es lo que demuestras hoy, no cómo llegaste.
+
+Antes de avanzar, te invitamos a probar la actividad "Mitos sobre el estándar" al final de esta lección. Diez segundos cada decisión, cinco mitos, te ayudan a calibrar si tu información sobre el proceso está actualizada.
