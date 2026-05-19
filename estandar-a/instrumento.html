@@ -288,6 +288,40 @@
       </ul>
     </aside>
 
+    <h2 style="margin-top:36px;">Flujo del IEC · qué pasa con tu evidencia</h2>
+    <p>Cada pieza de evidencia que entregas atraviesa este flujo. Conocerlo te ayuda a anticipar qué espera ver el evaluador en cada punto.</p>
+
+    <figure class="diagram-mermaid">
+      <pre class="mermaid">
+flowchart TD
+  A[Aspirante presenta<br/>evidencia] --> B{¿Es histórica<br/>o presente?}
+  B -->|Histórica| C[Verificación<br/>de autoría<br/>Anexo 5]
+  B -->|Presente| D[Observación directa<br/>o entrega documental]
+  C --> E[Asignación<br/>de peso<br/>0.32 / 0.62 / 3.33]
+  D --> E
+  E --> F[Reactivos del IEC<br/>126 totales]
+  F --> G{¿Cumple<br/>criterio F21?}
+  G -->|Sí| H[Suma de puntos]
+  G -->|No| I[No suma]
+  H --> J[Puntaje agregado<br/>+ AHV restadas]
+  I --> J
+  J --> K{¿≥ 80% +<br/>sin críticos<br/>incumplidos?}
+  K -->|Sí| L[Competente]
+  K -->|No| M[Aún No Competente]
+  classDef start fill:#28467e,stroke:#f7c031,color:#FAFCFF
+  classDef decision fill:#f7c031,stroke:#28467e,color:#28467e
+  classDef step fill:#529ed7,stroke:#1F4E8C,color:#FAFCFF
+  classDef ok fill:#3FA35B,stroke:#28467e,color:#FAFCFF
+  classDef nok fill:#DC2626,stroke:#28467e,color:#FAFCFF
+  class A start
+  class B,G,K decision
+  class C,D,E,F,H,I,J step
+  class L ok
+  class M nok
+      </pre>
+      <figcaption>El peso del reactivo (taxativo · mediano · menor) decide cuánto impacto tiene tu evidencia en el dictamen final.</figcaption>
+    </figure>
+
     <section id="siguiente">
       <h2>¿Listo para planificar tu preparación?</h2>
       <p>Ahora que entiendes la mecánica del IEC, conviene tener un plan operativo. El siguiente capítulo te propone una <strong>ruta de 4 semanas</strong> con checklist final.</p>

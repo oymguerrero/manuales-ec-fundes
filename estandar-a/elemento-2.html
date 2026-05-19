@@ -464,6 +464,15 @@
 
         <div class="tabs__panel" id="panel-pe2-3" role="tabpanel" aria-labelledby="tab-pe2-3" hidden>
           <h3>3.4.3 · El material de capacitación</h3>
+
+          <aside class="callout callout--example callout--with-photo" role="note">
+            <img src="../img/personajes/dona-beatriz-tablet.jpg" alt="Doña Beatriz aprendiendo a usar el chatbot en una tablet durante la capacitación" class="img-personaje" loading="lazy" />
+            <div>
+              <span class="callout__label">Capacitación real · La Espiga</span>
+              <div class="callout__body">Después de la capacitación, <strong>Doña Beatriz pudo operar el chatbot sin Carlos al lado.</strong> Esa es la prueba: si la persona capacitada queda autónoma. Material denso pero inaccesible = capacitación fallida; material visual paso-a-paso = capacitación efectiva.</div>
+            </div>
+          </aside>
+
           <p>Material que entregas al personal para consultar después de la sesión cómo operar autónomamente. <strong>6 características:</strong></p>
           <ol type="a">
             <li>Instrucciones paso a paso para operar cada herramienta implementada.</li>
@@ -560,6 +569,56 @@
         <li>Las AHV (Responsabilidad y Cooperación) se observan durante los dos desempeños.</li>
       </ul>
     </aside>
+
+    <h2 style="margin-top:36px;">Flujo lógico del Elemento 2</h2>
+    <p>Antes de ir a la sesión, fija el orden de operaciones: cada etapa habilita la siguiente. Si saltas pasos, las dependencias no se sostienen.</p>
+
+    <figure class="diagram-mermaid">
+      <pre class="mermaid">
+flowchart LR
+  A[Propuesta E1<br/>aprobada] --> B[Configurar<br/>herramientas]
+  B --> C[Integrar accesos<br/>+ permisos]
+  C --> D[Probar<br/>funcionamiento]
+  D --> E{¿Funciona<br/>en condiciones<br/>reales?}
+  E -->|Sí| F[Documentar<br/>3.4.2 técnico]
+  E -->|No| C
+  F --> G[Capacitar<br/>al personal]
+  G --> H[Presentar<br/>al emprendedor]
+  H --> I[Soluciones<br/>operando]
+  classDef start fill:#28467e,stroke:#f7c031,color:#FAFCFF
+  classDef step fill:#529ed7,stroke:#1F4E8C,color:#FAFCFF
+  classDef decision fill:#f7c031,stroke:#28467e,color:#28467e
+  classDef end fill:#3FA35B,stroke:#28467e,color:#FAFCFF
+  class A start
+  class B,C,D,F,G,H step
+  class E decision
+  class I end
+      </pre>
+      <figcaption>Las decisiones técnicas no son lineales: si las pruebas fallan, vuelves a configurar antes de seguir documentando.</figcaption>
+    </figure>
+
+    <h2 style="margin-top:36px;">Ordena los pasos del Elemento 2</h2>
+    <p>Antes de la sesión real, el aspirante suele confundir el orden óptimo. Ordena la secuencia tú mismo y verifica.</p>
+
+    <div class="quiz" data-type="order" id="quiz-e2-orden">
+      <p class="quiz__question">El consultor recibe la propuesta firmada. ¿Cuál es el orden correcto de los siguientes pasos?</p>
+      <ol class="quiz__sortable">
+        <li class="quiz__item" data-correct-pos="1">Configurar las herramientas de IA seleccionadas en el entorno tecnológico</li>
+        <li class="quiz__item" data-correct-pos="2">Configurar accesos y permisos por usuario</li>
+        <li class="quiz__item" data-correct-pos="3">Ejecutar pruebas funcionales en condiciones reales</li>
+        <li class="quiz__item" data-correct-pos="4">Documentar el informe técnico (3.4.2)</li>
+        <li class="quiz__item" data-correct-pos="5">Capacitar al personal (material 3.4.3)</li>
+        <li class="quiz__item" data-correct-pos="6">Presentar las soluciones al emprendedor</li>
+      </ol>
+      <button class="quiz__check" type="button">Verificar orden</button>
+      <div class="quiz__feedback quiz__feedback--correct" hidden>
+        <strong>✓ Correcto.</strong> Configurar → probar → documentar → capacitar → presentar es la secuencia natural del E2. Documentar antes de capacitar evita que el personal aprenda algo distinto a lo que entregarás.
+      </div>
+      <div class="quiz__feedback quiz__feedback--wrong" hidden>
+        <strong>✗ Revisa el orden.</strong> Pista: las pruebas funcionales tienen que estar pasadas ANTES de capacitar, sino las encargadas aprenderán algo distinto al producto final.
+        <button class="quiz__retry" type="button">Intentar de nuevo</button>
+      </div>
+    </div>
 
     <section id="siguiente">
       <h2>¿Listo para el Elemento 3?</h2>

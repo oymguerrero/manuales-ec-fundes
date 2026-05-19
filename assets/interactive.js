@@ -1338,6 +1338,342 @@
     render();
   }
 
+  // ---------- loadCDN: carga script externo solo cuando se necesita ----------
+  // Devuelve una Promise que resuelve cuando el script está disponible.
+  // Cachea por URL para no insertar dos veces el mismo CDN.
+  const _cdnCache = {};
+  function loadCDN(url) {
+    if (_cdnCache[url]) return _cdnCache[url];
+    _cdnCache[url] = new Promise(function (resolve, reject) {
+      const s = document.createElement('script');
+      s.src = url;
+      s.async = true;
+      s.onload = function () { resolve(); };
+      s.onerror = function () { reject(new Error('No se pudo cargar: ' + url)); };
+      document.head.appendChild(s);
+    });
+    return _cdnCache[url];
+  }
+
+  // ---------- Diagram Mermaid ----------
+  // Carga Mermaid (~140 KB) solo si la página tiene .diagram-mermaid.
+  // Markup:
+  // <figure class="diagram-mermaid">
+  //   <pre class="mermaid">flowchart LR; A-->B</pre>
+  //   <figcaption>Caption opcional</figcaption>
+  // </figure>
+  function initDiagramMermaid(container) {
+    loadCDN('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js').then(function () {
+      if (!window.mermaid) return;
+      // Inicializar UNA VEZ (idempotente)
+      if (!window._miCompaniaMermaidInit) {
+        window.mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: 'loose',
+          theme: 'base',
+          themeVariables: {
+            primaryColor: '#28467e',
+            primaryTextColor: '#FAFCFF',
+            primaryBorderColor: '#1F4E8C',
+            lineColor: '#529ed7',
+            secondaryColor: '#f7c031',
+            tertiaryColor: '#FFF3CC',
+            fontFamily: 'Afacad, Inter, sans-serif',
+            fontSize: '15px'
+          }
+        });
+        window._miCompaniaMermaidInit = true;
+      }
+      const pre = container.querySelector('pre.mermaid');
+      if (!pre) return;
+      try {
+        window.mermaid.run({ nodes: [pre] });
+      } catch (e) { console.warn('Mermaid render error:', e); }
+    }).catch(function (e) { console.warn(e); });
+  }
+
+  // ---------- Drag Sort (arrastrar criterios a su zona) ----------
+  // Mouse/touch: SortableJS · Teclado: Tab/Space/flechas/Enter
+  // Markup:
+  // <div class="drag-sort" data-storage-key="ds-criterios-elementos">
+  //   <div class="drag-sort__bank">
+  //     <div class="drag-sort__item" data-id="f01" data-correct-zone="e1">F01: Reporte inicial</div>...
+  //   </div>
+  //   <div class="drag-sort__targets">
+  //     <div class="drag-sort__zone" data-zone="e1"><h4>Elemento 1</h4><ul></ul></div>
+  //     <div class="drag-sort__zone" data-zone="e2">...</div>
+  //   </div>
+  //   <button class="drag-sort__check" type="button">Verificar</button>
+  //   <div class="drag-sort__feedback" role="status" aria-live="polite" hidden></div>
+  // </div>
+  function initDragSort(container) {
+    const key = 'mi-compania-drag::v1::' + (container.dataset.storageKey || 'default');
+    const items = Array.prototype.slice.call(container.querySelectorAll('.drag-sort__item'));
+    const zones = container.querySelectorAll('.drag-sort__zone');
+    const bank = container.querySelector('.drag-sort__bank');
+    const checkBtn = container.querySelector('.drag-sort__check');
+    const feedback = container.querySelector('.drag-sort__feedback');
+    if (!items.length || !zones.length) return;
+
+    // Asegurar que cada zona tenga un <ul> para los drops
+    zones.forEach(function (z) {
+      if (!z.querySelector('ul')) {
+        const ul = document.createElement('ul');
+        ul.className = 'drag-sort__zone-list';
+        z.appendChild(ul);
+      }
+    });
+
+    // Anuncio teclado (aria-live)
+    let announcer = container.querySelector('.drag-sort__announcer');
+    if (!announcer) {
+      announcer = document.createElement('div');
+      announcer.className = 'drag-sort__announcer visually-hidden';
+      announcer.setAttribute('aria-live', 'polite');
+      announcer.setAttribute('aria-atomic', 'true');
+      container.appendChild(announcer);
+    }
+    function announce(msg) { announcer.textContent = msg; }
+
+    // Hacer items focables + keyboard
+    let grabbed = null;
+    items.forEach(function (item) {
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('role', 'option');
+      item.setAttribute('aria-grabbed', 'false');
+      item.addEventListener('keydown', function (e) {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          if (grabbed === item) {
+            grabbed.setAttribute('aria-grabbed', 'false');
+            announce('Soltado: ' + item.textContent.trim());
+            grabbed = null;
+          } else {
+            if (grabbed) grabbed.setAttribute('aria-grabbed', 'false');
+            grabbed = item;
+            item.setAttribute('aria-grabbed', 'true');
+            announce('Tomado: ' + item.textContent.trim() + '. Usa flechas para moverlo entre zonas, luego Espacio para soltar.');
+          }
+        } else if (grabbed === item && (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+          e.preventDefault();
+          moveGrabbed(e.key);
+        } else if (e.key === 'Escape' && grabbed === item) {
+          grabbed.setAttribute('aria-grabbed', 'false');
+          grabbed = null;
+          announce('Movimiento cancelado.');
+        }
+      });
+    });
+
+    function moveGrabbed(direction) {
+      // Listas en orden: bank, zone1, zone2, ... (zonas según orden DOM)
+      const allLists = [bank];
+      zones.forEach(function (z) { allLists.push(z.querySelector('ul') || z); });
+      // Encuentra contenedor actual del item
+      const currentList = grabbed.parentElement;
+      const idx = allLists.indexOf(currentList);
+      let nextIdx = idx;
+      if (direction === 'ArrowRight' || direction === 'ArrowDown') nextIdx = Math.min(allLists.length - 1, idx + 1);
+      else if (direction === 'ArrowLeft' || direction === 'ArrowUp') nextIdx = Math.max(0, idx - 1);
+      if (nextIdx === idx) return;
+      allLists[nextIdx].appendChild(grabbed);
+      const targetLabel = nextIdx === 0 ? 'banco de items' : (allLists[nextIdx].parentElement.querySelector('h4, .drag-sort__zone-title') ? allLists[nextIdx].parentElement.querySelector('h4, .drag-sort__zone-title').textContent.trim() : 'zona ' + nextIdx);
+      announce('Movido a: ' + targetLabel);
+      grabbed.focus();
+    }
+
+    // Cargar SortableJS para mouse/touch
+    loadCDN('https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js').then(function () {
+      if (!window.Sortable) return;
+      const sortableOpts = {
+        group: 'drag-sort-' + (container.dataset.storageKey || 'default'),
+        animation: 150,
+        ghostClass: 'drag-sort__ghost',
+        chosenClass: 'drag-sort__chosen',
+        dragClass: 'drag-sort__dragging'
+      };
+      window.Sortable.create(bank, sortableOpts);
+      zones.forEach(function (z) {
+        const ul = z.querySelector('ul') || z;
+        window.Sortable.create(ul, sortableOpts);
+      });
+    }).catch(function (e) { console.warn(e); });
+
+    // Restaurar asignación previa
+    try {
+      const stored = JSON.parse(localStorage.getItem(key) || '{}');
+      Object.keys(stored).forEach(function (itemId) {
+        const item = items.find(function (it) { return it.dataset.id === itemId; });
+        const zone = container.querySelector('.drag-sort__zone[data-zone="' + stored[itemId] + '"]');
+        if (item && zone) {
+          (zone.querySelector('ul') || zone).appendChild(item);
+        }
+      });
+    } catch (e) {}
+
+    function persist() {
+      const state = {};
+      zones.forEach(function (z) {
+        const zoneId = z.dataset.zone;
+        z.querySelectorAll('.drag-sort__item').forEach(function (it) {
+          state[it.dataset.id] = zoneId;
+        });
+      });
+      try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+    }
+
+    if (checkBtn) {
+      checkBtn.addEventListener('click', function () {
+        let total = items.length, correct = 0;
+        items.forEach(function (item) {
+          const parent = item.parentElement;
+          const zoneEl = parent.closest('.drag-sort__zone');
+          const inZone = zoneEl ? zoneEl.dataset.zone : null;
+          const isCorrect = inZone === item.dataset.correctZone;
+          item.setAttribute('data-state', isCorrect ? 'correct' : (inZone ? 'wrong' : 'pending'));
+          if (isCorrect) correct++;
+        });
+        const pct = Math.round(correct / total * 100);
+        feedback.innerHTML = '<strong>' + correct + ' de ' + total + ' correctos (' + pct + '%).</strong> ' +
+          (pct === 100 ? 'Asignación perfecta.' : 'Revisa los marcados en rojo y reintenta.');
+        feedback.hidden = false;
+        persist();
+        recordEvent('drag-sort', { storageKey: container.dataset.storageKey, correct: correct, total: total });
+      });
+    }
+  }
+
+  // ---------- Case Lab (laboratorio del caso La Espiga) ----------
+  // Estructura: tabs internos (productos/plantillas) + columnas "lo que pide F21"
+  // vs "cómo se llenó para La Espiga"
+  // Markup:
+  // <div class="case-lab" data-storage-key="case-lab-e1">
+  //   <h3 class="case-lab__title">Plantillas del Elemento 1 · llenadas para La Espiga</h3>
+  //   <div class="case-lab__tabs" role="tablist"></div>
+  //   <div class="case-lab__panels"></div>
+  //   <script type="application/json" class="case-lab__data">{...}</script>
+  // </div>
+  function initCaseLab(container) {
+    const data = readJSONScript(container, '.case-lab__data');
+    if (!data || !data.products) return;
+
+    const tabsEl = container.querySelector('.case-lab__tabs');
+    const panelsEl = container.querySelector('.case-lab__panels');
+    if (!tabsEl || !panelsEl) return;
+
+    tabsEl.setAttribute('role', 'tablist');
+
+    data.products.forEach(function (prod, i) {
+      const tabId = 'caselab-tab-' + Math.random().toString(36).slice(2, 8);
+      const panelId = 'caselab-panel-' + Math.random().toString(36).slice(2, 8);
+      const isFirst = i === 0;
+      const tab = document.createElement('button');
+      tab.type = 'button';
+      tab.className = 'case-lab__tab';
+      tab.id = tabId;
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-controls', panelId);
+      tab.setAttribute('aria-selected', isFirst ? 'true' : 'false');
+      tab.tabIndex = isFirst ? 0 : -1;
+      tab.innerHTML = '<span class="case-lab__tab-num">' + escapeHTML(prod.num) + '</span> ' + escapeHTML(prod.title);
+      tabsEl.appendChild(tab);
+
+      const panel = document.createElement('div');
+      panel.className = 'case-lab__panel';
+      panel.id = panelId;
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tabId);
+      panel.hidden = !isFirst;
+
+      const rowsHTML = (prod.rows || []).map(function (r) {
+        return '<div class="case-lab__row">' +
+          '<div class="case-lab__cell case-lab__cell--f21"><span class="case-lab__cell-label">F21 pide</span>' + escapeHTML(r.f21) + '</div>' +
+          '<div class="case-lab__cell case-lab__cell--espiga"><span class="case-lab__cell-label">En La Espiga se llenó así</span>' + escapeHTML(r.espiga) + '</div>' +
+        '</div>';
+      }).join('');
+
+      panel.innerHTML =
+        (prod.intro ? '<p class="case-lab__intro">' + escapeHTML(prod.intro) + '</p>' : '') +
+        '<div class="case-lab__rows">' + rowsHTML + '</div>' +
+        (prod.note ? '<aside class="case-lab__note"><strong>Nota del consultor:</strong> ' + escapeHTML(prod.note) + '</aside>' : '');
+      panelsEl.appendChild(panel);
+    });
+
+    // Navegación teclado tipo tabs
+    const tabs = container.querySelectorAll('.case-lab__tab');
+    const panels = container.querySelectorAll('.case-lab__panel');
+    function activate(idx, focus) {
+      tabs.forEach(function (t, j) {
+        const active = j === idx;
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        t.tabIndex = active ? 0 : -1;
+      });
+      panels.forEach(function (p, j) { p.hidden = j !== idx; });
+      if (focus) tabs[idx].focus();
+    }
+    tabs.forEach(function (t, idx) {
+      t.addEventListener('click', function () { activate(idx, false); });
+      t.addEventListener('keydown', function (e) {
+        let next = null;
+        if (e.key === 'ArrowRight') next = (idx + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') next = (idx - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = tabs.length - 1;
+        if (next !== null) { e.preventDefault(); activate(next, true); }
+      });
+    });
+  }
+
+  // ---------- Timeline Interactive ----------
+  // Markup:
+  // <div class="timeline-interactive" data-storage-key="proceso-pasos">
+  //   <script type="application/json" class="timeline-interactive__data">[{title, date, body},...]</script>
+  // </div>
+  function initTimelineInteractive(container) {
+    const steps = readJSONScript(container, '.timeline-interactive__data');
+    if (!steps || !steps.length) return;
+
+    const stepsHTML = steps.map(function (s, i) {
+      const id = 'timeline-step-' + Math.random().toString(36).slice(2, 6);
+      return '<button type="button" class="timeline-interactive__step" data-idx="' + i + '" aria-expanded="' + (i === 0 ? 'true' : 'false') + '" aria-controls="' + id + '-panel">' +
+        '<span class="timeline-interactive__dot">' + (i + 1) + '</span>' +
+        '<span class="timeline-interactive__step-title">' + escapeHTML(s.title) + '</span>' +
+        (s.date ? '<span class="timeline-interactive__date">' + escapeHTML(s.date) + '</span>' : '') +
+        '</button>';
+    }).join('');
+
+    const panelsHTML = steps.map(function (s, i) {
+      const id = 'timeline-step-' + Math.random().toString(36).slice(2, 6);
+      return '<div class="timeline-interactive__panel" id="' + id + '-panel" data-idx="' + i + '" ' + (i === 0 ? '' : 'hidden') + '>' +
+        '<h4>' + escapeHTML(s.title) + '</h4>' +
+        '<div class="timeline-interactive__body">' + (s.body || '') + '</div>' +
+        '</div>';
+    }).join('');
+
+    container.innerHTML =
+      '<ol class="timeline-interactive__track">' + stepsHTML + '</ol>' +
+      '<div class="timeline-interactive__detail">' + panelsHTML + '</div>';
+
+    const buttons = container.querySelectorAll('.timeline-interactive__step');
+    const panels = container.querySelectorAll('.timeline-interactive__panel');
+
+    function show(idx) {
+      buttons.forEach(function (b) {
+        const active = parseInt(b.dataset.idx, 10) === idx;
+        b.setAttribute('aria-expanded', active ? 'true' : 'false');
+        b.classList.toggle('timeline-interactive__step--active', active);
+      });
+      panels.forEach(function (p) {
+        p.hidden = parseInt(p.dataset.idx, 10) !== idx;
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { show(parseInt(b.dataset.idx, 10)); });
+    });
+    show(0);
+  }
+
   // ---------- Inicialización ----------
   function init() {
     document.querySelectorAll('.tabs').forEach(initTabs);
@@ -1347,6 +1683,10 @@
     document.querySelectorAll('.scenario-decision').forEach(initScenarioDecision);
     document.querySelectorAll('.flashcard-deck').forEach(initFlashcardDeck);
     document.querySelectorAll('.swipe-decide').forEach(initSwipeDecide);
+    document.querySelectorAll('.drag-sort').forEach(initDragSort);
+    document.querySelectorAll('.case-lab').forEach(initCaseLab);
+    document.querySelectorAll('.timeline-interactive').forEach(initTimelineInteractive);
+    document.querySelectorAll('.diagram-mermaid').forEach(initDiagramMermaid);
     document.querySelectorAll('.audio-narration').forEach(initAudioNarration);
     document.querySelectorAll('.lesson-tabs').forEach(initLessonTabs);
     document.querySelectorAll('.glossary--rich').forEach(initGlossaryRich);

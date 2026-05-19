@@ -76,9 +76,12 @@
         <div class="accordion__body">
       <p>El proceso se compone de seis pasos. Aquí tienes una vista panorámica para que sitúes mentalmente el recorrido completo antes de profundizar en cada etapa.</p>
 
-      <aside class="callout callout--example" role="note">
-        <span class="callout__label">El caso que recorreremos</span>
-        <div class="callout__body"><strong>Carlos</strong> (hijo de Doña Beatriz, administrador de La Espiga) acaba de terminar su portafolio del Estándar A "Implementar IA". Documentó cómo configuró un chatbot de WhatsApp para los pedidos, integró una hoja de cálculo automatizada para el inventario y capacitó a las dos encargadas de mostrador. Estos seis pasos son lo que verá Carlos durante su evaluación. Cada vez que te sientas perdido en la teoría, vuelve aquí y piensa: <em>"¿qué le toca a Carlos en este paso?"</em></div>
+      <aside class="callout callout--example callout--with-photo" role="note">
+        <img src="../img/personajes/carlos-laptop.jpg" alt="Carlos, hijo de Doña Beatriz, joven consultor con laptop tomando notas en la trastienda de la panadería" class="img-personaje" loading="lazy" />
+        <div>
+          <span class="callout__label">El caso que recorreremos</span>
+          <div class="callout__body"><strong>Carlos</strong> (hijo de Doña Beatriz, administrador de La Espiga) acaba de terminar su portafolio del Estándar A "Implementar IA". Documentó cómo configuró un chatbot de WhatsApp para los pedidos, integró una hoja de cálculo automatizada para el inventario y capacitó a las dos encargadas de mostrador. Estos seis pasos son lo que verá Carlos durante su evaluación. Cada vez que te sientas perdido en la teoría, vuelve aquí y piensa: <em>"¿qué le toca a Carlos en este paso?"</em></div>
+        </div>
       </aside>
 
       <div class="audio-narration">
@@ -394,6 +397,44 @@
         <li>Después del cierre, espera ~<strong>90 días naturales</strong> para recibir el Certificado oficial.</li>
       </ul>
     </aside>
+
+    <h2 style="margin-top:36px;">Practica · imprevisto en el paso 4</h2>
+    <p>Carlos está en el cierre de evaluación (paso 4). Está integrando su portafolio cuando descubre algo. ¿Cómo reaccionas?</p>
+
+    <div class="scenario-decision" data-storage-key="proceso-imprevisto-paso-4">
+      <script type="application/json" class="scenario-decision__data">
+      {
+        "actor": "Tu evaluador · paso 4 de 6",
+        "title": "\"Falta una firma en el acta de cierre del proyecto 4.4.2…\"",
+        "context": "Estás revisando el portafolio con tu evaluador antes de cerrar la sesión. Te das cuenta de que el acta de cierre con La Espiga (producto 4.4.2) tiene tu firma y la de Doña Beatriz, pero faltan los contactos de soporte técnico que el F21 marca como REQUISITO TAXATIVO. La sesión termina en 20 minutos.",
+        "question": "¿Qué haces?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Lo dejas así. El acta tiene firmas, eso es lo importante.",
+            "outcome": "wrong",
+            "feedback": "Los contactos de soporte son REQUISITO TAXATIVO según el F21 del 4.4.2. Sin ellos el producto se invalida aunque las firmas estén. Tu portafolio quedaría incompleto y eso se reflejaría como 'Aún No Competente' para ese producto.",
+            "criterio": "F21 4.4.2: \"Contiene los contactos de soporte técnico para incidencias futuras (REQUISITO TAXATIVO)\"."
+          },
+          {
+            "id": "b",
+            "label": "Le pides al evaluador 10 minutos. Llamas a Doña Beatriz, actualizas el acta con los contactos, la firmas digitalmente y la subes al portafolio antes de cerrar.",
+            "outcome": "ok",
+            "feedback": "Decisión correcta. El paso 4 es de cierre administrativo, NO de evaluación. Tu evaluador puede aceptar correcciones documentales antes de cerrar el portafolio. Demuestras además la AHV de Responsabilidad: detectaste el problema y lo resolviste antes del cierre.",
+            "criterio": "Buena práctica andragógica: corregir activamente en lugar de esperar el dictamen."
+          },
+          {
+            "id": "c",
+            "label": "Le explicas al evaluador que vas a corregir el acta DESPUÉS, en los 90 días de dictamen.",
+            "outcome": "risk",
+            "feedback": "Esto no es viable. El portafolio se cierra en el paso 4. Lo que entregues ahí es lo que la ECE evaluará en el paso 6. No hay 'segundas entregas' en el dictamen — solo en una próxima presentación completa. Conviene corregir AHORA si tienes margen.",
+            "criterio": "Los pasos 5 y 6 son institucionales, ya no operativos. El evaluador no puede 'añadir' al portafolio en esa fase."
+          }
+        ],
+        "wrapUp": "El paso 4 es tu última oportunidad de corregir errores documentales. Detectarlos requiere haber estudiado el F21 al pie de la letra antes — por eso este manual los enfatiza tanto. Un consultor preparado entra al cierre con su propia lista de chequeo."
+      }
+      </script>
+    </div>
 
     <section id="siguiente">
       <h2>¿Listo para descubrir cuál es tu estándar?</h2>
