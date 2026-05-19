@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """
-Genera los 13 templates de los productos del estándar Implementar IA
-como HTML estilizado con extensión ofimática: Word (.doc), Excel (.xls)
-y una variante "Word guía visual" (.doc con saltos de página tipo
-lámina). Office los abre nativamente (Word/Excel muestran un warning
-una sola vez por archivo; en el caso de PowerPoint moderno NO abre HTML
-con extensión .ppt, por eso evitamos ese formato).
+Genera los 13 templates de los productos del estándar Implementar IA:
+- 9 Word (.doc) + 3 Excel (.xls) como HTML estilizado (Office los abre
+  nativamente con warning una sola vez por archivo).
+- 1 PowerPoint (.pptx) real generado con python-pptx — porque
+  PowerPoint moderno NO abre HTML como .ppt, hay que generar OOXML.
 
 Filosofía pedagógica: NO darle la solución al aspirante. Cada template
 muestra el criterio F21 oficial + un ejemplo breve del caso La Espiga
@@ -26,11 +25,9 @@ OUT = ROOT / "estandar-a" / "templates"
 OUT.mkdir(parents=True, exist_ok=True)
 
 # Cada producto define su formato óptimo basado en la naturaleza del contenido:
-#   "word"        → reportes narrativos, manuales técnicos, actas
-#   "excel"       → matrices, cronogramas, tablas comparativas de indicadores
-#   "word_guide"  → guía operativa estilo "lámina por paso" (Word, no PPT,
-#                   porque PowerPoint moderno NO abre HTML como .ppt y la
-#                   guía es más útil en Word para imprimir/anotar)
+#   "word"  → reportes narrativos, manuales técnicos, actas (HTML en .doc)
+#   "excel" → matrices, cronogramas, tablas comparativas (HTML en .xls)
+#   "pptx"  → presentación real generada con python-pptx (capacitación)
 PRODUCTS = [
     {
         "num": "1.4.1", "slug": "reporte-evaluacion-inicial", "format": "word",
@@ -252,9 +249,9 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "3.4.3", "slug": "material-capacitacion", "format": "word_guide",
+        "num": "3.4.3", "slug": "material-capacitacion", "format": "pptx",
         "elemento": "2 · Ejecutar", "title": "Material de capacitación al personal",
-        "intro": "Guía operativa estilo manual visual: una lámina por paso, espacio para captura, prompts destacados, tabla de errores comunes. La entregamos en Word para que el personal pueda imprimirla y dejarla en mostrador, y para que tú puedas adaptarla sin perder el formato. Si necesitas una sesión presencial, conviertes cada sección en lámina de PowerPoint en 10 minutos.",
+        "intro": "Presentación visual para capacitar al personal de la MiPyME. Una lámina por paso, espacio para captura, prompts destacados y errores frecuentes. El formato PowerPoint te permite usarla en sesión presencial o compartirla para autoestudio.",
         "f21": [
             "Contiene las instrucciones paso a paso para operar cada herramienta de IA implementada",
             "Incluye ejemplos de uso aplicados al contexto específico de la MiPyME",
@@ -600,146 +597,369 @@ Mi CompañIA · FUNDES Latinoamérica con el apoyo de Google.org · Template Exc
 </html>
 """
 
-WORD_GUIDE_TEMPLATE = """<!DOCTYPE html>
-<html xmlns:o="urn:schemas-microsoft-com:office:office"
-      xmlns:w="urn:schemas-microsoft-com:office:word"
-      xmlns="http://www.w3.org/TR/REC-html40">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="ProgId" content="Word.Document">
-<meta name="Generator" content="Microsoft Word">
-<title>{num} · {title}</title>
-<!--[if gte mso 9]>
-<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
-<![endif]-->
-<style>{base_styles}
-.lamina {{
-  page-break-before: always;
-  page-break-inside: avoid;
-  padding: 18pt 6pt;
-  position: relative;
-}}
-.lamina:first-of-type {{ page-break-before: avoid; }}
-.lamina-num {{
-  display: inline-block;
-  background: #28467e;
-  color: #f7c031;
-  font-weight: bold;
-  font-size: 11pt;
-  padding: 4pt 14pt;
-  border-radius: 14pt;
-  letter-spacing: 0.08em;
-}}
-.lamina h2 {{
-  font-size: 26pt;
-  color: #28467e;
-  border-bottom: 3pt solid #f7c031;
-  padding-bottom: 8pt;
-  margin: 10pt 0 18pt 0;
-  line-height: 1.15;
-}}
-.lamina-help {{
-  font-size: 11.5pt;
-  font-style: italic;
-  color: #555;
-  margin-bottom: 16pt;
-  line-height: 1.55;
-}}
-.captura-box {{
-  border: 1.5pt dashed #cce0f5;
-  background: #f5f9ff;
-  padding: 28pt 18pt;
-  margin: 12pt 0 16pt;
-  text-align: center;
-  color: #6d8db6;
-  font-style: italic;
-  font-size: 10pt;
-  min-height: 110pt;
-}}
-.prompt-box {{
-  background: #fff7d6;
-  border-left: 4pt solid #f7c031;
-  padding: 12pt 16pt;
-  margin: 16pt 0;
-  font-family: 'Consolas', 'Courier New', monospace;
-  font-size: 10pt;
-  color: #5a4400;
-  line-height: 1.55;
-}}
-.prompt-label {{
-  display: block;
-  font-family: 'Calibri', sans-serif;
-  font-weight: bold;
-  color: #28467e;
-  font-size: 10pt;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 6pt;
-}}
-.errors-table {{
-  border-collapse: collapse;
-  width: 100%;
-  margin: 12pt 0;
-  font-size: 10pt;
-}}
-.errors-table th, .errors-table td {{
-  border: 1pt solid #ccc;
-  padding: 8pt 10pt;
-  vertical-align: top;
-}}
-.errors-table th {{
-  background: #28467e;
-  color: white;
-  text-align: left;
-}}
-.errors-table td.fill {{ background: #fafafa; color: #aaa; font-style: italic; min-height: 28pt; }}
-</style>
-</head>
-<body>
+# ===========================================================================
+# GENERADOR PPTX REAL (3.4.3 material de capacitación)
+# ===========================================================================
+#
+# python-pptx solo se importa si hay productos con format="pptx".
+# La estética: 16:9, marca Mi CompañIA arriba, layout consistente con los
+# otros 12 templates HTML (mismo azul, mismo amarillo, mismas cajas).
 
-<div class="brand-header">
-<table>
-<tr>
-<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
-<td style="padding-left: 14pt;">
-<h1>{title}</h1>
-<p class="subtitle">Manual de Implementar IA · Producto del Elemento {elemento} · Guía visual</p>
-</td>
-<td class="meta"><strong>Producto {num}</strong><br>Guía editable · Word<br><em>Mi CompañIA · FUNDES</em></td>
-</tr>
-</table>
-</div>
+def generate_pptx_capacitacion(prod):
+    from pptx import Presentation
+    from pptx.dml.color import RGBColor
+    from pptx.enum.shapes import MSO_SHAPE
+    from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
+    from pptx.util import Inches, Pt
 
-<div class="intro"><strong>Sobre esta guía.</strong> {intro}</div>
+    AZUL = RGBColor(0x28, 0x46, 0x7E)
+    AMARILLO = RGBColor(0xF7, 0xC0, 0x31)
+    AZUL_CLARO = RGBColor(0xF0, 0xF7, 0xFF)
+    AMARILLO_CLARO = RGBColor(0xFF, 0xF3, 0xCC)
+    BLANCO = RGBColor(0xFF, 0xFF, 0xFF)
+    NEGRO = RGBColor(0x33, 0x33, 0x33)
+    GRIS = RGBColor(0x66, 0x66, 0x66)
+    GRIS_CLARO = RGBColor(0xFA, 0xFA, 0xFA)
+    GRIS_PUNTEADO = RGBColor(0xCC, 0xE0, 0xF5)
+    CREMA = RGBColor(0xFD, 0xF6, 0xE3)
+    ROJO = RGBColor(0xC0, 0x39, 0x2B)
 
-<div class="f21-box">
-<h3>Qué evalúa el F21 oficial</h3>
-<ul>{f21_html}</ul>
-</div>
+    prs = Presentation()
+    prs.slide_width = Inches(13.333)
+    prs.slide_height = Inches(7.5)
+    SW, SH = prs.slide_width, prs.slide_height
+    blank = prs.slide_layouts[6]
 
-<div class="espiga-box"><strong>Caso pedagógico La Espiga (ilustrativo, NO es tu material):</strong> {espiga}</div>
+    def solid(shape, color):
+        shape.fill.solid()
+        shape.fill.fore_color.rgb = color
+        shape.line.fill.background()
 
-<div class="product-data">
-<table>
-<tr><td>MiPyME</td><td><span class="blank">&nbsp;</span></td></tr>
-<tr><td>Personal capacitado (nombres + cargo)</td><td><span class="blank">&nbsp;</span></td></tr>
-<tr><td>Fecha de la capacitación</td><td><span class="blank">&nbsp;</span></td></tr>
-<tr><td>Soluciones cubiertas en esta guía</td><td><span class="blank">&nbsp;</span></td></tr>
-</table>
-</div>
+    def textbox(slide, x, y, w, h, text, *, size=18, bold=False, italic=False,
+                color=AZUL, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP, font_name="Calibri"):
+        tb = slide.shapes.add_textbox(x, y, w, h)
+        tf = tb.text_frame
+        tf.word_wrap = True
+        tf.vertical_anchor = anchor
+        tf.margin_left = Inches(0.05)
+        tf.margin_right = Inches(0.05)
+        tf.margin_top = Inches(0.02)
+        tf.margin_bottom = Inches(0.02)
+        p = tf.paragraphs[0]
+        p.alignment = align
+        run = p.add_run()
+        run.text = text
+        run.font.size = Pt(size)
+        run.font.bold = bold
+        run.font.italic = italic
+        run.font.color.rgb = color
+        run.font.name = font_name
+        return tb
 
-<h2 style="page-break-after: avoid;">Estructura de la guía · una lámina por sección</h2>
-<p style="font-size: 10pt; color: #666; margin-bottom: 18pt;">Cada bloque a continuación es una lámina maquetada (cada una imprime en su propia página). Reemplaza los marcadores con tu contenido. Si quieres convertirla en presentación, copia cada lámina como diapositiva de PowerPoint y la conversión queda en minutos.</p>
+    def filled_shape(slide, shape_type, x, y, w, h, fill, line_color=None):
+        s = slide.shapes.add_shape(shape_type, x, y, w, h)
+        solid(s, fill)
+        if line_color is not None:
+            s.line.color.rgb = line_color
+            s.line.width = Pt(0.75)
+        return s
 
-{questions_html}
+    def header_bar(slide, prod):
+        # franja azul superior
+        band = filled_shape(slide, MSO_SHAPE.RECTANGLE, 0, 0, SW, Inches(0.5), AZUL)
+        # franja amarilla justo debajo
+        filled_shape(slide, MSO_SHAPE.RECTANGLE, 0, Inches(0.5), SW, Inches(0.06), AMARILLO)
+        # logo "Mi CompañIA"
+        textbox(slide, Inches(0.35), Inches(0.05), Inches(3.5), Inches(0.4),
+                "Mi CompañIA", size=14, bold=True, color=AMARILLO, anchor=MSO_ANCHOR.MIDDLE)
+        # título de producto
+        textbox(slide, Inches(3.9), Inches(0.05), Inches(7.5), Inches(0.4),
+                f"· {prod['title']}", size=12, color=BLANCO, anchor=MSO_ANCHOR.MIDDLE)
+        # número de producto a la derecha
+        textbox(slide, Inches(11.4), Inches(0.05), Inches(1.8), Inches(0.4),
+                f"Producto {prod['num']}", size=12, bold=True, color=AMARILLO,
+                align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
 
-<div class="footer">
-Mi CompañIA · FUNDES Latinoamérica con el apoyo de Google.org · Guía visual del Manual de Implementar IA
-</div>
+    def footer_band(slide, page_num=None, total=None):
+        filled_shape(slide, MSO_SHAPE.RECTANGLE, 0, Inches(7.15), SW, Inches(0.35), AMARILLO)
+        label = "Mi CompañIA  ·  FUNDES Latinoamérica  ·  AIxMiPyMEs"
+        if page_num is not None and total is not None:
+            label += f"   ·   {page_num} / {total}"
+        textbox(slide, Inches(0), Inches(7.2), SW, Inches(0.3),
+                label, size=10, bold=True, color=AZUL, align=PP_ALIGN.CENTER,
+                anchor=MSO_ANCHOR.MIDDLE)
 
-</body>
-</html>
-"""
+    # cuántas slides totales calcularemos: portada + datos + F21 + Espiga + N preguntas + cierre
+    total = 4 + len(prod["preguntas"]) + 1
+    page = 1
+
+    # ---- Slide 1: portada ----
+    s = prs.slides.add_slide(blank)
+    bg = filled_shape(s, MSO_SHAPE.RECTANGLE, 0, 0, SW, SH, AZUL)
+    # bloque decorativo amarillo a la derecha
+    filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(9.5), 0, Inches(3.833), SH, AMARILLO)
+    filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(9.5), 0, Inches(0.12), SH, AMARILLO)
+    # cuadro central
+    textbox(s, Inches(0.7), Inches(2.0), Inches(8.5), Inches(0.6),
+            f"PRODUCTO {prod['num']}  ·  ELEMENTO {prod['elemento']}",
+            size=15, bold=True, color=AMARILLO)
+    textbox(s, Inches(0.7), Inches(2.7), Inches(8.5), Inches(2.0),
+            prod["title"], size=44, bold=True, color=BLANCO)
+    # subtitle
+    textbox(s, Inches(0.7), Inches(5.0), Inches(8.5), Inches(0.6),
+            "Material de capacitación al personal", size=20, italic=True, color=AZUL_CLARO)
+    # banda amarilla con autoría
+    textbox(s, Inches(0.7), Inches(5.9), Inches(8.5), Inches(0.5),
+            "Mi CompañIA  ·  FUNDES Latinoamérica con el apoyo de Google.org",
+            size=12, bold=True, color=AMARILLO)
+    # logo en banda derecha
+    badge = filled_shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, Inches(10.1), Inches(3.0),
+                        Inches(2.7), Inches(1.5), AZUL)
+    tf = badge.text_frame
+    tf.word_wrap = True
+    tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+    p = tf.paragraphs[0]
+    p.alignment = PP_ALIGN.CENTER
+    r = p.add_run()
+    r.text = "Mi\nCompañIA"
+    r.font.size = Pt(28)
+    r.font.bold = True
+    r.font.color.rgb = AMARILLO
+
+    # ---- Slide 2: datos de la capacitación ----
+    page += 1
+    s = prs.slides.add_slide(blank)
+    header_bar(s, prod)
+    textbox(s, Inches(0.5), Inches(1.0), Inches(12.3), Inches(0.8),
+            "Datos de esta capacitación", size=32, bold=True, color=AZUL)
+    textbox(s, Inches(0.5), Inches(1.8), Inches(12.3), Inches(0.6),
+            "Completa antes de impartirla. Define alcance, audiencia y tiempo para que el evaluador vea contexto.",
+            size=13, italic=True, color=GRIS)
+    fields = [
+        "Nombre de la MiPyME",
+        "Personal capacitado (nombres + cargo)",
+        "Fecha de la capacitación",
+        "Duración estimada",
+        "Soluciones cubiertas en esta sesión",
+    ]
+    for i, label in enumerate(fields):
+        y = Inches(2.7 + i * 0.75)
+        # franja azul claro
+        filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(0.5), y, Inches(12.3), Inches(0.6), AZUL_CLARO)
+        # label
+        textbox(s, Inches(0.7), y, Inches(4.0), Inches(0.6),
+                label + ":", size=13, bold=True, color=AZUL, anchor=MSO_ANCHOR.MIDDLE)
+        # línea para llenar
+        textbox(s, Inches(4.8), y, Inches(8.0), Inches(0.6),
+                "________________________________________", size=13, color=GRIS, anchor=MSO_ANCHOR.MIDDLE)
+    footer_band(s, page, total)
+
+    # ---- Slide 3: criterio F21 ----
+    page += 1
+    s = prs.slides.add_slide(blank)
+    header_bar(s, prod)
+    textbox(s, Inches(0.5), Inches(1.0), Inches(12.3), Inches(0.8),
+            "Criterio F21 · qué evalúa el verificador",
+            size=28, bold=True, color=AZUL)
+    textbox(s, Inches(0.5), Inches(1.8), Inches(12.3), Inches(0.5),
+            "Texto literal del F21 oficial. Tu material debe cubrir explícitamente cada punto.",
+            size=12, italic=True, color=GRIS)
+    box = filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(0.5), Inches(2.4),
+                      Inches(12.3), Inches(4.5), AZUL_CLARO)
+    tf = box.text_frame
+    tf.word_wrap = True
+    tf.margin_left = Inches(0.4)
+    tf.margin_top = Inches(0.3)
+    tf.margin_right = Inches(0.4)
+    for i, crit in enumerate(prod["f21"]):
+        is_tax = "REQUISITO TAXATIVO" in crit
+        clean = crit.replace("(REQUISITO TAXATIVO)", "").strip()
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        p.space_after = Pt(8)
+        r = p.add_run()
+        r.text = "•  " + clean
+        r.font.size = Pt(14)
+        r.font.color.rgb = AZUL if not is_tax else ROJO
+        r.font.bold = is_tax
+        if is_tax:
+            r2 = p.add_run()
+            r2.text = "   ⚠ REQUISITO TAXATIVO"
+            r2.font.size = Pt(11)
+            r2.font.bold = True
+            r2.font.color.rgb = ROJO
+    footer_band(s, page, total)
+
+    # ---- Slide 4: caso La Espiga ----
+    page += 1
+    s = prs.slides.add_slide(blank)
+    header_bar(s, prod)
+    textbox(s, Inches(0.5), Inches(1.0), Inches(12.3), Inches(0.8),
+            "Ejemplo orientativo · caso La Espiga", size=28, bold=True, color=AZUL)
+    textbox(s, Inches(0.5), Inches(1.8), Inches(12.3), Inches(0.5),
+            "Solo para mostrar el TIPO de contenido. NO copies esto a tu MiPyME.",
+            size=12, italic=True, color=GRIS)
+    box = filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(0.5), Inches(2.4),
+                      Inches(12.3), Inches(4.5), CREMA)
+    tf = box.text_frame
+    tf.word_wrap = True
+    tf.margin_left = Inches(0.4)
+    tf.margin_top = Inches(0.3)
+    p = tf.paragraphs[0]
+    r = p.add_run()
+    r.text = prod["espiga"]
+    r.font.size = Pt(16)
+    r.font.italic = True
+    r.font.color.rgb = RGBColor(0x6A, 0x52, 0x08)
+    footer_band(s, page, total)
+
+    # ---- Slide por cada pregunta guía ----
+    for idx, (title, help_text) in enumerate(prod["preguntas"], start=1):
+        page += 1
+        title_lower = title.lower()
+        is_prompt = "prompt" in title_lower
+        is_errors = "error" in title_lower or "qué hacer" in title_lower
+
+        s = prs.slides.add_slide(blank)
+        header_bar(s, prod)
+        # número grande en círculo
+        circle = filled_shape(s, MSO_SHAPE.OVAL, Inches(0.55), Inches(0.95),
+                             Inches(1.1), Inches(1.1), AZUL)
+        tf = circle.text_frame
+        tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = Inches(0)
+        tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+        p = tf.paragraphs[0]
+        p.alignment = PP_ALIGN.CENTER
+        r = p.add_run()
+        r.text = str(idx)
+        r.font.size = Pt(36)
+        r.font.bold = True
+        r.font.color.rgb = AMARILLO
+        # eyebrow "LÁMINA N"
+        textbox(s, Inches(1.85), Inches(0.95), Inches(11), Inches(0.4),
+                f"LÁMINA {idx}", size=11, bold=True, color=AMARILLO)
+        # título
+        textbox(s, Inches(1.85), Inches(1.3), Inches(11.2), Inches(0.9),
+                title, size=26, bold=True, color=AZUL)
+        # subrayado amarillo
+        filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(1.85), Inches(2.18),
+                    Inches(2.5), Inches(0.06), AMARILLO)
+        # help text
+        textbox(s, Inches(0.5), Inches(2.4), Inches(12.3), Inches(0.8),
+                help_text, size=13, italic=True, color=GRIS)
+
+        # Contenido específico
+        if is_prompt:
+            # 2 cajas de prompt apiladas
+            for i, (label_text, bg_color, accent) in enumerate([
+                ("PROMPT SUGERIDO", AMARILLO_CLARO, AMARILLO),
+                ("OTRO PROMPT", AZUL_CLARO, AZUL),
+            ]):
+                y = Inches(3.5 + i * 1.7)
+                # franja izquierda como acento
+                filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(0.5), y, Inches(0.12), Inches(1.5), accent)
+                box = filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(0.62), y, Inches(12.2), Inches(1.5), bg_color)
+                tf = box.text_frame
+                tf.word_wrap = True
+                tf.margin_left = Inches(0.3)
+                tf.margin_top = Inches(0.15)
+                tf.margin_right = Inches(0.3)
+                p = tf.paragraphs[0]
+                r = p.add_run()
+                r.text = label_text
+                r.font.size = Pt(10)
+                r.font.bold = True
+                r.font.color.rgb = AZUL
+                p2 = tf.add_paragraph()
+                p2.space_before = Pt(4)
+                r = p2.add_run()
+                r.text = "[ Pega aquí un prompt completo: rol del asistente + contexto de la MiPyME + formato de salida esperado + ejemplo. ]"
+                r.font.size = Pt(13)
+                r.font.italic = True
+                r.font.color.rgb = RGBColor(0x5A, 0x44, 0x00)
+                r.font.name = "Consolas"
+        elif is_errors:
+            # tabla de 4 columnas x 5 filas (1 header + 4 data)
+            tbl_shape = s.shapes.add_table(rows=5, cols=4,
+                                            left=Inches(0.5), top=Inches(3.5),
+                                            width=Inches(12.3), height=Inches(3.5))
+            tbl = tbl_shape.table
+            tbl.columns[0].width = Inches(2.6)
+            tbl.columns[1].width = Inches(2.5)
+            tbl.columns[2].width = Inches(3.7)
+            tbl.columns[3].width = Inches(3.5)
+            headers = ["Error frecuente", "Cómo identificarlo", "Cómo resolverlo", "Cuándo escalar"]
+            for c, h in enumerate(headers):
+                cell = tbl.cell(0, c)
+                cell.fill.solid()
+                cell.fill.fore_color.rgb = AZUL
+                cell.text = h
+                for para in cell.text_frame.paragraphs:
+                    for run in para.runs:
+                        run.font.size = Pt(12)
+                        run.font.bold = True
+                        run.font.color.rgb = BLANCO
+            for row in range(1, 5):
+                for col in range(4):
+                    cell = tbl.cell(row, col)
+                    cell.fill.solid()
+                    cell.fill.fore_color.rgb = GRIS_CLARO if row % 2 == 1 else BLANCO
+                    cell.text = ""
+        else:
+            # caja de captura + caja de notas
+            cap = filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(0.5), Inches(3.5),
+                              Inches(7.0), Inches(3.5), AZUL_CLARO, line_color=GRIS_PUNTEADO)
+            tf = cap.text_frame
+            tf.word_wrap = True
+            tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+            tf.margin_left = tf.margin_right = Inches(0.3)
+            p = tf.paragraphs[0]
+            p.alignment = PP_ALIGN.CENTER
+            r = p.add_run()
+            r.text = "📷  Inserta aquí la captura\n\n[Sugerencia: marca con círculo rojo cada zona importante]"
+            r.font.size = Pt(13)
+            r.font.italic = True
+            r.font.color.rgb = RGBColor(0x6D, 0x8D, 0xB6)
+            # caja de notas a la derecha
+            notes = filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(7.7), Inches(3.5),
+                                Inches(5.1), Inches(3.5), GRIS_CLARO)
+            tf = notes.text_frame
+            tf.word_wrap = True
+            tf.margin_left = tf.margin_right = Inches(0.3)
+            tf.margin_top = Inches(0.2)
+            p = tf.paragraphs[0]
+            r = p.add_run()
+            r.text = "NOTAS PARA EL CAPACITADOR"
+            r.font.size = Pt(11)
+            r.font.bold = True
+            r.font.color.rgb = AZUL
+            p2 = tf.add_paragraph()
+            p2.space_before = Pt(8)
+            r = p2.add_run()
+            r.text = "[ Escribe aquí qué decir mientras muestras la captura. Ejemplos reales de la MiPyME van mejor que descripciones genéricas. ]"
+            r.font.size = Pt(12)
+            r.font.italic = True
+            r.font.color.rgb = RGBColor(0xAA, 0xAA, 0xAA)
+        footer_band(s, page, total)
+
+    # ---- Slide final: cierre ----
+    page += 1
+    s = prs.slides.add_slide(blank)
+    filled_shape(s, MSO_SHAPE.RECTANGLE, 0, 0, SW, SH, AZUL)
+    textbox(s, Inches(0.5), Inches(2.4), Inches(12.3), Inches(1.5),
+            "¿Dudas durante la operación?", size=42, bold=True, color=AMARILLO,
+            align=PP_ALIGN.CENTER)
+    textbox(s, Inches(0.5), Inches(4.0), Inches(12.3), Inches(0.8),
+            "Tu consultor sigue disponible. Datos de contacto en el Acta de cierre (producto 4.4.2).",
+            size=18, color=BLANCO, align=PP_ALIGN.CENTER)
+    textbox(s, Inches(0.5), Inches(5.0), Inches(12.3), Inches(0.6),
+            "Este material puede actualizarse cuando se añadan nuevas FAQ o flujos.",
+            size=14, italic=True, color=AZUL_CLARO, align=PP_ALIGN.CENTER)
+    filled_shape(s, MSO_SHAPE.RECTANGLE, 0, Inches(6.85), SW, Inches(0.65), AMARILLO)
+    textbox(s, Inches(0), Inches(6.95), SW, Inches(0.5),
+            "Mi CompañIA  ·  FUNDES Latinoamérica con el apoyo de Google.org",
+            size=13, bold=True, color=AZUL, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+
+    return prs
 
 
 # ===========================================================================
@@ -870,65 +1090,12 @@ def render_indicators_example(num):
 """
 
 
-def render_laminas_word_guide(preguntas):
-    """Cada pregunta se renderiza como una lámina con encabezado, ayuda,
-    espacio para captura y zona de notas. Las láminas que mencionan
-    'prompts' o 'errores' reciben tratamiento especial (caja de prompt
-    o tabla de errores) para que el F21 quede explícitamente cubierto."""
-    html = ""
-    for i, (title, help_text) in enumerate(preguntas, 1):
-        title_lower = title.lower()
-        is_prompt = "prompt" in title_lower
-        is_errors = "error" in title_lower or "qué hacer" in title_lower
-
-        block = f'<div class="lamina">\n'
-        block += f'<span class="lamina-num">Lámina {i}</span>\n'
-        block += f'<h2>{title}</h2>\n'
-        block += f'<div class="lamina-help">{help_text}</div>\n'
-
-        if is_prompt:
-            block += (
-                '<div class="prompt-box">\n'
-                '<span class="prompt-label">Prompt sugerido (reemplaza con uno real de tu MiPyME)</span>\n'
-                '[ Pega aquí el prompt completo. Recomendación: empieza con un rol ("Eres asistente de…"), '
-                'añade el contexto de la MiPyME, especifica el formato de salida y un ejemplo. ]\n'
-                '</div>\n'
-                '<div class="prompt-box" style="background:#f7faff;border-left-color:#28467e;color:#28467e;">\n'
-                '<span class="prompt-label">Otro prompt</span>\n'
-                '[ Añade tantos como necesite el personal. Ideal: 5–10 prompts listos para copiar/pegar. ]\n'
-                '</div>\n'
-            )
-        elif is_errors:
-            block += (
-                '<table class="errors-table">\n'
-                '<tr><th style="width:24%;">Error frecuente</th>'
-                '<th style="width:20%;">Cómo identificarlo</th>'
-                '<th style="width:32%;">Cómo resolverlo</th>'
-                '<th>Cuándo escalar</th></tr>\n'
-            )
-            for _ in range(4):
-                block += (
-                    '<tr><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td>'
-                    '<td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>\n'
-                )
-            block += '</table>\n'
-        else:
-            block += (
-                '<div class="captura-box">[ Inserta aquí la captura de pantalla del paso. '
-                'Sugerencia: numera con un círculo rojo cada zona importante. ]</div>\n'
-                '<div class="fill-area">[ Escribe aquí el contenido de la lámina para TU MiPyME. '
-                'Borra este marcador cuando empieces. ]</div>\n'
-            )
-
-        block += '</div>\n'
-        html += block
-    return html
 
 
 def render_product(p):
+    """Devuelve (contenido, extensión). Para pptx, contenido es un objeto
+    Presentation que main() guarda con .save(path)."""
     f21_html = render_f21(p["f21"])
-    extension_by_format = {"word": "doc", "excel": "xls", "word_guide": "doc"}
-    ext = extension_by_format[p["format"]]
 
     if p["format"] == "word":
         questions_html = render_questions_word(p["preguntas"])
@@ -937,6 +1104,7 @@ def render_product(p):
             espiga=p["espiga"], f21_html=f21_html, questions_html=questions_html,
             base_styles=BASE_STYLES,
         )
+        return html, "doc"
     elif p["format"] == "excel":
         questions_html = render_questions_excel(p["preguntas"])
         matrix_html = render_matrix_example(p["num"]) + render_gantt_example(p["num"]) + render_indicators_example(p["num"])
@@ -945,20 +1113,17 @@ def render_product(p):
             espiga=p["espiga"], f21_html=f21_html, questions_html=questions_html,
             matrix_html=matrix_html, base_styles=BASE_STYLES,
         )
-    elif p["format"] == "word_guide":
-        questions_html = render_laminas_word_guide(p["preguntas"])
-        html = WORD_GUIDE_TEMPLATE.format(
-            num=p["num"], title=p["title"], elemento=p["elemento"], intro=p["intro"],
-            espiga=p["espiga"], f21_html=f21_html, questions_html=questions_html,
-            base_styles=BASE_STYLES,
-        )
-    return html, ext
+        return html, "xls"
+    elif p["format"] == "pptx":
+        return generate_pptx_capacitacion(p), "pptx"
+    raise ValueError(f"Formato desconocido: {p['format']}")
 
 
 def main():
-    # Borrar archivos legacy: OOXML generados antes (.docx/.xlsx/.pptx)
-    # y carpetas auxiliares que Word/Excel crean al previsualizar HTML.
-    for ext in (".docx", ".xlsx", ".pptx"):
+    # Borrar archivos legacy: OOXML generados antes (.docx/.xlsx) que
+    # ya no usamos, y carpetas auxiliares que Office crea al previsualizar
+    # HTML-en-extensión-Office.
+    for ext in (".docx", ".xlsx"):
         for f in OUT.glob(f"*{ext}"):
             f.unlink()
             print(f"  [del legacy] {f.name}")
@@ -967,12 +1132,20 @@ def main():
             import shutil
             shutil.rmtree(d)
             print(f"  [del legacy dir] {d.name}")
+    # Para el 3.4.3: borrar versión .doc previa si existía (cambia a .pptx)
+    old_343 = OUT / "3-4-3-material-capacitacion.doc"
+    if old_343.exists():
+        old_343.unlink()
+        print(f"  [del legacy] {old_343.name}")
 
     for p in PRODUCTS:
-        html, ext = render_product(p)
+        content, ext = render_product(p)
         filename = f"{p['num'].replace('.', '-')}-{p['slug']}.{ext}"
         filepath = OUT / filename
-        filepath.write_text(html, encoding="utf-8")
+        if p["format"] == "pptx":
+            content.save(filepath)
+        else:
+            filepath.write_text(content, encoding="utf-8")
         print(f"  [ok] {filename}  ({p['format'].upper()})")
     print(f"\nGenerados {len(PRODUCTS)} templates en {OUT}/")
 
