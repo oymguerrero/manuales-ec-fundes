@@ -5,7 +5,7 @@ La palabra competencia tiene muchos usos cotidianos.
 <break time="300ms"/>
 Pero en el sistema mexicano de certificación, tiene un significado preciso.
 <break time="700ms"/>
-Conforme a las Reglas Generales del Sistema Nacional de Competencias, una competencia laboral es el conjunto de conocimientos, habilidades, destrezas y actitudes que requiere una persona para realizar actividades en el mercado de trabajo.
+Conforme el CONOCER, una competencia laboral es el conjunto de conocimientos, habilidades, destrezas y actitudes que requiere una persona para realizar actividades en el mercado de trabajo. Sus resultados deben ser medibles, observables y aplicables en diversos contextos, bajo criterios de calidad específicos.
 <break time="800ms"/>
 Tres palabras de esa definición son clave.
 <break time="500ms"/>
