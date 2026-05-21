@@ -12,6 +12,6 @@ Tercera: ¿tu rol cubre los tres momentos del proyecto? <break time="0.3s"/> Pla
 
 Tres respuestas afirmativas significan que estás en el estándar correcto. Si alguna fue dudosa, vale la pena revisar la matriz comparativa de los cuatro estándares en este mismo capítulo.
 
-Un punto clave: <break time="0.5s"/> dos personas con biografías muy distintas pueden certificarse en el mismo estándar. La competencia es de la función, no de tu currículum. Lo que importa es lo que demuestras hoy, no cómo llegaste.
+Un punto clave: <break time="0.5s"/> dos personas con trayectoria profesional distinta pueden certificarse en el mismo estándar. La competencia es de la función, no de tu currículum. Lo que importa es lo que demuestras hoy, no cómo llegaste.
 
 Antes de avanzar, te invitamos a probar la actividad "Mitos sobre el estándar" al final de esta lección. Diez segundos cada decisión, cinco mitos, te ayudan a calibrar si tu información sobre el proceso está actualizada.

@@ -15,7 +15,7 @@ La competencia no es un atributo aislado. Una persona competente no es solo algu
 <break time="800ms"/>
 Segunda: <emphasis level="moderate">función</emphasis>.
 <break time="400ms"/>
-La competencia está asociada a una función específica, no a tu currículum. Dos personas con biografías muy distintas pueden ser igualmente competentes en la misma función. La evaluación no se interesa por cómo llegaste a ser competente. Solo por demostrar que lo eres.
+La competencia está asociada a una función específica, no a tu currículum. Dos personas con trayectoria profesional distinta pueden ser igualmente competentes en la misma función. La evaluación no se interesa por cómo llegaste a ser competente. Solo por demostrar que lo eres.
 <break time="800ms"/>
 Tercera: <emphasis level="moderate">criterios verificables</emphasis>.
 <break time="400ms"/>
