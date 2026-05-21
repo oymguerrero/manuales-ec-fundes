@@ -19,7 +19,7 @@ La competencia está asociada a una función específica, no a tu currículum. D
 <break time="800ms"/>
 Tercera: <emphasis level="moderate">criterios verificables</emphasis>.
 <break time="400ms"/>
-El sistema mexicano establece criterios públicos, escritos y aplicables de manera homogénea. Esos criterios están en el Estándar de Competencia. Toda evaluación se rige por ellos, y solo por ellos. Por eso puedes saber con anticipación exactamente qué se te pedirá.
+Un estándar de competencia establece criterios públicos, escritos y aplicables de manera homogénea. Toda evaluación se rige por ellos, y solo por ellos. Por eso puedes saber con anticipación exactamente qué se te pedirá.
 <break time="900ms"/>
 La competencia se evalúa por cuatro componentes.
 <break time="400ms"/>
