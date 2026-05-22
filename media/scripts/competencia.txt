@@ -5,7 +5,7 @@ La palabra competencia tiene muchos usos cotidianos.
 <break time="300ms"/>
 Pero en el sistema mexicano de certificación, tiene un significado preciso.
 <break time="700ms"/>
-Conforme el CONOCER, una competencia laboral es el conjunto de conocimientos, habilidades, destrezas y actitudes que requiere una persona para realizar actividades en el mercado de trabajo. Sus resultados deben ser medibles, observables y aplicables en diversos contextos, bajo criterios de calidad específicos.
+Conforme el CONOCER, una competencia laboral es el conjunto de conocimientos, habilidades y actitudes que requiere una persona para realizar actividades en el mercado de trabajo. Sus resultados deben ser medibles, observables y aplicables en diversos contextos, bajo criterios de calidad específicos.
 <break time="800ms"/>
 Tres palabras de esa definición son clave.
 <break time="500ms"/>
@@ -21,17 +21,15 @@ Tercera: <emphasis level="moderate">criterios verificables</emphasis>.
 <break time="400ms"/>
 Un estándar de competencia establece criterios públicos, escritos y aplicables de manera homogénea. Toda evaluación se rige por ellos, y solo por ellos. Por eso puedes saber con anticipación exactamente qué se te pedirá.
 <break time="900ms"/>
-La competencia se evalúa por cuatro componentes.
+La competencia se evalúa por tres componentes.
 <break time="400ms"/>
 Conocimientos: lo que sabes.
 <break time="300ms"/>
 Habilidades: lo que sabes hacer.
 <break time="300ms"/>
-Destrezas: el componente fino, la ejecución precisa.
-<break time="300ms"/>
 Y actitudes, hábitos y valores: cómo te conduces durante el desempeño.
 <break time="700ms"/>
-Los cuatro componentes se evalúan juntos. Es lo que hace especial al modelo de CONOCER: no se trata solo de saber, sino de demostrar que sabes hacer, con calidad, en una función real.
+Los tres componentes se evalúan juntos. Es lo que hace especial al modelo de CONOCER: no se trata solo de saber, sino de demostrar que sabes hacer, con calidad, en una función real.
 <break time="500ms"/>
 Continúa con la sección siguiente para entender cómo funciona el sistema en México.
 </speak>
