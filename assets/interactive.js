@@ -1596,8 +1596,8 @@
 
       const rowsHTML = (prod.rows || []).map(function (r) {
         return '<div class="case-lab__row">' +
-          '<div class="case-lab__cell case-lab__cell--f21"><span class="case-lab__cell-label">F21 pide</span>' + escapeHTML(r.f21) + '</div>' +
-          '<div class="case-lab__cell case-lab__cell--espiga"><span class="case-lab__cell-label">En La Espiga se llenó así</span>' + escapeHTML(r.espiga) + '</div>' +
+          '<div class="case-lab__cell case-lab__cell--f21"><span class="case-lab__cell-label">El estándar solicita </span>' + escapeHTML(r.f21) + '</div>' +
+          '<div class="case-lab__cell case-lab__cell--espiga"><span class="case-lab__cell-label">Carlos lo cumplió así</span>' + escapeHTML(r.espiga) + '</div>' +
         '</div>';
       }).join('');
 
