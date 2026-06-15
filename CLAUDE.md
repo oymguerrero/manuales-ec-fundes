@@ -104,6 +104,7 @@ Agentes especializados (`.claude/agents/`), cada uno con un rol estricto que no 
 
 | Agente | Hace | NO hace |
 |---|---|---|
+| `mi-compania-orchestrator` | **Coordina** a los demás: recibe petición vaga, decide qué agentes invocar, en qué orden, integra resultados, propone commit | No modifica archivos directamente — solo coordina |
 | `mi-compania-content-developer` | Vuelca contenido normativo de PDFs/DOCX a HTML | Copy persuasivo, ejercicios pedagógicos |
 | `mi-compania-copywriter` | Copy de UI: hero, CTAs, microcopy, headlines | Contenido normativo largo, ejercicios |
 | `mi-compania-pedagogo` | Diseña ejercicios, callouts, secuencias andragógicas | Implementa JS/CSS, escribe contenido factual |
@@ -114,11 +115,18 @@ Agentes especializados (`.claude/agents/`), cada uno con un rol estricto que no 
 
 Skills (`.claude/skills/`) son comandos slash que orquestan agentes:
 
+- `/orquestar <petición>` → invoca `mi-compania-orchestrator` para peticiones vagas que cruzan disciplinas. Útil cuando no sabes qué skill específica usar.
 - `/revisar-marca [archivos...]` → invoca `brand-reviewer` y devuelve reporte categorizado (🔴 bloqueante / 🟡 recomendado / 🟢 verificado).
 - `/convertir-muro-de-texto` → toma una sección densa y la fracciona pedagógicamente.
 - `/crear-actividad-interactiva` → pedagogo diseña + frontend implementa.
 - `/nueva-seccion-ec` → inserta sección en `estandar-a/elemento-*.html` con plantillas.
 - `/pre-publicacion` → checklist antes de publicar.
+
+**Cuándo usar el orchestrator vs invocar un agente directo:**
+
+- Usa `/orquestar` o invoca `mi-compania-orchestrator` cuando la petición **mezcla 2+ disciplinas** (ej. contenido normativo + componente interactivo + revisión) y no sabes qué agentes elegir ni en qué orden.
+- Invoca un agente directo cuando la petición **claramente** es de una sola disciplina (ej. "audita la marca de X" → llama a brand-reviewer; "implementa este componente" → llama a frontend).
+- NO uses el orquestador para cambios de 1-2 líneas — el main loop los hace directo.
 
 ## Sistema de diseño
 
