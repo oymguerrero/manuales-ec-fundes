@@ -984,7 +984,8 @@ Estado de la biblioteca compartida en `assets/styles.css` + `assets/interactive.
 | Tabs ARIA accesibles (`.tabs`) | Recordar/Comprender | ✅ | — |
 | Accordion FAQ (`<details>`) | Recordar | ✅ nativo | — |
 | Checklist con localStorage (`.checklist`) | Aplicar (autoevaluación) | ✅ | — |
-| Mini-diagnóstico (`.finder`) | Aplicar (decisión) | ✅ | — |
+| Mini-diagnóstico (`.finder`) | Aplicar (decisión) | ✅ (legacy: 3 preguntas, scoring binario) | — |
+| **Diagnóstico multi-categoría** (`.diagnostic-multi`) | Evaluar (auto-canalización) | ✅ (N preguntas con scoring matricial; recomienda 1 de M categorías con % match; soporta opciones "block" para excluir perfiles que no aplican) | — |
 | Glosario filtrable (`.glossary--rich`) | Recordar | ✅ | — |
 | Reflection prompt (`.callout--reflection`) | Crear/Evaluar | ✅ | — |
 | Key points (`.key-points`) | Comprender | ✅ | — |

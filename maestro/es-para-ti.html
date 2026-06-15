@@ -98,33 +98,96 @@
             </details>
           </div>
 
-          <p style="color: red;">Nota: creo que todo este capítulo puede estar en el segundo manual que es del estándar correcto y aquí solamente cerrar mencionando que en cada manual del estándar se encuentra la información específica</p>
-          <p>El Manual de <strong>Implementar IA</strong> certifica la competencia para acompañar a una MiPyME en la planeación, ejecución y evaluación de soluciones de Inteligencia Artificial en sus procesos cotidianos. Responde con honestidad para saber si tu trabajo encaja con este estándar.</p>
+          <p>El sistema CONOCER ofrece <strong>cuatro estándares de competencia</strong> orientados a profesionales que llevan IA a las MiPyMEs mexicanas. Cada uno apunta a un perfil distinto: Implementar IA (configurar herramientas existentes), Productos y servicios (crear soluciones nuevas con IA), Marketing digital (estrategia y contenido con IA) y Transformación digital (rediseño profundo con desarrollo a medida). Responde el diagnóstico para saber cuál encaja mejor con tu perfil profesional.</p>
 
-          <div class="finder">
-            <fieldset>
-              <legend>Pregunta 1 · ¿Trabajas directamente con MiPyMEs (micro, pequeñas o medianas empresas)?</legend>
-              <label><input type="radio" name="q1" value="yes" /> Sí, las MiPyMEs son mi cliente principal o frecuente</label>
-              <label><input type="radio" name="q1" value="no" /> No, trabajo con empresas grandes / corporativos / gobierno</label>
-            </fieldset>
-
-            <fieldset>
-              <legend>Pregunta 2 · ¿Tu trabajo incluye seleccionar y configurar herramientas de IA <em>existentes en el mercado</em> (ChatGPT, Claude, Copilot, Gemini, Zapier, plataformas con módulos de IA…) para procesos operativos de la MiPyME?</legend>
-              <label><input type="radio" name="q2" value="yes" /> Sí, configuro y aplico herramientas que ya existen</label>
-              <label><input type="radio" name="q2" value="develop" /> No, yo programo / desarrollo software a la medida</label>
-              <label><input type="radio" name="q2" value="content" /> No, yo genero contenido digital con IA (texto, imagen, video, audio)</label>
-            </fieldset>
-
-            <fieldset>
-              <legend>Pregunta 3 · ¿Tu rol incluye <strong>los tres momentos</strong> del proyecto: planear (diagnóstico + hoja de ruta), ejecutar (configurar + capacitar) y evaluar (medir resultados + cerrar)?</legend>
-              <label><input type="radio" name="q3" value="yes" /> Sí, hago el ciclo completo</label>
-              <label><input type="radio" name="q3" value="partial" /> Solo uno o dos de los tres momentos</label>
-              <label><input type="radio" name="q3" value="no" /> No, mi rol es muy distinto</label>
-            </fieldset>
-
-            <button type="button" id="finder-submit" class="btn btn-primary">Ver resultado</button>
-
-            <div id="finder-result" class="finder__result" aria-live="polite"></div>
+          <div class="diagnostic-multi" data-storage-key="que-estandar">
+            <script type="application/json" class="diagnostic-multi__data">
+            {
+              "categories": [
+                {
+                  "id": "A",
+                  "label": "Implementar IA",
+                  "href": "../estandar-a/index.html",
+                  "available": true,
+                  "summary": "Acompañas a la MiPyME en la planeación, ejecución y evaluación de soluciones de IA configurando herramientas existentes (ChatGPT, Claude, Zapier, plataformas SaaS con IA). Ciclo completo: diagnóstico → propuesta → implementación → capacitación → medición."
+                },
+                {
+                  "id": "B",
+                  "label": "Productos y servicios con IA",
+                  "available": false,
+                  "summary": "Diseñas y desarrollas productos o servicios nuevos habilitados por IA: contenido digital generativo, automatización de entregables, escalamiento de la oferta. Te enfocas en crear, no en operar."
+                },
+                {
+                  "id": "C",
+                  "label": "Marketing digital con IA",
+                  "available": false,
+                  "summary": "Llevas la estrategia digital de la MiPyME al siguiente nivel con IA: campañas, redes sociales, copy publicitario, analítica de audiencia, generación de contenido visual y audiovisual."
+                },
+                {
+                  "id": "D",
+                  "label": "Transformación digital con IA",
+                  "available": false,
+                  "summary": "Rediseñas el modelo operativo del negocio con desarrollo a la medida, integraciones complejas y arquitectura tecnológica que incorpora IA al núcleo. Programación, APIs, sistemas."
+                }
+              ],
+              "questions": [
+                {
+                  "text": "¿Quién es tu cliente principal o frecuente?",
+                  "options": [
+                    { "label": "MiPyMEs (micro, pequeñas o medianas empresas) en México", "scores": { "A": 2, "B": 2, "C": 2, "D": 2 } },
+                    { "label": "Una mezcla: a veces MiPyMEs, a veces más grandes", "scores": { "A": 1, "B": 1, "C": 1, "D": 1 } },
+                    { "label": "Solo corporativos, gobierno o multinacionales", "scores": {}, "block": true, "block_reason": "Estos 4 estándares CONOCER están diseñados específicamente para la función de acompañar a MiPyMEs mexicanas. Si tu trabajo es solo con corporativos o sector público, hay otros estándares en el catálogo CONOCER que se ajustan mejor a tu perfil." }
+                  ]
+                },
+                {
+                  "text": "¿Qué tipo de soluciones de IA implementas o desarrollas más seguido?",
+                  "options": [
+                    { "label": "Configuro y aplico herramientas SaaS que ya existen (ChatGPT, Claude, Zapier, plataformas con módulos de IA)", "scores": { "A": 3, "B": 0, "C": 1, "D": 0 } },
+                    { "label": "Creo productos o servicios digitales nuevos donde la IA es el ingrediente clave (apps, MVPs, herramientas)", "scores": { "A": 0, "B": 3, "C": 1, "D": 1 } },
+                    { "label": "Genero contenido digital con IA: textos, imágenes, video, audio para campañas y comunicación", "scores": { "A": 0, "B": 1, "C": 3, "D": 0 } },
+                    { "label": "Programo soluciones a medida: integraciones, microservicios, agentes con API custom, arquitectura", "scores": { "A": 0, "B": 1, "C": 0, "D": 3 } }
+                  ]
+                },
+                {
+                  "text": "¿Cuál es el alcance típico de tu intervención con la MiPyME?",
+                  "options": [
+                    { "label": "Ciclo completo: planeo el proyecto, ejecuto la implementación, mido resultados y entrego con acta", "scores": { "A": 3, "B": 1, "C": 1, "D": 2 } },
+                    { "label": "Le ayudo a lanzar productos o servicios digitales escalables (foco en crear)", "scores": { "A": 1, "B": 3, "C": 1, "D": 1 } },
+                    { "label": "Le llevo las campañas de marketing y la presencia digital (foco en alcance y conversión)", "scores": { "A": 0, "B": 1, "C": 3, "D": 0 } },
+                    { "label": "Le reinvento la operación con tecnología profunda (foco en transformación arquitectónica)", "scores": { "A": 1, "B": 0, "C": 0, "D": 3 } }
+                  ]
+                },
+                {
+                  "text": "¿Qué tipo de problema resuelves más seguido en una MiPyME?",
+                  "options": [
+                    { "label": "Procesos operativos lentos, repetitivos o manuales que se pueden automatizar", "scores": { "A": 3, "B": 0, "C": 0, "D": 1 } },
+                    { "label": "Falta de oferta digital: productos o servicios que aún no existen en su catálogo", "scores": { "A": 0, "B": 3, "C": 1, "D": 1 } },
+                    { "label": "Bajo alcance o engagement: la marca no se ve, no convierte, no llega", "scores": { "A": 0, "B": 1, "C": 3, "D": 0 } },
+                    { "label": "Sistemas legados que no se integran, datos dispersos, tecnología obsoleta", "scores": { "A": 1, "B": 0, "C": 0, "D": 3 } }
+                  ]
+                },
+                {
+                  "text": "¿Cuál es tu fortaleza técnica principal?",
+                  "options": [
+                    { "label": "Conozco a fondo el ecosistema SaaS / no-code / low-code y sé combinar herramientas", "scores": { "A": 3, "B": 1, "C": 1, "D": 0 } },
+                    { "label": "Diseño productos y modelos de negocio: UX, propuesta de valor, validación", "scores": { "A": 1, "B": 3, "C": 1, "D": 1 } },
+                    { "label": "Estrategia de marca, copy, contenido visual, growth marketing y publicidad pagada", "scores": { "A": 0, "B": 1, "C": 3, "D": 0 } },
+                    { "label": "Programación, integraciones, arquitectura de software, datos", "scores": { "A": 0, "B": 1, "C": 0, "D": 3 } }
+                  ]
+                },
+                {
+                  "text": "Si tuvieras que describir tu trabajo en una sola frase, ¿cuál es la que más te representa?",
+                  "options": [
+                    { "label": "\"Acompaño a la MiPyME a adoptar IA en sus procesos del día a día\"", "scores": { "A": 3, "B": 0, "C": 0, "D": 0 } },
+                    { "label": "\"Ayudo a la MiPyME a lanzar productos o servicios habilitados por IA\"", "scores": { "A": 0, "B": 3, "C": 0, "D": 0 } },
+                    { "label": "\"Llevo el marketing y comunicación digital de la MiPyME al siguiente nivel con IA\"", "scores": { "A": 0, "B": 0, "C": 3, "D": 0 } },
+                    { "label": "\"Reinvento el modelo operativo de la MiPyME con tecnología que incorpora IA\"", "scores": { "A": 0, "B": 0, "C": 0, "D": 3 } }
+                  ]
+                }
+              ],
+              "wrap_up": "La compatibilidad alta (≥60%) con un estándar significa que tu perfil profesional encaja bien con la función que ese estándar evalúa. Compatibilidad media puede significar que cubres varias funciones — es normal en consultoría independiente. Solo el estándar con la compatibilidad más alta debe ser tu primer foco de certificación."
+            }
+            </script>
           </div>
         </div>
       </details>

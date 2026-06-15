@@ -1852,6 +1852,159 @@
     }).catch(function (e) { console.warn(e); });
   }
 
+  // ---------- Diagnostic Multi (cuestionario con scoring multi-categoría) ----------
+  // Útil para canalizar al usuario hacia una opción entre varias.
+  // Markup:
+  // <div class="diagnostic-multi" data-storage-key="que-estandar">
+  //   <script type="application/json" class="diagnostic-multi__data">
+  //     {
+  //       "categories": [
+  //         {"id":"A", "label":"Implementar IA", "href":"...", "available":true,
+  //          "summary":"...", "match_label":"alta compatibilidad"},
+  //         {"id":"B", "label":"...", "available":false, ...}
+  //       ],
+  //       "questions": [
+  //         {"text":"¿...?", "options":[
+  //           {"label":"opción a", "scores":{"A":2,"B":0,"C":0,"D":0}, "block": false},
+  //           {"label":"opción b", "scores":{}, "block": true, "block_reason": "..."}
+  //         ]}
+  //       ],
+  //       "wrap_up": "..."
+  //     }
+  //   </script>
+  // </div>
+  function initDiagnosticMulti(container) {
+    const data = readJSONScript(container, '.diagnostic-multi__data');
+    if (!data || !data.questions || !data.categories) return;
+    const key = 'mi-compania-diagnostic::v1::' + (container.dataset.storageKey || 'default');
+
+    const state = { answers: {}, blocked: false, blockReason: '' };
+    try {
+      const stored = JSON.parse(localStorage.getItem(key) || 'null');
+      if (stored && stored.answers) Object.assign(state, stored);
+    } catch (e) {}
+
+    function render() {
+      const total = data.questions.length;
+      const answered = Object.keys(state.answers).length;
+      const completed = answered === total && !state.blocked;
+      let html = '<div class="diagnostic-multi__inner">';
+      html += '<div class="diagnostic-multi__progress">';
+      html += '<span class="diagnostic-multi__progress-label">Diagnóstico · pregunta ' + Math.min(answered + 1, total) + ' de ' + total + '</span>';
+      html += '<div class="diagnostic-multi__progress-bar"><div class="diagnostic-multi__progress-fill" style="width:' + Math.round((answered / total) * 100) + '%"></div></div>';
+      html += '</div>';
+
+      data.questions.forEach(function (q, qi) {
+        const answered = state.answers[qi] !== undefined;
+        const hidden = qi > Object.keys(state.answers).length;
+        html += '<fieldset class="diagnostic-multi__question"' + (hidden ? ' hidden' : '') + ' data-qi="' + qi + '">';
+        html += '<legend><span class="diagnostic-multi__q-num">' + (qi + 1) + '</span> ' + escapeHTML(q.text) + '</legend>';
+        q.options.forEach(function (opt, oi) {
+          const isSelected = state.answers[qi] === oi;
+          html += '<label class="diagnostic-multi__option' + (isSelected ? ' diagnostic-multi__option--selected' : '') + '">';
+          html += '<input type="radio" name="dq-' + qi + '" value="' + oi + '"' + (isSelected ? ' checked' : '') + '>';
+          html += '<span>' + escapeHTML(opt.label) + '</span>';
+          html += '</label>';
+        });
+        html += '</fieldset>';
+      });
+
+      if (state.blocked) {
+        html += '<div class="diagnostic-multi__result diagnostic-multi__result--blocked">';
+        html += '<h3>Este programa de certificación NO es para tu caso</h3>';
+        html += '<p>' + escapeHTML(state.blockReason) + '</p>';
+        html += '<button type="button" class="diagnostic-multi__reset">Volver a empezar</button>';
+        html += '</div>';
+      } else if (completed) {
+        // calcular scores
+        const scores = {};
+        data.categories.forEach(function (c) { scores[c.id] = 0; });
+        Object.keys(state.answers).forEach(function (qi) {
+          const opt = data.questions[qi].options[state.answers[qi]];
+          if (opt.scores) {
+            Object.keys(opt.scores).forEach(function (cid) {
+              if (scores[cid] !== undefined) scores[cid] += opt.scores[cid];
+            });
+          }
+        });
+        // ordenar categorías por score
+        const ranked = data.categories.slice().sort(function (a, b) { return (scores[b.id] || 0) - (scores[a.id] || 0); });
+        const maxScore = ranked[0] ? scores[ranked[0].id] : 0;
+
+        html += '<div class="diagnostic-multi__result">';
+        html += '<h3>Tu perfil encaja con</h3>';
+        ranked.forEach(function (cat, idx) {
+          const score = scores[cat.id] || 0;
+          const pct = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
+          const isTop = idx === 0;
+          const isStrong = pct >= 60;
+          html += '<div class="diagnostic-multi__match' + (isTop ? ' diagnostic-multi__match--top' : '') + (isStrong ? '' : ' diagnostic-multi__match--weak') + '">';
+          html += '<div class="diagnostic-multi__match-header">';
+          html += '<span class="diagnostic-multi__match-label">' + escapeHTML(cat.label) + '</span>';
+          if (isTop && isStrong) html += '<span class="diagnostic-multi__match-badge">Recomendado</span>';
+          else if (!cat.available) html += '<span class="diagnostic-multi__match-badge diagnostic-multi__match-badge--coming">En construcción</span>';
+          html += '<span class="diagnostic-multi__match-pct">' + pct + '%</span>';
+          html += '</div>';
+          html += '<div class="diagnostic-multi__match-bar"><div class="diagnostic-multi__match-fill" style="width:' + pct + '%"></div></div>';
+          if (cat.summary) html += '<p class="diagnostic-multi__match-summary">' + escapeHTML(cat.summary) + '</p>';
+          if (cat.href && cat.available) {
+            html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Ir al curso de ' + escapeHTML(cat.label) + ' →</a>';
+          } else if (!cat.available) {
+            html += '<p class="diagnostic-multi__match-coming">Este curso está en construcción. Mientras tanto, conoce el marco general en el <a href="../index.html">listado de manuales</a>.</p>';
+          }
+          html += '</div>';
+        });
+        if (data.wrap_up) {
+          html += '<aside class="diagnostic-multi__wrapup"><strong>Para llevar:</strong> ' + escapeHTML(data.wrap_up) + '</aside>';
+        }
+        html += '<button type="button" class="diagnostic-multi__reset">Volver a hacer el diagnóstico</button>';
+        html += '</div>';
+      }
+
+      html += '</div>';
+      container.innerHTML = html;
+
+      // bind handlers
+      container.querySelectorAll('input[type="radio"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          const qi = parseInt(radio.name.replace('dq-', ''), 10);
+          const oi = parseInt(radio.value, 10);
+          const opt = data.questions[qi].options[oi];
+          state.answers[qi] = oi;
+          if (opt.block) {
+            state.blocked = true;
+            state.blockReason = opt.block_reason || 'Tu respuesta indica que este conjunto de estándares no aplica a tu caso.';
+          }
+          try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+          recordEvent('diagnostic', { storageKey: container.dataset.storageKey, qi: qi, oi: oi });
+          render();
+          // Scroll a la siguiente pregunta
+          setTimeout(function () {
+            const next = container.querySelector('.diagnostic-multi__question[data-qi="' + (qi + 1) + '"]');
+            if (next && !next.hidden) next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            else if (state.blocked || Object.keys(state.answers).length === data.questions.length) {
+              const result = container.querySelector('.diagnostic-multi__result');
+              if (result) result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 100);
+        });
+      });
+      const resetBtn = container.querySelector('.diagnostic-multi__reset');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          state.answers = {};
+          state.blocked = false;
+          state.blockReason = '';
+          try { localStorage.removeItem(key); } catch (e) {}
+          render();
+          container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    }
+
+    render();
+  }
+
   // ---------- Inicialización ----------
   function init() {
     document.querySelectorAll('.tabs').forEach(initTabs);
@@ -1867,6 +2020,7 @@
     document.querySelectorAll('.diagram-mermaid').forEach(initDiagramMermaid);
     document.querySelectorAll('.progress-skill').forEach(initProgressSkill);
     document.querySelectorAll('.chart-block').forEach(initChartBlock);
+    document.querySelectorAll('.diagnostic-multi').forEach(initDiagnosticMulti);
     document.querySelectorAll('.audio-narration').forEach(initAudioNarration);
     document.querySelectorAll('.lesson-tabs').forEach(initLessonTabs);
     document.querySelectorAll('.glossary--rich').forEach(initGlossaryRich);
