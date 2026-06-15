@@ -35,7 +35,13 @@ media/raw/
 logs/
 
 # Claude Code / Cowork
-.claude/
+# Por default ignoramos TODO dentro de .claude/, pero permitimos que los
+# agentes, skills y README del equipo SI se compartan via git (son trabajo
+# colaborativo). El settings.local.json sigue siendo local (permisos personales).
+.claude/*
+!.claude/agents/
+!.claude/skills/
+!.claude/README.md
 
 # Playwright MCP
 .playwright-mcp/
