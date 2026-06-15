@@ -977,29 +977,87 @@ Usa el skill `/convertir-muro-de-texto` o sigue manualmente:
 
 Estado de la biblioteca compartida en `assets/styles.css` + `assets/interactive.js`:
 
-| Componente | Patrón Bloom | Estado |
-|---|---|---|
-| **Lesson Tabs LMS** (sidebar + panel + progress + check) | Estructura de lección | ✅ (ver §17) |
-| **Accordion modules** (`<details>` con badge + meta) | Recordar | ✅ (base del Lesson Tabs) |
-| Tabs ARIA accesibles | Recordar/Comprender | ✅ |
-| Accordion FAQ (`<details>`) | Recordar | ✅ nativo |
-| Checklist con localStorage | Aplicar (autoevaluación) | ✅ |
-| Mini-diagnóstico | Evaluar | ✅ |
-| Finder cuestionario | Aplicar (decisión) | ✅ |
-| Glosario filtrable | Recordar | ✅ |
-| Reflection prompt (callout--reflection) | Crear/Evaluar | ✅ |
-| Key points (recapitulación) | Comprender | ✅ |
-| Flip cards | Recordar | ✅ |
-| Quiz multiple choice | Comprender/Aplicar | ✅ |
-| **Audio narration con mini-bar flotante** | UDL (vía auditiva) | ✅ (ElevenLabs · voz Alice · ver §17.7) |
-| Decision scenario | Aplicar/Analizar | ⏳ pendiente |
-| Sort drag-drop | Aplicar/Analizar | ⏳ pendiente |
-| Sequence drag-drop | Aplicar | ⏳ pendiente |
-| Comparison slider | Analizar | ⏳ pendiente |
-| Hotspot diagram | Recordar/Aplicar | ⏳ pendiente |
-| Microvideo embed | variable | ⏳ pendiente |
+| Componente (clase CSS) | Patrón Bloom | Estado | CDN |
+|---|---|---|---|
+| **Lesson Tabs LMS** (`.lesson-tabs`) | Estructura de lección | ✅ (ver §17) | — |
+| **Accordion modules** (`<details class="accordion__item">`) | Recordar | ✅ (base del Lesson Tabs) | — |
+| Tabs ARIA accesibles (`.tabs`) | Recordar/Comprender | ✅ | — |
+| Accordion FAQ (`<details>`) | Recordar | ✅ nativo | — |
+| Checklist con localStorage (`.checklist`) | Aplicar (autoevaluación) | ✅ | — |
+| Mini-diagnóstico (`.finder`) | Aplicar (decisión) | ✅ | — |
+| Glosario filtrable (`.glossary--rich`) | Recordar | ✅ | — |
+| Reflection prompt (`.callout--reflection`) | Crear/Evaluar | ✅ | — |
+| Key points (`.key-points`) | Comprender | ✅ | — |
+| Flip cards (`.flipcard`) | Recordar | ✅ | — |
+| Quiz multiple choice (`.quiz`) | Comprender/Aplicar | ✅ | — |
+| **Quiz extensiones** (`.quiz[data-type="vf|order|cloze"]`) | Comprender/Aplicar | ✅ | — |
+| **Audio narration con mini-bar flotante** (`.audio-narration`) | UDL (vía auditiva) | ✅ (ElevenLabs · voz Alice · ver §17.7) | — |
+| **Scenario decision** (`.scenario-decision`) | Aplicar/Evaluar/Crear | ✅ (caso ramificado ok/risk/wrong con feedback + criterio) | — |
+| **Flashcard deck** (`.flashcard-deck`) | Recordar/Comprender | ✅ (mazo con micro-SRS: difícil/regular/fácil reordena la pila) | — |
+| **Swipe decide** (`.swipe-decide`) | Evaluar | ✅ (tarjetas binarias tipo Tinder; atajos A/L o flechas ←/→) | — |
+| **Drag sort** (`.drag-sort`) | Aplicar/Analizar | ✅ (mouse/touch + teclado Tab/Space/flechas; persiste asignación) | SortableJS 1.15.2 (8 KB) |
+| **Case Lab** (`.case-lab`) | Aplicar/Analizar | ✅ (tabs por producto + filas F21 ↔ caso La Espiga) | — |
+| **Timeline interactive** (`.timeline-interactive`) | Comprender/Aplicar | ✅ (hitos clicables; expande detalle abajo, sin modal) | — |
+| **Diagram Mermaid** (`.diagram-mermaid`) | Comprender | ✅ (flowcharts con tema Mi CompañIA) | Mermaid 10 (~140 KB) |
+| **Chart block** (`.chart-block`) | Analizar | ✅ (paleta brand por default; doughnut, bar, line, radar) | Chart.js 4 (~25 KB) |
+| **Progress skill** (`.progress-skill`) | Gamificación | ✅ (dashboard que lee `mi-compania-*` de localStorage; export JSON; reset) | — |
+| Comparison slider | Analizar | ⏳ pendiente | — |
+| Hotspot diagram | Recordar/Aplicar | ⏳ pendiente | — |
+| Microvideo embed | variable | ⏳ pendiente | — |
 
 > **Cuando se implemente un componente nuevo, mueve su fila de pendiente a implementado y actualiza esta tabla.**
+
+### 16.10 Arquitectura técnica común de los componentes pedagógicos
+
+Tres convenciones que comparten todos los componentes nuevos (§16.9, marcados como ✅ desde "Scenario decision" hacia abajo):
+
+**1. Datos pedagógicos inline en JSON, NO archivo central.**
+
+Cada instancia declara sus datos vía `<script type="application/json" class="X__data">{...}</script>` dentro del propio HTML:
+
+```html
+<div class="scenario-decision" data-storage-key="esc-espiga-01">
+  <script type="application/json" class="scenario-decision__data">
+    { "title": "…", "context": "…", "options": [{ "id": "a", "outcome": "ok", "feedback": "…" }, …] }
+  </script>
+</div>
+```
+
+Justificación: evita `fetch()` async (race conditions con `initX()`), mantiene co-localización editorial (quien edita el HTML edita la actividad), y permite Ctrl+F encontrar contenido pedagógico desde el navegador.
+
+**2. Carga condicional de CDN con `loadCDN()`.**
+
+Los 3 CDN externos (SortableJS, Mermaid, Chart.js) NO se cargan globalmente. El helper `loadCDN(url)` en `assets/interactive.js` los inyecta solo cuando una página tiene un componente que los requiere, y cachea por URL para no duplicar:
+
+```js
+loadCDN('https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js').then(() => {
+  window.Sortable.create(bank, makeOpts());
+});
+```
+
+Resultado: una página de glosario carga 0 KB de CDN externos. Una página con un Mermaid carga solo Mermaid. Worst case (las 3): +173 KB en una sola página.
+
+**3. Métricas y persistencia con `recordEvent()`.**
+
+Wrapper único `recordEvent(type, payload)` escribe a `mi-compania-metrics::v1` (array circular, últimos 500 eventos):
+
+```js
+recordEvent('quiz', { quizId: 'que-es-mitos', correct: true, attempts: 1 });
+recordEvent('scenario', { storageKey: 'esc-espiga-01', picked: 'b', outcome: 'ok' });
+```
+
+Todas las claves localStorage llevan prefijo `mi-compania-` y versión `::v1::` (ej. `mi-compania-deck::v1::glosario-conocer`) para poder invalidar limpiamente si cambia el esquema. El componente `.progress-skill` lee todas estas claves y reconstruye un dashboard del usuario sin backend.
+
+### 16.11 Gotchas conocidos
+
+- **Drag-sort + SortableJS**: pasar opciones **frescas** a cada `Sortable.create()`. SortableJS muta `group: 'name'` → `group: {name, pull, put}` al primer create; si reutilizas el mismo objeto para las zonas, llegan con `group` ya transformado y se rompe la comunicación bidireccional banco ↔ zona. Patrón seguro:
+  ```js
+  function makeOpts() { return { group: { name, pull: true, put: true }, animation: 150, emptyInsertThreshold: 20, …}; }
+  Sortable.create(bank, makeOpts());
+  zones.forEach(z => Sortable.create(z.querySelector('ul'), makeOpts()));
+  ```
+- **`emptyInsertThreshold: 20`** es obligatorio para que SortableJS acepte drops en contenedores con poco espacio para insertar (banco vacío, zona vacía).
+- **Audio narration con `lesson-tabs`**: el mini-bar flotante se "scopea" al módulo activo. Si haces un audio fuera de un `.accordion__item`, el scoping se pierde.
 
 ---
 
@@ -1414,8 +1472,202 @@ La marca tiene **tres elementos gráficos propios** que aparecen como decoració
 
 Estado actual:
 
-- [ ] Sparkles como SVG reutilizable (`<svg class="sparkle">`) — pendiente de implementar.
+- [x] **Sparkles** como SVG inline reutilizable (`<svg class="sparkle">`) — implementado en eyebrows de hero (todas las páginas).
 - [ ] Flecha amarilla como componente CSS o SVG — pendiente.
 - [ ] Líneas onduladas como background SVG sutil para secciones decorativas — pendiente.
 
 **Si los implementas:** define los SVG en `assets/styles.css` como background-image data-URI o como SVG sprite en una carpeta `img/decor/`, y permite que tres-cuatro componentes los compongan vía clases utilitarias (`.has-sparkles`, `.has-waves`).
+
+---
+
+## 20. Pipeline de assets: imágenes y audio
+
+### 20.1 Imágenes generadas con IA (caso La Espiga)
+
+El caso pedagógico transversal del Estándar A se ancla visualmente en 7 imágenes generadas con **Higgsfield Soul V2** (modelo `text2image_soul_v2`, 0.12 créditos por imagen):
+
+- `img/personajes/`: `dona-beatriz-retrato.jpg`, `dona-beatriz-tablet.jpg`, `carlos-laptop.jpg`, `consultor-generico.jpg`
+- `img/escenas/`: `panaderia-interior.jpg`, `whatsapp-pedidos.jpg`, `trastienda-pre-ia.jpg`
+
+**Pipeline:**
+
+```bash
+# 1. Generar con Higgsfield (máx 4 jobs concurrentes en plan free)
+higgsfield generate create text2image_soul_v2 --prompt "..." --aspect_ratio 4:3 --wait
+
+# 2. Descargar de la URL devuelta
+curl -sSL <url> -o img/personajes/x.png
+
+# 3. Optimizar PNG → JPEG (típicamente 4 MB → 100 KB, 97% reducción)
+python -c "
+from PIL import Image
+img = Image.open('img/personajes/x.png')
+if img.width > 1200: img.thumbnail((1200, 1200), Image.LANCZOS)
+img.convert('RGB').save('img/personajes/x.jpg', 'JPEG', quality=82, optimize=True, progressive=True)
+"
+
+# 4. Actualizar referencias .png → .jpg en todos los HTML
+```
+
+**Reglas:**
+
+- Generar nuevas imágenes **solo cuando** no existe equivalente CC0 en unDraw/Storyset.
+- Mantener consistencia de personaje: cuando regeneras a Doña Beatriz o Carlos, el prompt debe describir los mismos rasgos (edad, vestimenta, ambiente).
+- Después de generar, **siempre** comprimir a JPEG progresivo. PNG en `img/personajes/` o `img/escenas/` se considera asset legacy.
+
+### 20.2 Audio narrado (ElevenLabs)
+
+- Generación: **ElevenLabs Multilingual v2** (`scripts/tts-elevenlabs.ps1`), voz Alice.
+- Fuente: scripts en `media/scripts/<nombre>.txt` (SSML parcial con `<break time="0.5s"/>` permitido).
+- Salida: `media/audio-<nombre>.mp3`.
+- Capacidad ElevenLabs free: ~10,000 chars/mes; planificar.
+- API key requiere scope **`text_to_speech`** explícito (las keys sin permisos correctos devuelven 401 silencioso).
+
+Patrón de inserción en HTML:
+
+```html
+<div class="audio-narration">
+  <div class="audio-narration__header">
+    <button class="audio-narration__toggle" aria-controls="audio-X">Escuchar esta sección</button>
+    <span class="audio-narration__meta">2 min 30 seg · voz Alice · narración alternativa al texto</span>
+  </div>
+  <div class="audio-narration__player" id="audio-X" hidden>
+    <audio controls preload="none"><source src="../media/audio-X.mp3" type="audio/mpeg"/></audio>
+  </div>
+  <details class="audio-narration__transcript">
+    <summary>Ver transcripción</summary>
+    <div class="audio-narration__transcript-body"><p>…</p></div>
+  </details>
+</div>
+```
+
+La transcripción visible **es obligatoria** (accesibilidad WCAG 1.2.1 + SEO + buscable con Ctrl+F).
+
+---
+
+## 21. Patrones editoriales del Curso introductorio (`maestro/`)
+
+Convenciones que el equipo consolidó al refactorizar los 6 capítulos del Curso introductorio:
+
+### 21.1 Eyebrow del hero · `Tema N. <Nombre>`
+
+Cada capítulo abre con `<div class="eyebrow">Tema N. <Nombre del tema></div>` en el hero. El número de Tema **NO siempre coincide** con `accordion__num` de los módulos internos — el Tema 1 puede tener módulos `1.1`, `1.2`, `1.3` o (tras renumerar) `0.`, `1.1`, `1.2`. Ejemplos en uso:
+
+- `que-es.html` → "Tema 1. Marco Institucional"
+- `como-se-evalua.html` → "Tema 2. Metodología de evaluación"
+- `proceso.html` → "Tema 3. El recorrido completo"
+- `es-para-ti.html` → "Tema 4. Antes de comprometerte"
+
+### 21.2 Módulo `0. Visión general` (obligatorio)
+
+Primer módulo de cada capítulo, siempre abierto por default (`open`):
+
+```html
+<details class="accordion__item" id="vision-general" open>
+  <summary>
+    <span class="accordion__num">0.</span>
+    <span class="accordion__title-main">Visión general</span>
+    <span class="accordion__meta">Objetivo del tema · 1 min</span>
+  </summary>
+  <div class="accordion__body">
+    <p>En este tema veremos … (síntesis 2-3 líneas)</p>
+    <div class="callout callout--example" role="note">
+      <span class="callout__label">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+        </svg>
+        Objetivo específico
+      </span>
+      <div class="callout__body">
+        <p>Al finalizar el tema, serás capaz de … (verbo Bloom + contenido + condición + para qué).</p>
+      </div>
+    </div>
+  </div>
+</details>
+```
+
+El objetivo específico sigue el formato CONOCER: **verbo en infinitivo + objeto + condición + propósito**. SVG de target (3 círculos concéntricos) marca visualmente la sección.
+
+### 21.3 Renumeración al eliminar módulos
+
+Cuando se elimina un módulo intermedio, **actualizar todos los `accordion__num` siguientes** + los `id` si vienen referenciados desde otras páginas o anchors. Ver commits recientes (`dee4446`, `2835105`, `d456cfa`, `a6665fd`) como referencia del patrón de commit message: *"Ajuste de numeracion en Tema N (archivo.html): X.Y → A.B, …"*.
+
+### 21.4 Notas editoriales temporales
+
+Durante refactors colaborativos pueden aparecer notas en rojo:
+
+```html
+<p style="color: red;">Nota: revisar este texto con Aide.</p>
+<span style="background: #fff0f0;">Pendiente: validar dato con la fuente oficial.</span>
+```
+
+Son **trabajo en curso, NO contenido final**. El brand-reviewer las marca como bloqueantes. Al cerrar un sprint, eliminarlas todas.
+
+---
+
+## 22. Caso pedagógico transversal · La Espiga
+
+### 22.1 Qué es
+
+Panadería ficticia mexicana usada como hilo narrativo de **todo el Estándar A** y, puntualmente, del Curso introductorio. Permite que el aspirante adulto ancle conceptos abstractos en un caso concreto reproducible mentalmente.
+
+**Personajes canónicos:**
+
+- **Doña Beatriz** (60+ años) — dueña fundadora. Conoce su negocio al detalle, no maneja tecnología compleja. Toma decisiones por intuición + cuenta. Imagen: `img/personajes/dona-beatriz-retrato.jpg`.
+- **Carlos** (~28-30) — hijo de Beatriz, recién egresado de administración. Apoya en digitalización. Es **el consultor del estándar** en el caso. Imagen: `img/personajes/carlos-laptop.jpg`.
+- **3 encargadas de mostrador** (40-55 años) — operan día a día. Aprenden lo que les ayuda, no por gusto.
+
+**Negocio:**
+
+- 3 sucursales, 12 empleados, pan tradicional y repostería.
+- Pedidos por WhatsApp anotados en libretas (cuello de botella central).
+- Sin sistema de inventarios, contabilidad externa.
+- 5 oportunidades de IA detectadas; priorización elige 2 para Fase 1 (chatbot WhatsApp FAQ + reporte automatizado de pedidos).
+
+### 22.2 Reglas de uso
+
+1. **Mismo personaje, mismos rasgos.** Si generas una nueva imagen de Beatriz o Carlos, el prompt debe describir los mismos rasgos que las existentes — sin ello el caso pierde consistencia visual.
+2. **El caso NO se resuelve por el aspirante.** Doña Beatriz y Carlos son **ejemplos**, no plantillas. Cada vez que un componente pedagógico use el caso, marcar explícitamente: *"Ejemplo orientativo (caso La Espiga) — NO copies esto a tu MiPyME"*.
+3. **Protagonismo en Estándar A.** En `maestro/` aparece de forma puntual (callouts en `que-es.html`, `proceso.html`) para anclar el marco institucional. NO debe tomar protagonismo en `maestro/` — eso difumina la separación marco-institucional vs aplicación.
+
+### 22.3 Dónde aparece (referencia)
+
+- `estandar-a/index.html` — presentación completa del caso + escena comparativa antes vs después.
+- `estandar-a/elemento-{1,2,3}.html` — flashcards, escenarios y case-lab usan datos de La Espiga.
+- `maestro/que-es.html §1.1` — callout puntual con Doña Beatriz + `.scenario-decision` "¿cómo explicas EC a Beatriz?".
+- `maestro/proceso.html §inicio` — callout con Carlos como hilo del recorrido.
+- `maestro/como-se-evalua.html` — `.case-lab` con las 5 evidencias llenadas para el caso.
+
+---
+
+## 23. Templates ofimáticos del Estándar A
+
+13 templates descargables (`estandar-a/templates/`) generados por `scripts/generate-templates.py`. La distribución de formatos se eligió **por naturaleza del producto**, no por uniformidad:
+
+| Productos | Formato | Razón |
+|---|---|---|
+| 1.4.1, 1.4.2, 1.4.3, 1.4.4, 1.4.7, 1.4.8, 3.4.1, 3.4.2, 4.4.2 | **Word (.docx)** | Reportes narrativos, informes, propuestas, actas |
+| 1.4.5 matriz impacto/viabilidad | **Excel (.xlsx)** | Cálculos + fórmula `=SUM(I+V+E)` |
+| 1.4.6 hoja de ruta | **Excel (.xlsx)** | Gantt 8 semanas con multi-hoja |
+| 4.4.1 reporte resultados | **Excel (.xlsx)** | Comparativa antes/después con variación % |
+| 3.4.3 material capacitación | **PowerPoint (.pptx)** | 16:9 ~12 slides; el personal aprende mejor con visuales paso a paso |
+
+### 23.1 Filosofía pedagógica de los templates
+
+Cada template trae 3 bloques fijos:
+
+1. **Criterio F21 literal** (caja azul) — lo que el evaluador verifica al pie de la letra. `REQUISITO TAXATIVO` se destaca con badge rojo.
+2. **Caso La Espiga (caja crema)** — ejemplo orientativo del tipo de contenido. **NO** es la respuesta.
+3. **Preguntas guía** — espacios en blanco con prompts. El aspirante responde con datos de SU MiPyME.
+
+Regla operativa: **los templates ayudan a pasar la evaluación, no la resuelven.** Si un template diera respuestas directas al aspirante, perderíamos la fortaleza pedagógica del estándar (que evalúa competencia real, no plantilla rellenada).
+
+### 23.2 Generación
+
+```bash
+pip install python-docx openpyxl python-pptx  # solo primera vez
+python scripts/generate-templates.py
+```
+
+Re-ejecuta cuando: cambia el F21 oficial, se ajusta el caso La Espiga, se agregan preguntas guía, o cambia el branding. El script borra archivos legacy con extensión incorrecta (.doc/.xls/.ppt → .docx/.xlsx/.pptx) automáticamente.
