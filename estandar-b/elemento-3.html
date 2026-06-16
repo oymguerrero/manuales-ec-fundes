@@ -35,10 +35,10 @@
   <div class="container">
     <span class="sub-nav__label">Desarrollar con IA</span>
     <a href="index.html">Inicio</a>
-    <a href="elemento-1.html">Elemento 1</a>
-    <a href="elemento-2.html">Elemento 2</a>
-    <a href="elemento-3.html" class="active">Elemento 3</a>
-    <a href="elemento-4.html">Elemento 4</a>
+    <a href="elemento-1.html">Elemento 1 · Identificar</a>
+    <a href="elemento-2.html">Elemento 2 · Conceptualizar</a>
+    <a href="elemento-3.html" class="active">Elemento 3 · Desarrollar</a>
+    <a href="elemento-4.html">Elemento 4 · Validar</a>
     <a href="instrumento.html">Instrumento</a>
     <a href="ruta-preparacion.html">Ruta de preparación</a>
     <a href="recursos.html">FAQ y recursos</a>
@@ -73,6 +73,29 @@
   <div class="container">
 
     <a class="back-link" href="elemento-2.html">Volver al Elemento 2</a>
+
+    <div class="audio-narration">
+      <div class="audio-narration__header">
+        <button class="audio-narration__toggle" type="button" aria-expanded="false" aria-controls="audio-estandar-b-e3-intro">
+          Escuchar esta sección
+        </button>
+        <span class="audio-narration__meta">narración alternativa al texto</span>
+      </div>
+      <div class="audio-narration__player" id="audio-estandar-b-e3-intro" hidden>
+        <audio controls preload="none">
+          <source src="../media/audio-estandar-b-e3-intro.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio HTML5. <a href="../media/audio-estandar-b-e3-intro.mp3">Descarga el archivo MP3</a>.
+        </audio>
+      </div>
+      <details class="audio-narration__transcript">
+        <summary>Ver transcripción</summary>
+        <div class="audio-narration__transcript-body">
+          <p>Elemento 3: Desarrollar. El concepto se vuelve tangible. Aquí el consultor construye el prototipo funcional con herramientas de IA, lo presenta al cliente y realiza una prueba funcional con un caso de uso real.</p>
+          <p>Produce 2 documentos. Tiene 2 desempeños observables.</p>
+          <p>En Tonalli, Diego construye el asistente que genera descripciones de piezas cerámicas a partir de una foto.</p>
+        </div>
+      </details>
+    </div>
 
     <div class="lesson-tabs" data-progress-key="estandar-b-elemento-3">
     <div class="accordion accordion--modules" aria-label="Módulos del Elemento 3">
@@ -280,6 +303,26 @@
         </summary>
         <div class="accordion__body">
 
+          <div class="template-downloads">
+            <h3 class="template-downloads__title">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+              Descarga los 2 templates editables (1 Word + 1 Excel)
+            </h3>
+            <p class="template-downloads__intro">El Elemento 3 produce 2 documentos clave del prototipo: la documentación técnica y funcional del prototipo y el plan de experimentación con sus hipótesis categorizadas (adaptabilidad, deseabilidad, factibilidad y viabilidad). Adapta ambos templates a tu proyecto real.</p>
+            <div class="template-downloads__grid">
+              <a class="template-downloads__item" href="templates/3-1-documentacion-prototipo.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">3.1</span> Documentación del prototipo funcional</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/3-2-plan-experimentacion.xls" download>
+                <span class="template-downloads__item-icon template-downloads__item-icon--xls">XLS</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">3.2</span> Plan de experimentación</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
           <h3>Producto 3.1 · Documentación del prototipo funcional desarrollado</h3>
 
           <ul>
@@ -310,6 +353,7 @@
           <h4>¿Cómo se estructura un plan de experimentación?</h4>
           <p>El plan de experimentación (Producto 3.2) sigue una secuencia lógica de 6 etapas. Cada etapa es un criterio verificable que el evaluador buscará en tu documento.</p>
 
+          <figure>
           <div class="diagram-mermaid">
             <pre class="mermaid">
 flowchart LR
@@ -330,6 +374,8 @@ flowchart LR
   style F fill:#f29100,color:#FAFCFF,stroke:none
             </pre>
           </div>
+          <figcaption>Diagrama del plan de experimentación: hipótesis, pruebas priorizadas, perfil de usuarios y cronograma de validación.</figcaption>
+          </figure>
 
           <aside class="callout callout--example" role="note">
             <span class="callout__label">Ejemplo · Tonalli</span>

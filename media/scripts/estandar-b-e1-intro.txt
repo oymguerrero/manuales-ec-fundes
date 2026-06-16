@@ -1,0 +1,13 @@
+<speak>
+Elemento uno: <emphasis level="moderate">Identificar oportunidades de desarrollo de productos y servicios con inteligencia artificial.</emphasis>
+<break time="700ms"/>
+Antes de proponer cualquier solución, el consultor necesita entender. Y entender requiere trabajo de campo real: entrevistas con el cliente, análisis del mercado, observación del proceso. Nada de esto puede hacerse desde el escritorio.
+<break time="800ms"/>
+Este elemento produce cuatro documentos. El reporte de necesidades del cliente, el análisis del mercado y la competencia, la lista de oportunidades priorizadas, y el informe de viabilidad preliminar.
+<break time="700ms"/>
+La priorización es el momento más crítico. Hay siempre más oportunidades de las que se pueden desarrollar. El consultor debe seleccionar la que tenga mayor potencial de impacto, mayor viabilidad técnica y mayor aceptación por parte del cliente.
+<break time="800ms"/>
+En el caso de Artesanías Tonalli, Diego comienza con una primera visita al taller de Lucía. La escucha hablar de su proceso: cómo describe cada pieza a compradores en ferias presenciales, cómo le cuesta trasladar eso a una ficha de producto en línea. El dolor es claro. La oportunidad, también.
+<break time="700ms"/>
+Al terminar este elemento, tendrás la base que justifica todo lo que viene. Un diagnóstico sólido no es burocracia. Es la diferencia entre desarrollar algo que el cliente necesita y desarrollar algo que nadie va a usar.
+</speak>

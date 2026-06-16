@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<title>2.3 · Modelo de negocio documentado</title>
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+
+.tonalli-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.tonalli-box strong { color: #28467e; font-style: normal; }
+
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>Modelo de negocio documentado</h1>
+<p class="subtitle">Manual de Desarrollar con IA · Producto del Elemento 2 · Conceptualizar</p>
+</td>
+<td class="meta"><strong>Producto 2.3</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> Documento integrador que combina la propuesta de valor comercial (canvas) con el diseño del modelo de funcionamiento del prototipo: arquitectura, flujos, herramientas IA seleccionadas y consideraciones éticas. Tu evaluador no busca que llenes el template — busca que respondas con datos de TU MiPyME real. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>(a) Incluye la descripción del valor diferencial de la idea respecto a soluciones convencionales</li>
+<li>(b) Contiene la descripción de la propuesta de valor comercial en el contexto de la MiPyME, en una frase</li>
+<li>(c) Contiene descritos los segmentos de clientes</li>
+<li>(d) Contiene definidas las formas de relación con el cliente y los canales de comunicación/distribución</li>
+<li>(e) Contiene los recursos y actividades clave necesarias para la operación</li>
+<li>(f) Contiene las fuentes de ingresos asociadas al producto o servicio</li>
+<li>(g) Contiene los costos de desarrollo, operación y mantenimiento</li>
+<li>(h) Contiene las alianzas clave para la operación y desarrollo del producto/servicio</li>
+<li>(i) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos</li>
+<li>(j) Especifica las funcionalidades clave del prototipo de la solución propuesta</li>
+<li>(k) Contiene la definición de los datos de entrada requeridos y los resultados esperados del componente de IA</li>
+<li>(l) Contiene las herramientas/plataformas de IA aplicables al desarrollo del prototipo</li>
+<li>(m) Contiene la justificación de la selección de las herramientas/plataformas de IA alineadas a las necesidades y recursos de la MiPyME</li>
+<li>(n) Describe los flujos de interacción de usuario con el prototipo</li>
+<li>(o) Describe la arquitectura del prototipo</li>
+<li>(p) Contiene la representación visual y la descripción de los requerimientos de diseño gráfico</li>
+<li>(q) Contiene los costos de desarrollo y operación del prototipo</li>
+<li>(r) Contiene la definición de los requerimientos técnicos mínimos del prototipo</li>
+<li>(s) Incluye las consideraciones de protección de datos personales y uso ético de IA aplicables al prototipo</li>
+<li>(t) Incluye las consideraciones de propiedad intelectual aplicables al producto</li>
+<li>(u) Incluye los términos de servicio de las herramientas/plataformas de IA utilizadas y la legislación mexicana de derecho de autor</li>
+<li>(v) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos</li>
+</ul>
+</div>
+
+<div class="tonalli-box"><strong>Caso pedagógico Artesanías Tonalli (ilustrativo, NO es tu solución):</strong> Propuesta de valor: "Cada pieza de Tonalli contará su historia en línea en menos de 2 minutos." Segmentos: turistas culturales que compran en línea + tiendas de decoración. Canal: Instagram Shopping + sitio web propio. Prototipo: workflow en Make.com que recibe foto de pieza → Claude Vision genera descripción poética + técnica → output formateado para Wix/tienda.</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Fecha del documento</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+<div class="question-block">
+<div><span class="question-num">1</span><span class="question-title">Valor diferencial</span></div>
+<div class="question-help">¿En qué es diferente tu solución respecto a lo que el emprendedor haría sin IA? ¿Cuál es la ventaja competitiva real?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">2</span><span class="question-title">Propuesta de valor en una frase</span></div>
+<div class="question-help">Escribe: "Para [segmento], [nombre de la solución] es [categoría] que [beneficio clave], a diferencia de [alternativa convencional] que [limitación]."</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">3</span><span class="question-title">Segmentos de clientes</span></div>
+<div class="question-help">¿A quién sirve esta solución? ¿Hay más de un segmento? Descríbelos.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">4</span><span class="question-title">Relación con el cliente y canales</span></div>
+<div class="question-help">¿Cómo llegará la solución a los clientes? ¿Cómo se comunicarán y distribuirán? ¿Qué tipo de relación (autoservicio, asistida, comunidad)?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">5</span><span class="question-title">Recursos y actividades clave</span></div>
+<div class="question-help">¿Qué necesita tener y hacer el emprendedor para que la solución opere? Personas, herramientas, datos, habilidades.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">6</span><span class="question-title">Fuentes de ingresos</span></div>
+<div class="question-help">¿Cómo generará dinero el emprendedor con esta solución? ¿Directa o indirectamente?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">7</span><span class="question-title">Costos de desarrollo, operación y mantenimiento</span></div>
+<div class="question-help">¿Qué costará desarrollar y mantener la solución? Desglosa suscripciones, tiempo, servicio del consultor.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">8</span><span class="question-title">Alianzas clave</span></div>
+<div class="question-help">¿Hay proveedores, plataformas o personas externas que sean esenciales para que la solución funcione?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">9</span><span class="question-title">Funcionalidades clave del prototipo</span></div>
+<div class="question-help">¿Qué hace exactamente el prototipo? Lista las funciones mínimas que debe tener para ser viable.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">10</span><span class="question-title">Datos de entrada y resultados esperados del componente IA</span></div>
+<div class="question-help">¿Qué le entra al componente de IA? ¿Qué debe salir? Define el contrato de datos de entrada y salida.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">11</span><span class="question-title">Herramientas/plataformas de IA seleccionadas y justificación</span></div>
+<div class="question-help">¿Qué herramientas usarás? ¿Por qué estas y no otras? Considera el contexto y los recursos de la MiPyME.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">12</span><span class="question-title">Flujos de interacción del usuario con el prototipo</span></div>
+<div class="question-help">¿Cómo interactúa el usuario con el prototipo paso a paso? Dibuja o describe el flujo.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">13</span><span class="question-title">Arquitectura del prototipo</span></div>
+<div class="question-help">¿Cuáles son los componentes técnicos? ¿Cómo se conectan entre sí?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">14</span><span class="question-title">Diseño gráfico y requerimientos visuales</span></div>
+<div class="question-help">¿Qué aspecto visual tendrá el prototipo? ¿Hay requerimientos de interfaz?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">15</span><span class="question-title">Costos de desarrollo y operación del prototipo</span></div>
+<div class="question-help">¿Cuánto costará construirlo? ¿Cuánto costará mantenerlo por mes?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">16</span><span class="question-title">Requerimientos técnicos mínimos</span></div>
+<div class="question-help">¿Qué necesita tener la MiPyME para que el prototipo funcione? (Conexión, dispositivos, cuentas, etc.)</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">17</span><span class="question-title">Protección de datos y ética de IA</span></div>
+<div class="question-help">¿Qué datos personales maneja el prototipo? ¿Cómo se protegen? ¿Hay riesgos de sesgo o uso indebido de IA?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">18</span><span class="question-title">Propiedad intelectual y términos de servicio</span></div>
+<div class="question-help">¿Quién es dueño de las descripciones generadas? ¿Los términos de la herramienta de IA permiten el uso comercial?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Template del Manual de Desarrollar con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<speak>
+Elemento tres: <emphasis level="moderate">Desarrollar el prototipo del producto o servicio con inteligencia artificial.</emphasis>
+<break time="700ms"/>
+El concepto aprobado por el cliente ahora se vuelve tangible. El consultor construye el prototipo funcional usando herramientas de inteligencia artificial disponibles en el mercado, lo presenta al cliente y realiza una prueba funcional con un caso de uso real.
+<break time="800ms"/>
+Este elemento produce dos documentos. El prototipo funcional documentado y el reporte de prueba funcional.
+<break time="700ms"/>
+Hay dos desempeños observables. Primero, la presentación formal del prototipo al cliente, con demostración en vivo. Segundo, la ejecución de la prueba funcional: el sistema corre con datos o imágenes reales, no con ejemplos de laboratorio.
+<break time="800ms"/>
+Esta distinción importa. Un prototipo que solo funciona con casos perfectos no es suficiente para la evaluación. El evaluador querrá ver que el consultor probó el sistema en condiciones cercanas a las reales y documentó los resultados, incluyendo lo que no funcionó como se esperaba.
+<break time="700ms"/>
+En Artesanías Tonalli, Diego construye el asistente en cuatro días usando una API de visión y un modelo de lenguaje. Lo presenta a Lucía con tres piezas reales del taller. Dos descripciones salen excelentes. Una requiere ajuste en el prompt. Todo queda registrado.
+<break time="600ms"/>
+El prototipo está en pie. Ahora viene la pregunta más importante: ¿funciona para los usuarios reales?
+</speak>

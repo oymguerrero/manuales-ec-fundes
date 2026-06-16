@@ -1,0 +1,15 @@
+<speak>
+Elemento cuatro: <emphasis level="moderate">Validar el producto o servicio con inteligencia artificial.</emphasis>
+<break time="700ms"/>
+El ciclo de desarrollo cierra con la validación experimental. No con la opinión del consultor ni con la del cliente, sino con evidencia de usuarios reales interactuando con el prototipo en condiciones lo más cercanas posible al uso cotidiano.
+<break time="800ms"/>
+Este elemento produce cuatro documentos. El plan de validación, el registro de experimentos con usuarios, el análisis de resultados y la recomendación fundamentada.
+<break time="700ms"/>
+Hay un desempeño observable central: el consultor presenta al cliente una recomendación documentada sobre qué hacer con el producto. Las tres opciones posibles son implementar, iterar o pivotar. Y cualquiera de las tres es válida, siempre que esté respaldada por los datos del experimento.
+<break time="800ms"/>
+Esta es la parte del proceso que más distingue a un consultor competente. No se trata de defender el prototipo que construiste. Se trata de interpretar los resultados con honestidad y recomendar lo que más le conviene al cliente, aunque eso signifique volver al inicio.
+<break time="700ms"/>
+En Artesanías Tonalli, Diego diseña un experimento con cinco compradoras habituales. Les pide describir tres piezas con sus propias palabras y luego compara con las descripciones del asistente. Los resultados son contundentes: el tono es el adecuado, pero la longitud de los textos necesita ajuste. La recomendación es iterar.
+<break time="600ms"/>
+Con este elemento concluye el proceso completo del Estándar B. Lo que construiste, lo probaste. Lo que probaste, lo aprendiste. Y lo que aprendiste, lo documentaste para el cliente y para la evaluación.
+</speak>

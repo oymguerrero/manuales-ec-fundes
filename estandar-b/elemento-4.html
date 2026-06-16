@@ -35,10 +35,10 @@
   <div class="container">
     <span class="sub-nav__label">Desarrollar con IA</span>
     <a href="index.html">Inicio</a>
-    <a href="elemento-1.html">Elemento 1</a>
-    <a href="elemento-2.html">Elemento 2</a>
-    <a href="elemento-3.html">Elemento 3</a>
-    <a href="elemento-4.html" class="active">Elemento 4</a>
+    <a href="elemento-1.html">Elemento 1 · Identificar</a>
+    <a href="elemento-2.html">Elemento 2 · Conceptualizar</a>
+    <a href="elemento-3.html">Elemento 3 · Desarrollar</a>
+    <a href="elemento-4.html" class="active">Elemento 4 · Validar</a>
     <a href="instrumento.html">Instrumento</a>
     <a href="ruta-preparacion.html">Ruta de preparación</a>
     <a href="recursos.html">FAQ y recursos</a>
@@ -74,6 +74,29 @@
 
     <a class="back-link" href="elemento-3.html">Volver al Elemento 3</a>
 
+    <div class="audio-narration">
+      <div class="audio-narration__header">
+        <button class="audio-narration__toggle" type="button" aria-expanded="false" aria-controls="audio-estandar-b-e4-intro">
+          Escuchar esta sección
+        </button>
+        <span class="audio-narration__meta">narración alternativa al texto</span>
+      </div>
+      <div class="audio-narration__player" id="audio-estandar-b-e4-intro" hidden>
+        <audio controls preload="none">
+          <source src="../media/audio-estandar-b-e4-intro.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio HTML5. <a href="../media/audio-estandar-b-e4-intro.mp3">Descarga el archivo MP3</a>.
+        </audio>
+      </div>
+      <details class="audio-narration__transcript">
+        <summary>Ver transcripción</summary>
+        <div class="audio-narration__transcript-body">
+          <p>Elemento 4: Validar. El ciclo cierra con la validación experimental. El consultor diseña experimentos, los ejecuta con usuarios reales, analiza los resultados y formula una recomendación fundamentada de implementar, iterar o pivotar.</p>
+          <p>Produce 4 documentos. Tiene 1 desempeño observable.</p>
+          <p>En Tonalli, Diego ejecuta pruebas con 10 usuarios para decidir si el asistente está listo para escalar.</p>
+        </div>
+      </details>
+    </div>
+
     <div class="lesson-tabs" data-progress-key="estandar-b-elemento-4">
     <div class="accordion accordion--modules" aria-label="Módulos del Elemento 4">
 
@@ -94,7 +117,7 @@
 
           <aside class="callout callout--example" role="note">
             <span class="callout__label">Tonalli · Elemento 4 — Diego ejecuta las pruebas con compradores reales</span>
-            <div class="callout__body">Diego recluta 15 compradores de artesanía en línea (con consentimiento informado), los divide en 3 grupos de 5, y les hace probar el asistente durante 3 semanas. Registra todo en la bitácora: tiempo por ficha, errores, frases exactas de los usuarios, capturas de pantalla. Resultado: hipótesis de deseabilidad aprobada (80% prefiere las fichas generadas por IA), hipótesis de factibilidad fallida (4 minutos por pieza vs. los 90 segundos del diseño). Diego lo lleva todo a Lucía con una recomendación clara: iterar el pipeline técnico, no descartar el proyecto.</div>
+            <div class="callout__body">Diego recluta 15 compradores de artesanía en línea (con consentimiento informado), los divide en 3 grupos de 5, y les hace probar el asistente durante 3 semanas. Registra todo en la bitácora: tiempo por ficha, errores, frases exactas de los usuarios, capturas de pantalla. Resultado: hipótesis de deseabilidad aprobada (80% prefiere las fichas generadas por IA), hipótesis de factibilidad fallida (4 minutos por pieza vs. los 90 segundos del diseño). Diego lo lleva todo a Lucía con una recomendación clara: iterar el flujo de procesamiento técnico, no descartar el proyecto.</div>
           </aside>
 
         </div>
@@ -211,7 +234,7 @@
           <aside class="callout callout--example" role="note">
             <span class="callout__label">Tonalli · Desempeño 4.1</span>
             <div class="callout__body">
-              <p>Diego abre la presentación: "Ejecutamos 15 sesiones de prueba durante 3 semanas, con compradores de artesanía en línea que nunca habían visto el asistente." Muestra los resultados hipótesis por hipótesis. Para la hipótesis de deseabilidad: "El 80% prefirió nuestras fichas generadas por IA sobre las descripciones actuales de Tonalli — el criterio de éxito era 70%, lo superamos." Para la hipótesis de factibilidad: "El tiempo promedio fue 4 minutos por pieza — el criterio era 90 segundos, no lo alcanzamos." Cita textual de un comprador: "La descripción me convence, pero si tarda tanto, no lo uso." La recomendación de Diego: iterar el pipeline técnico (evaluar un modelo más rápido o comprimir imágenes antes de enviarlas). Lucía pregunta cuánto tiempo tomará. Diego propone: "Dos semanas para la siguiente iteración. ¿Lo intentamos?" Lucía dice que sí.</p>
+              <p>Diego abre la presentación: "Ejecutamos 15 sesiones de prueba durante 3 semanas, con compradores de artesanía en línea que nunca habían visto el asistente." Muestra los resultados hipótesis por hipótesis. Para la hipótesis de deseabilidad: "El 80% prefirió nuestras fichas generadas por IA sobre las descripciones actuales de Tonalli — el criterio de éxito era 70%, lo superamos." Para la hipótesis de factibilidad: "El tiempo promedio fue 4 minutos por pieza — el criterio era 90 segundos, no lo alcanzamos." Cita textual de un comprador: "La descripción me convence, pero si tarda tanto, no lo uso." La recomendación de Diego: iterar el flujo de procesamiento técnico (evaluar un modelo más rápido o comprimir imágenes antes de enviarlas). Lucía pregunta cuánto tiempo tomará. Diego propone: "Dos semanas para la siguiente iteración. ¿Lo intentamos?" Lucía dice que sí.</p>
             </div>
           </aside>
 
@@ -226,6 +249,36 @@
           <span class="accordion__meta">4 productos documentales · criterios F21 · 12 min</span>
         </summary>
         <div class="accordion__body">
+
+          <div class="template-downloads">
+            <h3 class="template-downloads__title">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+              Descarga los 4 templates editables (3 Word + 1 Excel)
+            </h3>
+            <p class="template-downloads__intro">El Elemento 4 cierra el ciclo con 4 documentos de validación. La bitácora registra cronológicamente cada sesión de prueba; el reporte sintetiza resultados por hipótesis; la tabla por hipótesis permite comparar resultados contra criterios de éxito; y el documento de recomendaciones documenta la decisión de iterar, pivotar o escalar. Adapta todos los templates a tu proyecto real.</p>
+            <div class="template-downloads__grid">
+              <a class="template-downloads__item" href="templates/4-1-bitacora-pruebas.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">4.1</span> Bitácora de ejecución de pruebas</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/4-2-reporte-resultados-validacion.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">4.2</span> Reporte de resultados de validación</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/4-3-resultados-por-hipotesis.xls" download>
+                <span class="template-downloads__item-icon template-downloads__item-icon--xls">XLS</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">4.3</span> Resultados por hipótesis</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/4-4-recomendaciones-prototipo.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">4.4</span> Recomendaciones al prototipo</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
 
           <h3>Producto 4.1 · Bitácora de ejecución de pruebas del plan de experimentación, elaborada</h3>
 
@@ -319,7 +372,7 @@
                   "id": "a",
                   "label": "Iterar: optimizar el tiempo de respuesta del asistente reduciendo la resolución de imagen con compresión inteligente, o evaluando un modelo IA más rápido para la tarea de descripción, sin cambiar la hipótesis central.",
                   "outcome": "ok",
-                  "feedback": "Recomendación profesional correcta. Los datos son inequívocos: la deseabilidad está validada (80% de preferencia, NPS 62 — eso es sólido). El único problema es técnico y específico: velocidad de procesamiento de imagen. Iterar el pipeline técnico es la decisión calibrada. No se abandona algo que los usuarios quieren; se resuelve el cuello de botella que impide escalarlo. El F21 del Producto 4.4 pide que la decisión esté justificada en los hallazgos — esta lo está.",
+                  "feedback": "Recomendación profesional correcta. Los datos son inequívocos: la deseabilidad está validada (80% de preferencia, NPS 62 — eso es sólido). El único problema es técnico y específico: velocidad de procesamiento de imagen. Iterar el flujo de procesamiento técnico es la decisión calibrada. No se abandona algo que los usuarios quieren; se resuelve el cuello de botella que impide escalarlo. El F21 del Producto 4.4 pide que la decisión esté justificada en los hallazgos — esta lo está.",
                   "criterio": "Producto 4.4 F21 literal b: decisión documentada y justificada de iteración. Evidencia: deseabilidad aprobada (80%, NPS 62); factibilidad fallida por causa técnica resoluble. Perseverar en la hipótesis central, iterar la implementación técnica."
                 },
                 {
@@ -334,7 +387,7 @@
                   "label": "Abandonar: si el asistente tarda 4 minutos y eso es demasiado para los usuarios, el proyecto no funciona. Recomendarle a Lucía no escalar y cerrar el proyecto.",
                   "outcome": "wrong",
                   "feedback": "Recomendación sin respaldo en los datos. Abandonar es la decisión correcta cuando la hipótesis central es inválida y no hay ajuste posible. Aquí la hipótesis central (los compradores prefieren fichas con IA) está validada con 80% de preferencia y NPS 62. El único fallo es técnico con causa identificada. El AHV Perseverancia existe precisamente para señalar que el consultor no abandona ante el primer obstáculo técnico.",
-                  "criterio": "La decisión de abandonar requiere que los datos no muestren ningún camino viable. Aquí el camino existe (optimizar el pipeline). AHV Perseverancia: se observa en cómo el consultor responde a resultados mixtos, no solo favorables."
+                  "criterio": "La decisión de abandonar requiere que los datos no muestren ningún camino viable. Aquí el camino existe (optimizar el flujo de procesamiento). AHV Perseverancia: se observa en cómo el consultor responde a resultados mixtos, no solo favorables."
                 }
               ],
               "wrapUp": "Los datos mixtos son la norma en innovación, no la excepción. Un proyecto con deseabilidad validada y factibilidad técnica resoluble es un proyecto en buen camino — no un fracaso. La habilidad que evalúa el F21 en el Elemento 4 no es que todo salga bien: es que sepas leer los datos con rigor y recomendar con argumentos. Lucía confía en Diego para eso."

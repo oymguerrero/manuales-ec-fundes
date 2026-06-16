@@ -35,10 +35,10 @@
   <div class="container">
     <span class="sub-nav__label">Desarrollar con IA</span>
     <a href="index.html">Inicio</a>
-    <a href="elemento-1.html" class="active">Elemento 1</a>
-    <a href="elemento-2.html">Elemento 2</a>
-    <a href="elemento-3.html">Elemento 3</a>
-    <a href="elemento-4.html">Elemento 4</a>
+    <a href="elemento-1.html" class="active">Elemento 1 · Identificar</a>
+    <a href="elemento-2.html">Elemento 2 · Conceptualizar</a>
+    <a href="elemento-3.html">Elemento 3 · Desarrollar</a>
+    <a href="elemento-4.html">Elemento 4 · Validar</a>
     <a href="instrumento.html">Instrumento</a>
     <a href="ruta-preparacion.html">Ruta de preparación</a>
     <a href="recursos.html">FAQ y recursos</a>
@@ -73,6 +73,29 @@
   <div class="container">
 
     <a class="back-link" href="index.html">Volver a Bienvenida y contexto</a>
+
+    <div class="audio-narration">
+      <div class="audio-narration__header">
+        <button class="audio-narration__toggle" type="button" aria-expanded="false" aria-controls="audio-estandar-b-e1-intro">
+          Escuchar esta sección
+        </button>
+        <span class="audio-narration__meta">narración alternativa al texto</span>
+      </div>
+      <div class="audio-narration__player" id="audio-estandar-b-e1-intro" hidden>
+        <audio controls preload="none">
+          <source src="../media/audio-estandar-b-e1-intro.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio HTML5. <a href="../media/audio-estandar-b-e1-intro.mp3">Descarga el archivo MP3</a>.
+        </audio>
+      </div>
+      <details class="audio-narration__transcript">
+        <summary>Ver transcripción</summary>
+        <div class="audio-narration__transcript-body">
+          <p>Elemento 1: Identificar. Esta es la fase de investigación — entrevistas con usuarios, análisis de mercado y priorización de oportunidades.</p>
+          <p>El Elemento 1 produce 4 documentos que mapean con precisión la necesidad del usuario y el contexto de mercado antes de conceptualizar cualquier solución.</p>
+          <p>En el caso Tonalli, Diego empieza levantando información con Lucía sobre el reto de describir piezas únicas para venta en línea.</p>
+        </div>
+      </details>
+    </div>
 
     <div class="lesson-tabs" data-progress-key="estandar-b-elemento-1">
     <div class="accordion accordion--modules" aria-label="Módulos del Elemento 1">
@@ -264,6 +287,36 @@
         </summary>
         <div class="accordion__body">
 
+          <div class="template-downloads">
+            <h3 class="template-downloads__title">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+              Descarga los 4 templates editables (3 Word + 1 Excel)
+            </h3>
+            <p class="template-downloads__intro">El Elemento 1 produce 4 documentos de investigación: desde la sesión inicial con el cliente hasta la matriz de priorización. El Producto 1.3 es el más extenso: documenta 11 criterios que cubren el registro de entrevistas, el perfil del usuario y el análisis de causa raíz. Adapta todos los templates a tu proyecto real.</p>
+            <div class="template-downloads__grid">
+              <a class="template-downloads__item" href="templates/1-1-reporte-inicial.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">1.1</span> Reporte inicial del levantamiento de información</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/1-2-analisis-mercado.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">1.2</span> Análisis de mercado de la MiPyME</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/1-3-reporte-entrevistas.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">1.3</span> Reporte de entrevistas de necesidades del usuario</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/1-4-matriz-priorizacion.xls" download>
+                <span class="template-downloads__item-icon template-downloads__item-icon--xls">XLS</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">1.4</span> Matriz de priorización de oportunidades</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
           <p>Este elemento exige 4 productos documentales. A continuación se describe cada uno con sus características literales del F21 y guías de preparación.</p>
 
           <h3>Producto 1.1 · Reporte inicial documentado del levantamiento de información con el cliente</h3>
@@ -302,15 +355,29 @@
           <h3>Producto 1.3 · Reporte de entrevistas de necesidades del usuario, elaborado</h3>
 
           <p>Criterios del F21 (11 características):</p>
-          <ol type="a">
+
+          <p class="criteria-group-label"><strong>Registro de entrevistas</strong></p>
+          <ol type="a" start="1">
             <li>Registro de entrevistas: objetivo, perfil del entrevistado y medio utilizado.</li>
             <li>Herramientas/plataformas de IA utilizadas como apoyo en investigación cualitativa: propósito y prompts.</li>
+          </ol>
+
+          <p class="criteria-group-label"><strong>Perfil del usuario</strong></p>
+          <ol type="a" start="3">
             <li>Descripción de problemas/necesidades/experiencias y contexto de uso.</li>
             <li>Perfil del usuario: necesidades, emociones, perspectiva, acciones y resultados esperados.</li>
             <li>Análisis del propósito de uso: cronología del proceso, cuatro fuerzas del progreso, narrativa de necesidad.</li>
+          </ol>
+
+          <p class="criteria-group-label"><strong>Hallazgos y análisis</strong></p>
+          <ol type="a" start="6">
             <li>Hallazgos: patrones de comportamiento y necesidades prioritarias.</li>
             <li>Problemas actuales del usuario y su impacto en el proceso o servicio.</li>
             <li>Análisis de causa raíz mediante árbol de problema/causa-efecto.</li>
+          </ol>
+
+          <p class="criteria-group-label"><strong>Oportunidades y cierre</strong></p>
+          <ol type="a" start="9">
             <li>Oportunidades de mejora y de mercado mediante IA.</li>
             <li>Listado de herramientas y prompts utilizados.</li>
             <li>Formato digital/físico, redacción clara, sin errores ortográficos.</li>

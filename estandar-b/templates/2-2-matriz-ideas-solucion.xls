@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:x="urn:schemas-microsoft-com:office:excel"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Excel.Sheet">
+<meta name="Generator" content="Microsoft Excel">
+<title>2.2 · Matriz de ideas de solución validada por el cliente/usuario</title>
+<!--[if gte mso 9]>
+<xml><x:ExcelWorkbook><x:ExcelWorksheets>
+<x:ExcelWorksheet><x:Name>2.2</x:Name><x:WorksheetOptions><x:Panes><x:Pane><x:Number>3</x:Number></x:Pane></x:Panes></x:WorksheetOptions></x:ExcelWorksheet>
+</x:ExcelWorksheets></x:ExcelWorkbook></xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+
+.tonalli-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.tonalli-box strong { color: #28467e; font-style: normal; }
+
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+
+table.matrix { border-collapse: collapse; width: 100%; margin: 10pt 0; font-size: 10pt; }
+table.matrix th, table.matrix td { border: 1pt solid #999; padding: 6pt 8pt; vertical-align: top; }
+table.matrix th { background: #28467e; color: white; font-weight: bold; text-align: left; }
+table.matrix tr.score th { background: #f7c031; color: #28467e; }
+table.matrix td.fill { background: #fffbe6; min-height: 22pt; height: 22pt; color: #aaa; font-style: italic; }
+table.matrix tr:nth-child(even) td.fill { background: #fefbf0; }
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>Matriz de ideas de solución validada por el cliente/usuario</h1>
+<p class="subtitle">Manual de Desarrollar con IA · Producto del Elemento 2 · Conceptualizar · Excel</p>
+</td>
+<td class="meta"><strong>Producto 2.2</strong><br>Hoja editable · Excel<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> Tabla comparativa de todas las ideas generadas, evaluadas por novedad, utilidad y factibilidad, con la selección final documentada y validada por el cliente. Excel es el formato natural para esta clase de producto: te permite añadir filas conforme detectes más elementos, ordenar por puntaje y generar gráficas. <strong>Llénalo con datos de TU MiPyME real.</strong></div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>(a) Contiene el listado de ideas generadas durante el proceso de ideación</li>
+<li>(b) Contiene la descripción breve de cada idea de producto o servicio propuesto</li>
+<li>(c) Incluye una clasificación preliminar de las ideas según criterios de novedad, utilidad y factibilidad</li>
+<li>(d) Especifica las oportunidades de implementación de tecnologías digitales/IA identificadas y validadas por el cliente/usuario</li>
+<li>(e) Especifica la(s) idea(s) seleccionada(s) por el cliente</li>
+<li>(f) Se presenta en formato de matriz/tabla de análisis, en formato digital/físico, con redacción clara y sin errores ortográficos</li>
+</ul>
+</div>
+
+<div class="tonalli-box"><strong>Caso pedagógico Artesanías Tonalli (ilustrativo):</strong> Matriz con 6 ideas evaluadas por Lucía y Diego. Criterios: novedad (1-5), utilidad para el negocio (1-5), factibilidad técnica (1-5). Ganadora: "Asistente IA que genera descripción + ficha de producto desde foto" → novedad 4, utilidad 5, factibilidad 4. Segunda: "QR con historia narrada" → descartada por costo de implementación por pieza.</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME</td><td><span class="blank">&nbsp;</span></td><td>Fecha</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor</td><td><span class="blank">&nbsp;</span></td><td>Responsable MiPyME</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+<table class="matrix">
+<tr><th style="width: 4%;">#</th><th style="width: 28%;">Pregunta guía</th><th>Tu respuesta (llena con datos de TU MiPyME)</th></tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">1</td>
+<td><strong>Listado de ideas con descripción breve</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Una fila por idea. Describe brevemente qué es y cómo funcionaría.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">2</td>
+<td><strong>Clasificación por novedad, utilidad y factibilidad</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Puntúa cada idea en los tres criterios. Define qué significa cada nivel (1-5) en el contexto de tu MiPyME.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">3</td>
+<td><strong>Oportunidades IA validadas por el cliente</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Qué tecnologías o herramientas de IA vio el cliente como aplicables y deseables para cada idea? ¿Hubo alguna que el cliente rechazó?</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">4</td>
+<td><strong>Idea(s) seleccionada(s) por el cliente</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Cuál eligió el cliente? ¿Fue una sola idea o una combinación? Documenta el proceso de selección.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+</table>
+
+
+
+<h2>Matriz de ideas · evaluación y selección</h2>
+<p style="font-size: 10pt; color: #666;">Una fila por idea. Evalúa cada una con los tres criterios (1-5). La última columna marca si fue seleccionada por el cliente.</p>
+<table class="matrix">
+<tr><th style="width:4%;">#</th><th style="width:22%;">Idea</th><th style="width:18%;">Descripción breve</th><th style="width:9%;">Novedad (1-5)</th><th style="width:9%;">Utilidad (1-5)</th><th style="width:9%;">Factibilidad (1-5)</th><th style="width:9%;">Score total</th><th>Seleccionada por el cliente</th></tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">1</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">2</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">3</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">4</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">5</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">6</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center;color:#28467e;font-weight:bold;">7</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+
+</table>
+
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org · Template del Manual de Desarrollar con IA
+</div>
+
+</body>
+</html>

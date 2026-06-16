@@ -1,0 +1,15 @@
+<speak>
+Elemento dos: <emphasis level="moderate">Conceptualizar el producto o servicio con inteligencia artificial.</emphasis>
+<break time="700ms"/>
+Con las necesidades claras y las oportunidades priorizadas, llega la fase creativa. No la creatividad sin rumbo, sino la creatividad estructurada: ideación, propuesta de valor y modelo de negocio del producto.
+<break time="800ms"/>
+Este elemento produce tres documentos. El registro de sesión de ideación, la propuesta de valor del producto, y el modelo de negocio preliminar.
+<break time="700ms"/>
+Hay dos desempeños que el evaluador observará directamente. Primero, que el consultor facilita una sesión de ideación con el cliente, generando opciones y ayudando a elegir la más prometedora. Segundo, que presenta formalmente la propuesta de prototipo al cliente y obtiene su validación antes de construir nada.
+<break time="800ms"/>
+Este segundo punto es esencial. En innovación, construir algo sin aprobación previa del cliente es un error costoso. La firma o validación formal del cliente al finalizar la conceptualización protege a ambas partes y alinea expectativas desde el inicio.
+<break time="700ms"/>
+En Artesanías Tonalli, Diego facilita una sesión de trabajo con Lucía. Juntos exploran tres conceptos posibles. Al final convergen en uno: un asistente de descripción de piezas que usa visión artificial para analizar fotografías y generar textos de producto en el tono de Lucía.
+<break time="600ms"/>
+El concepto está listo. El siguiente paso es construirlo.
+</speak>
