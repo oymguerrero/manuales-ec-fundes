@@ -1672,3 +1672,25 @@ python scripts/generate-templates.py
 ```
 
 Re-ejecuta cuando: cambia el F21 oficial, se ajusta el caso La Espiga, se agregan preguntas guía, o cambia el branding. El script borra archivos legacy con extensión incorrecta (.doc/.xls/.ppt → .docx/.xlsx/.pptx) automáticamente.
+
+### 23.3 Templates del Estándar B — Backlog (no generados todavía)
+
+Los templates del Estándar B seguirán la misma filosofía pedagógica del §23.1 (criterio F21 literal + caso orientativo + preguntas guía). Se generarán en `estandar-b/templates/` con un script equivalente a `generate-templates.py`. Quedan como backlog para commit posterior:
+
+| Productos | Formato | Contenido |
+|---|---|---|
+| 1.1 · Reporte de levantamiento de necesidades | **Word (.docx)** | Entrevistas, observación y análisis del contexto del negocio |
+| 1.2 · Análisis de mercado y benchmarking | **Word (.docx)** | Comparativa de soluciones existentes y oportunidades de diferenciación |
+| 1.3 · Reporte de entrevistas con usuarios | **Word (.docx)** | Síntesis de hallazgos cualitativos por segmento de usuario |
+| 1.4 · Matriz de priorización de necesidades | **Word (.docx)** | Criterios de impacto, viabilidad y urgencia |
+| 2.1 · Informe de ideación | **Word (.docx)** | Descripción de sesión creativa, ideas generadas y selección razonada |
+| 2.2 · Matriz de ideas de solución | **Excel (.xlsx)** | Puntaje por criterio (impacto, factibilidad, novedad) con fórmulas |
+| 2.3 · Modelo de negocio preliminar | **Word (.docx)** | Canvas simplificado: propuesta de valor, segmento, canales, costos |
+| 3.1 · Documentación del prototipo funcional | **Word (.docx)** | Descripción técnica, capturas, flujos y limitaciones del prototipo |
+| 3.2 · Plan de experimentación | **Excel (.xlsx)** | Hipótesis, métricas de éxito, criterios de validación y cronograma |
+| 4.1 · Bitácora de sesiones de validación | **Word (.docx)** | Registro cronológico de pruebas con usuarios reales |
+| 4.2 · Reporte de validación | **Word (.docx)** | Hallazgos, patrones de feedback y grado de cumplimiento de hipótesis |
+| 4.3 · Descripción de resultados | **Word (.docx)** | Métricas alcanzadas vs. metas del plan de experimentación |
+| 4.4 · Documento de recomendaciones | **Word (.docx)** | Próximos pasos, iteraciones sugeridas y decisión de escalamiento |
+
+**Nota:** estos templates no están generados en el repositorio actual. Deben crearse antes de publicar el contenido del Estándar B.

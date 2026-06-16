@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manual de Desarrollar con IA · Bienvenida y contexto · Mi CompañIA</title>
+<meta name="description" content="Manual del Aspirante del Estándar B: bienvenida, antes de empezar, ficha técnica y mapa funcional del ciclo investigar-conceptualizar-prototipar-validar." />
+<link rel="icon" type="image/png" href="../img/logo.png" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/interactive.js" defer></script>
+</head>
+<body>
+
+<!--
+  Fuente: contenido fuente proporcionado directamente (2026-06-15)
+  Última revisión contra fuente: 2026-06-15
+  Caso pedagógico: Artesanías Tonalli (Lucía + Diego)
+-->
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="brand-text">Mi CompañIA</span>
+    </a>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../maestro/index.html">Curso introductorio</a>
+      <a href="index.html">Desarrollar con IA</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="sub-nav" aria-label="Capítulos del Manual del Estándar B">
+  <div class="container">
+    <span class="sub-nav__label">Desarrollar con IA</span>
+    <a href="index.html" class="active">Inicio</a>
+    <a href="elemento-1.html">Elemento 1</a>
+    <a href="elemento-2.html">Elemento 2</a>
+    <a href="elemento-3.html">Elemento 3</a>
+    <a href="elemento-4.html">Elemento 4</a>
+    <a href="instrumento.html">Instrumento</a>
+    <a href="ruta-preparacion.html">Ruta de preparación</a>
+    <a href="recursos.html">FAQ y recursos</a>
+  </div>
+</nav>
+
+<div class="maestro-progress" aria-label="Progreso del Manual de Desarrollar con IA">
+  <div class="container">
+    <span class="maestro-progress__label">Capítulo 1 de 8 · Bienvenida y contexto</span>
+    <div class="maestro-progress__bar" role="presentation">
+      <span class="maestro-progress__dot maestro-progress__dot--current"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+    </div>
+  </div>
+</div>
+
+<section class="hero hero--photo hero--ec1">
+  <div class="container">
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Manual del Aspirante · Desarrollar con <span class="ia">IA</span> · v1.0</div>
+    <h1>Desarrollo de productos y servicios con <span class="ia">IA</span> en la MiPyME</h1>
+    <p>Guía completa para preparar y presentar tu evaluación con fines de certificación CONOCER. Si tu trabajo es detectar necesidades reales de usuarios, diseñar soluciones innovadoras con IA, construir prototipos y probarlos con clientes antes de lanzarlos, este manual te llevará paso a paso al día de tu evaluación.</p>
+    <div class="hero-actions">
+      <a href="elemento-1.html" class="btn btn-primary">Empezar por el Elemento 1</a>
+      <a href="ruta-preparacion.html" class="btn btn-secondary">Ver ruta de preparación</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <a class="back-link" href="../index.html">Volver al inicio</a>
+
+    <div class="lesson-tabs" data-progress-key="estandar-b-bienvenida-contexto">
+    <div class="accordion accordion--modules" aria-label="Módulos del Capítulo 1 · Bienvenida y contexto">
+
+      <!-- ===== 1.1 BIENVENIDA ===== -->
+      <details class="accordion__item" id="bienvenida" open>
+        <summary>
+          <span class="accordion__num">1.1</span>
+          <span class="accordion__title-main">Bienvenida</span>
+          <span class="accordion__meta">Carta de inicio · 5 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>Este manual está dedicado en exclusiva al Estándar de Competencia B: <strong>Desarrollo de productos y servicios con Inteligencia Artificial en la MiPyME</strong>. Es el documento que te acompañará a lo largo de tu preparación y al que volverás una y otra vez hasta el día de tu evaluación.</p>
+
+          <p>El Estándar B está dirigido a quienes trabajan en el ciclo completo de innovación orientada al usuario: escuchas una necesidad real de alguien, identificas una oportunidad de mercado que nadie ha resuelto bien, conceptualizas una solución con IA, construyes un prototipo funcional y lo llevas a prueba con usuarios reales antes de recomendarlo o lanzarlo.</p>
+
+          <p>Es importante que ubiques bien este estándar dentro del mapa de los cuatro estándares CONOCER de IA para MiPyMEs:</p>
+
+          <ul>
+            <li><strong>No es el Estándar A (Implementar IA).</strong> El Estándar A es para quien toma herramientas de IA que ya existen en el mercado y las configura e implementa dentro de los procesos de una MiPyME. Si tu trabajo es acompañar esa incorporación operativa, tu estándar es el A, no el B.</li>
+            <li><strong>No es el Estándar C (Marketing digital con IA).</strong> El Estándar C es para quien crea contenido de marketing —textos, imágenes, audio, video, campañas— usando IA. Si tu trabajo central es la comunicación y promoción digital, tu estándar es el C.</li>
+            <li><strong>No es el Estándar D (Desarrollo técnico complejo).</strong> El Estándar D es para quien programa y construye soluciones técnicas complejas desde código. Si escribes modelos o arquitecturas de IA a nivel de ingeniería, tu estándar es el D.</li>
+          </ul>
+
+          <p>El Estándar B es para quien <strong>innova desde la necesidad del usuario</strong>. No asumes que sabes qué necesitan: lo investigas. No implementas lo que ya existe: conceptualizas lo que debería existir. No lanzas sin evidencia: prototipas y validas con personas reales. Si tu proceso de trabajo se parece a esto, <strong>este es tu estándar</strong>.</p>
+
+          <p>Este manual te guiará a través de cuatro tareas interconectadas: comprender con precisión qué se te evaluará, preparar las evidencias que requerirás, practicar los desempeños que tu evaluador observará y articular ese aprendizaje alrededor de un caso pedagógico concreto que recorrerás de principio a fin.</p>
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">Importante</span>
+            <div class="callout__body">La fuente de evaluación es el <strong>F21</strong> (formato oficial del estándar publicado por CONOCER). Todo lo que se te evaluará está descrito en ese documento. Este manual no reemplaza al F21 — lo explica, lo complementa y te ayuda a prepararte. Ante cualquier duda sobre criterios, la versión oficial del F21 es la que manda.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.2 ANTES DE EMPEZAR ===== -->
+      <details class="accordion__item" id="antes-empezar">
+        <summary>
+          <span class="accordion__num">1.2</span>
+          <span class="accordion__title-main">Antes de empezar</span>
+          <span class="accordion__meta">Marco CONOCER · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>Este manual puede leerse sin haber estudiado antes el <a href="../maestro/index.html">Curso introductorio</a>. Aun así, conviene tener presentes algunos elementos del marco general antes de entrar al contenido del estándar.</p>
+
+          <h3>La certificación CONOCER, en resumen</h3>
+          <p>La certificación que obtendrás es expedida por la <strong>Secretaría de Educación Pública</strong> a través del <strong>CONOCER</strong>. El Certificado de Competencia se incorpora al Registro Nacional de Personas Certificadas (RENEC) y tiene validez en todo el territorio nacional. No es un título académico: es una constancia oficial de que sabes hacer algo y puedes demostrarlo con evidencias verificables.</p>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Para tener presente</span>
+            <div class="callout__body">Para los estándares inscritos en el RENEC, incluido el Estándar B, <strong>no se requiere por disposición legal la posesión de un título profesional</strong>. Lo que importa es que puedas demostrar la competencia, independientemente de tu trayectoria académica formal.</div>
+          </aside>
+
+          <h3>La lógica de la evaluación</h3>
+          <p>La evaluación CONOCER se construye sobre <strong>evidencias verificables</strong>. No es un examen de opción múltiple ni una prueba teórica. Lo que se te evaluará es tu capacidad de ejecutar la función con calidad, ante un evaluador certificado. Para ello se combinan cuatro tipos de evidencia:</p>
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Qué se evalúa</th>
+                <th>Cómo funciona</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Desempeños</strong></td>
+                <td>Lo que haces en tiempo real, paso a paso</td>
+                <td>El evaluador te observa ejecutar una actividad o te pide demostrar cómo realizas una tarea concreta</td>
+              </tr>
+              <tr>
+                <td><strong>Productos</strong></td>
+                <td>Documentos, artefactos o entregables que ya construiste</td>
+                <td>Presentas archivos reales de proyectos anteriores (reportes, fichas, prototipos, resultados de prueba)</td>
+              </tr>
+              <tr>
+                <td><strong>Conocimientos</strong></td>
+                <td>Conceptos y principios que sustentan tu práctica</td>
+                <td>El evaluador puede preguntarte sobre fundamentos teóricos o pedirte que expliques por qué tomaste ciertas decisiones</td>
+              </tr>
+              <tr>
+                <td><strong>AHV · Actitudes, Hábitos y Valores</strong></td>
+                <td>La forma en que trabajas: ética, rigor, empatía, orden</td>
+                <td>Se observan de manera transversal durante toda la sesión de evaluación, no en un momento separado</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.3 FICHA TÉCNICA ===== -->
+      <details class="accordion__item" id="ficha-tecnica">
+        <summary>
+          <span class="accordion__num">1.3</span>
+          <span class="accordion__title-main">Ficha técnica del Estándar B</span>
+          <span class="accordion__meta">Datos del F21 · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <tbody>
+              <tr>
+                <td><strong>Título oficial</strong></td>
+                <td>Desarrollo de productos y servicios con Inteligencia Artificial en la MiPyME</td>
+              </tr>
+              <tr>
+                <td><strong>Nivel SNC</strong></td>
+                <td>Tres</td>
+              </tr>
+              <tr>
+                <td><strong>Número de elementos</strong></td>
+                <td>Cuatro</td>
+              </tr>
+              <tr>
+                <td><strong>Comité de Gestión</strong></td>
+                <td><!-- TODO: confirmar CGC responsable del Estándar B con fuente oficial --></td>
+              </tr>
+              <tr>
+                <td><strong>Periodo de revisión</strong></td>
+                <td><!-- TODO: confirmar periodo sugerido en el F21 del Estándar B --></td>
+              </tr>
+              <tr>
+                <td><strong>Clasificación SCIAN</strong></td>
+                <td>541510 — Servicios de diseño de sistemas de cómputo y servicios relacionados</td>
+              </tr>
+              <tr>
+                <td><strong>Grupo SINCO</strong></td>
+                <td>2271 — Desarrolladores y analistas de software y multimedia</td>
+              </tr>
+              <tr>
+                <td><strong>Ocupaciones asociadas</strong></td>
+                <td>Consultor de inteligencia artificial para MiPyMEs · Desarrollador de productos digitales con IA · Diseñador de soluciones de IA para negocios · Analista de sistemas · Asesor y consultor informático</td>
+              </tr>
+              <tr>
+                <td><strong>Modalidades de evaluación</strong></td>
+                <td>Presencial o remota</td>
+              </tr>
+              <tr>
+                <td><strong>Requisito de título profesional</strong></td>
+                <td>No requerido</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.4 MAPA FUNCIONAL ===== -->
+      <details class="accordion__item" id="mapa-funcional">
+        <summary>
+          <span class="accordion__num">1.4</span>
+          <span class="accordion__title-main">El mapa funcional del Estándar B</span>
+          <span class="accordion__meta">4 elementos · ciclo de innovación · 5 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>El mapa funcional del Estándar B se organiza como un <strong>ciclo de innovación orientada al usuario</strong>: cuatro pasos que van desde la investigación de necesidades hasta la validación del prototipo con personas reales. Los cuatro elementos son secuenciales y cada uno produce evidencias que alimentan al siguiente.</p>
+
+          <svg class="diagram" viewBox="0 0 980 320" role="img" aria-labelledby="svg-mapa-b-title svg-mapa-b-desc">
+            <title id="svg-mapa-b-title">Mapa funcional del Estándar B: ciclo de innovación con cuatro fases</title>
+            <desc id="svg-mapa-b-desc">El Estándar B se compone de cuatro elementos secuenciales: Investigar (Elemento 1), Conceptualizar (Elemento 2), Prototipar (Elemento 3) y Validar (Elemento 4). Forman el ciclo completo de desarrollo de productos y servicios con IA.</desc>
+            <defs>
+              <marker id="arrow-mapa-b" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+                <path d="M 0 0 L 12 6 L 0 12 z" fill="#28467e"/>
+              </marker>
+            </defs>
+
+            <!-- Elemento 1 · Investigar -->
+            <g transform="translate(20, 40)">
+              <rect width="200" height="220" rx="16" fill="#28467e" stroke="#f7c031" stroke-width="3"/>
+              <circle cx="36" cy="36" r="22" fill="#f7c031"/>
+              <text x="36" y="44" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800">1</text>
+              <text x="100" y="32" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em">INVESTIGAR</text>
+              <line x1="16" y1="66" x2="184" y2="66" stroke="rgba(247,192,49,0.4)" stroke-width="1"/>
+              <text x="100" y="96" text-anchor="middle" fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600">Necesidades del usuario</text>
+              <text x="100" y="114" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10">y oportunidades de mercado</text>
+              <text x="100" y="158" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">Escuchas · observas</text>
+              <text x="100" y="172" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">analizas el mercado</text>
+              <text x="100" y="186" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">y documentas hallazgos</text>
+            </g>
+
+            <!-- Flecha 1 → 2 -->
+            <line x1="230" y1="150" x2="255" y2="150" stroke="#28467e" stroke-width="3" marker-end="url(#arrow-mapa-b)"/>
+
+            <!-- Elemento 2 · Conceptualizar -->
+            <g transform="translate(265, 40)">
+              <rect width="200" height="220" rx="16" fill="#28467e" stroke="#f7c031" stroke-width="3"/>
+              <circle cx="36" cy="36" r="22" fill="#f7c031"/>
+              <text x="36" y="44" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800">2</text>
+              <text x="100" y="32" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em">CONCEPTUALIZAR</text>
+              <line x1="16" y1="66" x2="184" y2="66" stroke="rgba(247,192,49,0.4)" stroke-width="1"/>
+              <text x="100" y="96" text-anchor="middle" fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600">Soluciones de productos</text>
+              <text x="100" y="114" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10">y servicios con IA</text>
+              <text x="100" y="158" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">Defines el qué y el para qué</text>
+              <text x="100" y="172" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">seleccionas tecnologías</text>
+              <text x="100" y="186" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">y diseñas la solución</text>
+            </g>
+
+            <!-- Flecha 2 → 3 -->
+            <line x1="475" y1="150" x2="500" y2="150" stroke="#28467e" stroke-width="3" marker-end="url(#arrow-mapa-b)"/>
+
+            <!-- Elemento 3 · Prototipar -->
+            <g transform="translate(510, 40)">
+              <rect width="200" height="220" rx="16" fill="#1F4E8C" stroke="#f7c031" stroke-width="3"/>
+              <circle cx="36" cy="36" r="22" fill="#f7c031"/>
+              <text x="36" y="44" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800">3</text>
+              <text x="100" y="32" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em">PROTOTIPAR</text>
+              <line x1="16" y1="66" x2="184" y2="66" stroke="rgba(247,192,49,0.4)" stroke-width="1"/>
+              <text x="100" y="96" text-anchor="middle" fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600">Prototipo del producto</text>
+              <text x="100" y="114" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10">o servicio con IA</text>
+              <text x="100" y="158" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">Construyes algo tangible</text>
+              <text x="100" y="172" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">que pueda probarse</text>
+              <text x="100" y="186" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">con usuarios reales</text>
+            </g>
+
+            <!-- Flecha 3 → 4 -->
+            <line x1="720" y1="150" x2="745" y2="150" stroke="#28467e" stroke-width="3" marker-end="url(#arrow-mapa-b)"/>
+
+            <!-- Elemento 4 · Validar -->
+            <g transform="translate(755, 40)">
+              <rect width="205" height="220" rx="16" fill="#28467e" stroke="#f7c031" stroke-width="3"/>
+              <circle cx="36" cy="36" r="22" fill="#f7c031"/>
+              <text x="36" y="44" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800">4</text>
+              <text x="102" y="32" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em">VALIDAR</text>
+              <line x1="16" y1="66" x2="189" y2="66" stroke="rgba(247,192,49,0.4)" stroke-width="1"/>
+              <text x="102" y="96" text-anchor="middle" fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600">El prototipo con usuarios</text>
+              <text x="102" y="114" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10">mediante pruebas reales</text>
+              <text x="102" y="158" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">Pruebas con personas reales</text>
+              <text x="102" y="172" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">analizas resultados</text>
+              <text x="102" y="186" text-anchor="middle" fill="rgba(250,252,255,0.75)" font-family="Afacad, Inter, sans-serif" font-size="10">y generas recomendaciones</text>
+            </g>
+
+            <!-- Total -->
+            <text x="490" y="295" text-anchor="middle" fill="#4B5563" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700">Ciclo completo de innovación orientada al usuario con IA</text>
+          </svg>
+          <p class="diagram-caption">Los cuatro elementos son secuenciales y forman un ciclo de innovación completo: sin investigación no hay conceptualización sólida; sin prototipo no hay qué validar. Para la certificación debes demostrar los cuatro.</p>
+
+          <article class="process-step">
+            <div class="process-step__badge">1</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Elemento 1 — Identificar necesidades del usuario y oportunidades de mercado con IA en la MiPyME</h4>
+              <div class="process-step__body">Investigar, escuchar y documentar las necesidades reales de los usuarios y las oportunidades de mercado que una solución con IA podría atender. Este elemento es el punto de partida: si no entiendes el problema, no puedes diseñar la solución correcta. <a href="elemento-1.html">Ver Elemento 1 →</a></div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">2</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Elemento 2 — Conceptualizar soluciones de productos y servicios con IA en la MiPyME</h4>
+              <div class="process-step__body">Transformar los hallazgos de la investigación en una propuesta de solución concreta: definir qué hará el producto o servicio, qué tecnologías de IA utilizará, cómo se integrará en la operación de la MiPyME y cómo se diferenciará en el mercado. <a href="elemento-2.html">Ver Elemento 2 →</a></div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">3</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Elemento 3 — Desarrollar el prototipo de producto y servicio con IA en la MiPyME</h4>
+              <div class="process-step__body">Construir una versión funcional —aunque no final— de la solución conceptualizada. El prototipo debe ser lo suficientemente tangible para que usuarios reales puedan interactuar con él y dar retroalimentación significativa. <a href="elemento-3.html">Ver Elemento 3 →</a></div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">4</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Elemento 4 — Validar el prototipo del producto y servicio mediante usuarios con IA en la MiPyME</h4>
+              <div class="process-step__body">Llevar el prototipo a prueba con usuarios reales en el entorno de la MiPyME, recopilar evidencia de su funcionamiento y aceptación, analizar los resultados y generar recomendaciones concretas sobre si la solución es viable para su desarrollo final. <a href="elemento-4.html">Ver Elemento 4 →</a></div>
+            </div>
+          </article>
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">Importante</span>
+            <div class="callout__body">Los cuatro elementos del Estándar B son <strong>obligatorios</strong>. Cada uno se evalúa de manera integral (desempeños + productos + conocimientos + AHV). La persona competente en el Estándar B es quien demuestra los cuatro elementos en su totalidad. Si únicamente demuestras algunos, el dictamen será <em>Todavía no competente</em>.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.5 EL CASO TONALLI ===== -->
+      <details class="accordion__item" id="caso-tonalli">
+        <summary>
+          <span class="accordion__num">1.5</span>
+          <span class="accordion__title-main">Conoce a Artesanías Tonalli</span>
+          <span class="accordion__meta">Caso pedagógico transversal · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>A lo largo de este manual usaremos una MiPyME ficticia como hilo narrativo. El caso está diseñado para que puedas ver los conceptos del estándar aplicados a una situación real y representativa del tejido empresarial mexicano.</p>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Perfil de la empresa · Artesanías Tonalli</span>
+            <div class="callout__body">
+              <ul style="margin: 0; padding-left: 1.2em;">
+                <li><strong>Nombre:</strong> Artesanías Tonalli</li>
+                <li><strong>Ubicación:</strong> Comunidad alfarera, México</li>
+                <li><strong>Giro:</strong> Taller familiar de cerámica de barro bruñido artesanal</li>
+                <li><strong>Personas:</strong> 8 (artesanos + apoyo administrativo)</li>
+                <li><strong>Canales actuales:</strong> Venta directa a turistas en el taller + tiendas de decoración</li>
+                <li><strong>Reto central:</strong> Abrir un canal de venta en línea, pero cada pieza es única y diferente, lo que complica describir, fotografiar y posicionar el catálogo</li>
+              </ul>
+            </div>
+          </aside>
+
+          <h3>Las personas del caso</h3>
+
+          <p><strong>Lucía</strong> es la fundadora y maestra alfarera. Lleva más de veinte años perfeccionando la técnica del barro bruñido. Conoce cada pieza que sale del taller como si fuera única —porque lo es. Le preocupa que vender en línea signifique reducir sus piezas a descripciones genéricas que no capturen su valor real. Confía en el trabajo manual y quiere que cualquier herramienta nueva respete esa identidad.</p>
+
+          <p><strong>Diego</strong> es el sobrino de Lucía, recién egresado de diseño. Le entusiasma la idea de abrir el taller al mundo digital, pero sabe que hacerlo bien requiere algo más que subir fotos a una plataforma. Ha investigado algunas herramientas de IA y cree que podrían ayudar a generar las fichas de producto, pero nunca ha llevado ese proceso de principio a fin con usuarios reales.</p>
+
+          <h3>El proyecto que se desarrollará</h3>
+
+          <p>A lo largo del manual, seguirás a Lucía y Diego en el desarrollo de un <strong>asistente de IA que genera descripciones y fichas de producto a partir de fotografías de cada pieza</strong>. El asistente debe capturar las características visuales únicas de cada cerámica —forma, textura, tono, acabado— y convertirlas en textos que puedan usarse directamente en un catálogo en línea, sin que Lucía tenga que escribir cada descripción a mano.</p>
+
+          <p>Ese proyecto es el hilo que recorre los cuatro elementos del estándar:</p>
+
+          <ul>
+            <li><strong>Elemento 1 · Investigar:</strong> Lucía habla con sus clientes habituales —turistas, compradores de tiendas— para entender qué información buscan antes de comprar una pieza única y qué los hace decidirse o desistir.</li>
+            <li><strong>Elemento 2 · Conceptualizar:</strong> Diego facilita una sesión de ideación donde el equipo define qué debe hacer el asistente, qué tecnología de IA usarán, cómo se integraría al flujo de fotografiado del taller y cuál sería la experiencia del usuario final.</li>
+            <li><strong>Elemento 3 · Prototipar:</strong> Diego construye el primer prototipo funcional del asistente: un flujo que recibe una foto y devuelve una ficha de producto con descripción, materiales, dimensiones estimadas y sugerencia de precio.</li>
+            <li><strong>Elemento 4 · Validar:</strong> El equipo prueba el asistente con clientes reales que visitan el taller, recoge su retroalimentación, analiza los resultados y genera recomendaciones sobre si la solución está lista para adoptarse o necesita ajustes.</li>
+          </ul>
+
+          <p style="font-size:0.92rem;color:var(--color-gris-texto);font-style:italic;">El caso es ficticio, pero los retos son representativos. Muchos talleres artesanales mexicanos enfrentan exactamente esta paradoja: tienen productos únicos de alto valor que no saben cómo comunicar en los canales digitales donde sus compradores potenciales ya están buscando.</p>
+
+        </div>
+      </details>
+
+    </div>
+    </div>
+
+    <section id="siguiente">
+      <h2>¿Listo para empezar?</h2>
+      <p>El siguiente capítulo desarrolla el Elemento 1: identificar necesidades del usuario y oportunidades de mercado. Ahí encontrarás los desempeños, productos, conocimientos y AHV que se evaluarán en esta primera etapa del ciclo de innovación.</p>
+      <div class="hero-actions">
+        <a href="elemento-1.html" class="btn btn-primary">Continuar: Elemento 1 · Investigar →</a>
+        <a href="ruta-preparacion.html" class="btn btn-secondary">Ver ruta de preparación primero</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="footer-tag">Desarrollar con IA · Bienvenida</span>
+    </div>
+    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+  </div>
+</footer>
+
+</body>
+</html>

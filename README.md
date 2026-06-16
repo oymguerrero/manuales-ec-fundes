@@ -12,7 +12,7 @@ manuales-ec-fundes/
 │   ├── que-es.html                  Cap 2 · Qué es la certificación CONOCER
 │   ├── como-se-evalua.html          Cap 3 · Cómo se evalúa por evidencias
 │   ├── proceso.html                 Cap 4 · Proceso paso a paso (6 etapas)
-│   ├── cuatro-estandares.html       Cap 5 · Los 4 estándares + finder
+│   ├── es-para-ti.html              Cap 4 · Los 4 estándares + finder
 │   └── recursos.html                Cap 6 · FAQ, glosario y referencias
 ├── estandar-a/                      Manual del Estándar A
 │   ├── index.html                   Bienvenida + ficha técnica del Estándar A
@@ -67,7 +67,7 @@ Para una vista visual del proceso, abre `flujo-trabajo.html`.
 |---|---|---|
 | **Manual Maestro** | 6 capítulos · audios narrados · quizzes · diagramas SVG | Desarrollado |
 | **Estándar A — Implementación** | 3 elementos · 14 conocimientos · 13 productos · caso La Espiga | Desarrollado |
-| Estándar B — Productos y servicios | — | En desarrollo |
+| **Estándar B — Desarrollar con IA** | 4 elementos · 13 productos · 7 desempeños | Publicado |
 | Estándar C — Marketing digital | — | En desarrollo |
 | Estándar D — Transformación digital | — | En desarrollo |
 

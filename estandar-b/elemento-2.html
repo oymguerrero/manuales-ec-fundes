@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elemento 2 · Conceptualizar soluciones · Estándar B · Mi CompañIA</title>
+<meta name="description" content="Elemento 2 del Estándar B: conceptualizar soluciones de productos y servicios con IA. Ideación, modelo de negocio y diseño del prototipo con el caso Artesanías Tonalli." />
+<link rel="icon" type="image/png" href="../img/logo.png" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/interactive.js" defer></script>
+</head>
+<body>
+
+<!--
+  Fuente: contenido fuente proporcionado directamente (2026-06-15)
+  Última revisión contra fuente: 2026-06-15
+  Caso pedagógico: Artesanías Tonalli (Lucía + Diego)
+-->
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="brand-text">Mi CompañIA</span>
+    </a>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../maestro/index.html">Curso introductorio</a>
+      <a href="index.html">Desarrollar con IA</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="sub-nav" aria-label="Capítulos del Manual del Estándar B">
+  <div class="container">
+    <span class="sub-nav__label">Desarrollar con IA</span>
+    <a href="index.html">Inicio</a>
+    <a href="elemento-1.html">Elemento 1</a>
+    <a href="elemento-2.html" class="active">Elemento 2</a>
+    <a href="elemento-3.html">Elemento 3</a>
+    <a href="elemento-4.html">Elemento 4</a>
+    <a href="instrumento.html">Instrumento</a>
+    <a href="ruta-preparacion.html">Ruta de preparación</a>
+    <a href="recursos.html">FAQ y recursos</a>
+  </div>
+</nav>
+
+<div class="maestro-progress" aria-label="Progreso del Manual de Desarrollar con IA">
+  <div class="container">
+    <span class="maestro-progress__label">Capítulo 3 de 8 · Elemento 2 · Conceptualizar</span>
+    <div class="maestro-progress__bar" role="presentation">
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--current"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Capítulo 3 · De los hallazgos a la solución</div>
+    <h1>Elemento 2 — Conceptualizar soluciones de productos y servicios con <span class="ia">IA</span></h1>
+    <p>Con las necesidades y oportunidades claras del Elemento 1, este elemento traduce los hallazgos en un concepto de solución. Es la fase creativa y estratégica: ideación, definición de la propuesta de valor y modelado del negocio.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <a class="back-link" href="elemento-1.html">Volver al Elemento 1</a>
+
+    <div class="lesson-tabs" data-progress-key="estandar-b-elemento-2">
+    <div class="accordion accordion--modules" aria-label="Módulos del Elemento 2">
+
+      <!-- ===== 3.1 QUÉ HARÁS ===== -->
+      <details class="accordion__item" id="que-haras" open>
+        <summary>
+          <span class="accordion__num">3.1</span>
+          <span class="accordion__title-main">Qué harás en este elemento</span>
+          <span class="accordion__meta">De hallazgos a concepto · 4 pasos · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <ol>
+            <li><strong>Facilitar una sesión de ideación con el cliente/usuario:</strong> presentar hallazgos del Elemento 1, guiar la generación de ideas con metodologías (Design Thinking, SCAMPER, Crazy 8s), usar herramientas de IA para ampliar posibilidades.</li>
+            <li><strong>Construir y validar la matriz de ideas:</strong> clasificar por novedad, utilidad y factibilidad; seleccionar con el cliente la idea a desarrollar.</li>
+            <li><strong>Documentar el modelo de negocio:</strong> usar Business Model Canvas o Lean Canvas para estructurar cómo la solución crea, entrega y captura valor.</li>
+            <li><strong>Diseñar el modelo de funcionamiento del prototipo:</strong> definir funcionalidades, datos de entrada/salida, arquitectura, flujos de interacción y requerimientos técnicos.</li>
+          </ol>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Tonalli · Elemento 2 — Diego facilita la sesión de ideación</span>
+            <div class="callout__body">Diego reúne a Lucía y Rosa (quien maneja las redes) para una sesión de 2 horas. Usan ChatGPT como apoyo y generan 12 ideas. La pregunta detonadora acordada: "¿Cómo podría Tonalli describir cada pieza única en menos de 2 minutos sin que Lucía intervenga?" Seleccionan la idea ganadora: un asistente IA que genera ficha de producto a partir de una foto tomada con el celular.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.2 CÓMO TE EVALUARÁN ===== -->
+      <details class="accordion__item" id="como-evaluan">
+        <summary>
+          <span class="accordion__num">3.2</span>
+          <span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+          <span class="accordion__meta">2 desempeños · 3 productos · 2 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Tipo de evidencia</th>
+                <th>Cantidad</th>
+                <th>Cómo se valora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Desempeños observables</strong></td>
+                <td>2 desempeños</td>
+                <td>El evaluador observa la sesión de ideación y la sesión de presentación de propuesta de prototipo.</td>
+              </tr>
+              <tr>
+                <td><strong>Productos entregables</strong></td>
+                <td>3 productos</td>
+                <td>El evaluador revisa los productos contra los criterios del F21.</td>
+              </tr>
+              <tr>
+                <td><strong>Conocimientos</strong></td>
+                <td>3 áreas (Conocimiento y Comprensión)</td>
+                <td>Cuestionario de dominio aplicado.</td>
+              </tr>
+              <tr>
+                <td><strong>Actitudes, hábitos y valores</strong></td>
+                <td>1 (Iniciativa)</td>
+                <td>Se observa durante los desempeños.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Para tener presente</span>
+            <div class="callout__body">Los desempeños de este elemento tienen mayor peso observacional que los del Elemento 1. La sesión de ideación y la sesión de presentación son observadas en vivo por el evaluador. Practica con un colega antes de tu evaluación.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.3 LOS DESEMPEÑOS ===== -->
+      <details class="accordion__item" id="desempenos">
+        <summary>
+          <span class="accordion__num">3.3</span>
+          <span class="accordion__title-main">Los desempeños del Elemento 2</span>
+          <span class="accordion__meta">2 desempeños · 15 características · 10 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <h3>Desempeño 2.1 · Facilita la sesión de ideación de soluciones con el cliente/usuario mediante IA</h3>
+          <p>El evaluador observará cómo conduces una sesión de ideación completa con el cliente. Este desempeño tiene 11 características — es el más extenso del Estándar B:</p>
+
+          <div class="tabs">
+            <div class="tabs__list" role="tablist" aria-label="Características del Desempeño 2.1">
+              <button class="tabs__tab" role="tab" id="tab-e2d1a" aria-controls="panel-e2d1a" aria-selected="true">A · Presentación</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1b" aria-controls="panel-e2d1b" aria-selected="false" tabindex="-1">B · Objetivo</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1c" aria-controls="panel-e2d1c" aria-selected="false" tabindex="-1">C · Metodología</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1d" aria-controls="panel-e2d1d" aria-selected="false" tabindex="-1">D · Hallazgos</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1e" aria-controls="panel-e2d1e" aria-selected="false" tabindex="-1">E · Preguntas abiertas</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1f" aria-controls="panel-e2d1f" aria-selected="false" tabindex="-1">F · Herramientas IA</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1g" aria-controls="panel-e2d1g" aria-selected="false" tabindex="-1">G · Pregunta generadora</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1h" aria-controls="panel-e2d1h" aria-selected="false" tabindex="-1">H · Primeras ideas</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1i" aria-controls="panel-e2d1i" aria-selected="false" tabindex="-1">I · Ampliar ideas</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1j" aria-controls="panel-e2d1j" aria-selected="false" tabindex="-1">J · Clasificación</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d1k" aria-controls="panel-e2d1k" aria-selected="false" tabindex="-1">K · Selección</button>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1a" role="tabpanel" aria-labelledby="tab-e2d1a">
+              <h4>A · Presentación</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Presentándose ante cliente/usuario al mencionar su nombre completo y su rol como consultor/asesor/desarrollador de productos y servicios con IA."</em></p>
+              <p><strong>Qué significa:</strong> Establece credibilidad desde el inicio. El cliente y el evaluador saben exactamente quién eres y qué rol juegas en este proceso.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1b" role="tabpanel" aria-labelledby="tab-e2d1b" hidden>
+              <h4>B · Objetivo de la sesión</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Presentando el objetivo de la sesión."</em></p>
+              <p><strong>Qué significa:</strong> El cliente sabe por qué está ahí y qué se logrará. No llegues a improvisar — enuncia el objetivo de manera precisa al inicio.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1c" role="tabpanel" aria-labelledby="tab-e2d1c" hidden>
+              <h4>C · Metodología de ideación</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Presentando al cliente la metodología a utilizar para la ideación."</em></p>
+              <p><strong>Qué significa:</strong> No improvises la sesión — preséntala como un proceso con lógica. Explica brevemente qué técnica usarás (Design Thinking, SCAMPER, Crazy 8s) y por qué es adecuada para este contexto.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1d" role="tabpanel" aria-labelledby="tab-e2d1d" hidden>
+              <h4>D · Exposición de hallazgos</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Exponiendo los problemas u oportunidades detectadas durante el diagnóstico."</em></p>
+              <p><strong>Qué significa:</strong> Conectas la ideación con los hallazgos del Elemento 1. La sesión no empieza desde cero — arranca desde la evidencia que ya recopilaste con el cliente.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1e" role="tabpanel" aria-labelledby="tab-e2d1e" hidden>
+              <h4>E · Preguntas abiertas</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Realizando preguntas abiertas que faciliten la generación de ideas."</em></p>
+              <p><strong>Qué significa:</strong> La calidad de las ideas depende de la calidad de las preguntas. Prepara preguntas que amplíen el pensamiento del cliente, no que lo limiten a lo que ya conoce.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1f" role="tabpanel" aria-labelledby="tab-e2d1f" hidden>
+              <h4>F · Herramientas de IA para ideación</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Utilizando herramientas/plataformas/aplicaciones/prompts para ideación de preguntas."</em></p>
+              <p><strong>Qué significa:</strong> Usas IA como amplificador creativo, no como sustituto del cliente. La herramienta enriquece la conversación; quien genera y valida las ideas sigue siendo el equipo humano.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1g" role="tabpanel" aria-labelledby="tab-e2d1g" hidden>
+              <h4>G · Pregunta generadora acordada</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Acordando con los asistentes una pregunta generadora orientada a resolver la necesidad."</em></p>
+              <p><strong>Qué significa:</strong> La sesión converge en una pregunta detonadora elegida colectivamente. No es una pregunta que tú impones — es una que todos acuerdan como el foco central de la ideación.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1h" role="tabpanel" aria-labelledby="tab-e2d1h" hidden>
+              <h4>H · Construcción colaborativa de ideas</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Construyendo con los asistentes las primeras ideas."</em></p>
+              <p><strong>Qué significa:</strong> Es construcción colaborativa, no propuesta unilateral del consultor. El evaluador observará que las ideas emergen del diálogo, no de tu presentación previa.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1i" role="tabpanel" aria-labelledby="tab-e2d1i" hidden>
+              <h4>I · Ampliar con IA</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Ampliando el alcance de la ideación mediante herramientas/plataformas/aplicaciones/prompts."</em></p>
+              <p><strong>Qué significa:</strong> La IA enriquece y diversifica las ideas generadas humanamente. Después de la ronda inicial de ideas, usas IA para identificar variantes, combinaciones o ángulos que el grupo no consideró.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1j" role="tabpanel" aria-labelledby="tab-e2d1j" hidden>
+              <h4>J · Clasificación de ideas</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Clasificando verbalmente/por escrito las ideas en categorías de resultados."</em></p>
+              <p><strong>Qué significa:</strong> La sesión cierra con orden, no con una lista caótica. Clasifica las ideas en categorías que permitan al cliente comparar y decidir con claridad.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d1k" role="tabpanel" aria-labelledby="tab-e2d1k" hidden>
+              <h4>K · Selección con el cliente</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Seleccionando las ideas que favorezcan una solución orientada a satisfacer la necesidad o resolver el problema del cliente."</em></p>
+              <p><strong>Qué significa:</strong> El cliente elige, no el consultor. Tu rol es facilitar la decisión con criterios claros (novedad, utilidad, factibilidad), no imponer la solución que tú prefieres.</p>
+            </div>
+          </div>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Tonalli · Desempeño 2.1</span>
+            <div class="callout__body">Diego se presenta y enuncia el objetivo. Presenta el hallazgo central del Elemento 1: 5 de 5 compradores en línea no comprarían una pieza sin descripción. La pregunta generadora acordada: "¿Cómo podría Tonalli describir cada pieza única en menos de 2 minutos sin que Lucía intervenga?" Usa ChatGPT para ampliar las 6 ideas iniciales a 12. Clasifican en 3 categorías. Lucía y Rosa seleccionan la #3: asistente IA con foto → ficha en 90 segundos.</div>
+          </aside>
+
+          <h3>Desempeño 2.2 · Facilita la sesión de presentación de propuesta del prototipo</h3>
+          <p>Después de la sesión de ideación y de construir el modelo de negocio y el diseño de funcionamiento, presentas la propuesta del prototipo para validación del cliente. 4 características:</p>
+
+          <div class="tabs">
+            <div class="tabs__list" role="tablist" aria-label="Características del Desempeño 2.2">
+              <button class="tabs__tab" role="tab" id="tab-e2d2a" aria-controls="panel-e2d2a" aria-selected="true">A · Objetivo</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d2b" aria-controls="panel-e2d2b" aria-selected="false" tabindex="-1">B · Características técnicas</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d2c" aria-controls="panel-e2d2c" aria-selected="false" tabindex="-1">C · Propuesta económica</button>
+              <button class="tabs__tab" role="tab" id="tab-e2d2d" aria-controls="panel-e2d2d" aria-selected="false" tabindex="-1">D · Visto bueno</button>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d2a" role="tabpanel" aria-labelledby="tab-e2d2a">
+              <h4>A · Objetivo de la sesión</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Presentando el objetivo de la sesión."</em></p>
+              <p><strong>Qué significa:</strong> El cliente sabe que viene a revisar y aprobar, no a escuchar. Enuncia el objetivo con claridad: "Hoy te presento la propuesta del prototipo para que la revises y me des tu visto bueno antes de que empiece a construirlo."</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d2b" role="tabpanel" aria-labelledby="tab-e2d2b" hidden>
+              <h4>B · Características técnicas y funcionales</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Exponiendo las características técnicas y funcionales de la propuesta del prototipo."</em></p>
+              <p><strong>Qué significa:</strong> Explicas QUÉ hace el prototipo, con qué herramienta de IA, cómo funciona, qué produce. En lenguaje accesible para el cliente, no en jerga técnica.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d2c" role="tabpanel" aria-labelledby="tab-e2d2c" hidden>
+              <h4>C · Propuesta económica</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Validando la propuesta económica del prototipo con el cliente."</em></p>
+              <p><strong>Qué significa:</strong> Hay un costo de desarrollo y el cliente debe estar de acuerdo antes de seguir. Presenta el desglose: horas de desarrollo, costos de herramientas, costo de operación mensual.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e2d2d" role="tabpanel" aria-labelledby="tab-e2d2d" hidden>
+              <h4>D · Retroalimentación y visto bueno</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Solicitando retroalimentación y visto bueno verbal/por escrito para el desarrollo del prototipo."</em></p>
+              <p><strong>Qué significa:</strong> No construyes sin aprobación explícita del cliente. El visto bueno puede ser verbal (y documentado en el acta de reunión) o por escrito. Sin este paso, el Elemento 3 no tiene sustento.</p>
+            </div>
+          </div>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Tonalli · Desempeño 2.2</span>
+            <div class="callout__body">Diego presenta una propuesta de 2 páginas: qué hace el asistente (foto → ficha en 90 segundos), herramienta elegida (GPT-4V vía API), costo de desarrollo (20 horas de Diego + $15 USD/mes de API), y el visto bueno que firma Lucía antes de que él empiece a construir el prototipo.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.4 LOS PRODUCTOS ===== -->
+      <details class="accordion__item" id="productos">
+        <summary>
+          <span class="accordion__num">3.4</span>
+          <span class="accordion__title-main">Los productos del Elemento 2</span>
+          <span class="accordion__meta">3 productos documentales · criterios F21 · 10 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <h3>Producto 2.1 · Informe del proceso de ideación documentado</h3>
+
+          <ul>
+            <li>a) Preguntas generadoras de ideas formuladas a partir del problema priorizado.</li>
+            <li>b) Preguntas sobre oportunidades de mejora o innovación en procesos, productos/servicios.</li>
+            <li>c) La/s pregunta/s detonadora/s seleccionadas para la generación de ideas.</li>
+            <li>d) Técnicas de ideación utilizadas.</li>
+            <li>e) Ideas obtenidas a partir de las preguntas generadoras.</li>
+            <li>f) Reformulación de las ideas que facilitan/impulsan la generación de soluciones.</li>
+            <li>g) Herramientas y prompts utilizados en la sesión.</li>
+            <li>h) Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+          </ul>
+
+          <h3>Producto 2.2 · Matriz de ideas de solución validada por el cliente/usuario</h3>
+
+          <ul>
+            <li>a) Listado de ideas generadas durante el proceso de ideación.</li>
+            <li>b) Descripción breve de cada idea de producto o servicio propuesto.</li>
+            <li>c) Clasificación preliminar por criterios de novedad, utilidad y factibilidad.</li>
+            <li>d) Oportunidades de implementación de tecnologías digitales/IA identificadas y validadas por el cliente.</li>
+            <li>e) La/s idea/s seleccionada/s por el cliente.</li>
+            <li>f) Formato de matriz/tabla de análisis, digital/físico, redacción clara.</li>
+          </ul>
+
+          <h3>Producto 2.3 · Modelo de negocio documentado</h3>
+
+          <p>Este producto tiene dos partes: el modelo de negocio (literales a-i) y el diseño del modelo de funcionamiento del prototipo (literales j-v). Son 22 criterios en total — el más extenso del Estándar B.</p>
+
+          <h4>Modelo de negocio (criterios a-i)</h4>
+          <ul>
+            <li>a) Descripción del valor diferencial de la idea respecto a soluciones convencionales.</li>
+            <li>b) Propuesta de valor comercial en el contexto de la MiPyME, en una frase.</li>
+            <li>c) Segmentos de clientes descritos.</li>
+            <li>d) Formas de relación con el cliente y canales de comunicación/distribución.</li>
+            <li>e) Recursos y actividades clave necesarias para la operación.</li>
+            <li>f) Fuentes de ingresos asociadas al producto o servicio.</li>
+            <li>g) Costos de desarrollo, operación y mantenimiento.</li>
+            <li>h) Alianzas clave para la operación y desarrollo.</li>
+            <li>i) Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+          </ul>
+
+          <h4>Diseño del modelo de funcionamiento del prototipo (criterios j-v)</h4>
+          <ul>
+            <li>j) Funcionalidades clave del prototipo de la solución propuesta.</li>
+            <li>k) Definición de datos de entrada requeridos y resultados esperados del componente de IA.</li>
+            <li>l) Herramientas/plataformas de IA aplicables al desarrollo del prototipo.</li>
+            <li>m) Justificación de la selección de herramientas/plataformas alineadas a necesidades y recursos de la MiPyME.</li>
+            <li>n) Flujos de interacción de usuario con el prototipo.</li>
+            <li>o) Arquitectura del prototipo.</li>
+            <li>p) Representación visual y descripción de requerimientos de diseño gráfico.</li>
+            <li>q) Costos de desarrollo y operación del prototipo.</li>
+            <li>r) Requerimientos técnicos mínimos para la operación en el contexto de la MiPyME.</li>
+            <li>s) Consideraciones de protección de datos personales y uso ético de IA.</li>
+            <li>t) Consideraciones de propiedad intelectual aplicables al producto.</li>
+            <li>u) Términos de servicio de las herramientas de IA utilizadas y legislación mexicana de derecho de autor.</li>
+            <li>v) Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+          </ul>
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">Requisito taxativo</span>
+            <div class="callout__body">El Producto 2.3 incluye consideraciones de protección de datos personales y uso ético de IA (criterio s) y de propiedad intelectual (criterio t). Estos criterios son frecuentemente omitidos. El evaluador los busca activamente.</div>
+          </aside>
+
+          <h3>Decide rápido · ¿Esta descripción tiene modelo de negocio o le falta algo crítico?</h3>
+          <p>Lucía y Diego generaron varias ideas en la sesión. Para cada una, decide si cumple el criterio del F21 para modelo de negocio (propuesta de valor + segmento + ingreso) o si le falta algo esencial.</p>
+
+          <div class="swipe-decide" data-storage-key="eb2-modelo-negocio-tonalli" data-left-label="No cumple" data-right-label="Cumple">
+            <script type="application/json" class="swipe-decide__data">
+            [
+              {
+                "text": "Idea A: Asistente IA que genera fichas de producto a partir de una foto tomada con el celular. La compran tiendas en línea de artesanías que hoy pierden ventas por descripciones pobres. El ingreso viene de suscripción mensual por taller.",
+                "answer": "right",
+                "explain": "CUMPLE. Segmento claro (tiendas en línea de artesanías), propuesta de valor diferencial (descripciones automáticas que reducen pérdida de ventas), y fuente de ingreso definida (suscripción mensual)."
+              },
+              {
+                "text": "Idea B: Una app que usa IA para recomendar piezas de cerámica a compradores según sus gustos. Sería muy útil para los artesanos.",
+                "answer": "left",
+                "explain": "NO CUMPLE. No define quién paga, no especifica la propuesta de valor diferencial frente a los recomendadores que ya existen, y no tiene fuente de ingreso. 'Muy útil' no es modelo de negocio."
+              },
+              {
+                "text": "Idea C: Servicio de generación de contenido para redes sociales. Diego toma fotos y un modelo de IA genera 5 publicaciones listas para Instagram y Facebook. Lucía paga $800 MXN al mes. Propuesta de valor: consistencia de contenido sin contratar un community manager.",
+                "answer": "right",
+                "explain": "CUMPLE. Segmento definido (talleres sin presupuesto para community manager), propuesta de valor clara (consistencia de contenido a bajo costo), ingreso recurrente mensual. Modelo simple pero completo."
+              },
+              {
+                "text": "Idea D: Chatbot de WhatsApp que responde preguntas de clientes sobre los productos de Tonalli. Lucía está convencida de que va a funcionar.",
+                "answer": "left",
+                "explain": "NO CUMPLE. No hay propuesta de valor explícita, no hay fuente de ingreso definida, ni diseño del funcionamiento. La convicción de Lucía es un buen punto de partida, pero no es un modelo de negocio."
+              },
+              {
+                "text": "Idea E: Plataforma de catálogo digital para artesanos de la comunidad. Los artesanos pagan $200 MXN/mes para publicar con descripciones generadas por IA. Los compradores acceden gratis. Para artesanos: presencia digital sin saber de tecnología. Para compradores: catálogo autenticado de artesanía original.",
+                "answer": "right",
+                "explain": "CUMPLE con solidez. Dos segmentos definidos, propuesta de valor diferenciada para cada uno, y modelo de ingreso claro. Es el nivel de detalle que busca el evaluador en el Producto 2.3."
+              },
+              {
+                "text": "Idea F: Diego propone usar IA generativa para crear diseños nuevos de cerámica inspirados en los patrones tradicionales, para venderlos como NFTs a coleccionistas internacionales.",
+                "answer": "left",
+                "explain": "NO CUMPLE en el contexto del F21. La idea no está validada con el cliente, no hay fuente de ingreso probada, y la viabilidad para una MiPyME de 8 personas es cuestionable. El F21 pide que el modelo sea pertinente al contexto de la empresa."
+              }
+            ]
+            </script>
+          </div>
+
+          <h3>¿Qué tanto ya sabes de estos conocimientos? Voltea y comprueba.</h3>
+          <p>Estos tres marcos conceptuales sustentan tu trabajo en el Elemento 2. Márcalos honestamente.</p>
+
+          <div class="flashcard-deck" data-storage-key="eb2-conocimientos">
+            <script type="application/json" class="flashcard-deck__data">
+            [
+              {
+                "front": "Preparación de sesiones con clientes\n\n¿Qué incluye y para qué sirve?",
+                "back": "Incluye: definición del objetivo de la sesión, selección de participantes, diseño de la agenda con tiempos, materiales de apoyo (guías, lienzos, prototipos), y criterios para validar que la sesión fue productiva. Sirve para que el evaluador observe que las sesiones no fueron improvisadas sino conducidas con método."
+              },
+              {
+                "front": "Metodologías y técnicas de ideación\n\n¿Cuáles debes dominar y cuándo aplica cada una?",
+                "back": "Técnicas clave del F21: Design Thinking (empatía → definir → idear → prototipar → testear), Lean Startup (construir → medir → aprender), Crazy 8s, SCAMPER. Aplica Design Thinking cuando el problema no está bien definido. Aplica Lean Startup cuando ya tienes hipótesis y quieres validarlas rápido con mínimo recurso."
+              },
+              {
+                "front": "Modelo de negocio: BMC, Lean Canvas y propuesta de valor\n\n¿En qué se diferencian y cuándo usar cada uno?",
+                "back": "BMC (Business Model Canvas): describe el modelo completo en 9 bloques. Lean Canvas: adapta el BMC para soluciones nuevas — reemplaza socios/actividades/recursos por problema/solución/métricas/ventaja injusta. Para el Estándar B, el Lean Canvas es el más útil porque la solución es nueva y aún no está validada."
+              }
+            ]
+            </script>
+          </div>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.5 LOS CONOCIMIENTOS ===== -->
+      <details class="accordion__item" id="conocimientos">
+        <summary>
+          <span class="accordion__num">3.5</span>
+          <span class="accordion__title-main">Los conocimientos del Elemento 2</span>
+          <span class="accordion__meta">3 áreas · Conocimiento y Comprensión · 5 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Área de conocimiento</th>
+                <th>Nivel</th>
+                <th>Lo que debes poder hacer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Preparación de sesiones con clientes</td>
+                <td>Conocimiento</td>
+                <td>Describir los componentes de una agenda de sesión efectiva con clientes en contexto de innovación con IA.</td>
+              </tr>
+              <tr>
+                <td>Metodologías/técnicas de ideación</td>
+                <td>Comprensión</td>
+                <td>Explicar las diferencias entre metodologías y seleccionar la más adecuada para el contexto de la MiPyME.</td>
+              </tr>
+              <tr>
+                <td>Modelo de negocio: Business Model Canvas, Lean Canvas, propuesta de valor</td>
+                <td>Comprensión</td>
+                <td>Aplicar el BMC o Lean Canvas para estructurar el modelo de la solución propuesta y articular la propuesta de valor en una frase.</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.6 AHV ===== -->
+      <details class="accordion__item" id="ahv">
+        <summary>
+          <span class="accordion__num">3.6</span>
+          <span class="accordion__title-main">Las actitudes, hábitos y valores del Elemento 2</span>
+          <span class="accordion__meta">AHV · Iniciativa · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>Este elemento evalúa una sola AHV: <strong>Iniciativa</strong>.</p>
+
+          <p><em><strong>Definición del F21:</strong> "La manera en que propone alternativas de solución y herramientas adecuadas al cliente y al contexto de la MiPyME."</em></p>
+
+          <p>La Iniciativa no es imponer ideas — es proponer con pertinencia. Cuando el cliente se atasca en la sesión de ideación, tú aportas una perspectiva nueva que desbloquea la conversación. Cuando la primera herramienta de IA no es accesible para la MiPyME, propones una alternativa realista.</p>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Cómo demostrar Iniciativa al evaluador</span>
+            <div class="callout__body">Cuando el cliente no genera ideas, usa un prompt de IA para proponer 5 ideas adicionales y pide al cliente que las evalúe. Cuando el modelo de negocio tiene un hueco (sin fuente de ingreso clara), propón activamente 3 opciones y facilita la decisión del cliente — no esperes a que él lo resuelva solo.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.7 GLOSARIO ===== -->
+      <details class="accordion__item" id="glosario">
+        <summary>
+          <span class="accordion__num">3.7</span>
+          <span class="accordion__title-main">Glosario operativo del Elemento 2</span>
+          <span class="accordion__meta">7 términos del F21 · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Término</th>
+                <th>Definición conforme al F21</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Arquitectura del prototipo</strong></td>
+                <td>Estructura técnica que describe los componentes, flujos de datos, integraciones y lógica de funcionamiento de una solución tecnológica propuesta.</td>
+              </tr>
+              <tr>
+                <td><strong>Flujo de interacción</strong></td>
+                <td>Secuencia de pasos que describe cómo el usuario interactúa con el prototipo o solución, desde el inicio hasta la obtención del resultado esperado.</td>
+              </tr>
+              <tr>
+                <td><strong>Ideación</strong></td>
+                <td>Proceso creativo y estructurado de generación de ideas orientadas a resolver un problema o aprovechar una oportunidad identificada.</td>
+              </tr>
+              <tr>
+                <td><strong>Modelo de negocio</strong></td>
+                <td>Representación de cómo una empresa crea, entrega y captura valor: propuesta de valor, segmentos de clientes, canales, fuentes de ingresos, recursos y actividades clave.</td>
+              </tr>
+              <tr>
+                <td><strong>Pregunta generadora</strong></td>
+                <td>Formulación de preguntas abiertas diseñadas para estimular la generación de ideas y explorar posibles soluciones.</td>
+              </tr>
+              <tr>
+                <td><strong>Propuesta de valor</strong></td>
+                <td>Descripción del beneficio diferenciado que un producto o servicio ofrece al cliente, explicando por qué debería elegirlo sobre las alternativas.</td>
+              </tr>
+              <tr>
+                <td><strong>Prototipo</strong></td>
+                <td>Versión preliminar de un producto o servicio que permite visualizar, probar y validar una solución antes de su desarrollo completo.</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+    </div>
+    </div>
+
+    <div class="lesson-nav" style="display:flex; justify-content:space-between; margin-top:2rem;">
+      <a href="elemento-1.html" class="btn btn-secondary">Anterior · Elemento 1</a>
+      <a href="elemento-3.html" class="btn btn-primary">Siguiente · Elemento 3</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="footer-tag">Desarrollar con IA · Elemento 2 · Conceptualizar</span>
+    </div>
+    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+  </div>
+</footer>
+
+</body>
+</html>

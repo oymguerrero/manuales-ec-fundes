@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elemento 3 · Desarrollar el prototipo · Estándar B · Mi CompañIA</title>
+<meta name="description" content="Elemento 3 del Estándar B: desarrollar el prototipo funcional de la solución con herramientas de IA, presentarlo al cliente y realizar una prueba funcional con un caso de uso real." />
+<link rel="icon" type="image/png" href="../img/logo.png" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/interactive.js" defer></script>
+</head>
+<body>
+
+<!--
+  Fuente: contenido fuente proporcionado directamente (2026-06-15)
+  Última revisión contra fuente: 2026-06-15
+  Caso pedagógico: Artesanías Tonalli (Lucía + Diego)
+-->
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="brand-text">Mi CompañIA</span>
+    </a>
+    <nav>
+      <a href="../index.html">Inicio</a>
+      <a href="../maestro/index.html">Curso introductorio</a>
+      <a href="index.html">Desarrollar con IA</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="sub-nav" aria-label="Capítulos del Manual del Estándar B">
+  <div class="container">
+    <span class="sub-nav__label">Desarrollar con IA</span>
+    <a href="index.html">Inicio</a>
+    <a href="elemento-1.html">Elemento 1</a>
+    <a href="elemento-2.html">Elemento 2</a>
+    <a href="elemento-3.html" class="active">Elemento 3</a>
+    <a href="elemento-4.html">Elemento 4</a>
+    <a href="instrumento.html">Instrumento</a>
+    <a href="ruta-preparacion.html">Ruta de preparación</a>
+    <a href="recursos.html">FAQ y recursos</a>
+  </div>
+</nav>
+
+<div class="maestro-progress" aria-label="Progreso del Manual de Desarrollar con IA">
+  <div class="container">
+    <span class="maestro-progress__label">Capítulo 4 de 8 · Elemento 3 · Desarrollar</span>
+    <div class="maestro-progress__bar" role="presentation">
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--current"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Capítulo 4 · Del concepto al prototipo funcional</div>
+    <h1>Elemento 3 — Desarrollar el prototipo de producto y servicio con <span class="ia">IA</span></h1>
+    <p>Aquí el concepto se vuelve tangible. El consultor construye un prototipo funcional de la solución con herramientas de IA, lo presenta al cliente y realiza una prueba funcional con un caso de uso real.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <a class="back-link" href="elemento-2.html">Volver al Elemento 2</a>
+
+    <div class="lesson-tabs" data-progress-key="estandar-b-elemento-3">
+    <div class="accordion accordion--modules" aria-label="Módulos del Elemento 3">
+
+      <!-- ===== 4.1 QUÉ HARÁS ===== -->
+      <details class="accordion__item" id="que-haras" open>
+        <summary>
+          <span class="accordion__num">4.1</span>
+          <span class="accordion__title-main">Qué harás en este elemento</span>
+          <span class="accordion__meta">Del concepto al prototipo funcional · 3 pasos · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <ol>
+            <li><strong>Construir el prototipo funcional:</strong> usar las herramientas/plataformas de IA seleccionadas en el Elemento 2 para construir una versión operativa de la solución que procese datos reales y produzca resultados verificables.</li>
+            <li><strong>Presentar el prototipo al cliente:</strong> describir la problemática, la solución propuesta, la operación técnica, los casos de uso y los requerimientos. Recoger retroalimentación y acordar el plan de experimentación.</li>
+            <li><strong>Realizar una prueba funcional con un caso de uso:</strong> ejecutar el prototipo con datos reales, registrar resultados, comparar con el diseño, documentar fallas/limitaciones y acordar ajustes con el cliente.</li>
+          </ol>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Tonalli · Elemento 3 — Diego construye el asistente</span>
+            <div class="callout__body">Diego toma las especificaciones del Elemento 2 y construye en 2 semanas el asistente IA: un flujo donde Lucía o Rosa fotografían una pieza con el celular, la imagen se procesa con GPT-4V con un prompt diseñado por Diego, y el sistema genera: nombre artesanal sugerido, técnica (barro bruñido), medidas aproximadas, y descripción de 3 párrafos lista para publicar. Lo presenta a Lucía con 3 ejemplos en vivo. Registran que el tiempo promedio es 90 segundos por pieza. La retroalimentación de Lucía: "la descripción menciona 'lustre metálico' y eso es perfecto, pero a veces inventa colores que no tiene la pieza".</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 4.2 CÓMO TE EVALUARÁN ===== -->
+      <details class="accordion__item" id="como-evaluan">
+        <summary>
+          <span class="accordion__num">4.2</span>
+          <span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+          <span class="accordion__meta">2 desempeños · 2 productos · 2 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Tipo de evidencia</th>
+                <th>Cantidad</th>
+                <th>Cómo se valora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Desempeños observables</strong></td>
+                <td>2 desempeños</td>
+                <td>El evaluador observa la presentación del prototipo y la prueba funcional en vivo.</td>
+              </tr>
+              <tr>
+                <td><strong>Productos entregables</strong></td>
+                <td>2 productos</td>
+                <td>El evaluador revisa los productos contra los criterios del F21.</td>
+              </tr>
+              <tr>
+                <td><strong>Conocimientos</strong></td>
+                <td>5 áreas (Conocimiento y Comprensión)</td>
+                <td>Cuestionario de dominio aplicado.</td>
+              </tr>
+              <tr>
+                <td><strong>Actitudes, hábitos y valores</strong></td>
+                <td>1 (Responsabilidad)</td>
+                <td>Se observa durante los desempeños.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Para tener presente</span>
+            <div class="callout__body">En este elemento, los desempeños son observados en tiempo real. El evaluador verá cómo presentas el prototipo y cómo ejecutas la prueba funcional. El AHV Responsabilidad se evalúa precisamente en ese momento — el evaluador observa si presentas el prototipo cumpliendo íntegramente los requisitos de calidad descritos en el diseño.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 4.3 LOS DESEMPEÑOS ===== -->
+      <details class="accordion__item" id="desempenos">
+        <summary>
+          <span class="accordion__num">4.3</span>
+          <span class="accordion__title-main">Los desempeños del Elemento 3</span>
+          <span class="accordion__meta">2 desempeños · 12 características · 8 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <h3>Desempeño 3.1 · Realiza la presentación del prototipo al cliente</h3>
+          <p>El evaluador observará cómo presentas el prototipo funcional al cliente. 7 características:</p>
+
+          <div class="tabs">
+            <div class="tabs__list" role="tablist" aria-label="Características del Desempeño 3.1">
+              <button class="tabs__tab" role="tab" id="tab-e3d1a" aria-controls="panel-e3d1a" aria-selected="true">A · Problemática</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d1b" aria-controls="panel-e3d1b" aria-selected="false" tabindex="-1">B · Operación técnica</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d1c" aria-controls="panel-e3d1c" aria-selected="false" tabindex="-1">C · Requerimientos</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d1d" aria-controls="panel-e3d1d" aria-selected="false" tabindex="-1">D · Casos de uso</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d1e" aria-controls="panel-e3d1e" aria-selected="false" tabindex="-1">E · Lenguaje accesible</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d1f" aria-controls="panel-e3d1f" aria-selected="false" tabindex="-1">F · Retroalimentación</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d1g" aria-controls="panel-e3d1g" aria-selected="false" tabindex="-1">G · Acuerdo</button>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d1a" role="tabpanel" aria-labelledby="tab-e3d1a">
+              <h4>A · Problemática</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Describiendo la problemática identificada, la solución propuesta mediante IA y el alcance de la misma."</em></p>
+              <p><strong>Qué significa:</strong> Empiezas con el problema, no con la tecnología. El cliente recuerda el problema — que la solución sea la respuesta directa a ese problema.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d1b" role="tabpanel" aria-labelledby="tab-e3d1b" hidden>
+              <h4>B · Operación técnica</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Exponiendo la operación técnica del prototipo y su lógica operativa."</em></p>
+              <p><strong>Qué significa:</strong> Explicas cómo funciona internamente el prototipo — qué entra, qué procesa, qué sale — en lenguaje accesible.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d1c" role="tabpanel" aria-labelledby="tab-e3d1c" hidden>
+              <h4>C · Requerimientos</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Explicando los requerimientos técnicos, herramientas/plataformas de IA utilizadas y condiciones de uso."</em></p>
+              <p><strong>Qué significa:</strong> El cliente debe entender qué necesita para operar el prototipo (dispositivo, internet, cuenta en plataforma, etc.).</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d1d" role="tabpanel" aria-labelledby="tab-e3d1d" hidden>
+              <h4>D · Casos de uso</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Presentando los casos de uso dentro del contexto operativo de la MiPyME."</em></p>
+              <p><strong>Qué significa:</strong> No presentes el prototipo en abstracto — muéstralo funcionando con un escenario real de la empresa.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d1e" role="tabpanel" aria-labelledby="tab-e3d1e" hidden>
+              <h4>E · Lenguaje accesible</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Explicando los términos técnicos necesarios para la comprensión del prototipo en lenguaje accesible para el cliente."</em></p>
+              <p><strong>Qué significa:</strong> Adaptas la terminología al nivel del cliente. No dices "API de visión por computadora"; dices "el servicio que analiza la foto y extrae la información de la pieza".</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d1f" role="tabpanel" aria-labelledby="tab-e3d1f" hidden>
+              <h4>F · Retroalimentación</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Preguntando si existen dudas/respondiendo las dudas que se presenten al solicitar la retroalimentación."</em></p>
+              <p><strong>Qué significa:</strong> Abre el espacio de manera explícita, no esperes a que el cliente interrumpa.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d1g" role="tabpanel" aria-labelledby="tab-e3d1g" hidden>
+              <h4>G · Acuerdo</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Validando la comprensión y el acuerdo del cliente respecto al plan de experimentación, mediante el parafraseo de lo expresado por el cliente y la confirmación verbal de su aceptación."</em></p>
+              <p><strong>Qué significa:</strong> Cierra la sesión con un acuerdo explícito, no asumas que el silencio es aceptación.</p>
+            </div>
+          </div>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Tonalli · Desempeño 3.1</span>
+            <div class="callout__body">Diego abre: "Lucía, como acordamos, el prototipo genera fichas de producto a partir de una foto. Te voy a mostrar cómo funciona con tres piezas del taller." Muestra el flujo completo. Explica que necesitan un celular con cámara (que ya tienen) y conexión a internet (que ya tienen). Pide retroalimentación: Lucía dice que la descripción a veces inventa colores. Diego confirma: "Escucho que la descripción de color no siempre es precisa. ¿Están de acuerdo en que el plan de experimentación incluya una prueba específica de ese punto?" Lucía confirma verbalmente.</div>
+          </aside>
+
+          <h3>Desempeño 3.2 · Realiza una prueba funcional del prototipo con un caso de uso con el cliente/usuario</h3>
+          <p>Con el prototipo presentado, realizas una prueba funcional en vivo. 5 características:</p>
+
+          <div class="tabs">
+            <div class="tabs__list" role="tablist" aria-label="Características del Desempeño 3.2">
+              <button class="tabs__tab" role="tab" id="tab-e3d2a" aria-controls="panel-e3d2a" aria-selected="true">A · Caso de uso</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d2b" aria-controls="panel-e3d2b" aria-selected="false" tabindex="-1">B · Registro de datos</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d2c" aria-controls="panel-e3d2c" aria-selected="false" tabindex="-1">C · Comparación</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d2d" aria-controls="panel-e3d2d" aria-selected="false" tabindex="-1">D · Fallas y hallazgos</button>
+              <button class="tabs__tab" role="tab" id="tab-e3d2e" aria-controls="panel-e3d2e" aria-selected="false" tabindex="-1">E · Acuerdos</button>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d2a" role="tabpanel" aria-labelledby="tab-e3d2a">
+              <h4>A · Caso de uso</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Aplicando el caso de uso del prototipo de acuerdo con los requerimientos y alcances establecidos en el diseño del modelo de funcionamiento."</em></p>
+              <p><strong>Qué significa:</strong> La prueba no es libre — sigue el guión del modelo de funcionamiento documentado en el Elemento 2.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d2b" role="tabpanel" aria-labelledby="tab-e3d2b" hidden>
+              <h4>B · Registro de datos</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Registrando los datos de entrada utilizados y los resultados obtenidos en cada prueba."</em></p>
+              <p><strong>Qué significa:</strong> Cada prueba queda documentada con los inputs exactos y los outputs producidos.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d2c" role="tabpanel" aria-labelledby="tab-e3d2c" hidden>
+              <h4>C · Comparación</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Mencionando el resultado de la comparación de los datos obtenidos con los datos del diseño."</em></p>
+              <p><strong>Qué significa:</strong> Comparas en voz alta lo que el prototipo produjo vs. lo que el diseño esperaba que produjera.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d2d" role="tabpanel" aria-labelledby="tab-e3d2d" hidden>
+              <h4>D · Fallas y hallazgos</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Registrando fallas/limitaciones/desviaciones/hallazgos detectados durante las pruebas."</em></p>
+              <p><strong>Qué significa:</strong> No ocultes las fallas — el evaluador espera que las documentes con honestidad.</p>
+            </div>
+
+            <div class="tabs__panel" id="panel-e3d2e" role="tabpanel" aria-labelledby="tab-e3d2e" hidden>
+              <h4>E · Acuerdos</h4>
+              <p><em><strong>Texto del estándar (F21):</strong> "Acordando con el cliente los ajustes necesarios al prototipo con base en los hallazgos de la prueba realizada."</em></p>
+              <p><strong>Qué significa:</strong> La sesión termina con una lista acordada de ajustes — no con promesas vagas.</p>
+            </div>
+          </div>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Tonalli · Desempeño 3.2</span>
+            <div class="callout__body">Diego ejecuta 5 casos de uso: fotografía 5 piezas distintas. Para cada una, registra la foto original (input), la ficha generada (output) y el tiempo transcurrido. Compara en voz alta: "El diseño estimaba 60 segundos por pieza; el resultado real es 90 segundos. Dentro de rango aceptable." Detecta y registra: en 2 de 5 piezas, el color descrito no coincide exactamente. Acuerda con Lucía: "Agregaremos al prompt una instrucción para que el asistente pida confirmación del color antes de finalizar la ficha."</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 4.4 LOS PRODUCTOS ===== -->
+      <details class="accordion__item" id="productos">
+        <summary>
+          <span class="accordion__num">4.4</span>
+          <span class="accordion__title-main">Los productos del Elemento 3</span>
+          <span class="accordion__meta">2 productos documentales · criterios F21 · 8 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <h3>Producto 3.1 · Documentación del prototipo funcional desarrollado</h3>
+
+          <ul>
+            <li>a) Alcances y restricciones del prototipo funcional.</li>
+            <li>b) Descripción de la operación del prototipo funcional, datos de entrada y parámetros de uso.</li>
+            <li>c) Los prompts y ajustes en las herramientas que se utilizan para la construcción del prototipo.</li>
+            <li>d) Descripción de los casos de uso del prototipo funcional.</li>
+            <li>e) Resultado de las pruebas funcionales y retroalimentación de los casos de uso.</li>
+            <li>f) Manual de usuario que describe las instrucciones de operación del prototipo.</li>
+            <li>g) Formato digital/físico, redacción clara, estructura profesional, sin errores ortográficos.</li>
+          </ul>
+
+          <h3>Producto 3.2 · Plan de experimentación documentado</h3>
+
+          <ul>
+            <li>a) Al menos tres hipótesis seleccionadas por el cliente de cada una de las siguientes categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad.</li>
+            <li>b) Diseño de las pruebas priorizadas: hipótesis, métricas, criterios de éxito, nivel de criticidad, nivel de confianza, costo, tiempo, nombre de la prueba, nombre del responsable y tiempo de duración.</li>
+            <li>c) Descripción del perfil de los usuarios participantes en las pruebas.</li>
+            <li>d) Plan de ejecución de las pruebas: actividad, responsable y temporalidad.</li>
+            <li>e) Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+          </ul>
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">Requisito taxativo</span>
+            <div class="callout__body">El Plan de experimentación (Producto 3.2) exige al menos tres hipótesis de CADA categoría: adaptabilidad, deseabilidad, factibilidad y viabilidad (literal a). Son mínimo 12 hipótesis en total. Es el criterio más específico del Elemento 3 y un error frecuente es presentar solo hipótesis de una o dos categorías.</div>
+          </aside>
+
+          <h4>¿Cómo se estructura un plan de experimentación?</h4>
+          <p>El plan de experimentación (Producto 3.2) sigue una secuencia lógica de 6 etapas. Cada etapa es un criterio verificable que el evaluador buscará en tu documento.</p>
+
+          <div class="diagram-mermaid">
+            <pre class="mermaid">
+flowchart LR
+  A["Hipótesis\n¿Qué creemos\nque es verdad?"]
+  B["Diseño\nde prueba\n¿Cómo lo\nverificamos?"]
+  C["Perfil de\nusuarios\n¿Con quién\nprobamos?"]
+  D["Ejecución\nRealizar la\nprueba con\nusuarios reales"]
+  E["Registro\nDocumentar\nobservaciones\ny datos"]
+  F["Análisis\n¿Qué aprendimos?\n¿Qué decidimos?"]
+
+  A --> B --> C --> D --> E --> F
+
+  style A fill:#28467e,color:#FAFCFF,stroke:none
+  style B fill:#529ed7,color:#FAFCFF,stroke:none
+  style C fill:#529ed7,color:#FAFCFF,stroke:none
+  style D fill:#f7c031,color:#28467e,stroke:none
+  style E fill:#f7c031,color:#28467e,stroke:none
+  style F fill:#f29100,color:#FAFCFF,stroke:none
+            </pre>
+          </div>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Ejemplo · Tonalli</span>
+            <div class="callout__body">
+              <p><strong>Hipótesis:</strong> "Creemos que si el asistente IA genera la ficha de producto en menos de 60 segundos por pieza, Lucía lo usará de forma autónoma sin apoyo de Diego."</p>
+              <p><strong>Diseño de prueba:</strong> Sesión de 45 minutos donde Lucía fotografía 10 piezas y usa el asistente sin ayuda. Métricas: tiempo por ficha, número de intentos por ficha, satisfacción declarada.</p>
+              <p><strong>Perfil de usuarios:</strong> Lucía (maestra alfarera, usuaria básica de smartphone, sin experiencia previa con IA). Criterio: es la usuaria final principal.</p>
+              <p><strong>Ejecución:</strong> Diego observa sin intervenir. Solo registra.</p>
+              <p><strong>Registro:</strong> Hoja de observación con tiempo por ficha, errores cometidos, frases textuales de Lucía.</p>
+              <p><strong>Análisis:</strong> Promedio de tiempo por ficha = 4 minutos. Hipótesis FALSA. Decisión: iterar el diseño del prompt para simplificar la interacción.</p>
+            </div>
+          </aside>
+
+          <h3>Aplica el Elemento 3 · ¿Cómo presenta Diego el prototipo?</h3>
+          <p>Diego tiene listo el prototipo del asistente IA para Tonalli. Llegó el momento de mostrárselo a Lucía. Elige cómo conduce la presentación.</p>
+
+          <div class="scenario-decision" data-storage-key="eb3-presenta-prototipo-tonalli">
+            <script type="application/json" class="scenario-decision__data">
+            {
+              "actor": "Diego · Artesanías Tonalli",
+              "title": "\"Lucía, te quiero mostrar lo que construí\"",
+              "context": "El prototipo es funcional: Diego le toma una foto a una pieza de barro bruñido con el celular, la sube a la interfaz, y el asistente IA genera en 90 segundos una ficha con nombre artesanal sugerido, técnica, medidas aproximadas y descripción de 3 párrafos lista para publicar en línea. Diego tiene 30 minutos con Lucía y Rosa, quien maneja las redes de Tonalli.",
+              "question": "¿Cómo conduce Diego la sesión de presentación del prototipo?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Diego explica durante 20 minutos todas las decisiones técnicas que tomó, los modelos de IA que consideró y por qué eligió este enfoque. Al final, muestra el resultado a Lucía con 2 minutos restantes.",
+                  "outcome": "wrong",
+                  "feedback": "Error de diseño de sesión. El F21 del desempeño de presentación valora que el cliente pueda ver y reaccionar al prototipo — no que el consultor demuestre su dominio técnico. Lucía y Rosa no necesitan saber qué modelo de IA usó Diego; necesitan ver si el asistente genera fichas útiles para su negocio. Con 2 minutos no hay tiempo para retroalimentación real.",
+                  "criterio": "Desempeño 3.1 F21: la presentación debe centrarse en el caso de uso del cliente, no en la arquitectura técnica. AHV Responsabilidad incluye adaptar la comunicación al nivel del cliente."
+                },
+                {
+                  "id": "b",
+                  "label": "Diego toma una pieza de Lucía, la fotografía en vivo, activa el asistente y en 90 segundos muestra la ficha generada. Le pide a Lucía que lea la descripción en voz alta y diga si así hablaría ella de esa pieza. Toma notas de sus correcciones.",
+                  "outcome": "ok",
+                  "feedback": "Presentación efectiva. Usar una pieza real de Lucía en vivo convierte la sesión en una prueba funcional auténtica que cumple también el Desempeño 3.2. Pedirle que lea la descripción activa su criterio como maestra alfarera, y tomar notas de sus correcciones demuestra AHV Responsabilidad: Diego escucha y documenta, no defiende.",
+                  "criterio": "Desempeños 3.1 y 3.2 del F21 cumplidos: presentación al cliente + prueba funcional con caso de uso real. AHV Responsabilidad presente: escucha activa y registro de retroalimentación."
+                },
+                {
+                  "id": "c",
+                  "label": "Diego le manda por WhatsApp a Lucía tres fichas de ejemplo generadas previamente y le pregunta por mensaje si le gustaron. Con eso documenta la presentación del prototipo.",
+                  "outcome": "risk",
+                  "feedback": "No cumple el desempeño. El F21 requiere una sesión observable donde el evaluador pueda constatar cómo Diego conduce la interacción con el cliente. Un intercambio de WhatsApp no es un desempeño observable; es una comunicación asíncrona sin registro de proceso. Además no hay prueba funcional en vivo ni posibilidad de retroalimentación rica.",
+                  "criterio": "Desempeño 3.1 F21: el evaluador debe poder observar la presentación. Sin sesión presencial o videoconferencia registrable, el desempeño no puede evaluarse. El AHV Responsabilidad tampoco es observable en un chat."
+                }
+              ],
+              "wrapUp": "La presentación del prototipo no es un demo tecnológico — es una conversación profesional donde el cliente descubre si la solución resuelve su problema real. El reto de Diego es hacer que Lucía confíe en que esta herramienta es suya, no solo de él."
+            }
+            </script>
+          </div>
+
+        </div>
+      </details>
+
+      <!-- ===== 4.5 LOS CONOCIMIENTOS ===== -->
+      <details class="accordion__item" id="conocimientos">
+        <summary>
+          <span class="accordion__num">4.5</span>
+          <span class="accordion__title-main">Los conocimientos del Elemento 3</span>
+          <span class="accordion__meta">5 áreas · Conocimiento y Comprensión · 8 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Área de conocimiento</th>
+                <th>Nivel</th>
+                <th>Lo que debes poder hacer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Concepto y ejemplos: adaptabilidad, deseabilidad, factibilidad y viabilidad</td>
+                <td>Conocimiento</td>
+                <td>Describir qué evalúa cada categoría de hipótesis y dar un ejemplo de cada una en el contexto de la MiPyME.</td>
+              </tr>
+              <tr>
+                <td>Diseño de experimentos de innovación</td>
+                <td>Comprensión</td>
+                <td>Explicar cómo diseñar una prueba de hipótesis con métricas, criterios de éxito y perfil de usuarios.</td>
+              </tr>
+              <tr>
+                <td>Uso de herramientas/plataformas de IA para prototipar</td>
+                <td>Comprensión</td>
+                <td>Seleccionar herramientas de IA adecuadas al contexto de la MiPyME y describir su operación básica.</td>
+              </tr>
+              <tr>
+                <td>Pruebas funcionales aplicadas a herramientas digitales: tipos (funcionamiento, integración, uso en condiciones reales)</td>
+                <td>Comprensión</td>
+                <td>Distinguir entre tipos de prueba funcional y aplicar la más adecuada al caso.</td>
+              </tr>
+              <tr>
+                <td>Protección de datos en el desarrollo y prueba de prototipos: datos anonimizados, consentimiento informado, riesgos de fuga en herramientas de IA</td>
+                <td>Comprensión</td>
+                <td>Identificar los riesgos de privacidad al usar datos de clientes de la MiPyME en herramientas de IA y proponer controles básicos.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <aside class="callout callout--reflection" role="note">
+            <span class="callout__label">Sobre el consentimiento informado en pruebas con usuarios</span>
+            <div class="callout__body">Cuando ejecutas el plan de experimentación del Producto 3.2 con usuarios reales (compradores de Tonalli, por ejemplo), debes obtener su consentimiento informado antes de registrar sus interacciones, comentarios o datos. El consentimiento debe especificar para qué se usará la información y quién tendrá acceso. El F21 lo exige y la LFPDPPP lo refuerza.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 4.6 AHV ===== -->
+      <details class="accordion__item" id="ahv">
+        <summary>
+          <span class="accordion__num">4.6</span>
+          <span class="accordion__title-main">Las actitudes, hábitos y valores del Elemento 3</span>
+          <span class="accordion__meta">AHV · Responsabilidad · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>Este elemento evalúa una sola AHV: <strong>Responsabilidad</strong>.</p>
+
+          <p><em><strong>Definición del F21:</strong> "La manera en que presenta el prototipo funcional y cumple íntegramente con los requisitos de calidad descritos en el diseño del prototipo."</em></p>
+
+          <p>La Responsabilidad en el Elemento 3 tiene dos dimensiones. La primera: el prototipo que presentas debe cumplir lo que prometiste en el diseño del Elemento 2. Si el diseño decía "genera la ficha en 60 segundos" y el prototipo la genera en 4 minutos, la Responsabilidad implica reportarlo con honestidad, no disimularlo. La segunda: la presentación al cliente no puede hacerse de cualquier manera — debe seguir el orden y los elementos del desempeño del F21.</p>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Señal de Responsabilidad que el evaluador busca</span>
+            <div class="callout__body">Cuando el prototipo tiene una limitación (y casi siempre tiene alguna), el consultor responsable la menciona proactivamente, la explica y propone cómo abordarla. El evaluador que ve a un consultor ocultar una falla detectará inmediatamente la ausencia de Responsabilidad.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 4.7 GLOSARIO ===== -->
+      <details class="accordion__item" id="glosario">
+        <summary>
+          <span class="accordion__num">4.7</span>
+          <span class="accordion__title-main">Glosario operativo del Elemento 3</span>
+          <span class="accordion__meta">8 términos del F21 · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Término</th>
+                <th>Definición</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Anonimizados</strong></td>
+                <td>Datos personales sometidos a un proceso irreversible mediante el cual no pueden asociarse a una persona identificada ni permiten su re-identificación.</td>
+              </tr>
+              <tr>
+                <td><strong>Caso de uso</strong></td>
+                <td>Escenario específico que describe cómo un usuario interactúa con una solución tecnológica para cumplir un objetivo dentro del contexto operativo de la empresa.</td>
+              </tr>
+              <tr>
+                <td><strong>Lógica operativa</strong></td>
+                <td>Secuencia de reglas, condiciones y procesos que determinan cómo funciona internamente un prototipo o solución para producir los resultados esperados.</td>
+              </tr>
+              <tr>
+                <td><strong>Manual de usuario</strong></td>
+                <td>Documento que contiene las instrucciones de operación de una herramienta o solución, describiendo paso a paso cómo utilizarla correctamente.</td>
+              </tr>
+              <tr>
+                <td><strong>Métricas</strong></td>
+                <td>Medidas cuantitativas definidas para evaluar el desempeño, resultado o impacto de una prueba o solución tecnológica.</td>
+              </tr>
+              <tr>
+                <td><strong>Plan de experimentación</strong></td>
+                <td>Documento que define las hipótesis a validar, las pruebas a realizar, las métricas de éxito, los perfiles de usuarios participantes y el cronograma de ejecución.</td>
+              </tr>
+              <tr>
+                <td><strong>Prototipo funcional</strong></td>
+                <td>Versión operativa de una solución que permite demostrar su funcionamiento en condiciones reales o simuladas, incluyendo datos de entrada, procesamiento y resultados.</td>
+              </tr>
+              <tr>
+                <td><strong>Prueba funcional</strong></td>
+                <td>Verificación controlada del correcto funcionamiento de un prototipo, comparando los resultados obtenidos con los resultados esperados según su diseño.</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+    </div>
+    </div>
+
+    <div class="lesson-nav" style="display:flex; justify-content:space-between; margin-top:2rem;">
+      <a href="elemento-2.html" class="btn btn-secondary">Anterior · Elemento 2</a>
+      <a href="elemento-4.html" class="btn btn-primary">Siguiente · Elemento 4</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="footer-tag">Desarrollar con IA · Elemento 3 · Desarrollar</span>
+    </div>
+    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+  </div>
+</footer>
+
+</body>
+</html>
