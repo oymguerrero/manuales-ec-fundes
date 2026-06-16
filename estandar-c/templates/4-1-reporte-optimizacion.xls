@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:x="urn:schemas-microsoft-com:office:excel"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Excel.Sheet">
+<meta name="Generator" content="Microsoft Excel">
+<title>4.1 · Reporte de desempeño del contenido publicado de marketing digital, documentado</title>
+<!--[if gte mso 9]>
+<xml><x:ExcelWorkbook><x:ExcelWorksheets>
+<x:ExcelWorksheet><x:Name>4.1</x:Name><x:WorksheetOptions><x:Panes><x:Pane><x:Number>3</x:Number></x:Pane></x:Panes></x:WorksheetOptions></x:ExcelWorksheet>
+</x:ExcelWorksheets></x:ExcelWorkbook></xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+
+.caso-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.caso-box strong { color: #28467e; font-style: normal; }
+
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+
+table.matrix { border-collapse: collapse; width: 100%; margin: 10pt 0; font-size: 10pt; }
+table.matrix th, table.matrix td { border: 1pt solid #999; padding: 6pt 8pt; vertical-align: top; }
+table.matrix th { background: #28467e; color: white; font-weight: bold; text-align: left; }
+table.matrix tr.score th { background: #f7c031; color: #28467e; }
+table.matrix td.fill { background: #fffbe6; min-height: 22pt; height: 22pt; color: #aaa; font-style: italic; }
+table.matrix tr:nth-child(even) td.fill { background: #fefbf0; }
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>Reporte de desempeño del contenido publicado de marketing digital, documentado</h1>
+<p class="subtitle">Manual de Marketing Digital con IA · Producto del Elemento 4 · Optimizar · Excel</p>
+</td>
+<td class="meta"><strong>Producto 4.1</strong><br>Hoja editable · Excel<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> Producto integrador que combina el reporte de desempeño de la campaña concluida con el plan de optimización para el siguiente periodo. Incluye métricas por publicación y por plataforma, comparativo contra objetivos, análisis de mejor y peor desempeño, recomendaciones de ajuste y el calendario del siguiente periodo. Debe contar con la aprobación de la persona responsable de marketing en la MiPyME. Excel es el formato natural para esta clase de producto: te permite añadir filas conforme registres más publicaciones, ordenar por métricas y generar gráficas. <strong>Llénalo con datos de TU MiPyME real.</strong></div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>(a) Está elaborado a partir de una campaña de marketing digital concluida</li>
+<li>(b) Tiene el resumen ejecutivo con los principales resultados alcanzados en el periodo analizado y su relación con los objetivos de la estrategia</li>
+<li>(c) Incluye las métricas de rendimiento por publicación, por tipo de contenido y por plataforma digital, así como el comparativo respecto a la línea base de la MiPyME/indicadores de referencia de mercado</li>
+<li>(d) Especifica el comparativo de resultados contra los objetivos medibles establecidos en la estrategia aprobada</li>
+<li>(e) Contiene el análisis de mayor y menor rendimiento de los contenidos por tipo, formato, horario y plataforma digital, con la identificación de patrones de comportamiento y metas establecidas</li>
+<li>(f) Incluye las capturas de pantalla/evidencias de los datos reportados por las herramientas de medición y seguimiento de las plataformas digitales</li>
+<li>(g) Especifica la fecha del periodo de análisis, la fuente de los datos presentados y la frecuencia de medición</li>
+<li>(h) Contiene las recomendaciones de continuidad/ajuste a los tipos de contenido/formatos/frecuencia de publicación por plataforma digital, con base en el análisis de resultados</li>
+<li>(i) Indica la(s) propuesta(s) de pruebas de optimización a realizar, considerando la hipótesis a validar y la métrica de éxito</li>
+<li>(j) Incluye la recomendación de continuidad/ajuste a horarios de publicación con base en los datos de rendimiento por plataforma digital y por tipo de contenido</li>
+<li>(k) Contiene la recomendación de continuidad/modificación a la segmentación de audiencia y al presupuesto de promoción de acuerdo con los resultados obtenidos</li>
+<li>(l) Incluye la propuesta de continuidad/ajuste a los prompts e instrucciones de generación de contenido con IA, considerando de los resultados de la campaña que concluyó</li>
+<li>(m) Tiene el calendario de publicación de contenidos para el siguiente periodo</li>
+<li>(n) Especifica los nuevos objetivos y métricas de seguimiento para el siguiente periodo</li>
+<li>(o) Contiene la evidencia de aprobación del plan de optimización por parte de la(s) persona(s) responsable(s) del marketing digital en la MiPyME</li>
+</ul>
+</div>
+
+<div class="caso-box"><strong>Caso pedagógico Cafetería La Cuesta (ilustrativo):</strong> Campaña: septiembre 2025, 4 semanas. Resultados: Instagram +187 seguidores (meta: +200, -6.5%); Engagement rate promedio 4.2% (referencia mercado cafeterías: 2.8%); Alcance total: 8,420 personas. Mejor contenido: video Reel del origen del café (487 likes, 23 comentarios, 156 guardados). Peor contenido: imagen de menú con texto (12 likes, 0 comentarios). Patrón: el contenido educativo sobre café de especialidad tiene 3x más engagement que el contenido promocional directo. Plan de optimización: reducir posts de menú en un 50%, aumentar contenido educativo/origen del café, probar Reels de 30s (vs 15s actuales), publicar jueves 7pm en vez de viernes 6pm.</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME</td><td><span class="blank">&nbsp;</span></td><td>Fecha</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor</td><td><span class="blank">&nbsp;</span></td><td>Responsable MiPyME</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+<table class="matrix">
+<tr><th style="width: 4%;">#</th><th style="width: 28%;">Pregunta guía</th><th>Tu respuesta (llena con datos de TU MiPyME)</th></tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">1</td>
+<td><strong>Periodo analizado y fuente de datos</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Cuándo fue la campaña que estás analizando? ¿Qué fuentes usaste para obtener los datos (Meta Insights, Google Analytics, Hootsuite)? ¿Con qué frecuencia los mediste?</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">2</td>
+<td><strong>Resumen ejecutivo</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">En 3-5 líneas: ¿qué pasó en el periodo? ¿Qué lograste vs qué esperabas?</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">3</td>
+<td><strong>Métricas por publicación, tipo de contenido y plataforma</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Tabla completa: por cada publicación (o por tipo de contenido agrupado), muestra alcance, impresiones, interacciones, tasa de interacción y otros KPIs relevantes.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">4</td>
+<td><strong>Comparativo contra objetivos de la estrategia</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Qué objetivos habías definido? ¿Los cumpliste, los superaste o quedaste por debajo? Tabla de objetivo vs resultado real.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">5</td>
+<td><strong>Análisis de mejor y peor desempeño</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Qué publicaciones o tipos de contenido funcionaron mejor? ¿Cuáles funcionaron peor? ¿Qué patrones de horario, formato o tema explican los resultados?</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">6</td>
+<td><strong>Capturas de pantalla o evidencias</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Adjunta o describe las capturas de las herramientas de analítica que respaldan los datos del reporte.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">7</td>
+<td><strong>Recomendaciones de ajuste (tipos, formatos, frecuencia)</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Con base en los resultados: ¿qué tipos de contenido vas a continuar? ¿Cuáles vas a eliminar o reducir? ¿Cambias la frecuencia?</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">8</td>
+<td><strong>Pruebas de optimización propuestas</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Qué pruebas A/B o multivariables propones para el siguiente periodo? Por cada una: qué hipótesis validas y con qué métrica.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">9</td>
+<td><strong>Ajuste de horarios</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Cambias los horarios de publicación? ¿Por qué? ¿Qué datos respaldan el cambio?</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">10</td>
+<td><strong>Ajuste de segmentación y presupuesto</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Modificas la audiencia a la que llegas? ¿Ajustas el presupuesto de publicidad pagada? ¿Por qué?</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">11</td>
+<td><strong>Ajuste de prompts de IA</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Qué cambios harás en los prompts que usas para generar contenido? ¿Qué aprendiste sobre qué tipos de prompts funcionan mejor para esta MiPyME?</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">12</td>
+<td><strong>Calendario del siguiente periodo</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">Elabora el calendario de publicación para el siguiente mes o periodo.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">13</td>
+<td><strong>Nuevos objetivos</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Qué objetivos y métricas defines para el siguiente periodo, basándote en lo aprendido?</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align: center; font-weight: bold; color: #28467e;">14</td>
+<td><strong>Evidencia de aprobación</strong><br><span style="color: #666; font-size: 9pt; font-style: italic;">¿Cómo documenta la persona responsable que aprobó el plan? Correo, firma, captura.</span></td>
+<td class="fill">&nbsp;</td>
+</tr>
+</table>
+
+
+
+<h2>Hoja 1 · Métricas por publicación</h2>
+<p style="font-size: 10pt; color: #666;">
+  Registra una fila por publicación. Añade filas según el volumen de tu campaña.
+  La columna «Tasa de interacción %» se calcula como (Me gusta + Comentarios + Compartidos + Guardados) / Alcance × 100.
+</p>
+<table class="matrix">
+<tr>
+  <th style="width: 8%;">Fecha</th>
+  <th style="width: 10%;">Plataforma</th>
+  <th style="width: 14%;">Tipo de contenido</th>
+  <th style="width: 7%;">Alcance</th>
+  <th style="width: 8%;">Impresiones</th>
+  <th style="width: 7%;">Me gusta</th>
+  <th style="width: 8%;">Comentarios</th>
+  <th style="width: 8%;">Compartidos</th>
+  <th style="width: 8%;">Guardados</th>
+  <th style="width: 10%;">Tasa de interacción %</th>
+  <th>Estado</th>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill">&nbsp;</td>
+</tr>
+
+</table>
+<p style="font-size:9pt;color:#999;margin-top:6pt;font-style:italic;">
+  Fuente de datos recomendada: Meta Business Suite Insights / Google Analytics / herramienta de gestión de redes.
+</p>
+
+<h2>Hoja 2 · Comparativo objetivo vs resultado</h2>
+<p style="font-size: 10pt; color: #666;">
+  Registra cada objetivo que definiste en la estrategia aprobada y compáralo con el resultado real.
+</p>
+<table class="matrix">
+<tr>
+  <th style="width: 28%;">Objetivo</th>
+  <th style="width: 18%;">Meta definida</th>
+  <th style="width: 18%;">Resultado real</th>
+  <th style="width: 12%;">Variación %</th>
+  <th style="width: 12%;">Cumplido (S/N)</th>
+</tr>
+<tr>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+<tr>
+<td class="fill">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+<td class="fill" style="text-align:center;color:#999;">=%</td>
+<td class="fill" style="text-align:center;">&nbsp;</td>
+</tr>
+
+</table>
+<p style="font-size:9pt;color:#999;margin-top:6pt;font-style:italic;">
+  Variación % = (Resultado real - Meta definida) / Meta definida × 100. Positivo = superado; negativo = por debajo.
+</p>
+
+<h2>Hoja 3 · Calendario del siguiente periodo</h2>
+<p style="font-size: 10pt; color: #666;">
+  Planifica el contenido del siguiente periodo. Por cada celda anota: plataforma / tipo de contenido / tema.
+  Añade o elimina semanas según la duración del periodo planificado.
+</p>
+<table class="matrix">
+<tr>
+  <th style="width: 8%;">Semana</th>
+  <th style="width: 12%;">Lunes</th><th style="width: 12%;">Martes</th><th style="width: 12%;">Miércoles</th><th style="width: 12%;">Jueves</th><th style="width: 12%;">Viernes</th><th style="width: 12%;">Sábado</th><th style="width: 12%;">Domingo</th>
+</tr>
+<tr><td style="font-weight:bold;color:#28467e;text-align:center;background:#f0f7ff;">Semana 1</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>
+<tr><td style="font-weight:bold;color:#28467e;text-align:center;background:#f0f7ff;">Semana 2</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>
+<tr><td style="font-weight:bold;color:#28467e;text-align:center;background:#f0f7ff;">Semana 3</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>
+<tr><td style="font-weight:bold;color:#28467e;text-align:center;background:#f0f7ff;">Semana 4</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>
+<tr><td style="font-weight:bold;color:#28467e;text-align:center;background:#f0f7ff;">Semana 5</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>
+<tr><td style="font-weight:bold;color:#28467e;text-align:center;background:#f0f7ff;">Semana 6</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>
+<tr><td style="font-weight:bold;color:#28467e;text-align:center;background:#f0f7ff;">Semana 7</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td><td class="fill">&nbsp;</td></tr>
+
+</table>
+<p style="font-size:9pt;color:#999;margin-top:6pt;font-style:italic;">
+  Complementa este calendario con las fechas clave de temporada comercial definidas en la estrategia.
+</p>
+
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org · Template del Manual de Marketing Digital con IA
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<speak>
+Elemento tres: <emphasis level="moderate">Implementar el contenido de marketing digital con inteligencia artificial.</emphasis>
+<break time="700ms"/>
+Tienes la estrategia. Tienes el contenido producido y aprobado. Ahora llega el momento de publicarlo. Pero implementar no es solo darle al botón de publicar. Es hacerlo bien, con registro, con criterio y dejando a la MiPyME en condiciones de seguir sola cuando tú ya no estés.
+<break time="800ms"/>
+En este elemento preparas dos productos clave. El primero es la bitácora de implementación. Un registro detallado de cada publicación: qué se publicó, en qué plataforma, en qué fecha y hora, con qué objetivo, y con qué ajuste final respecto al contenido original. Esta bitácora es tu evidencia de que ejecutaste el plan.
+<break time="700ms"/>
+El segundo producto es la guía operativa. Este es el documento que le entregas a la MiPyME. Es el manual que explica, paso a paso, cómo seguir publicando sin depender de ti. Cómo usar las herramientas de IA que configuraste, cómo seguir el calendario de contenido, qué hacer cuando una publicación no funciona como se esperaba.
+<break time="800ms"/>
+Aquí hay un estándar de calidad que debes tener muy claro. La guía operativa tiene que ser tan clara que Mariana, o cualquiera de sus seis colaboradores, pueda seguirla sin llamarte. Si necesita que la expliques, la guía no cumple su función.
+<break time="700ms"/>
+Escríbela en el idioma de la MiPyME. Sin tecnicismos. Con capturas de pantalla si hace falta. Con ejemplos concretos del negocio. Que se sienta como si la hubiera escrito alguien que conoce La Cuesta, no como un manual genérico.
+<break time="800ms"/>
+En la evaluación, tendrás que mostrar ambos productos. La bitácora demuestra que ejecutaste. La guía demuestra que dejaste capacidad instalada. Los dos son igualmente importantes.
+<break time="500ms"/>
+Implementar bien es asegurarte de que el trabajo que hiciste dure más allá del proyecto.
+</speak>

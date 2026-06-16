@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<title>2.2 · Contenido de imagen del portafolio de marketing digital generado con IA, documentado</title>
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+
+.caso-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.caso-box strong { color: #28467e; font-style: normal; }
+
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>Contenido de imagen del portafolio de marketing digital generado con IA, documentado</h1>
+<p class="subtitle">Manual de Marketing Digital con IA · Producto del Elemento 2 · Generar</p>
+</td>
+<td class="meta"><strong>Producto 2.2</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> Documenta el proceso de generación de imágenes con IA: la herramienta, el prompt o imagen de referencia, la imagen final para cada plataforma, la verificación de coherencia visual con la marca, la coherencia anatómica y física, y la relación de aspecto correcta para la plataforma de destino. Tu evaluador no busca que llenes el template — busca que respondas con datos de TU MiPyME real. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>(a) Especifica la herramienta de IA utilizada para la generación del contenido de imagen</li>
+<li>(b) Incluye la estructura del prompt/imagen de referencia para la generación de contenido de imagen</li>
+<li>(c) Contiene la versión final de imagen generada con la herramienta/plataforma de IA para la(s) plataforma(s) digital(es) de destino</li>
+<li>(d) Cumple con los criterios de calidad en cuanto a la coherencia visual con la marca, coherencia anatómica y física</li>
+<li>(e) Es congruente con el requerimiento y el contexto/realidad</li>
+<li>(f) Tiene la relación de aspecto acorde con la(s) plataforma(s) digital(es) de destino</li>
+</ul>
+</div>
+
+<div class="caso-box"><strong>Caso pedagógico Cafetería La Cuesta (ilustrativo, NO es tu solución):</strong> Herramienta: Midjourney v6. Prompt: 'A warm specialty coffee shop interior, latte art close-up, wooden bar, glass jars with roasted coffee beans, warm golden lighting, cozy university neighborhood atmosphere, Instagram square format --ar 1:1 --style raw'. Iteraciones: 3. Imagen final: cuadrada 1:1, colores cálidos terracota y madera, sin texto sobreimpuesto (el copy va en el caption). Verificación: la imagen no muestra logos de otras marcas, el café latte art es proporcional y anatómicamente correcto, los granos son reconocibles como café.</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Fecha del documento</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+<div class="question-block">
+<div><span class="question-num">1</span><span class="question-title">Herramienta de IA para imágenes</span></div>
+<div class="question-help">¿Qué herramienta usaste? (Midjourney, DALL-E, Adobe Firefly, Canva IA, Imagen de Google...) ¿Qué versión?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">2</span><span class="question-title">Prompt o parámetros de imagen</span></div>
+<div class="question-help">Escribe el prompt completo. Si usaste una imagen de referencia, descríbela. ¿Qué parámetros configuraste: estilo, relación de aspecto, nivel de detalle?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">3</span><span class="question-title">Imagen final y plataforma de destino</span></div>
+<div class="question-help">Describe la imagen final o adjunta la captura. ¿Para qué plataforma está optimizada y en qué formato?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">4</span><span class="question-title">Coherencia visual con la marca</span></div>
+<div class="question-help">¿Cómo verificaste que la imagen es coherente con la identidad visual de la MiPyME? ¿Los colores, el estilo y el ambiente coinciden?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">5</span><span class="question-title">Coherencia anatómica y física</span></div>
+<div class="question-help">¿Revisaste que no haya distorsiones, objetos imposibles o personas con fisionomía incorrecta? ¿Cómo lo corregiste si fue necesario?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">6</span><span class="question-title">Relación de aspecto correcta</span></div>
+<div class="question-help">¿Usaste la relación de aspecto correcta para la plataforma? (1:1 para feed de Instagram; 9:16 para stories y Reels; 16:9 para Facebook).</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Template del Manual de Marketing Digital con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+</div>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<title>2.1 · Contenido de texto del portafolio de marketing digital generado con IA, documentado</title>
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+
+.caso-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.caso-box strong { color: #28467e; font-style: normal; }
+
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>Contenido de texto del portafolio de marketing digital generado con IA, documentado</h1>
+<p class="subtitle">Manual de Marketing Digital con IA · Producto del Elemento 2 · Generar</p>
+</td>
+<td class="meta"><strong>Producto 2.1</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> Documenta el proceso completo de generación de contenido de texto con IA: la herramienta utilizada, el prompt estructurado (rol, contexto, tarea, audiencia, formato, tono, restricciones), la versión final lista para publicar y la verificación de originalidad, coherencia de marca, beneficios y llamados a la acción. Tu evaluador no busca que llenes el template — busca que respondas con datos de TU MiPyME real. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>(a) Especifica la herramienta de IA utilizada para la generación contenido de texto</li>
+<li>(b) Incluye la estructura del prompt/contenido de referencia para generación de contenido de texto que incluya al menos el rol, el contexto, la tarea, la audiencia, el formato, el tono de comunicación y las restricciones</li>
+<li>(c) Contiene la versión final del texto generada con apoyo de la herramienta/plataforma de IA para la(s) plataforma(s) digital(es) de destino</li>
+<li>(d) Cumple con los criterios de calidad en cuanto a originalidad y coherencia con la marca</li>
+<li>(e) Está redactado de forma clara, precisa y con apego a reglas de redacción y ortografía</li>
+<li>(f) Contiene los beneficios y llamados a la acción</li>
+<li>(g) Se adapta al formato de la(s) plataforma(s) digital(es) de destino</li>
+</ul>
+</div>
+
+<div class="caso-box"><strong>Caso pedagógico Cafetería La Cuesta (ilustrativo, NO es tu solución):</strong> Herramienta: Claude claude-sonnet-4-6. Prompt estructura completa: 'Rol: eres redactor de contenido de marketing digital especializado en cafeterías de especialidad. Contexto: Cafetería La Cuesta, zona universitaria, café tostado en casa. Tarea: escribe el caption para un post de Instagram del lunes. Audiencia: universitarios 18-28 años. Formato: caption de máximo 150 palabras + 5 hashtags. Tono: cálido, cercano, con dato de origen del café. Restricciones: sin emojis excesivos, no usar la palabra «delicioso».' Versión final: 'Hoy tostamos el Oaxaqueño de temporada. Notas de chocolate oscuro, ciruela y un final largo. Ven a probarlo entre clases — de 8 a 8. ☕ #CaféDeEspecialidad #LaCuesta #CaféOaxaqueño #ZonaUniversitaria #CaféTostado'</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Fecha del documento</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+<div class="question-block">
+<div><span class="question-num">1</span><span class="question-title">Herramienta de IA usada</span></div>
+<div class="question-help">¿Qué herramienta usaste para generar el texto? ¿Qué versión o modelo?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">2</span><span class="question-title">Estructura del prompt completo</span></div>
+<div class="question-help">Escribe el prompt exacto que usaste, con todos sus elementos: rol, contexto, tarea, audiencia, formato, tono, restricciones.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">3</span><span class="question-title">Versión final del texto</span></div>
+<div class="question-help">Copia aquí el texto final, ya editado y listo para publicar, indicando para qué plataforma es.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">4</span><span class="question-title">Validación de originalidad y coherencia de marca</span></div>
+<div class="question-help">¿Cómo verificaste que el texto es original? ¿Cómo comprobaste que refleja la voz de la marca?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">5</span><span class="question-title">Beneficios y llamados a la acción</span></div>
+<div class="question-help">¿Qué beneficio comunica el texto al lector? ¿Cuál es el llamado a la acción y dónde aparece?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">6</span><span class="question-title">Adaptación al formato de la plataforma</span></div>
+<div class="question-help">¿Cumple con los límites de caracteres de la plataforma? ¿Incluye hashtags, menciones u otros elementos propios del medio?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>
+</div>
+
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Template del Manual de Marketing Digital con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+</div>
+
+</body>
+</html>

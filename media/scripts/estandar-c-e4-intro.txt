@@ -1,0 +1,17 @@
+<speak>
+Elemento cuatro: <emphasis level="moderate">Optimizar la estrategia de contenido de marketing digital con inteligencia artificial.</emphasis>
+<break time="700ms"/>
+El ciclo no termina cuando publicas. Termina cuando revisas qué pasó, aprendes de los datos y ajustas el rumbo. Eso es optimizar. Y es lo que distingue a un creador de contenido que trabaja con criterio de uno que solo produce sin medir.
+<break time="800ms"/>
+Este elemento tiene un solo producto, pero ese producto integra dos partes que no puedes separar. La primera es el reporte de desempeño: una análisis de los resultados reales de la campaña. Qué publicaciones tuvieron más alcance, cuáles generaron más interacción, cuáles no funcionaron y por qué. Números reales comparados con los objetivos que definiste en la estrategia.
+<break time="700ms"/>
+La segunda parte es el plan de optimización para el siguiente periodo. No basta con diagnosticar. Tienes que proponer. Qué vas a cambiar, qué vas a mantener, qué vas a probar diferente. Con base en los datos, no en suposiciones.
+<break time="800ms"/>
+Hay un desempeño observable en este elemento que debes preparar con cuidado. Vas a presentar el reporte y el plan de optimización directamente a Mariana. Es una reunión de seguimiento real. No es una entrega de documento. Es una presentación donde explicas qué pasó, qué aprendiste y qué propones para mejorar.
+<break time="700ms"/>
+Esa presentación requiere claridad. Mariana no necesita ver todos los datos. Necesita entender qué funcionó, qué no, y qué van a hacer diferente. Tu trabajo es traducir los números en decisiones.
+<break time="800ms"/>
+Con este elemento cierras el ciclo completo. Planificaste. Generaste. Implementaste. Optimizaste. Ese ciclo, repetido con disciplina, es lo que construye presencia digital real para una MiPyME.
+<break time="600ms"/>
+Dominar ese ciclo es exactamente lo que certifica este estándar. Y si llegaste hasta aquí, ya tienes las herramientas para demostrarlo.
+</speak>

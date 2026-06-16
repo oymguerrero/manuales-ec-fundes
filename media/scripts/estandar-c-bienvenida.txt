@@ -1,0 +1,19 @@
+<speak>
+Bienvenida al Manual del Estándar C: Crear y gestionar contenido de marketing digital con inteligencia artificial en la MiPyME.
+<break time="700ms"/>
+Si trabajas en comunicación, redes sociales o marketing de una pequeña o mediana empresa, este estándar fue diseñado exactamente para lo que ya haces. O para lo que estás a punto de hacer.
+<break time="800ms"/>
+Certificarte en el Estándar C significa demostrar que puedes llevar una estrategia de contenido completa, de principio a fin, usando herramientas de inteligencia artificial. No solo que sabes usar una app. Sino que entiendes a quién le hablas, qué vas a publicar, cómo lo produces, cómo lo implementas y qué datos te dicen si funcionó.
+<break time="700ms"/>
+Para las MiPyMEs de México, esto ya no es una ventaja. Es una necesidad. El cliente está en digital. La competencia también. Y quien sepa crear contenido relevante con apoyo de IA, de manera consistente y medible, tiene una ventaja real.
+<break time="800ms"/>
+Este estándar se organiza en cuatro elementos. Planificar. Generar. Implementar. Y optimizar. Cada uno tiene sus productos, sus desempeños que demostrarás y su lógica dentro del ciclo completo.
+<break time="700ms"/>
+A lo largo de este manual te acompañará el caso de la Cafetería La Cuesta. Mariana es la dueña: lleva cinco años con su café de especialidad frente a la universidad, tiene seis personas en su equipo y compite todos los días contra cadenas que invierten fortunas en publicidad. Ella tiene algo que las cadenas no tienen: identidad propia, comunidad real y una historia auténtica que contar.
+<break time="800ms"/>
+En cada elemento verás cómo Mariana, con tu apoyo como consultor, construye su presencia digital de manera estratégica y sostenible.
+<break time="600ms"/>
+Una última cosa antes de empezar. Si ya estás creando contenido para una MiPyME, ya tienes experiencia que cuenta. Este manual te ayuda a ordenarla, documentarla y demostrarla. Estás más cerca de lo que crees.
+<break time="500ms"/>
+Empecemos.
+</speak>

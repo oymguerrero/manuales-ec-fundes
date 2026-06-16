@@ -1694,3 +1694,33 @@ Los templates del Estándar B seguirán la misma filosofía pedagógica del §23
 | 4.4 · Documento de recomendaciones | **Word (.docx)** | Próximos pasos, iteraciones sugeridas y decisión de escalamiento |
 
 **Nota:** estos templates no están generados en el repositorio actual. Deben crearse antes de publicar el contenido del Estándar B.
+
+### 23.4 Templates ofimáticos — Estándar C · Desarrollar contenido de marketing digital con IA
+
+**Caso pedagógico**: Cafetería La Cuesta — café de especialidad, zona universitaria, 6 empleados, dueña Mariana. Publican en redes de forma irregular, sin estrategia. Quieren posicionar su café frente a las cadenas atrayendo al público universitario.
+
+**Script generador**: `scripts/generate-templates-c.py`  
+**Directorio de salida**: `estandar-c/templates/`  
+**Total de templates**: 9
+
+| # | Producto | Archivo | Formato |
+|---|---|---|---|
+| 1.1 | Expediente de información clave de la MiPyME | `1-1-expediente-informacion.doc` | Word |
+| 1.2 | Estrategia de contenido de marketing digital | `1-2-estrategia-contenido.doc` | Word |
+| 2.1 | Portafolio de contenido de texto generado con IA | `2-1-portafolio-texto.doc` | Word |
+| 2.2 | Portafolio de contenido de imagen generado con IA | `2-2-portafolio-imagen.doc` | Word |
+| 2.3 | Portafolio de contenido de audio generado con IA | `2-3-portafolio-audio.doc` | Word |
+| 2.4 | Portafolio de contenido de video generado con IA | `2-4-portafolio-video.doc` | Word |
+| 3.1 | Bitácora de implementación del contenido digital | `3-1-bitacora-implementacion.doc` | Word |
+| 3.2 | Guía operativa de publicación para la MiPyME | `3-2-guia-operativa.doc` | Word |
+| 4.1 | Reporte de desempeño y plan de optimización | `4-1-reporte-optimizacion.xls` | Excel |
+
+**Distribución de formatos**: 8 Word + 1 Excel. Sin PowerPoint en este estándar.
+
+**Decisión de formato por naturaleza del producto**:
+- **Word (8 productos)**: todos los portafolios de contenido (2.1–2.4), los documentos estratégicos del E1 (1.1–1.2), los documentos de implementación del E3 (3.1–3.2) — documentos narrativos con secciones de texto y tablas descriptivas.
+- **Excel (1 producto)**: el 4.1 integra el reporte de desempeño (métricas por publicación, comparativo objetivo vs resultado) y el calendario del siguiente periodo — tres tablas estructuradas que se benefician del formato tabular y de las fórmulas.
+
+**Especificidad del Excel 4.1**: A diferencia de los Excel del B (que son matrices de priorización/evaluación), el 4.1 del C combina análisis retrospectivo (¿qué funcionó?) con planificación prospectiva (¿qué haremos el siguiente mes?). Contiene tres tablas: métricas por publicación (10 filas × 11 columnas), comparativo objetivo vs resultado (5 filas), calendario del siguiente periodo (7 semanas × 7 días).
+
+**Filosofía pedagógica** (idéntica al A y B): criterio F21 literal + caso La Cuesta (solo ilustrativo) + preguntas guía que el aspirante responde con su MiPyME real. Los templates NO dan la solución — orientan el proceso del aspirante.

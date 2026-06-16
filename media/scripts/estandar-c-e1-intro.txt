@@ -1,0 +1,15 @@
+<speak>
+Elemento uno: <emphasis level="moderate">Planificar la estrategia de contenido de marketing digital con inteligencia artificial.</emphasis>
+<break time="700ms"/>
+Antes de generar un solo post, una sola imagen o un solo video, necesitas entender la MiPyME para la que trabajas. No de manera superficial. A fondo. Quién es su cliente, qué plataformas usa hoy, qué está funcionando y qué no. Ese diagnóstico es la base de todo lo que viene.
+<break time="800ms"/>
+En este elemento preparas dos productos. El primero es el expediente de información clave: un documento que reúne el perfil completo de la empresa, las plataformas donde ya tiene presencia, quién es su audiencia real y cuáles son sus métricas actuales. Sin este expediente, cualquier estrategia que diseñes es un disparo a ciegas.
+<break time="700ms"/>
+El segundo producto es la estrategia de contenido. Aquí defines la voz de marca de la MiPyME, los tipos de contenido que vas a producir, un calendario de publicaciones y objetivos medibles. No objetivos vagos como "crecer en redes". Objetivos concretos: cuántos seguidores nuevos, qué tasa de interacción, en cuánto tiempo.
+<break time="800ms"/>
+En el caso de La Cuesta, Mariana tiene un perfil de Instagram que lleva tres años con publicaciones irregulares. Su audiencia son estudiantes universitarios de entre dieciocho y veinticinco años que buscan un lugar para estudiar o reunirse. El reto es posicionar La Cuesta como el café de su comunidad, frente a las cadenas que tienen más presupuesto pero menos historia.
+<break time="700ms"/>
+Cuando termines este elemento, tendrás un plan concreto. Una brújula. Todo el contenido que generes después va a responder a esta estrategia.
+<break time="600ms"/>
+La planificación no es burocracia. Es lo que hace la diferencia entre publicar mucho y publicar bien.
+</speak>
