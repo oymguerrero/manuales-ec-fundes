@@ -342,6 +342,32 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   border-radius: var(--radius-pill);
 }
 
+/* Variante "Diagnóstico" — card de entrada destacada */
+.ec-card--diagnostic {
+  background: linear-gradient(135deg, var(--color-azul-profundo) 0%, var(--color-azul) 100%);
+  color: #fff;
+  border-color: var(--color-amarillo);
+}
+.ec-card--diagnostic .ec-num {
+  color: var(--color-amarillo);
+  background: rgba(255,255,255,0.12);
+}
+.ec-card--diagnostic h3 {
+  color: #fff;
+}
+.ec-card--diagnostic p {
+  color: rgba(255,255,255,0.88);
+}
+.ec-card--diagnostic .meta {
+  color: var(--color-amarillo);
+}
+.ec-card--diagnostic:hover,
+.ec-card--diagnostic:focus {
+  border-color: var(--color-amarillo);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(40,70,126,0.4);
+}
+
 /* ---------- Element block (within EC pages) ---------- */
 .element {
   background: var(--color-blanco-calido);
@@ -4717,9 +4743,42 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 .diagnostic-multi__reset:hover { background: rgba(247,192,49,0.10); }
 .diagnostic-multi__result--blocked {
-  background: linear-gradient(135deg, #6b1d2e 0%, #822d3f 100%);
+  background: linear-gradient(135deg, #9F2929 0%, #9F2929 100%);
 }
 .diagnostic-multi__result--blocked h3 { color: white; }
+
+/* Badge "No prioritario" (modo multi) */
+.diagnostic-multi__match-badge--gray {
+  background: rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.70);
+}
+
+/* Bloque sin coincidencia (modo multi) */
+.diagnostic-multi__no-match {
+  margin-bottom: 16px;
+  border-radius: var(--radius-sm);
+}
+.diagnostic-multi__no-match p { margin: 0; color: inherit; }
+.diagnostic-multi__no-match a { color: var(--color-azul-profundo); }
+
+/* Radar chart wrapper (modo multi) */
+.diagnostic-multi__radar {
+  margin: 20px 0 16px;
+  text-align: center;
+}
+.diagnostic-multi__radar h4 {
+  color: var(--color-amarillo);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.diagnostic-multi__radar .chart-block__canvas-wrap {
+  max-width: 380px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+}
 
 /* ---------- Print: ocultar componentes interactivos ---------- */
 @media print {

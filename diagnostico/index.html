@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diagnóstico de perfil · Mi CompañIA</title>
+<meta name="description" content="Responde 6 preguntas sobre tu trabajo real con MiPyMEs y descubre qué estándares de competencia CONOCER en IA tienen mayor compatibilidad con tu perfil." />
+<link rel="icon" type="image/png" href="../img/logo.png" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/interactive.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="brand-text">Mi CompañIA</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../maestro/index.html">Curso introductorio</a>
+      <a href="../diagnostico/index.html" class="active">Diagnóstico</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Herramienta de orientación</div>
+    <h1>Descubre qué estándar de competencia es para ti</h1>
+    <p>Responde 6 preguntas sobre tu trabajo real con MiPyMEs y te diremos con qué estándares CONOCER tienes mayor compatibilidad. Tu perfil puede encajar en más de uno — te mostraremos todos los que superan el umbral de compatibilidad.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <a class="back-link" href="../index.html">Volver al inicio</a>
+
+    <section id="diagnostico">
+      <h2>¿Cuál es tu perfil?</h2>
+      <p>Responde cada pregunta pensando en tu trabajo frecuente, no en lo que podrías hacer eventualmente.</p>
+
+      <div class="diagnostic-multi" data-storage-key="que-estandar-diagnostico" data-mode="multi" data-threshold="60">
+        <div class="diagnostic-multi__fallback">
+          <p><strong>¿No ves el cuestionario?</strong> Asegúrate de que JavaScript esté activado en tu navegador. Mientras tanto, aquí tienes un resumen de los 4 estándares para que te orientes:</p>
+          <ul>
+            <li><a href="../estandar-a/index.html"><strong>Implementar IA (Estándar A)</strong></a> — Para consultores que configuran y aplican herramientas de IA existentes en MiPyMEs. Ciclo completo: planear, ejecutar, evaluar.</li>
+            <li><a href="../estandar-b/index.html"><strong>Desarrollar con IA (Estándar B)</strong></a> — Para quienes investigan necesidades, conceptualizan y prototipizan soluciones nuevas habilitadas por IA.</li>
+            <li><a href="../estandar-c/index.html"><strong>Marketing digital con IA (Estándar C)</strong></a> — Para estrategas de contenido digital que planifican campañas, generan piezas con IA y optimizan con métricas.</li>
+            <li><a href="../estandar-d/index.html"><strong>Transformación digital con IA (Estándar D)</strong></a> — Para profesionales que diagnostican, construyen e implementan soluciones técnicas de IA en el entorno productivo de la MiPyME.</li>
+          </ul>
+        </div>
+        <script type="application/json" class="diagnostic-multi__data">
+        {
+          "categories": [
+            {
+              "id": "A",
+              "label": "Implementar IA",
+              "href": "../estandar-a/index.html",
+              "available": true,
+              "summary": "Acompañas a la MiPyME en la planeación, ejecución y evaluación de soluciones de IA configurando herramientas existentes (ChatGPT, Claude, Zapier, plataformas SaaS con IA). Ciclo completo: diagnóstico → propuesta → implementación → capacitación → medición."
+            },
+            {
+              "id": "B",
+              "label": "Desarrollar con IA",
+              "href": "../estandar-b/index.html",
+              "available": true,
+              "summary": "Diseñas y desarrollas productos o servicios nuevos habilitados por IA: investigas la necesidad, conceptualizas la solución, construyes el prototipo y lo validas con usuarios reales. Tu foco es crear, no solo configurar."
+            },
+            {
+              "id": "C",
+              "label": "Marketing digital con IA",
+              "href": "../estandar-c/index.html",
+              "available": true,
+              "summary": "Llevas la estrategia de contenido digital de la MiPyME al siguiente nivel con IA: planificas campañas, generas piezas (texto, imagen, audio, video), implementas en plataformas y optimizas con métricas reales."
+            },
+            {
+              "id": "D",
+              "label": "Transformación digital con IA",
+              "href": "../estandar-d/index.html",
+              "available": true,
+              "summary": "Rediseñas el modelo operativo del negocio: diagnosticas oportunidades, construyes soluciones técnicas con IA (integraciones, APIs, arquitectura), implementas en el entorno productivo y optimizas con datos de operación."
+            }
+          ],
+          "questions": [
+            {
+              "text": "¿Quién es tu cliente principal o frecuente?",
+              "options": [
+                { "label": "MiPyMEs (micro, pequeñas o medianas empresas) en México", "scores": { "A": 2, "B": 2, "C": 2, "D": 2 } },
+                { "label": "Una mezcla: a veces MiPyMEs, a veces más grandes", "scores": { "A": 1, "B": 1, "C": 1, "D": 1 } },
+                { "label": "Solo corporativos, gobierno o multinacionales", "scores": {}, "block": true, "block_reason": "Estos 4 estándares CONOCER están diseñados específicamente para la función de acompañar a MiPyMEs mexicanas. Si tu trabajo es solo con corporativos o sector público, hay otros estándares en el catálogo CONOCER que se ajustan mejor a tu perfil." }
+              ]
+            },
+            {
+              "text": "¿Qué tipo de soluciones de IA implementas o desarrollas más seguido?",
+              "options": [
+                { "label": "Configuro y aplico herramientas SaaS que ya existen (ChatGPT, Claude, Zapier, plataformas con módulos de IA)", "scores": { "A": 3, "B": 0, "C": 1, "D": 0 } },
+                { "label": "Creo productos o servicios digitales nuevos donde la IA es el ingrediente clave (apps, MVPs, herramientas)", "scores": { "A": 0, "B": 3, "C": 1, "D": 1 } },
+                { "label": "Genero contenido digital con IA: textos, imágenes, video, audio para campañas y comunicación", "scores": { "A": 0, "B": 1, "C": 3, "D": 0 } },
+                { "label": "Programo soluciones a medida: integraciones, microservicios, agentes con API custom, arquitectura", "scores": { "A": 0, "B": 1, "C": 0, "D": 3 } }
+              ]
+            },
+            {
+              "text": "¿Cuál es el alcance típico de tu intervención con la MiPyME?",
+              "options": [
+                { "label": "Ciclo completo: planeo el proyecto, ejecuto la implementación, mido resultados y entrego con acta", "scores": { "A": 3, "B": 1, "C": 1, "D": 2 } },
+                { "label": "Le ayudo a lanzar productos o servicios digitales escalables (foco en crear)", "scores": { "A": 1, "B": 3, "C": 1, "D": 1 } },
+                { "label": "Le llevo las campañas de marketing y la presencia digital (foco en alcance y conversión)", "scores": { "A": 0, "B": 1, "C": 3, "D": 0 } },
+                { "label": "Le reinvento la operación con tecnología profunda (foco en transformación arquitectónica)", "scores": { "A": 1, "B": 0, "C": 0, "D": 3 } }
+              ]
+            },
+            {
+              "text": "¿Qué tipo de problema resuelves más seguido en una MiPyME?",
+              "options": [
+                { "label": "Procesos operativos lentos, repetitivos o manuales que se pueden automatizar", "scores": { "A": 3, "B": 0, "C": 0, "D": 1 } },
+                { "label": "Falta de oferta digital: productos o servicios que aún no existen en su catálogo", "scores": { "A": 0, "B": 3, "C": 1, "D": 1 } },
+                { "label": "Bajo alcance o engagement: la marca no se ve, no convierte, no llega", "scores": { "A": 0, "B": 1, "C": 3, "D": 0 } },
+                { "label": "Sistemas legados que no se integran, datos dispersos, tecnología obsoleta", "scores": { "A": 1, "B": 0, "C": 0, "D": 3 } }
+              ]
+            },
+            {
+              "text": "¿Cuál es tu fortaleza técnica principal?",
+              "options": [
+                { "label": "Conozco a fondo el ecosistema SaaS / no-code / low-code y sé combinar herramientas", "scores": { "A": 3, "B": 1, "C": 1, "D": 0 } },
+                { "label": "Diseño productos y modelos de negocio: UX, propuesta de valor, validación", "scores": { "A": 1, "B": 3, "C": 1, "D": 1 } },
+                { "label": "Estrategia de marca, copy, contenido visual, growth marketing y publicidad pagada", "scores": { "A": 0, "B": 1, "C": 3, "D": 0 } },
+                { "label": "Programación, integraciones, arquitectura de software, datos", "scores": { "A": 0, "B": 1, "C": 0, "D": 3 } }
+              ]
+            },
+            {
+              "text": "Si tuvieras que describir tu trabajo en una sola frase, ¿cuál es la que más te representa?",
+              "options": [
+                { "label": "\"Acompaño a la MiPyME a adoptar IA en sus procesos del día a día\"", "scores": { "A": 3, "B": 0, "C": 0, "D": 0 } },
+                { "label": "\"Ayudo a la MiPyME a lanzar productos o servicios habilitados por IA\"", "scores": { "A": 0, "B": 3, "C": 0, "D": 0 } },
+                { "label": "\"Llevo el marketing y comunicación digital de la MiPyME al siguiente nivel con IA\"", "scores": { "A": 0, "B": 0, "C": 3, "D": 0 } },
+                { "label": "\"Reinvento el modelo operativo de la MiPyME con tecnología que incorpora IA\"", "scores": { "A": 0, "B": 0, "C": 0, "D": 3 } }
+              ]
+            }
+          ],
+          "wrap_up": "Compatibilidad alta (≥60%) significa que tu perfil encaja bien con ese estándar. Si tienes compatibilidad alta en varios, puedes aspirar a más de una certificación. Comienza por el que describe mejor tu trabajo predominante."
+        }
+        </script>
+      </div>
+    </section>
+
+    <aside class="callout callout--tip" role="note">
+      <span class="callout__label">¿Cómo interpretar tu resultado?</span>
+      <div class="callout__body">
+        <p>La compatibilidad alta (≥60%) con un estándar indica que la función que ese estándar evalúa describe bien tu trabajo actual. Si saliste alto en varios, es normal — muchos consultores cubren más de una función. En ese caso, te recomendamos empezar por el estándar que mejor describe tu <strong>trabajo más frecuente</strong>.</p>
+        <p>Si ningún estándar supera el 40%, quizá tu trabajo actual está más orientado a empresas grandes o a funciones muy distintas. El <a href="../maestro/index.html">Curso introductorio</a> te ayuda a entender mejor el sistema CONOCER y sus estándares.</p>
+      </div>
+    </aside>
+
+    <section id="siguiente">
+      <h2>¿Listo para prepararte?</h2>
+      <p>Una vez que identifiques tu estándar, el siguiente paso es el Curso introductorio para entender cómo funciona la evaluación por evidencias. Después, entra directo al manual de tu estándar.</p>
+      <div class="hero-actions">
+        <a href="../maestro/index.html" class="btn btn-primary">Ir al Curso introductorio →</a>
+        <a href="../index.html" class="btn btn-secondary">Ver todos los manuales</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="footer-tag">Diagnóstico de perfil</span>
+    </div>
+    <div>
+      <svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg>
+      Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

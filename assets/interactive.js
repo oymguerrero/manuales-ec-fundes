@@ -1876,6 +1876,9 @@
   function initDiagnosticMulti(container) {
     const data = readJSONScript(container, '.diagnostic-multi__data');
     if (!data || !data.questions || !data.categories) return;
+    // Ocultar el fallback estático una vez que JS inicializa
+    var fallback = container.querySelector('.diagnostic-multi__fallback');
+    if (fallback) fallback.hidden = true;
     const key = 'mi-compania-diagnostic::v1::' + (container.dataset.storageKey || 'default');
 
     const state = { answers: {}, blocked: false, blockReason: '' };
@@ -1916,7 +1919,7 @@
         html += '<button type="button" class="diagnostic-multi__reset">Volver a empezar</button>';
         html += '</div>';
       } else if (completed) {
-        // calcular scores
+        // calcular scores acumulados
         const scores = {};
         data.categories.forEach(function (c) { scores[c.id] = 0; });
         Object.keys(state.answers).forEach(function (qi) {
@@ -1927,42 +1930,188 @@
             });
           }
         });
-        // ordenar categorías por score
-        const ranked = data.categories.slice().sort(function (a, b) { return (scores[b.id] || 0) - (scores[a.id] || 0); });
-        const maxScore = ranked[0] ? scores[ranked[0].id] : 0;
 
-        html += '<div class="diagnostic-multi__result">';
-        html += '<h3>Tu perfil encaja con</h3>';
-        ranked.forEach(function (cat, idx) {
-          const score = scores[cat.id] || 0;
-          const pct = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
-          const isTop = idx === 0;
-          const isStrong = pct >= 60;
-          html += '<div class="diagnostic-multi__match' + (isTop ? ' diagnostic-multi__match--top' : '') + (isStrong ? '' : ' diagnostic-multi__match--weak') + '">';
-          html += '<div class="diagnostic-multi__match-header">';
-          html += '<span class="diagnostic-multi__match-label">' + escapeHTML(cat.label) + '</span>';
-          if (isTop && isStrong) html += '<span class="diagnostic-multi__match-badge">Recomendado</span>';
-          else if (!cat.available) html += '<span class="diagnostic-multi__match-badge diagnostic-multi__match-badge--coming">En construcción</span>';
-          html += '<span class="diagnostic-multi__match-pct">' + pct + '%</span>';
-          html += '</div>';
-          html += '<div class="diagnostic-multi__match-bar"><div class="diagnostic-multi__match-fill" style="width:' + pct + '%"></div></div>';
-          if (cat.summary) html += '<p class="diagnostic-multi__match-summary">' + escapeHTML(cat.summary) + '</p>';
-          if (cat.href && cat.available) {
-            html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Ir al curso de ' + escapeHTML(cat.label) + ' →</a>';
-          } else if (!cat.available) {
-            html += '<p class="diagnostic-multi__match-coming">Este curso está en construcción. Mientras tanto, conoce el marco general en el <a href="../index.html">listado de manuales</a>.</p>';
+        const isMultiMode = container.dataset.mode === 'multi';
+        const threshold = parseInt(container.dataset.threshold || '60', 10);
+
+        if (isMultiMode) {
+          // Modo multi: calcular porcentaje sobre el máximo teórico posible por categoría
+          const maxTheoretical = {};
+          data.categories.forEach(function (c) { maxTheoretical[c.id] = 0; });
+          data.questions.forEach(function (q) {
+            // Para cada pregunta, sumar el score máximo que cada categoría puede recibir
+            const maxPerCat = {};
+            data.categories.forEach(function (c) { maxPerCat[c.id] = 0; });
+            q.options.forEach(function (opt) {
+              if (opt.scores && !opt.block) {
+                Object.keys(opt.scores).forEach(function (cid) {
+                  if (maxPerCat[cid] !== undefined && (opt.scores[cid] || 0) > maxPerCat[cid]) {
+                    maxPerCat[cid] = opt.scores[cid];
+                  }
+                });
+              }
+            });
+            data.categories.forEach(function (c) { maxTheoretical[c.id] += maxPerCat[c.id]; });
+          });
+
+          const pctAbsolute = {};
+          data.categories.forEach(function (c) {
+            const max = maxTheoretical[c.id] || 1;
+            pctAbsolute[c.id] = Math.min(100, Math.round((scores[c.id] / max) * 100));
+          });
+
+          // Ordenar por pctAbsolute de mayor a menor
+          const ranked = data.categories.slice().sort(function (a, b) {
+            return (pctAbsolute[b.id] || 0) - (pctAbsolute[a.id] || 0);
+          });
+
+          const compatibles = ranked.filter(function (c) { return pctAbsolute[c.id] >= threshold; });
+          const hasCompatible = compatibles.length > 0;
+
+          html += '<div class="diagnostic-multi__result">';
+          html += '<h3>Tu perfil según los 4 estándares</h3>';
+
+          if (!hasCompatible) {
+            html += '<div class="diagnostic-multi__no-match callout callout--tip">';
+            html += '<p>Tu perfil actual no tiene una coincidencia fuerte con estos 4 estándares. Eso no significa que no puedas certificarte — puede ser que tu trabajo cotidiano aún no incluya el acompañamiento a MiPyMEs, o que estés en una etapa de transición. El <a href="../maestro/index.html">Curso introductorio</a> te ayuda a entender las funciones en detalle.</p>';
+            html += '</div>';
           }
+
+          ranked.forEach(function (cat) {
+            const pct = pctAbsolute[cat.id] || 0;
+            const isCompatible = pct >= threshold;
+            html += '<div class="diagnostic-multi__match' + (isCompatible ? ' diagnostic-multi__match--top' : ' diagnostic-multi__match--weak') + '">';
+            html += '<div class="diagnostic-multi__match-header">';
+            html += '<span class="diagnostic-multi__match-label">' + escapeHTML(cat.label) + '</span>';
+            if (isCompatible) {
+              html += '<span class="diagnostic-multi__match-badge">Compatible</span>';
+            } else {
+              html += '<span class="diagnostic-multi__match-badge diagnostic-multi__match-badge--gray">No prioritario</span>';
+            }
+            if (!cat.available) html += '<span class="diagnostic-multi__match-badge diagnostic-multi__match-badge--coming">En construcción</span>';
+            html += '<span class="diagnostic-multi__match-pct">' + pct + '%</span>';
+            html += '</div>';
+            html += '<div class="diagnostic-multi__match-bar"><div class="diagnostic-multi__match-fill" style="width:' + pct + '%"></div></div>';
+            if (cat.summary) html += '<p class="diagnostic-multi__match-summary">' + escapeHTML(cat.summary) + '</p>';
+            if (isCompatible && cat.href && cat.available) {
+              html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Ir al manual de ' + escapeHTML(cat.label) + ' →</a>';
+            } else if (!cat.available) {
+              html += '<p class="diagnostic-multi__match-coming">Este manual está en construcción. Mientras tanto, conoce el marco general en el <a href="../index.html">listado de manuales</a>.</p>';
+            }
+            html += '</div>';
+          });
+
+          if (data.wrap_up) {
+            html += '<aside class="diagnostic-multi__wrapup"><strong>Para llevar:</strong> ' + escapeHTML(data.wrap_up) + '</aside>';
+          }
+
+          html += '<button type="button" class="diagnostic-multi__reset">Volver a hacer el diagnóstico</button>';
           html += '</div>';
-        });
-        if (data.wrap_up) {
-          html += '<aside class="diagnostic-multi__wrapup"><strong>Para llevar:</strong> ' + escapeHTML(data.wrap_up) + '</aside>';
+
+          // Radar chart — se inserta después de setear innerHTML, en un paso asíncrono
+          // Guardamos los datos en el contenedor para recuperarlos tras el re-render
+          if (hasCompatible) {
+            container._radarData = { ranked: ranked, pctAbsolute: pctAbsolute };
+          } else {
+            container._radarData = null;
+          }
+
+        } else {
+          // Modo clásico (retrocompatible): top-1 como Recomendado
+          const ranked = data.categories.slice().sort(function (a, b) { return (scores[b.id] || 0) - (scores[a.id] || 0); });
+          const maxScore = ranked[0] ? scores[ranked[0].id] : 0;
+
+          html += '<div class="diagnostic-multi__result">';
+          html += '<h3>Tu perfil encaja con</h3>';
+          ranked.forEach(function (cat, idx) {
+            const score = scores[cat.id] || 0;
+            const pct = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
+            const isTop = idx === 0;
+            const isStrong = pct >= 60;
+            html += '<div class="diagnostic-multi__match' + (isTop ? ' diagnostic-multi__match--top' : '') + (isStrong ? '' : ' diagnostic-multi__match--weak') + '">';
+            html += '<div class="diagnostic-multi__match-header">';
+            html += '<span class="diagnostic-multi__match-label">' + escapeHTML(cat.label) + '</span>';
+            if (isTop && isStrong) html += '<span class="diagnostic-multi__match-badge">Recomendado</span>';
+            else if (!cat.available) html += '<span class="diagnostic-multi__match-badge diagnostic-multi__match-badge--coming">En construcción</span>';
+            html += '<span class="diagnostic-multi__match-pct">' + pct + '%</span>';
+            html += '</div>';
+            html += '<div class="diagnostic-multi__match-bar"><div class="diagnostic-multi__match-fill" style="width:' + pct + '%"></div></div>';
+            if (cat.summary) html += '<p class="diagnostic-multi__match-summary">' + escapeHTML(cat.summary) + '</p>';
+            if (cat.href && cat.available) {
+              html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Ir al curso de ' + escapeHTML(cat.label) + ' →</a>';
+            } else if (!cat.available) {
+              html += '<p class="diagnostic-multi__match-coming">Este curso está en construcción. Mientras tanto, conoce el marco general en el <a href="../index.html">listado de manuales</a>.</p>';
+            }
+            html += '</div>';
+          });
+          if (data.wrap_up) {
+            html += '<aside class="diagnostic-multi__wrapup"><strong>Para llevar:</strong> ' + escapeHTML(data.wrap_up) + '</aside>';
+          }
+          html += '<button type="button" class="diagnostic-multi__reset">Volver a hacer el diagnóstico</button>';
+          html += '</div>';
         }
-        html += '<button type="button" class="diagnostic-multi__reset">Volver a hacer el diagnóstico</button>';
-        html += '</div>';
       }
 
       html += '</div>';
       container.innerHTML = html;
+
+      // Radar chart en modo multi (carga Chart.js condicionalmente)
+      if (container._radarData) {
+        var radarPayload = container._radarData;
+        var radarWrap = document.createElement('div');
+        radarWrap.className = 'diagnostic-multi__radar';
+        radarWrap.innerHTML = '<h4>Tus fortalezas por área</h4><div class="chart-block__canvas-wrap"><canvas></canvas></div>';
+        var resultDiv = container.querySelector('.diagnostic-multi__result');
+        var wrapupEl = resultDiv && resultDiv.querySelector('.diagnostic-multi__wrapup');
+        if (wrapupEl) {
+          resultDiv.insertBefore(radarWrap, wrapupEl);
+        } else if (resultDiv) {
+          resultDiv.appendChild(radarWrap);
+        }
+        var canvas = radarWrap.querySelector('canvas');
+        var renderRadar = function () {
+          if (!canvas || !window.Chart) return;
+          window.Chart.defaults.font.family = 'Afacad, Inter, sans-serif';
+          window.Chart.defaults.color = '#28467e';
+          try {
+            new window.Chart(canvas.getContext('2d'), {
+              type: 'radar',
+              data: {
+                labels: radarPayload.ranked.map(function (c) { return c.label; }),
+                datasets: [{
+                  label: 'Tu perfil',
+                  data: radarPayload.ranked.map(function (c) { return radarPayload.pctAbsolute[c.id] || 0; }),
+                  backgroundColor: 'rgba(40, 70, 126, 0.15)',
+                  borderColor: '#28467e',
+                  pointBackgroundColor: '#f7c031',
+                  pointBorderColor: '#28467e',
+                  pointHoverBackgroundColor: '#f7c031',
+                  borderWidth: 2
+                }]
+              },
+              options: {
+                responsive: true,
+                scales: {
+                  r: {
+                    min: 0,
+                    max: 100,
+                    ticks: { stepSize: 20, font: { size: 11 } },
+                    pointLabels: { font: { size: 13 } }
+                  }
+                },
+                plugins: { legend: { display: false } }
+              }
+            });
+          } catch (e) { console.warn('Radar chart error:', e); }
+        };
+        if (window.Chart) {
+          renderRadar();
+        } else {
+          loadCDN('https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js')
+            .then(renderRadar)
+            .catch(function (e) { console.warn('No se pudo cargar Chart.js para el radar:', e); });
+        }
+      }
 
       // bind handlers
       container.querySelectorAll('input[type="radio"]').forEach(function (radio) {

@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mi CompañIA — Curso introductorio · Implementar IA · IA para MiPyMEs</title>
-<meta name="description" content="Capacitación de Alineación a estándares de competencia IA para MiPyMEs. Curso introductorio y Curso de alineación: Implementar IA en los procesos de la MiPyME." />
+<title>Mi CompañIA — Certificación CONOCER en IA para MiPyMEs</title>
+<meta name="description" content="Prepárate para la certificación CONOCER en IA para MiPyMEs. Diagnóstico de perfil, Curso introductorio y manuales de los 4 estándares de competencia." />
 <link rel="icon" type="image/png" href="img/logo.png" />
 <link rel="stylesheet" href="assets/styles.css" />
+<script src="assets/interactive.js" defer></script>
 </head>
 <body>
 
@@ -16,26 +17,26 @@
       <img src="img/logo.png" alt="Mi CompañIA" />
       <span class="brand-text">Mi CompañIA</span>
     </a>
-    <nav>
+    <nav aria-label="Navegación principal">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="diagnostico/index.html">Diagnóstico</a>
       <a href="maestro/index.html">Curso introductorio</a>
-      <a href="estandar-a/index.html">Curso alineación Implementación IA</a>
-      <a href="#contexto">Contexto</a>
-      <a href="#colaborar">Colaborar</a>
     </nav>
   </div>
 </header>
 
+<!-- ===== hero ===== -->
 <section class="hero hero--photo hero--index">
   <div class="container">
     <div class="eyebrow">
       <svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg>
       Manuales interactivos
     </div>
-    <h1>Capacitación de Alineación a estándares de competencia <span class="ia">IA</span> para MiPyMEs</h1>
-    <p>Mi CompañIA es la iniciativa de FUNDES Latinoamérica, con apoyo de Google.org, para que los negocios de México den sus primeros pasos con Inteligencia Artificial de forma sencilla, práctica y acompañada. Este sitio publica el manual del curso introductorio a la certificación CONOCER y los manuales de capacitación para prepararte para la certificación en cada uno de los 4 estándares.</p>
+    <h1>Tu camino a la certificación <span class="ia">CONOCER</span> en IA para MiPyMEs</h1>
+    <p>Mi CompañIA es la plataforma de FUNDES Latinoamérica, con apoyo de Google.org, para prepararte a obtener tu certificación CONOCER en Inteligencia Artificial aplicada a MiPyMEs. Aquí encuentras el diagnóstico de perfil, el Curso introductorio al sistema CONOCER y los manuales de los 4 estándares de competencia publicados.</p>
     <div class="hero-actions">
-      <a href="maestro/index.html" class="btn btn-primary">Empezar por Curso introductorio</a>
-      <a href="estandar-a/index.html" class="btn btn-secondary">Curso alineación Implementación IA</a>
+      <a href="diagnostico/index.html" class="btn btn-primary">Hacer el diagnóstico de perfil →</a>
+      <a href="maestro/index.html" class="btn btn-secondary">Ir al Curso introductorio</a>
     </div>
   </div>
 </section>
@@ -43,61 +44,72 @@
 <main>
   <div class="container">
 
+    <!-- ===== contexto ===== -->
     <section id="contexto">
       <h2>¿De qué trata este proyecto?</h2>
-      <p>Mi CompañIA, un proyecto de FUNDES Latinoamérica, en conjunto con diferentes empresas representativas del sector, ha desarrollado 4 estándares de competencia alineados con las necesidades reales del ecosistema productivo mexicano y que homologan la función de los expertos en IA en todo el país. Estos estándares sirven como un referente profesional de capacitación para empresas, capacitadores, consultores y constituyen el insumo fundamental para obtener una certificación con validez oficial mediante SEP-CONOCER.</p>
+      <p>Mi CompañIA, un proyecto de FUNDES Latinoamérica, en conjunto con diferentes empresas representativas del sector, ha desarrollado 4 estándares de competencia alineados con las necesidades reales del ecosistema productivo mexicano. Estos estándares homologan la función de los expertos en IA en todo el país, sirven como referente profesional de capacitación para empresas, capacitadores y consultores, y son el insumo para obtener una certificación con validez oficial mediante SEP-CONOCER. Los 4 estándares están publicados y disponibles en este sitio.</p>
     </section>
 
-    <section id="manuales">
+    <!-- ===== manuales ===== -->
+    <section id="cursos">
       <h2>Los manuales disponibles</h2>
-      <p>En este sitio encontrarás los manuales de capacitación que te preparan para la certificación en cada uno de los 4 estándares de competencia (en proceso de publicarse). Inicia por el curso introductorio a la certificación CONOCER para entender cómo funciona el Sistema Nacional de Competencias, cómo se evalúa por evidencias y el proceso paso a paso. Posteriormente, consulta el curso sobre el estándar que corresponde a tu perfil y función profesional, donde aprenderás sobre el contenido completo del estándar, las evidencias que deben presentarse o demostrarse, los criterios específicos que solicita y la ruta de preparación.</p>
+      <p>Empieza por el diagnóstico para saber con qué estándar tienes mayor compatibilidad. Luego ve al Curso introductorio para entender cómo funciona el Sistema Nacional de Competencias y la evaluación por evidencias. Por último, entra al manual del estándar que corresponde a tu perfil.</p>
 
       <div class="ec-grid">
+
+        <a class="ec-card ec-card--diagnostic" href="diagnostico/index.html">
+          <span class="ec-num">Punto de entrada</span>
+          <h3>Diagnóstico de perfil</h3>
+          <p>Responde 6 preguntas sobre tu trabajo real con MiPyMEs y descubre con qué estándares CONOCER tienes mayor compatibilidad. Tu perfil puede encajar en más de uno.</p>
+          <div class="meta">6 preguntas · radar chart · resultados inmediatos</div>
+        </a>
 
         <a class="ec-card" href="maestro/index.html">
           <span class="ec-num">Curso introductorio</span>
           <h3>Curso introductorio a la certificación CONOCER</h3>
           <p>Marco institucional, metodología de evaluación por evidencias, proceso paso a paso y orientación para identificar cuál es tu estándar.</p>
-          <div class="meta">6 capítulos · audios narrados · quizzes · diagnóstico inicial</div>
+          <div class="meta">6 capítulos · audios narrados · quizzes</div>
         </a>
 
         <a class="ec-card" href="estandar-a/index.html">
-          <span class="ec-num">Implementar IA</span>
-          <h3>Curso de alineación: Implementar IA en los procesos de la MiPyME</h3>
+          <span class="ec-num">Estándar A · Implementar IA</span>
+          <h3>Implementar IA en los procesos de la MiPyME</h3>
           <p>Planear, ejecutar y evaluar soluciones de IA: el ciclo completo desde diagnóstico inicial hasta medición de impacto y cierre del proyecto.</p>
-          <div class="meta">3 elementos · 14 conocimientos · caso pedagógico La Espiga</div>
+          <div class="meta">3 elementos · 14 conocimientos · caso La Espiga</div>
         </a>
 
         <a class="ec-card" href="estandar-b/index.html">
-          <span class="ec-num">Desarrollar con IA</span>
-          <h3>Estándar B · Desarrollar con IA</h3>
-          <p>Identifica necesidades, conceptualiza soluciones, desarrolla el prototipo y valida con usuarios reales. 4 elementos · 13 productos · 7 desempeños.</p>
-          <div class="meta">Disponible</div>
+          <span class="ec-num">Estándar B · Desarrollar con IA</span>
+          <h3>Desarrollar productos y servicios con IA</h3>
+          <p>Investiga la necesidad, conceptualiza la solución, construye el prototipo y valídalo con usuarios reales. Para quienes crean, no solo configuran.</p>
+          <div class="meta">4 elementos · 13 productos · caso Tonalli</div>
         </a>
 
         <a class="ec-card" href="estandar-c/index.html">
-          <span class="ec-num">Marketing digital con IA</span>
-          <h3>Estándar C · Desarrollo de contenido de marketing digital con IA</h3>
-          <p>Planifica la estrategia de contenido, genera piezas con IA generativa (texto, imagen, audio, video), implementa en plataformas digitales y optimiza con métricas. 4 elementos · 9 productos · 6 desempeños.</p>
-          <div class="meta">Disponible</div>
+          <span class="ec-num">Estándar C · Marketing digital con IA</span>
+          <h3>Desarrollo de contenido de marketing digital con IA</h3>
+          <p>Planifica la estrategia de contenido, genera piezas con IA generativa (texto, imagen, audio, video), implementa en plataformas y optimiza con métricas.</p>
+          <div class="meta">4 elementos · 9 productos · 6 desempeños</div>
         </a>
 
         <a class="ec-card" href="estandar-d/index.html">
-          <span class="ec-num">Transformación digital</span>
-          <h3>Estándar D · Desarrollo de soluciones de transformación digital con IA</h3>
-          <p>Diagnostica oportunidades de transformación digital, construye la solución técnica con IA, impleméntala en el entorno productivo de la MiPyME y optimízala con datos reales de operación. 4 elementos · 15 productos · 1 desempeño observable.</p>
-          <div class="meta">Disponible · Nivel 4 SNC · caso El Surtido</div>
+          <span class="ec-num">Estándar D · Transformación digital con IA</span>
+          <h3>Desarrollo de soluciones de transformación digital con IA</h3>
+          <p>Diagnostica oportunidades, construye la solución técnica, impleméntala en el entorno productivo y optimízala con datos reales de operación.</p>
+          <div class="meta">4 elementos · 15 productos · caso El Surtido</div>
         </a>
 
       </div>
 
-      <p style="margin-top: 18px; font-size: 0.95rem; color: var(--color-gris-texto);">¿No estás seguro de cuál es tu estándar? El <a href="maestro/es-para-ti.html">capítulo 4 del Curso introductorio</a> tiene un diagnóstico rápido que evalúa tu perfil contra los 4 estándares.</p>
+      <p style="margin-top: 18px; font-size: 0.95rem; color: var(--color-gris-texto);">¿No sabes por dónde empezar? El <a href="diagnostico/index.html">diagnóstico de perfil</a> evalúa tu experiencia contra los 4 estándares y te orienta en menos de 3 minutos.</p>
     </section>
 
+    <!-- ===== progreso ===== -->
     <div class="progress-skill" data-storage-key="dashboard-global">
       <h3 class="progress-skill__title">Tu recorrido por Mi CompañIA</h3>
     </div>
 
+    <!-- ===== colaborar ===== -->
     <section id="colaborar">
       <h2>Cómo colaborar en este sitio</h2>
       <p>Este sitio es un <strong>proyecto vivo del equipo de Mi CompañIA</strong>. Está pensado para que cualquier persona del equipo pueda revisar, comentar y editar el contenido directamente desde GitHub o desde su editor de código (Claude Code, Antigravity, VS Code).</p>
@@ -106,9 +118,9 @@
         <li><strong>Pídele los cambios</strong> — describe en lenguaje natural qué desarrollar o corregir; tu asistente edita los archivos HTML/CSS/JS.</li>
         <li><strong>Sube los cambios</strong> — pídele <code>git commit</code> y <code>git push</code>; tu aporte queda en main.</li>
       </ol>
-      <p>Para más detalles, abre el archivo <code>flujo-trabajo.html</code> en el repositorio o consulta el <code>README.md</code>.</p>
+      <p>Para más detalles sobre el flujo de trabajo del equipo, consulta el archivo <code>CLAUDE.md</code> en la raíz del repositorio o el <code>README.md</code>.</p>
       <div class="callout">
-        <strong>Nota sobre las fuentes:</strong> Todo el contenido normativo del manual proviene del documento oficial <code>Manual_Estandar_A_v2.pdf</code> y de los archivos del CGC FUNDES. Si encuentras una inconsistencia entre el manual web y la fuente oficial, la fuente manda — abre un issue o avisa al equipo.
+        <strong>Nota sobre las fuentes:</strong> Todo el contenido normativo de los manuales proviene de los documentos oficiales de cada estándar y de los archivos del CGC FUNDES. Si encuentras una inconsistencia entre el manual web y la fuente oficial, la fuente manda — abre un issue o avisa al equipo.
       </div>
     </section>
 
@@ -121,6 +133,7 @@
   <div class="container">
     <div class="footer-brand">
       <img src="img/logo.png" alt="Mi CompañIA" />
+      <span class="footer-tag">Mi CompañIA</span>
     </div>
     <div>
       <svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="margin-right: 8px;"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg>
