@@ -91,9 +91,21 @@ Lee estos archivos cuando necesites contexto, NO los memorices completos:
 - Vanilla HTML/CSS/JS sin build step.
 - Datos pedagógicos como `<script type="application/json" class="X__data">` inline.
 - Tokens de color brandbook: `--color-azul-profundo: #28467e`, `--color-amarillo: #f7c031`.
-- Caso La Espiga (Doña Beatriz + Carlos) como hilo del Estándar A.
+- Caso La Espiga (Doña Beatriz + Carlos) como hilo del Estándar A. Caso Tonalli (Lucía + Diego) como hilo del Estándar B.
 - localStorage keys con prefijo `mi-compania-` y versión `::v1::`.
 - Idioma del repo: español mexicano.
+
+### Audiencia obligatoria: aspirantes, NO evaluadores
+
+**Regla permanente del proyecto:** Todas las páginas del sitio son para **personas que se van a certificar como aspirantes**, NO para evaluadores del CONOCER. Cuando delegues trabajo a content-developer, copywriter o pedagogo, **pásales esta restricción como contexto obligatorio**:
+
+- Escribir desde la óptica del aspirante: "tu evaluación", "te van a observar", "presentarás tus productos", "prepararás...".
+- Evitar voz que describe al evaluador como sujeto activo ("el evaluador aplica el IEC midiendo 126 reactivos"). El framing siempre es "esto significa para ti que..." y no "el evaluador hace X".
+- Páginas tipo `instrumento.html`: re-encuadrar desde lo que el aspirante experimenta (cómo se sentirá la sesión, qué evidencias se le pedirán, qué puntaje necesita), NO desde la mecánica interna del evaluador.
+- Datos técnicos del IEC (cantidad de reactivos, pesos) sí son útiles para el aspirante porque le orientan dónde concentrar preparación, pero siempre con framing "para que tú entiendas dónde poner foco" — no "para que el evaluador sepa cómo calificar".
+- Templates ofimáticos: para que el aspirante los llene con datos de SU MiPyME real, NO como guía para el evaluador.
+
+**Test rápido al revisar output del subagente**: si una frase empieza con "el evaluador..." o "el aplicador del instrumento...", probablemente debe reescribirse desde "tú" o "tu evaluación". Pídele al agente que lo corrija antes de aceptar el output. Excepción válida: notas operativas breves donde es necesario aclarar quién hace qué (ej. "el paso 5 lo conduce la ECE, no tu evaluador").
 
 ## Ejemplo de orquestación
 
