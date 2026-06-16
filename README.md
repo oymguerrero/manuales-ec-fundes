@@ -68,7 +68,7 @@ Para una vista visual del proceso, abre `flujo-trabajo.html`.
 | **Manual Maestro** | 6 capítulos · audios narrados · quizzes · diagramas SVG | Desarrollado |
 | **Estándar A — Implementación** | 3 elementos · 14 conocimientos · 13 productos · caso La Espiga | Desarrollado |
 | **Estándar B — Desarrollar con IA** | 4 elementos · 13 productos · 7 desempeños | Publicado |
-| Estándar C — Marketing digital | — | En desarrollo |
+| Estándar C — Marketing digital con IA | 4 elementos · 9 productos · 6 desempeños | Publicado |
 | Estándar D — Transformación digital | — | En desarrollo |
 
 ## Variables de entorno
