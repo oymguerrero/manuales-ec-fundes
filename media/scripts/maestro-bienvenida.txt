@@ -1,9 +1,9 @@
 <speak>
-Bienvenido al Manual Maestro de Mi Compañía.
+Bienvenido al Curso introductorio de Mi CompañIA.
 <break time="700ms"/>
 Si estás escuchando esto, es porque has decidido dar un paso importante en tu trayectoria profesional: demostrar tu experiencia práctica para obtener un certificado de competencia reconocido por el Estado mexicano.
 <break time="800ms"/>
-Mi Compañía nace de una constatación sencilla y a la vez urgente. El tejido productivo mexicano está formado, en su gran mayoría, por micro, pequeñas y medianas empresas. Y estas empresas necesitan acompañamiento experto para incorporar la inteligencia artificial a sus operaciones cotidianas.
+Mi CompañIA nace de una constatación sencilla y a la vez urgente. El tejido productivo mexicano está formado, en su gran mayoría, por micro, pequeñas y medianas empresas. Y estas empresas necesitan acompañamiento experto para incorporar la inteligencia artificial a sus operaciones cotidianas.
 <break time="600ms"/>
 Las MiPyMEs no requieren consultores que hablen el lenguaje de los grandes corporativos. Tampoco soluciones que asuman recursos que no tienen. Requieren profesionales capaces de mirar su negocio con realismo, identificar dónde la inteligencia artificial puede aportar valor concreto, y acompañarlas paso a paso.
 <break time="800ms"/>
@@ -17,7 +17,7 @@ El C, el contenido de marketing digital con inteligencia artificial.
 <break time="300ms"/>
 Y el D, el desarrollo de soluciones técnicas a la medida.
 <break time="800ms"/>
-Este Manual Maestro te dará la visión general. Aprenderás qué es la certificación, cómo se evalúa, qué proceso seguirás, y cuál de los cuatro estándares corresponde a tu perfil profesional.
+Este Curso introductorio te dará la visión general. Aprenderás qué es la certificación, cómo se evalúa, qué proceso seguirás, y cuál de los cuatro estándares corresponde a tu perfil profesional.
 <break time="600ms"/>
 Una vez identifiques tu estándar, podrás profundizar en su manual específico, donde encontrarás todo el detalle que necesitarás para prepararte con seguridad.
 <break time="700ms"/>

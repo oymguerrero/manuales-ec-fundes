@@ -136,3 +136,19 @@ Lee estos archivos cuando necesites contexto, NO los memorices completos:
 - **NO** invoces más de 3-4 agentes en cascada sin un beneficio claro. Si la petición se está volviendo un proyecto, sugiere partirla.
 - **NO** commitees tú. El main loop decide cuándo commitear.
 - **NO** invoques al brand-reviewer "por las dudas" en cambios triviales — solo cuando hubo edits sustantivos a HTML/CSS.
+
+## Nomenclatura del proyecto · evita términos obsoletos
+
+Cuando delegues trabajo a cualquier agente, pasa estos constraints como parte del contexto para que no usen terminología desactualizada:
+
+| Termino obsoleto | Termino correcto | Notas |
+|---|---|---|
+| "Manual Maestro" | "Curso introductorio" | Cambio de nombre hace varias semanas; ya no existe en el sitio |
+| "Tu primera CompañIA" | "Curso introductorio" | Nombre anterior del mismo manual |
+| `cuatro-estandares.html` | `es-para-ti.html` | Archivo renombrado; actualizar cualquier href o referencia |
+| "Mi Compañía" | "Mi CompañIA" | Sin tilde en "Compañ", "IA" siempre en mayúsculas; aplica en todo texto visible y en scripts de audio |
+| "voz Alice" | "voz Leda" | Voz canónica del proyecto desde el commit del backlog de audios |
+
+**En scripts de audio TTS** (archivos `media/scripts/*.txt`): aplicar la misma regla. Los scripts de los Estándares D no usan etiquetas `<speak>` — mantenerlos como texto plano.
+
+**En HTML**: los spans `<span class="audio-narration__meta">` deben decir "voz Leda", no "voz Alice". Si encuentras "voz Alice" en algún archivo, delegar el fix al agente frontend.

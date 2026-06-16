@@ -5,7 +5,7 @@ Con las necesidades claras y las oportunidades priorizadas, llega la fase creati
 <break time="800ms"/>
 Este elemento produce tres documentos. El registro de sesión de ideación, la propuesta de valor del producto, y el modelo de negocio preliminar.
 <break time="700ms"/>
-Hay dos desempeños que el evaluador observará directamente. Primero, que el consultor facilita una sesión de ideación con el cliente, generando opciones y ayudando a elegir la más prometedora. Segundo, que presenta formalmente la propuesta de prototipo al cliente y obtiene su validación antes de construir nada.
+Hay dos desempeños que se te observarán directamente. Primero, facilitar una sesión de ideación con el cliente, generando opciones y ayudando a elegir la más prometedora. Segundo, presentar formalmente la propuesta de prototipo al cliente y obtener su validación antes de construir nada.
 <break time="800ms"/>
 Este segundo punto es esencial. En innovación, construir algo sin aprobación previa del cliente es un error costoso. La firma o validación formal del cliente al finalizar la conceptualización protege a ambas partes y alinea expectativas desde el inicio.
 <break time="700ms"/>

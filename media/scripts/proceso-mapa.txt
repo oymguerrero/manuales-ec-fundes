@@ -13,7 +13,7 @@ El evaluador te entrega un documento donde te explica con precisión qué se te 
 <break time="700ms"/>
 Paso tres: las sesiones de evaluación.
 <break time="400ms"/>
-Aquí pasa lo importante. Tu evaluador aplica el Instrumento de Evaluación: cuestionarios de conocimiento, observación de tus desempeños, revisión de tus productos, y observación de tus actitudes durante el proceso.
+Aquí pasa lo importante. Aquí demuestras tu competencia en todos sus frentes: respondes cuestionarios de conocimiento, te observan en tus desempeños, presentas tus productos y se registran tus actitudes durante el proceso.
 <break time="700ms"/>
 Paso cuatro: el cierre de evaluación.
 <break time="400ms"/>
