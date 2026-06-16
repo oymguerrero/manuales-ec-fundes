@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<title>4.3 · Plan de optimización de la solución de transformación digital, elaborado</title>
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+
+.caso-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.caso-box strong { color: #28467e; font-style: normal; }
+
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>Plan de optimización de la solución de transformación digital, elaborado</h1>
+<p class="subtitle">Manual de Transformación Digital con IA · Producto del Elemento 4 · Optimizar</p>
+</td>
+<td class="meta"><strong>Producto 4.3</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> El documento que cierra el ciclo: propone las acciones de optimización con estimación de esfuerzo y beneficio, define los ajustes a los componentes de IA (calibración, prompts, proveedores), documenta las lecciones aprendidas, propone mejoras adicionales más allá de lo solicitado (este es el AHV de Iniciativa del Elemento 4) y establece la estrategia de actualización ante cambios en tecnologías y normatividad. Es el documento que demuestra que el proyecto no termina con la entrega — evoluciona. Tu evaluador no busca que llenes el template — busca que respondas con datos de TU proyecto real con una MiPyME. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>(a) Incluye las acciones de optimización propuestas para cada área de mejora con su estimación de esfuerzo y beneficio esperado</li>
+<li>(b) Especifica los ajustes a los componentes de IA recomendados, incluyendo calibración de modelos, ajustes de prompts/cambio de proveedores de servicio</li>
+<li>(c) Tiene las lecciones aprendidas y recomendaciones para escalamiento futuro de la solución de transformación digital</li>
+<li>(d) Propone mejoras y optimizaciones pertinentes y adicionales a las solicitadas en el plan de mantenimiento con base en el análisis de los datos de rendimiento realizado y en las tendencias de IA del mercado</li>
+<li>(e) Define la estrategia de actualización ante cambios en los modelos de IA, tecnologías utilizadas/normatividad aplicable</li>
+</ul>
+</div>
+
+<div class="caso-box"><strong>Caso pedagógico Distribuidora El Surtido (ilustrativo, NO es tu solución):</strong> El Surtido — Plan de optimización v1.0 · julio 2025. Acción #1: optimizar pipeline de notificaciones (esfuerzo: 8h, beneficio: reducir tiempo de confirmación de 5 min a <30s — alto impacto en confianza). Acción #2: ajustar responsive para pantallas <5 pulgadas (esfuerzo: 4h, beneficio: mejorar experiencia de choferes — impacto medio). Ajustes de IA: reducir temperatura del prompt de clasificación de 0.2 a 0.1 para mejorar consistencia; añadir ejemplos de pedidos con errores ortográficos al system prompt. Lecciones aprendidas: 1) El lenguaje real de los clientes de El Surtido tiene muchas abreviaciones locales — el prompt inicial no las contemplaba. 2) La capacitación en 3h fue insuficiente para los choferes — recomendar 2 sesiones. Mejora adicional propuesta (iniciativa): integrar predicción de demanda con datos históricos de los primeros 3 meses, usando Prophet — estimado de implementación: 3 semanas, potencial de reducción de desperdicio de inventario del 15%. Estrategia de actualización: revisar cambios de API de OpenAI cada trimestre; suscribirse a changelog de FastAPI; revisar LFPDPPP en caso de modificaciones legislativas.</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Fecha del documento</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+<div class="question-block">
+<div><span class="question-num">1</span><span class="question-title">Acciones de optimización con esfuerzo y beneficio estimados</span></div>
+<div class="question-help">Para cada área de mejora identificada en el reporte de retroalimentación: ¿qué acción de optimización propones? Estima el esfuerzo (horas de trabajo) y el beneficio esperado (qué mejora y en cuánto).</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">2</span><span class="question-title">Ajustes a los componentes de IA</span></div>
+<div class="question-help">¿Qué ajustes propones a los componentes de IA de la solución? (Cambios en los prompts, ajuste de parámetros como temperatura, cambio de modelo o proveedor de servicio). Justifica cada ajuste con datos.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">3</span><span class="question-title">Lecciones aprendidas y recomendaciones de escalamiento</span></div>
+<div class="question-help">¿Qué aprendiste de este proyecto que harías diferente la próxima vez? ¿Qué recomendarías si la MiPyME quisiera escalar la solución a más usuarios, más locaciones o más funcionalidades?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">4</span><span class="question-title">Mejoras adicionales propuestas (iniciativa propia)</span></div>
+<div class="question-help">Más allá de corregir los problemas detectados, ¿qué mejoras adicionales propones basándote en el rendimiento observado y en las tendencias de IA del mercado? Esta sección demuestra la actitud de Iniciativa que evalúa el F21 en este elemento.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">5</span><span class="question-title">Estrategia de actualización tecnológica y normativa</span></div>
+<div class="question-help">¿Cómo planeas mantener la solución actualizada cuando cambien: los modelos de IA que usa (nuevas versiones, APIs descontinuadas), las tecnologías del stack (actualizaciones de seguridad, fin de soporte), o la normatividad aplicable (cambios en LFPDPPP u otras regulaciones)?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Template del Manual de Desarrollo de Soluciones de Transformación Digital con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+</div>
+
+</body>
+</html>

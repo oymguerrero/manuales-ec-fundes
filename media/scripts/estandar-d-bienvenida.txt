@@ -1,0 +1,7 @@
+Bienvenido al Manual del Aspirante del Estándar D: Desarrollo de soluciones de transformación digital con Inteligencia Artificial en la MiPyME.
+
+Este es el estándar más avanzado de los cuatro. El Estándar D es para quienes desarrollan soluciones completas de transformación digital con IA: diagnostican oportunidades, construyen la solución con componentes de IA, la despliegan en el entorno productivo de la MiPyME y la optimizan con datos reales de operación.
+
+A lo largo del manual, el caso de la Distribuidora El Surtido —Raúl y su equipo de 22 personas con tres camionetas de reparto— mostrará cómo se ve un proyecto completo de transformación digital con IA: desde el diagnóstico inicial hasta la optimización de la solución en operación.
+
+Si tu trabajo cotidiano incluye diagnosticar oportunidades técnicas en empresas, construir soluciones con componentes de IA, desplegarlas en producción y optimizarlas, este es tu estándar. Prepárate para estudiar con disciplina y llegar con confianza al día de tu evaluación.

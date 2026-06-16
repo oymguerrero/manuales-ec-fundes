@@ -1,0 +1,7 @@
+Elemento 2: Construir. Aquí la solución toma forma técnica.
+
+El Elemento 2 produce 4 documentos: el entorno de desarrollo configurado, la solución de transformación digital con IA desarrollada, el reporte de pruebas técnicas y la documentación técnica completa.
+
+Para El Surtido, la solución integrará tres componentes de IA: un módulo de captura y procesamiento de pedidos desde WhatsApp, un módulo de predicción de demanda basado en los datos históricos de 3 años, y un módulo de optimización de rutas para las tres camionetas. El stack tecnológico será Python, FastAPI, PostgreSQL y una interfaz en Vue.js para que los repartidores vean su ruta en el celular.
+
+El criterio central de este elemento es que la solución funcione —no solo que compile. Al día de la evaluación, deberás poder demostrar cada componente operando con datos reales.

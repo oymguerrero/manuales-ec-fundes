@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elemento 2 · Construir · Estándar D · Mi CompañIA</title>
+<meta name="description" content="Elemento 2 del Estándar D: construir la solución de transformación digital con IA. Productos, conocimientos y AHV con el caso Distribuidora El Surtido." />
+<link rel="icon" type="image/png" href="../img/logo.png" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/interactive.js" defer></script>
+</head>
+<body>
+
+<!--
+  Fuente: extras/Manual_Estandar_D_v1_1.md (v1.1, 2026-06-16)
+  Última revisión contra fuente: 2026-06-16
+  Caso pedagógico: Distribuidora El Surtido (Raúl)
+-->
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="brand-text">Mi CompañIA</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../maestro/index.html">Curso introductorio</a>
+      <a href="../estandar-a/index.html">Implementar IA</a>
+      <a href="../estandar-b/index.html">Desarrollar con IA</a>
+      <a href="../estandar-c/index.html">Marketing digital con IA</a>
+      <a href="index.html">Transformación digital con IA</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="sub-nav" aria-label="Capítulos del Manual del Estándar D">
+  <div class="container">
+    <span class="sub-nav__label">Transformación digital con IA</span>
+    <a href="index.html">Inicio</a>
+    <a href="elemento-1.html">Elemento 1 · Diagnosticar</a>
+    <a href="elemento-2.html" class="active">Elemento 2 · Construir</a>
+    <a href="elemento-3.html">Elemento 3 · Implementar</a>
+    <a href="elemento-4.html">Elemento 4 · Optimizar</a>
+    <a href="instrumento.html">Instrumento</a>
+    <a href="ruta-preparacion.html">Ruta de preparación</a>
+    <a href="recursos.html">FAQ y recursos</a>
+  </div>
+</nav>
+
+<div class="maestro-progress" aria-label="Progreso del Manual de Transformación digital con IA">
+  <div class="container">
+    <span class="maestro-progress__label">Capítulo 3 de 8 · Elemento 2 · Construir</span>
+    <div class="maestro-progress__bar" role="presentation">
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--done"></span>
+      <span class="maestro-progress__dot maestro-progress__dot--current"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Capítulo 3 · Donde la solución toma forma</div>
+    <h1>Elemento 2 — Construir la solución de transformación digital con <span class="ia">IA</span> requerida por la MiPyME</h1>
+    <p>Con el diagnóstico y la propuesta autorizada, diseñas la arquitectura, configuras el entorno de desarrollo, construyes los componentes de IA, realizas las pruebas técnicas y documentas la solución completa.</p>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <a class="back-link" href="elemento-1.html">Volver al Elemento 1 · Diagnosticar</a>
+
+    <div class="audio-narration">
+      <div class="audio-narration__header">
+        <button class="audio-narration__toggle" type="button" aria-expanded="false" aria-controls="audio-estandar-d-e2-intro">
+          Escuchar esta sección
+        </button>
+        <span class="audio-narration__meta">narración alternativa al texto</span>
+      </div>
+      <div class="audio-narration__player" id="audio-estandar-d-e2-intro" hidden>
+        <audio controls preload="none">
+          <source src="../media/audio-estandar-d-e2-intro.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio HTML5. <a href="../media/audio-estandar-d-e2-intro.mp3" download>Descarga el archivo MP3</a>.
+        </audio>
+      </div>
+      <details class="audio-narration__transcript">
+        <summary>Ver transcripción</summary>
+        <div class="audio-narration__transcript-body">
+          <p>Elemento 2: Construir. Esta es la fase de desarrollo técnico — configuras el entorno, programas la solución, la pruebas y la documentas.</p>
+          <p>El Elemento 2 produce 4 documentos y artefactos: el entorno de desarrollo configurado, la solución desarrollada, el reporte de pruebas técnicas y la documentación técnica.</p>
+          <p>En el caso de El Surtido, aquí es donde la solución de captura de pedidos, optimización de rutas y predicción de demanda cobra vida en código real que funciona.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="lesson-tabs" data-progress-key="estandar-d-elemento-2">
+    <div class="accordion accordion--modules" aria-label="Módulos del Elemento 2 · Construir">
+
+      <!-- ===== 3.1 QUÉ HARÁS ===== -->
+      <details class="accordion__item" id="que-haras" open>
+        <summary>
+          <span class="accordion__num">3.1</span>
+          <span class="accordion__title-main">Qué harás en este elemento</span>
+          <span class="accordion__meta">4 grandes tareas · desarrollo técnico · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <ol>
+            <li><strong>Configurar el entorno de desarrollo:</strong> repositorio con estructura de carpetas organizada según el stack tecnológico, archivo de dependencias con versiones especificadas, README con instrucciones de instalación y ejecución, variables de entorno y credenciales de APIs de IA configuradas de forma segura.</li>
+            <li><strong>Desarrollar la solución:</strong> backend con la lógica de negocio, integración con los modelos/servicios de IA seleccionados, interfaz de usuario funcional y responsiva, esquema de base de datos con respaldos automatizados, medidas de seguridad (validación de datos, autenticación, cifrado, control de acceso basado en roles) y protección de datos personales.</li>
+            <li><strong>Realizar pruebas técnicas:</strong> pruebas unitarias, de integración y funcionales; verificación de vulnerabilidades de seguridad; plan de contingencia ante interrupciones; validación de la calidad de las respuestas de los componentes de IA.</li>
+            <li><strong>Elaborar la documentación técnica:</strong> arquitectura implementada con diagrama actualizado, referencia de endpoints de la API, instrucciones de mantenimiento, decisiones técnicas tomadas con su justificación, configuración de los componentes de IA y dependencias externas.</li>
+          </ol>
+
+          <aside class="callout callout--example callout--with-photo" role="note">
+            <img src="../img/personajes/desarrolladora-solucion.jpg" alt="Desarrolladora trabajando en la solución de transformación digital para la Distribuidora El Surtido" class="img-personaje" loading="lazy" />
+            <span class="callout__label">El Surtido · La solución toma forma en código</span>
+            <div class="callout__body">
+              <p>Con la propuesta autorizada por Raúl, ahora construyes la solución: una aplicación web que permite a los clientes de El Surtido capturar pedidos por formulario (en lugar de llamada), un módulo de optimización de rutas que usa una API de ruteo con IA para ordenar las paradas de cada camioneta, y un modelo de predicción de demanda entrenado con el historial de pedidos de los últimos dos años.</p>
+              <p>Todo esto requiere un repositorio organizado, un backend que integre los tres componentes, una interfaz simple para los choferes y los clientes, y pruebas que demuestren que funciona antes de llevarlo a producción.</p>
+            </div>
+          </aside>
+
+          <!-- ACTIVIDAD 4: diagram-mermaid "Arquitectura de la solución El Surtido" -->
+          <p>Antes de escribir una línea de código, diseñas la arquitectura. Para El Surtido, la solución integra tres componentes de IA que trabajan con los mismos datos de pedidos:</p>
+
+          <img src="../img/escenas/arquitectura-solucion.jpg" alt="Diseño de arquitectura de la solución para El Surtido" class="img-escena" loading="lazy" />
+
+          <div class="diagram-mermaid">
+            <pre class="mermaid">flowchart TB
+    A["WhatsApp API / Formulario web\nCaptura de pedidos"] --> B["Backend\nCaptura y validación"]
+    B --> C[("Base de datos\nde pedidos")]
+    C --> D["Motor IA\nOptimización de rutas"]
+    C --> E["Motor IA\nPredicción de demanda"]
+    D --> F["Dashboard\nRutas del día"]
+    E --> G["Dashboard\nInventario sugerido"]
+    F --> H["Repartidores\nmóvil"]
+    G --> I["Raúl\ngerente"]
+
+    style A fill:#e8f4fd,stroke:#529ed7
+    style B fill:#e8f4fd,stroke:#529ed7
+    style C fill:#f7f0e6,stroke:#f29100
+    style D fill:#eef6ee,stroke:#2d7a2d
+    style E fill:#eef6ee,stroke:#2d7a2d
+    style F fill:#fdf8e6,stroke:#f7c031
+    style G fill:#fdf8e6,stroke:#f7c031
+    style H fill:#f5f5f5,stroke:#888
+    style I fill:#f5f5f5,stroke:#888</pre>
+          </div>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.2 CÓMO TE EVALUARÁN ===== -->
+      <details class="accordion__item" id="como-evaluan">
+        <summary>
+          <span class="accordion__num">3.2</span>
+          <span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+          <span class="accordion__meta">Tabla de tipos de evidencia · 2 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Tipo de evidencia</th>
+                <th>Cantidad</th>
+                <th>Cómo se valora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Desempeños observables</strong></td>
+                <td>No hay desempeños en este elemento</td>
+                <td>El Elemento 2 no tiene desempeños observables: toda la evidencia es documental y técnica.</td>
+              </tr>
+              <tr>
+                <td><strong>Productos entregables</strong></td>
+                <td>4 productos</td>
+                <td>En tu evaluación se revisarán los 4 productos que elaboraste, contrastándolos contra los criterios del F21 uno por uno.</td>
+              </tr>
+              <tr>
+                <td><strong>Conocimientos</strong></td>
+                <td>6 áreas</td>
+                <td>Se te aplicará un cuestionario que mide el dominio aplicado de los 6 áreas de conocimiento exigidas.</td>
+              </tr>
+              <tr>
+                <td><strong>Actitudes, hábitos y valores</strong></td>
+                <td>1 (Responsabilidad)</td>
+                <td>Se observará cómo la solución desarrollada cumple con los estándares de calidad requeridos y la normativa de protección de datos personales.</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.3 LOS 4 PRODUCTOS ===== -->
+      <details class="accordion__item" id="productos">
+        <summary>
+          <span class="accordion__num">3.3</span>
+          <span class="accordion__title-main">Los 4 productos del Elemento 2</span>
+          <span class="accordion__meta">Criterios F21 literales · 15 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">Requisito taxativo</span>
+            <div class="callout__body">Para obtener la competencia en este elemento, tu solución debe estar funcionando en el entorno productivo de la MiPyME. No es suficiente demostrar que el código compila — debes poder mostrar la solución operando con datos reales. Una solución que solo funciona en local o en entorno de pruebas no satisface los criterios del F21 para el Elemento 2.</div>
+          </aside>
+
+          <div class="template-downloads">
+            <h3 class="template-downloads__title">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+              Templates descargables — Elemento 2
+            </h3>
+            <p class="template-downloads__intro">El Elemento 2 produce 4 artefactos técnicos: el entorno de desarrollo configurado, la solución construida, el reporte de pruebas y la documentación técnica. Descarga los templates, complétalos con tu stack real y tendrás los entregables listos para tu evaluación.</p>
+            <div class="template-downloads__grid">
+              <a class="template-downloads__item" href="templates/2-1-entorno-desarrollo-configurado.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.1</span> Entorno de desarrollo configurado</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/2-2-checklist-verificacion-solucion.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.2</span> Checklist de verificación de la solución desarrollada</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/2-3-reporte-pruebas-tecnicas.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.3</span> Reporte de pruebas técnicas de la solución</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="template-downloads__item" href="templates/2-4-documentacion-tecnica.doc" download>
+                <span class="template-downloads__item-icon">DOC</span>
+                <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.4</span> Documentación técnica de la solución</span>
+                <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <h3>Producto 2.1 · El entorno de desarrollo de la solución de transformación digital configurado</h3>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">El Surtido · Producto 2.1</span>
+            <div class="callout__body">El repositorio de El Surtido tiene carpetas separadas para backend (API Node.js), frontend (React), módulo de ruteo (Python con biblioteca de optimización) y módulo de predicción (Jupyter notebooks + modelo exportado). El README explica cómo instalar dependencias y configurar las variables de entorno con las claves de la API de ruteo y el modelo de predicción, sin que esas claves queden en el código.</div>
+          </aside>
+
+          <ul>
+            <li><strong>(a)</strong> Contiene el repositorio de la solución de transformación digital con la estructura de carpetas organizada según el stack tecnológico seleccionado.</li>
+            <li><strong>(b)</strong> Incluye el archivo de dependencias con las versiones especificadas de cada librería y framework utilizado.</li>
+            <li><strong>(c)</strong> Tiene las instrucciones de instalación, configuración y ejecución del proyecto en el archivo README.</li>
+            <li><strong>(d)</strong> Indica la configuración de variables de entorno y credenciales de APIs de IA de forma segura, separadas de la solución de transformación digital.</li>
+            <li><strong>(e)</strong> Refiere el stack tecnológico seleccionado correspondiente con la arquitectura definida en la propuesta autorizada.</li>
+            <li><strong>(f)</strong> Describe el historial de cambios documentado.</li>
+          </ul>
+
+          <h3>Producto 2.2 · La solución de transformación digital con IA desarrollada</h3>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">El Surtido · Producto 2.2</span>
+            <div class="callout__body">La solución de El Surtido tiene: un backend que expone endpoints para captura de pedidos, consulta de rutas y predicción de demanda; la integración con la API de ruteo (con manejo de errores y respuestas de respaldo cuando la API no está disponible); una interfaz web simple donde los clientes capturan pedidos y los choferes ven su ruta del día; y la base de datos con respaldos automatizados cada noche.</div>
+          </aside>
+
+          <ul>
+            <li><strong>(a)</strong> Contiene el backend operativo con la lógica de negocio implementada según los requerimientos funcionales de la propuesta autorizada.</li>
+            <li><strong>(b)</strong> Incluye la integración con los modelos/servicios de IA seleccionados, funcionando con manejo de errores y respuestas de respaldo.</li>
+            <li><strong>(c)</strong> Tiene la interfaz de usuario de manera funcional, responsiva, accesible y conectada al backend.</li>
+            <li><strong>(d)</strong> Indica el esquema de base de datos implementado con procedimientos de respaldo automatizado configurados.</li>
+            <li><strong>(e)</strong> Establece las medidas de seguridad aplicadas sobre validación y sanitización de datos de entrada, autenticación de usuarios, cifrado de datos sensibles y control de acceso basado en roles.</li>
+            <li><strong>(f)</strong> Refiere la manera en que se protegen los datos personales en el desarrollo de la solución.</li>
+            <li><strong>(g)</strong> Incluye su documentación, nomenclatura consistente y la separación de responsabilidades específicas de las funciones de cada componente del sistema.</li>
+          </ul>
+
+          <h3>Producto 2.3 · El reporte de pruebas técnicas de la solución de transformación digital elaborado</h3>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">El Surtido · Producto 2.3</span>
+            <div class="callout__body">El reporte de pruebas de El Surtido documenta: pruebas unitarias para el módulo de captura de pedidos y el módulo de predicción, pruebas de integración entre el backend y la API de ruteo, verificación de que el sistema maneja correctamente una pedido duplicado (escenario real frecuente), y validación de que las respuestas del modelo de predicción tienen una precisión aceptable comparada con los datos históricos reales.</div>
+          </aside>
+
+          <ul>
+            <li><strong>(a)</strong> Contiene los casos de prueba definidos para cada componente de la solución con datos de entrada y resultados esperados.</li>
+            <li><strong>(b)</strong> Incluye los resultados de las pruebas unitarias, las de integración y las funcionales ejecutadas.</li>
+            <li><strong>(c)</strong> Apunta las vulnerabilidades de seguridad identificadas, así como el estatus de corrección de las que son solucionables.</li>
+            <li><strong>(d)</strong> Tiene la información sobre la verificación realizada del correcto funcionamiento de las integraciones con los modelos/servicios de IA.</li>
+            <li><strong>(e)</strong> Describe el plan de contingencia ante la interrupción/saturación del servicio de la solución.</li>
+            <li><strong>(f)</strong> Refiere la validación realizada sobre la calidad y relevancia de las respuestas generadas por los componentes de IA.</li>
+            <li><strong>(g)</strong> Señala la fecha de las pruebas realizadas, el nombre del responsable de aplicarlas y la versión de la solución de transformación digital evaluada.</li>
+          </ul>
+
+          <h3>Producto 2.4 · La documentación técnica de la solución de transformación digital elaborada</h3>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">El Surtido · Producto 2.4</span>
+            <div class="callout__body">La documentación técnica de El Surtido incluye el diagrama de arquitectura actualizado (que refleja la decisión de usar serverless para el módulo de predicción en lugar del servidor propio que se planificó inicialmente), la referencia completa de los endpoints de la API con ejemplos de petición y respuesta, y la justificación técnica de esa decisión de arquitectura con sus ventajas de costo para una empresa del tamaño de El Surtido.</div>
+          </aside>
+
+          <ul>
+            <li><strong>(a)</strong> Contiene la descripción de la arquitectura implementada con diagrama actualizado de componentes y flujos de datos.</li>
+            <li><strong>(b)</strong> Incluye la referencia de los endpoints de la API con sus parámetros, respuestas esperadas y códigos de error.</li>
+            <li><strong>(c)</strong> Tiene las instrucciones para mantenimiento, actualización y modificación futura.</li>
+            <li><strong>(d)</strong> Incluye las decisiones técnicas tomadas durante el desarrollo con su justificación.</li>
+            <li><strong>(e)</strong> Refiere la configuración de los componentes de IA, los modelos utilizados, los prompts implementados con sus parámetros y criterios de selección.</li>
+            <li><strong>(f)</strong> Considera las dependencias externas con sus versiones, licencias y procedimiento de actualización.</li>
+          </ul>
+
+          <!-- ACTIVIDAD 5: swipe-decide "¿Esto cumple con los criterios de seguridad?" -->
+          <h3>Practica: ¿cumple o no cumple con los criterios de seguridad del F21?</h3>
+          <p>Desliza cada tarjeta hacia "Sí cumple" o "No cumple". Cada tarjeta describe una práctica de desarrollo real.</p>
+
+          <div class="swipe-decide" data-storage-key="ed2-swipe-seguridad">
+            <script type="application/json" class="swipe-decide__data">
+            {
+              "question": "¿Esta práctica de desarrollo cumple con los criterios de seguridad del F21?",
+              "leftLabel": "No cumple",
+              "rightLabel": "Sí cumple",
+              "cards": [
+                {
+                  "content": "<strong>Credenciales en el repositorio</strong><br><br>El archivo .env con las claves de la API de optimización de rutas está subido al repositorio de GitHub junto con el código fuente.",
+                  "correct": "left",
+                  "feedback": "No cumple. Las credenciales y variables de entorno NUNCA deben estar en el repositorio de código. El Producto 2.1(d) exige que estén 'configuradas de forma segura, separadas de la solución'. Agrega .env al .gitignore y usa un archivo .env.example sin valores reales."
+                },
+                {
+                  "content": "<strong>Validación de datos de entrada</strong><br><br>El sistema valida que el teléfono del cliente tenga formato correcto (10 dígitos numéricos) antes de guardarlo en la base de datos. Las entradas malformadas se rechazan con un mensaje de error claro.",
+                  "correct": "right",
+                  "feedback": "Cumple. Esto es sanitización de datos de entrada, exigida en el Producto 2.2(e). Para El Surtido es importante porque los pedidos llegan de múltiples canales (WhatsApp, formulario web) con formatos heterogéneos."
+                },
+                {
+                  "content": "<strong>Contraseñas en texto plano</strong><br><br>La contraseña del administrador (Raúl) se guarda en texto plano en la base de datos para facilitar la recuperación si la olvida.",
+                  "correct": "left",
+                  "feedback": "No cumple. Las contraseñas deben almacenarse siempre cifradas con un algoritmo de hash más sal (bcrypt, Argon2). El Producto 2.2(e) exige 'cifrado de datos sensibles'. Guardar contraseñas en texto plano es una vulnerabilidad crítica."
+                },
+                {
+                  "content": "<strong>Log de auditoría de accesos</strong><br><br>El sistema registra en un log quién accedió a los datos de pedidos, cuándo y qué acción realizó (consulta, modificación, eliminación).",
+                  "correct": "right",
+                  "feedback": "Cumple. El control de acceso basado en roles incluye tener trazabilidad de los accesos — parte del Producto 2.2(e). Para El Surtido, este log ayuda a detectar si algún repartidor accedió a datos fuera de su rol."
+                },
+                {
+                  "content": "<strong>README sin versiones de dependencias</strong><br><br>El README incluye las instrucciones de instalación pero solo dice 'instalar las dependencias con pip install -r requirements.txt' sin especificar versiones.",
+                  "correct": "left",
+                  "feedback": "No cumple completamente. El Producto 2.1(b) exige un 'archivo de dependencias con las versiones especificadas de cada librería'. Sin versiones fijas, el proyecto no es reproducible: una actualización de librería puede romper el sistema. El requirements.txt debe tener versiones exactas (ej. fastapi==0.110.0)."
+                },
+                {
+                  "content": "<strong>Documentación de prompts de IA</strong><br><br>Los prompts enviados al modelo de predicción de demanda están documentados en el reporte de pruebas con sus parámetros (temperatura, max_tokens, modelo) y la justificación de su selección.",
+                  "correct": "right",
+                  "feedback": "Cumple. El Producto 2.3(e) requiere 'configuración de los componentes de IA, los modelos utilizados, los prompts implementados con sus parámetros y criterios de selección'. Documentar los prompts también facilita la optimización futura del Elemento 4."
+                },
+                {
+                  "content": "<strong>Validación solo en backend</strong><br><br>La interfaz no tiene validación en el lado del cliente, pero el backend valida y rechaza los datos incorrectos antes de procesarlos.",
+                  "correct": "right",
+                  "feedback": "Aceptable según el F21. La validación en el backend es el requisito mínimo de seguridad — es donde realmente cuenta, ya que la validación del frontend puede eludirse. La validación adicional en el frontend mejora la experiencia de usuario pero no es obligatoria para cumplir el estándar."
+                }
+              ]
+            }
+            </script>
+          </div>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.4 LOS CONOCIMIENTOS ===== -->
+      <details class="accordion__item" id="conocimientos">
+        <summary>
+          <span class="accordion__num">3.4</span>
+          <span class="accordion__title-main">Los 6 conocimientos del Elemento 2</span>
+          <span class="accordion__meta">Cuestionario · niveles cognitivos · 5 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>En tu evaluación se te aplicará un cuestionario con reactivos diseñados para verificar el nivel cognitivo indicado. El nivel <strong>Conocimiento</strong> indica que debes reconocer hechos, componentes o definiciones; el nivel <strong>Comprensión</strong> indica que debes poder explicar el concepto y reconocer su aplicación en un caso.</p>
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Área de conocimiento</th>
+                <th>Nivel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Contenido indispensable de un reporte de pruebas técnicas de software.</td>
+                <td><span class="tag tag-conocimiento">Conocimiento</span></td>
+              </tr>
+              <tr>
+                <td>Documentación técnica de código.</td>
+                <td><span class="tag tag-conocimiento">Conocimiento</span></td>
+              </tr>
+              <tr>
+                <td>Principios de seguridad de la información en el desarrollo de aplicaciones con IA: privacidad por diseño en productos de IA; integración de principios de protección de datos desde la etapa de diseño; minimización de datos en flujos de procesamiento; documentación de transferencias a terceros.</td>
+                <td><span class="tag tag-comprension">Comprensión</span></td>
+              </tr>
+              <tr>
+                <td>Metodologías para el desarrollo de soluciones tecnológicas de IA, locales y servicios administrados en la Nube.</td>
+                <td><span class="tag tag-conocimiento">Conocimiento</span></td>
+              </tr>
+              <tr>
+                <td>Principios de IA ética y mitigación de sesgos.</td>
+                <td><span class="tag tag-conocimiento">Conocimiento</span></td>
+              </tr>
+              <tr>
+                <td>Pruebas de respaldo y de recuperación de la herramienta de IA: definición; cuáles son los tipos de fallas que deben simularse antes de operar la herramienta; elementos que debe incluir el registro de resultados de las pruebas.</td>
+                <td><span class="tag tag-conocimiento">Conocimiento</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Para tener presente</span>
+            <div class="callout__body">El conocimiento de <strong>Principios de seguridad</strong> (nivel Comprensión) requiere que puedas aplicarlo a un caso: dado un escenario de desarrollo con IA, identificar qué principio de privacidad por diseño aplica o qué dato no debería transferirse a un tercero sin consentimiento.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.5 AHV — RESPONSABILIDAD ===== -->
+      <details class="accordion__item" id="ahv">
+        <summary>
+          <span class="accordion__num">3.5</span>
+          <span class="accordion__title-main">AHV — Responsabilidad</span>
+          <span class="accordion__meta">Actitud observable · penalización si falta · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">AHV · Responsabilidad — Definición conforme al F21</span>
+            <div class="callout__body">
+              <p><strong>Responsabilidad:</strong> La manera en que la solución de transformación digital con IA desarrollada y funcional cumple con los estándares de calidad requeridos: código funcional documentado y alineado a la propuesta autorizada por la MiPyME, cumpliendo con la normatividad de protección de datos personales aplicable.</p>
+              <p>Esta actitud se observa durante la sesión de evaluación. Su ausencia penaliza el resultado. No se evalúa lo que declaras sobre la calidad de tu código — se evalúa si tu solución efectivamente funciona, está documentada y protege los datos como el F21 y la ley exigen.</p>
+            </div>
+          </aside>
+
+          <p>La Responsabilidad en el Elemento 2 se manifiesta en la coherencia entre lo que prometiste en la propuesta autorizada (Producto 1.4) y lo que entregaste en la solución (Producto 2.2): si el F21 requiere cifrado de datos sensibles y la propuesta lo incluyó, tu solución debe implementarlo. Si no, la brecha entre promesa y entrega se observa como falta de responsabilidad.</p>
+
+        </div>
+      </details>
+
+      <!-- ===== 3.6 GLOSARIO ===== -->
+      <details class="accordion__item" id="glosario">
+        <summary>
+          <span class="accordion__num">3.6</span>
+          <span class="accordion__title-main">Glosario del Elemento 2</span>
+          <span class="accordion__meta">20 términos del F21 · 8 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Término</th>
+                <th>Definición conforme al F21</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Archivo README</strong></td>
+                <td>Se refiere al documento incluido en un repositorio de código que proporciona información esencial sobre el proyecto, como su propósito, instrucciones de instalación, uso, dependencias, configuración y otros detalles relevantes para usuarios y desarrolladores.</td>
+              </tr>
+              <tr>
+                <td><strong>Backend</strong></td>
+                <td>Se refiere a la capa de una aplicación que contiene la lógica de negocio, el procesamiento de datos y la comunicación con bases de datos y servicios externos, no visible para el usuario final.</td>
+              </tr>
+              <tr>
+                <td><strong>Cifrado de datos</strong></td>
+                <td>Se refiere al proceso de transformar información legible en un formato codificado que solo puede ser descifrado por personas o sistemas autorizados, protegiendo la confidencialidad de los datos.</td>
+              </tr>
+              <tr>
+                <td><strong>Control de acceso basado en roles</strong></td>
+                <td>Se refiere al mecanismo de seguridad que restringe el acceso a los recursos del sistema según el rol asignado a cada usuario dentro de la organización.</td>
+              </tr>
+              <tr>
+                <td><strong>Control de versiones</strong></td>
+                <td>Se refiere al sistema que registra los cambios realizados al código fuente a lo largo del tiempo, permitiendo rastrear modificaciones, revertir errores y colaborar entre desarrolladores.</td>
+              </tr>
+              <tr>
+                <td><strong>Dependencias externas</strong></td>
+                <td>Se refiere al conjunto de librerías, frameworks, servicios/recursos desarrollados por terceros que una aplicación utiliza para funcionar correctamente, evitando desarrollar funcionalidades desde cero y facilitando la integración, el desarrollo y el mantenimiento del sistema.</td>
+              </tr>
+              <tr>
+                <td><strong>Endpoint</strong></td>
+                <td>Se refiere a la dirección/punto de acceso específico de una API a través del cual se realizan solicitudes y se reciben respuestas entre sistemas.</td>
+              </tr>
+              <tr>
+                <td><strong>Endpoint de la API</strong></td>
+                <td>Se refiere al punto de acceso específico dentro de una API que permite la comunicación entre sistemas, a través del cual se envían solicitudes y se reciben respuestas para consultar, crear, actualizar o eliminar datos dentro de una aplicación.</td>
+              </tr>
+              <tr>
+                <td><strong>Framework</strong></td>
+                <td>Se refiere a la estructura de software prediseñada que proporciona componentes reutilizables, convenciones y herramientas para acelerar el desarrollo de aplicaciones.</td>
+              </tr>
+              <tr>
+                <td><strong>Frontend</strong></td>
+                <td>Se refiere a la capa de una aplicación con la que el usuario interactúa directamente, incluyendo la interfaz gráfica, los elementos visuales y la experiencia de navegación.</td>
+              </tr>
+              <tr>
+                <td><strong>Interfaz de usuarios</strong></td>
+                <td>Se refiere al conjunto de elementos visuales e interactivos — como pantallas, botones, formularios, menús e iconos — mediante los cuales el usuario interactúa con una aplicación/sistema, facilitando la navegación, el uso de funcionalidades y la comunicación con el backend dentro de una solución digital.</td>
+              </tr>
+              <tr>
+                <td><strong>Librería</strong></td>
+                <td>Se refiere al conjunto de funciones, módulos o recursos de código reutilizable que pueden ser integrados en una aplicación para resolver tareas específicas sin necesidad de desarrollarlas desde cero, facilitando el desarrollo y promoviendo buenas prácticas.</td>
+              </tr>
+              <tr>
+                <td><strong>Nube</strong></td>
+                <td>Se refiere a los servidores a los que se accede a través de Internet, y al software y bases de datos que se ejecutan en los mismos.</td>
+              </tr>
+              <tr>
+                <td><strong>Prompt</strong></td>
+                <td>Se refiere a la instrucción o conjunto de instrucciones que se proporcionan a una herramienta de IA generativa para obtener un resultado específico.</td>
+              </tr>
+              <tr>
+                <td><strong>Pruebas de integración</strong></td>
+                <td>Se refiere a las verificaciones del correcto funcionamiento entre múltiples componentes/servicios que interactúan entre sí dentro de la solución.</td>
+              </tr>
+              <tr>
+                <td><strong>Pruebas unitarias</strong></td>
+                <td>Se refiere a las verificaciones individuales de cada componente o función del código para confirmar que produce los resultados esperados de forma aislada.</td>
+              </tr>
+              <tr>
+                <td><strong>Repositorio de código</strong></td>
+                <td>Se refiere al sistema de almacenamiento y control de versiones que permite gestionar, rastrear y colaborar en el desarrollo del código fuente de una solución tecnológica.</td>
+              </tr>
+              <tr>
+                <td><strong>Sanitización de datos de entrada</strong></td>
+                <td>Se refiere al proceso de limpiar, filtrar y validar los datos ingresados por el usuario o sistemas externos para eliminar contenido malicioso/inválido, prevenir vulnerabilidades como inyección de código y garantizar la integridad, seguridad y correcto procesamiento de la información dentro de una aplicación.</td>
+              </tr>
+              <tr>
+                <td><strong>Solución de transformación digital</strong></td>
+                <td>Se refiere al repositorio integrado y centralizado de tecnologías y componentes de software — como archivos, carpetas, ejecutables, configuraciones, bases de datos y servicios — organizados en un solo entorno digital que permite gestionar, automatizar e innovar procesos mediante la articulación de frontend, backend e integraciones, incorporando prácticas de desarrollo, seguridad y operación para mejorar la eficiencia, la toma de decisiones y la competitividad organizacional.</td>
+              </tr>
+              <tr>
+                <td><strong>Stack tecnológico</strong></td>
+                <td>Se refiere al conjunto de lenguajes de programación, frameworks, librerías, bases de datos y herramientas utilizadas para construir una solución de software.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ACTIVIDAD 3: flashcard-deck "Términos técnicos del desarrollo" -->
+          <h3>Refuerza los términos técnicos más relevantes para tu evaluación</h3>
+          <p>Voltea cada tarjeta. Frente: el término o pregunta. Reverso: la explicación aplicada al caso El Surtido.</p>
+
+          <div class="flashcard-deck" data-storage-key="ed2-glosario-tecnico">
+            <script type="application/json" class="flashcard-deck__data">
+            [
+              {
+                "front": "¿Qué es el stack tecnológico de la solución para El Surtido?",
+                "back": "El conjunto de lenguajes, frameworks, librerías, bases de datos y herramientas. Para El Surtido podría ser: Python + FastAPI (backend), PostgreSQL (BD), React o HTML vanilla (frontend), Google Maps API u OR-Tools (optimización de rutas), scikit-learn (predicción de demanda)."
+              },
+              {
+                "front": "¿Qué diferencia hay entre pruebas unitarias y pruebas de integración?",
+                "back": "Unitarias: verifican cada componente aislado (ej. la función que calcula la ruta óptima para un conjunto de pedidos). Integración: verifican que los componentes funcionan juntos (ej. que el módulo de pedidos envía correctamente los datos al motor de optimización)."
+              },
+              {
+                "front": "¿Qué es la sanitización de datos de entrada y por qué importa en El Surtido?",
+                "back": "Limpiar y validar datos ingresados antes de procesarlos, para prevenir vulnerabilidades. En El Surtido: validar que los pedidos recibidos por WhatsApp tengan formato correcto antes de procesarlos, prevenir inyección de SQL en formularios web."
+              },
+              {
+                "front": "¿Qué es el control de acceso basado en roles aplicado a El Surtido?",
+                "back": "Mecanismo que restringe el acceso según el rol. En El Surtido: Raúl (gerente) ve toda la analítica y puede modificar rutas; el coordinador de rutas asigna pedidos; los repartidores solo ven su ruta del día; los clientes (tiendas) solo pueden hacer pedidos."
+              },
+              {
+                "front": "¿Qué debe incluir el archivo README del proyecto de El Surtido?",
+                "back": "Propósito del sistema, instrucciones de instalación y configuración, dependencias con versiones exactas, configuración de variables de entorno (sin incluir las claves reales), instrucciones de ejecución y descripción de los endpoints principales de la API."
+              },
+              {
+                "front": "¿Qué es privacidad por diseño aplicada a la solución de El Surtido?",
+                "back": "Integrar protección de datos desde el diseño, no como parche posterior. Para El Surtido: minimizar qué datos de clientes se almacenan (solo los necesarios), cifrar datos sensibles en la BD, documentar las transferencias a APIs de IA externas (ej. Google Maps)."
+              },
+              {
+                "front": "¿Qué diferencia hay entre un endpoint y una API?",
+                "back": "La API es el conjunto completo de servicios expuestos por el sistema. El endpoint es una dirección específica dentro de esa API para una acción concreta. Ejemplo: el endpoint /pedidos/nuevo crea un pedido; el endpoint /rutas/optimizar calcula la ruta del día."
+              },
+              {
+                "front": "¿Qué características mínimas debe tener el reporte de pruebas técnicas (Producto 2.3)?",
+                "back": "Casos de prueba con datos de entrada y resultados esperados; resultados de pruebas unitarias, integración y funcionales; vulnerabilidades identificadas y su estatus de corrección; verificación de integraciones con IA; plan de contingencia; fecha, responsable y versión evaluada."
+              }
+            ]
+            </script>
+          </div>
+
+        </div>
+      </details>
+
+
+    </div>
+    </div>
+
+    <!-- ACTIVIDAD 6: scenario-decision "Decisiones técnicas en el desarrollo" -->
+    <div class="scenario-decision" data-storage-key="ed2-escenario-alcance">
+      <script type="application/json" class="scenario-decision__data">
+      {
+        "actor": "Raúl · Distribuidora El Surtido",
+        "title": "\"¿Por qué tardaste 3 semanas? Esperaba algo más sencillo\"",
+        "context": "Al terminar el desarrollo y mostrárselo a Raúl, él dice: '¿Por qué tardaste 3 semanas? Esperaba algo más sencillo.' Tú sabes que cumpliste exactamente el alcance acordado — pero Raúl parece haber olvidado el detalle de lo que se comprometió.",
+        "question": "¿Cómo respondes a la expectativa de Raúl?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Le muestras la propuesta autorizada (Producto 1.4) donde acordaron alcance, fechas y entregables con su firma.",
+            "outcome": "ok",
+            "feedback": "Perfecto. La propuesta autorizada con el VoBo de Raúl es tu respaldo legal y técnico. Es exactamente para esto que existe el Producto 1.4: cuando surgen discrepancias sobre el alcance, la propuesta firmada es la referencia. Muéstrasela antes de entrar en detalles técnicos."
+          },
+          {
+            "id": "b",
+            "label": "Le explicas los detalles técnicos del backend, las integraciones API y la complejidad del motor de optimización de rutas.",
+            "outcome": "risk",
+            "feedback": "El contexto técnico puede confundir más que aclarar. Empieza siempre por el acuerdo firmado antes de los detalles técnicos — eso le da contexto a Raúl sobre el tiempo invertido. Los detalles técnicos los puedes compartir si los pide después."
+          },
+          {
+            "id": "c",
+            "label": "Le ofreces simplificar la solución y quitar módulos para terminar más rápido.",
+            "outcome": "wrong",
+            "feedback": "No. Modificar el alcance de un proyecto sin un proceso formal genera riesgos técnicos y legales. Si hay cambios al alcance, deben documentarse con una adenda a la propuesta y el nuevo VoBo de Raúl. Ofrecer simplificar sin proceso puede comprometer la calidad de la solución."
+          }
+        ],
+        "wrapUp": "La propuesta autorizada es tu ancla cuando surgen discrepancias. Por eso el diagnóstico y el VoBo no son trámites — son protección para ti y para Raúl."
+      }
+      </script>
+    </div>
+
+    <div class="scenario-decision" data-storage-key="ed2-escenario-demo">
+      <script type="application/json" class="scenario-decision__data">
+      {
+        "actor": "Raúl · Distribuidora El Surtido",
+        "title": "\"Ok, tienes razón — ahora muéstrame el sistema\"",
+        "context": "Raúl revisa la propuesta autorizada y confirma que sí la firmó. Ahora pide ver el sistema funcionando.",
+        "question": "¿Cómo haces la demostración del sistema?",
+        "options": [
+          {
+            "id": "a",
+            "label": "Preparas una demo con casos de uso reales de El Surtido: el pedido de la Tienda El Buen Precio (Calle 5 de Mayo) y la ruta optimizada para las 3 camionetas del lunes.",
+            "outcome": "ok",
+            "feedback": "Excelente. Usar datos reales del contexto de Raúl hace la demo inmediatamente comprensible — él puede validar si la ruta tiene sentido porque conoce sus calles. Esto también te prepara para el Elemento 3: el Desempeño 3.1(B) exige demostrar la operación con 'casos de uso reales referentes al contexto de la MiPyME'."
+          },
+          {
+            "id": "b",
+            "label": "Haces la demo con datos de prueba genéricos (Cliente A, Dirección X, Pedido 001).",
+            "outcome": "risk",
+            "feedback": "Funciona técnicamente pero es mucho menos efectivo. Raúl necesita ver que la solución resuelve SU problema con SUS clientes. Los datos genéricos dificultan que conecte lo que ve con su operación real."
+          }
+        ]
+      }
+      </script>
+    </div>
+
+    <section id="siguiente">
+      <h2>Continúa con el Elemento 3</h2>
+      <p>Con la solución construida y probada, el siguiente paso es llevarla al entorno real de El Surtido. El Elemento 3 cubre el despliegue en producción, la capacitación del equipo y el acta de entrega.</p>
+      <div class="hero-actions">
+        <a href="elemento-3.html" class="btn btn-primary">Continuar: Elemento 3 · Implementar →</a>
+        <a href="instrumento.html" class="btn btn-secondary">Ver el Instrumento de Evaluación</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="footer-tag">Transformación digital con IA · Elemento 2 · Construir</span>
+    </div>
+    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+  </div>
+</footer>
+
+</body>
+</html>

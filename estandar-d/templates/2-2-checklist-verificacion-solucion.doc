@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<title>2.2 · Checklist de verificación de la solución de transformación digital con IA, desarrollada</title>
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+
+.caso-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.caso-box strong { color: #28467e; font-style: normal; }
+
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>Checklist de verificación de la solución de transformación digital con IA, desarrollada</h1>
+<p class="subtitle">Manual de Transformación Digital con IA · Producto del Elemento 2 · Construir</p>
+</td>
+<td class="meta"><strong>Producto 2.2</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> NOTA PEDAGÓGICA: El Producto 2.2 es la solución de software en sí misma (código, repositorio, sistema funcionando), no un documento tradicional. No puede ser un template de Word porque ES el sistema que construiste. Este template es un checklist de verificación que te ayuda a asegurarte de que tu solución cumple con todos los criterios del F21 antes de la evaluación. Úsalo para autoevaluar tu solución y documentar las evidencias que presentarás. Tu evaluador no busca que llenes el template — busca que respondas con datos de TU proyecto real con una MiPyME. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>(a) Contiene el backend operativo con la lógica de negocio implementada según los requerimientos funcionales de la propuesta autorizada</li>
+<li>(b) Incluye la integración con los modelos/servicios de IA seleccionados, funcionando con manejo de errores y respuestas de respaldo</li>
+<li>(c) Tiene la interfaz de usuario de manera funcional, responsiva, accesible y conectada al backend</li>
+<li>(d) Indica el esquema de base de datos implementado con procedimientos de respaldo automatizado configurados</li>
+<li>(e) Establece las medidas de seguridad aplicadas sobre validación y sanitización de datos de entrada, autenticación de usuarios, cifrado de datos sensibles y control de acceso basado en roles</li>
+<li>(f) Refiere la manera en que se protegen los datos personales en el desarrollo de la solución</li>
+<li>(g) Incluye su documentación, nomenclatura consistente y la separación de responsabilidades específicas de las funciones de cada componente del sistema</li>
+</ul>
+</div>
+
+<div class="caso-box"><strong>Caso pedagógico Distribuidora El Surtido (ilustrativo, NO es tu solución):</strong> El Surtido — Backend: FastAPI con endpoints /pedidos, /rutas, /inventario; integración OpenAI para procesamiento de pedidos en lenguaje natural; manejo de errores con fallback a captura manual si OpenAI no responde. Frontend: React, responsivo en móvil (choferes usan smartphone), accesible con contraste WCAG AA. BD: PostgreSQL con tablas pedidos, clientes, productos, rutas; respaldo automatizado diario con pg_dump + cron. Seguridad: validación de inputs con Pydantic, JWT con expiración 8h, cifrado de contraseñas con bcrypt, roles: admin/operador/chofer. Protección de datos: solo se almacena nombre y teléfono del cliente; aviso de privacidad integrado en el onboarding. Documentación de código: docstrings en todas las funciones, nombres en español, separación clara de routers/services/models.</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Fecha del documento</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+<div class="question-block">
+<div><span class="question-num">1</span><span class="question-title">Backend — ¿La lógica de negocio está implementada conforme a los requerimientos?</span></div>
+<div class="question-help">Lista los endpoints o funciones principales de tu backend. ¿Cada requerimiento funcional de la propuesta está implementado? Marca: implementado / parcial / pendiente.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">2</span><span class="question-title">Integración con IA — ¿Los modelos/servicios de IA funcionan con manejo de errores?</span></div>
+<div class="question-help">¿Qué servicio de IA integraste y en qué funcionalidad? ¿Qué pasa cuando el servicio de IA no responde o devuelve error? ¿Tienes respuesta de respaldo (fallback) implementada?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">3</span><span class="question-title">Interfaz de usuario — ¿Es funcional, responsiva y accesible?</span></div>
+<div class="question-help">¿La UI se ve correctamente en móvil y escritorio? ¿Está conectada al backend y muestra datos reales? ¿Pasó alguna verificación de accesibilidad básica?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">4</span><span class="question-title">Base de datos — ¿El esquema está implementado y el respaldo automatizado?</span></div>
+<div class="question-help">Describe las tablas principales y sus relaciones. ¿El respaldo automatizado está configurado y probado? ¿Con qué frecuencia se ejecuta y dónde se almacena?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">5</span><span class="question-title">Seguridad — ¿Están aplicadas todas las medidas del F21?</span></div>
+<div class="question-help">Marca cada medida implementada: [ ] Validación y sanitización de datos de entrada [ ] Autenticación de usuarios [ ] Cifrado de datos sensibles [ ] Control de acceso basado en roles. Describe cómo implementaste cada una.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">6</span><span class="question-title">Protección de datos personales</span></div>
+<div class="question-help">¿Qué datos personales trata el sistema? ¿Cómo los proteges? ¿Tienes aviso de privacidad? ¿La MiPyME tiene conocimiento de qué datos se almacenan y cómo?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">7</span><span class="question-title">Documentación y calidad del código</span></div>
+<div class="question-help">¿El código tiene comentarios o docstrings que explican cada función? ¿La nomenclatura es consistente? ¿Las responsabilidades están separadas (no todo en un solo archivo)?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Template del Manual de Desarrollo de Soluciones de Transformación Digital con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+</div>
+
+</body>
+</html>

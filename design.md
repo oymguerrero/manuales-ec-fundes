@@ -1724,3 +1724,12 @@ Los templates del Estándar B seguirán la misma filosofía pedagógica del §23
 **Especificidad del Excel 4.1**: A diferencia de los Excel del B (que son matrices de priorización/evaluación), el 4.1 del C combina análisis retrospectivo (¿qué funcionó?) con planificación prospectiva (¿qué haremos el siguiente mes?). Contiene tres tablas: métricas por publicación (10 filas × 11 columnas), comparativo objetivo vs resultado (5 filas), calendario del siguiente periodo (7 semanas × 7 días).
 
 **Filosofía pedagógica** (idéntica al A y B): criterio F21 literal + caso La Cuesta (solo ilustrativo) + preguntas guía que el aspirante responde con su MiPyME real. Los templates NO dan la solución — orientan el proceso del aspirante.
+
+### 23.5 Templates ofimáticos del Estándar D
+
+15 templates descargables (`estandar-d/templates/`) generados con `scripts/generate-templates-d.py`. Distribución elegida por naturaleza del producto:
+
+- **14 Word (.doc)**: diagnóstico de oportunidades, diagnóstico de madurez digital, propuesta de transformación digital, propuesta autorizada (E1); entorno de desarrollo, checklist de verificación de la solución, reporte de pruebas técnicas, documentación técnica (E2); checklist de despliegue a producción, documentación técnica de implementación, reporte de capacitación, acta final (E3); reporte de retroalimentación de usuarios, plan de optimización (E4).
+- **1 Excel (.xls)**: 4.1 reporte de rendimiento técnico (con columnas de métricas comparativas: Objetivo vs Real por período).
+
+Cada template contiene el criterio F21 literal + ejemplo breve del caso El Surtido (solo ilustrativo) + preguntas guía que el aspirante responde con datos de SU proyecto real.

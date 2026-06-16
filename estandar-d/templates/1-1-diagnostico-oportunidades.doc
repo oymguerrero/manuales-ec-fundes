@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<title>1.1 · Diagnóstico de oportunidades de transformación digital de la MiPyME, documentado</title>
+<!--[if gte mso 9]>
+<xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml>
+<![endif]-->
+<style>
+@page {
+  size: 21.59cm 27.94cm;
+  margin: 2.2cm 1.8cm;
+}
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #333;
+}
+.brand-header {
+  border-bottom: 3pt solid #f7c031;
+  padding-bottom: 10pt;
+  margin-bottom: 18pt;
+}
+.brand-header table { width: 100%; border-collapse: collapse; }
+.brand-header td { border: none; vertical-align: middle; padding: 0; }
+.brand-block {
+  background: #28467e;
+  color: #f7c031;
+  font-weight: bold;
+  font-size: 13pt;
+  padding: 12pt 8pt;
+  text-align: center;
+  border-radius: 6pt;
+  width: 70pt;
+}
+.brand-header h1 { color: #28467e; font-size: 17pt; margin: 0 0 3pt 0; font-weight: bold; }
+.brand-header .subtitle { color: #666; font-size: 10pt; margin: 0; }
+.brand-header .meta { text-align: right; font-size: 9pt; color: #666; width: 130pt; }
+.brand-header .meta strong { color: #28467e; font-size: 11pt; }
+
+.product-data {
+  background: #f5f9ff;
+  border: 1pt solid #cce0f5;
+  padding: 12pt 16pt;
+  margin: 0 0 20pt 0;
+  border-radius: 4pt;
+}
+.product-data table { width: 100%; border-collapse: collapse; }
+.product-data td { padding: 4pt 8pt; font-size: 10pt; border: none; }
+.product-data td:first-child { font-weight: bold; color: #28467e; width: 30%; }
+.product-data .blank { border-bottom: 1pt solid #999; display: inline-block; min-width: 220pt; }
+
+.intro {
+  background: #FFF3CC;
+  border-left: 4pt solid #f7c031;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  color: #555;
+}
+
+.f21-box {
+  background: #f0f7ff;
+  border-left: 4pt solid #1F4E8C;
+  padding: 12pt 16pt 14pt;
+  margin: 16pt 0;
+  font-size: 10pt;
+}
+.f21-box h3 {
+  margin: 0 0 8pt 0;
+  font-size: 11pt;
+  color: #28467e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.f21-box ul { margin: 0; padding-left: 18pt; color: #333; }
+.f21-box li { margin-bottom: 4pt; }
+
+.caso-box {
+  background: #fdf6e3;
+  border: 1pt dashed #d4a40e;
+  padding: 12pt 16pt;
+  margin: 14pt 0 20pt;
+  font-size: 10pt;
+  font-style: italic;
+  color: #6a5208;
+}
+.caso-box strong { color: #28467e; font-style: normal; }
+
+h2 {
+  color: #28467e;
+  font-size: 14pt;
+  border-bottom: 1pt solid #f7c031;
+  padding-bottom: 4pt;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+}
+
+.question-block {
+  margin-bottom: 22pt;
+  padding: 0 0 12pt 0;
+  border-bottom: 1pt dotted #ddd;
+}
+.question-num {
+  display: inline-block;
+  background: #28467e;
+  color: white;
+  width: 22pt;
+  height: 22pt;
+  line-height: 22pt;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 11pt;
+  margin-right: 8pt;
+  vertical-align: middle;
+}
+.question-title {
+  font-weight: bold;
+  color: #28467e;
+  font-size: 11.5pt;
+}
+.question-help {
+  color: #666;
+  font-size: 10pt;
+  font-style: italic;
+  margin: 6pt 0 8pt 30pt;
+  line-height: 1.45;
+}
+.fill-area {
+  border: 1pt dashed #ccc;
+  background: #fafafa;
+  padding: 22pt 16pt;
+  margin: 6pt 0 0 30pt;
+  min-height: 60pt;
+  color: #aaa;
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.footer {
+  margin-top: 36pt;
+  padding-top: 10pt;
+  border-top: 1pt solid #ddd;
+  font-size: 8pt;
+  color: #999;
+  text-align: center;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+<table>
+<tr>
+<td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
+<td style="padding-left: 14pt;">
+<h1>Diagnóstico de oportunidades de transformación digital de la MiPyME, documentado</h1>
+<p class="subtitle">Manual de Transformación Digital con IA · Producto del Elemento 1 · Diagnosticar</p>
+</td>
+<td class="meta"><strong>Producto 1.1</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+</tr>
+</table>
+</div>
+
+<div class="intro"><strong>Sobre este template.</strong> Es el punto de partida técnico del proyecto: un diagnóstico completo que documenta el perfil de la MiPyME, el resumen de la sesión de levantamiento con el responsable, las necesidades de transformación digital detectadas, el análisis de la infraestructura tecnológica existente y las experiencias previas de la empresa con soluciones digitales. Tu evaluador no busca que llenes el template — busca que respondas con datos de TU proyecto real con una MiPyME. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+
+<div class="f21-box">
+<h3>Qué evalúa el F21 oficial</h3>
+<ul><li>(a) Contiene el perfil de la MiPyME, especificando su tamaño, giro, colaboradores, ubicación, nombre y correo electrónico de la persona de contacto</li>
+<li>(b) Incluye el resumen de la sesión sostenida con el responsable de la MiPyME, especificando día, hora, lugar, asistentes y acuerdos tomados en la reunión</li>
+<li>(c) Tiene las necesidades de transformación digital detectadas correspondientes con lo expresado por los representantes de la MiPyME</li>
+<li>(d) Proporciona el análisis de infraestructura tecnológica existente especificando el hardware, software y conectividad con la que cuenta la MiPyME</li>
+<li>(e) Refiere las experiencias en implementación de soluciones de transformación digital con las que cuenta la MiPyME</li>
+</ul>
+</div>
+
+<div class="caso-box"><strong>Caso pedagógico Distribuidora El Surtido (ilustrativo, NO es tu solución):</strong> Distribuidora El Surtido · mayorista de abarrotes · 22 empleados · 3 camionetas. Contacto: Raúl García (gerente general) / raul@elsurtido.mx. Sesión de levantamiento: martes 4 de marzo 2025, 10:00 h, oficina El Surtido, asistentes: Raúl García (gerente), Luisa Morales (capturista), Carlos Ibarra (chofer líder). Acuerdo: entregar propuesta técnica en 2 semanas. Necesidades detectadas: captura de pedidos caótica (WhatsApp + llamadas mezcladas), rutas de reparto ineficientes (sin optimización), inventario reactivo (sin predicción). Infraestructura: 3 PCs Windows 10, 1 servidor local básico, internet 50 Mbps, 3 smartphones Android con datos, sin sistema ERP. Experiencias previas: intentaron Excel compartido en 2023 — abandonado por conflictos de versiones; ninguna experiencia con IA.</div>
+
+<div class="product-data">
+<table>
+<tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Fecha del documento</td><td><span class="blank">&nbsp;</span></td></tr>
+</table>
+</div>
+
+<h2>Tu turno · preguntas guía</h2>
+
+<div class="question-block">
+<div><span class="question-num">1</span><span class="question-title">Perfil de la MiPyME</span></div>
+<div class="question-help">Nombre de la empresa, tamaño (micro/pequeña/mediana), giro económico, número de colaboradores, ubicación y datos de contacto del responsable (nombre, cargo, correo electrónico).</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">2</span><span class="question-title">Resumen de la sesión de levantamiento</span></div>
+<div class="question-help">¿Cuándo y dónde realizaste la sesión? ¿Quiénes asistieron? ¿Cuáles fueron los acuerdos y compromisos establecidos?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">3</span><span class="question-title">Necesidades de transformación digital detectadas</span></div>
+<div class="question-help">¿Cuáles son los procesos que la MiPyME quiere mejorar o digitalizar? Lista las necesidades tal como las expresó el responsable, no tu interpretación.</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">4</span><span class="question-title">Análisis de infraestructura tecnológica</span></div>
+<div class="question-help">¿Con qué hardware cuenta la MiPyME (computadoras, servidores, dispositivos móviles)? ¿Qué software usa actualmente? ¿Qué tipo de conectividad y velocidad de internet tiene?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+<div class="question-block">
+<div><span class="question-num">5</span><span class="question-title">Experiencias previas con transformación digital</span></div>
+<div class="question-help">¿La MiPyME ha intentado antes implementar soluciones digitales? ¿Qué resultados tuvo? ¿Qué aprendizajes o resistencias dejaron esas experiencias?</div>
+<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu proyecto. Borra esta línea cuando empieces.]</div>
+</div>
+
+
+<div class="footer">
+Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Template del Manual de Desarrollo de Soluciones de Transformación Digital con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+</div>
+
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manual de Transformación digital con IA · Bienvenida y contexto · Mi CompañIA</title>
+<meta name="description" content="Manual del Aspirante del Estándar D: bienvenida, antes de empezar, ficha técnica y mapa funcional del ciclo diagnosticar-construir-implementar-optimizar." />
+<link rel="icon" type="image/png" href="../img/logo.png" />
+<link rel="stylesheet" href="../assets/styles.css" />
+<script src="../assets/interactive.js" defer></script>
+</head>
+<body>
+
+<!--
+  Fuente: extras/Manual_Estandar_D_v1_1.md (v1.1, 2026-06-16)
+  Última revisión contra fuente: 2026-06-16
+  Caso pedagógico: Distribuidora El Surtido (Raúl)
+-->
+
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="brand-text">Mi CompañIA</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../maestro/index.html">Curso introductorio</a>
+      <a href="../estandar-a/index.html">Implementar IA</a>
+      <a href="../estandar-b/index.html">Desarrollar con IA</a>
+      <a href="../estandar-c/index.html">Marketing digital con IA</a>
+      <a href="index.html">Transformación digital con IA</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="sub-nav" aria-label="Capítulos del Manual del Estándar D">
+  <div class="container">
+    <span class="sub-nav__label">Transformación digital con IA</span>
+    <a href="index.html" class="active">Inicio</a>
+    <a href="elemento-1.html">Elemento 1 · Diagnosticar</a>
+    <a href="elemento-2.html">Elemento 2 · Construir</a>
+    <a href="elemento-3.html">Elemento 3 · Implementar</a>
+    <a href="elemento-4.html">Elemento 4 · Optimizar</a>
+    <a href="instrumento.html">Instrumento</a>
+    <a href="ruta-preparacion.html">Ruta de preparación</a>
+    <a href="recursos.html">FAQ y recursos</a>
+  </div>
+</nav>
+
+<div class="maestro-progress" aria-label="Progreso del Manual de Transformación digital con IA">
+  <div class="container">
+    <span class="maestro-progress__label">Capítulo 1 de 8 · Bienvenida y contexto</span>
+    <div class="maestro-progress__bar" role="presentation">
+      <span class="maestro-progress__dot maestro-progress__dot--current"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+      <span class="maestro-progress__dot"></span>
+    </div>
+  </div>
+</div>
+
+<section class="hero hero--photo hero--ec1">
+  <div class="container">
+    <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Manual del Aspirante · Transformación digital con <span class="ia">IA</span> · v1.0</div>
+    <h1>Desarrollo de soluciones de transformación digital con <span class="ia">IA</span> en la MiPyME</h1>
+    <p>Guía completa para preparar y presentar tu evaluación con fines de certificación CONOCER. Si tu trabajo es diagnosticar oportunidades de transformación digital, construir soluciones técnicas con IA, implementarlas en producción y optimizarlas, este manual te lleva paso a paso al día de tu evaluación.</p>
+    <div class="hero-actions">
+      <a href="elemento-1.html" class="btn btn-primary">Empezar por el Elemento 1</a>
+      <a href="ruta-preparacion.html" class="btn btn-secondary">Ver ruta de preparación</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+
+    <a class="back-link" href="../index.html">Volver al inicio</a>
+
+    <div class="audio-narration">
+      <div class="audio-narration__header">
+        <button class="audio-narration__toggle" type="button" aria-expanded="false" aria-controls="audio-estandar-d-bienvenida">
+          Escuchar esta sección
+        </button>
+        <span class="audio-narration__meta">narración alternativa al texto</span>
+      </div>
+      <div class="audio-narration__player" id="audio-estandar-d-bienvenida" hidden>
+        <audio controls preload="none">
+          <source src="../media/audio-estandar-d-bienvenida.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio HTML5. <a href="../media/audio-estandar-d-bienvenida.mp3" download>Descarga el archivo MP3</a>.
+        </audio>
+      </div>
+      <details class="audio-narration__transcript">
+        <summary>Ver transcripción</summary>
+        <div class="audio-narration__transcript-body">
+          <p>Bienvenido al Manual del Estándar D: Desarrollar soluciones de transformación digital con inteligencia artificial para la MiPyME.</p>
+          <p>Este es el estándar más avanzado de la colección, Nivel 4 del Sistema Nacional de Competencias. Es para quienes desarrollan soluciones completas: diagnostican, construyen la solución técnica con IA, la implementan en producción y la optimizan.</p>
+          <p>A lo largo del manual, el caso de la Distribuidora El Surtido — Raúl y su equipo — te mostrará cómo se ve un proyecto completo de transformación digital con IA.</p>
+          <p>Prepárate para demostrar lo que sabes hacer.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="lesson-tabs" data-progress-key="estandar-d-bienvenida-contexto">
+    <div class="accordion accordion--modules" aria-label="Módulos del Capítulo 1 · Bienvenida y contexto">
+
+      <!-- ===== 1.1 BIENVENIDA ===== -->
+      <details class="accordion__item" id="bienvenida" open>
+        <summary>
+          <span class="accordion__num">1.1</span>
+          <span class="accordion__title-main">Bienvenida</span>
+          <span class="accordion__meta">Carta de inicio · 5 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>Este manual está dedicado en exclusiva al Estándar de Competencia D: <strong>Desarrollo de soluciones de transformación digital con Inteligencia Artificial en la MiPyME</strong>. Es el documento que te acompañará a lo largo de tu preparación y al que volverás una y otra vez hasta el día de tu evaluación.</p>
+
+          <p>El Estándar D es el más avanzado de la colección (Nivel 4 del Sistema Nacional de Competencias). Está dirigido a quienes desarrollan soluciones completas de transformación digital con inteligencia artificial para las MiPyMEs, incluyendo la construcción técnica de la solución. No es un estándar para configurar herramientas existentes —ese es el A—, ni para crear productos validados experimentalmente —ese es el B—, ni para contenido de marketing —ese es el C—. Es para desarrolladores de soluciones: profesionales que diagnostican oportunidades de transformación digital, construyen la solución con IA, la implementan en el entorno productivo y la optimizan.</p>
+
+          <p>Si tu trabajo cotidiano se parece a esto —si has diagnosticado oportunidades de transformación digital en empresas, has construido soluciones técnicas con componentes de IA, has desplegado soluciones en entornos productivos con sus credenciales e infraestructura, has capacitado usuarios y optimizado soluciones en operación—, este es tu estándar.</p>
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">Importante</span>
+            <div class="callout__body">La fuente de evaluación es el <strong>F21</strong> (documento oficial del estándar publicado por CONOCER). Todo lo que se te evaluará está descrito en ese documento. Este manual no reemplaza al F21 — lo explica, lo complementa y te ayuda a prepararte. Ante cualquier duda sobre criterios, la versión oficial del F21 es la que manda.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.2 ANTES DE EMPEZAR ===== -->
+      <details class="accordion__item" id="antes-empezar">
+        <summary>
+          <span class="accordion__num">1.2</span>
+          <span class="accordion__title-main">Antes de empezar</span>
+          <span class="accordion__meta">Marco CONOCER · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>Este manual puede leerse sin haber estudiado antes el <a href="../maestro/index.html">Curso introductorio</a>. Aun así, conviene tener presentes algunos elementos del marco general antes de entrar al contenido del estándar.</p>
+
+          <h3>La certificación CONOCER, en resumen</h3>
+          <p>La certificación que obtendrás es expedida por la <strong>Secretaría de Educación Pública</strong> a través del <strong>CONOCER</strong>. El Certificado de Competencia se incorpora al Registro Nacional de Personas Certificadas (RENEC) y tiene validez en todo el territorio nacional. No es un título académico: es una constancia oficial de que sabes hacer algo y puedes demostrarlo con evidencias verificables.</p>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Para tener presente</span>
+            <div class="callout__body">Para los estándares inscritos en el RENEC, incluido el Estándar D, <strong>no se requiere por disposición legal la posesión de un título profesional</strong>. Lo que importa es que puedas demostrar la competencia, independientemente de tu trayectoria académica formal.</div>
+          </aside>
+
+          <h3>La lógica de la evaluación</h3>
+          <p>La evaluación CONOCER se construye sobre <strong>evidencias verificables</strong>. No es un examen de opción múltiple ni una prueba teórica. Lo que se te evaluará es tu capacidad de ejecutar la función con calidad, ante un evaluador certificado. Para ello se combinan cuatro tipos de evidencia:</p>
+
+          <table class="prose-table">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Qué se evalúa</th>
+                <th>Cómo funciona</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Desempeños</strong></td>
+                <td>Lo que haces en tiempo real, ante el evaluador</td>
+                <td>Te observan mientras capacitas al equipo de la MiPyME en el uso de la solución</td>
+              </tr>
+              <tr>
+                <td><strong>Productos</strong></td>
+                <td>Documentos y entregables que ya construiste</td>
+                <td>Presentas diagnósticos, código, documentación técnica, reportes y actas elaborados antes de la sesión</td>
+              </tr>
+              <tr>
+                <td><strong>Conocimientos</strong></td>
+                <td>Conceptos y principios que sustentan tu práctica</td>
+                <td>Respondes un cuestionario que mide cuánto dominas desarrollo de software, IA, seguridad y normativa</td>
+              </tr>
+              <tr>
+                <td><strong>AHV · Actitudes, Hábitos y Valores</strong></td>
+                <td>La forma en que trabajas: orden, responsabilidad, tolerancia, iniciativa</td>
+                <td>Se observan de manera transversal durante la sesión de evaluación</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.3 EL ESTÁNDAR D EN SU CONTEXTO ===== -->
+      <details class="accordion__item" id="contexto">
+        <summary>
+          <span class="accordion__num">1.3</span>
+          <span class="accordion__title-main">El Estándar D en su contexto</span>
+          <span class="accordion__meta">Qué certifica · 5 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <h3>Qué función certifica el Estándar D</h3>
+          <p>El Estándar D certifica tu competencia para desarrollar soluciones de transformación digital con inteligencia artificial en una MiPyME. La función abarca el ciclo completo: diagnosticar oportunidades de transformación digital, construir la solución con IA requerida, implementar la solución personalizada en el entorno productivo y optimizar la solución implementada.</p>
+
+          <h3>Qué SÍ certifica el Estándar D</h3>
+          <ul>
+            <li>Tu capacidad de diagnosticar oportunidades de transformación digital en la MiPyME con un análisis de procesos, datos y madurez.</li>
+            <li>Tu capacidad de construir una solución de transformación digital con componentes de IA, incluyendo su arquitectura y lógica operativa.</li>
+            <li>Tu capacidad de implementar la solución en el entorno productivo de la MiPyME, con su infraestructura, credenciales y capacitación de usuarios.</li>
+            <li>Tu capacidad de optimizar la solución en operación a partir de datos de rendimiento y retroalimentación de usuarios.</li>
+            <li>Tu capacidad de documentar técnicamente la solución (manuales de usuario y mantenimiento) y formalizar el cierre del proyecto.</li>
+          </ul>
+
+          <h3>Qué NO certifica el Estándar D</h3>
+          <ul>
+            <li>La sola configuración de herramientas de IA existentes en procesos. Si tu trabajo se limita a configurar herramientas del mercado sin desarrollo técnico, tu estándar es el A (Implementación).</li>
+            <li>La conceptualización y validación experimental de productos nuevos sin implementación productiva. Si tu trabajo termina en el prototipo validado, tu estándar es el B (Productos y servicios).</li>
+            <li>La producción de contenido de marketing digital. Si tu trabajo se centra en contenido para campañas, tu estándar es el C (Marketing digital).</li>
+          </ul>
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">Importante</span>
+            <div class="callout__body">El Estándar D es el único de la colección que certifica el desarrollo técnico completo de una solución de transformación digital, incluyendo su construcción, despliegue en entorno productivo y mantenimiento. Es el de mayor nivel (4) y exige evidencia de una solución funcionando en producción con su infraestructura, credenciales y documentación técnica. Si tu trabajo no llega hasta el despliegue productivo y el mantenimiento, revisa si otro estándar corresponde mejor.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.4 FICHA TÉCNICA ===== -->
+      <details class="accordion__item" id="ficha-tecnica">
+        <summary>
+          <span class="accordion__num">1.4</span>
+          <span class="accordion__title-main">Ficha técnica del Estándar D</span>
+          <span class="accordion__meta">Datos del F21 · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <table class="prose-table">
+            <tbody>
+              <tr>
+                <td><strong>Título oficial</strong></td>
+                <td>Desarrollo de soluciones de transformación digital con Inteligencia Artificial en la MiPyME</td>
+              </tr>
+              <tr>
+                <td><strong>Nivel SNC</strong></td>
+                <td>Cuatro</td>
+              </tr>
+              <tr>
+                <td><strong>Descripción del nivel</strong></td>
+                <td>Desempeña diversas actividades tanto programadas, poco rutinarias como impredecibles que suponen la aplicación de técnicas y principios básicos. Requiere emitir orientaciones generales e instrucciones específicas a personas y equipos de trabajo.</td>
+              </tr>
+              <tr>
+                <td><strong>Número de elementos</strong></td>
+                <td>Cuatro: E1 Diagnosticar · E2 Construir · E3 Implementar · E4 Optimizar</td>
+              </tr>
+              <tr>
+                <td><strong>Comité de Gestión por Competencias</strong></td>
+                <td>Fundación para el Desarrollo Social y Económico, FUNDES, con la participación de la Asociación Latinoamericana de Profesionales en Seguridad Informática (ALAPSI) y el Instituto Estatal de Capacitación del Estado de Guanajuato (IECA)</td>
+              </tr>
+              <tr>
+                <td><strong>Periodo de revisión sugerido</strong></td>
+                <td>2 años</td>
+              </tr>
+              <tr>
+                <td><strong>Clasificación SCIAN</strong></td>
+                <td>541510 — Servicios de diseño de sistemas de cómputo y servicios relacionados</td>
+              </tr>
+              <tr>
+                <td><strong>Grupo unitario SINCO</strong></td>
+                <td>2271 — Desarrolladores y analistas de software y multimedia</td>
+              </tr>
+              <tr>
+                <td><strong>Ocupaciones asociadas</strong></td>
+                <td>Consultor de inteligencia artificial para MiPyMEs · Desarrollador de productos digitales con IA · Diseñador de soluciones de IA para negocios · Analista de sistemas · Asesor y consultor informático</td>
+              </tr>
+              <tr>
+                <td><strong>Modalidades de evaluación</strong></td>
+                <td>Presencial o remota mediante plataformas de videoconferencia con audio y video</td>
+              </tr>
+              <tr>
+                <td><strong>Requisito de título profesional</strong></td>
+                <td>No requerido por disposición legal</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.5 MAPA FUNCIONAL ===== -->
+      <details class="accordion__item" id="mapa-funcional">
+        <summary>
+          <span class="accordion__num">1.5</span>
+          <span class="accordion__title-main">El mapa funcional del Estándar D</span>
+          <span class="accordion__meta">4 elementos · ciclo completo · 5 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>El mapa funcional del Estándar D se organiza como un <strong>ciclo completo de transformación digital con IA</strong>: cuatro etapas que van desde el diagnóstico hasta la optimización en producción. Los cuatro elementos son secuenciales y cada uno produce evidencias que alimentan al siguiente.</p>
+
+          <svg class="diagram" viewBox="0 0 980 320" role="img" aria-labelledby="svg-mapa-d-title svg-mapa-d-desc">
+            <title id="svg-mapa-d-title">Mapa funcional del Estándar D: ciclo de transformación digital con cuatro etapas</title>
+            <desc id="svg-mapa-d-desc">El Estándar D se compone de cuatro elementos secuenciales: Diagnosticar (Elemento 1), Construir (Elemento 2), Implementar (Elemento 3) y Optimizar (Elemento 4). Forman el ciclo completo de desarrollo de soluciones de transformación digital con IA.</desc>
+            <defs>
+              <marker id="arrow-mapa-d" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+                <path d="M 0 0 L 12 6 L 0 12 z" fill="#28467e"/>
+              </marker>
+            </defs>
+
+            <!-- Elemento 1 · Diagnosticar -->
+            <g transform="translate(20, 40)">
+              <rect width="200" height="220" rx="16" fill="#28467e" stroke="#f7c031" stroke-width="3"/>
+              <circle cx="36" cy="36" r="22" fill="#f7c031"/>
+              <text x="36" y="44" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800">1</text>
+              <text x="100" y="32" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em">DIAGNOSTICAR</text>
+              <line x1="16" y1="66" x2="184" y2="66" stroke="#529ed7" stroke-width="1"/>
+              <text x="100" y="96" text-anchor="middle" fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600">Oportunidades de</text>
+              <text x="100" y="114" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10">transformación digital</text>
+              <text x="100" y="158" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">Analizas procesos y madurez</text>
+              <text x="100" y="172" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">elaboras propuesta</text>
+              <text x="100" y="186" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">y obtienes autorización</text>
+            </g>
+
+            <!-- Flecha 1 → 2 -->
+            <line x1="230" y1="150" x2="255" y2="150" stroke="#28467e" stroke-width="3" marker-end="url(#arrow-mapa-d)"/>
+
+            <!-- Elemento 2 · Construir -->
+            <g transform="translate(265, 40)">
+              <rect width="200" height="220" rx="16" fill="#28467e" stroke="#f7c031" stroke-width="3"/>
+              <circle cx="36" cy="36" r="22" fill="#f7c031"/>
+              <text x="36" y="44" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800">2</text>
+              <text x="100" y="32" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em">CONSTRUIR</text>
+              <line x1="16" y1="66" x2="184" y2="66" stroke="#529ed7" stroke-width="1"/>
+              <text x="100" y="96" text-anchor="middle" fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600">La solución técnica</text>
+              <text x="100" y="114" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10">con componentes de IA</text>
+              <text x="100" y="158" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">Configuras entorno</text>
+              <text x="100" y="172" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">desarrollas y pruebas</text>
+              <text x="100" y="186" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">y documentas técnicamente</text>
+            </g>
+
+            <!-- Flecha 2 → 3 -->
+            <line x1="475" y1="150" x2="500" y2="150" stroke="#28467e" stroke-width="3" marker-end="url(#arrow-mapa-d)"/>
+
+            <!-- Elemento 3 · Implementar -->
+            <g transform="translate(510, 40)">
+              <rect width="200" height="220" rx="16" fill="#28467e" stroke="#f7c031" stroke-width="3"/>
+              <circle cx="36" cy="36" r="22" fill="#f7c031"/>
+              <text x="36" y="44" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800">3</text>
+              <text x="100" y="32" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em">IMPLEMENTAR</text>
+              <line x1="16" y1="66" x2="184" y2="66" stroke="#529ed7" stroke-width="1"/>
+              <text x="100" y="96" text-anchor="middle" fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600">La solución en producción</text>
+              <text x="100" y="114" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10">con la infraestructura real</text>
+              <text x="100" y="158" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">Despliegas en producción</text>
+              <text x="100" y="172" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">capacitas al equipo</text>
+              <text x="100" y="186" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">y entregas el acta final</text>
+            </g>
+
+            <!-- Flecha 3 → 4 -->
+            <line x1="720" y1="150" x2="745" y2="150" stroke="#28467e" stroke-width="3" marker-end="url(#arrow-mapa-d)"/>
+
+            <!-- Elemento 4 · Optimizar -->
+            <g transform="translate(755, 40)">
+              <rect width="205" height="220" rx="16" fill="#28467e" stroke="#f7c031" stroke-width="3"/>
+              <circle cx="36" cy="36" r="22" fill="#f7c031"/>
+              <text x="36" y="44" text-anchor="middle" fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800">4</text>
+              <text x="102" y="32" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em">OPTIMIZAR</text>
+              <line x1="16" y1="66" x2="189" y2="66" stroke="#529ed7" stroke-width="1"/>
+              <text x="102" y="96" text-anchor="middle" fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600">La solución en operación</text>
+              <text x="102" y="114" text-anchor="middle" fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10">con datos reales</text>
+              <text x="102" y="158" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">Mides rendimiento</text>
+              <text x="102" y="172" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">recoges retroalimentación</text>
+              <text x="102" y="186" text-anchor="middle" fill="#ffffff" font-family="Afacad, Inter, sans-serif" font-size="10">y elaboras el plan de mejora</text>
+            </g>
+
+            <!-- Total -->
+            <text x="490" y="295" text-anchor="middle" fill="#4B5563" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700">Ciclo completo de transformación digital con IA</text>
+          </svg>
+          <p class="diagram-caption">Los cuatro elementos son secuenciales y forman el ciclo completo: sin diagnóstico no hay propuesta fundada; sin construcción no hay qué implementar; sin implementación productiva no hay qué optimizar. Para la certificación debes demostrar los cuatro.</p>
+
+          <article class="process-step">
+            <div class="process-step__badge">1</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Elemento 1 — Diagnosticar oportunidades de transformación digital en la MiPyME</h4>
+              <div class="process-step__body">Analizas los procesos, datos, infraestructura y madurez digital de la MiPyME para identificar y priorizar oportunidades de transformación digital con IA. Es la base técnica de todo lo que sigue. <a href="elemento-1.html">Ver Elemento 1 →</a></div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">2</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Elemento 2 — Construir la solución de transformación digital con IA requerida por la MiPyME</h4>
+              <div class="process-step__body">Con el diagnóstico hecho, configuras el entorno, desarrollas los componentes de IA, integras las piezas, realizas pruebas técnicas y documentas la solución. <a href="elemento-2.html">Ver Elemento 2 →</a></div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">3</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Elemento 3 — Implementar la solución de transformación digital personalizada en la MiPyME</h4>
+              <div class="process-step__body">Despliegas la solución en producción con la infraestructura real de la MiPyME, capacitas a los usuarios y formalizas la entrega mediante el acta correspondiente. <a href="elemento-3.html">Ver Elemento 3 →</a></div>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="process-step__badge">4</div>
+            <div class="process-step__content">
+              <h4 class="process-step__title">Elemento 4 — Optimizar la solución de transformación digital implementada en la MiPyME</h4>
+              <div class="process-step__body">Mides el rendimiento técnico de la solución en operación, recoges la retroalimentación de los usuarios y propones mejoras. El ciclo cierra con la mejora basada en datos. <a href="elemento-4.html">Ver Elemento 4 →</a></div>
+            </div>
+          </article>
+
+          <aside class="callout callout--important" role="note">
+            <span class="callout__label">Importante</span>
+            <div class="callout__body">Los cuatro elementos del Estándar D son <strong>obligatorios</strong>. La persona competente en el Estándar D es quien demuestra todos los elementos. Si demuestras solo algunos, el dictamen será <em>Todavía no competente</em>.</div>
+          </aside>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.6 CASO PEDAGÓGICO: EL SURTIDO ===== -->
+      <details class="accordion__item" id="caso-el-surtido">
+        <summary>
+          <span class="accordion__num">1.6</span>
+          <span class="accordion__title-main">Conoce a la Distribuidora El Surtido</span>
+          <span class="accordion__meta">Caso pedagógico transversal · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>A lo largo de este manual usaremos una MiPyME ficticia como hilo narrativo. El caso está diseñado para que puedas ver los conceptos del estándar aplicados a una situación real y representativa del tejido empresarial mexicano.</p>
+
+          <aside class="callout callout--example" role="note">
+            <span class="callout__label">Perfil de la empresa · Distribuidora El Surtido</span>
+            <div class="callout__body">
+              <ul style="margin: 0; padding-left: 1.2em;">
+                <li><strong>Nombre:</strong> Distribuidora El Surtido</li>
+                <li><strong>Giro:</strong> Distribuidora mayorista de abarrotes</li>
+                <li><strong>Personas:</strong> 22 empleados, 3 camionetas de reparto</li>
+                <li><strong>Clientes:</strong> ~200 tiendas de barrio en la región</li>
+                <li><strong>Sistema actual:</strong> Pedidos por teléfono y WhatsApp, rutas de reparto definidas a mano, inventario en hojas de cálculo desconectadas</li>
+                <li><strong>Reto central:</strong> Ordenar pedidos, optimizar rutas y predecir la demanda — sin área de sistemas</li>
+              </ul>
+            </div>
+          </aside>
+
+          <img src="../img/escenas/bodega-distribuidora.jpg" alt="Interior de la bodega de Distribuidora El Surtido: producto apilado, zona de picking y área de despacho de camionetas de reparto" class="img-escena img-escena--full" loading="lazy" />
+
+          <h3>Raúl y El Surtido</h3>
+
+          <aside class="callout callout--example callout--with-photo" role="note">
+            <img src="../img/personajes/raul-gerente.jpg" alt="Raúl, gerente de la Distribuidora El Surtido, al frente de su distribuidora mayorista de abarrotes" class="img-personaje" loading="lazy" />
+            <div>
+              <span class="callout__label">Raúl · gerente de Distribuidora El Surtido</span>
+              <div class="callout__body">
+                <p>Raúl hereda una distribuidora con veintidós empleados, tres camionetas de reparto y alrededor de doscientos clientes (tiendas de barrio) en la región. Como ingeniero, entiende el problema técnico con claridad: los pedidos llegan por teléfono y WhatsApp sin ningún sistema de captura, las rutas de reparto las define el chofer según su experiencia, y el inventario vive en tres hojas de cálculo que nadie sincroniza.</p>
+                <p>Quiere una solución que ordene los pedidos, optimice las rutas y prediga la demanda — pero no tiene un área de sistemas ni presupuesto para un ERP empresarial. Necesita algo hecho a la medida de su operación.</p>
+                <p>A lo largo del manual, el caso de El Surtido — Raúl y su distribuidora — te mostrará cómo se ve un proyecto completo de transformación digital con IA: diagnosticar las oportunidades, construir una solución que integre captura de pedidos, optimización de rutas con IA y predicción de demanda, implementarla en producción y optimizarla con datos reales de operación.</p>
+              </div>
+            </div>
+          </aside>
+
+          <h3>El proyecto que recorrerás</h3>
+
+          <ul>
+            <li><strong>Elemento 1 · Diagnosticar:</strong> Levantarás el diagnóstico de oportunidades de El Surtido (procesos, datos, infraestructura, madurez digital) y elaborarás la propuesta de transformación digital para que Raúl la autorice.</li>
+            <li><strong>Elemento 2 · Construir:</strong> Con la propuesta autorizada, configurarás el entorno de desarrollo, construirás la solución (captura de pedidos, ruteo con IA, predicción de demanda), realizarás las pruebas técnicas y documentarás todo.</li>
+            <li><strong>Elemento 3 · Implementar:</strong> Desplegarás la solución en la infraestructura real de El Surtido, capacitarás a Raúl y su equipo en el uso de la solución y entregarás el acta final.</li>
+            <li><strong>Elemento 4 · Optimizar:</strong> Medirás el rendimiento de la solución en operación, recogerás la retroalimentación del equipo y elaborarás el plan de optimización con mejoras a los componentes de IA.</li>
+          </ul>
+
+          <p style="font-size:0.92rem;color:var(--color-gris-texto);font-style:italic;">El caso es ficticio, pero los retos son representativos. Muchas distribuidoras, transportistas y empresas de logística regional enfrentan exactamente esta combinación: operación madura, datos valiosos dispersos y necesidad de una solución técnica a medida.</p>
+
+        </div>
+      </details>
+
+      <!-- ===== 1.7 CÓMO USAR ESTE MANUAL ===== -->
+      <details class="accordion__item" id="como-usar">
+        <summary>
+          <span class="accordion__num">1.7</span>
+          <span class="accordion__title-main">Cómo usar este manual</span>
+          <span class="accordion__meta">Guía de lectura · 2 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>El manual sigue el orden natural del proyecto. Cuatro capítulos dedicados, uno por cada elemento, te presentarán con detalle los desempeños, productos, conocimientos y actitudes de cada uno, con cada criterio del F21 reproducido literalmente. Tras ellos, encontrarás una ruta de preparación recomendada, una lista de verificación final y preguntas frecuentes específicas del estándar.</p>
+
+          <ol>
+            <li><strong>Lee el manual completo antes de preparar ningún documento.</strong> Entender el ciclo completo te ayuda a ver cómo los productos de cada elemento alimentan al siguiente.</li>
+            <li><strong>Compara tus productos actuales contra los criterios del F21.</strong> Cada sección de productos reproduce literalmente las características del F21. Marca con tres colores: verde (cumplida), amarillo (parcial), rojo (faltante).</li>
+            <li><strong>Usa el caso de El Surtido como referencia.</strong> Los callouts del caso muestran cómo se verían los productos en un proyecto real. Adapta el enfoque a tu propio proyecto.</li>
+            <li><strong>Practica el desempeño observable.</strong> El Elemento 3 tiene un desempeño que se observa en tiempo real. El Capítulo 4 te explica exactamente qué se espera y cómo prepararte.</li>
+            <li><strong>Usa la ruta de 4 semanas.</strong> El Capítulo 7 propone una ruta operativa para llegar preparado a tu evaluación.</li>
+          </ol>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Para tener presente</span>
+            <div class="callout__body">Si ya tienes experiencia como desarrollador de soluciones para MiPyMEs, es muy probable que ya cuentes con muchos de los productos que el estándar exige. El trabajo de preparación consiste principalmente en organizarlos, completarlos donde falten características y documentarlos con el nivel de detalle que el F21 requiere.</div>
+          </aside>
+
+        </div>
+      </details>
+
+    </div>
+    </div>
+
+    <section id="siguiente">
+      <h2>¿Listo para empezar?</h2>
+      <p>El siguiente capítulo desarrolla el Elemento 1: diagnosticar oportunidades de transformación digital en la MiPyME. Ahí encontrarás los 4 productos, los 5 conocimientos y el AHV que se evaluarán en esta primera etapa.</p>
+      <div class="hero-actions">
+        <a href="elemento-1.html" class="btn btn-primary">Continuar: Elemento 1 · Diagnosticar →</a>
+        <a href="ruta-preparacion.html" class="btn btn-secondary">Ver ruta de preparación primero</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <span class="footer-tag">Transformación digital con IA · Bienvenida</span>
+    </div>
+    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+  </div>
+</footer>
+
+</body>
+</html>

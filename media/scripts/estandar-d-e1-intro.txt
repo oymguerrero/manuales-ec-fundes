@@ -1,0 +1,7 @@
+Elemento 1: Diagnosticar. Esta es la fase que sienta las bases técnicas de todo el proyecto.
+
+El Elemento 1 produce 4 documentos: el diagnóstico de oportunidades de transformación digital, el diagnóstico de madurez digital y disposición al cambio, la propuesta de transformación digital y, finalmente, la propuesta con el Visto Bueno del cliente.
+
+En el caso de El Surtido, Raúl recibirá al consultor con una hoja de cálculo de 3 años de pedidos y un mapa de rutas dibujado a mano. El diagnóstico revelará la realidad técnica de la empresa: infraestructura básica, procesos manuales desconectados y una gran disposición al cambio. Con esa información, construirás la propuesta priorizada que guiará todo el proyecto.
+
+Recuerda: sin un diagnóstico preciso, la solución que construyas en el Elemento 2 no responderá a las necesidades reales de la MiPyME.

@@ -1,0 +1,7 @@
+Elemento 3: Implementar. La solución llega al entorno real de la MiPyME.
+
+Este es el único elemento del Estándar D con un desempeño observable: capacitarás al equipo de la MiPyME en el uso y operación de la solución. Es la única vez que te observarán en acción en tiempo real durante la evaluación. Prepáralo con cuidado.
+
+El Elemento 3 también produce 4 documentos: la solución desplegada en el entorno productivo, la documentación técnica de implementación, el reporte de capacitación y el acta final con la firma de conformidad del cliente.
+
+Para El Surtido, el despliegue será en un VPS cloud. Raúl y los supervisores recibirán la sesión de capacitación. El acta formaliza que la solución fue entregada, que las credenciales fueron transferidas y que el cliente aceptó los compromisos de mantenimiento.
