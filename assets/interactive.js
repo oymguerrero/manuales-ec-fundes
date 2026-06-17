@@ -1881,143 +1881,304 @@
     if (fallback) fallback.hidden = true;
     const key = 'mi-compania-diagnostic::v1::' + (container.dataset.storageKey || 'default');
 
-    const state = { answers: {}, blocked: false, blockReason: '' };
+    const isMultiMode = container.dataset.mode === 'multi';
+
+    // Región aria-live persistente para wizard (no se destruye en re-renders)
+    var ariaLiveRegion = null;
+    if (isMultiMode) {
+      ariaLiveRegion = document.createElement('div');
+      ariaLiveRegion.setAttribute('aria-live', 'polite');
+      ariaLiveRegion.setAttribute('aria-atomic', 'true');
+      ariaLiveRegion.className = 'sr-only';
+      container.appendChild(ariaLiveRegion);
+    }
+    const state = { answers: {}, blocked: false, blockReason: '', currentQ: 0 };
     try {
       const stored = JSON.parse(localStorage.getItem(key) || 'null');
-      if (stored && stored.answers) Object.assign(state, stored);
+      if (stored && stored.answers) {
+        Object.assign(state, stored);
+        // currentQ no se persiste — siempre reinicia en la primera sin responder
+        state.currentQ = Object.keys(stored.answers).length;
+        if (state.currentQ >= data.questions.length) state.currentQ = data.questions.length - 1;
+      }
     } catch (e) {}
 
+    // ---- helpers de scoring reutilizados en ambas ramas ----
+    function calcScores() {
+      const scores = {};
+      data.categories.forEach(function (c) { scores[c.id] = 0; });
+      Object.keys(state.answers).forEach(function (qi) {
+        const opt = data.questions[qi].options[state.answers[qi]];
+        if (opt && opt.scores) {
+          Object.keys(opt.scores).forEach(function (cid) {
+            if (scores[cid] !== undefined) scores[cid] += opt.scores[cid];
+          });
+        }
+      });
+      return scores;
+    }
+
+    function renderResultsMulti(html) {
+      const scores = calcScores();
+      const threshold = parseInt(container.dataset.threshold || '60', 10);
+
+      const maxTheoretical = {};
+      data.categories.forEach(function (c) { maxTheoretical[c.id] = 0; });
+      data.questions.forEach(function (q) {
+        const maxPerCat = {};
+        data.categories.forEach(function (c) { maxPerCat[c.id] = 0; });
+        q.options.forEach(function (opt) {
+          if (opt.scores && !opt.block) {
+            Object.keys(opt.scores).forEach(function (cid) {
+              if (maxPerCat[cid] !== undefined && (opt.scores[cid] || 0) > maxPerCat[cid]) {
+                maxPerCat[cid] = opt.scores[cid];
+              }
+            });
+          }
+        });
+        data.categories.forEach(function (c) { maxTheoretical[c.id] += maxPerCat[c.id]; });
+      });
+
+      const pctAbsolute = {};
+      data.categories.forEach(function (c) {
+        const max = maxTheoretical[c.id] || 1;
+        pctAbsolute[c.id] = Math.min(100, Math.round((scores[c.id] / max) * 100));
+      });
+
+      const ranked = data.categories.slice().sort(function (a, b) {
+        return (pctAbsolute[b.id] || 0) - (pctAbsolute[a.id] || 0);
+      });
+
+      const compatibles = ranked.filter(function (c) { return pctAbsolute[c.id] >= threshold; });
+      const hasCompatible = compatibles.length > 0;
+
+      html += '<div class="diagnostic-multi__result">';
+      html += '<h3>Tu perfil según los 4 estándares</h3>';
+
+      if (!hasCompatible) {
+        html += '<div class="diagnostic-multi__no-match callout callout--tip">';
+        html += '<p>Tu perfil actual no tiene una coincidencia fuerte con estos 4 estándares. Eso no significa que no puedas certificarte — puede ser que tu trabajo cotidiano aún no incluya el acompañamiento a MiPyMEs, o que estés en una etapa de transición. El <a href="../maestro/index.html">Curso introductorio</a> te ayuda a entender las funciones en detalle.</p>';
+        html += '</div>';
+      }
+
+      ranked.forEach(function (cat) {
+        const pct = pctAbsolute[cat.id] || 0;
+        const isCompatible = pct >= threshold;
+        html += '<div class="diagnostic-multi__match' + (isCompatible ? ' diagnostic-multi__match--top' : ' diagnostic-multi__match--weak') + '">';
+        html += '<div class="diagnostic-multi__match-header">';
+        html += '<span class="diagnostic-multi__match-label">' + escapeHTML(cat.label) + '</span>';
+        if (isCompatible) {
+          html += '<span class="diagnostic-multi__match-badge">Compatible</span>';
+        } else {
+          html += '<span class="diagnostic-multi__match-badge diagnostic-multi__match-badge--gray">No prioritario</span>';
+        }
+        if (!cat.available) html += '<span class="diagnostic-multi__match-badge diagnostic-multi__match-badge--coming">En construcción</span>';
+        html += '<span class="diagnostic-multi__match-pct">' + pct + '%</span>';
+        html += '</div>';
+        html += '<div class="diagnostic-multi__match-bar"><div class="diagnostic-multi__match-fill" style="width:' + pct + '%"></div></div>';
+        if (cat.summary) html += '<p class="diagnostic-multi__match-summary">' + escapeHTML(cat.summary) + '</p>';
+        if (isCompatible && cat.href && cat.available) {
+          html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Ir al manual de ' + escapeHTML(cat.label) + ' →</a>';
+        } else if (!cat.available) {
+          html += '<p class="diagnostic-multi__match-coming">Este manual está en construcción. Mientras tanto, conoce el marco general en el <a href="../index.html">listado de manuales</a>.</p>';
+        }
+        html += '</div>';
+      });
+
+      if (data.wrap_up) {
+        html += '<aside class="diagnostic-multi__wrapup"><strong>Para llevar:</strong> ' + escapeHTML(data.wrap_up) + '</aside>';
+      }
+
+      html += '<button type="button" class="diagnostic-multi__reset">Volver a hacer el diagnóstico</button>';
+      html += '</div>';
+
+      if (hasCompatible) {
+        container._radarData = { ranked: ranked, pctAbsolute: pctAbsolute };
+      } else {
+        container._radarData = null;
+      }
+
+      return html;
+    }
+
+    // ---- renderizado del radar chart (reutilizable) ----
+    function mountRadar() {
+      if (!container._radarData) return;
+      var radarPayload = container._radarData;
+      var radarWrap = document.createElement('div');
+      radarWrap.className = 'diagnostic-multi__radar';
+      radarWrap.innerHTML = '<h4>Tus fortalezas por estándar</h4><p class="diagnostic-multi__radar-copy">Cuanto más alto el puntaje en cada eje, mayor compatibilidad de tu perfil con ese estándar.</p><div class="chart-block__canvas-wrap"><canvas></canvas></div>';
+      var resultDiv = container.querySelector('.diagnostic-multi__result');
+      var wrapupEl = resultDiv && resultDiv.querySelector('.diagnostic-multi__wrapup');
+      if (wrapupEl) {
+        resultDiv.insertBefore(radarWrap, wrapupEl);
+      } else if (resultDiv) {
+        resultDiv.appendChild(radarWrap);
+      }
+      var canvas = radarWrap.querySelector('canvas');
+      var renderRadar = function () {
+        if (!canvas || !window.Chart) return;
+        window.Chart.defaults.font.family = 'Afacad, Inter, sans-serif';
+        window.Chart.defaults.color = 'rgba(255,255,255,0.85)';
+        try {
+          new window.Chart(canvas.getContext('2d'), {
+            type: 'radar',
+            data: {
+              labels: radarPayload.ranked.map(function (c) { return c.label; }),
+              datasets: [{
+                label: 'Tu perfil',
+                data: radarPayload.ranked.map(function (c) { return radarPayload.pctAbsolute[c.id] || 0; }),
+                backgroundColor: 'rgba(255, 255, 255, 0.10)',
+                borderColor: 'rgba(247, 192, 49, 0.9)',
+                pointBackgroundColor: '#f7c031',
+                pointBorderColor: 'rgba(255,255,255,0.8)',
+                pointHoverBackgroundColor: '#f7c031',
+                borderWidth: 2
+              }]
+            },
+            options: {
+              responsive: true,
+              scales: {
+                r: {
+                  min: 0,
+                  max: 100,
+                  ticks: {
+                    stepSize: 20,
+                    font: { size: 11 },
+                    color: 'rgba(255,255,255,0.7)',
+                    backdropColor: 'transparent'
+                  },
+                  pointLabels: {
+                    font: { size: 13 },
+                    color: 'rgba(255,255,255,0.9)'
+                  },
+                  grid: { color: 'rgba(255,255,255,0.15)' },
+                  angleLines: { color: 'rgba(255,255,255,0.15)' }
+                }
+              },
+              plugins: { legend: { display: false } }
+            }
+          });
+        } catch (e) { console.warn('Radar chart error:', e); }
+      };
+      if (window.Chart) {
+        renderRadar();
+      } else {
+        loadCDN('https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js')
+          .then(renderRadar)
+          .catch(function (e) { console.warn('No se pudo cargar Chart.js para el radar:', e); });
+      }
+    }
+
+    // ---- render principal: WIZARD (modo multi) o cascada (modo clásico) ----
     function render() {
       const total = data.questions.length;
       const answered = Object.keys(state.answers).length;
       const completed = answered === total && !state.blocked;
-      let html = '<div class="diagnostic-multi__inner">';
-      html += '<div class="diagnostic-multi__progress">';
-      html += '<span class="diagnostic-multi__progress-label">Diagnóstico · pregunta ' + Math.min(answered + 1, total) + ' de ' + total + '</span>';
-      html += '<div class="diagnostic-multi__progress-bar"><div class="diagnostic-multi__progress-fill" style="width:' + Math.round((answered / total) * 100) + '%"></div></div>';
-      html += '</div>';
 
-      data.questions.forEach(function (q, qi) {
-        const answered = state.answers[qi] !== undefined;
-        const hidden = qi > Object.keys(state.answers).length;
-        html += '<fieldset class="diagnostic-multi__question"' + (hidden ? ' hidden' : '') + ' data-qi="' + qi + '">';
-        html += '<legend><span class="diagnostic-multi__q-num">' + (qi + 1) + '</span> ' + escapeHTML(q.text) + '</legend>';
-        q.options.forEach(function (opt, oi) {
-          const isSelected = state.answers[qi] === oi;
-          html += '<label class="diagnostic-multi__option' + (isSelected ? ' diagnostic-multi__option--selected' : '') + '">';
-          html += '<input type="radio" name="dq-' + qi + '" value="' + oi + '"' + (isSelected ? ' checked' : '') + '>';
-          html += '<span>' + escapeHTML(opt.label) + '</span>';
-          html += '</label>';
-        });
-        html += '</fieldset>';
-      });
-
-      if (state.blocked) {
-        html += '<div class="diagnostic-multi__result diagnostic-multi__result--blocked">';
-        html += '<h3>Este programa de certificación NO es para tu caso</h3>';
-        html += '<p>' + escapeHTML(state.blockReason) + '</p>';
-        html += '<button type="button" class="diagnostic-multi__reset">Volver a empezar</button>';
-        html += '</div>';
-      } else if (completed) {
-        // calcular scores acumulados
-        const scores = {};
-        data.categories.forEach(function (c) { scores[c.id] = 0; });
-        Object.keys(state.answers).forEach(function (qi) {
-          const opt = data.questions[qi].options[state.answers[qi]];
-          if (opt.scores) {
-            Object.keys(opt.scores).forEach(function (cid) {
-              if (scores[cid] !== undefined) scores[cid] += opt.scores[cid];
-            });
-          }
-        });
-
-        const isMultiMode = container.dataset.mode === 'multi';
-        const threshold = parseInt(container.dataset.threshold || '60', 10);
-
-        if (isMultiMode) {
-          // Modo multi: calcular porcentaje sobre el máximo teórico posible por categoría
-          const maxTheoretical = {};
-          data.categories.forEach(function (c) { maxTheoretical[c.id] = 0; });
-          data.questions.forEach(function (q) {
-            // Para cada pregunta, sumar el score máximo que cada categoría puede recibir
-            const maxPerCat = {};
-            data.categories.forEach(function (c) { maxPerCat[c.id] = 0; });
-            q.options.forEach(function (opt) {
-              if (opt.scores && !opt.block) {
-                Object.keys(opt.scores).forEach(function (cid) {
-                  if (maxPerCat[cid] !== undefined && (opt.scores[cid] || 0) > maxPerCat[cid]) {
-                    maxPerCat[cid] = opt.scores[cid];
-                  }
-                });
-              }
-            });
-            data.categories.forEach(function (c) { maxTheoretical[c.id] += maxPerCat[c.id]; });
-          });
-
-          const pctAbsolute = {};
-          data.categories.forEach(function (c) {
-            const max = maxTheoretical[c.id] || 1;
-            pctAbsolute[c.id] = Math.min(100, Math.round((scores[c.id] / max) * 100));
-          });
-
-          // Ordenar por pctAbsolute de mayor a menor
-          const ranked = data.categories.slice().sort(function (a, b) {
-            return (pctAbsolute[b.id] || 0) - (pctAbsolute[a.id] || 0);
-          });
-
-          const compatibles = ranked.filter(function (c) { return pctAbsolute[c.id] >= threshold; });
-          const hasCompatible = compatibles.length > 0;
-
-          html += '<div class="diagnostic-multi__result">';
-          html += '<h3>Tu perfil según los 4 estándares</h3>';
-
-          if (!hasCompatible) {
-            html += '<div class="diagnostic-multi__no-match callout callout--tip">';
-            html += '<p>Tu perfil actual no tiene una coincidencia fuerte con estos 4 estándares. Eso no significa que no puedas certificarte — puede ser que tu trabajo cotidiano aún no incluya el acompañamiento a MiPyMEs, o que estés en una etapa de transición. El <a href="../maestro/index.html">Curso introductorio</a> te ayuda a entender las funciones en detalle.</p>';
+      if (isMultiMode) {
+        // ---- MODO WIZARD: una pregunta a la vez ----
+        if (completed || state.blocked) {
+          // Pantalla de resultados o bloqueo
+          let html = '<div class="diagnostic-multi__inner">';
+          if (state.blocked) {
+            html += '<div class="diagnostic-multi__result diagnostic-multi__result--blocked">';
+            html += '<h3>Este programa de certificación NO es para tu caso</h3>';
+            html += '<p>' + escapeHTML(state.blockReason) + '</p>';
+            html += '<button type="button" class="diagnostic-multi__reset">Volver a empezar</button>';
             html += '</div>';
-          }
-
-          ranked.forEach(function (cat) {
-            const pct = pctAbsolute[cat.id] || 0;
-            const isCompatible = pct >= threshold;
-            html += '<div class="diagnostic-multi__match' + (isCompatible ? ' diagnostic-multi__match--top' : ' diagnostic-multi__match--weak') + '">';
-            html += '<div class="diagnostic-multi__match-header">';
-            html += '<span class="diagnostic-multi__match-label">' + escapeHTML(cat.label) + '</span>';
-            if (isCompatible) {
-              html += '<span class="diagnostic-multi__match-badge">Compatible</span>';
-            } else {
-              html += '<span class="diagnostic-multi__match-badge diagnostic-multi__match-badge--gray">No prioritario</span>';
-            }
-            if (!cat.available) html += '<span class="diagnostic-multi__match-badge diagnostic-multi__match-badge--coming">En construcción</span>';
-            html += '<span class="diagnostic-multi__match-pct">' + pct + '%</span>';
-            html += '</div>';
-            html += '<div class="diagnostic-multi__match-bar"><div class="diagnostic-multi__match-fill" style="width:' + pct + '%"></div></div>';
-            if (cat.summary) html += '<p class="diagnostic-multi__match-summary">' + escapeHTML(cat.summary) + '</p>';
-            if (isCompatible && cat.href && cat.available) {
-              html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Ir al manual de ' + escapeHTML(cat.label) + ' →</a>';
-            } else if (!cat.available) {
-              html += '<p class="diagnostic-multi__match-coming">Este manual está en construcción. Mientras tanto, conoce el marco general en el <a href="../index.html">listado de manuales</a>.</p>';
-            }
-            html += '</div>';
-          });
-
-          if (data.wrap_up) {
-            html += '<aside class="diagnostic-multi__wrapup"><strong>Para llevar:</strong> ' + escapeHTML(data.wrap_up) + '</aside>';
-          }
-
-          html += '<button type="button" class="diagnostic-multi__reset">Volver a hacer el diagnóstico</button>';
-          html += '</div>';
-
-          // Radar chart — se inserta después de setear innerHTML, en un paso asíncrono
-          // Guardamos los datos en el contenedor para recuperarlos tras el re-render
-          if (hasCompatible) {
-            container._radarData = { ranked: ranked, pctAbsolute: pctAbsolute };
           } else {
-            container._radarData = null;
+            html = renderResultsMulti(html);
           }
+          html += '</div>';
+          container.innerHTML = html;
+          mountRadar();
+
+          // Scroll suave a resultados
+          setTimeout(function () {
+            var result = container.querySelector('.diagnostic-multi__result');
+            if (result) result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 80);
 
         } else {
-          // Modo clásico (retrocompatible): top-1 como Recomendado
+          // Pantalla de pregunta wizard
+          var qi = state.currentQ;
+          // Salvaguarda: si currentQ > preguntas respondidas, bajar al primer sin responder
+          if (qi > answered) qi = answered;
+          var q = data.questions[qi];
+          var progressPct = Math.round((answered / total) * 100);
+
+          var html = '<div class="diagnostic-multi__inner">';
+          html += '<div class="diagnostic-multi__progress">';
+          html += '<span class="diagnostic-multi__progress-label">Pregunta ' + (qi + 1) + ' de ' + total + '</span>';
+          html += '<div class="diagnostic-multi__progress-bar"><div class="diagnostic-multi__progress-fill" style="width:' + progressPct + '%"></div></div>';
+          html += '</div>';
+
+          html += '<div class="diagnostic-multi__wizard-step">';
+          html += '<fieldset class="diagnostic-multi__question" data-qi="' + qi + '">';
+          html += '<legend><span class="diagnostic-multi__q-num">' + (qi + 1) + '</span> ' + escapeHTML(q.text) + '</legend>';
+          q.options.forEach(function (opt, oi) {
+            var isSelected = state.answers[qi] === oi;
+            html += '<label class="diagnostic-multi__option' + (isSelected ? ' diagnostic-multi__option--selected' : '') + '">';
+            html += '<input type="radio" name="dq-' + qi + '" value="' + oi + '"' + (isSelected ? ' checked' : '') + '>';
+            html += '<span>' + escapeHTML(opt.label) + '</span>';
+            html += '</label>';
+          });
+          html += '</fieldset>';
+
+          // Botón Anterior (oculto en la primera pregunta)
+          if (qi > 0) {
+            html += '<button type="button" class="diagnostic-multi__prev">← Anterior</button>';
+          }
+
+          html += '</div>'; // wizard-step
+          html += '</div>'; // inner
+          container.innerHTML = html;
+
+          // Actualizar región aria-live con el texto de la pregunta nueva
+          if (ariaLiveRegion) {
+            ariaLiveRegion.textContent = 'Pregunta ' + (qi + 1) + ' de ' + total + ': ' + q.text;
+            container.appendChild(ariaLiveRegion);
+          }
+
+          // Foco en primer radio para accesibilidad y navegación con teclado
+          var firstRadio = container.querySelector('input[type="radio"]');
+          if (firstRadio) {
+            setTimeout(function () { firstRadio.focus(); }, 60);
+          }
+        }
+
+      } else {
+        // ---- MODO CLÁSICO: cascada vertical (sin cambios) ----
+        const scores = calcScores();
+        let html = '<div class="diagnostic-multi__inner">';
+        html += '<div class="diagnostic-multi__progress">';
+        html += '<span class="diagnostic-multi__progress-label">Diagnóstico · pregunta ' + Math.min(answered + 1, total) + ' de ' + total + '</span>';
+        html += '<div class="diagnostic-multi__progress-bar"><div class="diagnostic-multi__progress-fill" style="width:' + Math.round((answered / total) * 100) + '%"></div></div>';
+        html += '</div>';
+
+        data.questions.forEach(function (q, qi) {
+          const isAnswered = state.answers[qi] !== undefined;
+          const hidden = qi > Object.keys(state.answers).length;
+          html += '<fieldset class="diagnostic-multi__question"' + (hidden ? ' hidden' : '') + ' data-qi="' + qi + '">';
+          html += '<legend><span class="diagnostic-multi__q-num">' + (qi + 1) + '</span> ' + escapeHTML(q.text) + '</legend>';
+          q.options.forEach(function (opt, oi) {
+            const isSelected = state.answers[qi] === oi;
+            html += '<label class="diagnostic-multi__option' + (isSelected ? ' diagnostic-multi__option--selected' : '') + '">';
+            html += '<input type="radio" name="dq-' + qi + '" value="' + oi + '"' + (isSelected ? ' checked' : '') + '>';
+            html += '<span>' + escapeHTML(opt.label) + '</span>';
+            html += '</label>';
+          });
+          html += '</fieldset>';
+        });
+
+        if (state.blocked) {
+          html += '<div class="diagnostic-multi__result diagnostic-multi__result--blocked">';
+          html += '<h3>Este programa de certificación NO es para tu caso</h3>';
+          html += '<p>' + escapeHTML(state.blockReason) + '</p>';
+          html += '<button type="button" class="diagnostic-multi__reset">Volver a empezar</button>';
+          html += '</div>';
+        } else if (completed) {
           const ranked = data.categories.slice().sort(function (a, b) { return (scores[b.id] || 0) - (scores[a.id] || 0); });
           const maxScore = ranked[0] ? scores[ranked[0].id] : 0;
 
@@ -2050,105 +2211,128 @@
           html += '<button type="button" class="diagnostic-multi__reset">Volver a hacer el diagnóstico</button>';
           html += '</div>';
         }
-      }
 
-      html += '</div>';
-      container.innerHTML = html;
+        html += '</div>';
+        container.innerHTML = html;
 
-      // Radar chart en modo multi (carga Chart.js condicionalmente)
-      if (container._radarData) {
-        var radarPayload = container._radarData;
-        var radarWrap = document.createElement('div');
-        radarWrap.className = 'diagnostic-multi__radar';
-        radarWrap.innerHTML = '<h4>Tus fortalezas por área</h4><div class="chart-block__canvas-wrap"><canvas></canvas></div>';
-        var resultDiv = container.querySelector('.diagnostic-multi__result');
-        var wrapupEl = resultDiv && resultDiv.querySelector('.diagnostic-multi__wrapup');
-        if (wrapupEl) {
-          resultDiv.insertBefore(radarWrap, wrapupEl);
-        } else if (resultDiv) {
-          resultDiv.appendChild(radarWrap);
-        }
-        var canvas = radarWrap.querySelector('canvas');
-        var renderRadar = function () {
-          if (!canvas || !window.Chart) return;
-          window.Chart.defaults.font.family = 'Afacad, Inter, sans-serif';
-          window.Chart.defaults.color = '#28467e';
-          try {
-            new window.Chart(canvas.getContext('2d'), {
-              type: 'radar',
-              data: {
-                labels: radarPayload.ranked.map(function (c) { return c.label; }),
-                datasets: [{
-                  label: 'Tu perfil',
-                  data: radarPayload.ranked.map(function (c) { return radarPayload.pctAbsolute[c.id] || 0; }),
-                  backgroundColor: 'rgba(40, 70, 126, 0.15)',
-                  borderColor: '#28467e',
-                  pointBackgroundColor: '#f7c031',
-                  pointBorderColor: '#28467e',
-                  pointHoverBackgroundColor: '#f7c031',
-                  borderWidth: 2
-                }]
-              },
-              options: {
-                responsive: true,
-                scales: {
-                  r: {
-                    min: 0,
-                    max: 100,
-                    ticks: { stepSize: 20, font: { size: 11 } },
-                    pointLabels: { font: { size: 13 } }
-                  }
-                },
-                plugins: { legend: { display: false } }
+        // bind scroll al siguiente fieldset (comportamiento cascada original)
+        container.querySelectorAll('input[type="radio"]').forEach(function (radio) {
+          radio.addEventListener('change', function () {
+            const qi = parseInt(radio.name.replace('dq-', ''), 10);
+            const oi = parseInt(radio.value, 10);
+            const opt = data.questions[qi].options[oi];
+            state.answers[qi] = oi;
+            if (opt.block) {
+              state.blocked = true;
+              state.blockReason = opt.block_reason || 'Tu respuesta indica que este conjunto de estándares no aplica a tu caso.';
+            }
+            try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+            recordEvent('diagnostic', { storageKey: container.dataset.storageKey, qi: qi, oi: oi });
+            render();
+            setTimeout(function () {
+              const next = container.querySelector('.diagnostic-multi__question[data-qi="' + (qi + 1) + '"]');
+              if (next && !next.hidden) next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              else if (state.blocked || Object.keys(state.answers).length === data.questions.length) {
+                const result = container.querySelector('.diagnostic-multi__result');
+                if (result) result.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }
-            });
-          } catch (e) { console.warn('Radar chart error:', e); }
-        };
-        if (window.Chart) {
-          renderRadar();
-        } else {
-          loadCDN('https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js')
-            .then(renderRadar)
-            .catch(function (e) { console.warn('No se pudo cargar Chart.js para el radar:', e); });
+            }, 100);
+          });
+        });
+
+        const resetBtn = container.querySelector('.diagnostic-multi__reset');
+        if (resetBtn) {
+          resetBtn.addEventListener('click', function () {
+            state.answers = {};
+            state.blocked = false;
+            state.blockReason = '';
+            state.currentQ = 0;
+            try { localStorage.removeItem(key); } catch (e) {}
+            render();
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
         }
+        return; // salir temprano: los handlers ya están bindeados arriba
       }
 
-      // bind handlers
+      // ---- Handlers del modo wizard (solo llega aquí si isMultiMode) ----
+
+      // Selección de opción → auto-avance
       container.querySelectorAll('input[type="radio"]').forEach(function (radio) {
         radio.addEventListener('change', function () {
-          const qi = parseInt(radio.name.replace('dq-', ''), 10);
-          const oi = parseInt(radio.value, 10);
-          const opt = data.questions[qi].options[oi];
+          var qi = parseInt(radio.name.replace('dq-', ''), 10);
+          var oi = parseInt(radio.value, 10);
+          var opt = data.questions[qi].options[oi];
           state.answers[qi] = oi;
+
+          // Borra respuestas posteriores (si el usuario volvió y cambió)
+          var k = qi + 1;
+          while (state.answers[k] !== undefined) {
+            delete state.answers[k];
+            k++;
+          }
+
           if (opt.block) {
             state.blocked = true;
             state.blockReason = opt.block_reason || 'Tu respuesta indica que este conjunto de estándares no aplica a tu caso.';
           }
-          try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+
+          try { localStorage.setItem(key, JSON.stringify({ answers: state.answers, blocked: state.blocked, blockReason: state.blockReason })); } catch (e) {}
           recordEvent('diagnostic', { storageKey: container.dataset.storageKey, qi: qi, oi: oi });
-          render();
-          // Scroll a la siguiente pregunta
-          setTimeout(function () {
-            const next = container.querySelector('.diagnostic-multi__question[data-qi="' + (qi + 1) + '"]');
-            if (next && !next.hidden) next.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            else if (state.blocked || Object.keys(state.answers).length === data.questions.length) {
-              const result = container.querySelector('.diagnostic-multi__result');
-              if (result) result.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }, 100);
+
+          // Auto-avance: ir a la siguiente pregunta o mostrar resultados
+          if (!state.blocked && qi + 1 < data.questions.length) {
+            state.currentQ = qi + 1;
+          }
+          // Fade de salida breve antes de re-render
+          var step = container.querySelector('.diagnostic-multi__wizard-step');
+          if (step) {
+            step.style.opacity = '0';
+            step.style.transition = 'opacity 0.18s';
+          }
+          setTimeout(function () { render(); }, 180);
         });
       });
-      const resetBtn = container.querySelector('.diagnostic-multi__reset');
+
+      // Botón Anterior
+      var prevBtn = container.querySelector('.diagnostic-multi__prev');
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          if (state.currentQ > 0) {
+            state.currentQ -= 1;
+            var step = container.querySelector('.diagnostic-multi__wizard-step');
+            if (step) {
+              step.style.opacity = '0';
+              step.style.transition = 'opacity 0.18s';
+            }
+            setTimeout(function () { render(); }, 180);
+          }
+        });
+      }
+
+      // Reset en pantalla de resultados wizard
+      var resetBtn = container.querySelector('.diagnostic-multi__reset');
       if (resetBtn) {
         resetBtn.addEventListener('click', function () {
           state.answers = {};
           state.blocked = false;
           state.blockReason = '';
+          state.currentQ = 0;
+          container._radarData = null;
           try { localStorage.removeItem(key); } catch (e) {}
           render();
           container.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
       }
+
+      // Fade de entrada en la pregunta nueva
+      setTimeout(function () {
+        var step = container.querySelector('.diagnostic-multi__wizard-step');
+        if (step) {
+          step.style.opacity = '1';
+          step.style.transition = 'opacity 0.22s';
+        }
+      }, 10);
     }
 
     render();
