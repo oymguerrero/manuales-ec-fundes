@@ -283,6 +283,15 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   letter-spacing: 0.4px;
 }
 
+.ec-card .ec-prep {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+  margin-top: -6px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
 .ec-card h3 {
   margin: 0 0 10px;
   color: var(--color-azul-profundo);
