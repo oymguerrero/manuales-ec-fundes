@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word">
+<title>Checklist de Evaluación de Desempeños</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.5; color: #333333; }
+h1 { color: #1e3a8a; font-size: 22px; text-align: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 10px; }
+h2 { color: #111827; font-size: 16px; margin-top: 30px; margin-bottom: 5px; border-bottom: 1px solid #e5e7eb; padding-bottom: 5px; }
+p.note { font-style: italic; color: #4b5563; margin-bottom: 15px; font-size: 13px; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 20px; }
+th, td { border: 1px solid #d1d5db; padding: 10px; text-align: left; font-size: 12px; }
+th { background-color: #f3f4f6; color: #111827; font-weight: bold; }
+td.checkbox-cell { width: 30px; text-align: center; font-size: 14px; }
+td.missing-cell { width: 200px; }
+</style>
+</head>
+<body>
+
+<h1>Checklist de Evaluación de Desempeños<br>Gestión de Contenido de Marketing Digital con IA</h1>
+
+<h2>Desempeño 1. Validar la estrategia de contenido de marketing digital en la MiPyME utilizando IA</h2>
+<p class="note">Nota: Para este desempeño, requieres realizar la simulación con una persona en el rol de cliente. Graba la conversación y verifica si cumpliste con estos criterios:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Criterio de evaluación</th>
+      <th style="width: 40px; text-align: center;">Sí</th>
+      <th style="width: 40px; text-align: center;">No</th>
+      <th>¿Qué falta?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Presentaste la estrategia diseñada ante la(s) persona(s) responsable(s) del marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Utilizaste un lenguaje claro y acorde a la audiencia que describa los tecnicismos de la especialidad?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Aclaraste las dudas que se presentaron/solicitaste retroalimentación acerca de la propuesta presentada?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Obtuviste el visto bueno de validación verbal/por escrito por parte de la(s) persona(s) responsable(s) del marketing digital en la MiPyME para iniciar la implementación?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste iniciativa por la manera en que presentaste diversas alternativas de estrategias de contenido de marketing digital con uso de la IA de acuerdo al contexto de la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste amabilidad por la manera en que brindaste un trato cordial y profesional en la interacción con la persona responsable del marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Desempeño 2. Crear contenido de texto de marketing digital con herramientas/plataformas de IA</h2>
+<p class="note">Nota: Para demostrar este desempeño, no requieres una persona de apoyo, sin embargo, te recomendamos que vayas comentando en voz alta lo que estás haciendo para que no quede duda al evaluador de que has demostrado los criterios. Por ejemplo, cuando justificas la elección de esa herramienta.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Criterio de evaluación</th>
+      <th style="width: 40px; text-align: center;">Sí</th>
+      <th style="width: 40px; text-align: center;">No</th>
+      <th>¿Qué falta?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Justificaste la selección de la(s) herramienta(s)/plataforma(s) de IA de acuerdo al contenido de texto por generar?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Escribiste el prompt de contenido de texto que incluya al menos el rol, el contexto, la tarea, la audiencia, el formato, el tono de comunicación y las restricciones?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Realizaste las pruebas de validación del contenido de texto generado y eliminación de sesgos?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Efectuaste los ajustes al contenido de texto generado mediante al menos una iteración de prompts/las iteraciones requeridas hasta cumplir los criterios de calidad establecidos en la estrategia/a petición de la/s persona/s responsable/s del marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Explicaste cómo el contenido generado es coherente con la identidad de marca, los lineamientos de la estrategia aprobada y respeta los derechos de propiedad intelectual de terceros?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste orden por la manera en que organizaste los contenidos generados de acuerdo con la planificación establecida en la estrategia aprobada?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste responsabilidad por la manera en que verificaste la veracidad, pertinencia y originalidad del contenido generado por IA a presentar para su aprobación?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Desempeño 3. Crear contenido de video de marketing digital con la(s) herramienta(s)/plataforma(s) de IA</h2>
+<p class="note">Nota: Para demostrar este desempeño, no requieres una persona de apoyo, sin embargo, te recomendamos que vayas comentando en voz alta lo que estás haciendo para que no quede duda al evaluador de que has demostrado los criterios.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Criterio de evaluación</th>
+      <th style="width: 40px; text-align: center;">Sí</th>
+      <th style="width: 40px; text-align: center;">No</th>
+      <th>¿Qué falta?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Seleccionaste la(s) herramienta(s)/plataforma(s) de IA correspondiente(s) al tipo de contenido de video requerido por la estrategia?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Elaboraste el prompt con instrucciones específicas que incluyan al menos la escena, el sujeto, el ambiente, el estilo visual, la iluminación, la duración, restricciones y el formato?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Realizaste las pruebas de validación del contenido de video generado y eliminación de sesgos/errores/incoherencias?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Ajustaste el contenido de video generado mediante al menos una iteración de prompts/ las iteraciones requeridas hasta cumplir los criterios de calidad establecidos/a petición de la/s persona/s responsable/s del marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Verificaste que el contenido de video generado sea coherente con la identidad de marca, los lineamientos de la estrategia aprobada y respeta los derechos de propiedad intelectual de terceros?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste orden por la manera en que organizaste los contenidos generados de acuerdo con la planificación establecida en la estrategia aprobada?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste responsabilidad por la manera en que verificaste la veracidad, pertinencia y originalidad del contenido generado por IA a presentar para su aprobación?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Desempeño 4. Crear contenido de imagen de marketing digital con herramientas/plataformas de IA</h2>
+<p class="note">Nota: Para demostrar este desempeño, no requieres una persona de apoyo, sin embargo, te recomendamos que vayas comentando en voz alta lo que estás haciendo para que no quede duda al evaluador de que has demostrado los criterios.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Criterio de evaluación</th>
+      <th style="width: 40px; text-align: center;">Sí</th>
+      <th style="width: 40px; text-align: center;">No</th>
+      <th>¿Qué falta?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Justificaste la selección de la(s) herramienta(s)/plataforma(s) de IA de acuerdo al tipo de contenido de imagen requerido por la estrategia?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Elaboraste el prompt de contenido de imagen con los parámetros de sujeto, estilo, formato y restricciones?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Realizaste las pruebas de validación del contenido de imagen generado y eliminación de sesgos/errores/incoherencias?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Ajustaste el contenido de imagen generado mediante al menos una iteración de prompts/las iteraciones requeridas hasta cumplir los criterios de calidad establecidos en la estrategia/a petición de la/s persona/s responsable/s del marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Verificaste que el contenido de imagen generado sea coherente con la identidad de marca, los lineamientos de la estrategia aprobada y respeta los derechos de propiedad intelectual de terceros?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste orden por la manera en que organizaste los contenidos generados de acuerdo con la planificación establecida en la estrategia aprobada?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste responsabilidad por la manera en que verificaste la veracidad, pertinencia y originalidad del contenido generado por IA a presentar para su aprobación?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Desempeño 5. Crear contenido de audio de marketing digital con la(s) herramienta(s)/plataforma(s) de IA</h2>
+<p class="note">Nota: Para demostrar este desempeño, no requieres una persona de apoyo, sin embargo, te recomendamos que vayas comentando en voz alta lo que estás haciendo para que no quede duda al evaluador de que has demostrado los criterios.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Criterio de evaluación</th>
+      <th style="width: 40px; text-align: center;">Sí</th>
+      <th style="width: 40px; text-align: center;">No</th>
+      <th>¿Qué falta?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Seleccionaste la(s) herramienta(s)/plataforma(s) de IA correspondiente(s) al tipo de contenido de audio para narración por voz/música de acuerdo con lo requerido por la estrategia?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Elaboraste el prompt/Configuraste en la herramienta de IA para narración por voz/música los parámetros de tipo/guión/género/tono/ritmo/emoción/letra/duración/restricciones/referencia de acuerdo con los requerimientos de la estrategia/a petición de la/s persona/s responsable/s del marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Realizaste las pruebas de validación del contenido de audio generado y eliminación de sesgos/errores/incoherencias?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Repetiste el proceso de generación de audio hasta obtener el resultado que cumpla con los criterios de calidad establecidos en la estrategia?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Verificaste que el contenido de audio generado sea coherente con la identidad de marca, los lineamientos de la estrategia aprobada y respeta los derechos de propiedad intelectual de terceros?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste orden por la manera en que organizaste los contenidos generados de acuerdo con la planificación establecida en la estrategia aprobada?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste responsabilidad por la manera en que verificaste la veracidad, pertinencia y originalidad del contenido generado por IA a presentar para su aprobación?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Desempeño 6. Publicar el contenido de la campaña de marketing digital generado con IA</h2>
+<p class="note">Nota: Para demostrar este desempeño, no requieres una persona de apoyo, sin embargo, te recomendamos que vayas comentando en voz alta lo que estás haciendo para que no quede duda al evaluador de que has demostrado los criterios.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Criterio de evaluación</th>
+      <th style="width: 40px; text-align: center;">Sí</th>
+      <th style="width: 40px; text-align: center;">No</th>
+      <th>¿Qué falta?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Publicaste de acuerdo con los tipos de contenido digital de texto/imagen/audio/video aprobados en la estrategia?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Utilizaste al menos dos plataforma(s) digital(es) con las que cuenta la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Verificaste que la configuración de perfil(es) y cuenta(s) de la(s) plataforma(s) digital(es) corresponda con los lineamientos de identidad de marca establecidos en la estrategia?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Cargaste los contenidos aprobados y los elementos complementarios en la(s) plataforma(s) digital(es) de acuerdo con las especificaciones técnicas de cada medio?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Configuraste los elementos complementarios de cada publicación, conforme al contenido aprobado?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Programaste las publicaciones conforme al calendario de contenidos, horarios y frecuencia definidos en la estrategia aprobada?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Configuraste la segmentación de audiencia y el presupuesto de promoción en las publicaciones pagadas de acuerdo con la estrategia?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Comprobaste que los enlaces, etiquetas y llamados a la acción incluidos en cada publicación sean visibles y funcionales en multidispositivos?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste orden por la manera en que organizaste los contenidos generados de acuerdo con la planificación establecida en la estrategia aprobada?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste responsabilidad por la manera en que verificaste la veracidad, pertinencia y originalidad del contenido generado por IA a presentar para su aprobación?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Desempeño 7. Habilitar a la(s) persona(s) responsable(s) del marketing digital en la MiPyME en el proceso operativo de publicación y programación de contenido</h2>
+<p class="note">Nota: Para este desempeño, requieres realizar la simulación con una persona en el rol de cliente. Graba la conversación y verifica si cumpliste con estos criterios:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Criterio de evaluación</th>
+      <th style="width: 40px; text-align: center;">Sí</th>
+      <th style="width: 40px; text-align: center;">No</th>
+      <th>¿Qué falta?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Explicaste las configuraciones de segmentación de audiencia y presupuesto de promoción disponibles en la(s) plataforma(s) digital(es)?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Indicaste los criterios de verificación previos a la publicación: formato, especificaciones técnicas y textos complementarios?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Explicaste las restricciones y políticas de contenido de cada plataforma digital que pueden causar el rechazo de una publicación?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Describiste el procedimiento para monitorear las métricas de cada publicación posterior a su lanzamiento?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Aclaraste las dudas que se presentaron/solicitaste retroalimentación acerca del proceso operativo de publicación y programación de contenido por parte de la(s) persona(s) responsable(s) de marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Entregaste la guía operativa de publicación a la(s) persona(s) responsable(s) del marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste cooperación por la manera en que involucraste a la(s) persona(s) responsable(s) del marketing digital de la MiPyME en el proceso de implementación, facilitando su participación activa en la publicación y gestión de los contenidos?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste tolerancia por la manera en que mostraste paciencia ante las dificultades que manifestaron la(s) persona(s) responsable(s) del marketing digital de la MiPyME durante el proceso de implementación de la estrategia de contenido marketing digital?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Desempeño 8. Presentar el reporte de resultados y las recomendaciones de optimización del contenido de marketing digital con IA a la(s) persona(s) responsable(s) en la MiPyME</h2>
+<p class="note">Nota: Para este desempeño, requieres realizar la simulación con una persona en el rol de cliente. Graba la conversación y verifica si cumpliste con estos criterios:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Criterio de evaluación</th>
+      <th style="width: 40px; text-align: center;">Sí</th>
+      <th style="width: 40px; text-align: center;">No</th>
+      <th>¿Qué falta?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>¿Expusiste los resultados del reporte de desempeño de contenido de marketing digital publicado?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Mostraste el plan de optimización de contenido de marketing digital con IA para el siguiente periodo?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Aclaraste las dudas que se presentaron/solicitaste retroalimentación acerca de los resultados y plan de optimización por parte de la(s) persona(s) responsable(s) de marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Obtuviste la validación de las acciones de optimización y del calendario de publicación de contenidos para el siguiente periodo?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste iniciativa por la manera en que propusiste alternativas de optimización fundamentadas en los datos de rendimiento del contenido de marketing digital?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+    <tr>
+      <td>¿Demostraste tolerancia por la manera en que mostraste profesionalismo al comunicar resultados y apertura para recibir comentarios favorables/desfavorables por parte de la(s) persona(s) responsable(s) del marketing digital en la MiPyME?</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="checkbox-cell">☐</td>
+      <td class="missing-cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
