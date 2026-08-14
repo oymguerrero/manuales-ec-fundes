@@ -2199,7 +2199,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
    ocultamos el contenido cuando no está abierto. El sidebar se construye
    con copias visuales del summary, vinculadas por data-target. */
 
-.lesson-tabs .accordion__item {
+.lesson-tabs .accordion--modules > .accordion__item {
   border: none !important;
   border-radius: 0;
   margin-bottom: 0;
@@ -2208,18 +2208,18 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   display: none;
 }
 
-.lesson-tabs .accordion__item[open] {
+.lesson-tabs .accordion--modules > .accordion__item[open] {
   display: block;
   background: transparent !important;
   box-shadow: none !important;
 }
 
 /* Summary original queda oculto — el sidebar lo replica */
-.lesson-tabs .accordion__item > summary {
+.lesson-tabs .accordion--modules > .accordion__item > summary {
   display: none;
 }
 
-.lesson-tabs .accordion__body {
+.lesson-tabs .accordion--modules > .accordion__item > .accordion__body {
   padding: 0 !important;
   border-top: none !important;
 }
@@ -2511,9 +2511,9 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   .lesson-tabs__sidebar,
   .lesson-tabs__panel-footer { display: none !important; }
   .lesson-tabs__layout { display: block; }
-  .lesson-tabs .accordion__item,
-  .lesson-tabs .accordion__item[open] { display: block !important; }
-  .lesson-tabs .accordion__item > summary { display: block !important; }
+  .lesson-tabs .accordion--modules > .accordion__item,
+  .lesson-tabs .accordion--modules > .accordion__item[open] { display: block !important; }
+  .lesson-tabs .accordion--modules > .accordion__item > summary { display: block !important; }
   .lesson-tabs__panel-card { box-shadow: none; border-top-width: 1px; }
 }
 
