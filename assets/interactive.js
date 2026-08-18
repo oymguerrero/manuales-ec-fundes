@@ -2220,50 +2220,6 @@
     courseBar.className = 'learning-context';
     courseBar.setAttribute('aria-label', 'Contexto de aprendizaje');
 
-    const dialog = document.createElement('dialog');
-    dialog.className = 'course-map-dialog';
-    dialog.setAttribute('aria-labelledby', 'course-map-title');
-
-    function mapHTML() {
-      const stats = getCourseStats(entry.course);
-      const items = entry.course.pages.map(function (page) {
-        const status = learningStatusFor(page, entry.page.path);
-        const typeLabel = page.type === 'leccion' ? 'Tema formativo' :
-          page.type === 'evaluacion' ? 'Evaluación' :
-          page.type === 'preparacion' ? 'Preparación' :
-          page.type === 'apoyo' ? 'Apoyo' : 'Inicio del curso';
-        return '<li class="course-map__item course-map__item--' + status.key + '">' +
-          '<a href="' + siteHref(page.path) + '"' + (page.path === entry.page.path ? ' aria-current="page"' : '') + '>' +
-            '<span class="course-map__step" aria-hidden="true">' + (page.index + 1) + '</span>' +
-            '<span class="course-map__copy"><strong>' + escapeHTML(page.title) + '</strong>' +
-              '<small>' + typeLabel + ' · ' + status.label + '</small></span>' +
-          '</a>' +
-        '</li>';
-      }).join('');
-      return '<div class="course-map__header">' +
-          '<div><span class="course-map__eyebrow">Mapa del curso</span><h2 id="course-map-title">' + escapeHTML(entry.course.title) + '</h2></div>' +
-          '<form method="dialog"><button class="course-map__close" type="submit" aria-label="Cerrar mapa del curso">×</button></form>' +
-        '</div>' +
-        '<div class="course-map__summary"><strong>' + stats.required.completed + ' de ' + stats.required.total + ' temas requeridos revisados</strong>' +
-          '<span>Formación: ' + stats.formation.completed + ' de ' + stats.formation.total +
-            (stats.preparation.total ? ' · Preparación: ' + stats.preparation.completed + ' de ' + stats.preparation.total : '') +
-            ' · El apoyo opcional no modifica el avance.</span></div>' +
-        '<div class="course-map__search-wrap"><label for="course-map-search">Buscar en este curso</label>' +
-          '<input id="course-map-search" class="course-map__search" type="search" placeholder="Ej. pruebas, evidencia, recursos"></div>' +
-        '<ol class="course-map__list">' + items + '</ol>';
-    }
-
-    function bindMapSearch() {
-      const search = dialog.querySelector('.course-map__search');
-      if (!search) return;
-      search.addEventListener('input', function () {
-        const query = search.value.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        dialog.querySelectorAll('.course-map__item').forEach(function (item) {
-          const haystack = item.textContent.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-          item.hidden = Boolean(query) && haystack.indexOf(query) < 0;
-        });
-      });
-    }
 
     function contextHTML() {
       const stats = getCourseStats(entry.course);
@@ -2284,18 +2240,39 @@
             '<div class="learning-context__bar" role="progressbar" aria-label="Temas requeridos revisados" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + stats.required.pct + '"><span style="width:' + stats.required.pct + '%"></span></div>' +
           '</div>' +
           '<span class="learning-status learning-status--' + currentStatus.key + '">' + currentStatus.label + '</span>' +
-          '<button type="button" class="learning-context__map-button">Ver mapa del curso</button>' +
         '</div>' +
       '</div>';
     }
 
+    // El estado de cada tema se pinta sobre la sub-nav que ya existe en el
+    // HTML, en vez de repetir la lista de temas en un mapa aparte.
+    function marcarSubNav() {
+      const subNav = document.querySelector('.sub-nav');
+      if (!subNav) return;
+      entry.course.pages.forEach(function (page) {
+        const archivo = page.path.split('/').pop();
+        const link = subNav.querySelector('a[href="' + archivo + '"]');
+        if (!link) return;
+        const status = learningStatusFor(page, entry.page.path);
+        link.dataset.learningStatus = status.key;
+        link.querySelectorAll('.sub-nav__status').forEach(function (el) { el.remove(); });
+        const mark = document.createElement('span');
+        mark.className = 'sub-nav__status';
+        mark.textContent = status.key === 'complete' ? ' ✓' : '';
+        mark.title = status.label;
+        const sr = document.createElement('span');
+        sr.className = 'visually-hidden';
+        sr.textContent = ' (' + status.label + ')';
+        link.appendChild(mark);
+        link.appendChild(sr);
+      });
+    }
+
     courseBar.innerHTML = contextHTML();
-    dialog.innerHTML = mapHTML();
-    bindMapSearch();
     const insertionPoint = document.querySelector('.sub-nav') || document.querySelector('.site-header');
     if (insertionPoint) insertionPoint.insertAdjacentElement('afterend', courseBar);
     else document.body.insertBefore(courseBar, document.body.firstChild);
-    document.body.appendChild(dialog);
+    marcarSubNav();
 
     // La barra de puntos del HTML dice lo mismo que esta barra de contexto
     // ("Tema N de M" + avance), así que sobra en cuanto el shell existe. Se
@@ -2303,17 +2280,6 @@
     // posición dentro del curso.
     const dotProgress = document.querySelector('.maestro-progress');
     if (dotProgress) dotProgress.remove();
-
-    courseBar.addEventListener('click', function (event) {
-      if (!event.target.closest('.learning-context__map-button')) return;
-      dialog.innerHTML = mapHTML();
-      bindMapSearch();
-      if (typeof dialog.showModal === 'function') dialog.showModal();
-      else dialog.setAttribute('open', '');
-    });
-    dialog.addEventListener('click', function (event) {
-      if (event.target === dialog) dialog.close();
-    });
 
     if (main) {
       const container = main.querySelector(':scope > .container') || main;
@@ -2336,6 +2302,7 @@
 
     window.addEventListener('mi-compania:progress-changed', function () {
       courseBar.innerHTML = contextHTML();
+      marcarSubNav();
     });
   }
 
