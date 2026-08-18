@@ -1,0 +1,986 @@
+[
+  {
+    "numero": 1,
+    "elemento": "Elemento 1 · Planificar la estrategia de contenido de marketing digital con IA",
+    "titulo": "Valida la estrategia de contenido de marketing digital",
+    "duracion": "3 mins",
+    "criterios": [
+      "Presenta la estrategia diseñada ante la persona responsable del marketing digital.",
+      "Utiliza lenguaje claro y acorde a la audiencia, describiendo los tecnicismos de la especialidad.",
+      "Aclara las dudas que se presenten / solicita retroalimentación acerca de la propuesta.",
+      "Obtiene el visto bueno de validación verbal/por escrito para iniciar la implementación."
+    ],
+    "ahv": [
+      "Iniciativa — presenta diversas alternativas de estrategia acordes al contexto de la MiPyME.",
+      "Amabilidad — brinda trato cordial y profesional durante toda la interacción."
+    ],
+    "nota_arte": "Escena de mesa en la cafetería con laptop y documento impreso de la estrategia. Reutiliza los planos de Martín y Mariana.",
+    "escenas": [
+      {
+        "tipo": "apertura",
+        "titulo_pantalla": "Validación de la estrategia",
+        "narrador": "Martín terminó de diseñar la estrategia de contenido de marketing digital con IA para la cafetería La Cuesta. Hoy la presenta ante Mariana, la dueña, para obtener su validación. Observa con atención cómo Martín va cumpliendo cada uno de los criterios del estándar."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Presenta la estrategia diseñada.",
+        "dialogo": "Mariana, gracias por tu tiempo. Aquí traigo la estrategia de contenido para los próximos dos meses. La armé con base en el levantamiento que hicimos: tu audiencia, tus plataformas y las metas de venta que me compartiste. Te la voy a presentar completa y al final me dices qué ajustamos.",
+        "facial": "Sonrisa cordial y segura, mirada directa que transmite preparación y confianza profesional.",
+        "postura": "Sentado erguido, coloca el documento impreso sobre la mesa girándolo hacia Mariana para que ella pueda leerlo."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Utiliza lenguaje claro y describe los tecnicismos.",
+        "dialogo": "Antes de entrar en detalle te aclaro dos palabras que voy a usar mucho. El alcance orgánico es cuánta gente ve tu contenido sin que pagues; el alcance pagado es cuánta gente lo ve porque invertimos en promocionarlo. Y el embudo de ventas es simplemente el camino que recorre alguien desde que te descubre hasta que te compra.",
+        "facial": "Expresión pedagógica y paciente, cejas levemente elevadas al nombrar cada término.",
+        "postura": "Cuenta los conceptos con los dedos de la mano; gesto abierto, sin apuntar ni invadir el espacio de Mariana."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Te agradezco que me lo expliques así, porque la verdad cuando leo estas cosas en internet me pierdo con tanto término en inglés.",
+        "facial": "Sonrisa de alivio, mirada relajada y receptiva, cejas distendidas.",
+        "postura": "Se acomoda hacia adelante apoyando los antebrazos en la mesa, acercándose al documento con interés."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Amabilidad.",
+        "dialogo": "Para eso estoy. Aquí no hay preguntas tontas, y si en algún momento algo no queda claro, me detienes y lo volvemos a ver. Esta estrategia la vas a operar tú, así que tiene que quedarte perfectamente clara.",
+        "facial": "Rostro afable, sonrisa cálida y mirada franca que transmite disponibilidad genuina.",
+        "postura": "Palmas levemente abiertas hacia arriba en gesto de apertura; asentimiento lento con la cabeza."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Iniciativa presentando alternativas.",
+        "dialogo": "Te preparé dos rutas posibles. La ruta A concentra el esfuerzo en Instagram con tres publicaciones por semana y un presupuesto de promoción bajo. La ruta B reparte entre Instagram y WhatsApp Business, con dos publicaciones y una lista de difusión semanal. La A crece más rápido en alcance; la B te da clientes recurrentes más pronto.",
+        "facial": "Mirada analítica y entusiasta, alterna la vista entre el documento y los ojos de Mariana al contrastar cada ruta.",
+        "postura": "Señala alternadamente dos secciones del documento con la mano abierta, marcando la comparación en el aire."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Mmm... a mí me interesa mucho el cliente que regresa. Los estudiantes vienen en temporada, pero los vecinos de la colonia son los que me sostienen todo el año.",
+        "facial": "Ceño levemente concentrado, mirada reflexiva calculando el impacto en su negocio.",
+        "postura": "Apoya la barbilla en la mano, pluma en la otra sobre la libreta, en actitud de evaluación."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Utiliza lenguaje claro y acorde a la audiencia.",
+        "dialogo": "Entonces la ruta B te conviene más. Mira cómo quedaría: en la tabla de análisis tienes por cada plataforma el tipo de formato, la herramienta de IA que usaríamos y la frecuencia de publicación. Aquí en esta columna están los horarios sugeridos, que salen de cuándo tu público está más activo.",
+        "facial": "Atenta y didáctica, mirada enfocada en que Mariana siga cada columna del documento.",
+        "postura": "Recorre la tabla con la punta del bolígrafo, marcando el ritmo de lectura de arriba hacia abajo."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Presenta la estrategia diseñada.",
+        "dialogo": "También quedaron definidos dos objetivos medibles: subir la interacción en Instagram un veinte por ciento en ocho semanas, y conseguir cincuenta contactos nuevos en tu lista de WhatsApp. Cada uno con su métrica de seguimiento y el presupuesto que requiere.",
+        "facial": "Semblante firme y profesional, énfasis sutil en las cifras con una elevación de cejas.",
+        "postura": "Postura erguida, ambas manos apoyadas en la mesa a los costados del documento."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Oye, ¿y las temporadas fuertes? En diciembre y en el regreso a clases se me dispara la venta de pan.",
+        "facial": "Ojos iluminados por la observación, expresión activa y participativa.",
+        "postura": "Levanta ligeramente la pluma señalando el calendario del documento, torso inclinado hacia adelante."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Aclara las dudas que se presenten.",
+        "dialogo": "Buenísima observación, y sí está contemplado. En esta sección vinculé las temporadas comerciales de tu sector: regreso a clases, Día de Muertos, temporada navideña y Día de las Madres. En esas semanas la distribución de contenido cambia y sube la frecuencia de publicaciones de producto.",
+        "facial": "Sonrisa de aprobación ante la pregunta, seguida de expresión clara y resolutiva.",
+        "postura": "Pasa la hoja del documento y señala el bloque del calendario con el dedo índice."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Solicita retroalimentación sobre la propuesta.",
+        "dialogo": "Ya que viste el panorama completo, quiero tu opinión antes de cerrar nada. ¿Hay algo que sientas que no embona con cómo trabajas en la cafetería, o alguna parte que quieras que ajustemos?",
+        "facial": "Mirada atenta e inquisitiva, sonrisa amable, gesto de escucha activa.",
+        "postura": "Deja el bolígrafo sobre la mesa, entrelaza las manos y se inclina levemente hacia atrás cediendo el turno."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Solo una cosa: tres publicaciones a la semana en temporada alta me suenan mucho. ¿Podríamos dejar dos y una historia?",
+        "facial": "Expresión honesta y algo cautelosa, mirada evaluando la carga real de trabajo.",
+        "postura": "Gesto de medida con los dedos, hombros ligeramente encogidos al plantear el ajuste."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Aclara dudas y ajusta conforme a la retroalimentación.",
+        "dialogo": "Se puede perfectamente, y me parece más realista con tu capacidad operativa. Lo dejo en dos publicaciones más una historia y ajusto la distribución de las cuatro semanas. Es mejor una frecuencia que puedas sostener que una que te desgaste.",
+        "facial": "Semblante receptivo y satisfecho, asiente mientras anota el cambio.",
+        "postura": "Toma nota directamente sobre el documento impreso, mostrándole a Mariana lo que escribe."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Obtiene el visto bueno de validación.",
+        "dialogo": "Con ese ajuste incorporado, ¿me das tu visto bueno para arrancar la implementación? Te dejo aquí la hoja de aprobación para tu firma, y te la mando también por correo para que quede el registro por escrito.",
+        "facial": "Mirada serena y profesional, sonrisa contenida de cierre, sin presionar.",
+        "postura": "Desliza la hoja de aprobación hacia Mariana junto con la pluma, con movimiento pausado."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Claro que sí, me convence. Aquí te la firmo y quedamos formalmente para empezar.",
+        "facial": "Sonrisa amplia de satisfacción, mirada resuelta y confiada.",
+        "postura": "Toma la pluma con decisión y firma; luego se recarga en el respaldo en actitud relajada."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Amabilidad al cerrar.",
+        "dialogo": "Excelente, Mariana. Muchas gracias por la confianza y por tus observaciones, mejoraron la propuesta. Te envío hoy mismo la versión final con el ajuste de frecuencia y arrancamos con la generación de contenido.",
+        "facial": "Orgullo profesional y calidez, amplia sonrisa de cierre satisfactorio.",
+        "postura": "Extiende la mano para el saludo de cierre, postura erguida y abierta."
+      }
+    ]
+  },
+  {
+    "numero": 2,
+    "elemento": "Elemento 2 · Generar contenido de marketing digital con IA",
+    "titulo": "Crea contenido de texto con herramientas de IA",
+    "duracion": "3 mins",
+    "criterios": [
+      "Justifica la selección de la herramienta/plataforma de IA de acuerdo al contenido de texto por generar.",
+      "Escribe el prompt incluyendo al menos rol, contexto, tarea, audiencia, formato, tono de comunicación y restricciones.",
+      "Realiza pruebas de validación del contenido generado y eliminación de sesgos.",
+      "Efectúa ajustes mediante al menos una iteración de prompts hasta cumplir los criterios de calidad.",
+      "Explica cómo el contenido es coherente con la identidad de marca, la estrategia aprobada y respeta los derechos de propiedad intelectual."
+    ],
+    "ahv": [
+      "Orden — organiza los contenidos generados conforme a la planificación de la estrategia aprobada.",
+      "Responsabilidad — verifica veracidad, pertinencia y originalidad del contenido antes de presentarlo."
+    ],
+    "nota_arte": "Plano de Martín frente a la laptop con la interfaz de una herramienta de IA generativa de texto en pantalla. Se requiere arte nueva para los insertos de pantalla (prompt y resultado).",
+    "escenas": [
+      {
+        "tipo": "apertura",
+        "titulo_pantalla": "Generación de contenido de texto",
+        "narrador": "Con la estrategia ya aprobada por Mariana, Martín empieza a generar el contenido del portafolio. Comienza por los textos: los copies de las publicaciones de la cafetería La Cuesta. Observa cómo utiliza la Inteligencia Artificial cumpliendo cada criterio del estándar."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Justifica la selección de la herramienta de IA.",
+        "dialogo": "Para los textos voy a usar un modelo de lenguaje conversacional. ¿Por qué este y no otro? Porque necesito copies cortos con matices de tono local mexicano, y esta herramienta permite darle contexto largo de marca y sostenerlo a lo largo de varias piezas. Dejo registrada la justificación en el documento del portafolio.",
+        "facial": "Expresión analítica y segura, mirada enfocada en la pantalla mientras razona en voz alta.",
+        "postura": "Sentado frente a la laptop, una mano en el mouse y la otra gesticulando al explicar el criterio de elección."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Escribe el prompt con rol, contexto y tarea.",
+        "dialogo": "Ahora escribo el prompt, y aquí está la diferencia entre un texto genérico y uno que sirve. Empiezo por el rol: actúa como redactor de marketing digital para cafeterías de especialidad. Luego el contexto: La Cuesta es una cafetería de barrio universitario, tueste propio, ambiente tranquilo. Y la tarea: redacta tres copies para publicaciones de Instagram.",
+        "facial": "Concentración didáctica, labios en ligero movimiento mientras teclea y narra.",
+        "postura": "Ambas manos sobre el teclado, torso inclinado hacia el monitor, mirada fija en el texto que escribe."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Completa el prompt con audiencia, formato, tono y restricciones.",
+        "dialogo": "Falta la mitad más importante. La audiencia: estudiantes y profesionistas de dieciocho a treinta y cinco años de la zona. El formato: máximo cuarenta palabras con llamado a la acción y tres hashtags. El tono: cercano, cálido, sin tecnicismos. Y las restricciones: no prometer descuentos que no existen, no usar emojis en exceso y no mencionar marcas de terceros.",
+        "facial": "Mirada metódica, elevación sutil de cejas al enumerar cada parámetro del prompt.",
+        "postura": "Marca cada elemento con un golpecito del dedo en la mesa mientras lo dicta y lo escribe."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Realiza pruebas de validación del contenido generado.",
+        "dialogo": "Ya tengo los tres copies. Ahora viene la parte que muchos se saltan: validar. Reviso que los datos sean verdaderos, que el horario que menciona coincida con el real de la cafetería, y que no haya inventado ningún premio ni certificación que La Cuesta no tenga.",
+        "facial": "Semblante crítico y atento, mirada de revisión línea por línea en la pantalla.",
+        "postura": "Recorre el texto en el monitor con el dedo índice, deteniéndose en cada dato verificable."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Elimina sesgos del contenido generado.",
+        "dialogo": "También reviso sesgos. Mira este copy: dice para las chicas que buscan su momento de relax. Eso segmenta por género sin ninguna razón y deja fuera a la mitad de la clientela de Mariana. Lo marco para corregir. El contenido debe representar a toda la audiencia real del negocio.",
+        "facial": "Ceño levemente fruncido al detectar el problema, expresión de juicio profesional firme.",
+        "postura": "Señala la línea exacta en la pantalla y niega suavemente con la cabeza."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Efectúa ajustes mediante iteración de prompts.",
+        "dialogo": "Entonces itero el prompt. Le agrego una instrucción nueva: usa lenguaje inclusivo, no segmentes por género y mantén el enfoque en el producto y el ambiente. Vuelvo a generar. Esta es la primera iteración, y el estándar pide al menos una, aunque en la práctica suelen ser dos o tres.",
+        "facial": "Expresión resuelta y paciente, mirada de quien repite un proceso conocido sin frustración.",
+        "postura": "Teclea la instrucción adicional y presiona enter con un movimiento decidido."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Martín, ¿me dejas ver? Es que el segundo texto me suena un poquito formal para cómo hablamos aquí.",
+        "facial": "Mirada curiosa y participativa, ligera sonrisa al opinar sobre su propia marca.",
+        "postura": "Se acerca por un costado inclinándose hacia la pantalla, pluma en mano."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Ajusta a petición de la persona responsable.",
+        "dialogo": "Tienes toda la razón, y tú conoces a tus clientes mejor que cualquier modelo. Hago otra iteración pidiéndole que baje el registro y use la forma de hablar de una cafetería de barrio. Todos estos ajustes los voy documentando en el portafolio con la versión anterior y la versión final.",
+        "facial": "Sonrisa receptiva y agradecida, asiente mientras ya está tecleando el cambio.",
+        "postura": "Gira ligeramente la laptop hacia Mariana para que ella siga el proceso en pantalla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Orden en la organización del contenido.",
+        "dialogo": "Cada copy que queda aprobado lo guardo con la misma nomenclatura y en el mismo orden que el calendario de la estrategia: semana, plataforma, tipo de contenido. Así, cuando lleguemos a la publicación, no tenemos que adivinar qué texto va con qué pieza ni en qué fecha.",
+        "facial": "Semblante metódico y satisfecho, mirada de control sobre el proceso.",
+        "postura": "Muestra en pantalla la carpeta organizada, deslizando el cursor por los archivos nombrados."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Oye, ¿y no hay problema si la Inteligencia Artificial copió esto de algún lado? No quiero meterme en broncas legales.",
+        "facial": "Ceja levantada con inquietud legítima, mirada seria y preocupada.",
+        "postura": "Cruza levemente los brazos, torso erguido en actitud de precaución."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Explica el respeto a los derechos de propiedad intelectual.",
+        "dialogo": "Pregunta muy pertinente. Por eso paso los textos por una verificación de originalidad antes de darlos por buenos. Ninguno reproduce material protegido de terceros ni frases registradas de otras marcas. Dejo la evidencia de esa verificación en el portafolio, que es justo lo que el estándar pide demostrar.",
+        "facial": "Expresión tranquilizadora y profesional, mirada franca al responder la preocupación.",
+        "postura": "Palmas abiertas en gesto de transparencia, luego señala el reporte de verificación en pantalla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Explica la coherencia con identidad de marca y estrategia.",
+        "dialogo": "Y para cerrar, te explico por qué estos textos son de La Cuesta y no de cualquier cafetería. El tono cercano y sin tecnicismos es el que definimos en la voz de marca. Los tres formatos corresponden a las etapas del embudo que planeamos. Y la frecuencia embona exactamente con el calendario que aprobaste.",
+        "facial": "Mirada segura y clara, entusiasmo contenido al conectar cada pieza con la estrategia.",
+        "postura": "Alterna la mano entre la pantalla y el documento de la estrategia, uniendo ambos con el gesto."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Ahora sí me queda clarísimo. No es nada más pedirle textos a la máquina, es todo un proceso.",
+        "facial": "Sonrisa amplia de comprensión, mirada iluminada por el entendimiento.",
+        "postura": "Asiente repetidamente con la cabeza, relajando los hombros y apoyando la libreta en la mesa."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Responsabilidad.",
+        "dialogo": "Exacto. La herramienta genera, pero la responsabilidad de que lo publicado sea verdadero, pertinente y original siempre es nuestra. Con los textos listos, seguimos con el contenido de video.",
+        "facial": "Semblante serio y comprometido que suaviza en sonrisa al cerrar.",
+        "postura": "Postura erguida, ambas manos apoyadas en la mesa en gesto de cierre firme."
+      }
+    ]
+  },
+  {
+    "numero": 3,
+    "elemento": "Elemento 2 · Generar contenido de marketing digital con IA",
+    "titulo": "Crea contenido de video con herramientas de IA",
+    "duracion": "3 mins",
+    "criterios": [
+      "Selecciona la herramienta/plataforma de IA correspondiente al tipo de contenido de video requerido por la estrategia.",
+      "Elabora el prompt con escena, sujeto, ambiente, estilo visual, iluminación, duración, restricciones y formato.",
+      "Realiza pruebas de validación del video generado y eliminación de sesgos, errores e incoherencias.",
+      "Ajusta el video mediante al menos una iteración de prompts hasta cumplir los criterios de calidad.",
+      "Verifica que el video sea coherente con la identidad de marca, la estrategia aprobada y respete los derechos de propiedad intelectual."
+    ],
+    "ahv": [
+      "Orden — organiza los contenidos generados conforme a la planificación de la estrategia aprobada.",
+      "Responsabilidad — verifica veracidad, pertinencia y originalidad del contenido antes de presentarlo."
+    ],
+    "nota_arte": "Requiere arte nueva: insertos de pantalla con la herramienta de video generativo y los fotogramas de resultado (versión con error y versión corregida).",
+    "escenas": [
+      {
+        "tipo": "apertura",
+        "titulo_pantalla": "Generación de contenido de video",
+        "narrador": "El calendario de La Cuesta contempla Reels del proceso de tueste del café. Martín va a generarlos con Inteligencia Artificial. Observa cómo selecciona la herramienta, construye el prompt y valida el resultado cumpliendo los criterios del estándar."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Selecciona la herramienta de IA correspondiente al video requerido.",
+        "dialogo": "La estrategia pide Reels verticales de quince segundos mostrando el proceso de tueste. Para eso elijo una plataforma de video generativo que maneje formato nueve dieciséis nativo y movimiento de cámara realista. No todas lo hacen bien: varias solo entregan horizontal y perderíamos calidad al recortar.",
+        "facial": "Mirada evaluadora y técnica, expresión de quien compara opciones con criterio.",
+        "postura": "Frente a la laptop, desplaza el cursor entre dos herramientas comparando sus especificaciones."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Elabora el prompt con escena, sujeto y ambiente.",
+        "dialogo": "Construyo el prompt por capas. La escena: primer plano de granos de café girando dentro de un tostador de tambor. El sujeto: los granos cambiando de verde a café oscuro. El ambiente: taller de tueste artesanal con textura de madera y metal al fondo.",
+        "facial": "Concentración creativa, mirada que imagina la toma mientras la describe.",
+        "postura": "Teclea pausadamente, deteniéndose entre cada capa como quien construye por bloques."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Completa el prompt con estilo, iluminación, duración y formato.",
+        "dialogo": "Ahora la parte técnica. Estilo visual: documental cálido, sin filtros saturados. Iluminación: luz lateral suave, tonos ámbar. Duración: quince segundos. Formato: vertical nueve dieciséis, mil ochenta por mil novecientos veinte. Y las restricciones: sin texto sobrepuesto, sin logotipos de terceros y sin personas identificables.",
+        "facial": "Semblante metódico, elevación de cejas al enfatizar las restricciones.",
+        "postura": "Enumera con los dedos cada parámetro antes de escribirlo, marcando el orden."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Realiza pruebas de validación del video generado.",
+        "dialogo": "Ya salió el primer render. Antes de celebrar, lo reviso cuadro por cuadro. Aquí es donde las herramientas de video suelen fallar: manos con dedos de más, objetos que aparecen y desaparecen, física imposible. Hay que verlo completo y con atención.",
+        "facial": "Mirada crítica e hiperenfocada en el monitor, semblante serio de revisión.",
+        "postura": "Se inclina hacia la pantalla, avanza el video cuadro por cuadro con el teclado."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Detecta incoherencias y errores en el contenido generado.",
+        "dialogo": "Y efectivamente, mira: en el segundo ocho el tambor del tostador gira hacia un lado y de pronto invierte el sentido sin razón. Además los granos cambian de color demasiado rápido, no corresponde a un tueste real. Son incoherencias que un cliente cafetalero notaría de inmediato.",
+        "facial": "Ceño fruncido de detección, ligera negación con la cabeza al identificar la falla.",
+        "postura": "Pausa el video y señala con el dedo el punto exacto del error en la pantalla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Elimina sesgos del contenido generado.",
+        "dialogo": "También reviso sesgos. En la toma general de la cafetería, el modelo puso únicamente clientes de un mismo perfil. La clientela real de La Cuesta es mucho más diversa: estudiantes, vecinos, gente mayor del barrio. Ese sesgo hay que corregirlo, no es solo estética, es representar bien al negocio.",
+        "facial": "Expresión de juicio profesional firme, mirada atenta al detalle de la composición.",
+        "postura": "Recorre con la mano abierta el encuadre en pantalla, abarcando la escena completa."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Ajusta el video mediante iteración de prompts.",
+        "dialogo": "Itero el prompt. Agrego: mantén el sentido de giro constante durante toda la toma, transición de color gradual y realista, y muestra diversidad de edades y perfiles en los clientes de fondo. Vuelvo a generar. Esta iteración queda documentada en el portafolio junto con el render anterior.",
+        "facial": "Semblante paciente y resuelto, sin señal de frustración por tener que repetir.",
+        "postura": "Teclea las correcciones con ritmo constante y lanza la nueva generación."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "¡Ay, ese sí! Ese se ve como mi tostadora de verdad. El anterior parecía de otra cafetería.",
+        "facial": "Ojos iluminados de entusiasmo, sonrisa amplia y espontánea de reconocimiento.",
+        "postura": "Se acerca a la pantalla con las manos juntas, torso inclinado hacia adelante con energía."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Verifica la coherencia con la identidad de marca.",
+        "dialogo": "Esa es justo la prueba que importa. Si tú, que conoces el lugar, lo reconoces como tuyo, entonces es coherente con la identidad de marca. Los tonos ámbar y la madera corresponden a la paleta que definimos, y el estilo documental cálido es el que quedó en los lineamientos de la estrategia.",
+        "facial": "Sonrisa satisfecha y profesional, mirada que conecta el resultado con el plan.",
+        "postura": "Señala alternadamente la pantalla y el documento de lineamientos sobre la mesa."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "¿Y este video ya es mío? ¿Lo puedo usar sin que nadie me reclame?",
+        "facial": "Mirada seria e inquisitiva, ceja levantada con inquietud práctica.",
+        "postura": "Torso erguido, pluma detenida sobre la libreta esperando la respuesta."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Verifica el respeto a los derechos de propiedad intelectual.",
+        "dialogo": "Sí, y te explico por qué. En el prompt puse la restricción de no incluir logotipos ni marcas de terceros, y el video no usa música con derechos: el audio lo generamos aparte. Guardo la constancia de las condiciones de uso de la plataforma en el portafolio, junto con el prompt completo.",
+        "facial": "Expresión tranquilizadora y clara, mirada directa que transmite seguridad jurídica.",
+        "postura": "Gesto de contención con las palmas, luego señala el documento de respaldo."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Orden en la organización del contenido.",
+        "dialogo": "Archivo el video final con la nomenclatura del calendario: semana dos, Instagram, Reel de proceso. Guardo también el prompt, la versión descartada y el motivo del descarte. Ese expediente es lo que después se contrasta contra los criterios del estándar.",
+        "facial": "Semblante metódico y satisfecho, mirada de control sobre el archivo organizado.",
+        "postura": "Arrastra el archivo a la carpeta correspondiente mostrando la estructura en pantalla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Responsabilidad.",
+        "dialogo": "Un video generado con IA que no se revisa puede publicar un error que dañe la credibilidad del negocio. Por eso ninguna pieza sale sin esta validación. Ahora seguimos con las imágenes del portafolio.",
+        "facial": "Semblante comprometido y serio que cierra en sonrisa profesional.",
+        "postura": "Postura erguida, cierra parcialmente la laptop en gesto de transición."
+      }
+    ]
+  },
+  {
+    "numero": 4,
+    "elemento": "Elemento 2 · Generar contenido de marketing digital con IA",
+    "titulo": "Crea contenido de imagen con herramientas de IA",
+    "duracion": "3 mins",
+    "criterios": [
+      "Justifica la selección de la herramienta/plataforma de IA de acuerdo al tipo de contenido de imagen requerido.",
+      "Elabora el prompt de imagen con los parámetros de sujeto, estilo, formato y restricciones.",
+      "Realiza pruebas de validación de la imagen generada y eliminación de sesgos, errores e incoherencias.",
+      "Ajusta la imagen mediante al menos una iteración de prompts hasta cumplir los criterios de calidad.",
+      "Verifica que la imagen sea coherente con la identidad de marca, la estrategia aprobada y respete los derechos de propiedad intelectual."
+    ],
+    "ahv": [
+      "Orden — organiza los contenidos generados conforme a la planificación de la estrategia aprobada.",
+      "Responsabilidad — verifica veracidad, pertinencia y originalidad del contenido antes de presentarlo."
+    ],
+    "nota_arte": "Requiere arte nueva: insertos de pantalla con la herramienta de imagen generativa, la versión con error de manos y la versión corregida.",
+    "escenas": [
+      {
+        "tipo": "apertura",
+        "titulo_pantalla": "Generación de contenido de imagen",
+        "narrador": "La estrategia de La Cuesta contempla posts estáticos de producto y carruseles educativos. Martín va a generar esas imágenes con Inteligencia Artificial. Observa cómo justifica la herramienta, construye el prompt y valida el resultado."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Justifica la selección de la herramienta de IA.",
+        "dialogo": "Para las imágenes de producto elijo una plataforma especializada en fotografía de alimentos. La justificación es concreta: entrega texturas realistas de comida y bebida, respeta el formato cuadrado nativo y permite mantener consistencia de estilo entre varias piezas. Un generador genérico me daría postres que no se ven apetitosos.",
+        "facial": "Mirada evaluadora y segura, expresión de decisión técnica fundamentada.",
+        "postura": "Frente a la laptop, compara muestras de dos herramientas desplazando el cursor."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Elabora el prompt con sujeto y estilo.",
+        "dialogo": "Empiezo el prompt por el sujeto: una taza de café con arte latte junto a una concha de vainilla recién horneada, sobre mesa de madera clara. Y el estilo: fotografía cenital, luz natural de ventana, colores cálidos y saturación moderada, estética de cafetería artesanal.",
+        "facial": "Concentración creativa, mirada que visualiza la toma mientras la describe.",
+        "postura": "Teclea con ritmo pausado, deteniéndose para pensar cada descriptor."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Completa el prompt con formato y restricciones.",
+        "dialogo": "Ahora el formato: cuadrado uno a uno, mil ochenta por mil ochenta píxeles, que es lo que pide la publicación de Instagram según la estrategia. Y las restricciones: sin texto dentro de la imagen, sin logotipos de terceros, sin manos humanas en el encuadre y sin elementos que no vendamos en la cafetería.",
+        "facial": "Semblante metódico, elevación de cejas al enfatizar la restricción de las manos.",
+        "postura": "Marca cada restricción con un golpecito del dedo sobre la mesa al dictarla."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "¿Y por qué le pides que no salgan manos? A mí se me hacen bonitas esas fotos donde alguien sostiene la taza.",
+        "facial": "Expresión curiosa y genuina, cabeza ligeramente ladeada con interés.",
+        "postura": "Apoya el codo en la mesa sosteniendo la barbilla, en actitud de conversación relajada."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Realiza pruebas de validación de la imagen generada.",
+        "dialogo": "Muy buena pregunta, y te lo muestro con un ejemplo. Generé una versión sin esa restricción y mira: la mano que sostiene la taza tiene seis dedos. Es el error más común de estas herramientas. Por eso valido cada imagen antes de darla por buena, y en producto prefiero evitar el riesgo desde el prompt.",
+        "facial": "Sonrisa cómplice al mostrar el error, luego mirada crítica de revisión.",
+        "postura": "Amplía la imagen en pantalla y señala con el dedo la mano defectuosa."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "¡Ay, no lo había visto! Y si eso se publica, medio barrio se burla de la cafetería.",
+        "facial": "Ojos muy abiertos de sorpresa, risa nerviosa al caer en cuenta del riesgo.",
+        "postura": "Se lleva una mano a la boca, torso retrocediendo levemente por la reacción."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Elimina sesgos del contenido generado.",
+        "dialogo": "Exacto, y esa es una de las razones de validar. También reviso sesgos: en el carrusel educativo el modelo puso solo baristas hombres. Eso no representa a tu equipo ni a la industria. Lo marco para corregir, porque el contenido debe reflejar la realidad del negocio.",
+        "facial": "Semblante serio y profesional, mirada firme al señalar el sesgo.",
+        "postura": "Recorre con la mano abierta las cuatro imágenes del carrusel en pantalla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Ajusta la imagen mediante iteración de prompts.",
+        "dialogo": "Itero el prompt con dos correcciones: muestra personal de barra con diversidad de género y edad, y mantén el encuadre sin manos en primer plano. Genero de nuevo. Guardo las dos versiones y la razón del cambio, porque el estándar pide evidencia de al menos una iteración.",
+        "facial": "Expresión resuelta y paciente, concentración tranquila al reescribir.",
+        "postura": "Teclea las correcciones y lanza la nueva generación con movimiento decidido."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Verifica la coherencia con la identidad de marca.",
+        "dialogo": "Esta versión ya funciona. Y fíjate que la coherencia no es casualidad: los tonos madera y ámbar salen de la paleta que definimos en la estrategia, el encuadre cenital es el estilo que acordamos para producto, y el nivel de saturación es el mismo en las cuatro piezas del carrusel.",
+        "facial": "Mirada satisfecha y clara, entusiasmo profesional contenido.",
+        "postura": "Alterna la mano entre la pantalla y el documento de lineamientos de marca."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Se ven como si las hubiera tomado el mismo fotógrafo el mismo día. Eso está padrísimo.",
+        "facial": "Sonrisa amplia de satisfacción, mirada recorriendo las imágenes con aprobación.",
+        "postura": "Se recarga en el respaldo con los brazos relajados, asintiendo con la cabeza."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Verifica el respeto a los derechos de propiedad intelectual.",
+        "dialogo": "Y son originales. En el prompt restringí logotipos y marcas de terceros, y ninguna imagen reproduce una fotografía existente. Guardo en el portafolio el prompt completo, las condiciones de licencia de la plataforma y la constancia de que el uso comercial está permitido.",
+        "facial": "Expresión franca y tranquilizadora, mirada directa de respaldo profesional.",
+        "postura": "Palmas abiertas en gesto de transparencia, luego señala el expediente en pantalla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Orden en la organización del contenido.",
+        "dialogo": "Cada imagen se archiva con la nomenclatura del calendario: semana, plataforma y tipo de contenido. Junto a cada una queda su prompt, la versión descartada y el motivo. Cuando lleguemos a publicar, no hay que buscar nada.",
+        "facial": "Semblante metódico y satisfecho, mirada de control sobre el archivo.",
+        "postura": "Muestra la carpeta organizada deslizando el cursor por los archivos nombrados."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Responsabilidad.",
+        "dialogo": "La herramienta genera en segundos, pero la revisión es lo que evita publicar un error. Con las imágenes listas, nos falta el último tipo de contenido del portafolio: el audio.",
+        "facial": "Semblante comprometido que cierra en sonrisa profesional y cálida.",
+        "postura": "Postura erguida, gesto de transición señalando el siguiente punto de la lista."
+      }
+    ]
+  },
+  {
+    "numero": 5,
+    "elemento": "Elemento 2 · Generar contenido de marketing digital con IA",
+    "titulo": "Crea contenido de audio con herramientas de IA",
+    "duracion": "3 mins",
+    "criterios": [
+      "Selecciona la herramienta/plataforma de IA correspondiente al tipo de audio para narración por voz o música.",
+      "Elabora el prompt / configura los parámetros de tipo, guion, género, tono, ritmo, emoción, letra, duración, restricciones y referencia.",
+      "Realiza pruebas de validación del audio generado y eliminación de sesgos, errores e incoherencias.",
+      "Repite el proceso de generación hasta obtener el resultado que cumpla los criterios de calidad de la estrategia.",
+      "Verifica que el audio sea coherente con la identidad de marca, la estrategia aprobada y respete los derechos de propiedad intelectual."
+    ],
+    "ahv": [
+      "Orden — organiza los contenidos generados conforme a la planificación de la estrategia aprobada.",
+      "Responsabilidad — verifica veracidad, pertinencia y originalidad del contenido antes de presentarlo."
+    ],
+    "nota_arte": "Requiere arte nueva: insertos de pantalla con la herramienta de audio generativo, forma de onda y controles de parámetros.",
+    "escenas": [
+      {
+        "tipo": "apertura",
+        "titulo_pantalla": "Generación de contenido de audio",
+        "narrador": "Falta el último tipo de contenido del portafolio de La Cuesta: el audio. Martín necesita una narración por voz para los Reels y una pista musical de fondo. Observa cómo configura la herramienta de IA cumpliendo los criterios del estándar."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Selecciona la herramienta de IA para narración por voz.",
+        "dialogo": "Necesito dos cosas distintas y por eso uso dos herramientas. Para la narración elijo una plataforma de síntesis de voz que maneje español mexicano con entonación natural. Muchas solo ofrecen español neutro o peninsular, y en una cafetería de barrio eso suena ajeno.",
+        "facial": "Mirada evaluadora y técnica, expresión de decisión fundamentada.",
+        "postura": "Frente a la laptop con audífonos al cuello, compara muestras de voz en pantalla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Selecciona la herramienta de IA para música.",
+        "dialogo": "Y para la música de fondo uso una plataforma de generación musical que entregue pistas libres de regalías. Esto es clave: si tomo música de una plataforma cualquiera, la publicación puede ser silenciada o bloqueada por derechos de autor. Justifico ambas elecciones en el portafolio.",
+        "facial": "Semblante serio al mencionar el riesgo legal, mirada firme y consciente.",
+        "postura": "Levanta el dedo índice marcando la advertencia, luego regresa la mano al teclado."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Configura los parámetros de tipo, guion y duración.",
+        "dialogo": "Empiezo con la narración. El tipo: voz femenina adulta. El guion: el texto que ya validamos, veinticinco palabras exactas. La duración objetivo: quince segundos, para que embone justo con el Reel del tueste sin recortar la última frase.",
+        "facial": "Concentración metódica, mirada alternando entre el guion impreso y la pantalla.",
+        "postura": "Sostiene el guion en una mano mientras configura los campos con la otra."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Configura tono, ritmo y emoción.",
+        "dialogo": "Ahora los parámetros de interpretación. El tono: cálido y cercano, nada corporativo. El ritmo: pausado, para que se entienda con el ruido ambiente de una cafetería. Y la emoción: entusiasmo contenido, como quien te recomienda algo que de verdad le gusta.",
+        "facial": "Expresión expresiva y didáctica, modula la propia voz al describir cada parámetro.",
+        "postura": "Gesticula con la mano marcando el ritmo pausado que está describiendo."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Configura restricciones y referencia.",
+        "dialogo": "Faltan las restricciones y la referencia. Restricciones: sin acento extranjero, sin música sobrepuesta en esta pista y sin efectos de eco. Y como referencia le doy una muestra del tono que buscamos, que es la manera más rápida de que la herramienta entienda el estilo de la marca.",
+        "facial": "Semblante metódico, elevación sutil de cejas al enumerar las restricciones.",
+        "postura": "Marca cada restricción con un dedo antes de escribirla en el campo correspondiente."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Realiza pruebas de validación del audio generado.",
+        "dialogo": "Primer resultado. Y aquí hay que escuchar con audífonos, no con la bocina de la laptop. Reviso tres cosas: que la pronunciación sea correcta, que no haya cortes ni artefactos digitales, y que la duración real coincida con la que necesito.",
+        "facial": "Mirada concentrada y atenta, ojos entrecerrados de escucha crítica.",
+        "postura": "Se coloca los audífonos con ambas manos y queda inmóvil escuchando la pista."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Detecta errores e incoherencias en el audio.",
+        "dialogo": "Y sí hay un problema. Escucha cómo pronuncia el nombre: dice La Cuésta, con el acento en la e. El nombre de la cafetería es La Cuesta. Un error de pronunciación en el nombre de la marca es de los que no se perdonan.",
+        "facial": "Ceño fruncido de detección, ligera negación con la cabeza al identificar la falla.",
+        "postura": "Retrocede la pista con el cursor y la repite, señalando el punto exacto en la forma de onda."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "¡Ay, no! Así lo dicen los que no son de aquí. Suena horrible.",
+        "facial": "Gesto de desagrado espontáneo, risa incómoda y cejas levantadas.",
+        "postura": "Niega con la cabeza y hace un pequeño gesto de rechazo con la mano."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Elimina sesgos y repite el proceso de generación.",
+        "dialogo": "Se corrige. Le indico la pronunciación fonética del nombre y regenero. También ajusto un sesgo que noté: la voz sonaba demasiado juvenil y dejaba fuera a los clientes mayores del barrio. Bajo un poco la edad percibida a un registro adulto neutro. El estándar pide repetir hasta cumplir los criterios de calidad, y eso es exactamente lo que hago.",
+        "facial": "Expresión paciente y resuelta, sin frustración por tener que repetir el proceso.",
+        "postura": "Teclea la corrección fonética y lanza la nueva generación con movimiento decidido."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Configura la música con género, tono y letra.",
+        "dialogo": "Ahora la pista musical. Género: acústico instrumental suave, guitarra y percusión ligera. Tono: cálido y optimista. Sin letra, porque va debajo de la narración y competiría con la voz. Duración: quince segundos con cierre limpio, no cortado.",
+        "facial": "Mirada creativa y enfocada, semblante relajado al configurar la música.",
+        "postura": "Desplaza los controles deslizantes de la herramienta con movimientos precisos."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Esa sí suena a mi cafetería. Como la música que pongo en la mañana.",
+        "facial": "Sonrisa amplia y relajada, ojos entrecerrados de gusto al escuchar.",
+        "postura": "Se recarga en el respaldo, moviendo levemente la cabeza al ritmo de la pista."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Verifica la coherencia con la identidad de marca.",
+        "dialogo": "Esa es la prueba que importa. Y es coherente por diseño: el tono cálido y cercano es el que definimos en la voz de marca, y el estilo acústico corresponde al ambiente tranquilo que describiste en el levantamiento. No es una pista bonita al azar, embona con la estrategia.",
+        "facial": "Sonrisa satisfecha y profesional, mirada que conecta el resultado con el plan.",
+        "postura": "Señala alternadamente la pantalla y el documento de la estrategia sobre la mesa."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Verifica el respeto a los derechos de propiedad intelectual.",
+        "dialogo": "Y sobre derechos: ambas pistas son generadas, no tomadas de un catálogo comercial. Guardo la licencia de uso comercial de cada plataforma en el portafolio, junto con los parámetros de configuración. Así, si una plataforma reclama derechos, tenemos con qué responder.",
+        "facial": "Expresión franca y tranquilizadora, mirada directa de respaldo profesional.",
+        "postura": "Palmas abiertas en gesto de transparencia, luego señala el expediente en pantalla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Orden y Responsabilidad.",
+        "dialogo": "Archivo los audios con la misma nomenclatura del calendario y con su configuración completa. Con esto el portafolio queda completo: texto, video, imagen y audio. Todo validado, todo documentado. Ahora sí, listos para presentarlo y publicarlo.",
+        "facial": "Semblante de cierre satisfecho, orgullo profesional contenido.",
+        "postura": "Postura erguida, cierra la carpeta digital y se retira los audífonos con gesto de conclusión."
+      }
+    ]
+  },
+  {
+    "numero": 6,
+    "elemento": "Elemento 3 · Implementar la estrategia de contenido de marketing digital",
+    "titulo": "Publica el contenido de la campaña generado con IA",
+    "duracion": "3 mins",
+    "criterios": [
+      "Publica de acuerdo con los tipos de contenido de texto/imagen/audio/video aprobados en la estrategia.",
+      "Utiliza al menos dos plataformas digitales con las que cuenta la MiPyME.",
+      "Verifica que la configuración de perfiles y cuentas corresponda con los lineamientos de identidad de marca de la estrategia.",
+      "Carga los contenidos aprobados y los elementos complementarios de acuerdo con las especificaciones técnicas de cada medio.",
+      "Configura los elementos complementarios de cada publicación conforme al contenido aprobado.",
+      "Programa las publicaciones conforme al calendario, horarios y frecuencia definidos en la estrategia aprobada.",
+      "Configura la segmentación de audiencia y el presupuesto de promoción en las publicaciones pagadas.",
+      "Comprueba que enlaces, etiquetas y llamados a la acción sean visibles y funcionales en multidispositivos."
+    ],
+    "ahv": [
+      "Cooperación — involucra a la persona responsable facilitando su participación activa en la publicación.",
+      "Tolerancia — muestra paciencia ante las dificultades que manifiesta la persona responsable."
+    ],
+    "nota_arte": "Reutiliza los planos existentes de Martín y Mariana. Requiere insertos de pantalla: perfil de Instagram, gestor de publicaciones y vista previa en móvil.",
+    "escenas": [
+      {
+        "tipo": "apertura",
+        "titulo_pantalla": "Publicación del contenido",
+        "narrador": "El portafolio de contenido de La Cuesta está aprobado por Mariana. Ahora Martín publica las primeras piezas y programa el calendario completo. Observa con atención cómo va cumpliendo cada uno de los criterios del estándar."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Verifica la configuración de perfiles conforme a la identidad de marca.",
+        "dialogo": "Antes de publicar la primera pieza, reviso la casa. Perfil de Instagram: la biografía dice lo que acordamos, la foto es el logotipo en la versión correcta, el enlace del menú está activo y la categoría del negocio es cafetería. Todo esto tiene que corresponder con los lineamientos de identidad de la estrategia.",
+        "facial": "Mirada metódica de revisión, expresión concentrada recorriendo la pantalla.",
+        "postura": "Frente a la laptop, desplaza el cursor por cada campo del perfil de arriba hacia abajo."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Utiliza al menos dos plataformas digitales.",
+        "dialogo": "Y hago lo mismo con WhatsApp Business, que es tu segunda plataforma. El estándar pide publicar en al menos dos, y La Cuesta tiene estas dos activas. Aquí el perfil comercial tiene la descripción, el horario de atención y el catálogo actualizados.",
+        "facial": "Semblante atento y sistemático, mirada de verificación punto por punto.",
+        "postura": "Cambia de pestaña en la pantalla, señalando cada sección del perfil comercial."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Ay, el horario estaba mal. Todavía decía que cerramos a las seis y desde marzo cerramos a las ocho.",
+        "facial": "Ojos abiertos de sorpresa, expresión de leve vergüenza al notar el descuido.",
+        "postura": "Se lleva la mano a la frente, torso inclinándose hacia la pantalla para confirmar."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Tolerancia.",
+        "dialogo": "Qué bueno que lo revisamos entonces. Y no te preocupes, esto le pasa a todos los negocios: el perfil se llena una vez y nadie lo vuelve a ver. Lo corregimos ahora mismo y lo dejamos en la guía operativa como punto de revisión mensual.",
+        "facial": "Rostro afable y sereno, sonrisa tranquilizadora sin rastro de juicio.",
+        "postura": "Palmas levemente hacia arriba en gesto de contención, asentimiento lento y pausado."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Publica los tipos de contenido aprobados en la estrategia.",
+        "dialogo": "Ahora sí, la primera publicación. Y aquí una regla importante: solo sale lo que está en el portafolio que aprobaste. Nada de improvisar en el momento. Empiezo con el Reel del proceso de tueste, que es el contenido de video de la semana uno.",
+        "facial": "Mirada firme y profesional al marcar la regla, luego expresión enfocada en la tarea.",
+        "postura": "Abre el portafolio en una ventana y el gestor de publicaciones en la otra, alternando entre ambas."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Carga los contenidos conforme a las especificaciones técnicas de cada medio.",
+        "dialogo": "Cargo el video verificando las especificaciones del medio: vertical nueve dieciséis, mil ochenta por mil novecientos veinte, quince segundos, menos de cien megabytes. Si cargo un archivo con otra proporción, la plataforma lo recorta y perdemos el encuadre que cuidamos al generarlo.",
+        "facial": "Expresión técnica y atenta, elevación de cejas al enunciar cada especificación.",
+        "postura": "Inclinado hacia el monitor, señala con el bolígrafo los datos del archivo en pantalla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Cooperación involucrando a la persona responsable.",
+        "dialogo": "Mariana, esta parte la haces tú. Toma el ratón. Vamos a pegar el copy que validamos: cópialo del portafolio y pégalo aquí en el campo de descripción. Yo te voy guiando, pero quiero que tus manos hagan el proceso.",
+        "facial": "Sonrisa motivadora y paciente, mirada animada expectante por su participación.",
+        "postura": "Retira las manos del teclado y retrocede el torso, extendiendo la mano abierta hacia el ratón para cederle el control."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "A ver... lo copio de aquí... y lo pego acá. ¿Así? ¡Sí me salió!",
+        "facial": "Concentración total con labios entreabiertos, que cambia a sonrisa de logro al completar la acción.",
+        "postura": "Brazo extendido sosteniendo el ratón con firmeza, torso inclinado hacia la pantalla tomando el control."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Configura los elementos complementarios de cada publicación.",
+        "dialogo": "Perfecto. Ahora los elementos complementarios, que son todo lo que acompaña al contenido: los tres hashtags de la cafetería, el enlace al menú con su etiqueta de seguimiento, la ubicación del negocio y el llamado a la acción. Todo esto viene definido en el contenido aprobado, no se inventa aquí.",
+        "facial": "Expresión didáctica y clara, mirada que acompaña el avance de Mariana en pantalla.",
+        "postura": "Señala cada campo con el dedo índice sin tomar el ratón, dejando que ella opere."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Programa las publicaciones conforme al calendario y horarios de la estrategia.",
+        "dialogo": "En lugar de publicar una por una todos los días, programamos el mes completo. Cargo las publicaciones de las cuatro semanas respetando el calendario: los Reels martes y jueves a las ocho de la noche, los posts de producto sábados a mediodía. Esos horarios salieron del análisis de cuándo está activo tu público.",
+        "facial": "Semblante organizado y satisfecho, mirada de control sobre el calendario en pantalla.",
+        "postura": "Recorre el calendario de programación con la mano abierta, abarcando las cuatro semanas."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "O sea que ya no tengo que acordarme de publicar todos los días. Eso me quita un peso enorme.",
+        "facial": "Expresión de alivio genuino, cejas distendidas y sonrisa relajada.",
+        "postura": "Suelta el ratón y se recarga en el respaldo, soltando los hombros."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Configura segmentación de audiencia y presupuesto de promoción.",
+        "dialogo": "Ahora las publicaciones pagadas. Configuro la segmentación como quedó en la estrategia: personas de dieciocho a treinta y cinco años, en un radio de cinco kilómetros, con intereses en café de especialidad y repostería artesanal. Y el presupuesto: doscientos pesos diarios durante las dos semanas de promoción.",
+        "facial": "Atenta y pedagógica, elevación de cejas al enfatizar la cifra del presupuesto.",
+        "postura": "Inclinado hacia la pantalla, apunta con el bolígrafo los campos de segmentación y monto."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Comprueba enlaces, etiquetas y llamados a la acción en multidispositivos.",
+        "dialogo": "Último paso y no es opcional: comprobar que todo funcione en los dispositivos reales. Abro la publicación en mi teléfono y le doy clic al enlace del menú. Funciona. Reviso que el llamado a la acción se vea completo sin cortarse, y que las etiquetas sean visibles en pantalla chica.",
+        "facial": "Mirada verificadora y meticulosa, alternando entre teléfono y monitor.",
+        "postura": "Toma el teléfono con una mano y navega con el pulgar, mostrándole la pantalla a Mariana."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Cooperación.",
+        "dialogo": "Y ahora compruébalo tú desde tu teléfono, que es el que usan tus clientes. Si a ti te funciona el enlace y ves bien el texto, entonces está listo. Esta verificación en varios dispositivos queda registrada en la bitácora de implementación.",
+        "facial": "Sonrisa alentadora, mirada expectante e invitadora a que ella verifique.",
+        "postura": "Extiende la mano invitando a Mariana a tomar su propio teléfono, sin apresurarla."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Ya está publicado y me abre el menú perfecto. ¡Y lo hice yo!",
+        "facial": "Sonrisa amplia de orgullo y satisfacción, mirada brillante de logro personal.",
+        "postura": "Levanta el teléfono mostrando la pantalla con ambas manos, hombros erguidos con confianza."
+      }
+    ]
+  },
+  {
+    "numero": 7,
+    "elemento": "Elemento 3 · Implementar la estrategia de contenido de marketing digital",
+    "titulo": "Habilita al personal de la MiPyME en el proceso operativo",
+    "duracion": "3 mins",
+    "criterios": [
+      "Explica las configuraciones de segmentación de audiencia y presupuesto de promoción disponibles en las plataformas digitales.",
+      "Indica los criterios de verificación previos a la publicación: formato, especificaciones técnicas y textos complementarios.",
+      "Explica las restricciones y políticas de contenido de cada plataforma que pueden causar el rechazo de una publicación.",
+      "Describe el procedimiento para monitorear las métricas de cada publicación posterior a su lanzamiento.",
+      "Aclara las dudas que se presenten / solicita retroalimentación acerca del proceso operativo de publicación y programación.",
+      "Entrega la guía operativa de publicación a la persona responsable del marketing digital en la MiPyME."
+    ],
+    "ahv": [
+      "Cooperación — involucra a la persona responsable facilitando su participación activa en la publicación.",
+      "Tolerancia — muestra paciencia ante las dificultades que manifiesta la persona responsable."
+    ],
+    "nota_arte": "Guion original del equipo (Script para desempeño 7_06082026.pptx), portado al generador sin cambios de contenido. Reutiliza los planos existentes de Martín y Mariana.",
+    "escenas": [
+      {
+        "tipo": "apertura",
+        "titulo_pantalla": "Habilitación del cliente",
+        "narrador": "Martín está explicando a Mariana, la dueña de la cafetería La Cuesta, el proceso de publicación y programación del contenido generado, cumpliendo con los criterios del Desempeño “Habilitación del Cliente”. Observa con atención la conversación y cómo Martín va cumpliendo cada uno de los criterios del estándar."
+      },
+      {
+        "hablante": "Martín",
+        "dialogo": "¡Hola Mariana! Qué gusto saludarte. Hoy vamos a revisar la guía operativa para que puedas publicar y programar el contenido que hemos generado con Inteligencia Artificial para la cafetería. El objetivo es que tú o tu equipo puedan gestionarlo sin problemas.",
+        "facial": "Sonrisa cálida, abierta y entusiasta. Mirada directa a los ojos de Mariana transmitiendo cercanía profesional.",
+        "postura": "Sentado con el torso erguido e inclinado 5° hacia adelante. Manos abiertas sobre la mesa a la altura del pecho gestando bienvenida inclusiva."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Perfecto, la verdad me da un poco de miedo meter la pata en las redes, nunca he programado nada pagado.",
+        "facial": "Ceño suavemente fruncido, mirada vacilante y una pequeña risa nerviosa al admitir su temor.",
+        "postura": "Mano apoyando la barbilla o tocándose levemente el cuello/pluma. Hombros ligeramente encogidos hacia adentro mostrando vulnerabilidad inicial."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Tolerancia",
+        "dialogo": "No te preocupes en absoluto, es muy normal sentirse así al principio. Estoy aquí para guiarte paso a paso, y lo vamos a hacer a tu ritmo para que te sientas súper cómoda.",
+        "facial": "Rostro afable y sereno, mirada franca con un guiño de empatía y sonrisa tranquilizadora.",
+        "postura": "Muestra las palmas de las manos levemente orientadas hacia arriba (gesto de apoyo y contención). Asentimiento de cabeza lento y pausado."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Explica configuración de audiencia y presupuesto",
+        "dialogo": "Mira, aquí en la pantalla estamos viendo Facebook e Instagram. Te explico rápido: la segmentación de audiencia la configuré enfocada en personas de 18 a 35 años que viven a 5 km a la redonda de la cafetería, y que tienen intereses en 'café de especialidad' y 'postres artesanales'. Y sobre el presupuesto, asignamos $200 pesos diarios para las publicaciones promocionadas de este mes.",
+        "facial": "Atenta, pedagógica y clara. Elevación sutil de cejas al enfatizar la cifra de $200 diarios para marcar el dato clave.",
+        "postura": "Inclinado hacia la laptop, apuntando a la pantalla con un bolígrafo o dedo índice para dirigir la mirada de Mariana."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Cooperación, involucrando activamente.",
+        "dialogo": "Ahora, te voy a mostrar cómo programar una publicación. Mariana, por favor toma el ratón... dale clic al botón que dice 'Crear’.",
+        "facial": "Sonrisa motivadora y paciente, mirada animada expectante por la participación de Mariana.",
+        "postura": "Retira sus manos del mouse/teclado y retrocede sutilmente el torso, extendiendo la mano derecha abiertamente hacia el mouse para ceder el control físico."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "A ver... ¿este botón azul?",
+        "facial": "Concentración total, ojos fijos e hiperenfocados en el monitor, labios ligeramente entreabiertos por el esfuerzo, cambiando a sonrisa rápida al ubicar el botón.",
+        "postura": "Brazo extendido hacia el ratón sosteniéndolo con firmeza, torso inclinado hacia la pantalla en actitud de tomar el control."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Indica criterios de verificación previos a publicación.",
+        "dialogo": "Exacto. Antes de darle a publicar, siempre tenemos que revisar nuestros criterios de verificación: primero, que la imagen tenga el formato cuadrado, 1080x1080; segundo, que el texto complementario no tenga faltas de ortografía y traiga los hashtags de la cafetería.",
+        "facial": "Mirada aprobatoria y complacida con la acción de Mariana, actitud metódica y didáctica.",
+        "postura": "Marca con los dedos de la mano los puntos (1 y 2); postura firme pero muy accesible."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Oye Martín, ¿y qué pasa si subo una foto de un cliente que vino con su perrito?",
+        "facial": "Ojos iluminados por la idea espontánea, sonrisa genuina y expresión risueña al relacionarlo con su cafetería.",
+        "postura": "Cabeza ligeramente ladeada con curiosidad, pluma sostenida en la mano sobre su libreta, reclinada cómodamente."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Explica restricciones y políticas.",
+        "dialogo": "Esa es una gran pregunta. Debemos tener cuidado con las políticas de contenido. Las plataformas pueden rechazar una publicación si incluye música con derechos de autor sin permiso, imágenes explícitas, o si promocionas concursos sin poner las reglas claras. En el caso del perrito no hay problema, siempre que el cliente te dé permiso.",
+        "facial": "Sonrisa previa de aprobación a la pregunta, seguida de un semblante reflexivo y admonitorio amigable al citar las reglas.",
+        "postura": "Movimiento de manos formando un límite suave (gesto preventivo), terminando con un asentimiento afirmativo respecto al permiso."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Ah, entiendo... ¿y cómo voy a saber si a la gente le gustó lo que publicamos?",
+        "facial": "Ceja levantada con interés analítico, mirada atenta y enfocada en la viabilidad del negocio.",
+        "postura": "Torso erguido, pluma en mano lista sobre la libreta para anotar métricas, inclinación fija hacia adelante."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Describe procedimiento para monitorear métricas.",
+        "dialogo": "Para eso monitorearemos las métricas. Una vez que la publicación lleve 24 horas, vas a entrar a esta pestaña que dice 'Estadísticas'. Aquí revisaremos el alcance (cuánta gente lo vio) y las interacciones (cuántos likes, comentarios o compartidas tuvo).",
+        "facial": "Entusiasta, mirada brillante demostrando el valor de los datos para la cafetería.",
+        "postura": "Apunta con el dedo a la pestaña en el monitor y realiza un gesto circular con la mano para abarcar los conceptos de alcance e interacción."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Describe procedimiento para monitorear métricas.",
+        "dialogo": "Ahora te voy a seguir explicando a detalle cómo interpretar estas métricas, podrás ver que aquí los clientes de café... (el audio de Marlon va disminuyendo gradualmente, haciendo un corte de tiempo en el video/audio).",
+        "facial": "Gesticulación continua, fluida y seria en tono de explicación profunda.",
+        "postura": "Movimientos de manos constantes hacia el monitor durante el efecto visual/time-lapse de transición de tiempo."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Aclara dudas y solicita retroalimentación.",
+        "dialogo": "...y así es como se programa todo el mes. ¿Tienes alguna duda sobre este proceso operativo o algo que sientas que debamos ajustar para que sea más fácil para ti?",
+        "facial": "Mirada atenta, apacible e inquisitiva, con una sonrisa amable buscando la validación de Mariana.",
+        "postura": "Entrelaza levemente las manos sobre la mesa o cierra un poco la laptop, inclinándose en gesto de escucha activa."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Creo que me quedó bastante claro. Quizá la primera semana me cueste un poco, pero lo intentaré.",
+        "facial": "Sonrisa amplia de satisfacción, mirada resuelta reflejando seguridad y motivación recuperada.",
+        "postura": "Se apoya en el respaldo de la silla en actitud relajada, asintiendo con la cabeza mientras deja la pluma sobre la libreta."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Entrega la guía operativa.",
+        "dialogo": "¡Claro que sí! Y para que no tengas que memorizar todo esto, te hago entrega de este documento impreso y digital. Es tu Guía Operativa de Publicación. Aquí viene el paso a paso detallado, con capturas de pantalla de todo lo que acabamos de hacer.",
+        "facial": "Orgullo profesional, mirada afectuosa y amplia sonrisa al concluir satisfactoriamente el proceso de habilitación.",
+        "postura": "Postura erguida, extendiendo ambos brazos hacia Mariana para hacer entrega física del documento/carpeta de la guía."
+      }
+    ]
+  },
+  {
+    "numero": 8,
+    "elemento": "Elemento 4 · Optimizar el contenido de marketing digital con IA",
+    "titulo": "Presenta el reporte de resultados y las recomendaciones de optimización",
+    "duracion": "3 mins",
+    "criterios": [
+      "Expone los resultados del reporte de desempeño del contenido de marketing digital publicado.",
+      "Muestra el plan de optimización de contenido con IA para el siguiente periodo.",
+      "Aclara las dudas que se presenten / solicita retroalimentación acerca de los resultados y del plan.",
+      "Obtiene la validación de las acciones de optimización y del calendario de publicación para el siguiente periodo."
+    ],
+    "ahv": [
+      "Iniciativa — propone alternativas de optimización fundamentadas en los datos de rendimiento.",
+      "Tolerancia — muestra profesionalismo al comunicar resultados y apertura para recibir comentarios favorables y desfavorables."
+    ],
+    "nota_arte": "Reutiliza los planos existentes de Martín y Mariana. Requiere insertos: gráficas del reporte de desempeño y tabla del plan de optimización.",
+    "escenas": [
+      {
+        "tipo": "apertura",
+        "titulo_pantalla": "Presentación de resultados y optimización",
+        "narrador": "La campaña de La Cuesta concluyó. Martín analizó los datos y preparó el reporte de desempeño junto con el plan de optimización para el siguiente periodo. Hoy los presenta ante Mariana. Observa cómo cumple cada criterio del estándar."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Expone los resultados del reporte de desempeño.",
+        "dialogo": "Mariana, cerramos las cuatro semanas de campaña y aquí están los resultados. Te los voy a presentar completos: lo que funcionó y lo que no. Empiezo por el resumen: alcanzamos a once mil personas, la interacción subió veintitrés por ciento y sumaste sesenta y ocho contactos nuevos en WhatsApp.",
+        "facial": "Mirada profesional y directa, sonrisa contenida de quien trae buenas noticias sin exagerarlas.",
+        "postura": "Sentado erguido, coloca el reporte impreso sobre la mesa girándolo hacia Mariana."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "¡Sesenta y ocho contactos! Nos habíamos puesto de meta cincuenta, ¿verdad?",
+        "facial": "Ojos iluminados de entusiasmo, sonrisa amplia y espontánea.",
+        "postura": "Se inclina hacia adelante apoyando los antebrazos, acercándose al reporte con energía."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Expone el comparativo contra los objetivos de la estrategia.",
+        "dialogo": "Exacto, cincuenta era la meta y la superamos. El otro objetivo era subir la interacción veinte por ciento y llegamos a veintitrés. Los dos objetivos medibles que pusimos en la estrategia se cumplieron. Aquí está el comparativo contra la línea base que tenías antes de empezar.",
+        "facial": "Semblante satisfecho pero medido, mirada que sostiene el rigor del dato.",
+        "postura": "Señala con el bolígrafo la columna comparativa del reporte, marcando meta contra resultado."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Expone el análisis de mayor y menor rendimiento.",
+        "dialogo": "Ahora el detalle, y aquí viene lo interesante. Los Reels del proceso de tueste tuvieron cinco veces más alcance que los posts estáticos. Los carruseles educativos tuvieron menos alcance pero la mayor tasa de interacción, cuatro punto ocho por ciento. Y los sábados a mediodía rindieron mucho mejor que los martes.",
+        "facial": "Mirada analítica y entusiasta, expresión de quien encontró un patrón valioso.",
+        "postura": "Recorre la gráfica de rendimiento con el dedo, deteniéndose en cada tipo de contenido."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Comunica también los resultados desfavorables.",
+        "dialogo": "Y te debo la parte que no salió bien. Los posts de producto sin persona tuvieron el rendimiento más bajo de toda la campaña: menos de trescientas personas alcanzadas cada uno. Invertimos tiempo en generarlos y no rindieron. Eso también hay que decirlo.",
+        "facial": "Semblante honesto y sereno, mirada franca sin evasión ni justificación defensiva.",
+        "postura": "Mantiene la postura abierta, señala el dato bajo sin minimizarlo con el gesto."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Mmm, la verdad esos posts a mí me gustaban mucho. ¿Estás seguro de que el dato está bien?",
+        "facial": "Ceja levantada con escepticismo, expresión algo incómoda al cuestionar.",
+        "postura": "Se recarga hacia atrás cruzando levemente los brazos, en actitud de duda."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Tolerancia ante comentarios desfavorables.",
+        "dialogo": "Es una duda muy válida y me da gusto que la plantees. Los datos vienen directo de las estadísticas de la plataforma, aquí tienes las capturas con la fecha del periodo y la fuente. Y que te gusten no está peleado con el dato: quizá el problema no es el post, sino el horario en que salieron. Eso lo podemos probar.",
+        "facial": "Rostro sereno y receptivo, mirada franca sin rastro de molestia ni actitud defensiva.",
+        "postura": "Palmas abiertas hacia arriba en gesto de apertura, desliza las capturas hacia ella."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Muestra el plan de optimización para el siguiente periodo.",
+        "dialogo": "Y con eso paso al plan de optimización. Mi recomendación para el siguiente mes es un mix: sesenta por ciento Reels, veinticinco por ciento carruseles educativos y quince por ciento posts de producto. No elimino los posts, los reduzco y los muevo de horario para probar la hipótesis.",
+        "facial": "Mirada segura y propositiva, entusiasmo profesional al presentar la solución.",
+        "postura": "Pasa la hoja del documento y despliega la tabla del plan, girándola hacia Mariana."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Demuestra Iniciativa proponiendo alternativas fundamentadas en datos.",
+        "dialogo": "Además te propongo dos pruebas concretas. Primera: publicar los posts de producto sábado a mediodía en vez de martes; hipótesis, que el alcance suba al menos cuarenta por ciento; métrica de éxito, personas alcanzadas. Segunda: probar carruseles de proceso contra carruseles educativos y medir cuál sostiene mejor la interacción.",
+        "facial": "Expresión analítica y entusiasta, mirada brillante al exponer cada hipótesis.",
+        "postura": "Marca con dos dedos las pruebas propuestas, gesticulando la comparación en el aire."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Oye, eso me gusta. Es como probar en lugar de nada más adivinar.",
+        "facial": "Sonrisa de comprensión, mirada iluminada por entender la lógica de la prueba.",
+        "postura": "Descruza los brazos y vuelve a inclinarse hacia el documento, retomando la pluma."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Muestra las recomendaciones de segmentación, presupuesto y prompts.",
+        "dialogo": "El plan trae también tres ajustes más. Segmentación: cerrar el radio de cinco a tres kilómetros, porque ahí se concentró la interacción real. Presupuesto: mantener los doscientos diarios pero concentrarlos en los días de Reel. Y los prompts de generación: ajustar el de imagen para incluir personas, que fue lo que más rindió.",
+        "facial": "Semblante metódico y claro, mirada que acompaña cada recomendación con su razón.",
+        "postura": "Enumera los tres ajustes con los dedos, señalando después cada uno en la tabla."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Solicita retroalimentación acerca de los resultados y del plan.",
+        "dialogo": "Ya viste los resultados y la propuesta completa. Antes de cerrar quiero tu opinión: ¿hay algo del plan que no te convenza, o alguna prueba que quieras cambiar? Tú conoces a tus clientes y el dato solo cuenta una parte de la historia.",
+        "facial": "Mirada atenta e inquisitiva, sonrisa amable, gesto genuino de escucha activa.",
+        "postura": "Deja el bolígrafo sobre la mesa, entrelaza las manos y se reclina cediendo el turno."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Solo una cosa: en diciembre quiero más contenido de temporada. ¿Cabe en este plan?",
+        "facial": "Expresión participativa y decidida, mirada de quien ya piensa en el siguiente paso.",
+        "postura": "Señala el calendario del plan con la pluma, torso inclinado hacia adelante."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Aclara dudas y ajusta el calendario del siguiente periodo.",
+        "dialogo": "Cabe perfectamente y es muy buena idea. Agrego dos semanas de contenido de temporada navideña dentro del sesenta por ciento de Reels, sin alterar el presupuesto. Ajusto el calendario de publicación aquí mismo para que lo veas antes de aprobarlo.",
+        "facial": "Semblante receptivo y satisfecho, asiente mientras anota el cambio en el documento.",
+        "postura": "Toma nota sobre el calendario impreso mostrándole a Mariana lo que escribe."
+      },
+      {
+        "hablante": "Martín",
+        "criterio": "Obtiene la validación de las acciones y del calendario.",
+        "dialogo": "Con el ajuste de temporada incorporado, ¿me das tu aprobación del plan de optimización y del calendario para el siguiente periodo? Te dejo la hoja de validación y te la envío también por correo para que quede la evidencia por escrito.",
+        "facial": "Mirada serena y profesional, sonrisa contenida de cierre, sin presionar.",
+        "postura": "Desliza la hoja de aprobación junto con la pluma hacia Mariana, con movimiento pausado."
+      },
+      {
+        "hablante": "Mariana",
+        "dialogo": "Va, aquí te firmo. Y gracias por decirme también lo que no funcionó, eso se agradece.",
+        "facial": "Sonrisa amplia y sincera, mirada resuelta que transmite confianza recuperada.",
+        "postura": "Firma con decisión y luego se recarga en el respaldo en actitud relajada y satisfecha."
+      }
+    ]
+  }
+]

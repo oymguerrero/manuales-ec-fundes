@@ -1658,7 +1658,7 @@ Panadería ficticia mexicana usada como hilo narrativo de **todo el Estándar A*
 
 Cada template trae 3 bloques fijos:
 
-1. **Criterio F21 literal** (caja azul) — lo que el evaluador verifica al pie de la letra. `REQUISITO TAXATIVO` se destaca con badge rojo.
+1. **Criterio de la versión de trabajo del F21** (caja azul) — referencia provisional que debe revisarse cuando exista publicación oficial. `REQUISITO TAXATIVO` se destaca con badge rojo.
 2. **Caso La Espiga (caja crema)** — ejemplo orientativo del tipo de contenido. **NO** es la respuesta.
 3. **Preguntas guía** — espacios en blanco con prompts. El aspirante responde con datos de SU MiPyME.
 
@@ -1667,15 +1667,15 @@ Regla operativa: **los templates ayudan a pasar la evaluación, no la resuelven.
 ### 23.2 Generación
 
 ```bash
-pip install python-docx openpyxl python-pptx  # solo primera vez
+pip install beautifulsoup4 python-docx openpyxl python-pptx  # solo primera vez
 python scripts/generate-templates.py
 ```
 
-Re-ejecuta cuando: cambia el F21 oficial, se ajusta el caso La Espiga, se agregan preguntas guía, o cambia el branding. El script borra archivos legacy con extensión incorrecta (.doc/.xls/.ppt → .docx/.xlsx/.pptx) automáticamente.
+Re-ejecuta cuando: cambia la versión de trabajo del F21, se ajusta el caso La Espiga, se agregan preguntas guía o cambia el branding. Cada generador produce su contenido intermedio y ejecuta `convert-legacy-office.py`, que entrega archivos OOXML reales (`.docx`/`.xlsx`) y actualiza los enlaces del sitio.
 
-### 23.3 Templates del Estándar B — Backlog (no generados todavía)
+### 23.3 Templates del Estándar B — Generados
 
-Los templates del Estándar B seguirán la misma filosofía pedagógica del §23.1 (criterio F21 literal + caso orientativo + preguntas guía). Se generarán en `estandar-b/templates/` con un script equivalente a `generate-templates.py`. Quedan como backlog para commit posterior:
+Los templates del Estándar B siguen la misma filosofía pedagógica del §23.1 (criterio de trabajo + caso orientativo + preguntas guía). Se generan en `estandar-b/templates/` con `scripts/generate-templates-b.py` y se convierten automáticamente a OOXML real:
 
 | Productos | Formato | Contenido |
 |---|---|---|
@@ -1733,3 +1733,91 @@ Los templates del Estándar B seguirán la misma filosofía pedagógica del §23
 - **1 Excel (.xls)**: 4.1 reporte de rendimiento técnico (con columnas de métricas comparativas: Objetivo vs Real por período).
 
 Cada template contiene el criterio F21 literal + ejemplo breve del caso El Surtido (solo ilustrativo) + preguntas guía que el aspirante responde con datos de SU proyecto real.
+
+---
+
+## 24. Arquitectura de aprendizaje · shell LMS estático
+
+El sitio conserva páginas HTML reales, pero su capa compartida las integra como un sistema de aprendizaje. No es una SPA ni un LMS institucional: el avance se guarda en `localStorage` y existe solo en el navegador actual.
+
+### 24.1 Modelo de navegación
+
+```text
+Mi aprendizaje
+├─ Continuar donde me quedé
+├─ Ruta recomendada: Diagnóstico → Introducción → Estándar → Preparación
+└─ Mis cursos
+   ├─ Curso introductorio
+   ├─ Estándar A
+   ├─ Estándar B
+   ├─ Estándar C
+   └─ Estándar D
+
+Curso
+├─ Inicio y contexto
+├─ Elementos / unidades formativas
+├─ Instrumento de evaluación
+├─ Ruta de preparación
+└─ FAQ y recursos
+```
+
+La estructura normativa “Elemento” se conserva. En la interfaz se presenta como unidad del curso para que el aspirante entienda su posición sin perder el vocabulario oficial.
+
+### 24.2 Manifiesto y estado
+
+`LEARNING_COURSES` en `assets/interactive.js` es la fuente compartida para orden, títulos, URLs, tipos y claves de avance de las 37 páginas educativas. Al agregar, renombrar o retirar una página, se actualiza el manifiesto y la subnavegación HTML.
+
+El estado usa dos capas:
+
+- `mi-compania-lessons::<progressKey>`: `{ completed, total, path, updatedAt }` por página.
+- `mi-compania-learning::v1`: último curso, página, módulo y páginas visitadas.
+
+Reglas:
+
+1. “Completado” significa que la persona marcó todos los módulos de la página; no demuestra dominio ni certificación.
+2. “En curso” significa que visitó la página o completó algún módulo.
+3. El porcentaje de curso cuenta unidades completamente recorridas sobre el total declarado.
+4. La interfaz siempre aclara que el progreso es local y no constituye constancia oficial.
+5. Sin JavaScript permanecen visibles la navegación HTML, los `<details>` y todo el contenido factual.
+
+### 24.3 Componentes
+
+| Componente | Propósito | Fuente |
+|---|---|---|
+| `.progress-skill` + `.learning-dashboard__*` | Dashboard, reanudación, ruta y cursos | Inyectado en `index.html` |
+| `.learning-context` | Breadcrumb, ubicación, avance real y acceso al mapa | Generado en cada página educativa |
+| `.course-map-dialog` | Índice completo con estados y tipos de unidad | Generado desde el manifiesto |
+| `.course-pagination` | Anterior/siguiente coherente al final de cada página | Generado desde el manifiesto |
+| `.lesson-tabs` | Módulos, avance dentro de la página y continuidad | Mejora progresiva del accordion original |
+| `.lesson-overview` | Objetivo, módulos, tiempo, resultado y ciclo recomendado | Generado antes del contenido de cada unidad |
+| `.maestro-progress` | Fallback estático de ubicación sin JavaScript/impresión | HTML existente; oculto cuando carga el shell |
+
+### 24.4 Jerarquía compositiva
+
+- La portada usa hero de identidad y coloca **Mi aprendizaje** antes del catálogo.
+- Las portadas de curso pueden conservar hero amplio para presentar el resultado profesional.
+- Las páginas internas usan hero compacto: la tarea de aprendizaje aparece antes del pliegue.
+- El shell distingue **ubicación** (“Unidad 2 de 8”) de **avance** (“25 % completado”).
+- En móvil, los módulos se presentan como carril horizontal con snap y el mapa completo queda en un diálogo; no se obliga a recorrer una lista larga antes del contenido.
+- Cada página cierra con navegación anterior/siguiente generada desde la misma fuente que el mapa.
+
+### 24.5 Accesibilidad y comportamiento
+
+- `skip-link` disponible en todas las páginas.
+- `aria-current="page"` en navegación global y de curso; `aria-current="step"` en el módulo activo.
+- El diálogo usa `<dialog>`, encabezado accesible, botón de 44 × 44 px y cierre por comportamiento nativo.
+- Los cambios de módulo se anuncian con `role="status"` y actualizan el hash para reanudar.
+- Estado nunca depende solo del color: siempre incluye etiqueta textual.
+- Foco visible de alto contraste, targets táctiles y modo impresión sin controles del shell.
+
+### 24.6 Flujo pedagógico recomendado
+
+La infraestructura no sustituye el diseño instruccional. Al crear o renovar una unidad, seguir:
+
+1. **Orientar:** resultado, duración y evidencia esperada.
+2. **Explicar o demostrar:** contenido breve + caso/modelo.
+3. **Practicar:** decisión, clasificación, simulación o ejercicio con feedback.
+4. **Aplicar:** producto o acción sobre la MiPyME real.
+5. **Verificar y cerrar:** comprobación, puntos clave y siguiente unidad.
+
+No agregar video, audio, imagen o interacción por decoración. Cada medio debe reducir carga, aportar contexto, mejorar práctica o dar una alternativa accesible.

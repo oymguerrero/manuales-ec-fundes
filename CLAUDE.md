@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Qué es este repositorio
 
-Manuales web interactivos del proyecto **Mi CompañIA** (FUNDES Latinoamérica + Google.org) sobre certificación CONOCER en IA aplicada a MiPyMEs mexicanas. Dos manuales publicados:
+Manuales web interactivos del proyecto **Mi CompañIA** (FUNDES Latinoamérica + Google.org) para desarrollar competencias en IA aplicada a MiPyMEs mexicanas. Las cuatro propuestas de estándar aún no han sido publicadas oficialmente:
 
 - **Curso introductorio** (`maestro/`): 6 capítulos sobre el sistema CONOCER (qué es, cómo evalúa, proceso, ¿es para ti?, recursos).
 - **Estándar A · Implementar IA** (`estandar-a/`): 3 elementos + instrumento + ruta + recursos, con el caso pedagógico transversal "La Espiga" (panadería ficticia con Doña Beatriz + Carlos).
@@ -61,7 +61,7 @@ print('JSON OK' if errs == 0 else f'{errs} errores')
 |---|---|
 | `tts-elevenlabs.ps1` | Genera MP3 de narración con ElevenLabs (voz Alice, modelo `eleven_multilingual_v2`). Lee `media/scripts/<nombre>.txt` y escribe `media/audio-<nombre>.mp3`. ElevenLabs free tier limita 10k chars/mes. |
 | `tts-generate.ps1` | Variante con Google Cloud TTS Neural2 (fallback si ElevenLabs no disponible). |
-| `generate-templates.py` | Genera los 13 templates descargables del Estándar A (`.docx`/`.xlsx`/`.pptx`) con `python-docx`, `openpyxl`, `python-pptx`. Salida en `estandar-a/templates/`. |
+| `generate-templates.py` | Genera los 13 templates descargables del Estándar A y ejecuta `convert-legacy-office.py` para entregar `.docx`/`.xlsx` OOXML reales; conserva el `.pptx` nativo. |
 | `higgsfield` (CLI) | Imágenes del caso La Espiga. Modelo barato: `text2image_soul_v2` (0.12 créditos). Rate limit free tier: 4 jobs concurrentes. Después de generar, comprimir PNG → JPEG con PIL (típicamente 27 MB → 867 KB, 97% reducción) y actualizar referencias `.png` → `.jpg` en HTML. |
 
 ## Arquitectura de componentes interactivos (`assets/interactive.js`)
@@ -106,11 +106,20 @@ Agentes especializados (`.claude/agents/`), cada uno con un rol estricto que no 
 |---|---|---|
 | `mi-compania-orchestrator` | **Coordina** a los demás: recibe petición vaga, decide qué agentes invocar, en qué orden, integra resultados, propone commit | No modifica archivos directamente — solo coordina |
 | `mi-compania-content-developer` | Vuelca contenido normativo de PDFs/DOCX a HTML | Copy persuasivo, ejercicios pedagógicos |
+| `mi-compania-learning-content-generator` | Produce explicaciones, casos, guiones y práctica desde fuentes aprobadas | Transcripción normativa, microcopy, datos sin fuente |
 | `mi-compania-copywriter` | Copy de UI: hero, CTAs, microcopy, headlines | Contenido normativo largo, ejercicios |
 | `mi-compania-pedagogo` | Diseña ejercicios, callouts, secuencias andragógicas | Implementa JS/CSS, escribe contenido factual |
+| `mi-compania-elearning-specialist` | Diseña ruta asincrónica, microlearning, medios, feedback y progreso | Produce todo el contenido o implementa código |
+| `mi-compania-ux-architect` | Diseña recorridos, navegación, arquitectura de información y pruebas de usabilidad | Apariencia visual, implementación |
+| `mi-compania-ui-designer` | Especifica jerarquía visual, componentes, estados y responsive | Investigación UX, implementación final |
+| `mi-compania-graphic-designer` | Dirección de arte, diagramas, iconografía y briefs de assets | Layout UI, generación técnica del asset |
 | `mi-compania-frontend` | HTML semántico, CSS con tokens, JS vanilla | Contenido, copy, imágenes |
-| `mi-compania-asset-generator` | Imágenes/videos/audio (Higgsfield, ElevenLabs) | UI, contenido |
+| `mi-compania-image-producer` | Genera y optimiza imágenes individuales | Dirección de arte, audio/video, UI |
+| `mi-compania-audio-producer` | Produce TTS voz Leda, MP3 y transcripciones | Objetivos pedagógicos, imagen/video |
+| `mi-compania-asset-generator` | Paquetes multimedia y video | Solicitudes de una sola imagen/audio, UI |
 | `mi-compania-brand-reviewer` | **Solo audita** contra el sistema de diseño | No modifica nada — solo reporta |
+| `mi-compania-accessibility-auditor` | **Solo audita** WCAG 2.2 AA, teclado, reflow y multimedia | No diseña ni modifica archivos |
+| `mi-compania-design-auditor` | Dictamen final independiente de brief, UI, UX y responsive | No implementa ni se autoaprueba |
 | `mi-compania-backend` | Deploy, CI/CD, hosting, optimización pipeline | UI |
 
 Skills (`.claude/skills/`) son comandos slash que orquestan agentes:
@@ -121,10 +130,13 @@ Skills (`.claude/skills/`) son comandos slash que orquestan agentes:
 - `/crear-actividad-interactiva` → pedagogo diseña + frontend implementa.
 - `/nueva-seccion-ec` → inserta sección en `estandar-a/elemento-*.html` con plantillas.
 - `/pre-publicacion` → checklist antes de publicar.
+- `/auditar-experiencia [alcance]` → consolida diseño/UX, marca y accesibilidad en un dictamen único.
+- `/crear-leccion-multimedia <tema>` → coordina una lección completa desde objetivos y fuentes hasta medios, implementación y auditoría.
 
 **Cuándo usar el orchestrator vs invocar un agente directo:**
 
 - Usa `/orquestar` o invoca `mi-compania-orchestrator` cuando la petición **mezcla 2+ disciplinas** (ej. contenido normativo + componente interactivo + revisión) y no sabes qué agentes elegir ni en qué orden.
+- Para rediseños sigue la secuencia UX → UI/diseño gráfico → frontend/assets → auditorías independientes.
 - Invoca un agente directo cuando la petición **claramente** es de una sola disciplina (ej. "audita la marca de X" → llama a brand-reviewer; "implementa este componente" → llama a frontend).
 - NO uses el orquestador para cambios de 1-2 líneas — el main loop los hace directo.
 
