@@ -10,11 +10,12 @@
 <script src="../assets/interactive.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -55,11 +56,11 @@
   <div class="container">
     <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Tema 1. Marco Institucional</div>
     <h1>La certificación de competencias en México</h1>
-    <p>Antes de adentrarte en los detalles del estándar de competencia de la función en la que deseas certificarte, conviene comprender el sistema institucional que respalda el certificado que recibirás: qué es una competencia, cómo opera el Sistema Nacional de Competencias y quién puede certificarse.</p>
+    <p>Al terminar esta unidad podrás explicar, con lenguaje claro y un ejemplo cercano, qué respalda una certificación CONOCER y quién puede participar.</p>
   </div>
 </section>
 
-<main>
+<main id="contenido-principal" tabindex="-1">
   <div class="container">
 
     <a class="back-link" href="index.html">Volver al inicio del Curso introductorio</a>
@@ -115,7 +116,7 @@
       <p>El Sistema Nacional de Competencias está diseñado para fortalecer la movilidad laboral de los trabajadores en sus sectores y en el territorio nacional <a href="recursos.html#referencias" class="cite">[3]</a>. Tu Certificado tiene validez en todo el territorio nacional, y como persona certificada, te incorporas al Registro Nacional de Personas Certificadas (RENAP), padrón disponible en el portal institucional del CONOCER.</p>
 
       <h3>Contribución al sector</h3>
-      <p>Al certificarte, pertenecerás al primer grupo de profesionales reconocidos formalmente en la aplicación de inteligencia artificial a las MiPyMEs mexicanas. Tu certificación contribuye a consolidar un mercado profesional con estándares verificables, en un campo donde hoy predomina la informalidad.</p>
+      <p>Estas rutas buscan preparar profesionales para aplicar inteligencia artificial en MiPyMEs mexicanas con criterios verificables. La posibilidad de obtener un reconocimiento formal dependerá de la aprobación y publicación oficial de cada estándar y de los procesos que CONOCER habilite posteriormente.</p>
 
       <aside class="callout callout--tip" role="note">
         <span class="callout__label">Para tener presente</span>
@@ -233,9 +234,11 @@
       <h3>Los componentes que se evalúan</h3>
       <p>La definición legal nombra tres elementos. Cada uno corresponde a una <strong>cara distinta de la competencia</strong> que el evaluador observará:</p>
 
-      <table class="prose-table">
+      <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: Los componentes que se evalúan">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: Los componentes que se evalúan</caption>
         <thead>
-          <tr><th>Componente</th><th>Qué evalúa</th><th>Ejemplo en IA para MiPyMEs</th></tr>
+          <tr><th scope="col">Componente</th><th scope="col">Qué evalúa</th><th scope="col">Ejemplo en IA para MiPyMEs</th></tr>
         </thead>
         <tbody>
           <tr><td><strong>Conocimientos</strong></td><td>Lo que <em>sabes</em>: principios, teorías, normativas, técnicas.</td><td>Principios de protección de datos en soluciones de IA (LFPDPPP).</td></tr>
@@ -243,6 +246,7 @@
           <tr><td><strong>Actitudes, hábitos y valores</strong></td><td>Cómo <em>te conduces</em> durante el desempeño.</td><td>Tolerancia ante dificultades del cliente · orden en la presentación.</td></tr>
         </tbody>
       </table>
+      </div>
 
       <h3>Verifica tu comprensión</h3>
       <div class="quiz" data-correct="c">
@@ -377,60 +381,78 @@
         </div>
       </details>
 
+      <details class="accordion__item" id="aplica">
+        <summary>
+          <span class="accordion__num">1.6</span>
+          <span class="accordion__title-main">Aplica lo aprendido con Doña Beatriz</span>
+          <span class="accordion__meta">Decisión aplicada · retroalimentación · 4 min</span>
+        </summary>
+        <div class="accordion__body">
+          <p>La panadera ya entiende que tienes “un certificado del gobierno”. Ahora te pide que le expliques <em>en sus términos</em> qué es exactamente un Estándar de Competencia. Escoge la explicación que mejor funciona para una empresaria sin formación técnica.</p>
+
+          <div class="scenario-decision" data-storage-key="que-es-explicar-ec-a-beatriz">
+            <script type="application/json" class="scenario-decision__data">
+            {
+              "actor": "Doña Beatriz · La Espiga",
+              "title": "\"¿Y qué es eso del 'estándar' que tanto mencionas?\"",
+              "context": "Estás en la mesa de la trastienda con un café enfrente. Doña Beatriz no tiene fondo técnico ni quiere clases magistrales, quiere entender qué le compra cuando contrata a alguien certificado. Carlos toma nota desde una silla.",
+              "question": "¿Cómo se lo explicas?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "\"Es un documento normativo que tipifica las competencias laborales mediante criterios verificables…\"",
+                  "outcome": "wrong",
+                  "feedback": "Suena impecable en un comité técnico, pero a Doña Beatriz la pierdes en la primera frase. La andragogía adulta exige conectar primero con la experiencia previa del aprendiz, no con la jerga del experto.",
+                  "criterio": "Principio de Knowles: la motivación adulta nace del valor inmediato, no del rigor terminológico."
+                },
+                {
+                  "id": "b",
+                  "label": "\"Es como la receta de su pan, pero para mi trabajo: un papel donde está escrito exactamente qué tengo que demostrar que sé hacer para que una institución de Gobierno acreditada me dé un certificado oficial\"",
+                  "outcome": "ok",
+                  "feedback": "Acertaste. Anclaste el concepto abstracto en algo que Beatriz domina (sus recetas) y mantuviste la idea esencial: contenido explícito + criterios verificables + sello oficial. Carlos escribe en su libreta.",
+                  "criterio": "Andragogía: anclar lo nuevo en la experiencia previa del aprendiz multiplica la retención."
+                },
+                {
+                  "id": "c",
+                  "label": "\"Mira, hay como 800 estándares para todas las profesiones, y el mío es el de Implementar IA, que es uno de cuatro del paquete de IA para MiPyMEs…\"",
+                  "outcome": "risk",
+                  "feedback": "No está mal —es información correcta—, pero contestaste con datos antes de contestar con sentido. Beatriz preguntó qué es, no cuántos hay. Inviertes tres minutos en contexto institucional y todavía no le explicaste qué le compra.",
+                  "criterio": "Bloom: para una audiencia adulta no experta, empieza por comprender antes de recordar datos."
+                }
+              ],
+              "wrapUp": "El reto profesional no es repetir el estándar, sino traducirlo al lenguaje del cliente sin perder la sustancia."
+            }
+            </script>
+          </div>
+        </div>
+      </details>
+
+      <details class="accordion__item" id="cierre">
+        <summary>
+          <span class="accordion__num">1.7</span>
+          <span class="accordion__title-main">Comprueba y cierra la unidad</span>
+          <span class="accordion__meta">Síntesis · siguiente paso · 2 min</span>
+        </summary>
+        <div class="accordion__body">
+          <div class="key-points">
+            <h3>Lo que ya puedes explicar</h3>
+            <ul>
+              <li>Una competencia integra conocimientos, habilidades y actitudes demostrables.</li>
+              <li>El estándar hace públicos los criterios con los que se evaluará una función laboral.</li>
+              <li>No se exige título, empleo o curso previo: se exige demostrar la competencia.</li>
+              <li>Una explicación profesional debe traducir el rigor institucional al lenguaje de la persona interesada.</li>
+            </ul>
+          </div>
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Tu siguiente paso</span>
+            <div class="callout__body">El siguiente tema responde la pregunta que más ansiedad genera: cómo se evalúan las evidencias, el portafolio y los resultados posibles.</div>
+          </aside>
+        </div>
+      </details>
+
     </div>
     </div>
-
-    <h2 class="section-divider-top">Aplica lo aprendido · Doña Beatriz te interroga</h2>
-    <p>La panadera ya entiende que tienes "un certificado del gobierno". Ahora te pide que le expliques <em>en sus términos</em> qué es exactamente un Estándar de Competencia. Tienes tres formas de hacerlo. Escoge la que mejor funciona pedagógicamente para una empresaria sin formación técnica.</p>
-
-    <div class="scenario-decision" data-storage-key="que-es-explicar-ec-a-beatriz">
-      <script type="application/json" class="scenario-decision__data">
-      {
-        "actor": "Doña Beatriz · La Espiga",
-        "title": "\"¿Y qué es eso del 'estándar' que tanto mencionas?\"",
-        "context": "Estás en la mesa de la trastienda con un café enfrente. Doña Beatriz no tiene fondo técnico ni quiere clases magistrales, quiere entender qué le compra cuando contrata a alguien certificado. Carlos toma nota desde una silla.",
-        "question": "¿Cómo se lo explicas?",
-        "options": [
-          {
-            "id": "a",
-            "label": "\"Es un documento normativo que tipifica las competencias laborales mediante criterios verificables…\"",
-            "outcome": "wrong",
-            "feedback": "Suena impecable en un comité técnico, pero a Doña Beatriz la pierdes en la primera frase. La andragogía adulta exige conectar primero con la experiencia previa del aprendiz, no con la jerga del experto.",
-            "criterio": "Principio de Knowles: la motivación adulta nace del valor inmediato, no del rigor terminológico."
-          },
-          {
-            "id": "b",
-            "label": "\"Es como la receta de su pan, pero para mi trabajo: un papel donde está escrito exactamente qué tengo que demostrar que sé hacer para que una institución de Gobierno acreditada, me de un certificado oficial\"",
-            "outcome": "ok",
-            "feedback": "Acertaste. Anclaste el concepto abstracto en algo que Beatriz domina (sus recetas) y mantuviste la idea esencial: contenido explícito + criterios verificables + sello oficial. Carlos escribe en su libreta.",
-            "criterio": "Andragogía: anclar lo nuevo en la experiencia previa del aprendiz multiplica la retención."
-          },
-          {
-            "id": "c",
-            "label": "\"Mira, hay como 800 estándares para todas las profesiones, y el mío es el de Implementar IA, que es uno de cuatro del paquete de IA para MiPyMEs…\"",
-            "outcome": "risk",
-            "feedback": "No está mal — es información correcta — pero contestaste con datos antes de contestar con sentido. Beatriz preguntó qué es, no cuántos hay. Inviertes 3 minutos en contexto institucional y todavía no le explicaste qué le compra.",
-            "criterio": "Bloom: para audiencia adulta no-experta, empieza por Comprender antes de Recordar datos."
-          }
-        ],
-        "wrapUp": "El reto pedagógico real con un cliente MiPyME no es saber el contenido del estándar — eso ya lo sabes. Es traducirlo a su lenguaje sin perder la sustancia. Esta es exactamente la habilidad que tu certificación demuestra: dominio + capacidad de explicar."
-      }
-      </script>
-    </div>
-
-    <aside class="callout callout--tip" role="note">
-      <span class="callout__label">Para llevar</span>
-      <div class="callout__body">Ahora que sabes qué es una competencia y quién puede certificarse, el siguiente tema responde la pregunta que más ansiedad genera: ¿cómo me van a evaluar? Anticipar la lógica de la evaluación cambia cómo te preparas.</div>
-    </aside>
-
-    <section id="siguiente">
-      <h2>¿Listo para conocer cómo se evalúa?</h2>
-      <p>Ahora que conoces el marco institucional, el siguiente capítulo te muestra la metodología concreta de evaluación: los cinco tipos de evidencia, el portafolio y los dos resultados posibles.</p>
-      <div class="hero-actions">
-        <a href="como-se-evalua.html" class="btn btn-primary">Continuar: Cómo se evalúa →</a>
-        <a href="index.html" class="btn btn-secondary">← Volver a Sobre este curso</a>
-      </div>
-    </section>
 
   </div>
 </main>
@@ -438,10 +460,10 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
       <span class="footer-tag">Curso introductorio</span>
     </div>
-    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+    <div>Con el apoyo de Google.org</div>
   </div>
 </footer>
 

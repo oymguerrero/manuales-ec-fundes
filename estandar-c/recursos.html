@@ -10,6 +10,7 @@
 <script src="../assets/interactive.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
 <!--
   Fuente: extras/Manual_Estandar_C_v1_1.md (v1.1, 2026-06-15)
@@ -20,7 +21,7 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -68,15 +69,85 @@
   </div>
 </section>
 
-<main>
+<main id="contenido-principal" tabindex="-1">
   <div class="container">
 
     <a class="back-link" href="index.html">Volver al inicio del manual · Marketing digital con IA</a>
 
+    <aside class="draft-notice" role="note">
+      <strong>Propuesta no publicada.</strong>
+      Esta ruta se basa en una versión de trabajo que puede cambiar. Es material formativo independiente: no constituye convocatoria ni garantiza acceso a evaluación o certificación.
+    </aside>
+
     <div class="lesson-tabs" data-progress-key="estandar-c-recursos">
     <div class="accordion accordion--modules" aria-label="Módulos del Tema 7 · Glosario y referencias">
 
-      <!-- ===== 7.1 GLOSARIO ===== -->
+      <!-- ===== 8.1 FAQ ===== -->
+      <details class="accordion__item" id="faq" open>
+        <summary>
+          <span class="accordion__title-main">Preguntas frecuentes del Estándar C</span>
+          <span class="accordion__meta">5 preguntas clave · evaluación · modalidad · evidencia histórica · 5 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <aside class="callout callout--tip" role="note">
+            <span class="callout__label">Nota</span>
+            <div class="callout__body">Estas preguntas son específicas de este estándar. Para preguntas sobre el marco general de la certificación (qué es CONOCER, cómo inscribirse, costos), consulta el <a href="../maestro/index.html">Curso introductorio</a>.</div>
+          </aside>
+
+          <div class="accordion accordion--faq">
+
+            <details class="accordion__item">
+              <summary>
+                <span class="accordion__title-main">¿La propuesta contempla demostrar sólo algunos elementos?</span>
+              </summary>
+              <div class="accordion__body">
+                <p>No. La versión de trabajo integra los cuatro elementos como una sola función. Si tu práctica se concentra en una fase del marketing digital, compara las demás rutas. Una eventual regla de evaluación dependerá de la versión oficial publicada.</p>
+              </div>
+            </details>
+
+            <details class="accordion__item">
+              <summary>
+                <span class="accordion__title-main">¿Las herramientas de IA con las que trabajo cuentan para el estándar?</span>
+              </summary>
+              <div class="accordion__body">
+                <p>El estándar es agnóstico respecto a las herramientas específicas. Lo que importa es que las que uses sean apropiadas al contexto de la MiPyME y que puedas demostrar su funcionamiento durante la evaluación. ChatGPT, Gemini, Canva IA, Adobe Firefly, ElevenLabs — cualquiera sirve si puedes operar con ella en tiempo real frente al evaluador.</p>
+              </div>
+            </details>
+
+            <details class="accordion__item">
+              <summary>
+                <span class="accordion__title-main">¿Qué pasa si mi proyecto real no tuvo formalmente alguno de los productos exigidos?</span>
+              </summary>
+              <div class="accordion__body">
+                <p>Se recomienda elaborar el producto faltante de manera retrospectiva, con base en la realidad del proyecto. Lo importante es que el contenido refleje fielmente lo que ocurrió, no que se documente algo ficticio. Asegúrate de que todos los criterios del estándar estén cubiertos con datos reales del proyecto.</p>
+              </div>
+            </details>
+
+            <details class="accordion__item">
+              <summary>
+                <span class="accordion__title-main">¿La evaluación será presencial o remota?</span>
+              </summary>
+              <div class="accordion__body">
+                <p>Ambas modalidades son posibles. La modalidad se acuerda en el Plan de evaluación con el Centro de Evaluación. Si la práctica se realiza de forma simulada, el área de evaluación debe contar con los materiales, insumos e infraestructura para ejecutar todos los criterios del estándar — incluyendo acceso a las herramientas de IA y a las plataformas digitales de la MiPyME.</p>
+              </div>
+            </details>
+
+            <details class="accordion__item">
+              <summary>
+                <span class="accordion__title-main">¿Puedo presentar evidencias de proyectos anteriores?</span>
+              </summary>
+              <div class="accordion__body">
+                <p>Sí. Los productos del estándar pueden presentarse como Evidencia Histórica (productos elaborados durante consultorías previas), siempre que puedas demostrar su autoría y autenticidad ante el evaluador. Consulta el Instrumento de Evaluación de Competencia (IEC) y a tu Centro de Evaluación para el procedimiento específico de verificación.</p>
+              </div>
+            </details>
+
+          </div><!-- /.accordion.faq -->
+
+        </div>
+      </details>
+
+      <!-- ===== 8.2 GLOSARIO ===== -->
       <details class="accordion__item" id="glosario">
         <summary>
           <span class="accordion__title-main">Glosario consolidado del Estándar C</span>
@@ -84,13 +155,15 @@
         </summary>
         <div class="accordion__body">
 
-          <p>Reúne todas las entradas de glosario establecidas en el estándar del estándar, organizadas alfabéticamente y sin duplicados. Cada definición proviene del documento oficial del estándar.</p>
+          <p>Reúne las entradas de glosario incluidas en la versión de trabajo del estándar, organizadas alfabéticamente y sin duplicados. Las definiciones pueden cambiar hasta la publicación oficial.</p>
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: Información de la unidad">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: Información de la unidad</caption>
             <thead>
               <tr>
-                <th>Término</th>
-                <th>Definición conforme al estándar</th>
+                <th scope="col">Término</th>
+                <th scope="col">Definición conforme al estándar</th>
               </tr>
             </thead>
             <tbody>
@@ -176,6 +249,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
         </div>
       </details>
@@ -247,10 +321,10 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
-      <span class="footer-tag">Marketing digital con IA · Glosario y referencias</span>
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <span class="footer-tag">Marketing digital con IA · FAQ y recursos</span>
     </div>
-    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+    <div>Con el apoyo de Google.org</div>
   </div>
 </footer>
 

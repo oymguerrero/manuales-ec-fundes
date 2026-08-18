@@ -10,6 +10,7 @@
 <script src="../assets/interactive.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
 <!--
   Fuente: contenido fuente proporcionado directamente (2026-06-15)
@@ -20,7 +21,7 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -70,10 +71,15 @@
   </div>
 </section>
 
-<main>
+<main id="contenido-principal" tabindex="-1">
   <div class="container">
 
     <a class="back-link" href="index.html">Volver al inicio del manual · Desarrollar con IA</a>
+
+    <aside class="draft-notice" role="note">
+      <strong>Propuesta no publicada.</strong>
+      Esta ruta se basa en una versión de trabajo que puede cambiar. Es material formativo independiente: no constituye convocatoria ni garantiza acceso a evaluación o certificación.
+    </aside>
 
     <figure class="img-caso">
       <img src="../img/escenas/prototipo-validacion.jpg" alt="Lucía probando el prototipo del asistente de IA de Tonalli con Diego tomando notas de retroalimentación" class="img-escena" loading="lazy" />
@@ -135,17 +141,19 @@
       <details class="accordion__item" id="como-evaluan">
         <summary>
           <span class="accordion__num">5.2</span>
-          <span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+          <span class="accordion__title-main">Cómo contempla evaluarse este elemento la versión de trabajo</span>
           <span class="accordion__meta">1 desempeño · 4 productos · 2 min</span>
         </summary>
         <div class="accordion__body">
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: Información de la unidad">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: Información de la unidad</caption>
             <thead>
               <tr>
-                <th>Tipo de evidencia</th>
-                <th>Cantidad</th>
-                <th>Cómo se valora</th>
+                <th scope="col">Tipo de evidencia</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Cómo se valora</th>
               </tr>
             </thead>
             <tbody>
@@ -171,6 +179,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <aside class="callout callout--tip" role="note">
             <span class="callout__label">Para tener presente</span>
@@ -265,22 +274,22 @@
             </h3>
             <p class="template-downloads__intro">El Elemento 4 cierra el ciclo con 4 documentos de validación. La bitácora registra cronológicamente cada sesión de prueba; el reporte sintetiza resultados por hipótesis; la tabla por hipótesis permite comparar resultados contra criterios de éxito; y el documento de recomendaciones documenta la decisión de iterar, pivotar o escalar. Adapta todos los templates a tu proyecto real.</p>
             <div class="template-downloads__grid">
-              <a class="template-downloads__item" href="templates/4-1-bitacora-pruebas.doc" download>
+              <a class="template-downloads__item" href="templates/4-1-bitacora-pruebas.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">4.1</span> Bitácora de ejecución de pruebas</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
               </a>
-              <a class="template-downloads__item" href="templates/4-2-reporte-resultados-validacion.doc" download>
+              <a class="template-downloads__item" href="templates/4-2-reporte-resultados-validacion.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">4.2</span> Reporte de resultados de validación</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
               </a>
-              <a class="template-downloads__item" href="templates/4-3-resultados-por-hipotesis.xls" download>
+              <a class="template-downloads__item" href="templates/4-3-resultados-por-hipotesis.xlsx" download>
                 <span class="template-downloads__item-icon template-downloads__item-icon--xls">XLS</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">4.3</span> Resultados por hipótesis</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
               </a>
-              <a class="template-downloads__item" href="templates/4-4-recomendaciones-prototipo.doc" download>
+              <a class="template-downloads__item" href="templates/4-4-recomendaciones-prototipo.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">4.4</span> Recomendaciones al prototipo</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
@@ -415,12 +424,14 @@
         </summary>
         <div class="accordion__body">
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: El momento de la verdad · ¿Qué le recomienda Diego a Lucía?">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: El momento de la verdad · ¿Qué le recomienda Diego a Lucía?</caption>
             <thead>
               <tr>
-                <th>Área de conocimiento</th>
-                <th>Nivel</th>
-                <th>Lo que debes poder hacer</th>
+                <th scope="col">Área de conocimiento</th>
+                <th scope="col">Nivel</th>
+                <th scope="col">Lo que debes poder hacer</th>
               </tr>
             </thead>
             <tbody>
@@ -446,6 +457,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <aside class="callout callout--reflection" role="note">
             <span class="callout__label">Sobre la retención y eliminación de datos de usuarios</span>
@@ -487,11 +499,13 @@
         </summary>
         <div class="accordion__body">
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: El momento de la verdad · ¿Qué le recomienda Diego a Lucía?">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: El momento de la verdad · ¿Qué le recomienda Diego a Lucía?</caption>
             <thead>
               <tr>
-                <th>Término</th>
-                <th>Definición conforme al estándar</th>
+                <th scope="col">Término</th>
+                <th scope="col">Definición conforme al estándar</th>
               </tr>
             </thead>
             <tbody>
@@ -525,6 +539,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
         </div>
       </details>
@@ -547,10 +562,10 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
       <span class="footer-tag">Desarrollar con IA · Elemento 4 · Validar</span>
     </div>
-    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+    <div>Con el apoyo de Google.org</div>
   </div>
 </footer>
 

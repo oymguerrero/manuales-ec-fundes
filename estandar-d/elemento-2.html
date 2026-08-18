@@ -10,6 +10,7 @@
 <script src="../assets/interactive.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
 <!--
   Fuente: extras/Manual_Estandar_D_v1_1.md (v1.1, 2026-06-16)
@@ -20,7 +21,7 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -70,10 +71,15 @@
   </div>
 </section>
 
-<main>
+<main id="contenido-principal" tabindex="-1">
   <div class="container">
 
     <a class="back-link" href="index.html">Volver al inicio del manual · Transformación digital con IA</a>
+
+    <aside class="draft-notice" role="note">
+      <strong>Propuesta no publicada.</strong>
+      Esta ruta se basa en una versión de trabajo que puede cambiar. Es material formativo independiente: no constituye convocatoria ni garantiza acceso a evaluación o certificación.
+    </aside>
 
     <div class="audio-narration">
       <div class="audio-narration__header">
@@ -162,17 +168,19 @@
       <details class="accordion__item" id="como-evaluan">
         <summary>
           <span class="accordion__num">3.2</span>
-          <span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+          <span class="accordion__title-main">Cómo contempla evaluarse este elemento la versión de trabajo</span>
           <span class="accordion__meta">Tabla de tipos de evidencia · 2 min</span>
         </summary>
         <div class="accordion__body">
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: Información de la unidad">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: Información de la unidad</caption>
             <thead>
               <tr>
-                <th>Tipo de evidencia</th>
-                <th>Cantidad</th>
-                <th>Cómo se valora</th>
+                <th scope="col">Tipo de evidencia</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Cómo se valora</th>
               </tr>
             </thead>
             <tbody>
@@ -198,6 +206,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
         </div>
       </details>
@@ -223,22 +232,22 @@
             </h3>
             <p class="template-downloads__intro">El Elemento 2 produce 4 artefactos técnicos: el entorno de desarrollo configurado, la solución construida, el reporte de pruebas y la documentación técnica. Descarga los templates, complétalos con tu stack real y tendrás los entregables listos para tu evaluación.</p>
             <div class="template-downloads__grid">
-              <a class="template-downloads__item" href="templates/2-1-entorno-desarrollo-configurado.doc" download>
+              <a class="template-downloads__item" href="templates/2-1-entorno-desarrollo-configurado.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.1</span> Entorno de desarrollo configurado</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
               </a>
-              <a class="template-downloads__item" href="templates/2-2-checklist-verificacion-solucion.doc" download>
+              <a class="template-downloads__item" href="templates/2-2-checklist-verificacion-solucion.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.2</span> Checklist de verificación de la solución desarrollada</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
               </a>
-              <a class="template-downloads__item" href="templates/2-3-reporte-pruebas-tecnicas.doc" download>
+              <a class="template-downloads__item" href="templates/2-3-reporte-pruebas-tecnicas.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.3</span> Reporte de pruebas técnicas de la solución</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
               </a>
-              <a class="template-downloads__item" href="templates/2-4-documentacion-tecnica.doc" download>
+              <a class="template-downloads__item" href="templates/2-4-documentacion-tecnica.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.4</span> Documentación técnica de la solución</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
@@ -377,11 +386,13 @@
 
           <p>En tu evaluación se te aplicará un cuestionario con reactivos diseñados para verificar el nivel cognitivo indicado. El nivel <strong>Conocimiento</strong> indica que debes reconocer hechos, componentes o definiciones; el nivel <strong>Comprensión</strong> indica que debes poder explicar el concepto y reconocer su aplicación en un caso.</p>
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: Practica: ¿cumple o no cumple con los criterios de seguridad del estándar?">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: Practica: ¿cumple o no cumple con los criterios de seguridad del estándar?</caption>
             <thead>
               <tr>
-                <th>Área de conocimiento</th>
-                <th>Nivel</th>
+                <th scope="col">Área de conocimiento</th>
+                <th scope="col">Nivel</th>
               </tr>
             </thead>
             <tbody>
@@ -411,6 +422,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <aside class="callout callout--tip" role="note">
             <span class="callout__label">Para tener presente</span>
@@ -451,11 +463,13 @@
         </summary>
         <div class="accordion__body">
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: Practica: ¿cumple o no cumple con los criterios de seguridad del estándar?">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: Practica: ¿cumple o no cumple con los criterios de seguridad del estándar?</caption>
             <thead>
               <tr>
-                <th>Término</th>
-                <th>Definición conforme al estándar</th>
+                <th scope="col">Término</th>
+                <th scope="col">Definición conforme al estándar</th>
               </tr>
             </thead>
             <tbody>
@@ -541,6 +555,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <!-- ACTIVIDAD 3: flashcard-deck "Términos técnicos del desarrollo" -->
           <h3>Refuerza los términos técnicos más relevantes para tu evaluación</h3>
@@ -665,10 +680,10 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
       <span class="footer-tag">Transformación digital con IA · Elemento 2 · Construir</span>
     </div>
-    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+    <div>Con el apoyo de Google.org</div>
   </div>
 </footer>
 

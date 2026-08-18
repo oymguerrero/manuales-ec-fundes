@@ -10,6 +10,7 @@
 <script src="../assets/interactive.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
 <!--
   Fuente: extras/Manual_Estandar_C_v1_1.md (v1.1, 2026-06-15)
@@ -20,7 +21,7 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -68,10 +69,15 @@
   </div>
 </section>
 
-<main>
+<main id="contenido-principal" tabindex="-1">
   <div class="container">
 
     <a class="back-link" href="index.html">Volver al inicio del manual · Marketing digital con IA</a>
+
+    <aside class="draft-notice" role="note">
+      <strong>Propuesta no publicada.</strong>
+      Esta ruta se basa en una versión de trabajo que puede cambiar. Es material formativo independiente: no constituye convocatoria ni garantiza acceso a evaluación o certificación.
+    </aside>
 
     <div class="audio-narration">
       <div class="audio-narration__header">
@@ -115,7 +121,7 @@
               Objetivo específico
             </span>
             <div class="callout__body">
-              <p>Al terminar este tema, identificarás los criterios de evaluación de desempeño para la generación de contenido de marketing digital con IA, de acuerdo con el estándar C de CONOCER, con el fin de preparar la presentación de evidencias en la evaluación con fines de certificación.</p>
+              <p>Al terminar esta unidad, podrás identificar y practicar los criterios que la versión de trabajo contempla para generar contenido de marketing digital con IA.</p>
             </div>
           </aside>
 
@@ -128,7 +134,7 @@
       <details class="accordion__item" id="como-evaluan">
         <summary>
           <span class="accordion__num">2.2</span>
-          <span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+          <span class="accordion__title-main">Cómo contempla evaluarse este elemento la versión de trabajo</span>
           <span class="accordion__meta">Tabla de tipos de evidencia · 2 min</span>
         </summary>
         <div class="accordion__body">
@@ -139,12 +145,14 @@
             </div>
           </aside>
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: Información de la unidad">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: Información de la unidad</caption>
             <thead>
               <tr>
-                <th>Tipo de evidencia</th>
-                <th>Cantidad</th>
-                <th>Cómo se valora</th>
+                <th scope="col">Tipo de evidencia</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Cómo se valora</th>
               </tr>
             </thead>
             <tbody>
@@ -170,6 +178,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <aside class="callout" role="note" style="background: #F3F4F6; border-left-color: #9CA3AF; display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/martin-thinking.jpg" alt="Martín pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
@@ -352,22 +361,22 @@
             </h3>
             <p class="template-downloads__intro">El Elemento 2 produce 4 productos de contenido: uno por cada formato que generarás con IA (texto, imagen, audio y video). Cada template incluye dónde documentar el prompt, la herramienta usada y el resultado final. El portafolio de texto suele ser el más extenso porque requiere registrar la estructura completa del prompt.</p>
             <div class="template-downloads__grid">
-              <a class="template-downloads__item" href="templates/2-1-portafolio-texto.doc" download>
+              <a class="template-downloads__item" href="templates/2-1-portafolio-texto.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.1</span> Portafolio de contenido de texto generado con IA</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
               </a>
-              <a class="template-downloads__item" href="templates/2-2-portafolio-imagen.doc" download>
+              <a class="template-downloads__item" href="templates/2-2-portafolio-imagen.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.2</span> Portafolio de contenido de imagen generado con IA</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
               </a>
-              <a class="template-downloads__item" href="templates/2-3-portafolio-audio.doc" download>
+              <a class="template-downloads__item" href="templates/2-3-portafolio-audio.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.3</span> Portafolio de contenido de audio generado con IA</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
               </a>
-              <a class="template-downloads__item" href="templates/2-4-portafolio-video.doc" download>
+              <a class="template-downloads__item" href="templates/2-4-portafolio-video.docx" download>
                 <span class="template-downloads__item-icon">DOC</span>
                 <span class="template-downloads__item-name"><span class="template-downloads__item-num">2.4</span> Portafolio de contenido de video generado con IA</span>
                 <span class="template-downloads__item-arrow" aria-hidden="true">↓</span>
@@ -385,18 +394,21 @@
           <span class="accordion__title-main">Los conocimientos del Elemento 2</span>
           <span class="accordion__meta">3 áreas de conocimiento · 6 min</span>
         </summary>
+        <div class="accordion__body">
           <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; color: var(--color-azul-profundo);" role="note">
             <div class="callout__body">
               El estándar en el elemento 2 exige el dominio de 4 áreas de conocimiento, por lo que Martín tendrá que cubrir una evaluación de conocimientos que cubra estas áreas. Conoce cuáles son.
             </div>
           </aside>
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: Templates descargables — Elemento 2">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: Templates descargables — Elemento 2</caption>
             <thead>
               <tr>
-                <th>Área de conocimiento</th>
-                <th>Nivel</th>
-                <th>Lo que debes poder hacer</th>
+                <th scope="col">Área de conocimiento</th>
+                <th scope="col">Nivel</th>
+                <th scope="col">Lo que debes poder hacer</th>
               </tr>
             </thead>
             <tbody>
@@ -417,6 +429,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
           <h3>Pon a prueba tus conocimientos</h3>
           <p>Ponte a prueba, ¿qué tanto sabes sobre los conceptos que son requeridos dominar en el elemento 2 del estándar. Responde estas preguntas para saberlo. Este pequeño cuestionario no tiene valor sobre tu calificación del curso, es únicamente un ejercicio para que puedas repasar los conceptos.</p>
@@ -491,6 +504,7 @@
           </div>
 
         </div>
+        </div>
       </details>
 
       <!-- ===== 2.6 GLOSARIO ===== -->
@@ -502,11 +516,13 @@
         </summary>
         <div class="accordion__body">
 
-          <table class="prose-table">
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Tabla: Pon a prueba tus conocimientos">
+<table class="prose-table">
+<caption class="visually-hidden">Tabla: Pon a prueba tus conocimientos</caption>
             <thead>
               <tr>
-                <th>Término</th>
-                <th>Definición conforme al estándar</th>
+                <th scope="col">Término</th>
+                <th scope="col">Definición conforme al estándar</th>
               </tr>
             </thead>
             <tbody>
@@ -528,6 +544,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
 
         </div>
       </details>
@@ -593,10 +610,10 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-brand">
-      <img src="../img/logo.png" alt="Mi CompañIA" />
+      <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
       <span class="footer-tag">Marketing digital con IA · Elemento 2 · Generar</span>
     </div>
-    <div>Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org</div>
+    <div>Con el apoyo de Google.org</div>
   </div>
 </footer>
 
