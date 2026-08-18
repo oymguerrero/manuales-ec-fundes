@@ -1,0 +1,2488 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Manual del Estándar D: Transformación digital en la MiPyME</title>
+<style>
+body {
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: #333333;
+}
+h1 {
+    font-family: Georgia, Garamond, serif;
+    font-size: 24pt;
+    color: #1F4E8C;
+    margin-top: 18pt;
+    margin-bottom: 12pt;
+    text-align: center;
+}
+h2 {
+    font-family: Georgia, Garamond, serif;
+    font-size: 18pt;
+    color: #28467E;
+    margin-top: 16pt;
+    margin-bottom: 8pt;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 3px;
+}
+h3 {
+    font-size: 14pt;
+    color: #2E5894;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+}
+h4 {
+    font-size: 12pt;
+    color: #4A70A0;
+    margin-top: 8pt;
+    margin-bottom: 4pt;
+}
+p, li {
+    margin-top: 0;
+    margin-bottom: 8pt;
+}
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 8pt;
+    padding-left: 20pt;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+}
+th, td {
+    border: 1px solid #cccccc;
+    padding: 6pt 8pt;
+    font-size: 10pt;
+    vertical-align: top;
+}
+th {
+    background-color: #f2f5f9;
+    font-weight: bold;
+    color: #1F4E8C;
+}
+.callout {
+    background-color: #f9fbfd;
+    border-left: 4px solid #1F4E8C;
+    padding: 10pt;
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+}
+.callout--tip {
+    background-color: #f6faf6;
+    border-left: 4px solid #2e7d32;
+}
+.callout--important {
+    background-color: #fffde7;
+    border-left: 4px solid #f57f17;
+}
+.callout__label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4pt;
+}
+.checklist ul {
+    list-style-type: none;
+    padding-left: 5pt;
+}
+.checklist li {
+    margin-bottom: 6pt;
+}
+.eyebrow {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #777777;
+    margin-bottom: 6pt;
+}
+svg.diagram {
+    display: none; /* Word handles SVG poorly, we hide it or user can refer to HTML */
+}
+.diagram-caption {
+    font-style: italic;
+    color: #666666;
+    font-size: 9.5pt;
+}
+</style>
+</head>
+<body>
+<h1>Manual del Estándar D: Transformación digital en la MiPyME</h1>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+
+<div class="lesson-tabs" data-progress-key="estandar-d-bienvenida-contexto">
+<div aria-label="Módulos del Capítulo 1 · Bienvenida y contexto" class="accordion accordion--modules">
+<!-- ===== 1.1 BIENVENIDA ===== -->
+<details class="accordion__item" id="bienvenida" open="">
+<summary>
+<span class="accordion__num">1.1</span>
+<span class="accordion__title-main">Bienvenida</span>
+<span class="accordion__meta">Carta de inicio · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>Este manual está dedicado en exclusiva al Estándar de Competencia D: <strong>Desarrollo de soluciones de transformación digital con Inteligencia Artificial en la MiPyME</strong>. Es el documento que te acompañará a lo largo de tu preparación y al que volverás una y otra vez hasta el día de tu evaluación.</p>
+<p>El Estándar D es el más avanzado de la colección (Nivel 4 del Sistema Nacional de Competencias). Está dirigido a quienes desarrollan soluciones completas de transformación digital con inteligencia artificial para las MiPyMEs, incluyendo la construcción técnica de la solución. No es un estándar para configurar herramientas existentes —ese es el A—, ni para crear productos validados experimentalmente —ese es el B—, ni para contenido de marketing —ese es el C—. Es para desarrolladores de soluciones: profesionales que diagnostican oportunidades de transformación digital, construyen la solución con IA, la implementan en el entorno productivo y la optimizan.</p>
+<p>Si tu trabajo cotidiano se parece a esto —si has diagnosticado oportunidades de transformación digital en empresas, has construido soluciones técnicas con componentes de IA, has desplegado soluciones en entornos productivos con sus credenciales e infraestructura, has capacitado usuarios y optimizado soluciones en operación—, este es tu estándar.</p>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Importante</span>
+<div class="callout__body">La fuente de evaluación es el <strong>estándar</strong> (documento oficial del estándar publicado por CONOCER). Todo lo que se te evaluará está descrito en ese documento. Este manual no reemplaza al estándar — lo explica, lo complementa y te ayuda a prepararte. Ante cualquier duda sobre criterios, la versión oficial del estándar es la que manda.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 1.2 ANTES DE EMPEZAR ===== -->
+<details class="accordion__item" id="antes-empezar">
+<summary>
+<span class="accordion__num">1.2</span>
+<span class="accordion__title-main">Antes de empezar</span>
+<span class="accordion__meta">Marco CONOCER · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>Este manual puede leerse sin haber estudiado antes el <a href="../maestro/index.html">Curso introductorio</a>. Aun así, conviene tener presentes algunos elementos del marco general antes de entrar al contenido del estándar.</p>
+<h3>La certificación CONOCER, en resumen</h3>
+<p>La certificación que obtendrás es expedida por la <strong>Secretaría de Educación Pública</strong> a través del <strong>CONOCER</strong>. El Certificado de Competencia se incorpora al Registro Nacional de Personas Certificadas (RENEC) y tiene validez en todo el territorio nacional. No es un título académico: es una constancia oficial de que sabes hacer algo y puedes demostrarlo con evidencias verificables.</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Para los estándares inscritos en el RENEC, incluido el Estándar D, <strong>no se requiere por disposición legal la posesión de un título profesional</strong>. Lo que importa es que puedas demostrar la competencia, independientemente de tu trayectoria académica formal.</div>
+</aside>
+<h3>La lógica de la evaluación</h3>
+<p>La evaluación CONOCER se construye sobre <strong>evidencias verificables</strong>. No es un examen de opción múltiple ni una prueba teórica. Lo que se te evaluará es tu capacidad de ejecutar la función con calidad, ante un evaluador certificado. Para ello se combinan cuatro tipos de evidencia:</p>
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Qué se evalúa</th>
+<th>Cómo funciona</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños</strong></td>
+<td>Lo que haces en tiempo real, ante el evaluador</td>
+<td>Te observan mientras capacitas al equipo de la MiPyME en el uso de la solución</td>
+</tr>
+<tr>
+<td><strong>Productos</strong></td>
+<td>Documentos y entregables que ya construiste</td>
+<td>Presentas diagnósticos, código, documentación técnica, reportes y actas elaborados antes de la sesión</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>Conceptos y principios que sustentan tu práctica</td>
+<td>Respondes un cuestionario que mide cuánto dominas desarrollo de software, IA, seguridad y normativa</td>
+</tr>
+<tr>
+<td><strong>AHV · Actitudes, Hábitos y Valores</strong></td>
+<td>La forma en que trabajas: orden, responsabilidad, tolerancia, iniciativa</td>
+<td>Se observan de manera transversal durante la sesión de evaluación</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 1.3 EL ESTÁNDAR D EN SU CONTEXTO ===== -->
+<details class="accordion__item" id="contexto">
+<summary>
+<span class="accordion__num">1.3</span>
+<span class="accordion__title-main">El Estándar D en su contexto</span>
+<span class="accordion__meta">Qué certifica · 5 min</span>
+</summary>
+<div class="accordion__body">
+<h3>Qué función certifica el Estándar D</h3>
+<p>El Estándar D certifica tu competencia para desarrollar soluciones de transformación digital con inteligencia artificial en una MiPyME. La función abarca el ciclo completo: diagnosticar oportunidades de transformación digital, construir la solución con IA requerida, implementar la solución personalizada en el entorno productivo y optimizar la solución implementada.</p>
+<h3>Qué SÍ certifica el Estándar D</h3>
+<ul>
+<li>Tu capacidad de diagnosticar oportunidades de transformación digital en la MiPyME con un análisis de procesos, datos y madurez.</li>
+<li>Tu capacidad de construir una solución de transformación digital con componentes de IA, incluyendo su arquitectura y lógica operativa.</li>
+<li>Tu capacidad de implementar la solución en el entorno productivo de la MiPyME, con su infraestructura, credenciales y capacitación de usuarios.</li>
+<li>Tu capacidad de optimizar la solución en operación a partir de datos de rendimiento y retroalimentación de usuarios.</li>
+<li>Tu capacidad de documentar técnicamente la solución (manuales de usuario y mantenimiento) y formalizar el cierre del proyecto.</li>
+</ul>
+<h3>Qué NO certifica el Estándar D</h3>
+<ul>
+<li>La sola configuración de herramientas de IA existentes en procesos. Si tu trabajo se limita a configurar herramientas del mercado sin desarrollo técnico, tu estándar es el A (Implementación).</li>
+<li>La conceptualización y validación experimental de productos nuevos sin implementación productiva. Si tu trabajo termina en el prototipo validado, tu estándar es el B (Productos y servicios).</li>
+<li>La producción de contenido de marketing digital. Si tu trabajo se centra en contenido para campañas, tu estándar es el C (Marketing digital).</li>
+</ul>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Importante</span>
+<div class="callout__body">El Estándar D es el único de la colección que certifica el desarrollo técnico completo de una solución de transformación digital, incluyendo su construcción, despliegue en entorno productivo y mantenimiento. Es el de mayor nivel (4) y exige evidencia de una solución funcionando en producción con su infraestructura, credenciales y documentación técnica. Si tu trabajo no llega hasta el despliegue productivo y el mantenimiento, revisa si otro estándar corresponde mejor.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 1.4 FICHA TÉCNICA ===== -->
+<details class="accordion__item" id="ficha-tecnica">
+<summary>
+<span class="accordion__num">1.4</span>
+<span class="accordion__title-main">Ficha técnica del Estándar D</span>
+<span class="accordion__meta">Datos del estándar · 3 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<tbody>
+<tr>
+<td><strong>Título oficial</strong></td>
+<td>Desarrollo de soluciones de transformación digital con Inteligencia Artificial en la MiPyME</td>
+</tr>
+<tr>
+<td><strong>Nivel SNC</strong></td>
+<td>Cuatro</td>
+</tr>
+<tr>
+<td><strong>Descripción del nivel</strong></td>
+<td>Desempeña diversas actividades tanto programadas, poco rutinarias como impredecibles que suponen la aplicación de técnicas y principios básicos. Requiere emitir orientaciones generales e instrucciones específicas a personas y equipos de trabajo.</td>
+</tr>
+<tr>
+<td><strong>Número de elementos</strong></td>
+<td>Cuatro: E1 Diagnosticar · E2 Construir · E3 Implementar · E4 Optimizar</td>
+</tr>
+<tr>
+<td><strong>Comité de Gestión por Competencias</strong></td>
+<td>Fundación para el Desarrollo Social y Económico, FUNDES, con la participación de la Asociación Latinoamericana de Profesionales en Seguridad Informática (ALAPSI) y el Instituto Estatal de Capacitación del Estado de Guanajuato (IECA)</td>
+</tr>
+<tr>
+<td><strong>Periodo de revisión sugerido</strong></td>
+<td>2 años</td>
+</tr>
+<tr>
+<td><strong>Clasificación SCIAN</strong></td>
+<td>541510 — Servicios de diseño de sistemas de cómputo y servicios relacionados</td>
+</tr>
+<tr>
+<td><strong>Grupo unitario SINCO</strong></td>
+<td>2271 — Desarrolladores y analistas de software y multimedia</td>
+</tr>
+<tr>
+<td><strong>Ocupaciones asociadas</strong></td>
+<td>Consultor de inteligencia artificial para MiPyMEs · Desarrollador de productos digitales con IA · Diseñador de soluciones de IA para negocios · Analista de sistemas · Asesor y consultor informático</td>
+</tr>
+<tr>
+<td><strong>Modalidades de evaluación</strong></td>
+<td>Presencial o remota mediante plataformas de videoconferencia con audio y video</td>
+</tr>
+<tr>
+<td><strong>Requisito de título profesional</strong></td>
+<td>No requerido por disposición legal</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 1.5 MAPA FUNCIONAL ===== -->
+<details class="accordion__item" id="mapa-funcional">
+<summary>
+<span class="accordion__num">1.5</span>
+<span class="accordion__title-main">El mapa funcional del Estándar D</span>
+<span class="accordion__meta">4 elementos · ciclo completo · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>El mapa funcional del Estándar D se organiza como un <strong>ciclo completo de transformación digital con IA</strong>: cuatro etapas que van desde el diagnóstico hasta la optimización en producción. Los cuatro elementos son secuenciales y cada uno produce evidencias que alimentan al siguiente.</p>
+<svg aria-labelledby="svg-mapa-d-title svg-mapa-d-desc" class="diagram" role="img" viewbox="0 0 980 320">
+<title id="svg-mapa-d-title">Mapa funcional del Estándar D: ciclo de transformación digital con cuatro etapas</title>
+<desc id="svg-mapa-d-desc">El Estándar D se compone de cuatro elementos secuenciales: Diagnosticar (Elemento 1), Construir (Elemento 2), Implementar (Elemento 3) y Optimizar (Elemento 4). Forman el ciclo completo de desarrollo de soluciones de transformación digital con IA.</desc>
+<defs>
+<marker id="arrow-mapa-d" markerheight="10" markerwidth="10" orient="auto" refx="11" refy="6" viewbox="0 0 12 12">
+<path d="M 0 0 L 12 6 L 0 12 z" fill="#28467e"></path>
+</marker>
+</defs>
+<!-- Elemento 1 · Diagnosticar -->
+<g transform="translate(20, 40)">
+<rect fill="#28467e" height="220" rx="16" stroke="#f7c031" stroke-width="3" width="200"></rect>
+<circle cx="36" cy="36" fill="#f7c031" r="22"></circle>
+<text fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800" text-anchor="middle" x="36" y="44">1</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em" text-anchor="middle" x="100" y="32">DIAGNOSTICAR</text>
+<line stroke="#529ed7" stroke-width="1" x1="16" x2="184" y1="66" y2="66"></line>
+<text fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="100" y="96">Oportunidades de</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="114">transformación digital</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="158">Analizas procesos y madurez</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="172">elaboras propuesta</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="186">y obtienes autorización</text>
+</g>
+<!-- Flecha 1 → 2 -->
+<line marker-end="url(#arrow-mapa-d)" stroke="#28467e" stroke-width="3" x1="230" x2="255" y1="150" y2="150"></line>
+<!-- Elemento 2 · Construir -->
+<g transform="translate(265, 40)">
+<rect fill="#28467e" height="220" rx="16" stroke="#f7c031" stroke-width="3" width="200"></rect>
+<circle cx="36" cy="36" fill="#f7c031" r="22"></circle>
+<text fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800" text-anchor="middle" x="36" y="44">2</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em" text-anchor="middle" x="100" y="32">CONSTRUIR</text>
+<line stroke="#529ed7" stroke-width="1" x1="16" x2="184" y1="66" y2="66"></line>
+<text fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="100" y="96">La solución técnica</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="114">con componentes de IA</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="158">Configuras entorno</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="172">desarrollas y pruebas</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="186">y documentas técnicamente</text>
+</g>
+<!-- Flecha 2 → 3 -->
+<line marker-end="url(#arrow-mapa-d)" stroke="#28467e" stroke-width="3" x1="475" x2="500" y1="150" y2="150"></line>
+<!-- Elemento 3 · Implementar -->
+<g transform="translate(510, 40)">
+<rect fill="#28467e" height="220" rx="16" stroke="#f7c031" stroke-width="3" width="200"></rect>
+<circle cx="36" cy="36" fill="#f7c031" r="22"></circle>
+<text fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800" text-anchor="middle" x="36" y="44">3</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em" text-anchor="middle" x="100" y="32">IMPLEMENTAR</text>
+<line stroke="#529ed7" stroke-width="1" x1="16" x2="184" y1="66" y2="66"></line>
+<text fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="100" y="96">La solución en producción</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="114">con la infraestructura real</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="158">Despliegas en producción</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="172">capacitas al equipo</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="100" y="186">y entregas el acta final</text>
+</g>
+<!-- Flecha 3 → 4 -->
+<line marker-end="url(#arrow-mapa-d)" stroke="#28467e" stroke-width="3" x1="720" x2="745" y1="150" y2="150"></line>
+<!-- Elemento 4 · Optimizar -->
+<g transform="translate(755, 40)">
+<rect fill="#28467e" height="220" rx="16" stroke="#f7c031" stroke-width="3" width="205"></rect>
+<circle cx="36" cy="36" fill="#f7c031" r="22"></circle>
+<text fill="#28467e" font-family="Afacad, Inter, sans-serif" font-size="20" font-weight="800" text-anchor="middle" x="36" y="44">4</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0.06em" text-anchor="middle" x="102" y="32">OPTIMIZAR</text>
+<line stroke="#529ed7" stroke-width="1" x1="16" x2="189" y1="66" y2="66"></line>
+<text fill="#f7c031" font-family="Afacad, Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="102" y="96">La solución en operación</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="102" y="114">con datos reales</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="102" y="158">Mides rendimiento</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="102" y="172">recoges retroalimentación</text>
+<text fill="#FAFCFF" font-family="Afacad, Inter, sans-serif" font-size="10" text-anchor="middle" x="102" y="186">y elaboras el plan de mejora</text>
+</g>
+<!-- Total -->
+<text fill="#4B5563" font-family="Afacad, Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="490" y="295">Ciclo completo de transformación digital con IA</text>
+</svg>
+<p class="diagram-caption">Los cuatro elementos son secuenciales y forman el ciclo completo: sin diagnóstico no hay propuesta fundada; sin construcción no hay qué implementar; sin implementación productiva no hay qué optimizar. Para la certificación debes demostrar los cuatro.</p>
+<article class="process-step">
+<div class="process-step__badge">1</div>
+<div class="process-step__content">
+<h4 class="process-step__title">Elemento 1 — Diagnosticar oportunidades de transformación digital en la MiPyME</h4>
+<div class="process-step__body">Analizas los procesos, datos, infraestructura y madurez digital de la MiPyME para identificar y priorizar oportunidades de transformación digital con IA. Es la base técnica de todo lo que sigue. <a href="elemento-1.html">Ver Elemento 1 →</a></div>
+</div>
+</article>
+<article class="process-step">
+<div class="process-step__badge">2</div>
+<div class="process-step__content">
+<h4 class="process-step__title">Elemento 2 — Construir la solución de transformación digital con IA requerida por la MiPyME</h4>
+<div class="process-step__body">Con el diagnóstico hecho, configuras el entorno, desarrollas los componentes de IA, integras las piezas, realizas pruebas técnicas y documentas la solución. <a href="elemento-2.html">Ver Elemento 2 →</a></div>
+</div>
+</article>
+<article class="process-step">
+<div class="process-step__badge">3</div>
+<div class="process-step__content">
+<h4 class="process-step__title">Elemento 3 — Implementar la solución de transformación digital personalizada en la MiPyME</h4>
+<div class="process-step__body">Despliegas la solución en producción con la infraestructura real de la MiPyME, capacitas a los usuarios y formalizas la entrega mediante el acta correspondiente. <a href="elemento-3.html">Ver Elemento 3 →</a></div>
+</div>
+</article>
+<article class="process-step">
+<div class="process-step__badge">4</div>
+<div class="process-step__content">
+<h4 class="process-step__title">Elemento 4 — Optimizar la solución de transformación digital implementada en la MiPyME</h4>
+<div class="process-step__body">Mides el rendimiento técnico de la solución en operación, recoges la retroalimentación de los usuarios y propones mejoras. El ciclo cierra con la mejora basada en datos. <a href="elemento-4.html">Ver Elemento 4 →</a></div>
+</div>
+</article>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Importante</span>
+<div class="callout__body">Los cuatro elementos del Estándar D son <strong>obligatorios</strong>. La persona competente en el Estándar D es quien demuestra todos los elementos. Si demuestras solo algunos, el dictamen será <em>Todavía no competente</em>.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 1.6 CASO PEDAGÓGICO: EL SURTIDO ===== -->
+<details class="accordion__item" id="caso-el-surtido">
+<summary>
+<span class="accordion__num">1.6</span>
+<span class="accordion__title-main">Conoce a la Distribuidora El Surtido</span>
+<span class="accordion__meta">Caso pedagógico transversal · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>A lo largo de este manual usaremos una MiPyME ficticia como hilo narrativo. El caso está diseñado para que puedas ver los conceptos del estándar aplicados a una situación real y representativa del tejido empresarial mexicano.</p>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Perfil de la empresa · Distribuidora El Surtido</span>
+<div class="callout__body">
+<ul style="margin: 0; padding-left: 1.2em;">
+<li><strong>Nombre:</strong> Distribuidora El Surtido</li>
+<li><strong>Giro:</strong> Distribuidora mayorista de abarrotes</li>
+<li><strong>Personas:</strong> 22 empleados, 3 camionetas de reparto</li>
+<li><strong>Clientes:</strong> ~200 tiendas de barrio en la región</li>
+<li><strong>Sistema actual:</strong> Pedidos por teléfono y WhatsApp, rutas de reparto definidas a mano, inventario en hojas de cálculo desconectadas</li>
+<li><strong>Reto central:</strong> Ordenar pedidos, optimizar rutas y predecir la demanda — sin área de sistemas</li>
+</ul>
+</div>
+</aside>
+<img alt="Interior de la bodega de Distribuidora El Surtido: producto apilado, zona de picking y área de despacho de camionetas de reparto" class="img-escena img-escena--full" loading="lazy" src="../img/escenas/bodega-distribuidora.jpg"/>
+<h3>Raúl y El Surtido</h3>
+<aside class="callout callout--example callout--with-photo" role="note">
+<img alt="Raúl, gerente de la Distribuidora El Surtido, al frente de su distribuidora mayorista de abarrotes" class="img-personaje" loading="lazy" src="../img/personajes/raul-gerente.jpg"/>
+<div>
+<span class="callout__label">Raúl · gerente de Distribuidora El Surtido</span>
+<div class="callout__body">
+<p>Raúl hereda una distribuidora con veintidós empleados, tres camionetas de reparto y alrededor de doscientos clientes (tiendas de barrio) en la región. Como ingeniero, entiende el problema técnico con claridad: los pedidos llegan por teléfono y WhatsApp sin ningún sistema de captura, las rutas de reparto las define el chofer según su experiencia, y el inventario vive en tres hojas de cálculo que nadie sincroniza.</p>
+<p>Quiere una solución que ordene los pedidos, optimice las rutas y prediga la demanda — pero no tiene un área de sistemas ni presupuesto para un ERP empresarial. Necesita algo hecho a la medida de su operación.</p>
+<p>A lo largo del manual, el caso de El Surtido — Raúl y su distribuidora — te mostrará cómo se ve un proyecto completo de transformación digital con IA: diagnosticar las oportunidades, construir una solución que integre captura de pedidos, optimización de rutas con IA y predicción de demanda, implementarla en producción y optimizarla con datos reales de operación.</p>
+</div>
+</div>
+</aside>
+<h3>El proyecto que recorrerás</h3>
+<ul>
+<li><strong>Elemento 1 · Diagnosticar:</strong> Levantarás el diagnóstico de oportunidades de El Surtido (procesos, datos, infraestructura, madurez digital) y elaborarás la propuesta de transformación digital para que Raúl la autorice.</li>
+<li><strong>Elemento 2 · Construir:</strong> Con la propuesta autorizada, configurarás el entorno de desarrollo, construirás la solución (captura de pedidos, ruteo con IA, predicción de demanda), realizarás las pruebas técnicas y documentarás todo.</li>
+<li><strong>Elemento 3 · Implementar:</strong> Desplegarás la solución en la infraestructura real de El Surtido, capacitarás a Raúl y su equipo en el uso de la solución y entregarás el acta final.</li>
+<li><strong>Elemento 4 · Optimizar:</strong> Medirás el rendimiento de la solución en operación, recogerás la retroalimentación del equipo y elaborarás el plan de optimización con mejoras a los componentes de IA.</li>
+</ul>
+<p style="font-size:0.92rem;color:var(--color-gris-texto);font-style:italic;">El caso es ficticio, pero los retos son representativos. Muchas distribuidoras, transportistas y empresas de logística regional enfrentan exactamente esta combinación: operación madura, datos valiosos dispersos y necesidad de una solución técnica a medida.</p>
+</div>
+</details>
+<!-- ===== 1.7 CÓMO USAR ESTE MANUAL ===== -->
+<details class="accordion__item" id="como-usar">
+<summary>
+<span class="accordion__num">1.7</span>
+<span class="accordion__title-main">Cómo usar este manual</span>
+<span class="accordion__meta">Guía de lectura · 2 min</span>
+</summary>
+<div class="accordion__body">
+<p>El manual sigue el orden natural del proyecto. Cuatro capítulos dedicados, uno por cada elemento, te presentarán con detalle los desempeños, productos, conocimientos y actitudes de cada uno, con cada criterio del estándar reproducido literalmente. Tras ellos, encontrarás una ruta de preparación recomendada, una lista de verificación final y preguntas frecuentes específicas del estándar.</p>
+<ol>
+<li><strong>Lee el manual completo antes de preparar ningún documento.</strong> Entender el ciclo completo te ayuda a ver cómo los productos de cada elemento alimentan al siguiente.</li>
+<li><strong>Compara tus productos actuales contra los criterios del estándar.</strong> Cada sección de productos reproduce literalmente las características del estándar. Marca con tres colores: verde (cumplida), amarillo (parcial), rojo (faltante).</li>
+<li><strong>Usa el caso de El Surtido como referencia.</strong> Los callouts del caso muestran cómo se verían los productos en un proyecto real. Adapta el enfoque a tu propio proyecto.</li>
+<li><strong>Practica el desempeño observable.</strong> El Elemento 3 tiene un desempeño que se observa en tiempo real. El Capítulo 4 te explica exactamente qué se espera y cómo prepararte.</li>
+<li><strong>Usa la ruta de 4 semanas.</strong> El Capítulo 7 propone una ruta operativa para llegar preparado a tu evaluación.</li>
+</ol>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Si ya tienes experiencia como desarrollador de soluciones para MiPyMEs, es muy probable que ya cuentes con muchos de los productos que el estándar exige. El trabajo de preparación consiste principalmente en organizarlos, completarlos donde falten características y documentarlos con el nivel de detalle que el estándar requiere.</div>
+</aside>
+</div>
+</details>
+</div>
+</div>
+<section id="siguiente">
+<h2>¿Listo para empezar?</h2>
+<p>El siguiente capítulo desarrolla el Elemento 1: diagnosticar oportunidades de transformación digital en la MiPyME. Ahí encontrarás los 4 productos, los 5 conocimientos y el AHV que se evaluarán en esta primera etapa.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="elemento-1.html">Continuar: Elemento 1 · Diagnosticar →</a>
+<a class="btn btn-secondary" href="ruta-preparacion.html">Ver ruta de preparación primero</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+
+<div class="lesson-tabs" data-progress-key="estandar-d-elemento-1">
+<div aria-label="Módulos del Elemento 1 · Diagnosticar" class="accordion accordion--modules">
+<!-- ===== 2.1 QUÉ HARÁS ===== -->
+<details class="accordion__item" id="que-haras" open="">
+<summary>
+<span class="accordion__num">2.1</span>
+<span class="accordion__title-main">Qué harás en este elemento</span>
+<span class="accordion__meta">4 grandes tareas · base del proyecto · 3 min</span>
+</summary>
+<div class="accordion__body">
+<ol>
+<li><strong>Analizar procesos, datos, infraestructura y madurez de la MiPyME:</strong> sesión con el responsable, levantamiento del perfil empresarial, análisis de la infraestructura tecnológica existente (hardware, software, conectividad) y evaluación del estado digital actual de la organización.</li>
+<li><strong>Elaborar el diagnóstico de oportunidades de transformación digital:</strong> con base en el análisis, identificar y documentar las necesidades de transformación digital detectadas, las experiencias previas de la empresa con soluciones tecnológicas y las prioridades de atención.</li>
+<li><strong>Elaborar el diagnóstico de madurez digital:</strong> documentar el estado digital actual, el estado de los activos de información, la disposición al cambio y las brechas entre el estado actual y la expectativa de transformación digital.</li>
+<li><strong>Elaborar la propuesta de transformación digital y obtener autorización:</strong> documento con propuestas por orden de prioridad, requerimientos funcionales y no funcionales, tecnologías y APIs seleccionadas con justificación técnica, diagrama de arquitectura, modelo de datos, aspectos de ciberseguridad, presupuesto y calendarización. Al final, presentarla para obtener el VoBo del responsable de la MiPyME.</li>
+</ol>
+<aside class="callout callout--example callout--with-photo" role="note">
+<img alt="Raúl, gerente de Distribuidora El Surtido" class="img-personaje" loading="lazy" src="../img/personajes/raul-gerente.jpg"/>
+<div>
+<span class="callout__label">El Surtido · El diagnóstico inicial de Raúl</span>
+<div class="callout__body">
+<p>Raúl recibe pedidos por teléfono y WhatsApp sin ningún sistema de captura. Los choferes definen las rutas de reparto según su experiencia y el inventario vive en tres hojas de cálculo que nadie sincroniza. Antes de proponer ninguna solución, tu trabajo es documentar con precisión este estado inicial: qué hardware tienen, qué conectividad, qué datos existen aunque sean informales, y qué tan dispuesto está el equipo al cambio.</p>
+<p>Solo con ese diagnóstico formal podrás elaborar una propuesta de transformación digital que Raúl pueda evaluar, ajustar y autorizar.</p>
+</div>
+</div>
+</aside>
+</div>
+</details>
+<!-- ===== 2.2 CÓMO TE EVALUARÁN ===== -->
+<details class="accordion__item" id="como-evaluan">
+<summary>
+<span class="accordion__num">2.2</span>
+<span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+<span class="accordion__meta">Tabla de tipos de evidencia · 2 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo de evidencia</th>
+<th>Cantidad</th>
+<th>Cómo se valora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños observables</strong></td>
+<td>No hay desempeños en este elemento</td>
+<td>El Elemento 1 no tiene desempeños observables: toda la evidencia es documental.</td>
+</tr>
+<tr>
+<td><strong>Productos entregables</strong></td>
+<td>4 productos</td>
+<td>En tu evaluación se revisarán los productos que elaboraste antes de la sesión, contrastándolos contra los criterios del estándar uno por uno.</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>5 áreas</td>
+<td>Se te aplicará un cuestionario que mide el dominio aplicado de los conocimientos exigidos para este elemento.</td>
+</tr>
+<tr>
+<td><strong>Actitudes, hábitos y valores</strong></td>
+<td>1 (Orden)</td>
+<td>Se observará durante la ejecución de los desempeños del elemento cómo estructuras y presentas la información.</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">En este elemento, los <strong>4 productos son la única fuente de evidencia observable</strong>. Llegar sin los documentos completos al día de la evaluación impide que se verifique este elemento. La propuesta autorizada con VoBo del responsable de la MiPyME (Producto 1.4) es condición de cierre del elemento.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 2.3 LOS 4 PRODUCTOS ===== -->
+<details class="accordion__item" id="productos">
+<summary>
+<span class="accordion__num">2.3</span>
+<span class="accordion__title-main">Los 4 productos del Elemento 1</span>
+<span class="accordion__meta">Criterios estándar literales · 15 min</span>
+</summary>
+<div class="accordion__body">
+<div class="template-downloads">
+<h3 class="template-downloads__title">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"></path></svg>
+              Templates descargables — Elemento 1
+            </h3>
+<p class="template-downloads__intro">El Elemento 1 produce 4 documentos que son la base del proyecto de transformación digital. Descárgalos, llénalos con los datos de tu MiPyME real y tendrás los entregables listos para presentar en tu evaluación. El Producto 1.4 debe tener el VoBo firmado del responsable de la empresa — sin esa firma el elemento no puede cerrarse.</p>
+<div class="template-downloads__grid">
+<a class="template-downloads__item" download="" href="templates/1-1-diagnostico-oportunidades.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">1.1</span> Diagnóstico de oportunidades de transformación digital</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/1-2-diagnostico-madurez-digital.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">1.2</span> Diagnóstico de madurez digital y disposición al cambio</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/1-3-propuesta-transformacion-digital.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">1.3</span> Propuesta de transformación digital para la MiPyME</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/1-4-propuesta-autorizada.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">1.4</span> Propuesta autorizada con VoBo de la MiPyME</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+</div>
+</div>
+<h3>Producto 1.1 · El diagnóstico de oportunidades de transformación digital de la MiPyME documentado</h3>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Producto 1.1</span>
+<div class="callout__body">Para El Surtido, este diagnóstico documenta: perfil completo de la distribuidora (22 empleados, 3 camionetas, ~200 clientes en la región), resumen de la sesión con Raúl donde se identificaron los tres problemas principales, el análisis de la infraestructura (qué computadoras, qué conexión a internet tienen en la bodega, qué software usan) y las experiencias previas con soluciones tecnológicas.</div>
+</aside>
+<p>El documento que presentes debe incluir las siguientes características, tal como las establece el estándar:</p>
+<ul>
+<li><strong>(a)</strong> Contiene el perfil de la MiPyME, especificando su tamaño, giro, colaboradores, ubicación, nombre y correo electrónico de la persona de contacto.</li>
+<li><strong>(b)</strong> Incluye el resumen de la sesión sostenida con el responsable de la MiPyME, especificando día, hora, lugar, asistentes y acuerdos tomados en la reunión.</li>
+<li><strong>(c)</strong> Tiene las necesidades de transformación digital detectadas correspondientes con lo expresado por los representantes de la MiPyME.</li>
+<li><strong>(d)</strong> Proporciona el análisis de infraestructura tecnológica existente especificando el hardware, software y conectividad con la que cuenta la MiPyME.</li>
+<li><strong>(e)</strong> Refiere las experiencias en implementación de soluciones de transformación digital con las que cuenta la MiPyME.</li>
+</ul>
+<h3>Producto 1.2 · El diagnóstico de madurez digital y disposición al cambio de la MiPyME elaborado</h3>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Producto 1.2</span>
+<div class="callout__body">Para El Surtido, este diagnóstico muestra que el estado digital actual es bajo (sin ERP, sin sistema de pedidos digitalizado), que los activos de información existen pero están en hojas de cálculo desconectadas, que Raúl tiene alta disposición al cambio pero el equipo de choferes presenta resistencia moderada, y que la brecha principal es la digitalización de pedidos y la gestión de rutas.</div>
+</aside>
+<p>El documento que presentes debe incluir:</p>
+<ul>
+<li><strong>(a)</strong> Contiene el estado digital/tecnológico actual de la MiPyME.</li>
+<li><strong>(b)</strong> Establece el estado de los activos de información y su grado de estructuración.</li>
+<li><strong>(c)</strong> Tiene el estatus de disposición al cambio de la MiPyME.</li>
+<li><strong>(d)</strong> Indica las brechas digitales/tecnológicas existentes entre el estado actual de la MiPyME y la expectativa de transformación digital.</li>
+<li><strong>(e)</strong> Incluye la información disponible de la MiPyME con relación al tema de transformación digital.</li>
+<li><strong>(f)</strong> Menciona la fecha del diagnóstico, el nombre de la MiPyME, a quién va dirigido y el nombre de la empresa consultora/consultor que lo realizó.</li>
+</ul>
+<h3>Producto 1.3 · El documento de propuesta de transformación digital para la MiPyME elaborado</h3>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Producto 1.3</span>
+<div class="callout__body">Para El Surtido, la propuesta presenta tres soluciones priorizadas: (1) captura digital de pedidos vía app móvil integrada con WhatsApp Business API, (2) optimización de rutas con IA geoespacial, (3) predicción de demanda con modelo de series de tiempo. Incluye el diagrama de arquitectura, el modelo de datos y el presupuesto desglosado para Raúl.</div>
+</aside>
+<p>El documento que presentes debe incluir:</p>
+<ul>
+<li><strong>(a)</strong> Contiene las propuestas de transformación digital correspondientes con las necesidades detectadas en la MiPyME, por orden de prioridad de atención.</li>
+<li><strong>(b)</strong> Tiene los requerimientos funcionales y no funcionales para la implementación de la transformación digital de acuerdo con los diagnósticos realizados.</li>
+<li><strong>(c)</strong> Muestra información sobre las tecnologías, APIs y servicios de inteligencia artificial seleccionados con su justificación técnica.</li>
+<li><strong>(d)</strong> Incluye el diagrama de arquitectura del sistema propuesto con sus componentes.</li>
+<li><strong>(e)</strong> Refiere el modelo de datos y flujo de información entre componentes de la propuesta de solución.</li>
+<li><strong>(f)</strong> Cumple con los aspectos de ciberseguridad, manejo de información confidencial y normativas aplicables.</li>
+<li><strong>(g)</strong> Establece el presupuesto y calendarización para la implementación de la propuesta.</li>
+</ul>
+<h3>Producto 1.4 · La propuesta de transformación digital para la MiPyME autorizada</h3>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Producto 1.4</span>
+<div class="callout__body">Raúl revisó la propuesta inicial y solicitó que se diera prioridad a la captura de pedidos antes que a la predicción de demanda. La propuesta autorizada incorpora ese ajuste y trae la firma de Raúl con fecha. Sin ese VoBo, no puedes pasar al Elemento 2.</div>
+</aside>
+<p>El documento que presentes debe incluir:</p>
+<ul>
+<li><strong>(a)</strong> Contiene las modificaciones al documento original presentado.</li>
+<li><strong>(b)</strong> Incluye el VoBo de la persona responsable por parte de la MiPyME.</li>
+</ul>
+<!-- ACTIVIDAD 2: scenario-decision "¿Qué haces en el diagnóstico de El Surtido?" -->
+<h3>Practica antes de continuar: decisiones en el diagnóstico</h3>
+<p>Raúl tiene prisa. Decide cómo responderías en la reunión inicial.</p>
+<div class="scenario-decision" data-storage-key="ed1-escenario-diagnostico">
+
+</div>
+<h3>Segunda decisión: los tiempos del diagnóstico</h3>
+<p>Raúl acepta el diagnóstico pero pregunta cuánto tardará.</p>
+<div class="scenario-decision" data-storage-key="ed1-escenario-tiempos">
+
+</div>
+</div>
+</details>
+<!-- ===== 2.4 LOS CONOCIMIENTOS ===== -->
+<details class="accordion__item" id="conocimientos">
+<summary>
+<span class="accordion__num">2.4</span>
+<span class="accordion__title-main">Los 5 conocimientos del Elemento 1</span>
+<span class="accordion__meta">Cuestionario · niveles cognitivos · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>En tu evaluación se te aplicará un cuestionario con reactivos diseñados para verificar el nivel cognitivo indicado. El nivel <strong>Conocimiento</strong> indica que debes reconocer hechos o componentes; el nivel <strong>Comprensión</strong> indica que debes poder explicar el concepto y reconocer su aplicación.</p>
+<table class="prose-table">
+<thead>
+<tr>
+<th>Área de conocimiento</th>
+<th>Nivel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Características generales que deben cumplir los documentos e informes que se entregan a la MiPyME.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+<tr>
+<td>Contenido indispensable de un Contrato de Prestación de Servicios de Consultoría Tecnológica.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+<tr>
+<td>Protección de datos personales en soluciones de IA para MiPyME: clasificación de datos en el contexto de IA; transferencia de datos a terceros mediante herramientas/plataformas de IA generativa; compatibilidad del aviso de privacidad de la MiPyME con soluciones de IA propuestas; obligaciones legales de la MiPyME derivadas del uso de herramientas/plataformas de IA generativa conforme a la LFPDPPP; controles de acceso y autenticación en herramientas/plataformas de IA.</td>
+<td><span class="tag tag-comprension">Comprensión</span></td>
+</tr>
+<tr>
+<td>Importancia del consentimiento informado para el uso de la información de las MiPyMEs.</td>
+<td><span class="tag tag-comprension">Comprensión</span></td>
+</tr>
+<tr>
+<td>Principios del Sistema de Gestión de IA de acuerdo con la ISO/IEC 42001, aplicados a las MiPyMEs: gobernanza; transparencia; gestión de riesgos específicos de IA; mejora continua de los sistemas implementados.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Los conocimientos de nivel <strong>Comprensión</strong> (LFPDPPP y consentimiento informado) requieren que puedas explicar los conceptos y reconocer su aplicación en un caso concreto. Los reactivos no solo te preguntan la definición — te presentan situaciones y debes identificar qué obligaciones aplican o qué decisión es correcta.</div>
+</aside>
+<!-- ACTIVIDAD 1: flashcard-deck "Conocimientos del Diagnóstico" -->
+<h3>Refuerza estos conocimientos con tarjetas</h3>
+<p>Voltea cada tarjeta. Frente: el concepto o pregunta del estándar. Reverso: la respuesta aplicada al caso El Surtido.</p>
+<div class="flashcard-deck" data-storage-key="ed1-conocimientos">
+
+</div>
+</div>
+</details>
+<!-- ===== 2.5 AHV — ORDEN ===== -->
+<details class="accordion__item" id="ahv">
+<summary>
+<span class="accordion__num">2.5</span>
+<span class="accordion__title-main">AHV — Orden</span>
+<span class="accordion__meta">Actitud observable · penalización si falta · 3 min</span>
+</summary>
+<div class="accordion__body">
+<aside class="callout callout--important" role="note">
+<span class="callout__label">AHV · Orden — Definición conforme al estándar</span>
+<div class="callout__body">
+<p><strong>Orden:</strong> La manera en que estructura y presenta la información de la propuesta de transformación digital para la MiPyME de manera lógica y coherente conforme sus componentes.</p>
+<p>Esta actitud se observa durante la sesión de evaluación. Su ausencia penaliza el resultado. No se evalúa lo que declaras sobre tu orden — se evalúa cómo presentas y organizas tus documentos y argumentos durante la sesión.</p>
+</div>
+</aside>
+<p>El Orden en el Elemento 1 se manifiesta en la coherencia entre tus diagnósticos y la propuesta: cada sección de la propuesta debe derivarse lógicamente de los diagnósticos previos. Si el diagnóstico de oportunidades identifica tres problemas, la propuesta debe abordarlos en el mismo orden y con la misma numeración. En tu evaluación, se observará esta consistencia durante la revisión de tus documentos.</p>
+</div>
+</details>
+<!-- ===== 2.6 GLOSARIO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">2.6</span>
+<span class="accordion__title-main">Glosario del Elemento 1</span>
+<span class="accordion__meta">12 términos del estándar · 5 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición conforme al estándar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>APIs</strong></td>
+<td>Se refiere a las siglas en inglés de las Interfaces de Programación de Aplicaciones, que en inteligencia artificial son conjuntos de reglas y protocolos que permiten a los desarrolladores conectar sus aplicaciones con modelos de inteligencia artificial pre-entrenados (como modelos de visión o voz) sin necesidad de construir la infraestructura compleja desde cero. Funcionan como intermediarios que facilitan el intercambio de datos y el acceso a funciones avanzadas de aprendizaje automático.</td>
+</tr>
+<tr>
+<td><strong>Brecha digital/tecnológica</strong></td>
+<td>Se refiere a la diferencia entre el estado tecnológico actual de una organización y el nivel deseado o necesario para alcanzar sus objetivos de transformación digital.</td>
+</tr>
+<tr>
+<td><strong>Ciberseguridad</strong></td>
+<td>Se refiere al conjunto de prácticas, medidas y controles destinados a proteger los sistemas, datos e información de la empresa frente a accesos no autorizados o amenazas digitales.</td>
+</tr>
+<tr>
+<td><strong>Diagrama de arquitectura</strong></td>
+<td>Se refiere a la representación gráfica de los componentes de una solución tecnológica y las relaciones entre ellos, incluyendo servidores, bases de datos, interfaces y servicios externos.</td>
+</tr>
+<tr>
+<td><strong>Infraestructura tecnológica</strong></td>
+<td>Se refiere al conjunto de hardware, software, redes, servidores y servicios digitales con los que cuenta una organización para soportar sus operaciones y procesos.</td>
+</tr>
+<tr>
+<td><strong>IA (Inteligencia Artificial)</strong></td>
+<td>Se refiere a los sistemas computacionales capaces de realizar tareas que normalmente requieren inteligencia humana.</td>
+</tr>
+<tr>
+<td><strong>LFPDPPP</strong></td>
+<td>Se refiere a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, que es el ordenamiento legal en México que tiene como objetivo principal regular el tratamiento legítimo, controlado e informado de los datos personales que manejan las empresas o personas físicas del sector privado, garantizando así la privacidad y el derecho a la autodeterminación informativa de los ciudadanos.</td>
+</tr>
+<tr>
+<td><strong>Madurez digital</strong></td>
+<td>Se refiere al nivel de adopción y uso de tecnologías digitales en los procesos, operaciones y toma de decisiones de una organización.</td>
+</tr>
+<tr>
+<td><strong>MiPyME</strong></td>
+<td>Se refiere a las siglas de Micro, Pequeña y Mediana Empresa; son unidades económicas que se dedican a actividades comerciales, industriales o de servicios, y que cumplen con los rangos de estratificación (personal y ventas) establecidos por la Secretaría de Economía.</td>
+</tr>
+<tr>
+<td><strong>Modelo de datos</strong></td>
+<td>Se refiere a la representación estructurada de la información que maneja la solución que se está implementando en el desarrollo, especificando las entidades, sus atributos y las relaciones entre ellas.</td>
+</tr>
+<tr>
+<td><strong>Requerimientos funcionales</strong></td>
+<td>Se refiere a las especificaciones que describen las funciones y comportamientos que debe realizar una solución tecnológica para satisfacer las necesidades del usuario.</td>
+</tr>
+<tr>
+<td><strong>Requerimientos no funcionales</strong></td>
+<td>Se refiere a las especificaciones que describen las características de calidad de una solución tecnológica, como rendimiento, seguridad, escalabilidad y usabilidad.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 2.7 FLASHCARD DECK — CONCEPTOS CLAVE ===== -->
+<details class="accordion__item" id="flashcards-conceptos-e1">
+<summary>
+<span class="accordion__num">2.7</span>
+<span class="accordion__title-main">Practica los conceptos clave del diagnóstico</span>
+<span class="accordion__meta">Flashcards · 7 tarjetas · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>Repasa los términos y criterios más importantes del Elemento 1 con estas tarjetas. Haz clic para voltearlas.</p>
+<div class="flashcard-deck" data-storage-key="mi-compania-ed1-flashcards::v1::">
+
+</div>
+</div>
+</details>
+<!-- ===== 2.8 SCENARIO-DECISION — DIAGNÓSTICO CON EL SURTIDO ===== -->
+<details class="accordion__item" id="practica-diagnostico">
+<summary>
+<span class="accordion__num">2.8</span>
+<span class="accordion__title-main">Practica el diagnóstico con El Surtido</span>
+<span class="accordion__meta">Escenario de decisión · 2 bifurcaciones · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>Llegaste a la primera reunión con Raúl. Tienes 2 horas. Pon en práctica los criterios del estándar tomando decisiones de diagnóstico reales.</p>
+<div class="scenario-decision" data-storage-key="e1d-scenario-diagnostico">
+
+</div>
+</div>
+</details>
+</div>
+</div>
+<section id="siguiente">
+<h2>Continúa con el Elemento 2</h2>
+<p>Con el diagnóstico hecho y la propuesta autorizada por Raúl, el siguiente paso es construir la solución. El Elemento 2 cubre el desarrollo técnico completo: entorno, código, pruebas y documentación.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="elemento-2.html">Continuar: Elemento 2 · Construir →</a>
+<a class="btn btn-secondary" href="instrumento.html">Ver el Instrumento de Evaluación</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+
+<div class="lesson-tabs" data-progress-key="estandar-d-elemento-2">
+<div aria-label="Módulos del Elemento 2 · Construir" class="accordion accordion--modules">
+<!-- ===== 3.1 QUÉ HARÁS ===== -->
+<details class="accordion__item" id="que-haras" open="">
+<summary>
+<span class="accordion__num">3.1</span>
+<span class="accordion__title-main">Qué harás en este elemento</span>
+<span class="accordion__meta">4 grandes tareas · desarrollo técnico · 3 min</span>
+</summary>
+<div class="accordion__body">
+<ol>
+<li><strong>Configurar el entorno de desarrollo:</strong> repositorio con estructura de carpetas organizada según el stack tecnológico, archivo de dependencias con versiones especificadas, README con instrucciones de instalación y ejecución, variables de entorno y credenciales de APIs de IA configuradas de forma segura.</li>
+<li><strong>Desarrollar la solución:</strong> backend con la lógica de negocio, integración con los modelos/servicios de IA seleccionados, interfaz de usuario funcional y responsiva, esquema de base de datos con respaldos automatizados, medidas de seguridad (validación de datos, autenticación, cifrado, control de acceso basado en roles) y protección de datos personales.</li>
+<li><strong>Realizar pruebas técnicas:</strong> pruebas unitarias, de integración y funcionales; verificación de vulnerabilidades de seguridad; plan de contingencia ante interrupciones; validación de la calidad de las respuestas de los componentes de IA.</li>
+<li><strong>Elaborar la documentación técnica:</strong> arquitectura implementada con diagrama actualizado, referencia de endpoints de la API, instrucciones de mantenimiento, decisiones técnicas tomadas con su justificación, configuración de los componentes de IA y dependencias externas.</li>
+</ol>
+<aside class="callout callout--example callout--with-photo" role="note">
+<img alt="Desarrolladora trabajando en la solución de transformación digital para la Distribuidora El Surtido" class="img-personaje" loading="lazy" src="../img/personajes/desarrolladora-solucion.jpg"/>
+<div>
+<span class="callout__label">El Surtido · La solución toma forma en código</span>
+<div class="callout__body">
+<p>Con la propuesta autorizada por Raúl, ahora construyes la solución: una aplicación web que permite a los clientes de El Surtido capturar pedidos por formulario (en lugar de llamada), un módulo de optimización de rutas que usa una API de ruteo con IA para ordenar las paradas de cada camioneta, y un modelo de predicción de demanda entrenado con el historial de pedidos de los últimos dos años.</p>
+<p>Todo esto requiere un repositorio organizado, un backend que integre los tres componentes, una interfaz simple para los choferes y los clientes, y pruebas que demuestren que funciona antes de llevarlo a producción.</p>
+</div>
+</div>
+</aside>
+<!-- ACTIVIDAD 4: diagram-mermaid "Arquitectura de la solución El Surtido" -->
+<p>Antes de escribir una línea de código, diseñas la arquitectura. Para El Surtido, la solución integra tres componentes de IA que trabajan con los mismos datos de pedidos:</p>
+<img alt="Diseño de arquitectura de la solución para El Surtido" class="img-escena" loading="lazy" src="../img/escenas/arquitectura-solucion.jpg"/>
+<div class="diagram-mermaid">
+<pre class="mermaid">flowchart TB
+    A["WhatsApp API / Formulario web\nCaptura de pedidos"] --&gt; B["Backend\nCaptura y validación"]
+    B --&gt; C[("Base de datos\nde pedidos")]
+    C --&gt; D["Motor IA\nOptimización de rutas"]
+    C --&gt; E["Motor IA\nPredicción de demanda"]
+    D --&gt; F["Dashboard\nRutas del día"]
+    E --&gt; G["Dashboard\nInventario sugerido"]
+    F --&gt; H["Repartidores\nmóvil"]
+    G --&gt; I["Raúl\ngerente"]
+
+    style A fill:#EAF4FF,stroke:#529ed7,color:#28467e
+    style B fill:#EAF4FF,stroke:#529ed7,color:#28467e
+    style C fill:#FFF3CC,stroke:#f29100,color:#28467e
+    style D fill:#E8F5E9,stroke:#3FA35B,color:#28467e
+    style E fill:#E8F5E9,stroke:#3FA35B,color:#28467e
+    style F fill:#FFFBEA,stroke:#f7c031,color:#28467e
+    style G fill:#FFFBEA,stroke:#f7c031,color:#28467e
+    style H fill:#FAFCFF,stroke:#8DA4BF,color:#28467e
+    style I fill:#FAFCFF,stroke:#8DA4BF,color:#28467e</pre>
+</div>
+</div>
+</details>
+<!-- ===== 3.2 CÓMO TE EVALUARÁN ===== -->
+<details class="accordion__item" id="como-evaluan">
+<summary>
+<span class="accordion__num">3.2</span>
+<span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+<span class="accordion__meta">Tabla de tipos de evidencia · 2 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo de evidencia</th>
+<th>Cantidad</th>
+<th>Cómo se valora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños observables</strong></td>
+<td>No hay desempeños en este elemento</td>
+<td>El Elemento 2 no tiene desempeños observables: toda la evidencia es documental y técnica.</td>
+</tr>
+<tr>
+<td><strong>Productos entregables</strong></td>
+<td>4 productos</td>
+<td>En tu evaluación se revisarán los 4 productos que elaboraste, contrastándolos contra los criterios del estándar uno por uno.</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>6 áreas</td>
+<td>Se te aplicará un cuestionario que mide el dominio aplicado de los 6 áreas de conocimiento exigidas.</td>
+</tr>
+<tr>
+<td><strong>Actitudes, hábitos y valores</strong></td>
+<td>1 (Responsabilidad)</td>
+<td>Se observará cómo la solución desarrollada cumple con los estándares de calidad requeridos y la normativa de protección de datos personales.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 3.3 LOS 4 PRODUCTOS ===== -->
+<details class="accordion__item" id="productos">
+<summary>
+<span class="accordion__num">3.3</span>
+<span class="accordion__title-main">Los 4 productos del Elemento 2</span>
+<span class="accordion__meta">Criterios estándar literales · 15 min</span>
+</summary>
+<div class="accordion__body">
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Requisito taxativo</span>
+<div class="callout__body">Para obtener la competencia en este elemento, tu solución debe estar funcionando en el entorno productivo de la MiPyME. No es suficiente demostrar que el código compila — debes poder mostrar la solución operando con datos reales. Una solución que solo funciona en local o en entorno de pruebas no satisface los criterios del estándar para el Elemento 2.</div>
+</aside>
+<div class="template-downloads">
+<h3 class="template-downloads__title">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"></path></svg>
+              Templates descargables — Elemento 2
+            </h3>
+<p class="template-downloads__intro">El Elemento 2 produce 4 artefactos técnicos: el entorno de desarrollo configurado, la solución construida, el reporte de pruebas y la documentación técnica. Descarga los templates, complétalos con tu stack real y tendrás los entregables listos para tu evaluación.</p>
+<div class="template-downloads__grid">
+<a class="template-downloads__item" download="" href="templates/2-1-entorno-desarrollo-configurado.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">2.1</span> Entorno de desarrollo configurado</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/2-2-checklist-verificacion-solucion.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">2.2</span> Checklist de verificación de la solución desarrollada</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/2-3-reporte-pruebas-tecnicas.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">2.3</span> Reporte de pruebas técnicas de la solución</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/2-4-documentacion-tecnica.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">2.4</span> Documentación técnica de la solución</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+</div>
+</div>
+<h3>Producto 2.1 · El entorno de desarrollo de la solución de transformación digital configurado</h3>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Producto 2.1</span>
+<div class="callout__body">El repositorio de El Surtido tiene carpetas separadas para backend (API Node.js), frontend (React), módulo de ruteo (Python con biblioteca de optimización) y módulo de predicción (Jupyter notebooks + modelo exportado). El README explica cómo instalar dependencias y configurar las variables de entorno con las claves de la API de ruteo y el modelo de predicción, sin que esas claves queden en el código.</div>
+</aside>
+<ul>
+<li><strong>(a)</strong> Contiene el repositorio de la solución de transformación digital con la estructura de carpetas organizada según el stack tecnológico seleccionado.</li>
+<li><strong>(b)</strong> Incluye el archivo de dependencias con las versiones especificadas de cada librería y framework utilizado.</li>
+<li><strong>(c)</strong> Tiene las instrucciones de instalación, configuración y ejecución del proyecto en el archivo README.</li>
+<li><strong>(d)</strong> Indica la configuración de variables de entorno y credenciales de APIs de IA de forma segura, separadas de la solución de transformación digital.</li>
+<li><strong>(e)</strong> Refiere el stack tecnológico seleccionado correspondiente con la arquitectura definida en la propuesta autorizada.</li>
+<li><strong>(f)</strong> Describe el historial de cambios documentado.</li>
+</ul>
+<h3>Producto 2.2 · La solución de transformación digital con IA desarrollada</h3>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Producto 2.2</span>
+<div class="callout__body">La solución de El Surtido tiene: un backend que expone endpoints para captura de pedidos, consulta de rutas y predicción de demanda; la integración con la API de ruteo (con manejo de errores y respuestas de respaldo cuando la API no está disponible); una interfaz web simple donde los clientes capturan pedidos y los choferes ven su ruta del día; y la base de datos con respaldos automatizados cada noche.</div>
+</aside>
+<ul>
+<li><strong>(a)</strong> Contiene el backend operativo con la lógica de negocio implementada según los requerimientos funcionales de la propuesta autorizada.</li>
+<li><strong>(b)</strong> Incluye la integración con los modelos/servicios de IA seleccionados, funcionando con manejo de errores y respuestas de respaldo.</li>
+<li><strong>(c)</strong> Tiene la interfaz de usuario de manera funcional, responsiva, accesible y conectada al backend.</li>
+<li><strong>(d)</strong> Indica el esquema de base de datos implementado con procedimientos de respaldo automatizado configurados.</li>
+<li><strong>(e)</strong> Establece las medidas de seguridad aplicadas sobre validación y sanitización de datos de entrada, autenticación de usuarios, cifrado de datos sensibles y control de acceso basado en roles.</li>
+<li><strong>(f)</strong> Refiere la manera en que se protegen los datos personales en el desarrollo de la solución.</li>
+<li><strong>(g)</strong> Incluye su documentación, nomenclatura consistente y la separación de responsabilidades específicas de las funciones de cada componente del sistema.</li>
+</ul>
+<h3>Producto 2.3 · El reporte de pruebas técnicas de la solución de transformación digital elaborado</h3>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Producto 2.3</span>
+<div class="callout__body">El reporte de pruebas de El Surtido documenta: pruebas unitarias para el módulo de captura de pedidos y el módulo de predicción, pruebas de integración entre el backend y la API de ruteo, verificación de que el sistema maneja correctamente una pedido duplicado (escenario real frecuente), y validación de que las respuestas del modelo de predicción tienen una precisión aceptable comparada con los datos históricos reales.</div>
+</aside>
+<ul>
+<li><strong>(a)</strong> Contiene los casos de prueba definidos para cada componente de la solución con datos de entrada y resultados esperados.</li>
+<li><strong>(b)</strong> Incluye los resultados de las pruebas unitarias, las de integración y las funcionales ejecutadas.</li>
+<li><strong>(c)</strong> Apunta las vulnerabilidades de seguridad identificadas, así como el estatus de corrección de las que son solucionables.</li>
+<li><strong>(d)</strong> Tiene la información sobre la verificación realizada del correcto funcionamiento de las integraciones con los modelos/servicios de IA.</li>
+<li><strong>(e)</strong> Describe el plan de contingencia ante la interrupción/saturación del servicio de la solución.</li>
+<li><strong>(f)</strong> Refiere la validación realizada sobre la calidad y relevancia de las respuestas generadas por los componentes de IA.</li>
+<li><strong>(g)</strong> Señala la fecha de las pruebas realizadas, el nombre del responsable de aplicarlas y la versión de la solución de transformación digital evaluada.</li>
+</ul>
+<h3>Producto 2.4 · La documentación técnica de la solución de transformación digital elaborada</h3>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Producto 2.4</span>
+<div class="callout__body">La documentación técnica de El Surtido incluye el diagrama de arquitectura actualizado (que refleja la decisión de usar serverless para el módulo de predicción en lugar del servidor propio que se planificó inicialmente), la referencia completa de los endpoints de la API con ejemplos de petición y respuesta, y la justificación técnica de esa decisión de arquitectura con sus ventajas de costo para una empresa del tamaño de El Surtido.</div>
+</aside>
+<ul>
+<li><strong>(a)</strong> Contiene la descripción de la arquitectura implementada con diagrama actualizado de componentes y flujos de datos.</li>
+<li><strong>(b)</strong> Incluye la referencia de los endpoints de la API con sus parámetros, respuestas esperadas y códigos de error.</li>
+<li><strong>(c)</strong> Tiene las instrucciones para mantenimiento, actualización y modificación futura.</li>
+<li><strong>(d)</strong> Incluye las decisiones técnicas tomadas durante el desarrollo con su justificación.</li>
+<li><strong>(e)</strong> Refiere la configuración de los componentes de IA, los modelos utilizados, los prompts implementados con sus parámetros y criterios de selección.</li>
+<li><strong>(f)</strong> Considera las dependencias externas con sus versiones, licencias y procedimiento de actualización.</li>
+</ul>
+<!-- ACTIVIDAD 5: swipe-decide "¿Esto cumple con los criterios de seguridad?" -->
+<h3>Practica: ¿cumple o no cumple con los criterios de seguridad del estándar?</h3>
+<p>Desliza cada tarjeta hacia "Sí cumple" o "No cumple". Cada tarjeta describe una práctica de desarrollo real.</p>
+<div class="swipe-decide" data-storage-key="ed2-swipe-seguridad">
+
+</div>
+</div>
+</details>
+<!-- ===== 3.4 LOS CONOCIMIENTOS ===== -->
+<details class="accordion__item" id="conocimientos">
+<summary>
+<span class="accordion__num">3.4</span>
+<span class="accordion__title-main">Los 6 conocimientos del Elemento 2</span>
+<span class="accordion__meta">Cuestionario · niveles cognitivos · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>En tu evaluación se te aplicará un cuestionario con reactivos diseñados para verificar el nivel cognitivo indicado. El nivel <strong>Conocimiento</strong> indica que debes reconocer hechos, componentes o definiciones; el nivel <strong>Comprensión</strong> indica que debes poder explicar el concepto y reconocer su aplicación en un caso.</p>
+<table class="prose-table">
+<thead>
+<tr>
+<th>Área de conocimiento</th>
+<th>Nivel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contenido indispensable de un reporte de pruebas técnicas de software.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+<tr>
+<td>Documentación técnica de código.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+<tr>
+<td>Principios de seguridad de la información en el desarrollo de aplicaciones con IA: privacidad por diseño en productos de IA; integración de principios de protección de datos desde la etapa de diseño; minimización de datos en flujos de procesamiento; documentación de transferencias a terceros.</td>
+<td><span class="tag tag-comprension">Comprensión</span></td>
+</tr>
+<tr>
+<td>Metodologías para el desarrollo de soluciones tecnológicas de IA, locales y servicios administrados en la Nube.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+<tr>
+<td>Principios de IA ética y mitigación de sesgos.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+<tr>
+<td>Pruebas de respaldo y de recuperación de la herramienta de IA: definición; cuáles son los tipos de fallas que deben simularse antes de operar la herramienta; elementos que debe incluir el registro de resultados de las pruebas.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">El conocimiento de <strong>Principios de seguridad</strong> (nivel Comprensión) requiere que puedas aplicarlo a un caso: dado un escenario de desarrollo con IA, identificar qué principio de privacidad por diseño aplica o qué dato no debería transferirse a un tercero sin consentimiento.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 3.5 AHV — RESPONSABILIDAD ===== -->
+<details class="accordion__item" id="ahv">
+<summary>
+<span class="accordion__num">3.5</span>
+<span class="accordion__title-main">AHV — Responsabilidad</span>
+<span class="accordion__meta">Actitud observable · penalización si falta · 3 min</span>
+</summary>
+<div class="accordion__body">
+<aside class="callout callout--important" role="note">
+<span class="callout__label">AHV · Responsabilidad — Definición conforme al estándar</span>
+<div class="callout__body">
+<p><strong>Responsabilidad:</strong> La manera en que la solución de transformación digital con IA desarrollada y funcional cumple con los estándares de calidad requeridos: código funcional documentado y alineado a la propuesta autorizada por la MiPyME, cumpliendo con la normatividad de protección de datos personales aplicable.</p>
+<p>Esta actitud se observa durante la sesión de evaluación. Su ausencia penaliza el resultado. No se evalúa lo que declaras sobre la calidad de tu código — se evalúa si tu solución efectivamente funciona, está documentada y protege los datos como el estándar y la ley exigen.</p>
+</div>
+</aside>
+<p>La Responsabilidad en el Elemento 2 se manifiesta en la coherencia entre lo que prometiste en la propuesta autorizada (Producto 1.4) y lo que entregaste en la solución (Producto 2.2): si el estándar requiere cifrado de datos sensibles y la propuesta lo incluyó, tu solución debe implementarlo. Si no, la brecha entre promesa y entrega se observa como falta de responsabilidad.</p>
+</div>
+</details>
+<!-- ===== 3.6 GLOSARIO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">3.6</span>
+<span class="accordion__title-main">Glosario del Elemento 2</span>
+<span class="accordion__meta">20 términos del estándar · 8 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición conforme al estándar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Archivo README</strong></td>
+<td>Se refiere al documento incluido en un repositorio de código que proporciona información esencial sobre el proyecto, como su propósito, instrucciones de instalación, uso, dependencias, configuración y otros detalles relevantes para usuarios y desarrolladores.</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>Se refiere a la capa de una aplicación que contiene la lógica de negocio, el procesamiento de datos y la comunicación con bases de datos y servicios externos, no visible para el usuario final.</td>
+</tr>
+<tr>
+<td><strong>Cifrado de datos</strong></td>
+<td>Se refiere al proceso de transformar información legible en un formato codificado que solo puede ser descifrado por personas o sistemas autorizados, protegiendo la confidencialidad de los datos.</td>
+</tr>
+<tr>
+<td><strong>Control de acceso basado en roles</strong></td>
+<td>Se refiere al mecanismo de seguridad que restringe el acceso a los recursos del sistema según el rol asignado a cada usuario dentro de la organización.</td>
+</tr>
+<tr>
+<td><strong>Control de versiones</strong></td>
+<td>Se refiere al sistema que registra los cambios realizados al código fuente a lo largo del tiempo, permitiendo rastrear modificaciones, revertir errores y colaborar entre desarrolladores.</td>
+</tr>
+<tr>
+<td><strong>Dependencias externas</strong></td>
+<td>Se refiere al conjunto de librerías, frameworks, servicios/recursos desarrollados por terceros que una aplicación utiliza para funcionar correctamente, evitando desarrollar funcionalidades desde cero y facilitando la integración, el desarrollo y el mantenimiento del sistema.</td>
+</tr>
+<tr>
+<td><strong>Endpoint</strong></td>
+<td>Se refiere a la dirección/punto de acceso específico de una API a través del cual se realizan solicitudes y se reciben respuestas entre sistemas.</td>
+</tr>
+<tr>
+<td><strong>Endpoint de la API</strong></td>
+<td>Se refiere al punto de acceso específico dentro de una API que permite la comunicación entre sistemas, a través del cual se envían solicitudes y se reciben respuestas para consultar, crear, actualizar o eliminar datos dentro de una aplicación.</td>
+</tr>
+<tr>
+<td><strong>Framework</strong></td>
+<td>Se refiere a la estructura de software prediseñada que proporciona componentes reutilizables, convenciones y herramientas para acelerar el desarrollo de aplicaciones.</td>
+</tr>
+<tr>
+<td><strong>Frontend</strong></td>
+<td>Se refiere a la capa de una aplicación con la que el usuario interactúa directamente, incluyendo la interfaz gráfica, los elementos visuales y la experiencia de navegación.</td>
+</tr>
+<tr>
+<td><strong>Interfaz de usuarios</strong></td>
+<td>Se refiere al conjunto de elementos visuales e interactivos — como pantallas, botones, formularios, menús e iconos — mediante los cuales el usuario interactúa con una aplicación/sistema, facilitando la navegación, el uso de funcionalidades y la comunicación con el backend dentro de una solución digital.</td>
+</tr>
+<tr>
+<td><strong>Librería</strong></td>
+<td>Se refiere al conjunto de funciones, módulos o recursos de código reutilizable que pueden ser integrados en una aplicación para resolver tareas específicas sin necesidad de desarrollarlas desde cero, facilitando el desarrollo y promoviendo buenas prácticas.</td>
+</tr>
+<tr>
+<td><strong>Nube</strong></td>
+<td>Se refiere a los servidores a los que se accede a través de Internet, y al software y bases de datos que se ejecutan en los mismos.</td>
+</tr>
+<tr>
+<td><strong>Prompt</strong></td>
+<td>Se refiere a la instrucción o conjunto de instrucciones que se proporcionan a una herramienta de IA generativa para obtener un resultado específico.</td>
+</tr>
+<tr>
+<td><strong>Pruebas de integración</strong></td>
+<td>Se refiere a las verificaciones del correcto funcionamiento entre múltiples componentes/servicios que interactúan entre sí dentro de la solución.</td>
+</tr>
+<tr>
+<td><strong>Pruebas unitarias</strong></td>
+<td>Se refiere a las verificaciones individuales de cada componente o función del código para confirmar que produce los resultados esperados de forma aislada.</td>
+</tr>
+<tr>
+<td><strong>Repositorio de código</strong></td>
+<td>Se refiere al sistema de almacenamiento y control de versiones que permite gestionar, rastrear y colaborar en el desarrollo del código fuente de una solución tecnológica.</td>
+</tr>
+<tr>
+<td><strong>Sanitización de datos de entrada</strong></td>
+<td>Se refiere al proceso de limpiar, filtrar y validar los datos ingresados por el usuario o sistemas externos para eliminar contenido malicioso/inválido, prevenir vulnerabilidades como inyección de código y garantizar la integridad, seguridad y correcto procesamiento de la información dentro de una aplicación.</td>
+</tr>
+<tr>
+<td><strong>Solución de transformación digital</strong></td>
+<td>Se refiere al repositorio integrado y centralizado de tecnologías y componentes de software — como archivos, carpetas, ejecutables, configuraciones, bases de datos y servicios — organizados en un solo entorno digital que permite gestionar, automatizar e innovar procesos mediante la articulación de frontend, backend e integraciones, incorporando prácticas de desarrollo, seguridad y operación para mejorar la eficiencia, la toma de decisiones y la competitividad organizacional.</td>
+</tr>
+<tr>
+<td><strong>Stack tecnológico</strong></td>
+<td>Se refiere al conjunto de lenguajes de programación, frameworks, librerías, bases de datos y herramientas utilizadas para construir una solución de software.</td>
+</tr>
+</tbody>
+</table>
+<!-- ACTIVIDAD 3: flashcard-deck "Términos técnicos del desarrollo" -->
+<h3>Refuerza los términos técnicos más relevantes para tu evaluación</h3>
+<p>Voltea cada tarjeta. Frente: el término o pregunta. Reverso: la explicación aplicada al caso El Surtido.</p>
+<div class="flashcard-deck" data-storage-key="ed2-glosario-tecnico">
+
+</div>
+</div>
+</details>
+</div>
+</div>
+<!-- ACTIVIDAD 6: scenario-decision "Decisiones técnicas en el desarrollo" -->
+<div class="scenario-decision" data-storage-key="ed2-escenario-alcance">
+
+</div>
+<div class="scenario-decision" data-storage-key="ed2-escenario-demo">
+
+</div>
+<section id="siguiente">
+<h2>Continúa con el Elemento 3</h2>
+<p>Con la solución construida y probada, el siguiente paso es llevarla al entorno real de El Surtido. El Elemento 3 cubre el despliegue en producción, la capacitación del equipo y el acta de entrega.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="elemento-3.html">Continuar: Elemento 3 · Implementar →</a>
+<a class="btn btn-secondary" href="instrumento.html">Ver el Instrumento de Evaluación</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+
+<div class="lesson-tabs" data-progress-key="estandar-d-elemento-3">
+<div aria-label="Módulos del Elemento 3 · Implementar" class="accordion accordion--modules">
+<!-- ===== 4.1 QUÉ HARÁS ===== -->
+<details class="accordion__item" id="que-haras" open="">
+<summary>
+<span class="accordion__num">4.1</span>
+<span class="accordion__title-main">Qué harás en este elemento</span>
+<span class="accordion__meta">Despliegue · capacitación · entrega formal · 3 min</span>
+</summary>
+<div class="accordion__body">
+<ol>
+<li><strong>Desplegar la solución en producción:</strong> instalar y dejar operativa la solución en la infraestructura real de la MiPyME, conectar los modelos/servicios de IA en el entorno productivo, configurar los respaldos automatizados de la base de datos, implementar las medidas de seguridad acordadas y documentar el dominio, certificado de seguridad y redirecciones.</li>
+<li><strong>Capacitar al equipo:</strong> presentar las funcionalidades principales, demostrar la operación con casos de uso reales del contexto de la MiPyME, explicar las instrucciones para interactuar con los componentes de IA, indicar los procedimientos para reportar errores y solicitar soporte técnico, e instruir sobre la importancia de validar las respuestas de la solución en procesos críticos. Esta capacitación es el único desempeño observable del Estándar D.</li>
+<li><strong>Elaborar la documentación técnica de implementación:</strong> diagrama de infraestructura del entorno productivo, registro de credenciales y accesos documentados por rol, pasos ejecutados durante el despliegue con sus evidencias y procedimiento de respaldo y restauración.</li>
+<li><strong>Formalizar la entrega con el acta final:</strong> descripción de los entregables transferidos con su estatus de funcionamiento, credenciales y documentación entregadas al responsable, compromisos de mantenimiento y niveles de servicio acordados, y firma de conformidad de la MiPyME y del consultor.</li>
+</ol>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · La solución llega al almacén</span>
+<div class="callout__body">
+<img alt="Instalación de la solución en Distribuidora El Surtido" class="img-escena" loading="lazy" src="../img/escenas/raul-instalacion-sistema.jpg"/>
+<p>Para El Surtido, el despliegue significa que la solución queda instalada en un VPS cloud en DigitalOcean, con el dominio <strong>elsurtido.com.mx</strong> apuntando a ese servidor y el certificado SSL activado para que la conexión sea segura.</p>
+<p>Raúl y los 3 supervisores de reparto recibirán una sesión de capacitación de 4 horas. Los repartidores usarán la app en su celular para ver la ruta del día y registrar entregas. Al terminar, Raúl firmará el acta de entrega como responsable de la empresa.</p>
+</div>
+</aside>
+</div>
+</details>
+<!-- ===== 4.2 CÓMO TE EVALUARÁN ===== -->
+<details class="accordion__item" id="como-evaluan">
+<summary>
+<span class="accordion__num">4.2</span>
+<span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+<span class="accordion__meta">Desempeño observable + productos + conocimientos · 3 min</span>
+</summary>
+<div class="accordion__body">
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Importante · El único desempeño observable del Estándar D</span>
+<div class="callout__body">El Desempeño 3.1 es el <strong>único desempeño observable de todo el Estándar D</strong>. Es la única vez que te observarán en acción en tiempo real durante la evaluación. En los demás elementos, la valoración es a través de documentos y cuestionarios — aquí, en cambio, el evaluador está presente mientras capacitas al equipo. Prepara tu presentación de capacitación con cuidado: practica las 5 características, cronométrate y ensaya con alguien que actúe como el personal de la MiPyME.</div>
+</aside>
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo de evidencia</th>
+<th>Cantidad</th>
+<th>Cómo se valora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños observables</strong></td>
+<td>1 desempeño (Desempeño 3.1)</td>
+<td>En tu sesión de evaluación se te pedirá que demuestres esta capacidad directamente. Se observará cómo capacitas al equipo de la MiPyME y se verificarán las 5 características del desempeño.</td>
+</tr>
+<tr>
+<td><strong>Productos entregables</strong></td>
+<td>4 productos</td>
+<td>En tu evaluación se revisarán los 4 productos que elaboraste antes de la sesión, contrastándolos contra los criterios del estándar uno por uno.</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>2 áreas</td>
+<td>Se te aplicará un cuestionario sobre los componentes de un Manual de Usuario y un Manual de Mantenimiento.</td>
+</tr>
+<tr>
+<td><strong>Actitudes, hábitos y valores</strong></td>
+<td>1 (Tolerancia)</td>
+<td>Se observará durante la capacitación cómo atiendes las dudas y preguntas del equipo de la MiPyME, adaptándote a su ritmo y lenguaje.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 4.3 DESEMPEÑO OBSERVABLE ===== -->
+<details class="accordion__item" id="desempeno">
+<summary>
+<span class="accordion__num">4.3</span>
+<span class="accordion__title-main">El desempeño del Elemento 3 — Desempeño 3.1</span>
+<span class="accordion__meta">Único desempeño del Estándar D · 5 características · 8 min</span>
+</summary>
+<div class="accordion__body">
+<h3>Desempeño 3.1 · Capacitas al equipo de la MiPyME en el uso y operación de la solución de transformación digital implementada</h3>
+<p>El estándar establece 5 características que deben estar presentes en tu sesión de capacitación. Selecciona cada característica para ver qué significa para ti y cómo se ve en el caso de El Surtido.</p>
+<div class="tabs">
+<div aria-label="Características del Desempeño 3.1" class="tabs__list" role="tablist">
+<button aria-controls="panel-d3d1a" aria-selected="true" class="tabs__tab" id="tab-d3d1a" role="tab">A · Funcionalidades</button>
+<button aria-controls="panel-d3d1b" aria-selected="false" class="tabs__tab" id="tab-d3d1b" role="tab" tabindex="-1">B · Operación real</button>
+<button aria-controls="panel-d3d1c" aria-selected="false" class="tabs__tab" id="tab-d3d1c" role="tab" tabindex="-1">C · Instrucciones de IA</button>
+<button aria-controls="panel-d3d1d" aria-selected="false" class="tabs__tab" id="tab-d3d1d" role="tab" tabindex="-1">D · Soporte y errores</button>
+<button aria-controls="panel-d3d1e" aria-selected="false" class="tabs__tab" id="tab-d3d1e" role="tab" tabindex="-1">E · Validar respuestas</button>
+</div>
+<div aria-labelledby="tab-d3d1a" class="tabs__panel" id="panel-d3d1a" role="tabpanel">
+<h4>A · Presentas las funcionalidades principales y su propósito</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentando las funcionalidades principales de la solución y su propósito dentro de los procesos de la MiPyME."</em></p>
+<p><strong>Qué significa para ti:</strong> Abres la sesión mostrando qué puede hacer la solución — no cómo funciona internamente, sino qué resuelve para la MiPyME. Para El Surtido: la captura digital de pedidos, la optimización de rutas de reparto y la predicción de demanda. Raúl y los supervisores deben entender para qué sirve cada módulo en el contexto de su operación diaria antes de aprender a usarlo.</p>
+</div>
+<div aria-labelledby="tab-d3d1b" class="tabs__panel" hidden="" id="panel-d3d1b" role="tabpanel">
+<h4>B · Demuestras la operación con casos de uso reales</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Demostrando la operación de la solución con casos de uso reales referentes al contexto de la MiPyME."</em></p>
+<p><strong>Qué significa para ti:</strong> No uses datos ficticios ni demos genéricos. Para El Surtido: muestras cómo captura pedidos una tienda de barrio real de su cartera, cómo el sistema genera la ruta del día con las 3 camionetas que tienen, cómo el módulo sugiere el pedido de inventario para la semana siguiente. El evaluador verificará que los casos de uso sean del contexto de la MiPyME, no ejemplos de otro tipo de negocio.</p>
+</div>
+<div aria-labelledby="tab-d3d1c" class="tabs__panel" hidden="" id="panel-d3d1c" role="tabpanel">
+<h4>C · Explicas las instrucciones estandarizadas para interactuar con la IA</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Explicando las instrucciones estandarizadas para interactuar con los componentes de IA de la solución."</em></p>
+<p><strong>Qué significa para ti:</strong> Los usuarios de la MiPyME necesitan saber cómo comunicarse correctamente con los módulos de IA para obtener buenos resultados. Para El Surtido: le explicas a Raúl que la predicción de demanda mejora si el equipo registra las entregas completas (no a medias), y le muestras a los choferes cómo consultar la ruta actualizada cuando hay un pedido extra de último momento. Son las instrucciones documentadas en el Manual de Usuario.</p>
+</div>
+<div aria-labelledby="tab-d3d1d" class="tabs__panel" hidden="" id="panel-d3d1d" role="tabpanel">
+<h4>D · Indicas el procedimiento para reportar errores y solicitar soporte</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Indicando los procedimientos para reportar errores/solicitar soporte técnico, enfatizando que las fallas deben reportarse al momento de ser detectadas."</em></p>
+<p><strong>Qué significa para ti:</strong> El equipo de El Surtido debe saber qué hacer cuando algo falla — no esperarte a que te enteres mañana. Les muestras los canales de soporte definidos en el Acta Final (Producto 3.4), les explicas cómo describir un error de manera útil (qué pantalla estaban viendo, qué hicieron, qué pasó) y enfatizas que reportar en el momento evita que el problema se magnifique. Un error en la ruta de hoy no reportado puede convertirse en una entrega perdida mañana.</p>
+</div>
+<div aria-labelledby="tab-d3d1e" class="tabs__panel" hidden="" id="panel-d3d1e" role="tabpanel">
+<h4>E · Instruyes sobre la importancia de validar las respuestas de la IA en procesos críticos</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Instruyendo al equipo de la MiPyME sobre la importancia de que se validen las respuestas de la solución de transformación digital relacionadas con resultados/procesos críticos."</em></p>
+<p><strong>Qué significa para ti:</strong> Los sistemas de IA no son infalibles. Para El Surtido: instruyes a los repartidores para que revisen visualmente la ruta sugerida antes de salir — el modelo optimiza con datos históricos, pero no sabe que Calle Morelos está en obra desde ayer. Instruyes a Raúl para que no ejecute un pedido grande de inventario solo porque el módulo lo sugiere, sino que lo contraste con su propio criterio. La IA es una herramienta de apoyo, no una decisión automática.</p>
+</div>
+</div>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Cómo preparar el Desempeño 3.1</span>
+<div class="callout__body">
+<p>Tu sesión de capacitación con El Surtido dura 4 horas. En ese tiempo cubres los 5 módulos del desempeño con Raúl y los 3 supervisores de reparto — y aseguras que los repartidores queden listos para usar la app en su celular desde el primer día.</p>
+<p>Practica la sesión completa antes de la evaluación con alguien que actúe como Raúl o Mario. Cronométrate. El evaluador observará que cubres las 5 características — no que lo hagas perfecto, sino que lo hagas completo y con Tolerancia ante las dudas del equipo.</p>
+</div>
+</aside>
+</div>
+</details>
+<!-- ===== 4.4 LOS 4 PRODUCTOS ===== -->
+<details class="accordion__item" id="productos">
+<summary>
+<span class="accordion__num">4.4</span>
+<span class="accordion__title-main">Los 4 productos del Elemento 3</span>
+<span class="accordion__meta">Criterios estándar literales · 12 min</span>
+</summary>
+<div class="accordion__body">
+<div class="template-downloads">
+<h3 class="template-downloads__title">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"></path></svg>
+              Templates descargables — Elemento 3
+            </h3>
+<p class="template-downloads__intro">El Elemento 3 produce 4 documentos: la solución desplegada y su documentación técnica, el reporte de capacitación y el acta final que formaliza la entrega. El acta final firmada por Raúl es el documento que cierra formalmente el proyecto ante el evaluador.</p>
+<div class="template-downloads__grid">
+<a class="template-downloads__item" download="" href="templates/3-1-checklist-despliegue-produccion.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">3.1</span> Checklist de despliegue a producción</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/3-2-documentacion-tecnica-implementacion.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">3.2</span> Documentación técnica de implementación</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/3-3-reporte-capacitacion.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">3.3</span> Reporte de capacitación y transferencia de conocimiento</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/3-4-acta-final.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">3.4</span> Acta final de la solución de transformación digital</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+</div>
+</div>
+<h3>Producto 3.1 · La solución de transformación digital desplegada en el entorno productivo de la MiPyME</h3>
+<ul>
+<li><strong>(a)</strong> Contiene la solución instalada y operativa en la infraestructura de la MiPyME conforme a la arquitectura autorizada.</li>
+<li><strong>(b)</strong> Incluye los modelos/servicios de inteligencia artificial conectados y respondiendo en el entorno productivo de la MiPyME.</li>
+<li><strong>(c)</strong> Tiene la base de datos final de producción con los respaldos automatizados configurados.</li>
+<li><strong>(d)</strong> Refiere el procedimiento para monitorear el consumo de tokens/créditos de las APIs de IA.</li>
+<li><strong>(e)</strong> Describe las medidas de seguridad implementadas en el entorno productivo conforme a la propuesta de transformación digital autorizada.</li>
+</ul>
+<h3>Producto 3.2 · La documentación técnica de implementación elaborada</h3>
+<ul>
+<li><strong>(a)</strong> Contiene el diagrama de infraestructura del entorno de producción con sus componentes y conexiones.</li>
+<li><strong>(b)</strong> Incluye el registro de credenciales y accesos a la solución, documentados con permisos asignados por rol.</li>
+<li><strong>(c)</strong> Tiene la configuración del dominio, certificado de seguridad y redirecciones aplicadas.</li>
+<li><strong>(d)</strong> Enlista los pasos ejecutados durante el despliegue con los resultados obtenidos y sus evidencias.</li>
+<li><strong>(e)</strong> Señala el procedimiento de respaldo y restauración de la base de datos a realizar en caso necesario.</li>
+</ul>
+<h3>Producto 3.3 · El reporte de capacitación/transferencia de conocimiento al personal de la MiPyME elaborado</h3>
+<ul>
+<li><strong>(a)</strong> Contiene los temas cubiertos correspondientes con las funcionalidades de la solución de transformación digital implementada.</li>
+<li><strong>(b)</strong> Incluye los manuales de usuario y de mantenimiento de la solución de transformación digital con capturas de pantalla y procedimientos paso a paso.</li>
+<li><strong>(c)</strong> Tiene los procedimientos de resolución de problemas frecuentes que el personal de la MiPyME puede ejecutar de manera autónoma.</li>
+<li><strong>(d)</strong> Detalla la información sobre los asistentes, fecha, duración y materiales entregados en la sesión de capacitación.</li>
+</ul>
+<h3>Producto 3.4 · El acta final de la solución de transformación digital elaborada</h3>
+<ul>
+<li><strong>(a)</strong> Contiene la descripción de los entregables transferidos a la MiPyME con su estatus de funcionamiento.</li>
+<li><strong>(b)</strong> Incluye las credenciales de acceso y la documentación entregados al responsable de la MiPyME.</li>
+<li><strong>(c)</strong> Tiene los compromisos de mantenimiento y niveles de servicio acordados con la MiPyME incluyendo vigencia, alcance y límites de responsabilidad del desarrollador.</li>
+<li><strong>(d)</strong> Cuenta con la firma de conformidad del responsable de la MiPyME y del consultor.</li>
+</ul>
+<!-- ACTIVIDAD 7: drag-sort "Ordena los pasos del despliegue" -->
+<h3>Practica: ordena los pasos del despliegue</h3>
+<p>Arrastra los pasos al orden correcto para llevar la solución de El Surtido del entorno de desarrollo a producción:</p>
+<div class="drag-sort" data-storage-key="ed3-pasos-despliegue">
+<p class="drag-sort__instruction">Arrastra los pasos del despliegue al orden correcto para implementar la solución de El Surtido en producción:</p>
+<div class="drag-sort__zones">
+<div aria-label="Zona para ordenar los pasos del despliegue" class="drag-sort__zone" data-zone="orden">
+<h4>Secuencia de despliegue</h4>
+</div>
+</div>
+<div class="drag-sort__bank">
+<div class="drag-sort__item">Configurar la infraestructura del servidor de producción</div>
+<div class="drag-sort__item">Migrar la base de datos con los datos iniciales de El Surtido</div>
+<div class="drag-sort__item">Configurar las variables de entorno y credenciales de APIs</div>
+<div class="drag-sort__item">Desplegar el código de la aplicación</div>
+<div class="drag-sort__item">Configurar el certificado de seguridad (HTTPS)</div>
+<div class="drag-sort__item">Verificar el funcionamiento de las integraciones con servicios de IA</div>
+<div class="drag-sort__item">Realizar pruebas de aceptación en el entorno productivo</div>
+<div class="drag-sort__item">Documentar los pasos ejecutados con sus evidencias</div>
+</div>
+</div>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">El orden importa</span>
+<div class="callout__body">El orden correcto comienza por la infraestructura base (sin servidor no hay donde desplegar), luego las configuraciones de seguridad (primero las credenciales, después el certificado HTTPS), después el código y las integraciones, y al final las verificaciones y la documentación. Este orden queda registrado en el Producto 3.2(d).</div>
+</aside>
+</div>
+</details>
+<!-- ===== 4.5 LOS CONOCIMIENTOS ===== -->
+<details class="accordion__item" id="conocimientos">
+<summary>
+<span class="accordion__num">4.5</span>
+<span class="accordion__title-main">Los 2 conocimientos del Elemento 3</span>
+<span class="accordion__meta">Cuestionario · nivel Conocimiento · 3 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Área de conocimiento</th>
+<th>Nivel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Componentes esenciales de un Manual de Usuario de una solución de transformación digital.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+<tr>
+<td>Componentes mínimos indispensables de un Manual de Mantenimiento de una solución de transformación digital.</td>
+<td><span class="tag tag-conocimiento">Conocimiento</span></td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Los dos conocimientos de este elemento son de nivel Conocimiento: debes saber identificar qué componentes son esenciales o mínimos indispensables en cada tipo de manual. Estudia los manuales que elaboraste para El Surtido y verifica que incluyen todos los componentes que el estándar requiere — esa es la mejor preparación para los reactivos.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 4.6 AHV — TOLERANCIA ===== -->
+<details class="accordion__item" id="ahv">
+<summary>
+<span class="accordion__num">4.6</span>
+<span class="accordion__title-main">AHV — Tolerancia</span>
+<span class="accordion__meta">Actitud observable · penalización si falta · 3 min</span>
+</summary>
+<div class="accordion__body">
+<aside class="callout callout--important" role="note">
+<span class="callout__label">AHV · Tolerancia — Definición conforme al estándar</span>
+<div class="callout__body">
+<p><strong>Tolerancia:</strong> La manera en que comprendes y atiendes las dudas, comentarios y sugerencias de los usuarios de la MiPyME durante su capacitación en el uso y operación de la solución de transformación digital, adaptándote a su ritmo de aprendizaje y lenguaje sin mostrar frustración.</p>
+<p>Esta actitud se observa durante el Desempeño 3.1. Su ausencia penaliza el resultado. Se observa en cómo reaccionas cuando un usuario pregunta lo mismo dos veces, cuando alguien no entiende una funcionalidad que te parece obvia, o cuando el ritmo de la capacitación es más lento de lo que esperabas.</p>
+</div>
+</aside>
+<p>La Tolerancia en el Elemento 3 es especialmente importante porque la brecha de conocimiento técnico entre tú y el equipo de la MiPyME puede ser muy grande. Los choferes de El Surtido no son desarrolladores — para ellos, interactuar con una aplicación web puede ser una experiencia completamente nueva. Cuando capacitas, se observará si adaptas tu lenguaje al nivel del equipo o si mantienes jerga técnica que no les comunica nada. Si Mario pregunta lo mismo dos veces, eso no es una interrupción — es la señal de que debes buscar otra forma de explicarlo.</p>
+</div>
+</details>
+<!-- ===== 4.7 GLOSARIO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">4.7</span>
+<span class="accordion__title-main">Glosario del Elemento 3</span>
+<span class="accordion__meta">13 términos del estándar · 5 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición conforme al estándar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acta de entrega</strong></td>
+<td>Se refiere al documento formal que registra la transferencia de la solución y sus componentes al responsable de la MiPyME, incluyendo conformidad y firma de las partes.</td>
+</tr>
+<tr>
+<td><strong>Certificado de seguridad</strong></td>
+<td>Se refiere al protocolo que cifra la comunicación entre el navegador del usuario y el servidor de la aplicación, garantizando la confidencialidad de los datos transmitidos.</td>
+</tr>
+<tr>
+<td><strong>Credenciales de acceso</strong></td>
+<td>Se refiere al conjunto de datos de autenticación como usuarios, contraseñas, tokens/llaves que permiten ingresar y operar los diferentes componentes de la solución.</td>
+</tr>
+<tr>
+<td><strong>Despliegue</strong></td>
+<td>Se refiere al proceso de transferir una solución del entorno de desarrollo al entorno productivo, incluyendo la configuración de infraestructura, servicios y verificaciones necesarias.</td>
+</tr>
+<tr>
+<td><strong>Diagrama de infraestructura</strong></td>
+<td>Se refiere a la representación gráfica de los componentes técnicos del entorno productivo y las conexiones entre ellos, incluyendo servidores, bases de datos y servicios externos.</td>
+</tr>
+<tr>
+<td><strong>Entorno productivo</strong></td>
+<td>Se refiere al ambiente tecnológico donde la solución opera de forma real y accesible para los usuarios de la MiPyME, diferenciado del entorno de desarrollo y pruebas.</td>
+</tr>
+<tr>
+<td><strong>Instrucciones</strong></td>
+<td>Se refiere al conjunto documentado de indicaciones optimizadas estandarizadas para obtener respuestas efectivas de los componentes de IA de la solución.</td>
+</tr>
+<tr>
+<td><strong>Manual de usuario</strong></td>
+<td>Se refiere al documento con instrucciones paso a paso y capturas de pantalla que guían al personal de la MiPyME en la operación de las funcionalidades de la solución.</td>
+</tr>
+<tr>
+<td><strong>Niveles de servicio</strong></td>
+<td>Se refiere a los compromisos formales de calidad del soporte técnico acordados entre el consultor y la MiPyME, incluyendo tiempos de respuesta, resolución y vigencia.</td>
+</tr>
+<tr>
+<td><strong>Procedimiento de restauración</strong></td>
+<td>Se refiere al conjunto de pasos documentados para recuperar la base de datos/la solución a un estado anterior funcional en caso de falla.</td>
+</tr>
+<tr>
+<td><strong>Respaldo automatizado</strong></td>
+<td>Se refiere a la copia de seguridad programada y periódica de la base de datos y archivos del sistema, que permite restaurar la información en caso de pérdida o falla.</td>
+</tr>
+<tr>
+<td><strong>Token</strong></td>
+<td>Se refiere a la unidad mínima de texto que un modelo de IA procesa. Puede corresponder a una palabra completa, una parte de ella, un signo de puntuación o un espacio. Los modelos de lenguaje convierten el texto en secuencias de tokens antes de analizarlo o generar respuestas. El número de tokens determina el costo de procesamiento, los límites de contexto y la velocidad de respuesta del modelo.</td>
+</tr>
+<tr>
+<td><strong>Transferencia de conocimiento</strong></td>
+<td>Se refiere al proceso estructurado mediante el cual el consultor capacita al personal de la MiPyME para operar, mantener y resolver problemas básicos de la solución de forma autónoma.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 4.8 FLASHCARD DECK — CONCEPTOS DEL DESPLIEGUE Y CAPACITACIÓN ===== -->
+<details class="accordion__item" id="flashcards-e3">
+<summary>
+<span class="accordion__num">4.8</span>
+<span class="accordion__title-main">Practica los conceptos clave del Elemento 3</span>
+<span class="accordion__meta">Flashcards · 7 tarjetas · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>Repasa los conceptos más importantes del despliegue y la capacitación con estas tarjetas. Haz clic en cada una para voltearla y ver la explicación aplicada al caso El Surtido.</p>
+<div class="flashcard-deck" data-storage-key="ed3-conceptos-clave">
+
+</div>
+</div>
+</details>
+</div>
+</div>
+<!-- ACTIVIDAD 8: scenario-decision "La capacitación de El Surtido" -->
+<div class="scenario-decision" data-storage-key="ed3-escenario-capacitacion">
+
+</div>
+<div class="scenario-decision" data-storage-key="ed3-escenario-soporte">
+
+</div>
+<section id="siguiente">
+<h2>Continúa con el Elemento 4</h2>
+<p>Con la solución funcionando en producción y el equipo capacitado, el ciclo cierra con la optimización. El Elemento 4 cubre la medición de rendimiento, la retroalimentación de usuarios y el plan de mejora.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="elemento-4.html">Continuar: Elemento 4 · Optimizar →</a>
+<a class="btn btn-secondary" href="instrumento.html">Ver el Instrumento de Evaluación</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+<figure class="img-caso">
+<img alt="Raúl y el equipo técnico revisando el dashboard de rendimiento de la solución de IA en El Surtido" class="img-escena" loading="lazy" src="../img/escenas/raul-dashboard-optimizacion.jpg"/>
+<figcaption>Optimizar la solución técnica: monitorear el desempeño en operación y ajustar con datos reales.</figcaption>
+</figure>
+
+<div class="lesson-tabs" data-progress-key="estandar-d-elemento-4">
+<div aria-label="Módulos del Elemento 4 · Optimizar" class="accordion accordion--modules">
+<!-- ===== 5.1 QUÉ HARÁS ===== -->
+<details class="accordion__item" id="que-haras" open="">
+<summary>
+<span class="accordion__num">5.1</span>
+<span class="accordion__title-main">Qué harás en este elemento</span>
+<span class="accordion__meta">Medición · retroalimentación · plan de mejora · 3 min</span>
+</summary>
+<div class="accordion__body">
+<ol>
+<li><strong>Medir el rendimiento técnico de la solución en operación:</strong> recolectar métricas de disponibilidad, latencia, tasa de error y consumo de recursos; analizar el rendimiento de los componentes de IA (calidad de respuestas, tiempos de procesamiento, costos por consulta); y comparar contra los umbrales definidos en la propuesta original.</li>
+<li><strong>Recoger la retroalimentación de los usuarios:</strong> aplicar instrumentos de medición de satisfacción al equipo de El Surtido, identificar áreas de mejora priorizadas por impacto operativo y elaborar recomendaciones de ajuste.</li>
+<li><strong>Elaborar el plan de optimización:</strong> acciones de optimización propuestas para cada área de mejora con estimación de esfuerzo y beneficio, ajustes a los componentes de IA (calibración de modelos, ajuste de prompts, cambio de proveedores si aplica), lecciones aprendidas y recomendaciones de escalamiento, y estrategia de actualización ante cambios en los modelos de IA o la normativa aplicable.</li>
+</ol>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">El Surtido · Cuatro semanas en producción</span>
+<div class="callout__body">
+<p>Después de 4 semanas de operación real, los datos de El Surtido muestran un panorama mixto que debes documentar con precisión: disponibilidad del <strong>99.2%</strong>, latencia promedio de <strong>280 ms</strong>, tasa de error global del <strong>1.4%</strong>. Hasta ahí, los números están dentro de los umbrales de la propuesta.</p>
+<p>El módulo de predicción de demanda cuenta su propia historia: en la semana 1 tenía una precisión del <strong>61%</strong> — el modelo apenas estaba aprendiendo con los datos históricos de El Surtido. En la semana 3 llegó al <strong>78%</strong>, lo que muestra que el modelo mejora con operación real. Eso va en el análisis de rendimiento de componentes de IA del Producto 4.1.</p>
+<p>Los repartidores reportan que la app es fácil de usar, pero que en zonas sin señal a veces no carga la ruta. Tu plan de optimización propone tres acciones: implementar modo sin conexión para la app, reentrenar el modelo de predicción con más datos históricos y ajustar los prompts del módulo de WhatsApp para mejorar las respuestas automáticas a los clientes.</p>
+</div>
+</aside>
+</div>
+</details>
+<!-- ===== 5.2 CÓMO TE EVALUARÁN ===== -->
+<details class="accordion__item" id="como-evaluan">
+<summary>
+<span class="accordion__num">5.2</span>
+<span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+<span class="accordion__meta">Solo productos y AHV · sin desempeños ni cuestionario · 2 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo de evidencia</th>
+<th>Cantidad</th>
+<th>Cómo se valora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños observables</strong></td>
+<td>No hay desempeños en este elemento</td>
+<td>El Elemento 4 no tiene desempeños observables.</td>
+</tr>
+<tr>
+<td><strong>Productos entregables</strong></td>
+<td>3 productos</td>
+<td>En tu evaluación se revisarán los 3 productos que elaboraste, contrastándolos contra los criterios del estándar uno por uno.</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>No hay cuestionario formal en este elemento</td>
+<td>El Elemento 4 no tiene áreas de conocimiento con cuestionario asociado.</td>
+</tr>
+<tr>
+<td><strong>Actitudes, hábitos y valores</strong></td>
+<td>1 (Iniciativa)</td>
+<td>Se observará si propones mejoras adicionales a las solicitadas, basadas en los datos de rendimiento y las tendencias del mercado de IA.</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">El Elemento 4 es el único del estándar <strong>sin conocimientos formales ni desempeños observables</strong>. Toda la evaluación descansa en los 3 productos documentales y en la AHV de Iniciativa. Esto significa que la calidad y profundidad de tus documentos es lo que determina el resultado en este elemento.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 5.3 LOS 3 PRODUCTOS ===== -->
+<details class="accordion__item" id="productos">
+<summary>
+<span class="accordion__num">5.3</span>
+<span class="accordion__title-main">Los 3 productos del Elemento 4</span>
+<span class="accordion__meta">Criterios estándar literales · 10 min</span>
+</summary>
+<div class="accordion__body">
+<h3>Producto 4.1 · El reporte de rendimiento técnico de la solución de transformación digital elaborado</h3>
+<ul>
+<li><strong>(a)</strong> Contiene las métricas de rendimiento de la solución de transformación recolectadas: disponibilidad, latencia, tasa de error y consumo de recursos.</li>
+<li><strong>(b)</strong> Incluye la comparación de los indicadores técnicos contra los umbrales definidos en los requerimientos de la propuesta.</li>
+<li><strong>(c)</strong> Tiene el análisis de rendimiento de los componentes de IA: calidad de respuestas, ejemplos representativos, tiempos de procesamiento y costos por consulta.</li>
+<li><strong>(d)</strong> Proporciona información sobre el periodo de medición, las herramientas utilizadas y el nombre del responsable del reporte.</li>
+</ul>
+<h3>Producto 4.2 · El reporte de retroalimentación de usuarios de la MiPyME elaborado</h3>
+<ul>
+<li><strong>(a)</strong> Contiene los resultados de los instrumentos de medición de satisfacción aplicados a los usuarios de la MiPyME.</li>
+<li><strong>(b)</strong> Detalla la información sobre las áreas de mejora identificadas a partir de los resultados del monitoreo, priorizadas según su impacto en la operación de la MiPyME.</li>
+<li><strong>(c)</strong> Indica las recomendaciones de ajuste priorizadas por impacto en la experiencia del usuario y en los objetivos de negocio de la MiPyME.</li>
+<li><strong>(d)</strong> Tiene la cantidad de usuarios participantes en el proceso de retroalimentación, la fecha de aplicación y los instrumentos utilizados.</li>
+</ul>
+<h3>Producto 4.3 · El plan de optimización de la solución de transformación digital elaborado</h3>
+<ul>
+<li><strong>(a)</strong> Incluye las acciones de optimización propuestas para cada área de mejora con su estimación de esfuerzo y beneficio esperado.</li>
+<li><strong>(b)</strong> Especifica los ajustes a los componentes de IA recomendados, incluyendo calibración de modelos, ajustes de prompts/cambio de proveedores de servicio.</li>
+<li><strong>(c)</strong> Tiene las lecciones aprendidas y recomendaciones para escalamiento futuro de la solución de transformación digital.</li>
+<li><strong>(d)</strong> Propone mejoras y optimizaciones pertinentes y adicionales a las solicitadas en el plan de mantenimiento con base en el análisis de los datos de rendimiento realizado y en las tendencias de IA del mercado.</li>
+<li><strong>(e)</strong> Define la estrategia de actualización ante cambios en los modelos de IA, tecnologías utilizadas/normatividad aplicable.</li>
+</ul>
+<div class="template-downloads">
+<h3 class="template-downloads__title">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"></path></svg>
+              Templates descargables — Elemento 4
+            </h3>
+<p class="template-downloads__intro">El Elemento 4 produce 3 documentos de cierre y mejora. El reporte de rendimiento técnico (4.1) va en formato de hoja de cálculo porque necesitas tablas de métricas con comparativos contra umbrales. Los otros dos son documentos de análisis y planeación.</p>
+<div class="template-downloads__grid">
+<a class="template-downloads__item" download="" href="templates/4-1-reporte-rendimiento-tecnico.xls">
+<span class="template-downloads__item-icon template-downloads__item-icon--xls">XLS</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">4.1</span> Reporte de rendimiento técnico de la solución</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/4-2-reporte-retroalimentacion.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">4.2</span> Reporte de retroalimentación de usuarios</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/4-3-plan-optimizacion.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">4.3</span> Plan de optimización de la solución</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+</div>
+</div>
+</div>
+</details>
+<!-- ===== 5.4 AHV — INICIATIVA ===== -->
+<details class="accordion__item" id="ahv">
+<summary>
+<span class="accordion__num">5.4</span>
+<span class="accordion__title-main">AHV — Iniciativa</span>
+<span class="accordion__meta">Actitud observable · penalización si falta · 3 min</span>
+</summary>
+<div class="accordion__body">
+<aside class="callout callout--important" role="note">
+<span class="callout__label">AHV · Iniciativa — Definición conforme al estándar</span>
+<div class="callout__body">
+<p><strong>Iniciativa:</strong> La manera en que propones mejoras y optimizaciones pertinentes y adicionales a las solicitadas en el plan de mantenimiento con base en el análisis de los datos de rendimiento realizado y en las tendencias de IA del mercado.</p>
+<p>Esta actitud se observa en el contenido del Producto 4.3. Su ausencia penaliza el resultado. No basta con documentar las mejoras que el cliente te pidió — debes proponer mejoras adicionales que demuestren que analizas activamente el estado de la solución y el panorama tecnológico.</p>
+</div>
+</aside>
+<p>La Iniciativa en el Elemento 4 es la diferencia entre un consultor que espera instrucciones y uno que lidera la evolución de la solución. Para El Surtido, la iniciativa podría manifestarse en proponer la integración con un nuevo modelo de predicción de demanda que salió al mercado después de que construiste la solución, o en sugerir añadir alertas automáticas cuando el inventario de un producto crítico cae por debajo del umbral que el modelo predice para el siguiente ciclo de pedidos.</p>
+</div>
+</details>
+<!-- ===== 5.5 GLOSARIO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">5.5</span>
+<span class="accordion__title-main">Glosario operativo del Elemento 4</span>
+<span class="accordion__meta">9 términos del estándar · 4 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición conforme al estándar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Disponibilidad</strong></td>
+<td>Se refiere al porcentaje de tiempo en que una solución se encuentra operativa y accesible para los usuarios, también conocido como uptime.</td>
+</tr>
+<tr>
+<td><strong>Escalamiento</strong></td>
+<td>Se refiere al proceso de expandir el alcance, capacidad o cobertura de una solución validada para su implementación a mayor escala dentro de la organización o el mercado.</td>
+</tr>
+<tr>
+<td><strong>Indicador clave de rendimiento</strong></td>
+<td>Se refiere a la métrica cuantificable utilizada para evaluar el grado de cumplimiento de los objetivos de negocio/técnicos de una solución implementada.</td>
+</tr>
+<tr>
+<td><strong>Latencia</strong></td>
+<td>Se refiere al tiempo que transcurre entre que un usuario realiza una acción en la solución y recibe la respuesta del sistema, medido generalmente en milisegundos.</td>
+</tr>
+<tr>
+<td><strong>Mejora continua</strong></td>
+<td>Se refiere al enfoque sistemático de identificar, analizar e implementar ajustes incrementales en una solución con base en datos de rendimiento y retroalimentación de usuarios.</td>
+</tr>
+<tr>
+<td><strong>Niveles de servicio</strong></td>
+<td>Se refiere al desempeño medible/calidad en el servicio brindado, a menudo expresado como un porcentaje que indica qué tan bien se cumple con una expectativa/obligaciones contractuales.</td>
+</tr>
+<tr>
+<td><strong>Optimización</strong></td>
+<td>Se refiere al proceso de mejorar el rendimiento, la eficiencia/la calidad de una solución tecnológica a partir del análisis de su desempeño en operación.</td>
+</tr>
+<tr>
+<td><strong>Optimización de prompts</strong></td>
+<td>Se refiere al proceso de ajustar y mejorar las instrucciones enviadas a los modelos de inteligencia artificial para obtener respuestas más precisas, relevantes y eficientes.</td>
+</tr>
+<tr>
+<td><strong>Tasa de error</strong></td>
+<td>Se refiere al porcentaje de solicitudes/transacciones que no se completan exitosamente en un sistema, utilizado como indicador de estabilidad y calidad del servicio.</td>
+</tr>
+</tbody>
+</table>
+<!-- ACTIVIDAD 9: flashcard-deck "Métricas de optimización" -->
+<h3>Refuerza las métricas clave con tarjetas</h3>
+<p>Voltea cada tarjeta. Frente: la métrica o concepto. Reverso: su significado aplicado al caso El Surtido.</p>
+<div class="flashcard-deck" data-storage-key="ed4-metricas">
+
+</div>
+</div>
+</details>
+<!-- ===== 5.6 EL CICLO SE CIERRA ===== -->
+<details class="accordion__item" id="ciclo-cierra">
+<summary>
+<span class="accordion__num">5.6</span>
+<span class="accordion__title-main">El ciclo se cierra</span>
+<span class="accordion__meta">Reflexión final · el valor de completar el ciclo · 3 min</span>
+</summary>
+<div class="accordion__body">
+<aside class="callout callout--reflection" role="note">
+<span class="callout__label">Para reflexionar</span>
+<div class="callout__body">
+<p>Cuando terminas el Elemento 4, has completado un ciclo completo de transformación digital: <strong>diagnosticaste</strong> la situación de El Surtido, <strong>construiste</strong> una solución personalizada para sus procesos, la <strong>implementaste</strong> en producción y la entregaste con capacitación formal, y finalmente la <strong>optimizaste</strong> con base en datos reales de operación.</p>
+<p>Ese ciclo no es solo una exigencia del Estándar D: es el trabajo que una MiPyME contrata cuando decide transformar digitalmente su negocio. Raúl no solo tiene una app — tiene una solución que ya aprendió de sus propios datos, que el equipo sabe usar, y que tiene un plan de mejora para los próximos meses.</p>
+<p>Para tu certificación, completar el ciclo significa que puedes demostrar competencia en cada una de las cuatro etapas. El instrumento de evaluación verifica exactamente eso: que ninguna etapa quede incompleta. El Elemento 4 es la garantía de que la transformación no se quedó a medias.</p>
+</div>
+</aside>
+</div>
+</details>
+</div>
+</div>
+<!-- ACTIVIDAD 10: scenario-decision "Optimización en operación" -->
+<div class="scenario-decision" data-storage-key="ed4-escenario-optimizacion">
+
+</div>
+<div class="scenario-decision" data-storage-key="ed4-escenario-causa-raiz">
+
+</div>
+<section id="siguiente">
+<h2>Listo el ciclo completo</h2>
+<p>Conoces los cuatro elementos. El siguiente paso es entender cómo el Instrumento de Evaluación de Competencia los integra en una sola sesión — qué orden siguen, cómo se puntúan y qué debes tener listo el día de la evaluación.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="instrumento.html">Continuar: el Instrumento de Evaluación →</a>
+<a class="btn btn-secondary" href="ruta-preparacion.html">Ver ruta de preparación</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+<div class="lesson-tabs" data-progress-key="estandar-d-ruta">
+<div aria-label="Módulos del Capítulo 7 · Ruta de preparación" class="accordion accordion--modules">
+<!-- ===== 7.1 RUTA DE 4 SEMANAS ===== -->
+<details class="accordion__item" id="ruta" open="">
+<summary>
+<span class="accordion__num">7.1</span>
+<span class="accordion__title-main">Ruta de 4 semanas hacia la evaluación</span>
+<span class="accordion__meta">6-8 horas/semana · inventario · productos · desempeños · 8 min</span>
+</summary>
+<div class="accordion__body">
+<p>Esta ruta supone que ya cuentas con un proyecto real ejecutado, o en ejecución, con una MiPyME. Si aún no tienes esa experiencia, tu primer paso antes de la Semana 1 es conseguirla: busca una empresa que necesite una solución de transformación digital con IA y ejecuta el proyecto completo. Las cuatro semanas que siguen asumen una dedicación de seis a ocho horas semanales.</p>
+<article class="process-step">
+<div class="process-step__badge">S1</div>
+<div class="process-step__body">
+<h3 class="process-step__title">Semana 1 · Inventario y diagnóstico personal</h3>
+<p>Lee este manual completo. Localiza los productos del proyecto que ya tienes elaborados; identifica cuáles te faltan o necesitan revisión. Compáralos contra las características del estándar. Marca cada característica con tres colores: verde (cumplida), amarillo (parcial), rojo (faltante). Al final de la semana tendrás un mapa claro de tu situación.</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">El Estándar D tiene 15 productos. Es normal que, en proyectos reales, algunos documentos existan pero no cubran todas las características del estándar (por ejemplo: tienes documentación técnica, pero no incluye explícitamente las decisiones técnicas con su justificación). Ese es el tipo de brecha que la Semana 1 debe revelar.</div>
+</aside>
+</div>
+</article>
+<article class="process-step">
+<div class="process-step__badge">S2</div>
+<div class="process-step__body">
+<h3 class="process-step__title">Semana 2 · Cierre de productos de los Elementos 1 y 2</h3>
+<p>Trabaja los productos pendientes de los Elementos 1 y 2 hasta que cada característica del estándar esté en verde. Si un producto te falta por completo, elabóralo retrospectivamente con base en la realidad del proyecto. Solicita revisión a un colega de confianza para detectar omisiones.</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Para el Producto 1.4 (propuesta autorizada), necesitas el VoBo del responsable de la MiPyME. Si tu proyecto ya terminó y no tienes ese documento, busca al cliente del proyecto y solicítale que firme la propuesta retrospectivamente — explicando que es un requisito del proceso de certificación.</div>
+</aside>
+</div>
+</article>
+<article class="process-step">
+<div class="process-step__badge">S3</div>
+<div class="process-step__body">
+<h3 class="process-step__title">Semana 3 · Cierre de productos de los Elementos 3 y 4</h3>
+<p>Repite el mismo trabajo para los productos de los Elementos 3 y 4. Asegúrate de tener las evidencias del funcionamiento y los resultados: capturas de pantalla de la solución en producción, registros de métricas, retroalimentación recogida, conformidades firmadas.</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Para el Producto 3.4 (acta final), necesitas la firma de conformidad del responsable de la MiPyME. Si el acta final no está firmada, coordina con tu cliente para obtenerla esta semana. El Producto 3.1 (solución desplegada) debe estar accesible durante la evaluación — verifica que la URL funciona y que las credenciales están al día.</div>
+</aside>
+</div>
+</article>
+<article class="process-step">
+<div class="process-step__badge">S4</div>
+<div class="process-step__body">
+<h3 class="process-step__title">Semana 4 · Práctica del desempeño y consolidación</h3>
+<p>Practica el Desempeño 3.1 con un colega que actúe como cliente o usuario de la MiPyME. Usa grabación en video si puedes; revísala después y ajusta. Repasa los conocimientos exigidos, especialmente los de nivel Comprensión (LFPDPPP, consentimiento informado, principios de seguridad con IA). En los últimos días, lee de nuevo el estándar completo del estándar.</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Al practicar el Desempeño 3.1, pide a tu colega que haga preguntas inesperadas, que diga que no entiende y que pida que repitas algo. Así practicas la AHV de Tolerancia que el evaluador observará. El evaluador no evalúa solo que cubras las 5 características — también observa cómo reaccionas ante la confusión o las dudas del equipo.</div>
+</aside>
+</div>
+</article>
+</div>
+</details>
+<!-- ===== 7.2 LISTA DE VERIFICACIÓN FINAL ===== -->
+<details class="accordion__item" id="checklist">
+<summary>
+<span class="accordion__num">7.2</span>
+<span class="accordion__title-main">Lista de verificación final</span>
+<span class="accordion__meta">15 productos + 3 elementos adicionales · imprimible · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>Antes de presentarte a la evaluación, verifica que cuentas con cada uno de los siguientes productos y evidencias del estándar. Puedes imprimir esta lista y marcarla físicamente.</p>
+<div class="checklist printable-checklist" data-storage-key="mi-compania-ruta-d-checklist::v1::">
+<p style="font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin-bottom: 8px;">Elemento 1 · Diagnosticar (4 productos)</p>
+<ul>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 1.1</strong> · El diagnóstico de oportunidades de transformación digital de la MiPyME, documentado (incluye análisis de procesos, datos disponibles, infraestructura actual y brechas identificadas)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 1.2</strong> · El diagnóstico de madurez digital y disposición al cambio de la MiPyME, elaborado (incluye nivel de madurez digital y evaluación de disposición organizacional)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 1.3</strong> · El documento de propuesta de transformación digital para la MiPyME, elaborado (incluye alcance, objetivo, recursos, riesgos y cronograma)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 1.4</strong> · La propuesta de transformación digital para la MiPyME, autorizada con VoBo del responsable de la MiPyME
+                </label>
+</li>
+</ul>
+<p style="font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin: 20px 0 8px;">Elemento 2 · Construir (4 productos)</p>
+<ul>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 2.1</strong> · El entorno de desarrollo de la solución de transformación digital, configurado (incluye repositorio de código, stack tecnológico y credenciales del entorno)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 2.2</strong> · La solución de transformación digital con IA, desarrollada (incluye frontend, backend, componentes de IA integrados e interfaces de usuario)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 2.3</strong> · El reporte de pruebas técnicas de la solución, elaborado (incluye pruebas unitarias, pruebas de integración, resultados y evidencias)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 2.4</strong> · La documentación técnica de la solución, elaborada (incluye diagrama de arquitectura, modelo de datos, decisiones técnicas con justificación y README)
+                </label>
+</li>
+</ul>
+<p style="font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin: 20px 0 8px;">Elemento 3 · Implementar (4 productos)</p>
+<ul>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 3.1</strong> · La solución de transformación digital, desplegada y funcionando en el entorno productivo de la MiPyME (con URL activa y credenciales vigentes)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 3.2</strong> · La documentación técnica de implementación, elaborada (incluye diagrama de infraestructura, certificados de seguridad, manual de mantenimiento y procedimiento de restauración)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 3.3</strong> · El reporte de capacitación y transferencia de conocimiento al personal de la MiPyME, elaborado (incluye lista de participantes, temas cubiertos y evaluación de comprensión)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 3.4</strong> · El acta final de la solución de transformación digital, elaborada y firmada por el responsable de la MiPyME
+                </label>
+</li>
+</ul>
+<p style="font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin: 20px 0 8px;">Elemento 4 · Optimizar (3 productos)</p>
+<ul>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 4.1</strong> · El reporte de rendimiento técnico de la solución, elaborado (incluye métricas de disponibilidad, latencia, tasa de error y consumo de tokens/créditos)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 4.2</strong> · El reporte de retroalimentación de usuarios de la MiPyME, elaborado (incluye hallazgos cualitativos, problemas reportados y valoración del equipo)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+<strong>Producto 4.3</strong> · El plan de optimización de la solución, elaborado (incluye mejoras priorizadas, optimización de prompts y cronograma de implementación)
+                </label>
+</li>
+</ul>
+<p style="font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; margin: 20px 0 8px;">Logística del día de la evaluación</p>
+<ul>
+<li>
+<label>
+<input type="checkbox"/>
+                  Acceso a las herramientas, plataformas y soluciones de IA utilizadas en el proyecto (para demostrar el funcionamiento de la solución durante la evaluación)
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+                  Computadora con internet de banda ancha y, si la evaluación es remota, plataforma de videoconferencia funcional y probada previamente
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+                  Identificación oficial vigente
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+                  Datos de contacto de la persona responsable de la MiPyME, en caso de que el evaluador desee corroborar la autenticidad del trabajo
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+                  Desempeño 3.1 practicado al menos 3 veces, incluyendo simulación de preguntas inesperadas del equipo
+                </label>
+</li>
+<li>
+<label>
+<input type="checkbox"/>
+                  Conocimientos de nivel Comprensión repasados: LFPDPPP aplicada a IA, consentimiento informado, principios de seguridad con privacidad por diseño
+                </label>
+</li>
+</ul>
+<div class="checklist-progress">
+<progress aria-label="Progreso de la lista de verificación" max="100" value="0"></progress>
+<span class="checklist-text">0% completado</span>
+</div>
+</div>
+<div class="checklist-actions">
+<button class="btn btn-secondary" onclick="window.print()" type="button">Imprimir lista de verificación</button>
+</div>
+</div>
+</details>
+<!-- ===== 7.3 EL DÍA ANTES ===== -->
+<details class="accordion__item" id="dia-antes">
+<summary>
+<span class="accordion__num">7.3</span>
+<span class="accordion__title-main">El día antes de la evaluación</span>
+<span class="accordion__meta">Preparación de último día · checklist rápido · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>Con los 15 productos listos y el desempeño practicado, el día anterior a tu evaluación dedícalo solo a verificar condiciones técnicas y logísticas — no a revisar contenido nuevo.</p>
+<h3>Verifica tu acceso tecnológico</h3>
+<ul>
+<li><strong>La solución en producción (Producto 3.1):</strong> entra a la URL, confirma que carga, prueba un caso de uso completo. Verifica que las credenciales de acceso están al día y que la integración con las APIs de IA responde.</li>
+<li><strong>Herramientas de IA:</strong> abre las plataformas que usaste, confirma que tu cuenta está activa y que el saldo de tokens o créditos es suficiente para una sesión de demostración.</li>
+<li><strong>Repositorio de código:</strong> verifica que tu cuenta tiene acceso y que el último commit corresponde a la versión en producción.</li>
+</ul>
+<h3>Prepara tu acceso a los documentos</h3>
+<ul>
+<li>Organiza los 15 productos en una carpeta clara — no busques archivos durante la evaluación.</li>
+<li>Verifica que todos los documentos se pueden abrir: PDFs, Word, Excel sin errores de formato ni contraseñas.</li>
+<li>Ten a mano los datos de contacto de la persona responsable de la MiPyME.</li>
+</ul>
+<h3>Logística si la evaluación es remota</h3>
+<ul>
+<li>Instala o actualiza la plataforma de videoconferencia acordada con tu Centro de Evaluación.</li>
+<li>Prueba audio, video y compartir pantalla con anticipación.</li>
+<li>Asegura una conexión estable — si tu internet es variable, ten una conexión de respaldo (datos móviles).</li>
+<li>Elige un espacio sin interrupciones y con buena iluminación.</li>
+</ul>
+<h3>La noche anterior</h3>
+<ul>
+<li>Duerme bien. El Desempeño 3.1 requiere claridad para explicar con paciencia y adaptar el discurso a las preguntas del equipo.</li>
+<li>Ten tu identificación oficial a la mano.</li>
+<li>Relee los títulos de los 15 productos y los 5 criterios del Desempeño 3.1 — no el contenido completo, solo para que estén frescos.</li>
+</ul>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Recuerda</span>
+<div class="callout__body">El Desempeño 3.1 es el único momento en que te observan en tiempo real. No lo improvises: practica al menos 3 veces antes. Cuando el evaluador simule ser alguien del equipo que tiene dudas o que no entiende algo, responde con paciencia — eso es exactamente la AHV de Tolerancia que se estará observando.</div>
+</aside>
+</div>
+</details>
+</div>
+</div>
+<div class="lesson-nav" style="display:flex; justify-content:space-between; margin-top:2rem;">
+<a class="btn btn-secondary" href="instrumento.html">Anterior · Instrumento</a>
+<a class="btn btn-primary" href="recursos.html">Siguiente · FAQ y recursos</a>
+</div>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+<div class="lesson-tabs" data-progress-key="estandar-d-recursos">
+<div aria-label="Módulos del Capítulo 8 · FAQ y recursos" class="accordion accordion--modules">
+<!-- ===== 8.1 FAQ ===== -->
+<details class="accordion__item" id="faq" open="">
+<summary>
+<span class="accordion__num">8.1</span>
+<span class="accordion__title-main">Preguntas frecuentes del Estándar D</span>
+<span class="accordion__meta">5 preguntas clave · 5 min</span>
+</summary>
+<div class="accordion__body">
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Nota</span>
+<div class="callout__body">Estas preguntas son específicas de este estándar. Para preguntas sobre el marco general de la certificación (qué es CONOCER, cómo inscribirse, costos), consulta el <a href="../maestro/index.html">Curso introductorio</a>.</div>
+</aside>
+<div class="accordion accordion--faq">
+<details class="accordion__item">
+<summary>
+<span class="accordion__title-main">¿Puedo certificarme si solo demuestro algunos elementos del estándar?</span>
+</summary>
+<div class="accordion__body">
+<p>No. El Estándar D certifica todos sus elementos como una unidad. Si demuestras solo algunos, el dictamen será <em>Todavía no competente</em>. Si tu trabajo se concentra en una sola fase del ciclo —solo el diagnóstico, o solo la construcción técnica—, revisa si otro estándar de la colección corresponde mejor a tu perfil.</p>
+</div>
+</details>
+<details class="accordion__item">
+<summary>
+<span class="accordion__title-main">¿Las herramientas con las que trabajo cuentan?</span>
+</summary>
+<div class="accordion__body">
+<p>El estándar es agnóstico respecto a las herramientas específicas. Lo que importa es que las que uses sean apropiadas al contexto de la MiPyME y que puedas demostrar su funcionamiento durante la evaluación. Puedes usar cualquier stack tecnológico, cualquier proveedor de APIs de IA y cualquier plataforma de nube — siempre que la solución funcione en producción y cumpla los criterios del estándar.</p>
+</div>
+</details>
+<details class="accordion__item">
+<summary>
+<span class="accordion__title-main">¿Qué pasa si mi proyecto real no tuvo formalmente alguno de los productos exigidos?</span>
+</summary>
+<div class="accordion__body">
+<p>Te recomendamos elaborar el producto faltante de manera retrospectiva, con base en la realidad del proyecto. Lo importante es que el contenido refleje fielmente lo que ocurrió, no que estés documentando algo ficticio. Por ejemplo, si ejecutaste el diagnóstico pero no lo documentaste formalmente, puedes elaborar el documento ahora con la información que recuerdas del proyecto real.</p>
+</div>
+</details>
+<details class="accordion__item">
+<summary>
+<span class="accordion__title-main">¿La evaluación será presencial o remota?</span>
+</summary>
+<div class="accordion__body">
+<p>Ambas modalidades son posibles. La modalidad se acuerda en el Plan de evaluación con tu Centro de Evaluación. Si la práctica se realiza de forma simulada —es decir, el Desempeño 3.1 se realiza con un participante que actúa como personal de la MiPyME—, el área de evaluación debe contar con los materiales, insumos e infraestructura para ejecutar todos los criterios del estándar.</p>
+</div>
+</details>
+<details class="accordion__item">
+<summary>
+<span class="accordion__title-main">¿Puedo presentar evidencias de proyectos anteriores?</span>
+</summary>
+<div class="accordion__body">
+<p>Sí. Los productos del estándar pueden presentarse como Evidencia Histórica (EH), siempre que puedas demostrar tu autoría y autenticidad ante el evaluador. Los documentos deben cumplir íntegramente con las características del estándar — la antigüedad del proyecto no exime del contenido requerido. Consulta a tu Centro de Evaluación el procedimiento específico de verificación de Evidencia Histórica.</p>
+</div>
+</details>
+</div>
+</div>
+</details>
+<!-- ===== 8.2 GLOSARIO CONSOLIDADO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">8.2</span>
+<span class="accordion__title-main">Glosario consolidado del Estándar D</span>
+<span class="accordion__meta">Todos los términos del estándar · orden alfabético · sin duplicados · 15 min</span>
+</summary>
+<div class="accordion__body">
+<p>Reúne las entradas de glosario establecidas en el estándar del estándar, organizadas alfabéticamente y sin duplicados. Cada término proviene del documento oficial del estándar.</p>
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición conforme al estándar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acta de entrega</strong></td>
+<td>Se refiere al documento formal que registra la transferencia de la solución y sus componentes al responsable de la MiPyME, incluyendo conformidad y firma de las partes.</td>
+</tr>
+<tr>
+<td><strong>APIs</strong></td>
+<td>Se refiere a las siglas en inglés de las Interfaces de Programación de Aplicaciones, que en inteligencia artificial son conjuntos de reglas y protocolos que permiten a los desarrolladores conectar sus aplicaciones con modelos de inteligencia artificial pre-entrenados (como modelos de visión o voz) sin necesidad de construir la infraestructura compleja desde cero. Funcionan como intermediarios que facilitan el intercambio de datos y el acceso a funciones avanzadas de aprendizaje automático.</td>
+</tr>
+<tr>
+<td><strong>Archivo README</strong></td>
+<td>Se refiere al documento incluido en un repositorio de código que proporciona información esencial sobre el proyecto, como su propósito, instrucciones de instalación, uso, dependencias, configuración y otros detalles relevantes para usuarios y desarrolladores.</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>Se refiere a la capa de una aplicación que contiene la lógica de negocio, el procesamiento de datos y la comunicación con bases de datos y servicios externos, no visible para el usuario final.</td>
+</tr>
+<tr>
+<td><strong>Brecha digital/tecnológica</strong></td>
+<td>Se refiere a la diferencia entre el estado tecnológico actual de una organización y el nivel deseado o necesario para alcanzar sus objetivos de transformación digital.</td>
+</tr>
+<tr>
+<td><strong>Certificado de seguridad</strong></td>
+<td>Se refiere al protocolo que cifra la comunicación entre el navegador del usuario y el servidor de la aplicación, garantizando la confidencialidad de los datos transmitidos.</td>
+</tr>
+<tr>
+<td><strong>Ciberseguridad</strong></td>
+<td>Se refiere al conjunto de prácticas, medidas y controles destinados a proteger los sistemas, datos e información de la empresa frente a accesos no autorizados o amenazas digitales.</td>
+</tr>
+<tr>
+<td><strong>Cifrado de datos</strong></td>
+<td>Se refiere al proceso de transformar información legible en un formato codificado que solo puede ser descifrado por personas o sistemas autorizados, protegiendo la confidencialidad de los datos.</td>
+</tr>
+<tr>
+<td><strong>Control de acceso basado en roles</strong></td>
+<td>Se refiere al mecanismo de seguridad que restringe el acceso a los recursos del sistema según el rol asignado a cada usuario dentro de la organización.</td>
+</tr>
+<tr>
+<td><strong>Control de versiones</strong></td>
+<td>Se refiere al sistema que registra los cambios realizados al código fuente a lo largo del tiempo, permitiendo rastrear modificaciones, revertir errores y colaborar entre desarrolladores.</td>
+</tr>
+<tr>
+<td><strong>Credenciales de acceso</strong></td>
+<td>Se refiere al conjunto de datos de autenticación como usuarios, contraseñas, tokens/llaves que permiten ingresar y operar los diferentes componentes de la solución.</td>
+</tr>
+<tr>
+<td><strong>Dependencias externas</strong></td>
+<td>Se refiere al conjunto de librerías, frameworks, servicios/recursos desarrollados por terceros que una aplicación utiliza para funcionar correctamente, evitando desarrollar funcionalidades desde cero y facilitando la integración, el desarrollo y el mantenimiento del sistema.</td>
+</tr>
+<tr>
+<td><strong>Despliegue</strong></td>
+<td>Se refiere al proceso de transferir una solución del entorno de desarrollo al entorno productivo, incluyendo la configuración de infraestructura, servicios y verificaciones necesarias.</td>
+</tr>
+<tr>
+<td><strong>Diagrama de arquitectura</strong></td>
+<td>Se refiere a la representación gráfica de los componentes de una solución tecnológica y las relaciones entre ellos, incluyendo servidores, bases de datos, interfaces y servicios externos.</td>
+</tr>
+<tr>
+<td><strong>Diagrama de infraestructura</strong></td>
+<td>Se refiere a la representación gráfica de los componentes técnicos del entorno productivo y las conexiones entre ellos, incluyendo servidores, bases de datos y servicios externos.</td>
+</tr>
+<tr>
+<td><strong>Disponibilidad</strong></td>
+<td>Se refiere al porcentaje de tiempo en que una solución se encuentra operativa y accesible para los usuarios, también conocido como uptime.</td>
+</tr>
+<tr>
+<td><strong>Endpoint</strong></td>
+<td>Se refiere a la dirección/punto de acceso específico de una API a través del cual se realizan solicitudes y se reciben respuestas entre sistemas.</td>
+</tr>
+<tr>
+<td><strong>Endpoint de la API</strong></td>
+<td>Se refiere al punto de acceso específico dentro de una API que permite la comunicación entre sistemas, a través del cual se envían solicitudes y se reciben respuestas para consultar, crear, actualizar o eliminar datos dentro de una aplicación.</td>
+</tr>
+<tr>
+<td><strong>Entorno productivo</strong></td>
+<td>Se refiere al ambiente tecnológico donde la solución opera de forma real y accesible para los usuarios de la MiPyME, diferenciado del entorno de desarrollo y pruebas.</td>
+</tr>
+<tr>
+<td><strong>Escalamiento</strong></td>
+<td>Se refiere al proceso de expandir el alcance, capacidad o cobertura de una solución validada para su implementación a mayor escala dentro de la organización o el mercado.</td>
+</tr>
+<tr>
+<td><strong>Framework</strong></td>
+<td>Se refiere a la estructura de software prediseñada que proporciona componentes reutilizables, convenciones y herramientas para acelerar el desarrollo de aplicaciones.</td>
+</tr>
+<tr>
+<td><strong>Frontend</strong></td>
+<td>Se refiere a la capa de una aplicación con la que el usuario interactúa directamente, incluyendo la interfaz gráfica, los elementos visuales y la experiencia de navegación.</td>
+</tr>
+<tr>
+<td><strong>IA (Inteligencia Artificial)</strong></td>
+<td>Se refiere a los sistemas computacionales capaces de realizar tareas que normalmente requieren inteligencia humana.</td>
+</tr>
+<tr>
+<td><strong>Indicador clave de rendimiento</strong></td>
+<td>Se refiere a la métrica cuantificable utilizada para evaluar el grado de cumplimiento de los objetivos de negocio/técnicos de una solución implementada.</td>
+</tr>
+<tr>
+<td><strong>Infraestructura tecnológica</strong></td>
+<td>Se refiere al conjunto de hardware, software, redes, servidores y servicios digitales con los que cuenta una organización para soportar sus operaciones y procesos.</td>
+</tr>
+<tr>
+<td><strong>Instrucciones</strong></td>
+<td>Se refiere al conjunto documentado de indicaciones optimizadas estandarizadas para obtener respuestas efectivas de los componentes de IA de la solución.</td>
+</tr>
+<tr>
+<td><strong>Interfaz de usuarios</strong></td>
+<td>Se refiere al conjunto de elementos visuales e interactivos — como pantallas, botones, formularios, menús e iconos — mediante los cuales el usuario interactúa con una aplicación/sistema, facilitando la navegación, el uso de funcionalidades y la comunicación con el backend dentro de una solución digital.</td>
+</tr>
+<tr>
+<td><strong>Latencia</strong></td>
+<td>Se refiere al tiempo que transcurre entre que un usuario realiza una acción en la solución y recibe la respuesta del sistema, medido generalmente en milisegundos.</td>
+</tr>
+<tr>
+<td><strong>LFPDPPP</strong></td>
+<td>Se refiere a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares, que es el ordenamiento legal en México que tiene como objetivo principal regular el tratamiento legítimo, controlado e informado de los datos personales que manejan las empresas o personas físicas del sector privado, garantizando así la privacidad y el derecho a la autodeterminación informativa de los ciudadanos.</td>
+</tr>
+<tr>
+<td><strong>Librería</strong></td>
+<td>Se refiere al conjunto de funciones, módulos o recursos de código reutilizable que pueden ser integrados en una aplicación para resolver tareas específicas sin necesidad de desarrollarlas desde cero, facilitando el desarrollo y promoviendo buenas prácticas.</td>
+</tr>
+<tr>
+<td><strong>Madurez digital</strong></td>
+<td>Se refiere al nivel de adopción y uso de tecnologías digitales en los procesos, operaciones y toma de decisiones de una organización.</td>
+</tr>
+<tr>
+<td><strong>Manual de usuario</strong></td>
+<td>Se refiere al documento con instrucciones paso a paso y capturas de pantalla que guían al personal de la MiPyME en la operación de las funcionalidades de la solución.</td>
+</tr>
+<tr>
+<td><strong>Mejora continua</strong></td>
+<td>Se refiere al enfoque sistemático de identificar, analizar e implementar ajustes incrementales en una solución con base en datos de rendimiento y retroalimentación de usuarios.</td>
+</tr>
+<tr>
+<td><strong>MiPyME</strong></td>
+<td>Se refiere a las siglas de Micro, Pequeña y Mediana Empresa; son unidades económicas que se dedican a actividades comerciales, industriales o de servicios, y que cumplen con los rangos de estratificación (personal y ventas) establecidos por la Secretaría de Economía.</td>
+</tr>
+<tr>
+<td><strong>Modelo de datos</strong></td>
+<td>Se refiere a la representación estructurada de la información que maneja la solución que se está implementando en el desarrollo, especificando las entidades, sus atributos y las relaciones entre ellas.</td>
+</tr>
+<tr>
+<td><strong>Niveles de servicio</strong></td>
+<td>Se refiere a los compromisos formales de calidad del soporte técnico acordados entre el consultor y la MiPyME, incluyendo tiempos de respuesta, resolución y vigencia.</td>
+</tr>
+<tr>
+<td><strong>Nube</strong></td>
+<td>Se refiere a los servidores a los que se accede a través de Internet, y al software y bases de datos que se ejecutan en los mismos.</td>
+</tr>
+<tr>
+<td><strong>Optimización</strong></td>
+<td>Se refiere al proceso de mejorar el rendimiento, la eficiencia/la calidad de una solución tecnológica a partir del análisis de su desempeño en operación.</td>
+</tr>
+<tr>
+<td><strong>Optimización de prompts</strong></td>
+<td>Se refiere al proceso de ajustar y mejorar las instrucciones enviadas a los modelos de inteligencia artificial para obtener respuestas más precisas, relevantes y eficientes.</td>
+</tr>
+<tr>
+<td><strong>Procedimiento de restauración</strong></td>
+<td>Se refiere al conjunto de pasos documentados para recuperar la base de datos/la solución a un estado anterior funcional en caso de falla.</td>
+</tr>
+<tr>
+<td><strong>Prompt</strong></td>
+<td>Se refiere a la instrucción o conjunto de instrucciones que se proporcionan a una herramienta de IA generativa para obtener un resultado específico.</td>
+</tr>
+<tr>
+<td><strong>Pruebas de integración</strong></td>
+<td>Se refiere a las verificaciones del correcto funcionamiento entre múltiples componentes/servicios que interactúan entre sí dentro de la solución.</td>
+</tr>
+<tr>
+<td><strong>Pruebas unitarias</strong></td>
+<td>Se refiere a las verificaciones individuales de cada componente o función del código para confirmar que produce los resultados esperados de forma aislada.</td>
+</tr>
+<tr>
+<td><strong>Repositorio de código</strong></td>
+<td>Se refiere al sistema de almacenamiento y control de versiones que permite gestionar, rastrear y colaborar en el desarrollo del código fuente de una solución tecnológica.</td>
+</tr>
+<tr>
+<td><strong>Requerimientos funcionales</strong></td>
+<td>Se refiere a las especificaciones que describen las funciones y comportamientos que debe realizar una solución tecnológica para satisfacer las necesidades del usuario.</td>
+</tr>
+<tr>
+<td><strong>Requerimientos no funcionales</strong></td>
+<td>Se refiere a las especificaciones que describen las características de calidad de una solución tecnológica, como rendimiento, seguridad, escalabilidad y usabilidad.</td>
+</tr>
+<tr>
+<td><strong>Respaldo automatizado</strong></td>
+<td>Se refiere a la copia de seguridad programada y periódica de la base de datos y archivos del sistema, que permite restaurar la información en caso de pérdida o falla.</td>
+</tr>
+<tr>
+<td><strong>Sanitización de datos de entrada</strong></td>
+<td>Se refiere al proceso de limpiar, filtrar y validar los datos ingresados por el usuario o sistemas externos para eliminar contenido malicioso/inválido, prevenir vulnerabilidades como inyección de código y garantizar la integridad, seguridad y correcto procesamiento de la información dentro de una aplicación.</td>
+</tr>
+<tr>
+<td><strong>Solución de transformación digital</strong></td>
+<td>Se refiere al repositorio integrado y centralizado de tecnologías y componentes de software — como archivos, carpetas, ejecutables, configuraciones, bases de datos y servicios — organizados en un solo entorno digital que permite gestionar, automatizar e innovar procesos mediante la articulación de frontend, backend e integraciones, incorporando prácticas de desarrollo, seguridad y operación para mejorar la eficiencia, la toma de decisiones y la competitividad organizacional.</td>
+</tr>
+<tr>
+<td><strong>Stack tecnológico</strong></td>
+<td>Se refiere al conjunto de lenguajes de programación, frameworks, librerías, bases de datos y herramientas utilizadas para construir una solución de software.</td>
+</tr>
+<tr>
+<td><strong>Tasa de error</strong></td>
+<td>Se refiere al porcentaje de solicitudes/transacciones que no se completan exitosamente en un sistema, utilizado como indicador de estabilidad y calidad del servicio.</td>
+</tr>
+<tr>
+<td><strong>Token</strong></td>
+<td>Se refiere a la unidad mínima de texto que un modelo de IA procesa. Puede corresponder a una palabra completa, una parte de ella, un signo de puntuación o un espacio. Los modelos de lenguaje convierten el texto en secuencias de tokens antes de analizarlo o generar respuestas. El número de tokens determina el costo de procesamiento, los límites de contexto y la velocidad de respuesta del modelo.</td>
+</tr>
+<tr>
+<td><strong>Transferencia de conocimiento</strong></td>
+<td>Se refiere al proceso estructurado mediante el cual el consultor capacita al personal de la MiPyME para operar, mantener y resolver problemas básicos de la solución de forma autónoma.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 8.3 REFERENCIAS ===== -->
+<details class="accordion__item" id="referencias">
+<summary>
+<span class="accordion__num">8.3</span>
+<span class="accordion__title-main">Referencias del Estándar D</span>
+<span class="accordion__meta">Fuente normativa oficial · Manual Maestro · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>Las siguientes fuentes son las que respaldan el contenido normativo de este manual y del estándar de competencia.</p>
+<h3>Fuente normativa principal</h3>
+<p>La fuente de evaluación es el <strong>estándar-COOPYD-01</strong>, documento oficial del Estándar de Competencia publicado por CONOCER: <em>Desarrollo de soluciones de transformación digital con Inteligencia Artificial en la MiPyME</em>. Este documento contiene los criterios de evaluación, las características de cada producto y desempeño, el glosario oficial y la bibliografía del estándar. Es el único documento que manda en caso de discrepancia con este manual.</p>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">La fuente normativa es el estándar</span>
+<div class="callout__body">Este manual explica y complementa el estándar-COOPYD-01, pero no lo reemplaza. Ante cualquier duda sobre criterios de evaluación, características requeridas o definiciones de glosario, la versión vigente del estándar es la que determina qué se te evaluará. Puedes solicitarlo a tu Centro de Evaluación.</div>
+</aside>
+<h3>Manual Maestro de la colección Mi CompañIA</h3>
+<p>Para el marco institucional de la certificación CONOCER — qué es el Sistema Nacional de Competencias, cómo funciona el proceso de evaluación, los tipos de Prestadores de Servicios de Certificación, costos y duración — consulta el <a href="../maestro/index.html">Curso introductorio</a> de esta misma plataforma.</p>
+<h3>Comité de Gestión por Competencias</h3>
+<p>El estándar fue desarrollado por la Fundación para el Desarrollo Social y Económico (FUNDES) con la participación de la Asociación Latinoamericana de Profesionales en Seguridad Informática (ALAPSI) y el Instituto Estatal de Capacitación del Estado de Guanajuato (IECA). El proyecto es parte de la iniciativa Mi CompañIA, apoyada por Google.org.</p>
+</div>
+</details>
+<!-- ===== 8.4 SIGUIENTES PASOS ===== -->
+<details class="accordion__item" id="siguientes-pasos">
+<summary>
+<span class="accordion__num">8.4</span>
+<span class="accordion__title-main">¿Y ahora qué? · Siguientes pasos</span>
+<span class="accordion__meta">CONOCER · otros estándares · contacto · 2 min</span>
+</summary>
+<div class="accordion__body">
+<p>Terminaste de leer el Manual del Estándar D. Dependiendo de dónde te encuentres en tu preparación, estos son los siguientes pasos más comunes:</p>
+<div class="accordion accordion--faq">
+<details class="accordion__item">
+<summary>
+<span class="accordion__title-main">Si ya tienes un proyecto y estás listo para evaluarte</span>
+</summary>
+<div class="accordion__body">
+<p>Contacta a un Centro de Evaluación acreditado por CONOCER. Puedes consultar el directorio oficial en <a href="https://www.conocer.gob.mx" rel="noopener" target="_blank">conocer.gob.mx</a>. El proceso de inscripción incluye la firma del Plan de evaluación, la revisión de tus 15 productos y la agenda de la sesión de evaluación con el Desempeño 3.1.</p>
+</div>
+</details>
+<details class="accordion__item">
+<summary>
+<span class="accordion__title-main">Si aún estás buscando una MiPyME para ejecutar el proyecto</span>
+</summary>
+<div class="accordion__body">
+<p>El proyecto Mi CompañIA te conecta con MiPyMEs que buscan consultores de IA. Escríbenos a través del formulario en la página de inicio para conocer las opciones disponibles en tu ciudad.</p>
+</div>
+</details>
+<details class="accordion__item">
+<summary>
+<span class="accordion__title-main">Si quieres obtener múltiples certificaciones</span>
+</summary>
+<div class="accordion__body">
+<p>El Estándar D complementa los demás estándares de la colección. El Estándar A (Implementar IA) cubre la incorporación operativa de herramientas; el B (Desarrollar con IA) cubre la conceptualización y prototipado; el C (Marketing digital) cubre la producción de contenido. Si tu trabajo cruza varias de estas funciones, puedes certificarte en más de uno.</p>
+<ul style="margin-top: 12px;">
+<li><a href="../estandar-a/index.html">Estándar A · Implementar IA en la MiPyME</a></li>
+<li><a href="../estandar-b/index.html">Estándar B · Desarrollar con IA para la MiPyME</a></li>
+<li><a href="../estandar-c/index.html">Estándar C · Marketing digital con IA en la MiPyME</a></li>
+</ul>
+</div>
+</details>
+</div>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">¿Encontraste un error o inconsistencia?</span>
+<div class="callout__body">Si detectas información que no corresponde al estándar del estándar, escríbenos al equipo editorial de Mi CompañIA. La fuente normativa manda siempre sobre este manual — si hay diferencia, corremos la actualización en la próxima versión.</div>
+</aside>
+</div>
+</details>
+</div>
+</div>
+<div class="lesson-nav" style="display:flex; justify-content:space-between; margin-top:2rem;">
+<a class="btn btn-secondary" href="ruta-preparacion.html">Anterior · Ruta de preparación</a>
+<a class="btn btn-primary" href="../index.html">Inicio · Mi CompañIA</a>
+</div>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,2347 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset='utf-8'>
+<title>Manual del Estándar B: Desarrollar productos y servicios con IA en la MiPyME</title>
+<style>
+body {
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: #333333;
+}
+h1 {
+    font-family: Georgia, Garamond, serif;
+    font-size: 24pt;
+    color: #1F4E8C;
+    margin-top: 18pt;
+    margin-bottom: 12pt;
+    text-align: center;
+}
+h2 {
+    font-family: Georgia, Garamond, serif;
+    font-size: 18pt;
+    color: #28467E;
+    margin-top: 16pt;
+    margin-bottom: 8pt;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 3px;
+}
+h3 {
+    font-size: 14pt;
+    color: #2E5894;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+}
+h4 {
+    font-size: 12pt;
+    color: #4A70A0;
+    margin-top: 8pt;
+    margin-bottom: 4pt;
+}
+p, li {
+    margin-top: 0;
+    margin-bottom: 8pt;
+}
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 8pt;
+    padding-left: 20pt;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+}
+th, td {
+    border: 1px solid #cccccc;
+    padding: 6pt 8pt;
+    font-size: 10pt;
+    vertical-align: top;
+}
+th {
+    background-color: #f2f5f9;
+    font-weight: bold;
+    color: #1F4E8C;
+}
+.callout {
+    background-color: #f9fbfd;
+    border-left: 4px solid #1F4E8C;
+    padding: 10pt;
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+}
+.callout--tip {
+    background-color: #f6faf6;
+    border-left: 4px solid #2e7d32;
+}
+.callout--important {
+    background-color: #fffde7;
+    border-left: 4px solid #f57f17;
+}
+.callout__label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4pt;
+}
+.checklist ul {
+    list-style-type: none;
+    padding-left: 5pt;
+}
+.checklist li {
+    margin-bottom: 6pt;
+}
+.eyebrow {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #777777;
+    margin-bottom: 6pt;
+}
+svg.diagram {
+    display: none; /* Word handles SVG poorly, we hide it or user can refer to HTML */
+}
+.diagram-caption {
+    font-style: italic;
+    color: #666666;
+    font-size: 9.5pt;
+}
+</style>
+</head>
+<body>
+<h1>Manual del Estándar B: Desarrollar productos y servicios con IA en la MiPyME</h1>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+
+<div class="lesson-tabs" data-progress-key="estandar-b-bienvenida-contexto">
+<div aria-label="Módulos del Capítulo 1 · Bienvenida y contexto" class="accordion accordion--modules">
+<!-- ===== 1.1 BIENVENIDA ===== -->
+<details class="accordion__item" id="bienvenida" open="">
+<summary>
+<span class="accordion__num">1.1</span>
+<span class="accordion__title-main">Bienvenida</span>
+<span class="accordion__meta">Carta de inicio · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>Este manual está dedicado en exclusiva al Estándar de Competencia B: <strong>Desarrollo de productos y servicios con Inteligencia Artificial en la MiPyME</strong>. Es el documento que te acompañará a lo largo de tu preparación y al que volverás una y otra vez hasta el día de tu evaluación.</p>
+<p>El Estándar B está dirigido a quienes trabajan en el ciclo completo de innovación orientada al usuario: escuchas una necesidad real de alguien, identificas una oportunidad de mercado que nadie ha resuelto bien, conceptualizas una solución con IA, construyes un prototipo funcional y lo llevas a prueba con usuarios reales antes de recomendarlo o lanzarlo.</p>
+<p>Es importante que ubiques bien este estándar dentro del mapa de los cuatro estándares CONOCER de IA para MiPyMEs:</p>
+<ul>
+<li><strong>No es el Estándar A (Implementar IA).</strong> El Estándar A es para quien toma herramientas de IA que ya existen en el mercado y las configura e implementa dentro de los procesos de una MiPyME. Si tu trabajo es acompañar esa incorporación operativa, tu estándar es el A, no el B.</li>
+<li><strong>No es el Estándar C (Marketing digital con IA).</strong> El Estándar C es para quien crea contenido de marketing —textos, imágenes, audio, video, campañas— usando IA. Si tu trabajo central es la comunicación y promoción digital, tu estándar es el C.</li>
+<li><strong>No es el Estándar D (Desarrollo técnico complejo).</strong> El Estándar D es para quien programa y construye soluciones técnicas complejas desde código. Si escribes modelos o arquitecturas de IA a nivel de ingeniería, tu estándar es el D.</li>
+</ul>
+<p>El Estándar B es para quien <strong>innova desde la necesidad del usuario</strong>. No asumes que sabes qué necesitan: lo investigas. No implementas lo que ya existe: conceptualizas lo que debería existir. No lanzas sin evidencia: prototipas y validas con personas reales. Si tu proceso de trabajo se parece a esto, <strong>este es tu estándar</strong>.</p>
+<p>Este manual te guiará a través de cuatro tareas interconectadas: comprender con precisión qué se te evaluará, preparar las evidencias que requerirás, practicar los desempeños que tu evaluador observará y articular ese aprendizaje alrededor de un caso pedagógico concreto que recorrerás de principio a fin.</p>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Importante</span>
+<div class="callout__body">La fuente de evaluación es el <strong>estándar</strong> (formato oficial del estándar publicado por CONOCER). Todo lo que se te evaluará está descrito en ese documento. Este manual no reemplaza al estándar — lo explica, lo complementa y te ayuda a prepararte. Ante cualquier duda sobre criterios, la versión oficial del estándar es la que manda.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 1.2 ANTES DE EMPEZAR ===== -->
+<details class="accordion__item" id="antes-empezar">
+<summary>
+<span class="accordion__num">1.2</span>
+<span class="accordion__title-main">Antes de empezar</span>
+<span class="accordion__meta">Marco CONOCER · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>Este manual puede leerse sin haber estudiado antes el <a href="../maestro/index.html">Curso introductorio</a>. Aun así, conviene tener presentes algunos elementos del marco general antes de entrar al contenido del estándar.</p>
+<h3>La certificación CONOCER, en resumen</h3>
+<p>La certificación que obtendrás es expedida por la <strong>Secretaría de Educación Pública</strong> a través del <strong>CONOCER</strong>. El Certificado de Competencia se incorpora al Registro Nacional de Personas Certificadas (RENEC) y tiene validez en todo el territorio nacional. No es un título académico: es una constancia oficial de que sabes hacer algo y puedes demostrarlo con evidencias verificables.</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Para los estándares inscritos en el RENEC, incluido el Estándar B, <strong>no se requiere por disposición legal la posesión de un título profesional</strong>. Lo que importa es que puedas demostrar la competencia, independientemente de tu trayectoria académica formal.</div>
+</aside>
+<h3>La lógica de la evaluación</h3>
+<p>La evaluación CONOCER se construye sobre <strong>evidencias verificables</strong>. No es un examen de opción múltiple ni una prueba teórica. Lo que se te evaluará es tu capacidad de ejecutar la función con calidad, ante un evaluador certificado. Para ello se combinan cuatro tipos de evidencia:</p>
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Qué se evalúa</th>
+<th>Cómo funciona</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños</strong></td>
+<td>Lo que haces en tiempo real, paso a paso</td>
+<td>El evaluador te observa ejecutar una actividad o te pide demostrar cómo realizas una tarea concreta</td>
+</tr>
+<tr>
+<td><strong>Productos</strong></td>
+<td>Documentos, artefactos o entregables que ya construiste</td>
+<td>Presentas archivos reales de proyectos anteriores (reportes, fichas, prototipos, resultados de prueba)</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>Conceptos y principios que sustentan tu práctica</td>
+<td>El evaluador puede preguntarte sobre fundamentos teóricos o pedirte que expliques por qué tomaste ciertas decisiones</td>
+</tr>
+<tr>
+<td><strong>AHV · Actitudes, Hábitos y Valores</strong></td>
+<td>La forma en que trabajas: ética, rigor, empatía, orden</td>
+<td>Se observan de manera transversal durante toda la sesión de evaluación, no en un momento separado</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 1.3 FICHA TÉCNICA ===== -->
+<details class="accordion__item" id="ficha-tecnica">
+<summary>
+<span class="accordion__num">1.3</span>
+<span class="accordion__title-main">Ficha técnica del Estándar B</span>
+<span class="accordion__meta">Datos del estándar · 3 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<tbody>
+<tr>
+<td><strong>Título oficial</strong></td>
+<td>Desarrollo de productos y servicios con Inteligencia Artificial en la MiPyME</td>
+</tr>
+<tr>
+<td><strong>Nivel SNC</strong></td>
+<td>Tres</td>
+</tr>
+<tr>
+<td><strong>Número de elementos</strong></td>
+<td>Cuatro</td>
+</tr>
+<tr>
+<td><strong>Comité de Gestión</strong></td>
+<td>FUNDES, con participación de ALAPSI y el Instituto Estatal de Capacitación del Estado de Guanajuato (IECA)</td>
+</tr>
+<tr>
+<td><strong>Periodo de revisión</strong></td>
+<td>Dos años</td>
+</tr>
+<tr>
+<td><strong>Clasificación SCIAN</strong></td>
+<td>541510 — Servicios de diseño de sistemas de cómputo y servicios relacionados</td>
+</tr>
+<tr>
+<td><strong>Grupo SINCO</strong></td>
+<td>2271 — Desarrolladores y analistas de software y multimedia</td>
+</tr>
+<tr>
+<td><strong>Ocupaciones asociadas</strong></td>
+<td>Consultor de inteligencia artificial para MiPyMEs · Desarrollador de productos digitales con IA · Diseñador de soluciones de IA para negocios · Analista de sistemas · Asesor y consultor informático</td>
+</tr>
+<tr>
+<td><strong>Modalidades de evaluación</strong></td>
+<td>Presencial o remota</td>
+</tr>
+<tr>
+<td><strong>Requisito de título profesional</strong></td>
+<td>No requerido</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 1.4 EL CASO TONALLI ===== -->
+<details class="accordion__item" id="caso-tonalli">
+<summary>
+<span class="accordion__num">1.4</span>
+<span class="accordion__title-main">Conoce a Artesanías Tonalli</span>
+<span class="accordion__meta">Caso pedagógico transversal · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>A lo largo de este manual usaremos una MiPyME ficticia como hilo narrativo. El caso está diseñado para que puedas ver los conceptos del estándar aplicados a una situación real y representativa del tejido empresarial mexicano.</p>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Perfil de la empresa · Artesanías Tonalli</span>
+<div class="callout__body">
+<ul style="margin: 0; padding-left: 1.2em;">
+<li><strong>Nombre:</strong> Artesanías Tonalli</li>
+<li><strong>Ubicación:</strong> Comunidad alfarera, México</li>
+<li><strong>Giro:</strong> Taller familiar de cerámica de barro bruñido artesanal</li>
+<li><strong>Personas:</strong> 8 (artesanos + apoyo administrativo)</li>
+<li><strong>Canales actuales:</strong> Venta directa a turistas en el taller + tiendas de decoración</li>
+<li><strong>Reto central:</strong> Abrir un canal de venta en línea, pero cada pieza es única y diferente, lo que complica describir, fotografiar y posicionar el catálogo</li>
+</ul>
+</div>
+</aside>
+<img alt="Interior del taller Artesanías Tonalli: estantes de madera con piezas de barro bruñido en tonos terrosos y mesa de trabajo con pinceles e instrumentos" class="img-escena img-escena--full" loading="lazy" src="../img/escenas/taller-tonalli.jpg"/>
+<h3>Las personas del caso</h3>
+<aside class="callout callout--with-photo" role="note">
+<img alt="Lucía, fundadora y maestra alfarera de Artesanías Tonalli, pintando una pieza de barro con concentración" class="img-personaje" loading="lazy" src="../img/personajes/lucia-artesana.jpg"/>
+<div>
+<span class="callout__label">Lucía · fundadora y maestra alfarera</span>
+<div class="callout__body">Lleva más de veinte años perfeccionando la técnica del barro bruñido. Conoce cada pieza que sale del taller como si fuera única —porque lo es. Le preocupa que vender en línea signifique reducir sus piezas a descripciones genéricas que no capturen su valor real. Confía en el trabajo manual y quiere que cualquier herramienta nueva respete esa identidad.</div>
+</div>
+</aside>
+<aside class="callout callout--with-photo" role="note">
+<img alt="Diego, sobrino de Lucía y consultor en innovación, sosteniendo una tablet con bocetos de la solución" class="img-personaje" loading="lazy" src="../img/personajes/diego-consultor.jpg"/>
+<div>
+<span class="callout__label">Diego · sobrino y consultor en innovación</span>
+<div class="callout__body">Recién egresado de diseño. Le entusiasma la idea de abrir el taller al mundo digital, pero sabe que hacerlo bien requiere algo más que subir fotos a una plataforma. Ha investigado algunas herramientas de IA y cree que podrían ayudar a generar las fichas de producto, pero nunca ha llevado ese proceso de principio a fin con usuarios reales.</div>
+</div>
+</aside>
+<h3>El proyecto que se desarrollará</h3>
+<p>A lo largo del manual, seguirás a Lucía y Diego en el desarrollo de un <strong>asistente de IA que genera descripciones y fichas de producto a partir de fotografías de cada pieza</strong>. El asistente debe capturar las características visuales únicas de cada cerámica —forma, textura, tono, acabado— y convertirlas en textos que puedan usarse directamente en un catálogo en línea, sin que Lucía tenga que escribir cada descripción a mano.</p>
+<p>Ese proyecto es el hilo que recorre los cuatro elementos del estándar:</p>
+<ul>
+<li><strong>Elemento 1 · Investigar:</strong> Lucía habla con sus clientes habituales —turistas, compradores de tiendas— para entender qué información buscan antes de comprar una pieza única y qué los hace decidirse o desistir.</li>
+<li><strong>Elemento 2 · Conceptualizar:</strong> Diego facilita una sesión de ideación donde el equipo define qué debe hacer el asistente, qué tecnología de IA usarán, cómo se integraría al flujo de fotografiado del taller y cuál sería la experiencia del usuario final.</li>
+<li><strong>Elemento 3 · Prototipar:</strong> Diego construye el primer prototipo funcional del asistente: un flujo que recibe una foto y devuelve una ficha de producto con descripción, materiales, dimensiones estimadas y sugerencia de precio.</li>
+<li><strong>Elemento 4 · Validar:</strong> El equipo prueba el asistente con clientes reales que visitan el taller, recoge su retroalimentación, analiza los resultados y genera recomendaciones sobre si la solución está lista para adoptarse o necesita ajustes.</li>
+</ul>
+<p style="font-size:0.92rem;color:var(--color-gris-texto);font-style:italic;">El caso es ficticio, pero los retos son representativos. Muchos talleres artesanales mexicanos enfrentan exactamente esta paradoja: tienen productos únicos de alto valor que no saben cómo comunicar en los canales digitales donde sus compradores potenciales ya están buscando.</p>
+</div>
+</details>
+</div>
+</div>
+<section id="siguiente">
+<h2>¿Listo para empezar?</h2>
+<p>El siguiente capítulo desarrolla el Elemento 1: identificar necesidades del usuario y oportunidades de mercado. Ahí encontrarás los desempeños, productos, conocimientos y AHV que se evaluarán en esta primera etapa del ciclo de innovación.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="elemento-1.html">Continuar: Elemento 1 · Investigar →</a>
+<a class="btn btn-secondary" href="ruta-preparacion.html">Ver ruta de preparación primero</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+<figure class="img-caso">
+<img alt="Diego entrevistando a Lucía en el taller de Artesanías Tonalli para entender necesidades del negocio" class="img-escena" loading="lazy" src="../img/escenas/entrevista-usuario-tonalli.jpg"/>
+<figcaption>Identificar bien la necesidad del usuario es la base de todo lo que viene después.</figcaption>
+</figure>
+
+<div class="lesson-tabs" data-progress-key="estandar-b-elemento-1">
+<div aria-label="Módulos del Elemento 1" class="accordion accordion--modules">
+<!-- ===== 2.1 QUÉ HARÁS ===== -->
+<details class="accordion__item" id="que-haras" open="">
+<summary>
+<span class="accordion__num">2.1</span>
+<span class="accordion__title-main">Qué harás en este elemento</span>
+<span class="accordion__meta">Ciclo de investigación · 5 pasos · 3 min</span>
+</summary>
+<div class="accordion__body">
+<ol>
+<li><strong>Levantar información inicial sobre la MiPyME:</strong> perfil empresarial, contexto tecnológico, descripción del problema/oportunidad desde la perspectiva del cliente.</li>
+<li><strong>Realizar un análisis de mercado:</strong> macroentorno, tendencias, competidores, oportunidades de diferenciación con IA.</li>
+<li><strong>Entrevistar a usuarios y partes interesadas:</strong> entrevistas estructuradas o semiestructuradas para comprender necesidades, comportamientos y contexto de uso.</li>
+<li><strong>Identificar y documentar los hallazgos:</strong> patrones de comportamiento, necesidades prioritarias, análisis de causa raíz.</li>
+<li><strong>Priorizar oportunidades:</strong> construir la matriz de priorización con criterios de viabilidad, impacto y recursos, y seleccionar la oportunidad a desarrollar.</li>
+</ol>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli en este elemento · Diego y Lucía comienzan</span>
+<div class="callout__body">Diego se reúne con Lucía para entender el taller: el problema de catalogar piezas únicas, los intentos previos fallidos de venta en línea, y el contexto tecnológico actual (venta presencial, sin canal digital). Luego entrevista a compradores de artesanía en línea y confirma que la descripción pobre es la principal barrera de compra. Con esos insumos, construye la matriz de priorización y presenta a Lucía la oportunidad de mayor impacto: un asistente de IA para generar fichas de producto a partir de fotografías.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 2.2 CÓMO TE EVALUARÁN ===== -->
+<details class="accordion__item" id="como-evaluan">
+<summary>
+<span class="accordion__num">2.2</span>
+<span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+<span class="accordion__meta">Tabla de tipos de evidencia · 2 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo de evidencia</th>
+<th>Cantidad</th>
+<th>Cómo se valora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños observables</strong></td>
+<td>2 desempeños</td>
+<td>Te observan directamente: la recopilación de información inicial y la presentación de la propuesta al cliente.</td>
+</tr>
+<tr>
+<td><strong>Productos entregables</strong></td>
+<td>4 productos</td>
+<td>Tus productos se revisan contra los criterios del estándar. Mayor peso documental del elemento.</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>6 áreas (nivel Comprensión)</td>
+<td>Cuestionario que mide el dominio aplicado de los conocimientos.</td>
+</tr>
+<tr>
+<td><strong>Actitudes, hábitos y valores</strong></td>
+<td>1 (Orden)</td>
+<td>Se observa durante la ejecución de los desempeños.</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">En este elemento, los <strong>productos son la fuente de evidencia con mayor volumen</strong>. Si llegas al día de la evaluación sin los 4 productos completos y listos para revisión, la sesión no podrá completarse adecuadamente.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 2.3 LOS DESEMPEÑOS ===== -->
+<details class="accordion__item" id="desempenos">
+<summary>
+<span class="accordion__num">2.3</span>
+<span class="accordion__title-main">Los desempeños del Elemento 1</span>
+<span class="accordion__meta">2 desempeños · criterios estándar en pestañas · 8 min</span>
+</summary>
+<div class="accordion__body">
+<h3>Desempeño 1.1 · Recopila información sobre la MiPyME y el mercado</h3>
+<p>El evaluador observará cómo realizas el levantamiento de información inicial con el emprendedor. El estándar valora 5 características:</p>
+<div class="tabs">
+<div aria-label="Características del Desempeño 1.1" class="tabs__list" role="tablist">
+<button aria-controls="panel-e1d1a" aria-selected="true" class="tabs__tab" id="tab-e1d1a" role="tab">A · Entorno empresarial</button>
+<button aria-controls="panel-e1d1b" aria-selected="false" class="tabs__tab" id="tab-e1d1b" role="tab" tabindex="-1">B · Problemas y oportunidades</button>
+<button aria-controls="panel-e1d1c" aria-selected="false" class="tabs__tab" id="tab-e1d1c" role="tab" tabindex="-1">C · Sentencia del problema</button>
+<button aria-controls="panel-e1d1d" aria-selected="false" class="tabs__tab" id="tab-e1d1d" role="tab" tabindex="-1">D · Análisis de mercado</button>
+<button aria-controls="panel-e1d1e" aria-selected="false" class="tabs__tab" id="tab-e1d1e" role="tab" tabindex="-1">E · Entrevistas a usuarios</button>
+</div>
+<div aria-labelledby="tab-e1d1a" class="tabs__panel" id="panel-e1d1a" role="tabpanel">
+<h4>A · Entorno empresarial</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Describiendo el contexto empresarial y tecnológico actual de la MiPyME"</em></p>
+<p><strong>Qué significa:</strong> Antes de proponer soluciones, mapeas el punto de partida. Incluye el sector, el modelo de negocio actual, las herramientas que ya usa, y el nivel de digitalización. Sin este contexto, cualquier solución que propongas después flotan sin anclaje.</p>
+</div>
+<div aria-labelledby="tab-e1d1b" class="tabs__panel" hidden="" id="panel-e1d1b" role="tabpanel">
+<h4>B · Problemas y oportunidades</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Describiendo los problemas, necesidades/oportunidades de mejora identificadas desde la perspectiva del cliente"</em></p>
+<p><strong>Qué significa:</strong> Escuchas al emprendedor, no proyectas tus propias hipótesis. Los problemas son del cliente, no tuyos. Documenta con sus palabras, no con las tuyas, y diferencia entre lo que dice que quiere y lo que realmente necesita.</p>
+</div>
+<div aria-labelledby="tab-e1d1c" class="tabs__panel" hidden="" id="panel-e1d1c" role="tabpanel">
+<h4>C · Sentencia del problema</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Definiendo la sentencia del problema/oportunidad que considera el origen, el perfil del afectado, el contexto y el mecanismo de resolución vigente"</em></p>
+<p><strong>Qué significa:</strong> Es el párrafo articulador del proyecto — dice con precisión qué problema existe, para quién, en qué condiciones y cómo se resuelve hoy. Un evaluador puede pedirte que la leas en voz alta. Si no puedes leerla con fluidez y precisión, no está lista.</p>
+</div>
+<div aria-labelledby="tab-e1d1d" class="tabs__panel" hidden="" id="panel-e1d1d" role="tabpanel">
+<h4>D · Análisis de mercado</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Realizando el análisis del macroentorno, tendencias, competidores y oportunidades de diferenciación con IA"</em></p>
+<p><strong>Qué significa:</strong> Contextualizas el problema en el mercado. No basta con saber lo que el cliente ve; debes aportar lo que el mercado dice que el cliente no ve. El análisis de mercado debe estar fundamentado en fuentes verificables, no en suposiciones.</p>
+</div>
+<div aria-labelledby="tab-e1d1e" class="tabs__panel" hidden="" id="panel-e1d1e" role="tabpanel">
+<h4>E · Entrevistas a usuarios</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Documentando los hallazgos de entrevistas con usuarios, incluyendo perfil del entrevistado, herramientas de IA utilizadas, necesidades identificadas y análisis de causa raíz"</em></p>
+<p><strong>Qué significa:</strong> El levantamiento llega hasta los usuarios finales, no solo hasta el emprendedor. El análisis de causa raíz (árbol de problema) distingue síntomas de causas reales. Sin esto, las soluciones atacan efectos, no causas.</p>
+</div>
+</div>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Desempeño 1.1 — Diego levanta información</span>
+<div class="callout__body">
+<p>Diego se reúne con Lucía (contexto empresarial: 8 personas, venta presencial y a tiendas, sin canal digital). Entrevista a 5 compradores de artesanía en línea y descubre que la descripción es la barrera principal: ninguno compraría una pieza sin saber el tamaño, el material y la técnica. Redacta la sentencia del problema:</p>
+<p><em>"Los talleres artesanales como Tonalli no pueden vender en línea de forma efectiva porque sus piezas únicas carecen de descripción profesional — el emprendedor no tiene tiempo ni vocabulario técnico para catalogarlas — lo que resulta en tasas de conversión bajas y dependencia del turismo presencial."</em></p>
+</div>
+</aside>
+<h3>Desempeño 1.2 · Presenta el análisis de oportunidades y la propuesta de exploración</h3>
+<p>Tras el levantamiento, el análisis de mercado y las entrevistas, presentas los hallazgos al emprendedor y propones las oportunidades priorizadas. 4 características:</p>
+<div class="tabs">
+<div aria-label="Características del Desempeño 1.2" class="tabs__list" role="tablist">
+<button aria-controls="panel-e1d2a" aria-selected="true" class="tabs__tab" id="tab-e1d2a" role="tab">A · Hallazgos de investigación</button>
+<button aria-controls="panel-e1d2b" aria-selected="false" class="tabs__tab" id="tab-e1d2b" role="tab" tabindex="-1">B · Oportunidades de IA</button>
+<button aria-controls="panel-e1d2c" aria-selected="false" class="tabs__tab" id="tab-e1d2c" role="tab" tabindex="-1">C · Matriz de priorización</button>
+<button aria-controls="panel-e1d2d" aria-selected="false" class="tabs__tab" id="tab-e1d2d" role="tab" tabindex="-1">D · Resolución de dudas</button>
+</div>
+<div aria-labelledby="tab-e1d2a" class="tabs__panel" id="panel-e1d2a" role="tabpanel">
+<h4>A · Hallazgos de investigación</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentando los hallazgos de la investigación de mercado y las entrevistas de usuario"</em></p>
+<p><strong>Qué significa:</strong> Traduce datos en insights accionables. No presentas tablas crudas — presentas patrones y conclusiones que el emprendedor puede entender y usar para tomar decisiones. La claridad de la presentación es parte de la evaluación.</p>
+</div>
+<div aria-labelledby="tab-e1d2b" class="tabs__panel" hidden="" id="panel-e1d2b" role="tabpanel">
+<h4>B · Oportunidades de IA</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Explicando las oportunidades de diferenciación mediante inteligencia artificial identificadas"</em></p>
+<p><strong>Qué significa:</strong> Ancla cada oportunidad en un problema real. "Se podría usar IA" no es suficiente — debes explicar qué problema concreto resuelve, qué evidencia lo respalda y por qué una solución de IA es adecuada en este contexto específico.</p>
+</div>
+<div aria-labelledby="tab-e1d2c" class="tabs__panel" hidden="" id="panel-e1d2c" role="tabpanel">
+<h4>C · Matriz de priorización</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentando la matriz de priorización de oportunidades con los criterios de evaluación y la recomendación"</em></p>
+<p><strong>Qué significa:</strong> La matriz da rigor a la decisión — no es intuición. Los criterios (viabilidad comercial, impacto, recursos) deben ser explícitos y aplicados de manera consistente a todas las oportunidades evaluadas.</p>
+</div>
+<div aria-labelledby="tab-e1d2d" class="tabs__panel" hidden="" id="panel-e1d2d" role="tabpanel">
+<h4>D · Resolución de dudas</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Resolviendo dudas del cliente sobre el análisis y las oportunidades identificadas"</em></p>
+<p><strong>Qué significa:</strong> El evaluador observa cómo manejas preguntas críticas. Responde con honestidad: si no sabes algo, dilo. Si una pregunta revela un hueco en el análisis, reconócelo. La transparencia es parte de la competencia profesional.</p>
+</div>
+</div>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Desempeño 1.2 — Diego presenta sus hallazgos a Lucía</span>
+<div class="callout__body">Diego usa tres bloques: hallazgos de mercado (las tiendas de artesanía en línea con mejores ventas tienen 3 fotos + descripción de 200 palabras por pieza), resultados de entrevistas (5 de 5 compradores dijeron que no comprarían sin descripción), y la matriz con 3 oportunidades priorizadas. La #1: asistente IA para fichas de producto. Lucía pregunta cuánto cuesta. Diego responde con claridad: hay opciones gratuitas (ChatGPT básico) y opciones de pago con mayor calidad (Claude API), y propone empezar con la opción gratuita para validar antes de invertir.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 2.4 LOS PRODUCTOS ===== -->
+<details class="accordion__item" id="productos">
+<summary>
+<span class="accordion__num">2.4</span>
+<span class="accordion__title-main">Los productos del Elemento 1</span>
+<span class="accordion__meta">4 productos documentales · criterios estándar · 10 min</span>
+</summary>
+<div class="accordion__body">
+<div class="template-downloads">
+<h3 class="template-downloads__title">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"></path></svg>
+              Descarga los 4 templates editables (3 Word + 1 Excel)
+            </h3>
+<p class="template-downloads__intro">El Elemento 1 produce 4 documentos de investigación: desde la sesión inicial con el cliente hasta la matriz de priorización. El Producto 1.3 es el más extenso: documenta 11 criterios que cubren el registro de entrevistas, el perfil del usuario y el análisis de causa raíz. Adapta todos los templates a tu proyecto real.</p>
+<div class="template-downloads__grid">
+<a class="template-downloads__item" download="" href="templates/1-1-reporte-inicial.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">1.1</span> Reporte inicial del levantamiento de información</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/1-2-analisis-mercado.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">1.2</span> Análisis de mercado de la MiPyME</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/1-3-reporte-entrevistas.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">1.3</span> Reporte de entrevistas de necesidades del usuario</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/1-4-matriz-priorizacion.xls">
+<span class="template-downloads__item-icon template-downloads__item-icon--xls">XLS</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">1.4</span> Matriz de priorización de oportunidades</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+</div>
+</div>
+<p>Este elemento exige 4 productos documentales. A continuación se describe cada uno con sus características literales del estándar y guías de preparación.</p>
+<h3>Producto 1.1 · Reporte inicial documentado del levantamiento de información con el cliente</h3>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Requisito taxativo</span>
+<div class="callout__body">Este producto debe presentarse en formato digital o físico, con redacción clara, estructurada y sin errores ortográficos (característica i del estándar). Un producto con errores ortográficos puede ser objetado por el evaluador.</div>
+</aside>
+<p>Criterios del estándar (9 características):</p>
+<ol type="a">
+<li>Contiene el resumen de la sesión inicial realizada con el emprendedor o persona responsable de la empresa/contexto empresarial y tecnológico actual.</li>
+<li>Incluye el perfil empresarial: nombre, ubicación, giro, número de empleados, datos de contacto.</li>
+<li>Contiene la descripción de problemas, necesidades/oportunidades desde la perspectiva del cliente.</li>
+<li>Contiene la descripción de procesos/actividades/áreas donde se identifican oportunidades.</li>
+<li>Contiene la definición del alcance preliminar del proyecto.</li>
+<li>Contiene la sentencia del problema/oportunidad: origen, perfil del afectado, contexto y mecanismo de resolución vigente.</li>
+<li>Contiene las fuentes de información consultadas.</li>
+<li>Indica la metodología de recolección aplicada.</li>
+<li>Se presenta en formato digital/físico, redacción clara, sin errores ortográficos.</li>
+</ol>
+<h3>Producto 1.2 · Análisis de mercado de la MiPyME elaborado</h3>
+<p>Criterios del estándar (7 características):</p>
+<ol type="a">
+<li>Análisis del macroentorno y tendencias: tendencias de consumo, cambios tecnológicos, comportamientos del cliente.</li>
+<li>Comparativo de competidores directos e indirectos: propuesta de valor, posicionamiento, uso de tecnología.</li>
+<li>Oportunidades de diferenciación mediante IA: derivadas del análisis de tendencias, brechas competitivas y necesidades emergentes.</li>
+<li>Información del entorno para orientar entrevistas con usuarios.</li>
+<li>Listado de herramientas y prompts de análisis con IA utilizados.</li>
+<li>Fuentes consultadas: reportes sectoriales, estudios de mercado, bases de datos, plataformas digitales.</li>
+<li>Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+</ol>
+<h3>Producto 1.3 · Reporte de entrevistas de necesidades del usuario, elaborado</h3>
+<p>Criterios del estándar (11 características):</p>
+<p class="criteria-group-label"><strong>Registro de entrevistas</strong></p>
+<ol start="1" type="a">
+<li>Registro de entrevistas: objetivo, perfil del entrevistado y medio utilizado.</li>
+<li>Herramientas/plataformas de IA utilizadas como apoyo en investigación cualitativa: propósito y prompts.</li>
+</ol>
+<p class="criteria-group-label"><strong>Perfil del usuario</strong></p>
+<ol start="3" type="a">
+<li>Descripción de problemas/necesidades/experiencias y contexto de uso.</li>
+<li>Perfil del usuario: necesidades, emociones, perspectiva, acciones y resultados esperados.</li>
+<li>Análisis del propósito de uso: cronología del proceso, cuatro fuerzas del progreso, narrativa de necesidad.</li>
+</ol>
+<p class="criteria-group-label"><strong>Hallazgos y análisis</strong></p>
+<ol start="6" type="a">
+<li>Hallazgos: patrones de comportamiento y necesidades prioritarias.</li>
+<li>Problemas actuales del usuario y su impacto en el proceso o servicio.</li>
+<li>Análisis de causa raíz mediante árbol de problema/causa-efecto.</li>
+</ol>
+<p class="criteria-group-label"><strong>Oportunidades y cierre</strong></p>
+<ol start="9" type="a">
+<li>Oportunidades de mejora y de mercado mediante IA.</li>
+<li>Listado de herramientas y prompts utilizados.</li>
+<li>Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+</ol>
+<h3>Producto 1.4 · Matriz de priorización de oportunidades elaborada</h3>
+<p>Criterios del estándar (4 características):</p>
+<ol type="a">
+<li>Criterios de evaluación de viabilidad comercial, impacto y recursos definidos.</li>
+<li>Oportunidades clasificadas y ordenadas por prioridad.</li>
+<li>Recomendación de oportunidades seleccionadas para desarrollo.</li>
+<li>Formato digital/físico, redacción clara, estructura profesional, sin errores ortográficos.</li>
+</ol>
+<aside class="callout callout--template" role="note">
+<span class="callout__label">Plantilla guía disponible</span>
+<div class="callout__body">Para cada uno de estos 4 productos encontrarás en la ruta de preparación una plantilla base descargable que ya tiene la estructura del estándar. Úsala como punto de partida, no como documento final — el contenido debe ser tuyo.</div>
+</aside>
+<h3>Antes de continuar: ¿ya tienes claros los 4 productos?</h3>
+<p>Voltea cada tarjeta y márcala con honestidad. Las que marquen "a repasar" son las que debes trabajar antes de construir tu portafolio.</p>
+<div class="flashcard-deck" data-storage-key="eb1-productos">
+
+</div>
+<h3>Aplica el Elemento 1 · Diego revisa su reporte antes de la reunión con Lucía</h3>
+<p>Diego terminó el levantamiento inicial en Artesanías Tonalli. Mañana se lo presenta a Lucía. Revisa el estado de su reporte y decide qué tan listo está para la evaluación del estándar.</p>
+<div class="scenario-decision" data-storage-key="eb1-reporte-inicial-tonalli">
+
+</div>
+</div>
+</details>
+<!-- ===== 2.5 LOS CONOCIMIENTOS ===== -->
+<details class="accordion__item" id="conocimientos">
+<summary>
+<span class="accordion__num">2.5</span>
+<span class="accordion__title-main">Los conocimientos del Elemento 1</span>
+<span class="accordion__meta">6 áreas de conocimiento · nivel Comprensión · 8 min</span>
+</summary>
+<div class="accordion__body">
+<p>El estándar exige el dominio de 6 áreas de conocimiento para este elemento. Nivel Comprensión: puedes explicar el concepto y reconocer su aplicación.</p>
+<table class="prose-table">
+<thead>
+<tr>
+<th>Área de conocimiento</th>
+<th>Nivel</th>
+<th>Lo que debes poder hacer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Investigación de mercado asistida por IA: análisis de macroentorno, tendencias, oportunidades de diferenciación</td>
+<td>Comprensión</td>
+<td>Explicar qué factores del macroentorno impactan el mercado de la MiPyME e identificar oportunidades de diferenciación con IA</td>
+</tr>
+<tr>
+<td>Ingeniería de prompts para exploración de oportunidades: componentes del prompt, tipos según propósito, técnicas de iteración, criterios de evaluación de respuestas</td>
+<td>Comprensión</td>
+<td>Construir prompts efectivos para análisis de mercado y reconocer cuándo una respuesta de IA no es confiable</td>
+</tr>
+<tr>
+<td>Metodologías de investigación de usuario: Jobs To Be Done (JTBD), entrevistas estructuradas, observación directa</td>
+<td>Comprensión</td>
+<td>Aplicar la metodología JTBD para identificar el "trabajo" que el usuario intenta realizar y diseñar entrevistas orientadas a ese objetivo</td>
+</tr>
+<tr>
+<td>Protección de datos personales en soluciones de IA: clasificación de datos, transferencias a terceros, aviso de privacidad, LFPDPPP, controles de acceso</td>
+<td>Comprensión</td>
+<td>Identificar qué datos de la MiPyME son sensibles/personales, evaluar la compatibilidad del aviso de privacidad con las herramientas de IA propuestas</td>
+</tr>
+<tr>
+<td>Consentimiento informado para uso de información de la empresa</td>
+<td>Comprensión</td>
+<td>Explicar por qué se requiere consentimiento y cómo obtenerlo correctamente antes de procesar datos del cliente en herramientas de IA</td>
+</tr>
+<tr>
+<td>Conocimientos generales de contratación: relación de encargo, responsables de la información</td>
+<td>Comprensión</td>
+<td>Describir las responsabilidades legales del consultor respecto a la información de la empresa durante el proyecto</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--reflection" role="note">
+<span class="callout__label">Nota sobre privacidad en el Elemento 1</span>
+<div class="callout__body">Cuando uses herramientas de IA (ChatGPT, Claude, Gemini) para analizar información de la MiPyME, estás transfiriendo datos a terceros. Antes de empezar cualquier análisis, verifica que el aviso de privacidad de la empresa contemple ese uso, o trabaja con datos anonimizados.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 2.6 AHV ===== -->
+<details class="accordion__item" id="ahv">
+<summary>
+<span class="accordion__num">2.6</span>
+<span class="accordion__title-main">Las actitudes, hábitos y valores del Elemento 1</span>
+<span class="accordion__meta">AHV · Orden · cómo se observa · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>Este elemento evalúa una sola AHV: <strong>Orden</strong>.</p>
+<p><strong>Definición del estándar:</strong> "La manera en que presenta la información del diagnóstico de forma lógica y comprensible para el usuario."</p>
+<p>El Orden en este elemento no es estético — es funcional. Un reporte desordenado dificulta que el evaluador encuentre los criterios del estándar. Un análisis de mercado sin estructura hace que el emprendedor no entienda la recomendación. Ordena para que quien te lea nunca tenga que preguntarse "¿y esto dónde está?".</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Cómo demostrar Orden al evaluador</span>
+<div class="callout__body">Usa una tabla de contenidos en tus documentos, numera los apartados para que correspondan a los criterios del estándar (ej. "Sección 1.f · Sentencia del problema"), y en la presentación oral, anuncia antes de cada bloque qué viene a continuación.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 2.7 GLOSARIO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">2.7</span>
+<span class="accordion__title-main">Glosario operativo del Elemento 1</span>
+<span class="accordion__meta">17 términos del estándar · 5 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición conforme al estándar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Análisis de causa raíz</strong></td>
+<td>Método de análisis que busca identificar las causas fundamentales de un problema, evitando enfocarse solo en sus efectos.</td>
+</tr>
+<tr>
+<td><strong>Árbol de problema o causa-efecto</strong></td>
+<td>Herramienta visual que organiza problema central, causas y efectos, permitiendo comprender la relación entre los factores que originan una situación.</td>
+</tr>
+<tr>
+<td><strong>Contexto de aparición</strong></td>
+<td>Condiciones específicas en las que surge un problema u oportunidad: el momento, el lugar y las circunstancias que lo provocan o lo hacen evidente.</td>
+</tr>
+<tr>
+<td><strong>Cronología del proceso</strong></td>
+<td>Secuencia de etapas que describe cómo el usuario identifica, decide, ejecuta y evalúa la solución de un problema o necesidad.</td>
+</tr>
+<tr>
+<td><strong>Cuatro fuerzas del progreso</strong></td>
+<td>Fuerzas que influyen en la decisión: Push (insatisfacción con la situación actual), Pull (atracción hacia una nueva solución), Anxiety (miedos ante el cambio) y Habit (inercia que mantiene la solución actual).</td>
+</tr>
+<tr>
+<td><strong>Entrevista a usuario</strong></td>
+<td>Técnica cualitativa: conversar de forma estructurada o semiestructurada con usuarios/clientes para comprender sus necesidades, experiencias y comportamientos.</td>
+</tr>
+<tr>
+<td><strong>Hallazgos</strong></td>
+<td>Conclusiones relevantes del análisis de entrevistas y datos de usuarios que revelan patrones de comportamiento, necesidades o problemas. También conocidos como Insights.</td>
+</tr>
+<tr>
+<td><strong>Herramientas de análisis con IA</strong></td>
+<td>Aplicaciones o sistemas que utilizan algoritmos de IA para analizar, interpretar o sintetizar información, apoyando la identificación de patrones o hipótesis a partir de datos cualitativos o cuantitativos.</td>
+</tr>
+<tr>
+<td><strong>Hipótesis</strong></td>
+<td>Afirmación verificable que propone una relación causal entre una variable y un resultado esperado, y que se valida mediante pruebas o experimentación.</td>
+</tr>
+<tr>
+<td><strong>Inteligencia Artificial</strong></td>
+<td>Sistemas computacionales capaces de realizar tareas que normalmente requieren inteligencia humana.</td>
+</tr>
+<tr>
+<td><strong>Macroentorno</strong></td>
+<td>Conjunto de factores externos (económicos, tecnológicos, sociales, regulatorios y culturales) que influyen en el mercado y en el desempeño de una empresa.</td>
+</tr>
+<tr>
+<td><strong>Narrativa de necesidad</strong></td>
+<td>Descripción del contexto en el que surge una necesidad del usuario, usando la estructura Job Story: "Cuando… quiero… para poder…"</td>
+</tr>
+<tr>
+<td><strong>Prompt</strong></td>
+<td>Instrucción o conjunto de instrucciones que se proporcionan a una herramienta de IA generativa para obtener un resultado específico.</td>
+</tr>
+<tr>
+<td><strong>Propósito de uso</strong></td>
+<td>Enfoque de innovación que busca identificar el trabajo o progreso que una persona intenta lograr al utilizar un producto o servicio (Jobs To Be Done).</td>
+</tr>
+<tr>
+<td><strong>Sentencia del problema</strong></td>
+<td>Formulación sintética que describe el origen de un problema u oportunidad, el perfil del afectado, el contexto en que aparece y el mecanismo de resolución vigente.</td>
+</tr>
+<tr>
+<td><strong>Usuario/Persona</strong></td>
+<td>Representación del tipo de usuario objetivo basada en información real de entrevistas o investigación: características, contexto, motivaciones, objetivos y problemas.</td>
+</tr>
+<tr>
+<td><strong>Usuarios sintéticos</strong></td>
+<td>Perfiles simulados generados mediante IA que replican comportamientos, preferencias o respuestas de usuarios reales para explorar hipótesis o escenarios.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+</div>
+<section id="siguiente">
+<h2>Terminaste el Elemento 1 · Identificar necesidades</h2>
+<p>Ya tienes claro cómo identificar necesidades del usuario y oportunidades de mercado con IA. Lo que sigue: conceptualizar la solución con base en tus hallazgos.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="elemento-2.html">Continuar: Elemento 2 · Conceptualizar →</a>
+<a class="btn btn-secondary" href="index.html">← Volver al inicio del manual</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+<figure class="img-caso">
+<img alt="Diego y Lucía en sesión de ideación colaborativa, diseñando la solución de IA para Tonalli" class="img-escena img-escena--full" loading="lazy" src="../img/escenas/sesion-ideacion-prototipo.jpg"/>
+<figcaption>Conceptualizar es trabajar codo a codo con el cliente: ideas viables que respeten su identidad.</figcaption>
+</figure>
+
+<div class="lesson-tabs" data-progress-key="estandar-b-elemento-2">
+<div aria-label="Módulos del Elemento 2" class="accordion accordion--modules">
+<!-- ===== 3.1 QUÉ HARÁS ===== -->
+<details class="accordion__item" id="que-haras" open="">
+<summary>
+<span class="accordion__num">3.1</span>
+<span class="accordion__title-main">Qué harás en este elemento</span>
+<span class="accordion__meta">De hallazgos a concepto · 4 pasos · 3 min</span>
+</summary>
+<div class="accordion__body">
+<ol>
+<li><strong>Facilitar una sesión de ideación con el cliente/usuario:</strong> presentar hallazgos del Elemento 1, guiar la generación de ideas con metodologías (Design Thinking, SCAMPER, Crazy 8s), usar herramientas de IA para ampliar posibilidades.</li>
+<li><strong>Construir y validar la matriz de ideas:</strong> clasificar por novedad, utilidad y factibilidad; seleccionar con el cliente la idea a desarrollar.</li>
+<li><strong>Documentar el modelo de negocio:</strong> usar Business Model Canvas o Lean Canvas para estructurar cómo la solución crea, entrega y captura valor.</li>
+<li><strong>Diseñar el modelo de funcionamiento del prototipo:</strong> definir funcionalidades, datos de entrada/salida, arquitectura, flujos de interacción y requerimientos técnicos.</li>
+</ol>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Elemento 2 — Diego facilita la sesión de ideación</span>
+<div class="callout__body">Diego reúne a Lucía y Rosa (quien maneja las redes) para una sesión de 2 horas. Usan ChatGPT como apoyo y generan 12 ideas. La pregunta detonadora acordada: "¿Cómo podría Tonalli describir cada pieza única en menos de 2 minutos sin que Lucía intervenga?" Seleccionan la idea ganadora: un asistente IA que genera ficha de producto a partir de una foto tomada con el celular.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 3.2 CÓMO TE EVALUARÁN ===== -->
+<details class="accordion__item" id="como-evaluan">
+<summary>
+<span class="accordion__num">3.2</span>
+<span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+<span class="accordion__meta">2 desempeños · 3 productos · 2 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo de evidencia</th>
+<th>Cantidad</th>
+<th>Cómo se valora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños observables</strong></td>
+<td>2 desempeños</td>
+<td>Te observan durante la sesión de ideación y la sesión de presentación de propuesta de prototipo.</td>
+</tr>
+<tr>
+<td><strong>Productos entregables</strong></td>
+<td>3 productos</td>
+<td>Tus productos se revisan contra los criterios del estándar.</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>3 áreas (Conocimiento y Comprensión)</td>
+<td>Cuestionario de dominio aplicado.</td>
+</tr>
+<tr>
+<td><strong>Actitudes, hábitos y valores</strong></td>
+<td>1 (Iniciativa)</td>
+<td>Se observa durante los desempeños.</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Los desempeños de este elemento tienen mayor peso observacional que los del Elemento 1. La sesión de ideación y la sesión de presentación son observadas en vivo por el evaluador. Practica con un colega antes de tu evaluación.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 3.3 LOS DESEMPEÑOS ===== -->
+<details class="accordion__item" id="desempenos">
+<summary>
+<span class="accordion__num">3.3</span>
+<span class="accordion__title-main">Los desempeños del Elemento 2</span>
+<span class="accordion__meta">2 desempeños · 15 características · 10 min</span>
+</summary>
+<div class="accordion__body">
+<h3>Desempeño 2.1 · Facilita la sesión de ideación de soluciones con el cliente/usuario mediante IA</h3>
+<p>El evaluador observará cómo conduces una sesión de ideación completa con el cliente. Este desempeño tiene 11 características — es el más extenso del Estándar B:</p>
+<div class="tabs">
+<div aria-label="Características del Desempeño 2.1" class="tabs__list" role="tablist">
+<button aria-controls="panel-e2d1a" aria-selected="true" class="tabs__tab" id="tab-e2d1a" role="tab">A · Presentación</button>
+<button aria-controls="panel-e2d1b" aria-selected="false" class="tabs__tab" id="tab-e2d1b" role="tab" tabindex="-1">B · Objetivo</button>
+<button aria-controls="panel-e2d1c" aria-selected="false" class="tabs__tab" id="tab-e2d1c" role="tab" tabindex="-1">C · Metodología</button>
+<button aria-controls="panel-e2d1d" aria-selected="false" class="tabs__tab" id="tab-e2d1d" role="tab" tabindex="-1">D · Hallazgos</button>
+<button aria-controls="panel-e2d1e" aria-selected="false" class="tabs__tab" id="tab-e2d1e" role="tab" tabindex="-1">E · Preguntas abiertas</button>
+<button aria-controls="panel-e2d1f" aria-selected="false" class="tabs__tab" id="tab-e2d1f" role="tab" tabindex="-1">F · Herramientas IA</button>
+<button aria-controls="panel-e2d1g" aria-selected="false" class="tabs__tab" id="tab-e2d1g" role="tab" tabindex="-1">G · Pregunta generadora</button>
+<button aria-controls="panel-e2d1h" aria-selected="false" class="tabs__tab" id="tab-e2d1h" role="tab" tabindex="-1">H · Primeras ideas</button>
+<button aria-controls="panel-e2d1i" aria-selected="false" class="tabs__tab" id="tab-e2d1i" role="tab" tabindex="-1">I · Ampliar ideas</button>
+<button aria-controls="panel-e2d1j" aria-selected="false" class="tabs__tab" id="tab-e2d1j" role="tab" tabindex="-1">J · Clasificación</button>
+<button aria-controls="panel-e2d1k" aria-selected="false" class="tabs__tab" id="tab-e2d1k" role="tab" tabindex="-1">K · Selección</button>
+</div>
+<div aria-labelledby="tab-e2d1a" class="tabs__panel" id="panel-e2d1a" role="tabpanel">
+<h4>A · Presentación</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentándose ante cliente/usuario al mencionar su nombre completo y su rol como consultor/asesor/desarrollador de productos y servicios con IA."</em></p>
+<p><strong>Qué significa:</strong> Establece credibilidad desde el inicio. El cliente y el evaluador saben exactamente quién eres y qué rol juegas en este proceso.</p>
+</div>
+<div aria-labelledby="tab-e2d1b" class="tabs__panel" hidden="" id="panel-e2d1b" role="tabpanel">
+<h4>B · Objetivo de la sesión</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentando el objetivo de la sesión."</em></p>
+<p><strong>Qué significa:</strong> El cliente sabe por qué está ahí y qué se logrará. No llegues a improvisar — enuncia el objetivo de manera precisa al inicio.</p>
+</div>
+<div aria-labelledby="tab-e2d1c" class="tabs__panel" hidden="" id="panel-e2d1c" role="tabpanel">
+<h4>C · Metodología de ideación</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentando al cliente la metodología a utilizar para la ideación."</em></p>
+<p><strong>Qué significa:</strong> No improvises la sesión — preséntala como un proceso con lógica. Explica brevemente qué técnica usarás (Design Thinking, SCAMPER, Crazy 8s) y por qué es adecuada para este contexto.</p>
+</div>
+<div aria-labelledby="tab-e2d1d" class="tabs__panel" hidden="" id="panel-e2d1d" role="tabpanel">
+<h4>D · Exposición de hallazgos</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Exponiendo los problemas u oportunidades detectadas durante el diagnóstico."</em></p>
+<p><strong>Qué significa:</strong> Conectas la ideación con los hallazgos del Elemento 1. La sesión no empieza desde cero — arranca desde la evidencia que ya recopilaste con el cliente.</p>
+</div>
+<div aria-labelledby="tab-e2d1e" class="tabs__panel" hidden="" id="panel-e2d1e" role="tabpanel">
+<h4>E · Preguntas abiertas</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Realizando preguntas abiertas que faciliten la generación de ideas."</em></p>
+<p><strong>Qué significa:</strong> La calidad de las ideas depende de la calidad de las preguntas. Prepara preguntas que amplíen el pensamiento del cliente, no que lo limiten a lo que ya conoce.</p>
+</div>
+<div aria-labelledby="tab-e2d1f" class="tabs__panel" hidden="" id="panel-e2d1f" role="tabpanel">
+<h4>F · Herramientas de IA para ideación</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Utilizando herramientas/plataformas/aplicaciones/prompts para ideación de preguntas."</em></p>
+<p><strong>Qué significa:</strong> Usas IA como amplificador creativo, no como sustituto del cliente. La herramienta enriquece la conversación; quien genera y valida las ideas sigue siendo el equipo humano.</p>
+</div>
+<div aria-labelledby="tab-e2d1g" class="tabs__panel" hidden="" id="panel-e2d1g" role="tabpanel">
+<h4>G · Pregunta generadora acordada</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Acordando con los asistentes una pregunta generadora orientada a resolver la necesidad."</em></p>
+<p><strong>Qué significa:</strong> La sesión converge en una pregunta detonadora elegida colectivamente. No es una pregunta que tú impones — es una que todos acuerdan como el foco central de la ideación.</p>
+</div>
+<div aria-labelledby="tab-e2d1h" class="tabs__panel" hidden="" id="panel-e2d1h" role="tabpanel">
+<h4>H · Construcción colaborativa de ideas</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Construyendo con los asistentes las primeras ideas."</em></p>
+<p><strong>Qué significa:</strong> Es construcción colaborativa, no propuesta unilateral del consultor. El evaluador observará que las ideas emergen del diálogo, no de tu presentación previa.</p>
+</div>
+<div aria-labelledby="tab-e2d1i" class="tabs__panel" hidden="" id="panel-e2d1i" role="tabpanel">
+<h4>I · Ampliar con IA</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Ampliando el alcance de la ideación mediante herramientas/plataformas/aplicaciones/prompts."</em></p>
+<p><strong>Qué significa:</strong> La IA enriquece y diversifica las ideas generadas humanamente. Después de la ronda inicial de ideas, usas IA para identificar variantes, combinaciones o ángulos que el grupo no consideró.</p>
+</div>
+<div aria-labelledby="tab-e2d1j" class="tabs__panel" hidden="" id="panel-e2d1j" role="tabpanel">
+<h4>J · Clasificación de ideas</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Clasificando verbalmente/por escrito las ideas en categorías de resultados."</em></p>
+<p><strong>Qué significa:</strong> La sesión cierra con orden, no con una lista caótica. Clasifica las ideas en categorías que permitan al cliente comparar y decidir con claridad.</p>
+</div>
+<div aria-labelledby="tab-e2d1k" class="tabs__panel" hidden="" id="panel-e2d1k" role="tabpanel">
+<h4>K · Selección con el cliente</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Seleccionando las ideas que favorezcan una solución orientada a satisfacer la necesidad o resolver el problema del cliente."</em></p>
+<p><strong>Qué significa:</strong> El cliente elige, no el consultor. Tu rol es facilitar la decisión con criterios claros (novedad, utilidad, factibilidad), no imponer la solución que tú prefieres.</p>
+</div>
+</div>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Desempeño 2.1</span>
+<div class="callout__body">Diego se presenta y enuncia el objetivo. Presenta el hallazgo central del Elemento 1: 5 de 5 compradores en línea no comprarían una pieza sin descripción. La pregunta generadora acordada: "¿Cómo podría Tonalli describir cada pieza única en menos de 2 minutos sin que Lucía intervenga?" Usa ChatGPT para ampliar las 6 ideas iniciales a 12. Clasifican en 3 categorías. Lucía y Rosa seleccionan la #3: asistente IA con foto → ficha en 90 segundos.</div>
+</aside>
+<h3>Desempeño 2.2 · Facilita la sesión de presentación de propuesta del prototipo</h3>
+<p>Después de la sesión de ideación y de construir el modelo de negocio y el diseño de funcionamiento, presentas la propuesta del prototipo para validación del cliente. 4 características:</p>
+<div class="tabs">
+<div aria-label="Características del Desempeño 2.2" class="tabs__list" role="tablist">
+<button aria-controls="panel-e2d2a" aria-selected="true" class="tabs__tab" id="tab-e2d2a" role="tab">A · Objetivo</button>
+<button aria-controls="panel-e2d2b" aria-selected="false" class="tabs__tab" id="tab-e2d2b" role="tab" tabindex="-1">B · Características técnicas</button>
+<button aria-controls="panel-e2d2c" aria-selected="false" class="tabs__tab" id="tab-e2d2c" role="tab" tabindex="-1">C · Propuesta económica</button>
+<button aria-controls="panel-e2d2d" aria-selected="false" class="tabs__tab" id="tab-e2d2d" role="tab" tabindex="-1">D · Visto bueno</button>
+</div>
+<div aria-labelledby="tab-e2d2a" class="tabs__panel" id="panel-e2d2a" role="tabpanel">
+<h4>A · Objetivo de la sesión</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentando el objetivo de la sesión."</em></p>
+<p><strong>Qué significa:</strong> El cliente sabe que viene a revisar y aprobar, no a escuchar. Enuncia el objetivo con claridad: "Hoy te presento la propuesta del prototipo para que la revises y me des tu visto bueno antes de que empiece a construirlo."</p>
+</div>
+<div aria-labelledby="tab-e2d2b" class="tabs__panel" hidden="" id="panel-e2d2b" role="tabpanel">
+<h4>B · Características técnicas y funcionales</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Exponiendo las características técnicas y funcionales de la propuesta del prototipo."</em></p>
+<p><strong>Qué significa:</strong> Explicas QUÉ hace el prototipo, con qué herramienta de IA, cómo funciona, qué produce. En lenguaje accesible para el cliente, no en jerga técnica.</p>
+</div>
+<div aria-labelledby="tab-e2d2c" class="tabs__panel" hidden="" id="panel-e2d2c" role="tabpanel">
+<h4>C · Propuesta económica</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Validando la propuesta económica del prototipo con el cliente."</em></p>
+<p><strong>Qué significa:</strong> Hay un costo de desarrollo y el cliente debe estar de acuerdo antes de seguir. Presenta el desglose: horas de desarrollo, costos de herramientas, costo de operación mensual.</p>
+</div>
+<div aria-labelledby="tab-e2d2d" class="tabs__panel" hidden="" id="panel-e2d2d" role="tabpanel">
+<h4>D · Retroalimentación y visto bueno</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Solicitando retroalimentación y visto bueno verbal/por escrito para el desarrollo del prototipo."</em></p>
+<p><strong>Qué significa:</strong> No construyes sin aprobación explícita del cliente. El visto bueno puede ser verbal (y documentado en el acta de reunión) o por escrito. Sin este paso, el Elemento 3 no tiene sustento.</p>
+</div>
+</div>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Desempeño 2.2</span>
+<div class="callout__body">Diego presenta una propuesta de 2 páginas: qué hace el asistente (foto → ficha en 90 segundos), herramienta elegida (GPT-4V vía API), costo de desarrollo (20 horas de Diego + $15 USD/mes de API), y el visto bueno que firma Lucía antes de que él empiece a construir el prototipo.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 3.4 LOS PRODUCTOS ===== -->
+<details class="accordion__item" id="productos">
+<summary>
+<span class="accordion__num">3.4</span>
+<span class="accordion__title-main">Los productos del Elemento 2</span>
+<span class="accordion__meta">3 productos documentales · criterios estándar · 10 min</span>
+</summary>
+<div class="accordion__body">
+<div class="template-downloads">
+<h3 class="template-downloads__title">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"></path></svg>
+              Descarga los 3 templates editables (2 Word + 1 Excel)
+            </h3>
+<p class="template-downloads__intro">El Elemento 2 produce 3 documentos de la fase creativa: el informe de ideación, la matriz de ideas y el modelo de negocio. El Producto 2.3 es el más completo: integra el Business Model Canvas con el diseño técnico del prototipo (22 criterios estándar). Adapta cada template a tu proyecto real.</p>
+<div class="template-downloads__grid">
+<a class="template-downloads__item" download="" href="templates/2-1-informe-ideacion.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">2.1</span> Informe del proceso de ideación de soluciones</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/2-2-matriz-ideas-solucion.xls">
+<span class="template-downloads__item-icon template-downloads__item-icon--xls">XLS</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">2.2</span> Matriz de ideas de solución</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/2-3-modelo-negocio.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">2.3</span> Modelo de negocio documentado</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+</div>
+</div>
+<h3>Producto 2.1 · Informe del proceso de ideación documentado</h3>
+<ul>
+<li>a) Preguntas generadoras de ideas formuladas a partir del problema priorizado.</li>
+<li>b) Preguntas sobre oportunidades de mejora o innovación en procesos, productos/servicios.</li>
+<li>c) La/s pregunta/s detonadora/s seleccionadas para la generación de ideas.</li>
+<li>d) Técnicas de ideación utilizadas.</li>
+<li>e) Ideas obtenidas a partir de las preguntas generadoras.</li>
+<li>f) Reformulación de las ideas que facilitan/impulsan la generación de soluciones.</li>
+<li>g) Herramientas y prompts utilizados en la sesión.</li>
+<li>h) Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+</ul>
+<h3>Producto 2.2 · Matriz de ideas de solución validada por el cliente/usuario</h3>
+<ul>
+<li>a) Listado de ideas generadas durante el proceso de ideación.</li>
+<li>b) Descripción breve de cada idea de producto o servicio propuesto.</li>
+<li>c) Clasificación preliminar por criterios de novedad, utilidad y factibilidad.</li>
+<li>d) Oportunidades de implementación de tecnologías digitales/IA identificadas y validadas por el cliente.</li>
+<li>e) La/s idea/s seleccionada/s por el cliente.</li>
+<li>f) Formato de matriz/tabla de análisis, digital/físico, redacción clara.</li>
+</ul>
+<h3>Producto 2.3 · Modelo de negocio documentado</h3>
+<p>Este producto tiene dos partes: el modelo de negocio (literales a-i) y el diseño del modelo de funcionamiento del prototipo (literales j-v). Son 22 criterios en total — el más extenso del Estándar B.</p>
+<h4>Modelo de negocio (criterios a-i)</h4>
+<ul>
+<li>a) Descripción del valor diferencial de la idea respecto a soluciones convencionales.</li>
+<li>b) Propuesta de valor comercial en el contexto de la MiPyME, en una frase.</li>
+<li>c) Segmentos de clientes descritos.</li>
+<li>d) Formas de relación con el cliente y canales de comunicación/distribución.</li>
+<li>e) Recursos y actividades clave necesarias para la operación.</li>
+<li>f) Fuentes de ingresos asociadas al producto o servicio.</li>
+<li>g) Costos de desarrollo, operación y mantenimiento.</li>
+<li>h) Alianzas clave para la operación y desarrollo.</li>
+<li>i) Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+</ul>
+<h4>Diseño del modelo de funcionamiento del prototipo (criterios j-v)</h4>
+<ul>
+<li>j) Funcionalidades clave del prototipo de la solución propuesta.</li>
+<li>k) Definición de datos de entrada requeridos y resultados esperados del componente de IA.</li>
+<li>l) Herramientas/plataformas de IA aplicables al desarrollo del prototipo.</li>
+<li>m) Justificación de la selección de herramientas/plataformas alineadas a necesidades y recursos de la MiPyME.</li>
+<li>n) Flujos de interacción de usuario con el prototipo.</li>
+<li>o) Arquitectura del prototipo.</li>
+<li>p) Representación visual y descripción de requerimientos de diseño gráfico.</li>
+<li>q) Costos de desarrollo y operación del prototipo.</li>
+<li>r) Requerimientos técnicos mínimos para la operación en el contexto de la MiPyME.</li>
+<li>s) Consideraciones de protección de datos personales y uso ético de IA.</li>
+<li>t) Consideraciones de propiedad intelectual aplicables al producto.</li>
+<li>u) Términos de servicio de las herramientas de IA utilizadas y legislación mexicana de derecho de autor.</li>
+<li>v) Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+</ul>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Requisito taxativo</span>
+<div class="callout__body">El Producto 2.3 incluye consideraciones de protección de datos personales y uso ético de IA (criterio s) y de propiedad intelectual (criterio t). Estos criterios son frecuentemente omitidos. El evaluador los busca activamente.</div>
+</aside>
+<h3>Decide rápido · ¿Esta descripción tiene modelo de negocio o le falta algo crítico?</h3>
+<p>Lucía y Diego generaron varias ideas en la sesión. Para cada una, decide si cumple el criterio del estándar para modelo de negocio (propuesta de valor + segmento + ingreso) o si le falta algo esencial.</p>
+<div class="swipe-decide" data-left-label="No cumple" data-right-label="Cumple" data-storage-key="eb2-modelo-negocio-tonalli">
+
+</div>
+<h3>¿Qué tanto ya sabes de estos conocimientos? Voltea y comprueba.</h3>
+<p>Estos tres marcos conceptuales sustentan tu trabajo en el Elemento 2. Márcalos honestamente.</p>
+<div class="flashcard-deck" data-storage-key="eb2-conocimientos">
+
+</div>
+</div>
+</details>
+<!-- ===== 3.5 LOS CONOCIMIENTOS ===== -->
+<details class="accordion__item" id="conocimientos">
+<summary>
+<span class="accordion__num">3.5</span>
+<span class="accordion__title-main">Los conocimientos del Elemento 2</span>
+<span class="accordion__meta">3 áreas · Conocimiento y Comprensión · 5 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Área de conocimiento</th>
+<th>Nivel</th>
+<th>Lo que debes poder hacer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preparación de sesiones con clientes</td>
+<td>Conocimiento</td>
+<td>Describir los componentes de una agenda de sesión efectiva con clientes en contexto de innovación con IA.</td>
+</tr>
+<tr>
+<td>Metodologías/técnicas de ideación</td>
+<td>Comprensión</td>
+<td>Explicar las diferencias entre metodologías y seleccionar la más adecuada para el contexto de la MiPyME.</td>
+</tr>
+<tr>
+<td>Modelo de negocio: Business Model Canvas, Lean Canvas, propuesta de valor</td>
+<td>Comprensión</td>
+<td>Aplicar el BMC o Lean Canvas para estructurar el modelo de la solución propuesta y articular la propuesta de valor en una frase.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 3.6 AHV ===== -->
+<details class="accordion__item" id="ahv">
+<summary>
+<span class="accordion__num">3.6</span>
+<span class="accordion__title-main">Las actitudes, hábitos y valores del Elemento 2</span>
+<span class="accordion__meta">AHV · Iniciativa · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>Este elemento evalúa una sola AHV: <strong>Iniciativa</strong>.</p>
+<p><em><strong>Definición del estándar:</strong> "La manera en que propone alternativas de solución y herramientas adecuadas al cliente y al contexto de la MiPyME."</em></p>
+<p>La Iniciativa no es imponer ideas — es proponer con pertinencia. Cuando el cliente se atasca en la sesión de ideación, tú aportas una perspectiva nueva que desbloquea la conversación. Cuando la primera herramienta de IA no es accesible para la MiPyME, propones una alternativa realista.</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Cómo demostrar Iniciativa al evaluador</span>
+<div class="callout__body">Cuando el cliente no genera ideas, usa un prompt de IA para proponer 5 ideas adicionales y pide al cliente que las evalúe. Cuando el modelo de negocio tiene un hueco (sin fuente de ingreso clara), propón activamente 3 opciones y facilita la decisión del cliente — no esperes a que él lo resuelva solo.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 3.7 GLOSARIO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">3.7</span>
+<span class="accordion__title-main">Glosario operativo del Elemento 2</span>
+<span class="accordion__meta">7 términos del estándar · 3 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición conforme al estándar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Arquitectura del prototipo</strong></td>
+<td>Estructura técnica que describe los componentes, flujos de datos, integraciones y lógica de funcionamiento de una solución tecnológica propuesta.</td>
+</tr>
+<tr>
+<td><strong>Flujo de interacción</strong></td>
+<td>Secuencia de pasos que describe cómo el usuario interactúa con el prototipo o solución, desde el inicio hasta la obtención del resultado esperado.</td>
+</tr>
+<tr>
+<td><strong>Ideación</strong></td>
+<td>Proceso creativo y estructurado de generación de ideas orientadas a resolver un problema o aprovechar una oportunidad identificada.</td>
+</tr>
+<tr>
+<td><strong>Modelo de negocio</strong></td>
+<td>Representación de cómo una empresa crea, entrega y captura valor: propuesta de valor, segmentos de clientes, canales, fuentes de ingresos, recursos y actividades clave.</td>
+</tr>
+<tr>
+<td><strong>Pregunta generadora</strong></td>
+<td>Formulación de preguntas abiertas diseñadas para estimular la generación de ideas y explorar posibles soluciones.</td>
+</tr>
+<tr>
+<td><strong>Propuesta de valor</strong></td>
+<td>Descripción del beneficio diferenciado que un producto o servicio ofrece al cliente, explicando por qué debería elegirlo sobre las alternativas.</td>
+</tr>
+<tr>
+<td><strong>Prototipo</strong></td>
+<td>Versión preliminar de un producto o servicio que permite visualizar, probar y validar una solución antes de su desarrollo completo.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+</div>
+<section id="siguiente">
+<h2>Terminaste el Elemento 2 · Conceptualizar la solución</h2>
+<p>Ya sabes cómo conceptualizar una solución de IA con base en las necesidades identificadas. Lo que sigue: construir el prototipo funcional.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="elemento-3.html">Continuar: Elemento 3 · Prototipar →</a>
+<a class="btn btn-secondary" href="index.html">← Volver al inicio del manual</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+<figure class="img-caso">
+<img alt="Diego construyendo el prototipo del asistente de IA para Tonalli con bocetos de la interfaz" class="img-escena" loading="lazy" src="../img/escenas/construccion-prototipo-ia.jpg"/>
+<figcaption>Construir el prototipo funcional: el momento donde la idea se vuelve algo que el usuario puede tocar.</figcaption>
+</figure>
+
+<div class="lesson-tabs" data-progress-key="estandar-b-elemento-3">
+<div aria-label="Módulos del Elemento 3" class="accordion accordion--modules">
+<!-- ===== 4.1 QUÉ HARÁS ===== -->
+<details class="accordion__item" id="que-haras" open="">
+<summary>
+<span class="accordion__num">4.1</span>
+<span class="accordion__title-main">Qué harás en este elemento</span>
+<span class="accordion__meta">Del concepto al prototipo funcional · 3 pasos · 3 min</span>
+</summary>
+<div class="accordion__body">
+<ol>
+<li><strong>Construir el prototipo funcional:</strong> usar las herramientas/plataformas de IA seleccionadas en el Elemento 2 para construir una versión operativa de la solución que procese datos reales y produzca resultados verificables.</li>
+<li><strong>Presentar el prototipo al cliente:</strong> describir la problemática, la solución propuesta, la operación técnica, los casos de uso y los requerimientos. Recoger retroalimentación y acordar el plan de experimentación.</li>
+<li><strong>Realizar una prueba funcional con un caso de uso:</strong> ejecutar el prototipo con datos reales, registrar resultados, comparar con el diseño, documentar fallas/limitaciones y acordar ajustes con el cliente.</li>
+</ol>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Elemento 3 — Diego construye el asistente</span>
+<div class="callout__body">Diego toma las especificaciones del Elemento 2 y construye en 2 semanas el asistente IA: un flujo donde Lucía o Rosa fotografían una pieza con el celular, la imagen se procesa con GPT-4V con un prompt diseñado por Diego, y el sistema genera: nombre artesanal sugerido, técnica (barro bruñido), medidas aproximadas, y descripción de 3 párrafos lista para publicar. Lo presenta a Lucía con 3 ejemplos en vivo. Registran que el tiempo promedio es 90 segundos por pieza. La retroalimentación de Lucía: "la descripción menciona 'lustre metálico' y eso es perfecto, pero a veces inventa colores que no tiene la pieza".</div>
+</aside>
+</div>
+</details>
+<!-- ===== 4.2 CÓMO TE EVALUARÁN ===== -->
+<details class="accordion__item" id="como-evaluan">
+<summary>
+<span class="accordion__num">4.2</span>
+<span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+<span class="accordion__meta">2 desempeños · 2 productos · 2 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo de evidencia</th>
+<th>Cantidad</th>
+<th>Cómo se valora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños observables</strong></td>
+<td>2 desempeños</td>
+<td>Te observan durante la presentación del prototipo y la prueba funcional en vivo.</td>
+</tr>
+<tr>
+<td><strong>Productos entregables</strong></td>
+<td>2 productos</td>
+<td>Tus productos se revisan contra los criterios del estándar.</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>5 áreas (Conocimiento y Comprensión)</td>
+<td>Cuestionario de dominio aplicado.</td>
+</tr>
+<tr>
+<td><strong>Actitudes, hábitos y valores</strong></td>
+<td>1 (Responsabilidad)</td>
+<td>Se observa durante los desempeños.</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">En este elemento, los desempeños son observados en tiempo real. El evaluador verá cómo presentas el prototipo y cómo ejecutas la prueba funcional. El AHV Responsabilidad se evalúa precisamente en ese momento — el evaluador observa si presentas el prototipo cumpliendo íntegramente los requisitos de calidad descritos en el diseño.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 4.3 LOS DESEMPEÑOS ===== -->
+<details class="accordion__item" id="desempenos">
+<summary>
+<span class="accordion__num">4.3</span>
+<span class="accordion__title-main">Los desempeños del Elemento 3</span>
+<span class="accordion__meta">2 desempeños · 12 características · 8 min</span>
+</summary>
+<div class="accordion__body">
+<h3>Desempeño 3.1 · Realiza la presentación del prototipo al cliente</h3>
+<p>El evaluador observará cómo presentas el prototipo funcional al cliente. 7 características:</p>
+<div class="tabs">
+<div aria-label="Características del Desempeño 3.1" class="tabs__list" role="tablist">
+<button aria-controls="panel-e3d1a" aria-selected="true" class="tabs__tab" id="tab-e3d1a" role="tab">A · Problemática</button>
+<button aria-controls="panel-e3d1b" aria-selected="false" class="tabs__tab" id="tab-e3d1b" role="tab" tabindex="-1">B · Operación técnica</button>
+<button aria-controls="panel-e3d1c" aria-selected="false" class="tabs__tab" id="tab-e3d1c" role="tab" tabindex="-1">C · Requerimientos</button>
+<button aria-controls="panel-e3d1d" aria-selected="false" class="tabs__tab" id="tab-e3d1d" role="tab" tabindex="-1">D · Casos de uso</button>
+<button aria-controls="panel-e3d1e" aria-selected="false" class="tabs__tab" id="tab-e3d1e" role="tab" tabindex="-1">E · Lenguaje accesible</button>
+<button aria-controls="panel-e3d1f" aria-selected="false" class="tabs__tab" id="tab-e3d1f" role="tab" tabindex="-1">F · Retroalimentación</button>
+<button aria-controls="panel-e3d1g" aria-selected="false" class="tabs__tab" id="tab-e3d1g" role="tab" tabindex="-1">G · Acuerdo</button>
+</div>
+<div aria-labelledby="tab-e3d1a" class="tabs__panel" id="panel-e3d1a" role="tabpanel">
+<h4>A · Problemática</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Describiendo la problemática identificada, la solución propuesta mediante IA y el alcance de la misma."</em></p>
+<p><strong>Qué significa:</strong> Empiezas con el problema, no con la tecnología. El cliente recuerda el problema — que la solución sea la respuesta directa a ese problema.</p>
+</div>
+<div aria-labelledby="tab-e3d1b" class="tabs__panel" hidden="" id="panel-e3d1b" role="tabpanel">
+<h4>B · Operación técnica</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Exponiendo la operación técnica del prototipo y su lógica operativa."</em></p>
+<p><strong>Qué significa:</strong> Explicas cómo funciona internamente el prototipo — qué entra, qué procesa, qué sale — en lenguaje accesible.</p>
+</div>
+<div aria-labelledby="tab-e3d1c" class="tabs__panel" hidden="" id="panel-e3d1c" role="tabpanel">
+<h4>C · Requerimientos</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Explicando los requerimientos técnicos, herramientas/plataformas de IA utilizadas y condiciones de uso."</em></p>
+<p><strong>Qué significa:</strong> El cliente debe entender qué necesita para operar el prototipo (dispositivo, internet, cuenta en plataforma, etc.).</p>
+</div>
+<div aria-labelledby="tab-e3d1d" class="tabs__panel" hidden="" id="panel-e3d1d" role="tabpanel">
+<h4>D · Casos de uso</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentando los casos de uso dentro del contexto operativo de la MiPyME."</em></p>
+<p><strong>Qué significa:</strong> No presentes el prototipo en abstracto — muéstralo funcionando con un escenario real de la empresa.</p>
+</div>
+<div aria-labelledby="tab-e3d1e" class="tabs__panel" hidden="" id="panel-e3d1e" role="tabpanel">
+<h4>E · Lenguaje accesible</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Explicando los términos técnicos necesarios para la comprensión del prototipo en lenguaje accesible para el cliente."</em></p>
+<p><strong>Qué significa:</strong> Adaptas la terminología al nivel del cliente. No dices "API de visión por computadora"; dices "el servicio que analiza la foto y extrae la información de la pieza".</p>
+</div>
+<div aria-labelledby="tab-e3d1f" class="tabs__panel" hidden="" id="panel-e3d1f" role="tabpanel">
+<h4>F · Retroalimentación</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Preguntando si existen dudas/respondiendo las dudas que se presenten al solicitar la retroalimentación."</em></p>
+<p><strong>Qué significa:</strong> Abre el espacio de manera explícita, no esperes a que el cliente interrumpa.</p>
+</div>
+<div aria-labelledby="tab-e3d1g" class="tabs__panel" hidden="" id="panel-e3d1g" role="tabpanel">
+<h4>G · Acuerdo</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Validando la comprensión y el acuerdo del cliente respecto al plan de experimentación, mediante el parafraseo de lo expresado por el cliente y la confirmación verbal de su aceptación."</em></p>
+<p><strong>Qué significa:</strong> Cierra la sesión con un acuerdo explícito, no asumas que el silencio es aceptación.</p>
+</div>
+</div>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Desempeño 3.1</span>
+<div class="callout__body">Diego abre: "Lucía, como acordamos, el prototipo genera fichas de producto a partir de una foto. Te voy a mostrar cómo funciona con tres piezas del taller." Muestra el flujo completo. Explica que necesitan un celular con cámara (que ya tienen) y conexión a internet (que ya tienen). Pide retroalimentación: Lucía dice que la descripción a veces inventa colores. Diego confirma: "Escucho que la descripción de color no siempre es precisa. ¿Están de acuerdo en que el plan de experimentación incluya una prueba específica de ese punto?" Lucía confirma verbalmente.</div>
+</aside>
+<h3>Desempeño 3.2 · Realiza una prueba funcional del prototipo con un caso de uso con el cliente/usuario</h3>
+<p>Con el prototipo presentado, realizas una prueba funcional en vivo. 5 características:</p>
+<div class="tabs">
+<div aria-label="Características del Desempeño 3.2" class="tabs__list" role="tablist">
+<button aria-controls="panel-e3d2a" aria-selected="true" class="tabs__tab" id="tab-e3d2a" role="tab">A · Caso de uso</button>
+<button aria-controls="panel-e3d2b" aria-selected="false" class="tabs__tab" id="tab-e3d2b" role="tab" tabindex="-1">B · Registro de datos</button>
+<button aria-controls="panel-e3d2c" aria-selected="false" class="tabs__tab" id="tab-e3d2c" role="tab" tabindex="-1">C · Comparación</button>
+<button aria-controls="panel-e3d2d" aria-selected="false" class="tabs__tab" id="tab-e3d2d" role="tab" tabindex="-1">D · Fallas y hallazgos</button>
+<button aria-controls="panel-e3d2e" aria-selected="false" class="tabs__tab" id="tab-e3d2e" role="tab" tabindex="-1">E · Acuerdos</button>
+</div>
+<div aria-labelledby="tab-e3d2a" class="tabs__panel" id="panel-e3d2a" role="tabpanel">
+<h4>A · Caso de uso</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Aplicando el caso de uso del prototipo de acuerdo con los requerimientos y alcances establecidos en el diseño del modelo de funcionamiento."</em></p>
+<p><strong>Qué significa:</strong> La prueba no es libre — sigue el guión del modelo de funcionamiento documentado en el Elemento 2.</p>
+</div>
+<div aria-labelledby="tab-e3d2b" class="tabs__panel" hidden="" id="panel-e3d2b" role="tabpanel">
+<h4>B · Registro de datos</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Registrando los datos de entrada utilizados y los resultados obtenidos en cada prueba."</em></p>
+<p><strong>Qué significa:</strong> Cada prueba queda documentada con los inputs exactos y los outputs producidos.</p>
+</div>
+<div aria-labelledby="tab-e3d2c" class="tabs__panel" hidden="" id="panel-e3d2c" role="tabpanel">
+<h4>C · Comparación</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Mencionando el resultado de la comparación de los datos obtenidos con los datos del diseño."</em></p>
+<p><strong>Qué significa:</strong> Comparas en voz alta lo que el prototipo produjo vs. lo que el diseño esperaba que produjera.</p>
+</div>
+<div aria-labelledby="tab-e3d2d" class="tabs__panel" hidden="" id="panel-e3d2d" role="tabpanel">
+<h4>D · Fallas y hallazgos</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Registrando fallas/limitaciones/desviaciones/hallazgos detectados durante las pruebas."</em></p>
+<p><strong>Qué significa:</strong> No ocultes las fallas — el evaluador espera que las documentes con honestidad.</p>
+</div>
+<div aria-labelledby="tab-e3d2e" class="tabs__panel" hidden="" id="panel-e3d2e" role="tabpanel">
+<h4>E · Acuerdos</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Acordando con el cliente los ajustes necesarios al prototipo con base en los hallazgos de la prueba realizada."</em></p>
+<p><strong>Qué significa:</strong> La sesión termina con una lista acordada de ajustes — no con promesas vagas.</p>
+</div>
+</div>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Desempeño 3.2</span>
+<div class="callout__body">Diego ejecuta 5 casos de uso: fotografía 5 piezas distintas. Para cada una, registra la foto original (input), la ficha generada (output) y el tiempo transcurrido. Compara en voz alta: "El diseño estimaba 60 segundos por pieza; el resultado real es 90 segundos. Dentro de rango aceptable." Detecta y registra: en 2 de 5 piezas, el color descrito no coincide exactamente. Acuerda con Lucía: "Agregaremos al prompt una instrucción para que el asistente pida confirmación del color antes de finalizar la ficha."</div>
+</aside>
+</div>
+</details>
+<!-- ===== 4.4 LOS PRODUCTOS ===== -->
+<details class="accordion__item" id="productos">
+<summary>
+<span class="accordion__num">4.4</span>
+<span class="accordion__title-main">Los productos del Elemento 3</span>
+<span class="accordion__meta">2 productos documentales · criterios estándar · 8 min</span>
+</summary>
+<div class="accordion__body">
+<div class="template-downloads">
+<h3 class="template-downloads__title">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"></path></svg>
+              Descarga los 2 templates editables (1 Word + 1 Excel)
+            </h3>
+<p class="template-downloads__intro">El Elemento 3 produce 2 documentos clave del prototipo: la documentación técnica y funcional del prototipo y el plan de experimentación con sus hipótesis categorizadas (adaptabilidad, deseabilidad, factibilidad y viabilidad). Adapta ambos templates a tu proyecto real.</p>
+<div class="template-downloads__grid">
+<a class="template-downloads__item" download="" href="templates/3-1-documentacion-prototipo.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">3.1</span> Documentación del prototipo funcional</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/3-2-plan-experimentacion.xls">
+<span class="template-downloads__item-icon template-downloads__item-icon--xls">XLS</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">3.2</span> Plan de experimentación</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+</div>
+</div>
+<h3>Producto 3.1 · Documentación del prototipo funcional desarrollado</h3>
+<ul>
+<li>a) Alcances y restricciones del prototipo funcional.</li>
+<li>b) Descripción de la operación del prototipo funcional, datos de entrada y parámetros de uso.</li>
+<li>c) Los prompts y ajustes en las herramientas que se utilizan para la construcción del prototipo.</li>
+<li>d) Descripción de los casos de uso del prototipo funcional.</li>
+<li>e) Resultado de las pruebas funcionales y retroalimentación de los casos de uso.</li>
+<li>f) Manual de usuario que describe las instrucciones de operación del prototipo.</li>
+<li>g) Formato digital/físico, redacción clara, estructura profesional, sin errores ortográficos.</li>
+</ul>
+<h3>Producto 3.2 · Plan de experimentación documentado</h3>
+<ul>
+<li>a) Al menos tres hipótesis seleccionadas por el cliente de cada una de las siguientes categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad.</li>
+<li>b) Diseño de las pruebas priorizadas: hipótesis, métricas, criterios de éxito, nivel de criticidad, nivel de confianza, costo, tiempo, nombre de la prueba, nombre del responsable y tiempo de duración.</li>
+<li>c) Descripción del perfil de los usuarios participantes en las pruebas.</li>
+<li>d) Plan de ejecución de las pruebas: actividad, responsable y temporalidad.</li>
+<li>e) Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+</ul>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Requisito taxativo</span>
+<div class="callout__body">El Plan de experimentación (Producto 3.2) exige al menos tres hipótesis de CADA categoría: adaptabilidad, deseabilidad, factibilidad y viabilidad (literal a). Son mínimo 12 hipótesis en total. Es el criterio más específico del Elemento 3 y un error frecuente es presentar solo hipótesis de una o dos categorías.</div>
+</aside>
+<h4>¿Cómo se estructura un plan de experimentación?</h4>
+<p>El plan de experimentación (Producto 3.2) sigue una secuencia lógica de 6 etapas. Cada etapa es un criterio verificable que el evaluador buscará en tu documento.</p>
+<figure>
+<div class="diagram-mermaid">
+<pre class="mermaid">
+flowchart LR
+  A["Hipótesis\n¿Qué creemos\nque es verdad?"]
+  B["Diseño\nde prueba\n¿Cómo lo\nverificamos?"]
+  C["Perfil de\nusuarios\n¿Con quién\nprobamos?"]
+  D["Ejecución\nRealizar la\nprueba con\nusuarios reales"]
+  E["Registro\nDocumentar\nobservaciones\ny datos"]
+  F["Análisis\n¿Qué aprendimos?\n¿Qué decidimos?"]
+
+  A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F
+
+  style A fill:#28467e,color:#FAFCFF,stroke:none
+  style B fill:#529ed7,color:#FAFCFF,stroke:none
+  style C fill:#529ed7,color:#FAFCFF,stroke:none
+  style D fill:#f7c031,color:#28467e,stroke:none
+  style E fill:#f7c031,color:#28467e,stroke:none
+  style F fill:#f29100,color:#FAFCFF,stroke:none
+            </pre>
+</div>
+<figcaption>Diagrama del plan de experimentación: hipótesis, pruebas priorizadas, perfil de usuarios y cronograma de validación.</figcaption>
+</figure>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Ejemplo · Tonalli</span>
+<div class="callout__body">
+<p><strong>Hipótesis:</strong> "Creemos que si el asistente IA genera la ficha de producto en menos de 60 segundos por pieza, Lucía lo usará de forma autónoma sin apoyo de Diego."</p>
+<p><strong>Diseño de prueba:</strong> Sesión de 45 minutos donde Lucía fotografía 10 piezas y usa el asistente sin ayuda. Métricas: tiempo por ficha, número de intentos por ficha, satisfacción declarada.</p>
+<p><strong>Perfil de usuarios:</strong> Lucía (maestra alfarera, usuaria básica de smartphone, sin experiencia previa con IA). Criterio: es la usuaria final principal.</p>
+<p><strong>Ejecución:</strong> Diego observa sin intervenir. Solo registra.</p>
+<p><strong>Registro:</strong> Hoja de observación con tiempo por ficha, errores cometidos, frases textuales de Lucía.</p>
+<p><strong>Análisis:</strong> Promedio de tiempo por ficha = 4 minutos. Hipótesis FALSA. Decisión: iterar el diseño del prompt para simplificar la interacción.</p>
+</div>
+</aside>
+<h3>Aplica el Elemento 3 · ¿Cómo presenta Diego el prototipo?</h3>
+<p>Diego tiene listo el prototipo del asistente IA para Tonalli. Llegó el momento de mostrárselo a Lucía. Elige cómo conduce la presentación.</p>
+<div class="scenario-decision" data-storage-key="eb3-presenta-prototipo-tonalli">
+
+</div>
+</div>
+</details>
+<!-- ===== 4.5 LOS CONOCIMIENTOS ===== -->
+<details class="accordion__item" id="conocimientos">
+<summary>
+<span class="accordion__num">4.5</span>
+<span class="accordion__title-main">Los conocimientos del Elemento 3</span>
+<span class="accordion__meta">5 áreas · Conocimiento y Comprensión · 8 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Área de conocimiento</th>
+<th>Nivel</th>
+<th>Lo que debes poder hacer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concepto y ejemplos: adaptabilidad, deseabilidad, factibilidad y viabilidad</td>
+<td>Conocimiento</td>
+<td>Describir qué evalúa cada categoría de hipótesis y dar un ejemplo de cada una en el contexto de la MiPyME.</td>
+</tr>
+<tr>
+<td>Diseño de experimentos de innovación</td>
+<td>Comprensión</td>
+<td>Explicar cómo diseñar una prueba de hipótesis con métricas, criterios de éxito y perfil de usuarios.</td>
+</tr>
+<tr>
+<td>Uso de herramientas/plataformas de IA para prototipar</td>
+<td>Comprensión</td>
+<td>Seleccionar herramientas de IA adecuadas al contexto de la MiPyME y describir su operación básica.</td>
+</tr>
+<tr>
+<td>Pruebas funcionales aplicadas a herramientas digitales: tipos (funcionamiento, integración, uso en condiciones reales)</td>
+<td>Comprensión</td>
+<td>Distinguir entre tipos de prueba funcional y aplicar la más adecuada al caso.</td>
+</tr>
+<tr>
+<td>Protección de datos en el desarrollo y prueba de prototipos: datos anonimizados, consentimiento informado, riesgos de fuga en herramientas de IA</td>
+<td>Comprensión</td>
+<td>Identificar los riesgos de privacidad al usar datos de clientes de la MiPyME en herramientas de IA y proponer controles básicos.</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--reflection" role="note">
+<span class="callout__label">Sobre el consentimiento informado en pruebas con usuarios</span>
+<div class="callout__body">Cuando ejecutas el plan de experimentación del Producto 3.2 con usuarios reales (compradores de Tonalli, por ejemplo), debes obtener su consentimiento informado antes de registrar sus interacciones, comentarios o datos. El consentimiento debe especificar para qué se usará la información y quién tendrá acceso. El estándar lo exige y la LFPDPPP lo refuerza.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 4.6 AHV ===== -->
+<details class="accordion__item" id="ahv">
+<summary>
+<span class="accordion__num">4.6</span>
+<span class="accordion__title-main">Las actitudes, hábitos y valores del Elemento 3</span>
+<span class="accordion__meta">AHV · Responsabilidad · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>Este elemento evalúa una sola AHV: <strong>Responsabilidad</strong>.</p>
+<p><em><strong>Definición del estándar:</strong> "La manera en que presenta el prototipo funcional y cumple íntegramente con los requisitos de calidad descritos en el diseño del prototipo."</em></p>
+<p>La Responsabilidad en el Elemento 3 tiene dos dimensiones. La primera: el prototipo que presentas debe cumplir lo que prometiste en el diseño del Elemento 2. Si el diseño decía "genera la ficha en 60 segundos" y el prototipo la genera en 4 minutos, la Responsabilidad implica reportarlo con honestidad, no disimularlo. La segunda: la presentación al cliente no puede hacerse de cualquier manera — debe seguir el orden y los elementos del desempeño del estándar.</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Señal de Responsabilidad que el evaluador busca</span>
+<div class="callout__body">Cuando el prototipo tiene una limitación (y casi siempre tiene alguna), el consultor responsable la menciona proactivamente, la explica y propone cómo abordarla. El evaluador que ve a un consultor ocultar una falla detectará inmediatamente la ausencia de Responsabilidad.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 4.7 GLOSARIO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">4.7</span>
+<span class="accordion__title-main">Glosario operativo del Elemento 3</span>
+<span class="accordion__meta">8 términos del estándar · 3 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Anonimizados</strong></td>
+<td>Datos personales sometidos a un proceso irreversible mediante el cual no pueden asociarse a una persona identificada ni permiten su re-identificación.</td>
+</tr>
+<tr>
+<td><strong>Caso de uso</strong></td>
+<td>Escenario específico que describe cómo un usuario interactúa con una solución tecnológica para cumplir un objetivo dentro del contexto operativo de la empresa.</td>
+</tr>
+<tr>
+<td><strong>Lógica operativa</strong></td>
+<td>Secuencia de reglas, condiciones y procesos que determinan cómo funciona internamente un prototipo o solución para producir los resultados esperados.</td>
+</tr>
+<tr>
+<td><strong>Manual de usuario</strong></td>
+<td>Documento que contiene las instrucciones de operación de una herramienta o solución, describiendo paso a paso cómo utilizarla correctamente.</td>
+</tr>
+<tr>
+<td><strong>Métricas</strong></td>
+<td>Medidas cuantitativas definidas para evaluar el desempeño, resultado o impacto de una prueba o solución tecnológica.</td>
+</tr>
+<tr>
+<td><strong>Plan de experimentación</strong></td>
+<td>Documento que define las hipótesis a validar, las pruebas a realizar, las métricas de éxito, los perfiles de usuarios participantes y el cronograma de ejecución.</td>
+</tr>
+<tr>
+<td><strong>Prototipo funcional</strong></td>
+<td>Versión operativa de una solución que permite demostrar su funcionamiento en condiciones reales o simuladas, incluyendo datos de entrada, procesamiento y resultados.</td>
+</tr>
+<tr>
+<td><strong>Prueba funcional</strong></td>
+<td>Verificación controlada del correcto funcionamiento de un prototipo, comparando los resultados obtenidos con los resultados esperados según su diseño.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+</div>
+<section id="siguiente">
+<h2>Terminaste el Elemento 3 · Prototipar la solución</h2>
+<p>Ya dominas cómo construir y documentar el prototipo funcional. Lo que sigue: validar el prototipo con usuarios reales y demostrar que cumple los requisitos.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="elemento-4.html">Continuar: Elemento 4 · Validar →</a>
+<a class="btn btn-secondary" href="index.html">← Volver al inicio del manual</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+
+<div class="lesson-tabs" data-progress-key="estandar-b-elemento-4">
+<div aria-label="Módulos del Elemento 4" class="accordion accordion--modules">
+<!-- ===== 5.1 QUÉ HARÁS ===== -->
+<details class="accordion__item" id="que-haras" open="">
+<summary>
+<span class="accordion__num">5.1</span>
+<span class="accordion__title-main">Qué harás en este elemento</span>
+<span class="accordion__meta">Validación experimental · 3 pasos · 3 min</span>
+</summary>
+<div class="accordion__body">
+<ol>
+<li><strong>Ejecutar el plan de experimentación:</strong> aplicar las pruebas diseñadas en el Elemento 3 con los usuarios definidos, registrar todo cronológicamente en la bitácora, documentar observaciones, incidencias y ajustes.</li>
+<li><strong>Analizar los resultados:</strong> comparar los datos obtenidos contra los criterios de éxito del plan de experimentación, identificar patrones en los datos cualitativos y cuantitativos, y elaborar el reporte de resultados.</li>
+<li><strong>Formular y presentar la recomendación final:</strong> decidir si el prototipo debe implementarse, iterarse, pivotarse o descartarse, justificar la decisión con evidencia, y acordar los siguientes pasos con el cliente.</li>
+</ol>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Elemento 4 — Diego ejecuta las pruebas con compradores reales</span>
+<div class="callout__body">Diego recluta 15 compradores de artesanía en línea (con consentimiento informado), los divide en 3 grupos de 5, y les hace probar el asistente durante 3 semanas. Registra todo en la bitácora: tiempo por ficha, errores, frases exactas de los usuarios, capturas de pantalla. Resultado: hipótesis de deseabilidad aprobada (80% prefiere las fichas generadas por IA), hipótesis de factibilidad fallida (4 minutos por pieza vs. los 90 segundos del diseño). Diego lo lleva todo a Lucía con una recomendación clara: iterar el flujo de procesamiento técnico, no descartar el proyecto.</div>
+</aside>
+<img alt="Mesa de validación del prototipo Tonalli: tablet con mockup de la app, bitácora de pruebas con notas a mano, una pieza de cerámica del taller y micrófono para registrar sesiones con usuarios" class="img-escena img-escena--full" loading="lazy" src="../img/escenas/prototipo-validacion.jpg"/>
+</div>
+</details>
+<!-- ===== 5.2 CÓMO TE EVALUARÁN ===== -->
+<details class="accordion__item" id="como-evaluan">
+<summary>
+<span class="accordion__num">5.2</span>
+<span class="accordion__title-main">Cómo se te evaluará en este elemento</span>
+<span class="accordion__meta">1 desempeño · 4 productos · 2 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Tipo de evidencia</th>
+<th>Cantidad</th>
+<th>Cómo se valora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Desempeños observables</strong></td>
+<td>1 desempeño</td>
+<td>El evaluador observa la presentación de resultados de validación ante el cliente.</td>
+</tr>
+<tr>
+<td><strong>Productos entregables</strong></td>
+<td>4 productos</td>
+<td>El evaluador revisa los 4 productos contra los criterios del estándar.</td>
+</tr>
+<tr>
+<td><strong>Conocimientos</strong></td>
+<td>4 áreas (Comprensión)</td>
+<td>Cuestionario de dominio aplicado.</td>
+</tr>
+<tr>
+<td><strong>Actitudes, hábitos y valores</strong></td>
+<td>1 (Perseverancia)</td>
+<td>Se observa durante el desempeño.</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Este elemento tiene el mayor número de productos del Estándar B (4 productos) y el menor número de desempeños (1). Eso significa que la evaluación se concentra en los documentos que presentas. La bitácora de ejecución y el reporte de resultados son los productos que el evaluador revisará con más detalle.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 5.3 EL DESEMPEÑO ===== -->
+<details class="accordion__item" id="desempenos">
+<summary>
+<span class="accordion__num">5.3</span>
+<span class="accordion__title-main">El desempeño del Elemento 4</span>
+<span class="accordion__meta">1 desempeño · 6 características · 8 min</span>
+</summary>
+<div class="accordion__body">
+<h3>Desempeño 4.1 · Presenta los resultados de la validación de las hipótesis priorizadas ante el cliente</h3>
+<p>El único desempeño de este elemento es también el más integrador del Estándar B: reúnes todos los hallazgos del plan de experimentación y los presentas al cliente con una recomendación fundamentada. 6 características:</p>
+<div class="tabs">
+<div aria-label="Características del Desempeño 4.1" class="tabs__list" role="tablist">
+<button aria-controls="panel-e4d1a" aria-selected="true" class="tabs__tab" id="tab-e4d1a" role="tab">A · Contexto de pruebas</button>
+<button aria-controls="panel-e4d1b" aria-selected="false" class="tabs__tab" id="tab-e4d1b" role="tab" tabindex="-1">B · Hallazgos</button>
+<button aria-controls="panel-e4d1c" aria-selected="false" class="tabs__tab" id="tab-e4d1c" role="tab" tabindex="-1">C · Métricas de éxito</button>
+<button aria-controls="panel-e4d1d" aria-selected="false" class="tabs__tab" id="tab-e4d1d" role="tab" tabindex="-1">D · Retroalimentación</button>
+<button aria-controls="panel-e4d1e" aria-selected="false" class="tabs__tab" id="tab-e4d1e" role="tab" tabindex="-1">E · Ajustes propuestos</button>
+<button aria-controls="panel-e4d1f" aria-selected="false" class="tabs__tab" id="tab-e4d1f" role="tab" tabindex="-1">F · Acuerdo de siguientes pasos</button>
+</div>
+<div aria-labelledby="tab-e4d1a" class="tabs__panel" id="panel-e4d1a" role="tabpanel">
+<h4>A · Contexto de pruebas</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Exponiendo el contexto y desarrollo de las pruebas realizadas de acuerdo con el plan de experimentación."</em></p>
+<p><strong>Qué significa:</strong> el cliente debe entender cómo se ejecutaron las pruebas — quiénes participaron, qué se probó, en qué condiciones, durante cuánto tiempo.</p>
+</div>
+<div aria-labelledby="tab-e4d1b" class="tabs__panel" hidden="" id="panel-e4d1b" role="tabpanel">
+<h4>B · Hallazgos</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Exponiendo los hallazgos de las pruebas realizadas de acuerdo con el plan de experimentación."</em></p>
+<p><strong>Qué significa:</strong> los hallazgos son los datos y observaciones que emergen de la bitácora — no interpretaciones, sino hechos documentados.</p>
+</div>
+<div aria-labelledby="tab-e4d1c" class="tabs__panel" hidden="" id="panel-e4d1c" role="tabpanel">
+<h4>C · Métricas de éxito</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentando las métricas de éxito y su comparación con los criterios definidos en el plan de experimentación."</em></p>
+<p><strong>Qué significa:</strong> cada hipótesis tenía criterios de éxito; ahora comparas los resultados reales contra esos criterios. El cliente ve exactamente qué pasó con cada hipótesis.</p>
+</div>
+<div aria-labelledby="tab-e4d1d" class="tabs__panel" hidden="" id="panel-e4d1d" role="tabpanel">
+<h4>D · Retroalimentación</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Mostrando la retroalimentación cualitativa y cuantitativa recopilada de los usuarios."</em></p>
+<p><strong>Qué significa:</strong> los números (métricas) van acompañados de las voces de los usuarios. Las citas textuales de los usuarios hacen que los hallazgos sean vívidos y comprensibles para el cliente.</p>
+</div>
+<div aria-labelledby="tab-e4d1e" class="tabs__panel" hidden="" id="panel-e4d1e" role="tabpanel">
+<h4>E · Ajustes propuestos</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Proponiendo los ajustes y mejoras derivados de la validación, priorizados por impacto y factibilidad."</em></p>
+<p><strong>Qué significa:</strong> no solo reportas lo que pasó — propones qué hacer con eso. Los ajustes están priorizados (no es una lista exhaustiva sin orden).</p>
+</div>
+<div aria-labelledby="tab-e4d1f" class="tabs__panel" hidden="" id="panel-e4d1f" role="tabpanel">
+<h4>F · Acuerdo de siguientes pasos</h4>
+<p><em><strong>Texto del estándar (estándar):</strong> "Acordando con el cliente/usuario los siguientes pasos para la implementación, iteración/descarte del prototipo."</em></p>
+<p><strong>Qué significa:</strong> la sesión cierra con un acuerdo explícito y verificable sobre qué pasa después.</p>
+</div>
+</div>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Tonalli · Desempeño 4.1</span>
+<div class="callout__body">
+<p>Diego abre la presentación: "Ejecutamos 15 sesiones de prueba durante 3 semanas, con compradores de artesanía en línea que nunca habían visto el asistente." Muestra los resultados hipótesis por hipótesis. Para la hipótesis de deseabilidad: "El 80% prefirió nuestras fichas generadas por IA sobre las descripciones actuales de Tonalli — el criterio de éxito era 70%, lo superamos." Para la hipótesis de factibilidad: "El tiempo promedio fue 4 minutos por pieza — el criterio era 90 segundos, no lo alcanzamos." Cita textual de un comprador: "La descripción me convence, pero si tarda tanto, no lo uso." La recomendación de Diego: iterar el flujo de procesamiento técnico (evaluar un modelo más rápido o comprimir imágenes antes de enviarlas). Lucía pregunta cuánto tiempo tomará. Diego propone: "Dos semanas para la siguiente iteración. ¿Lo intentamos?" Lucía dice que sí.</p>
+</div>
+</aside>
+</div>
+</details>
+<!-- ===== 5.4 LOS PRODUCTOS ===== -->
+<details class="accordion__item" id="productos">
+<summary>
+<span class="accordion__num">5.4</span>
+<span class="accordion__title-main">Los productos del Elemento 4</span>
+<span class="accordion__meta">4 productos documentales · criterios estándar · 12 min</span>
+</summary>
+<div class="accordion__body">
+<div class="template-downloads">
+<h3 class="template-downloads__title">
+<svg aria-hidden="true" focusable="false" viewbox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"></path></svg>
+              Descarga los 4 templates editables (3 Word + 1 Excel)
+            </h3>
+<p class="template-downloads__intro">El Elemento 4 cierra el ciclo con 4 documentos de validación. La bitácora registra cronológicamente cada sesión de prueba; el reporte sintetiza resultados por hipótesis; la tabla por hipótesis permite comparar resultados contra criterios de éxito; y el documento de recomendaciones documenta la decisión de iterar, pivotar o escalar. Adapta todos los templates a tu proyecto real.</p>
+<div class="template-downloads__grid">
+<a class="template-downloads__item" download="" href="templates/4-1-bitacora-pruebas.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">4.1</span> Bitácora de ejecución de pruebas</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/4-2-reporte-resultados-validacion.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">4.2</span> Reporte de resultados de validación</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/4-3-resultados-por-hipotesis.xls">
+<span class="template-downloads__item-icon template-downloads__item-icon--xls">XLS</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">4.3</span> Resultados por hipótesis</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+<a class="template-downloads__item" download="" href="templates/4-4-recomendaciones-prototipo.doc">
+<span class="template-downloads__item-icon">DOC</span>
+<span class="template-downloads__item-name"><span class="template-downloads__item-num">4.4</span> Recomendaciones al prototipo</span>
+<span aria-hidden="true" class="template-downloads__item-arrow">↓</span>
+</a>
+</div>
+</div>
+<h3>Producto 4.1 · Bitácora de ejecución de pruebas del plan de experimentación, elaborada</h3>
+<ul>
+<li>Registro cronológico de cada experimento ejecutado: fecha, duración, perfil del usuario participante y condiciones de prueba.</li>
+<li>La/s hipótesis seleccionadas para ser evaluadas en cada sesión y los datos recopilados conforme a las métricas definidas en el plan.</li>
+<li>Registro de observaciones, incidencias técnicas y ajustes realizados durante la ejecución de cada prueba.</li>
+<li>Retroalimentación cualitativa del usuario documentada para cada caso de uso probado.</li>
+<li>Evidencia documental de las pruebas realizadas: capturas de pantalla/registros de interacción/grabaciones/transcripciones.</li>
+<li>Formato digital/físico, redacción clara, estructura cronológica, sin errores ortográficos.</li>
+</ul>
+<h3>Producto 4.2 · Reporte de resultados de validación de las pruebas, elaborado</h3>
+<ul>
+<li>Perfil de los participantes en las pruebas de validación de las hipótesis.</li>
+<li>Descripción de los resultados obtenidos por cada hipótesis evaluada.</li>
+<li>Comparativo de resultados contra los criterios de éxito definidos en el plan de experimentación.</li>
+<li>Hallazgos de usabilidad, funcionalidad y aceptación del usuario derivados de la bitácora de experimentación.</li>
+<li>Análisis de patrones y tendencias identificados a partir de los datos recopilados.</li>
+<li>Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+</ul>
+<h3>Producto 4.3 · Descripción de los resultados obtenidos por cada hipótesis, documentada</h3>
+<ul>
+<li>Metodología utilizada en la realización de la prueba.</li>
+<li>Descripción del contexto de la realización de la prueba.</li>
+<li>Condiciones de aplicación de las pruebas conforme al plan de experimentación.</li>
+<li>Formato digital/físico, redacción clara, estructura profesional, sin errores ortográficos.</li>
+</ul>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Producto 4.3 vs. Producto 4.2: no son lo mismo</span>
+<div class="callout__body">El Producto 4.3 puede parecer redundante con el 4.2, pero tienen propósitos distintos: el 4.2 es el reporte consolidado (visión panorámica), el 4.3 es la descripción detallada hipótesis por hipótesis (visión granular). El evaluador usará el 4.3 para verificar que cada hipótesis fue tratada individualmente y con rigor metodológico.</div>
+</aside>
+<h3>Producto 4.4 · Documento de recomendaciones al prototipo/pruebas, elaborado</h3>
+<ul>
+<li>Recomendaciones de ajuste al prototipo basadas en los hallazgos de validación.</li>
+<li>Decisión documentada y justificada de pivoteo/iteración/escalamiento del producto o servicio.</li>
+<li>Hoja de ruta con los siguientes pasos, responsables y tiempos estimados para la siguiente fase.</li>
+<li>Requerimientos técnicos y de recursos necesarios para la implementación/escalamiento.</li>
+<li>Formato digital/físico, redacción clara, sin errores ortográficos.</li>
+</ul>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Requisito taxativo</span>
+<div class="callout__body">El Producto 4.4 literal b exige que la decisión de pivoteo/iteración/escalamiento esté documentada <strong>Y</strong> justificada. No es suficiente escribir "se recomienda iterar" — debes argumentar POR QUÉ, citando los hallazgos específicos que sustentan esa decisión.</div>
+</aside>
+<h3>Los 4 verbos que definen el destino de tu prototipo</h3>
+<p>Al final de la validación, siempre tomas una de cuatro decisiones. Voltea cada tarjeta: el reverso te dice qué significa el término y cuándo lo usarías en el caso de Tonalli.</p>
+<div class="flashcard-deck" data-storage-key="eb4-decisiones-experimentacion">
+
+</div>
+<h3>El momento de la verdad · ¿Qué le recomienda Diego a Lucía?</h3>
+<p>Diego tiene los resultados de la validación del asistente IA de Tonalli. Son datos mixtos: algunas hipótesis pasaron, una falló. Ahora viene la decisión profesional más importante del proyecto.</p>
+<div class="scenario-decision" data-storage-key="eb4-decision-final-tonalli">
+
+</div>
+</div>
+</details>
+<!-- ===== 5.5 LOS CONOCIMIENTOS ===== -->
+<details class="accordion__item" id="conocimientos">
+<summary>
+<span class="accordion__num">5.5</span>
+<span class="accordion__title-main">Los conocimientos del Elemento 4</span>
+<span class="accordion__meta">4 áreas · Comprensión · 8 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Área de conocimiento</th>
+<th>Nivel</th>
+<th>Lo que debes poder hacer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metodologías de validación de prototipos: pruebas de usabilidad, pruebas A/B, entrevistas de validación, pruebas de conceptos</td>
+<td>Comprensión</td>
+<td>Explicar las diferencias entre metodologías de validación y seleccionar la más adecuada según la hipótesis a probar.</td>
+</tr>
+<tr>
+<td>Toma de decisiones en experimentación de negocios: iterar, pivotar, perseverar y abandonar</td>
+<td>Comprensión</td>
+<td>Explicar cuándo corresponde cada tipo de decisión y justificarla con base en los datos de validación.</td>
+</tr>
+<tr>
+<td>Métricas de validación: satisfacción del usuario, tasa de adopción, eficiencia operativa, NPS (Net Promoter Score)</td>
+<td>Comprensión</td>
+<td>Definir las métricas apropiadas para validar las hipótesis del plan de experimentación y calcular el NPS a partir de datos de usuarios.</td>
+</tr>
+<tr>
+<td>Manejo ético y legal de datos de usuarios en experimentación: consentimiento informado, almacenamiento seguro, periodo de retención y eliminación conforme a la LFPDPPP</td>
+<td>Comprensión</td>
+<td>Describir los requisitos legales para recopilar, almacenar y eliminar datos de usuarios en el contexto de pruebas con IA, conforme a la LFPDPPP vigente (reforma 2025).</td>
+</tr>
+</tbody>
+</table>
+<aside class="callout callout--reflection" role="note">
+<span class="callout__label">Sobre la retención y eliminación de datos de usuarios</span>
+<div class="callout__body">La LFPDPPP exige que los datos personales se conserven únicamente durante el tiempo necesario para los fines que los justificaron. Una vez que el plan de experimentación concluye, los datos de los participantes deben eliminarse o anonimizarse conforme al procedimiento acordado en el aviso de privacidad. No puedes conservar las grabaciones o transcripciones de las sesiones de prueba indefinidamente sin el consentimiento explícito de los participantes para ese fin adicional.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 5.6 AHV ===== -->
+<details class="accordion__item" id="ahv">
+<summary>
+<span class="accordion__num">5.6</span>
+<span class="accordion__title-main">Las actitudes, hábitos y valores del Elemento 4</span>
+<span class="accordion__meta">AHV · Perseverancia · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>Este elemento evalúa una sola AHV: <strong>Perseverancia</strong>.</p>
+<p><em><strong>Definición del estándar:</strong> "La manera en que presenta evidencia de los experimentos y el proceso de iteración ante resultados iniciales desfavorables hasta obtener evidencia suficiente para la toma de decisiones."</em></p>
+<p>La Perseverancia en el Elemento 4 no es insistir en algo que no funciona — es continuar el proceso de aprendizaje experimental hasta tener evidencia suficiente para decidir con rigor. Si la primera ronda de pruebas no es concluyente, el consultor perseverante diseña una segunda ronda, no abandona. Si los resultados son mixtos, el consultor perseverante los descompone hipótesis por hipótesis, no los descarta como "fallo".</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Señal de Perseverancia que el evaluador busca</span>
+<div class="callout__body">Cuando los resultados iniciales no son favorables, el evaluador observa si el consultor sigue el proceso hasta tener evidencia suficiente o si abandona prematuramente. En el caso de Tonalli, Diego tenía resultados mixtos — y la Perseverancia se manifiesta en que construyó una recomendación argumentada de iteración en lugar de rendirse.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 5.7 GLOSARIO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">5.7</span>
+<span class="accordion__title-main">Glosario operativo del Elemento 4</span>
+<span class="accordion__meta">7 términos del estándar · 3 min</span>
+</summary>
+<div class="accordion__body">
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición conforme al estándar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bitácora</strong></td>
+<td>Registro cronológico y detallado de las actividades, pruebas o experimentos.</td>
+</tr>
+<tr>
+<td><strong>Escalamiento</strong></td>
+<td>Proceso de expandir el alcance, capacidad o cobertura de una solución validada para su implementación a mayor escala dentro de la organización o el mercado.</td>
+</tr>
+<tr>
+<td><strong>Hoja de ruta</strong></td>
+<td>Plan que define las etapas, actividades, responsables y temporalidad para la implementación o escalamiento de una solución.</td>
+</tr>
+<tr>
+<td><strong>Iterar</strong></td>
+<td>Proceso de realizar ajustes y mejoras sucesivas a partir de los resultados de validación.</td>
+</tr>
+<tr>
+<td><strong>Pivotar</strong></td>
+<td>Decisión estratégica de cambiar significativamente el enfoque, modelo o funcionalidad de un producto o servicio cuando los resultados de validación indican que la propuesta original no cumple los criterios de éxito.</td>
+</tr>
+<tr>
+<td><strong>Usabilidad</strong></td>
+<td>Grado en que un producto o solución puede ser utilizado por los usuarios de manera efectiva, eficiente y satisfactoria en su contexto de uso.</td>
+</tr>
+<tr>
+<td><strong>Validación</strong></td>
+<td>Proceso de comprobar que una solución cumple con las necesidades del usuario y los criterios de éxito definidos, mediante pruebas con usuarios reales.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+</div>
+<section id="siguiente">
+<h2>Terminaste el Elemento 4 · Validar la solución</h2>
+<p>Ya conoces los 4 elementos del Estándar B. El siguiente capítulo explica cómo se aplica el Instrumento de Evaluación de Competencia: desempeños, productos, conocimientos y AHV.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="instrumento.html">Continuar: Instrumento de Evaluación →</a>
+<a class="btn btn-secondary" href="index.html">← Volver al inicio del manual</a>
+</div>
+</section>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+<div class="lesson-tabs" data-progress-key="estandar-b-ruta">
+<div aria-label="Módulos del Capítulo 7 · Ruta de preparación" class="accordion accordion--modules">
+<!-- ===== 7.1 LA RUTA DE 4 SEMANAS ===== -->
+<details class="accordion__item" id="plan" open="">
+<summary>
+<span class="accordion__num">7.1</span>
+<span class="accordion__title-main">La ruta de preparación: 4 semanas al día de tu evaluación</span>
+<span class="accordion__meta">Plan operativo · 6-8 horas semanales · 5 min</span>
+</summary>
+<div class="accordion__body">
+<article class="process-step">
+<div class="process-step__badge">S1</div>
+<div class="process-step__content">
+<h3 class="process-step__title">Semana 1 · Inventario y diagnóstico personal</h3>
+<div class="process-step__body">
+<p>Lee este manual completo. Localiza los 13 productos del proyecto que ya tienes elaborados. Compara cada producto contra las características del estándar. Marca cada característica con tres colores: <strong>verde</strong> (cumplida), <strong>amarillo</strong> (parcial), <strong>rojo</strong> (faltante). Al final de la semana tendrás un mapa claro de tu situación.</p>
+</div>
+</div>
+</article>
+<article class="process-step">
+<div class="process-step__badge">S2</div>
+<div class="process-step__content">
+<h3 class="process-step__title">Semana 2 · Cierre de productos — primera mitad</h3>
+<div class="process-step__body">
+<p>Trabaja los productos pendientes del Elemento 1 (los 4 productos de investigación) y el Elemento 2 (los 3 productos de conceptualización) hasta que cada característica del estándar esté en verde. Si un producto te falta por completo, elabóralo retrospectivamente con base en la realidad del proyecto.</p>
+<p><strong>Solicita revisión a un colega</strong> para detectar omisiones antes de avanzar.</p>
+</div>
+</div>
+</article>
+<article class="process-step">
+<div class="process-step__badge">S3</div>
+<div class="process-step__content">
+<h3 class="process-step__title">Semana 3 · Cierre de productos — segunda mitad</h3>
+<div class="process-step__body">
+<p>Repite el mismo trabajo para los productos del Elemento 3 (documentación del prototipo y plan de experimentación) y el Elemento 4 (los 4 productos de validación). Asegúrate de tener las evidencias del funcionamiento: capturas de pantalla, registros de sesión, retroalimentación recopilada con consentimiento informado.</p>
+</div>
+</div>
+</article>
+<article class="process-step">
+<div class="process-step__badge">S4</div>
+<div class="process-step__content">
+<h3 class="process-step__title">Semana 4 · Práctica de desempeños y consolidación</h3>
+<div class="process-step__body">
+<p>Practica los <strong>7 desempeños del estándar</strong> con un colega que actúe como cliente o usuario. Graba si puedes. Revisa la grabación y ajusta. Repasa los conocimientos exigidos, especialmente los de nivel Comprensión. En los últimos días, lee de nuevo el estándar completo del estándar.</p>
+</div>
+</div>
+</article>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">Para tener presente</span>
+<div class="callout__body">Si no puedes dedicar 6-8 horas semanales, extiende la ruta a 6 u 8 semanas con 3-4 horas semanales. Lo importante es la disciplina constante, no la velocidad. La preparación apresurada se nota en la sesión de evaluación.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 7.2 LISTA DE VERIFICACIÓN FINAL ===== -->
+<details class="accordion__item" id="checklist-final">
+<summary>
+<span class="accordion__num">7.2</span>
+<span class="accordion__title-main">Lista de verificación final antes de la evaluación</span>
+<span class="accordion__meta">Los 13 productos + elementos adicionales · 8 min</span>
+</summary>
+<div class="accordion__body">
+<p>Verifica que cuentas con cada uno de los siguientes productos y evidencias el día de tu evaluación. Tu progreso se guarda en este navegador.</p>
+<div aria-label="Acciones del checklist" class="checklist-actions" role="group" style="margin: 16px 0 24px;">
+<button class="btn btn-secondary" data-action="print-checklist" type="button">
+<svg aria-hidden="true" height="16" style="vertical-align: -2px; margin-right: 6px;" viewbox="0 0 24 24" width="16"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" fill="currentColor"></path></svg>
+              Descargar checklist como PDF
+            </button>
+<span class="checklist-actions__hint">El navegador abrirá el diálogo de impresión. Selecciona <strong>"Guardar como PDF"</strong> como destino.</span>
+</div>
+<div class="checklist printable-checklist" data-storage-key="estandar-b-checklist-final" id="checklist-final-imprimible">
+<p style="margin-bottom: 14px; font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Productos del Elemento 1 · Identificar (4)</p>
+<ul>
+<li><label><input type="checkbox"/><span class="checklist__text">1.1 · El reporte inicial documentado del levantamiento de información con el cliente</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">1.2 · El análisis de mercado de la MiPyME elaborado</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">1.3 · El reporte de entrevistas de necesidades del usuario, elaborado</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">1.4 · La matriz de priorización de oportunidades elaborada</span></label></li>
+</ul>
+<p style="margin: 24px 0 14px; font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Productos del Elemento 2 · Conceptualizar (3)</p>
+<ul>
+<li><label><input type="checkbox"/><span class="checklist__text">2.1 · El informe del proceso de ideación de soluciones documentado con el cliente/usuario</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">2.2 · La matriz de ideas de solución validada por el cliente/usuario</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">2.3 · El modelo de negocio documentado (incluye diseño del modelo de funcionamiento del prototipo)</span></label></li>
+</ul>
+<p style="margin: 24px 0 14px; font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Productos del Elemento 3 · Desarrollar (2)</p>
+<ul>
+<li><label><input type="checkbox"/><span class="checklist__text">3.1 · La documentación del prototipo funcional desarrollado</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">3.2 · El plan de experimentación documentado</span></label></li>
+</ul>
+<p style="margin: 24px 0 14px; font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Productos del Elemento 4 · Validar (4)</p>
+<ul>
+<li><label><input type="checkbox"/><span class="checklist__text">4.1 · La bitácora de ejecución de pruebas del plan de experimentación, elaborada</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">4.2 · El reporte de resultados de validación de las pruebas, elaborado</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">4.3 · La descripción de los resultados obtenidos por cada hipótesis, documentada</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">4.4 · El documento de recomendaciones al prototipo/pruebas, elaborado</span></label></li>
+</ul>
+<p style="margin: 24px 0 14px; font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Otros elementos para el día de la evaluación</p>
+<ul>
+<li><label><input type="checkbox"/><span class="checklist__text">Acceso a las herramientas, plataformas y soluciones de IA utilizadas en el proyecto para demostrar su funcionamiento</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Computadora con internet de banda ancha y, si es evaluación remota, plataforma de videoconferencia funcional</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Identificación oficial</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Datos de contacto de la persona responsable de la MiPyME, en caso de que el evaluador desee corroborar</span></label></li>
+</ul>
+<p style="margin: 24px 0 14px; font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Práctica de desempeños (semana 4)</p>
+<ul>
+<li><label><input type="checkbox"/><span class="checklist__text">Practiqué el Desempeño 1.1 · Recopila información sobre la MiPyME y el mercado</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Practiqué el Desempeño 1.2 · Presenta el análisis de oportunidades y propuesta de exploración</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Practiqué el Desempeño 2.1 · Facilita la sesión de ideación</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Practiqué el Desempeño 2.2 · Facilita la sesión de presentación de propuesta del prototipo</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Practiqué el Desempeño 3.1 · Presenta el prototipo al cliente</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Practiqué el Desempeño 3.2 · Realiza prueba funcional con un caso de uso</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Practiqué el Desempeño 4.1 · Presenta resultados de validación ante el cliente</span></label></li>
+</ul>
+<p style="margin: 24px 0 14px; font-weight: 700; color: var(--color-azul-profundo); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem;">Consolidación de conocimientos</p>
+<ul>
+<li><label><input type="checkbox"/><span class="checklist__text">Domino las 6 áreas de conocimiento del Elemento 1 (nivel Comprensión)</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Domino las 3 áreas de conocimiento del Elemento 2 (nivel Conocimiento/Comprensión)</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Domino las 5 áreas de conocimiento del Elemento 3 (nivel Conocimiento/Comprensión)</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Domino las 4 áreas de conocimiento del Elemento 4 (nivel Comprensión)</span></label></li>
+<li><label><input type="checkbox"/><span class="checklist__text">Releí el estándar completo del estándar</span></label></li>
+</ul>
+<div class="checklist__progress">
+<progress aria-label="Progreso total de preparación" class="checklist__bar" max="100" value="0"></progress>
+<span class="checklist__count">0 de 31</span>
+</div>
+</div>
+<aside class="callout callout--important" role="note">
+<span class="callout__label">Importante · Sin productos no hay evaluación</span>
+<div class="callout__body">La evaluación no puede completarse si no presentas todos los productos. No hay parciales en el Estándar B: si demuestras solo algunos elementos, el dictamen es "Todavía no competente" y tendrás que repetir la evaluación completa.</div>
+</aside>
+</div>
+</details>
+</div>
+</div>
+<div class="lesson-nav" style="display:flex; justify-content:space-between; margin-top:2rem;">
+<a class="btn btn-secondary" href="instrumento.html">Anterior · Instrumento</a>
+<a class="btn btn-primary" href="recursos.html">Siguiente · FAQ y recursos</a>
+</div>
+</div>
+</main>
+<hr style='page-break-before: always; border: 1px solid #ccc;'>
+<main>
+<div class="container">
+
+<div class="lesson-tabs" data-progress-key="estandar-b-recursos">
+<div aria-label="Módulos del Capítulo 8 · Recursos" class="accordion accordion--modules">
+<!-- ===== 8.1 FAQ ===== -->
+<details class="accordion__item" id="faq" open="">
+<summary>
+<span class="accordion__num">8.1</span>
+<span class="accordion__title-main">Preguntas frecuentes del Estándar B</span>
+<span class="accordion__meta">7 preguntas específicas del estándar · 8 min</span>
+</summary>
+<div class="accordion__body">
+<p>Las preguntas siguientes son específicas del Estándar B. Para preguntas sobre el marco general de la certificación, consulta el <a href="../maestro/recursos.html">FAQ general del Curso introductorio</a>.</p>
+<h3>¿Puedo certificarme si solo demuestro algunos elementos del estándar?</h3>
+<p>No. El Estándar B certifica todos sus elementos como una unidad. Si demuestras solo algunos, el dictamen será "Todavía no competente". Si tu trabajo se concentra en una sola fase del ciclo, revisa si otro estándar de la colección corresponde mejor a tu perfil.</p>
+<h3>¿Las herramientas con las que trabajo cuentan?</h3>
+<p>El estándar es agnóstico respecto a las herramientas específicas. Lo que importa es que las que uses sean apropiadas al contexto de la MiPyME y que puedas demostrar su funcionamiento durante la evaluación.</p>
+<h3>¿Qué pasa si mi proyecto real no tuvo formalmente alguno de los productos exigidos?</h3>
+<p>El estándar permite elaborar el producto faltante de manera retrospectiva, con base en la realidad del proyecto. Lo importante es que el contenido refleje fielmente lo que ocurrió. El evaluador puede pedir que expliques el contexto del producto.</p>
+<h3>¿La evaluación será presencial o remota?</h3>
+<p>Ambas modalidades son posibles. La modalidad se acuerda en el Plan de evaluación. Si la práctica se realiza de forma simulada, el área de evaluación debe contar con los materiales, insumos e infraestructura para ejecutar todos los criterios del estándar.</p>
+<h3>¿Puedo presentar evidencias de proyectos anteriores?</h3>
+<p>Sí. Los productos del estándar pueden presentarse como Evidencia Histórica (proyectos previos), siempre que puedas demostrar tu autoría y autenticidad ante el evaluador. Consulta el IEC y a tu Centro de Evaluación para el procedimiento específico.</p>
+<h3>¿Qué es diferente entre el Estándar A y el Estándar B?</h3>
+<p>El Estándar A certifica la implementación de herramientas de IA existentes en los procesos operativos de una MiPyME (configuras, adaptas, capacitas). El Estándar B certifica el desarrollo de productos y servicios nuevos con IA (investigas, conceptualizas, construyes un prototipo, validas con usuarios). Si tu trabajo es configurar herramientas del mercado, tu estándar es el A. Si tu trabajo es crear algo nuevo que antes no existía, tu estándar es el B.</p>
+<h3>¿El prototipo tiene que ser un software completamente desarrollado?</h3>
+<p>No. El estándar habla de un "prototipo funcional" — una versión operativa que permite demostrar el funcionamiento de la solución en condiciones reales o simuladas. Puede ser una solución con herramientas de IA de no-código, un flujo construido en una plataforma como Make o Zapier, o incluso una solución con prompts y herramientas de IA generativa que produce los resultados esperados. Lo que importa es que funcione y que puedas demostrarlo.</p>
+<aside class="callout callout--tip" role="note">
+<span class="callout__label">¿Tu pregunta no está aquí?</span>
+<div class="callout__body">Consulta la sección de <a href="#contacto">Contacto y siguientes pasos</a> al final de esta página o el <a href="../maestro/recursos.html">FAQ general del Curso introductorio</a> para preguntas sobre el marco general de la certificación.</div>
+</aside>
+</div>
+</details>
+<!-- ===== 8.2 GLOSARIO ===== -->
+<details class="accordion__item" id="glosario">
+<summary>
+<span class="accordion__num">8.2</span>
+<span class="accordion__title-main">Glosario consolidado del Estándar B</span>
+<span class="accordion__meta">39 términos del estándar · orden alfabético · 10 min</span>
+</summary>
+<div class="accordion__body">
+<p>Reúne las entradas de glosario establecidas en el estándar del Estándar B, organizadas alfabéticamente y sin duplicados. Cada término proviene del documento oficial.</p>
+<table class="prose-table">
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición conforme al estándar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Análisis de causa raíz</strong></td>
+<td>Método de análisis que busca identificar las causas fundamentales de un problema, evitando enfocarse solo en sus efectos.</td>
+</tr>
+<tr>
+<td><strong>Anonimizados</strong></td>
+<td>Datos personales sometidos a un proceso irreversible mediante el cual no pueden asociarse a una persona identificada ni permiten su re-identificación.</td>
+</tr>
+<tr>
+<td><strong>Árbol de problema o causa-efecto</strong></td>
+<td>Herramienta visual que organiza problema central, causas y efectos, permitiendo comprender la relación entre los factores que originan una situación.</td>
+</tr>
+<tr>
+<td><strong>Arquitectura del prototipo</strong></td>
+<td>Estructura técnica que describe los componentes, flujos de datos, integraciones y lógica de funcionamiento de una solución tecnológica propuesta.</td>
+</tr>
+<tr>
+<td><strong>Bitácora</strong></td>
+<td>Registro cronológico y detallado de las actividades, pruebas o experimentos.</td>
+</tr>
+<tr>
+<td><strong>Caso de uso</strong></td>
+<td>Escenario específico que describe cómo un usuario interactúa con una solución tecnológica para cumplir un objetivo dentro del contexto operativo de la empresa.</td>
+</tr>
+<tr>
+<td><strong>Contexto de aparición</strong></td>
+<td>Condiciones específicas en las que surge un problema u oportunidad: el momento, el lugar y las circunstancias que lo provocan o lo hacen evidente.</td>
+</tr>
+<tr>
+<td><strong>Cronología del proceso</strong></td>
+<td>Secuencia de etapas que describe cómo el usuario identifica, decide, ejecuta y evalúa la solución de un problema o necesidad.</td>
+</tr>
+<tr>
+<td><strong>Cuatro fuerzas del progreso</strong></td>
+<td>Fuerzas que influyen en la decisión: Push (insatisfacción con la situación actual), Pull (atracción hacia una nueva solución), Anxiety (miedos ante el cambio) y Habit (inercia que mantiene la solución actual).</td>
+</tr>
+<tr>
+<td><strong>Entrevista a usuario</strong></td>
+<td>Técnica cualitativa: conversar de forma estructurada o semiestructurada con usuarios para comprender sus necesidades, experiencias, problemas y comportamientos.</td>
+</tr>
+<tr>
+<td><strong>Escalamiento</strong></td>
+<td>Proceso de expandir el alcance, capacidad o cobertura de una solución validada para su implementación a mayor escala.</td>
+</tr>
+<tr>
+<td><strong>Flujo de interacción</strong></td>
+<td>Secuencia de pasos que describe cómo el usuario interactúa con el prototipo o solución, desde el inicio hasta la obtención del resultado esperado.</td>
+</tr>
+<tr>
+<td><strong>Hallazgos</strong></td>
+<td>Conclusiones relevantes obtenidas del análisis de entrevistas y datos de usuarios que revelan patrones, necesidades o problemas importantes. También conocidos como Insights.</td>
+</tr>
+<tr>
+<td><strong>Herramientas de análisis con IA</strong></td>
+<td>Aplicaciones o sistemas que utilizan algoritmos de IA para analizar, interpretar o sintetizar información, apoyando la identificación de patrones o hipótesis.</td>
+</tr>
+<tr>
+<td><strong>Hipótesis</strong></td>
+<td>Afirmación verificable que propone una relación causal entre una variable y un resultado esperado, y que se valida mediante pruebas o experimentación.</td>
+</tr>
+<tr>
+<td><strong>Hoja de ruta</strong></td>
+<td>Plan que define las etapas, actividades, responsables y temporalidad para la implementación o escalamiento de una solución.</td>
+</tr>
+<tr>
+<td><strong>Ideación</strong></td>
+<td>Proceso creativo y estructurado de generación de ideas orientadas a resolver un problema o aprovechar una oportunidad identificada.</td>
+</tr>
+<tr>
+<td><strong>Inteligencia Artificial</strong></td>
+<td>Sistemas computacionales capaces de realizar tareas que normalmente requieren inteligencia humana.</td>
+</tr>
+<tr>
+<td><strong>Iterar</strong></td>
+<td>Proceso de realizar ajustes y mejoras sucesivas a partir de los resultados de validación.</td>
+</tr>
+<tr>
+<td><strong>Lógica operativa</strong></td>
+<td>Secuencia de reglas, condiciones y procesos que determinan cómo funciona internamente un prototipo o solución para producir los resultados esperados.</td>
+</tr>
+<tr>
+<td><strong>Macroentorno</strong></td>
+<td>Conjunto de factores externos (económicos, tecnológicos, sociales, regulatorios y culturales) que influyen en el mercado y en el desempeño de una empresa.</td>
+</tr>
+<tr>
+<td><strong>Manual de usuario</strong></td>
+<td>Documento que contiene las instrucciones de operación de una herramienta o solución, describiendo paso a paso cómo utilizarla correctamente.</td>
+</tr>
+<tr>
+<td><strong>Métricas</strong></td>
+<td>Medidas cuantitativas definidas para evaluar el desempeño, resultado o impacto de una prueba o solución tecnológica.</td>
+</tr>
+<tr>
+<td><strong>Modelo de negocio</strong></td>
+<td>Representación de cómo una empresa crea, entrega y captura valor: propuesta de valor, segmentos de clientes, canales, fuentes de ingresos, recursos y actividades clave.</td>
+</tr>
+<tr>
+<td><strong>Narrativa de necesidad</strong></td>
+<td>Descripción del contexto en que surge una necesidad del usuario, usando la estructura Job Story: "Cuando… quiero… para poder…"</td>
+</tr>
+<tr>
+<td><strong>Pivotar</strong></td>
+<td>Decisión estratégica de cambiar significativamente el enfoque, modelo o funcionalidad de un producto o servicio cuando los resultados de validación indican que la propuesta original no cumple los criterios de éxito.</td>
+</tr>
+<tr>
+<td><strong>Plan de experimentación</strong></td>
+<td>Documento que define las hipótesis a validar, las pruebas a realizar, las métricas de éxito, los perfiles de usuarios participantes y el cronograma de ejecución.</td>
+</tr>
+<tr>
+<td><strong>Pregunta generadora</strong></td>
+<td>Formulación de preguntas abiertas diseñadas para estimular la generación de ideas y explorar posibles soluciones a un problema o necesidad.</td>
+</tr>
+<tr>
+<td><strong>Prompt</strong></td>
+<td>Instrucción o conjunto de instrucciones que se proporcionan a una herramienta de IA generativa para obtener un resultado específico.</td>
+</tr>
+<tr>
+<td><strong>Propósito de uso</strong></td>
+<td>Enfoque de innovación que busca identificar el trabajo o progreso que una persona intenta lograr al utilizar un producto o servicio (Jobs To Be Done).</td>
+</tr>
+<tr>
+<td><strong>Propuesta de valor</strong></td>
+<td>Descripción del beneficio diferenciado que un producto o servicio ofrece al cliente, explicando por qué debería elegirlo sobre las alternativas.</td>
+</tr>
+<tr>
+<td><strong>Prototipo</strong></td>
+<td>Versión preliminar de un producto o servicio que permite visualizar, probar y validar una solución antes de su desarrollo completo.</td>
+</tr>
+<tr>
+<td><strong>Prototipo funcional</strong></td>
+<td>Versión operativa de una solución que permite demostrar su funcionamiento en condiciones reales o simuladas, incluyendo datos de entrada, procesamiento y resultados.</td>
+</tr>
+<tr>
+<td><strong>Prueba funcional</strong></td>
+<td>Verificación controlada del correcto funcionamiento de un prototipo, comparando los resultados obtenidos con los resultados esperados según su diseño.</td>
+</tr>
+<tr>
+<td><strong>Sentencia del problema</strong></td>
+<td>Formulación sintética que describe el origen de un problema u oportunidad, el perfil del afectado, el contexto en que aparece y el mecanismo de resolución vigente.</td>
+</tr>
+<tr>
+<td><strong>Usabilidad</strong></td>
+<td>Grado en que un producto o solución puede ser utilizado por los usuarios de manera efectiva, eficiente y satisfactoria en su contexto de uso.</td>
+</tr>
+<tr>
+<td><strong>Usuario/Persona</strong></td>
+<td>Representación del tipo de usuario objetivo basada en información real de entrevistas o investigación.</td>
+</tr>
+<tr>
+<td><strong>Usuarios sintéticos</strong></td>
+<td>Perfiles simulados generados mediante IA que replican comportamientos, preferencias o respuestas de usuarios reales para explorar hipótesis o escenarios.</td>
+</tr>
+<tr>
+<td><strong>Validación</strong></td>
+<td>Proceso de comprobar que una solución cumple con las necesidades del usuario y los criterios de éxito definidos, mediante pruebas con usuarios reales.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<!-- ===== 8.3 REFERENCIAS ===== -->
+<details class="accordion__item" id="referencias">
+<summary>
+<span class="accordion__num">8.3</span>
+<span class="accordion__title-main">Referencias de información del Estándar B</span>
+<span class="accordion__meta">25 referencias del estándar · bibliografía completa · 5 min</span>
+</summary>
+<div class="accordion__body">
+<p>Las siguientes referencias son las que el estándar del Estándar B consigna como fuentes que respaldan los conocimientos teóricos y técnicos exigidos para la certificación.</p>
+<ol class="reference-list">
+<li><strong>[R1]</strong> Bland, D. J., &amp; Osterwalder, A. (2019). <em>Testing business ideas: A field guide for rapid experimentation.</em> John Wiley &amp; Sons.</li>
+<li><strong>[R2]</strong> Brown, T. (2008). Design thinking. <em>Harvard Business Review, 86</em>(6), 84–92. <a href="https://hbr.org/2008/06/design-thinking" rel="noopener" target="_blank">hbr.org</a></li>
+<li><strong>[R3]</strong> Brown, T. (2009). <em>Change by design: How design thinking transforms organizations and inspires innovation.</em> HarperBusiness.</li>
+<li><strong>[R4]</strong> Cámara de Diputados del H. Congreso de la Unión. (2025). <em>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</em> [nueva ley]. DOF, 20 de marzo de 2025.</li>
+<li><strong>[R5]</strong> Cámara de Diputados, C. (2020). <em>Ley Federal de protección a la propiedad industrial.</em> <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPPI.pdf" rel="noopener" target="_blank">PDF</a></li>
+<li><strong>[R6]</strong> Christensen Institute. (s.f.). <em>Jobs to be done theory.</em> <a href="https://www.christenseninstitute.org/theory/jobs-to-be-done/" rel="noopener" target="_blank">christenseninstitute.org</a></li>
+<li><strong>[R7]</strong> Christensen, C. M., Hall, T., Dillon, K., &amp; Duncan, D. S. (2016). <em>Competing against luck: The story of innovation and customer choice.</em> Harper Business.</li>
+<li><strong>[R8]</strong> CONOCER. (2025). <em>EC1705: Uso básico de herramientas de IA generativa para creación de contenido digital.</em> DOF.</li>
+<li><strong>[R9]</strong> DAIR.AI. (2024). <em>Prompt engineering guide.</em> <a href="https://www.promptingguide.ai/" rel="noopener" target="_blank">promptingguide.ai</a></li>
+<li><strong>[R10]</strong> Deming, W. E. (1986). <em>Out of the crisis.</em> MIT Press.</li>
+<li><strong>[R11]</strong> Eberle, B. (2008). <em>SCAMPER: Creative games and activities for imagination development.</em> Prufrock Press.</li>
+<li><strong>[R12]</strong> Etxebarria Tobías, O., &amp; Orrantia Etxebarria, I. (2024). <em>Inteligencia artificial para pymes: Aplica la IA y haz crecer tu empresa.</em> Anaya Multimedia.</li>
+<li><strong>[R13]</strong> Global Partnership on Artificial Intelligence (GPAI). (2024). <em>Broad adoption of AI by SMEs: Overview of 2023 activities and 2024 outlook.</em> OECD.AI.</li>
+<li><strong>[R14]</strong> Honorable Congreso de la Unión. (2020, 1 de julio). <em>Ley Federal del Derecho de Autor.</em> DOF. <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf_mov/Ley_Federal_del_Derecho_de_Autor.pdf" rel="noopener" target="_blank">PDF</a></li>
+<li><strong>[R15]</strong> Instituto Nacional de Estadística y Geografía (INEGI). (2024). <em>Encuesta Nacional de Digitalización de Negocios (EDN) 2023.</em> <a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2024/EDN/EDN2023.pdf" rel="noopener" target="_blank">PDF</a></li>
+<li><strong>[R16]</strong> Knapp, J., Zeratsky, J., &amp; Kowitz, B. (2016). <em>Sprint: How to solve big problems and test new ideas in just five days.</em> Simon &amp; Schuster.</li>
+<li><strong>[R17]</strong> Kohavi, R., Tang, D. y Xu, Y. (2020). <em>Trustworthy online controlled experiments: A practical guide to A/B testing.</em> Cambridge University Press.</li>
+<li><strong>[R18]</strong> Kotter, J. P. (2012). <em>Leading change.</em> Harvard Business Review Press.</li>
+<li><strong>[R19]</strong> Krug, S. (2014). <em>Don't make me think, revisited: A common sense approach to web usability</em> (3.ª ed.). New Riders/Pearson.</li>
+<li><strong>[R20]</strong> <em>Ley para el Desarrollo de la Competitividad de la Micro, Pequeña y Mediana Empresa.</em> (DOF 30/12/2002, última reforma 20/10/2023).</li>
+<li><strong>[R21]</strong> NIST. (2023). <em>AI Risk Management Framework (AI RMF 1.0).</em> <a href="https://www.nist.gov/itl/ai-risk-management-framework" rel="noopener" target="_blank">nist.gov</a></li>
+<li><strong>[R22]</strong> OCDE. (2024a). <em>Generative AI and the SME workforce.</em> OECD Publishing. <a href="https://www.oecd.org/en/publications/generative-ai-and-the-sme-workforce_2d08b99d-en.html" rel="noopener" target="_blank">oecd.org</a></li>
+<li><strong>[R23]</strong> OCDE. (2024b). <em>OECD Principles on Artificial Intelligence</em> (actualización mayo 2024). <a href="https://oecd.ai/en/ai-principles" rel="noopener" target="_blank">oecd.ai</a></li>
+<li><strong>[R24]</strong> OCDE. (2024c). <em>Recomendación del Consejo sobre Inteligencia Artificial – Principios de la OCDE sobre IA.</em> <a href="https://oecd.ai/en/ai-principles" rel="noopener" target="_blank">oecd.ai</a></li>
+<li><strong>[R25]</strong> OCDE. (2025). <em>AI adoption by small and medium-sized enterprises.</em> OECD Publishing.</li>
+</ol>
+</div>
+</details>
+<!-- ===== 8.4 CONTACTO Y SIGUIENTES PASOS ===== -->
+<details class="accordion__item" id="contacto">
+<summary>
+<span class="accordion__num">8.4</span>
+<span class="accordion__title-main">¿Qué sigue después de este manual?</span>
+<span class="accordion__meta">Siguientes pasos · contacto · 3 min</span>
+</summary>
+<div class="accordion__body">
+<p>Si ya completaste el estudio de este manual y tienes tus productos listos, los siguientes pasos son:</p>
+<ol>
+<li>Contacta a tu Centro de Evaluación para programar la sesión de evaluación.</li>
+<li>Confirma la modalidad (presencial o remota) y los requisitos técnicos.</li>
+<li>Solicita el Plan de evaluación y revisa las fechas disponibles.</li>
+<li>Prepara los productos en formato digital organizado para presentación.</li>
+<li>Practica los 7 desempeños con un colega la semana anterior a la evaluación.</li>
+</ol>
+<aside class="callout callout--example" role="note">
+<span class="callout__label">Recursos de la colección</span>
+<div class="callout__body">Si tienes preguntas sobre el marco general del CONOCER, la estructura del sistema de certificación o cómo se compara el Estándar B con el A, consulta el <a href="../maestro/index.html">Curso Introductorio</a>. Los Estándares C y D están en desarrollo.</div>
+</aside>
+<h3>Soporte de tu Centro de Evaluación</h3>
+<p>Una vez inscrito al proceso, tu Centro de Evaluación o Evaluador Independiente te indicará los canales operativos: agenda de sesiones, requerimientos técnicos específicos y dudas sobre la modalidad presencial o remota.</p>
+<h3>Información oficial del CONOCER</h3>
+<p>Para consultas relativas al marco institucional del Sistema Nacional de Competencias, al RENEC, al RENAP o al Padrón de Prestadores de Servicios: <a href="https://conocer.gob.mx" rel="noopener" target="_blank">conocer.gob.mx</a>.</p>
+<div style="margin-top: 2rem;">
+<a class="btn btn-primary" href="../index.html">Volver al inicio de la colección</a>
+</div>
+</div>
+</details>
+</div>
+</div>
+<hr style="margin: 56px 0 32px; border: none; border-top: 2px solid var(--color-gris-linea);"/>
+<section id="cierre">
+<p style="text-align: center; font-style: italic; color: var(--color-gris-texto);">— Fin del Manual del Estándar B —</p>
+<p style="text-align: center;">Te deseamos el mejor resultado en tu proceso de certificación.</p>
+</section>
+<div class="lesson-nav" style="display:flex; justify-content:space-between; margin-top:2rem;">
+<a class="btn btn-secondary" href="ruta-preparacion.html">Anterior · Ruta de preparación</a>
+<a class="btn btn-primary" href="../index.html">Inicio · Mi CompañIA</a>
+</div>
+</div>
+</main>
+</body>
+</html>
