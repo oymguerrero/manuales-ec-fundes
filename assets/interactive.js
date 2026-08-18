@@ -546,12 +546,337 @@
     }
   }
 
+  // ---------- Arquitectura de aprendizaje (catálogo + estado local) ----------
+  // Mantiene URLs HTML reales y añade continuidad tipo LMS sin convertir el sitio
+  // en una SPA. El progreso es local a este navegador y nunca equivale a dominio
+  // demostrado ni a una constancia oficial.
+  const LEARNING_COURSES = [
+    {
+      id: 'maestro', title: 'Curso introductorio', shortTitle: 'Introducción',
+      pages: [
+        ['maestro/index.html', 'Bienvenida y contexto', 'maestro-cap1-bienvenida', 'inicio'],
+        ['maestro/que-es.html', 'Qué es la certificación', 'maestro-cap2-que-es', 'leccion'],
+        ['maestro/como-se-evalua.html', 'Cómo se evalúa', 'maestro-cap3-como-se-evalua', 'leccion'],
+        ['maestro/proceso.html', 'Proceso paso a paso', 'maestro-cap4-proceso', 'leccion'],
+        ['maestro/es-para-ti.html', '¿Es para ti?', 'maestro-cap5-es-para-ti', 'leccion'],
+        ['maestro/recursos.html', 'Recursos', 'maestro-cap6-recursos', 'apoyo']
+      ]
+    },
+    {
+      id: 'estandar-a', title: 'Implementar IA', shortTitle: 'Ruta A',
+      pages: [
+        ['estandar-a/index.html', 'Bienvenida y contexto', 'estandar-a-bienvenida-contexto', 'inicio'],
+        ['estandar-a/elemento-1.html', 'Elemento 1 · Planear', 'estandar-a-elemento-1', 'leccion'],
+        ['estandar-a/elemento-2.html', 'Elemento 2 · Ejecutar', 'estandar-a-elemento-2', 'leccion'],
+        ['estandar-a/elemento-3.html', 'Elemento 3 · Evaluar', 'estandar-a-elemento-3', 'leccion'],
+        ['estandar-a/instrumento.html', 'Evaluación propuesta', 'estandar-a-instrumento', 'evaluacion'],
+        ['estandar-a/ruta-preparacion.html', 'Ruta de preparación', 'estandar-a-ruta-preparacion', 'preparacion'],
+        ['estandar-a/recursos.html', 'FAQ y recursos', 'estandar-a-recursos', 'apoyo']
+      ]
+    },
+    {
+      id: 'estandar-b', title: 'Desarrollar con IA', shortTitle: 'Ruta B',
+      pages: [
+        ['estandar-b/index.html', 'Bienvenida y contexto', 'estandar-b-bienvenida-contexto', 'inicio'],
+        ['estandar-b/elemento-1.html', 'Elemento 1 · Identificar', 'estandar-b-elemento-1', 'leccion'],
+        ['estandar-b/elemento-2.html', 'Elemento 2 · Conceptualizar', 'estandar-b-elemento-2', 'leccion'],
+        ['estandar-b/elemento-3.html', 'Elemento 3 · Desarrollar', 'estandar-b-elemento-3', 'leccion'],
+        ['estandar-b/elemento-4.html', 'Elemento 4 · Validar', 'estandar-b-elemento-4', 'leccion'],
+        ['estandar-b/instrumento.html', 'Evaluación propuesta', 'estandar-b-instrumento', 'evaluacion'],
+        ['estandar-b/ruta-preparacion.html', 'Ruta de preparación', 'estandar-b-ruta', 'preparacion'],
+        ['estandar-b/recursos.html', 'FAQ y recursos', 'estandar-b-recursos', 'apoyo']
+      ]
+    },
+    {
+      id: 'estandar-c', title: 'Marketing digital con IA', shortTitle: 'Ruta C',
+      pages: [
+        ['estandar-c/index.html', 'Bienvenida y contexto', 'estandar-c-bienvenida-contexto', 'inicio'],
+        ['estandar-c/elemento-1.html', 'Elemento 1 · Planificar', 'estandar-c-elemento-1', 'leccion'],
+        ['estandar-c/elemento-2.html', 'Elemento 2 · Generar contenido', 'estandar-c-elemento-2', 'leccion'],
+        ['estandar-c/elemento-3.html', 'Elemento 3 · Implementar', 'estandar-c-elemento-3', 'leccion'],
+        ['estandar-c/elemento-4.html', 'Elemento 4 · Optimizar', 'estandar-c-elemento-4', 'leccion'],
+        ['estandar-c/instrumento.html', 'Evaluación propuesta', 'estandar-c-instrumento', 'evaluacion'],
+        ['estandar-c/ruta-preparacion.html', 'Ruta de preparación', 'estandar-c-ruta-preparacion', 'preparacion'],
+        ['estandar-c/recursos.html', 'FAQ y recursos', 'estandar-c-recursos', 'apoyo']
+      ]
+    },
+    {
+      id: 'estandar-d', title: 'Soluciones de transformación digital', shortTitle: 'Ruta D',
+      pages: [
+        ['estandar-d/index.html', 'Bienvenida y contexto', 'estandar-d-bienvenida-contexto', 'inicio'],
+        ['estandar-d/elemento-1.html', 'Elemento 1 · Diagnosticar', 'estandar-d-elemento-1', 'leccion'],
+        ['estandar-d/elemento-2.html', 'Elemento 2 · Construir', 'estandar-d-elemento-2', 'leccion'],
+        ['estandar-d/elemento-3.html', 'Elemento 3 · Implementar', 'estandar-d-elemento-3', 'leccion'],
+        ['estandar-d/elemento-4.html', 'Elemento 4 · Optimizar', 'estandar-d-elemento-4', 'leccion'],
+        ['estandar-d/instrumento.html', 'Evaluación propuesta', 'estandar-d-instrumento', 'evaluacion'],
+        ['estandar-d/ruta-preparacion.html', 'Ruta de preparación', 'estandar-d-ruta', 'preparacion'],
+        ['estandar-d/recursos.html', 'FAQ y recursos', 'estandar-d-recursos', 'apoyo']
+      ]
+    }
+  ].map(function (course) {
+    course.pages = course.pages.map(function (page, index) {
+      return { path: page[0], title: page[1], progressKey: page[2], type: page[3], index: index };
+    });
+    return course;
+  });
+
+  const LESSON_OUTCOMES = {
+    'maestro/que-es.html': ['Explicar qué respalda una certificación CONOCER y distinguirla de un curso o título académico.', 'Explicación clara para orientar a una persona interesada'],
+    'maestro/como-se-evalua.html': ['Distinguir conocimientos, desempeños, productos y actitudes dentro de una evaluación por competencia.', 'Mapa de los tipos de evidencia que deberás preparar'],
+    'maestro/proceso.html': ['Ordenar las etapas de evaluación y anticipar qué ocurre antes, durante y después de la sesión.', 'Plan personal para transitar el proceso de evaluación'],
+    'maestro/es-para-ti.html': ['Valorar tu experiencia actual e identificar la ruta formativa que mejor corresponde a tu perfil.', 'Ruta sugerida y brechas iniciales identificadas'],
+    'maestro/recursos.html': ['Resolver dudas frecuentes, distinguir los registros y actores del sistema CONOCER y localizar fuentes de consulta confiables.', 'Fuentes y siguiente paso identificados'],
+    'estandar-a/elemento-1.html': ['Planear una intervención de IA a partir del diagnóstico, la priorización y una hoja de ruta viable.', 'Paquete de planeación conectado con una MiPyME real'],
+    'estandar-a/elemento-2.html': ['Ejecutar la implementación de soluciones de IA, probarlas y transferir su operación al equipo.', 'Evidencias de configuración, pruebas y capacitación'],
+    'estandar-a/elemento-3.html': ['Evaluar resultados, documentar aprendizajes y cerrar formalmente una implementación de IA.', 'Reporte de resultados y cierre sustentado en indicadores'],
+    'estandar-a/instrumento.html': ['Interpretar la estructura de evaluación descrita en la versión de trabajo y relacionar sus reactivos con las evidencias que debes preparar.', 'Mapa propuesto de reactivos y evidencias de la ruta A'],
+    'estandar-a/ruta-preparacion.html': ['Organizar tu preparación en una secuencia realista y detectar qué evidencias de la ruta A requieren refuerzo.', 'Plan personal de preparación para la ruta A'],
+    'estandar-a/recursos.html': ['Resolver dudas de la ruta A y localizar referencias, formatos y recursos para continuar tu preparación.', 'Recursos de apoyo de la ruta A localizados'],
+    'estandar-b/elemento-1.html': ['Identificar una oportunidad de negocio mediante investigación, entrevistas y análisis de mercado.', 'Problema priorizado con evidencia del usuario y del mercado'],
+    'estandar-b/elemento-2.html': ['Conceptualizar alternativas de solución con IA y seleccionar un modelo de negocio coherente.', 'Concepto de solución y modelo de negocio argumentados'],
+    'estandar-b/elemento-3.html': ['Desarrollar un prototipo de solución con IA y preparar un plan de experimentación verificable.', 'Prototipo documentado y experimento listo para ejecutarse'],
+    'estandar-b/elemento-4.html': ['Validar hipótesis con resultados de prueba y convertir hallazgos en recomendaciones.', 'Conclusiones por hipótesis y siguiente iteración priorizada'],
+    'estandar-b/instrumento.html': ['Interpretar la estructura de evaluación descrita en la versión de trabajo y vincular desempeños, productos y conocimientos con tus evidencias de la ruta B.', 'Mapa propuesto de evaluación de la ruta B'],
+    'estandar-b/ruta-preparacion.html': ['Planificar la preparación de la ruta B y priorizar las brechas de investigación, prototipado y validación.', 'Plan personal de preparación para la ruta B'],
+    'estandar-b/recursos.html': ['Resolver dudas de la ruta B y localizar referencias y recursos para desarrollar y validar tu solución.', 'Recursos de apoyo de la ruta B localizados'],
+    'estandar-c/elemento-1.html': ['Planificar una estrategia de contenido digital con IA a partir del contexto, audiencia y objetivos.', 'Estrategia de contenido trazable a necesidades del cliente'],
+    'estandar-c/elemento-2.html': ['Generar piezas de texto, imagen, audio y video con IA aplicando criterios de calidad y uso responsable.', 'Portafolio multiformato con decisiones documentadas'],
+    'estandar-c/elemento-3.html': ['Implementar y documentar la publicación de contenido y transferir el proceso al equipo de la MiPyME.', 'Bitácora de implementación y guía operativa'],
+    'estandar-c/elemento-4.html': ['Analizar el desempeño del contenido y proponer optimizaciones basadas en datos.', 'Reporte de desempeño y plan de optimización'],
+    'estandar-c/instrumento.html': ['Interpretar la estructura de evaluación descrita en la versión de trabajo y relacionar las piezas, desempeños y conocimientos con tus evidencias de la ruta C.', 'Mapa propuesto de evaluación de la ruta C'],
+    'estandar-c/ruta-preparacion.html': ['Organizar la preparación de productos y desempeños de contenido digital e identificar lo que aún debes reforzar.', 'Plan personal de preparación para la ruta C'],
+    'estandar-c/recursos.html': ['Resolver dudas de la ruta C y localizar referencias y recursos para producir contenido con IA de forma responsable.', 'Recursos de apoyo de la ruta C localizados'],
+    'estandar-d/elemento-1.html': ['Diagnosticar madurez, brechas y oportunidades de transformación digital en una MiPyME.', 'Diagnóstico y propuesta priorizada para una organización real'],
+    'estandar-d/elemento-2.html': ['Construir y verificar una solución de transformación digital con IA.', 'Solución probada con documentación técnica suficiente'],
+    'estandar-d/elemento-3.html': ['Desplegar la solución, capacitar a las personas usuarias y documentar la implementación.', 'Evidencias de despliegue y transferencia operativa'],
+    'estandar-d/elemento-4.html': ['Medir el rendimiento técnico y convertir retroalimentación en un plan de mejora.', 'Reporte de rendimiento y optimización priorizada'],
+    'estandar-d/instrumento.html': ['Interpretar la estructura de evaluación descrita en la versión de trabajo y vincular la solución técnica, sus productos y desempeños con la evidencia requerida.', 'Mapa propuesto de evaluación de la ruta D'],
+    'estandar-d/ruta-preparacion.html': ['Organizar la preparación técnica de la ruta D y priorizar brechas de diagnóstico, construcción, despliegue y optimización.', 'Plan personal de preparación para la ruta D'],
+    'estandar-d/recursos.html': ['Resolver dudas de la ruta D y localizar referencias y recursos para documentar una solución de transformación digital.', 'Recursos de apoyo de la ruta D localizados']
+  };
+
+  const LEARNING_STATE_KEY = 'mi-compania-learning::v1';
+
+  function siteHref(path) {
+    const stylesheet = document.querySelector('link[rel="stylesheet"][href*="assets/styles.css"]');
+    const base = stylesheet ? stylesheet.href.replace(/assets\/styles\.css(?:\?.*)?$/, '') : location.href;
+    return new URL(path, base).href;
+  }
+
+  function currentLearningEntry() {
+    const pathname = decodeURIComponent(location.pathname).replace(/\\/g, '/');
+    for (let c = 0; c < LEARNING_COURSES.length; c++) {
+      const course = LEARNING_COURSES[c];
+      for (let p = 0; p < course.pages.length; p++) {
+        const page = course.pages[p];
+        if (pathname.endsWith('/' + page.path) || pathname.endsWith(page.path)) {
+          return { course: course, page: page };
+        }
+      }
+    }
+    return null;
+  }
+
+  function readLearningState() {
+    try {
+      const state = JSON.parse(localStorage.getItem(LEARNING_STATE_KEY) || '{}');
+      if (!state.visited) state.visited = {};
+      return state;
+    } catch (e) {
+      return { visited: {} };
+    }
+  }
+
+  function writeLearningState(state) {
+    try { localStorage.setItem(LEARNING_STATE_KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  function trackLearningVisit(moduleId) {
+    const entry = currentLearningEntry();
+    if (!entry) return;
+    const state = readLearningState();
+    const samePage = state.lastPath === entry.page.path;
+    state.visited[entry.page.path] = Date.now();
+    state.lastPath = entry.page.path;
+    state.lastCourse = entry.course.id;
+    state.lastModule = moduleId || (samePage ? state.lastModule : '') || '';
+    state.updatedAt = new Date().toISOString();
+    writeLearningState(state);
+  }
+
+  function readPageProgress(page) {
+    let value = null;
+    try { value = JSON.parse(localStorage.getItem('mi-compania-lessons::' + page.progressKey) || 'null'); } catch (e) {}
+    if (Array.isArray(value)) {
+      return { done: value.length, total: 0, complete: false, legacy: true };
+    }
+    if (value && Array.isArray(value.completed)) {
+      const total = Number(value.total) || 0;
+      const done = value.completed.length;
+      return { done: done, total: total, complete: total > 0 && done >= total, legacy: false };
+    }
+    return { done: 0, total: 0, complete: false, legacy: false };
+  }
+
+  function getCourseStats(course) {
+    const state = readLearningState();
+    function summarize(types) {
+      const pages = course.pages.filter(function (page) { return types.indexOf(page.type) >= 0; });
+      let completed = 0;
+      let started = 0;
+      pages.forEach(function (page) {
+        const progress = readPageProgress(page);
+        const wasVisited = Boolean(state.visited && state.visited[page.path]);
+        if (wasVisited || progress.done > 0) started += 1;
+        if (progress.complete) completed += 1;
+      });
+      return {
+        completed: completed,
+        started: started,
+        total: pages.length,
+        pct: pages.length ? Math.round(completed / pages.length * 100) : 0
+      };
+    }
+
+    const formation = summarize(['leccion']);
+    const preparation = summarize(['evaluacion', 'preparacion']);
+    const optional = summarize(['inicio', 'apoyo']);
+    const requiredCompleted = formation.completed + preparation.completed;
+    const requiredStarted = formation.started + preparation.started;
+    const requiredTotal = formation.total + preparation.total;
+    const required = {
+      completed: requiredCompleted,
+      started: requiredStarted,
+      total: requiredTotal,
+      pct: requiredTotal ? Math.round(requiredCompleted / requiredTotal * 100) : 0
+    };
+    return {
+      formation: formation,
+      preparation: preparation,
+      optional: optional,
+      required: required,
+      // Alias temporal para los componentes que consumen el agregado principal.
+      completed: required.completed,
+      started: required.started,
+      total: required.total,
+      pct: required.pct
+    };
+  }
+
+  function getResumeTarget() {
+    const state = readLearningState();
+    let course = LEARNING_COURSES.find(function (item) { return item.id === state.lastCourse; });
+    if (!course && state.diagnostic) {
+      course = LEARNING_COURSES.find(function (item) { return item.id === state.diagnostic.courseId; });
+    }
+    if (!course) course = LEARNING_COURSES[0];
+    let page = course.pages.find(function (item) { return item.path === state.lastPath; }) || course.pages[0];
+    return { course: course, page: page, module: state.lastModule || '' };
+  }
+
+  function getCourseResumePage(course, state) {
+    const visited = course.pages.filter(function (page) {
+      return state.visited && state.visited[page.path];
+    }).sort(function (a, b) {
+      return state.visited[b.path] - state.visited[a.path];
+    });
+    if (visited.length) return visited[0];
+    return course.pages.find(function (page) {
+      return page.type === 'leccion' && !readPageProgress(page).complete;
+    }) || course.pages.find(function (page) { return page.type === 'leccion'; }) || course.pages[0];
+  }
+
+  // Integra el contenido pedagógico que algunas páginas conservan después de
+  // .lesson-tabs. En el HTML sin JavaScript ese contenido sigue siendo lineal;
+  // con el entorno LMS pasa a ser parte de la unidad y de su avance.
+  function normalizeLessonWorkspace(container) {
+    if (container.dataset.workspaceNormalized === 'true') return;
+    container.dataset.workspaceNormalized = 'true';
+
+    const wrapper = container.querySelector('.accordion.accordion--modules')
+                  || container.querySelector('.accordion--modules');
+    if (!wrapper) return;
+
+    const trailing = [];
+    const decorative = [];
+    let sibling = container.nextElementSibling;
+    while (sibling) {
+      const next = sibling.nextElementSibling;
+      if (sibling.id === 'siguiente' || sibling.classList.contains('course-pagination')) break;
+
+      if (sibling.classList.contains('lesson-nav')) {
+        // initLearningShell crea una sola paginación coherente para el curso.
+        sibling.hidden = true;
+        sibling.style.display = 'none';
+      } else if (sibling.tagName === 'HR') {
+        decorative.push(sibling);
+      } else if (sibling.tagName !== 'SCRIPT' && sibling.tagName !== 'TEMPLATE') {
+        trailing.push(sibling);
+      }
+      sibling = next;
+    }
+
+    if (!trailing.length) {
+      decorative.forEach(function (element) { element.hidden = true; });
+      return;
+    }
+
+    const interactiveSelector = [
+      '.case-lab', '.chart-block', '.checklist', '.diagram-mermaid',
+      '.drag-sort', '.flashcard-deck', '.quiz', '.scenario-decision',
+      '.swipe-decide', '.timeline-interactive'
+    ].join(',');
+    const isRouteClosing = trailing.some(function (element) {
+      return element.id === 'cierre' || Boolean(element.querySelector && element.querySelector('#cierre'));
+    });
+    const hasPractice = trailing.some(function (element) {
+      return element.matches(interactiveSelector) || Boolean(element.querySelector(interactiveSelector));
+    });
+
+    // Una sola nota final no justifica otro paso: se incorpora al último módulo.
+    if (trailing.length === 1 && !hasPractice && !isRouteClosing) {
+      const lastItem = wrapper.querySelector(':scope > details.accordion__item:last-of-type');
+      const lastBody = lastItem && lastItem.querySelector(':scope > .accordion__body');
+      if (lastBody) {
+        lastBody.appendChild(trailing[0]);
+        decorative.forEach(function (element) { element.hidden = true; });
+        return;
+      }
+    }
+
+    let closingId = isRouteClosing ? 'cierre-de-la-ruta' : 'practica-y-cierre';
+    let suffix = 2;
+    while (document.getElementById(closingId)) {
+      closingId = (isRouteClosing ? 'cierre-de-la-ruta-' : 'practica-y-cierre-') + suffix;
+      suffix += 1;
+    }
+
+    const closing = document.createElement('details');
+    closing.className = 'accordion__item lesson-closing-module';
+    closing.id = closingId;
+
+    const summary = document.createElement('summary');
+    summary.innerHTML =
+      '<span class="accordion__num">Cierre</span>' +
+      '<span class="accordion__title-main">' + (isRouteClosing ? 'Cierre de la ruta' : 'Práctica y cierre') + '</span>' +
+      '<span class="accordion__meta">' + (isRouteClosing ? 'Síntesis · siguientes pasos' : 'Aplica · reflexiona · comprueba') + '</span>';
+
+    const body = document.createElement('div');
+    body.className = 'accordion__body';
+    trailing.forEach(function (element) { body.appendChild(element); });
+    decorative.forEach(function (element) { element.hidden = true; });
+
+    closing.appendChild(summary);
+    closing.appendChild(body);
+    wrapper.appendChild(closing);
+  }
+
   // ---------- Lesson Tabs (LMS-style: sidebar + panel + tracking de avance) ----------
   // Transforma un .accordion.accordion--modules en layout sidebar + panel:
   // - sidebar listado clickeable con check de avance
   // - panel principal con un solo módulo visible
-  // - localStorage persiste los módulos marcados como completados
-  // - botones "Marcar como leído y continuar →" + "← Anterior"
+  // - localStorage persiste los módulos marcados como revisados
+  // - botones "Marcar como revisado y continuar →" + "← Anterior"
   // El markup HTML original (details/summary) se mantiene intacto para
   // accesibilidad, Ctrl+F y print. El comportamiento visual es controlado por JS+CSS.
   function initLessonTabs(container) {
@@ -576,11 +901,21 @@
     try {
       const raw = JSON.parse(localStorage.getItem(storageKey) || '[]');
       if (Array.isArray(raw)) completed = new Set(raw);
+      else if (raw && Array.isArray(raw.completed)) completed = new Set(raw.completed);
     } catch (e) { /* localStorage bloqueado: degradación silenciosa */ }
+    completed = new Set(Array.from(completed).filter(function (id) {
+      return items.some(function (item) { return item.id === id; });
+    }));
 
     function persist() {
       try {
-        localStorage.setItem(storageKey, JSON.stringify(Array.from(completed)));
+        localStorage.setItem(storageKey, JSON.stringify({
+          completed: Array.from(completed),
+          total: items.length,
+          path: currentLearningEntry() ? currentLearningEntry().page.path : location.pathname,
+          updatedAt: new Date().toISOString()
+        }));
+        window.dispatchEvent(new CustomEvent('mi-compania:progress-changed'));
       } catch (e) { /* nop */ }
     }
 
@@ -590,7 +925,7 @@
     header.className = 'lesson-tabs__header';
     header.innerHTML =
       '<span class="lesson-tabs__progress-text">' +
-        '<strong class="lesson-tabs__count">0</strong> de ' + items.length + ' módulos completados' +
+        '<strong class="lesson-tabs__count">0</strong> de ' + items.length + ' módulos revisados' +
       '</span>' +
       '<div class="lesson-tabs__progress-bar" role="progressbar" aria-label="Avance del capítulo" aria-valuemin="0" aria-valuemax="' + items.length + '" aria-valuenow="0">' +
         '<div class="lesson-tabs__progress-fill"></div>' +
@@ -622,6 +957,10 @@
     const panelContent = document.createElement('div');
     panelContent.className = 'lesson-tabs__panel-content';
 
+    const panelStatus = document.createElement('p');
+    panelStatus.className = 'visually-hidden';
+    panelStatus.setAttribute('role', 'status');
+
     const panelFooter = document.createElement('div');
     panelFooter.className = 'lesson-tabs__panel-footer';
     panelFooter.innerHTML =
@@ -629,10 +968,11 @@
         '<span aria-hidden="true">←</span> Anterior' +
       '</button>' +
       '<button type="button" class="lesson-tabs__nav-btn lesson-tabs__nav-btn--complete" data-action="complete">' +
-        '<span aria-hidden="true">✓</span> Marcar como leído y continuar' +
+        '<span aria-hidden="true">✓</span> Marcar como revisado y continuar' +
       '</button>';
 
     panelCard.appendChild(panelHeader);
+    panelCard.appendChild(panelStatus);
     panelCard.appendChild(panelContent);
     panelCard.appendChild(panelFooter);
     panel.appendChild(panelCard);
@@ -669,7 +1009,9 @@
       btn.type = 'button';
       btn.className = 'lesson-tab-item';
       btn.dataset.target = id;
+      btn.dataset.moduleLabel = 'Abrir módulo ' + num + ': ' + title;
       btn.setAttribute('aria-controls', id);
+      btn.setAttribute('aria-label', btn.dataset.moduleLabel);
       btn.innerHTML =
         '<span class="lesson-tab-item__indicator"><span class="lesson-tab-item__num-inside">' + (index + 1) + '</span></span>' +
         '<span class="lesson-tab-item__num">' + num + '</span>' +
@@ -713,7 +1055,21 @@
       const sidebarBtns = sidebar.querySelectorAll('.lesson-tab-item');
       sidebarBtns.forEach(function (b, i) {
         b.classList.toggle('is-active', i === idx);
+        if (i === idx) b.setAttribute('aria-current', 'step');
+        else b.removeAttribute('aria-current');
       });
+      const activeSidebarBtn = sidebarBtns[idx];
+      function revealActiveSidebarButton() {
+        if (!activeSidebarBtn) return;
+        if (sidebar.scrollWidth > sidebar.clientWidth) {
+          sidebar.scrollLeft = Math.max(0, activeSidebarBtn.offsetLeft - (sidebar.clientWidth - activeSidebarBtn.offsetWidth) / 2);
+        }
+        if (sidebar.scrollHeight > sidebar.clientHeight) {
+          sidebar.scrollTop = Math.max(0, activeSidebarBtn.offsetTop - (sidebar.clientHeight - activeSidebarBtn.offsetHeight) / 2);
+        }
+      }
+      revealActiveSidebarButton();
+      requestAnimationFrame(revealActiveSidebarButton);
       // Actualizar header del panel desde el summary del item activo
       const det = items[idx];
       const summary = det.querySelector('summary');
@@ -723,6 +1079,11 @@
       panelHeader.querySelector('.lesson-tabs__panel-num').textContent = num;
       panelHeader.querySelector('.lesson-tabs__panel-title').textContent = title;
       panelHeader.querySelector('.lesson-tabs__panel-meta').textContent = meta;
+      panelStatus.textContent = 'Módulo activo: ' + num + ', ' + title;
+      trackLearningVisit(det.id);
+      if (options.history) {
+        try { history.pushState({ module: det.id }, '', '#' + encodeURIComponent(det.id)); } catch (e) {}
+      }
       // Actualizar botones de navegación
       const prevBtn = panelFooter.querySelector('[data-action="prev"]');
       const completeBtn = panelFooter.querySelector('[data-action="complete"]');
@@ -730,14 +1091,14 @@
       const isLast = idx === items.length - 1;
       if (completed.has(items[idx].id)) {
         completeBtn.innerHTML = (isLast
-          ? '<span aria-hidden="true">✓</span> Completado · Finalizar capítulo'
-          : '<span aria-hidden="true">✓</span> Ya completado · Continuar');
+          ? '<span aria-hidden="true">✓</span> Unidad revisada'
+          : '<span aria-hidden="true">✓</span> Ya revisado · Continuar');
         completeBtn.classList.remove('lesson-tabs__nav-btn--complete');
         completeBtn.classList.add('lesson-tabs__nav-btn--next');
       } else {
         completeBtn.innerHTML = (isLast
-          ? '<span aria-hidden="true">✓</span> Marcar como leído y finalizar'
-          : '<span aria-hidden="true">✓</span> Marcar como leído y continuar');
+          ? '<span aria-hidden="true">✓</span> Completar unidad'
+          : '<span aria-hidden="true">✓</span> Marcar como revisado y continuar');
         completeBtn.classList.add('lesson-tabs__nav-btn--complete');
         completeBtn.classList.remove('lesson-tabs__nav-btn--next');
       }
@@ -774,27 +1135,19 @@
       bar.setAttribute('aria-valuenow', String(done));
       // Actualizar visualmente cada sidebar item
       sidebar.querySelectorAll('.lesson-tab-item').forEach(function (b, i) {
-        b.classList.toggle('is-done', completed.has(items[i].id));
+        const isReviewed = completed.has(items[i].id);
+        b.classList.toggle('is-done', isReviewed);
+        b.setAttribute('aria-label', b.dataset.moduleLabel + (isReviewed ? ' (revisado)' : ' (pendiente)'));
       });
     }
 
     // Click en sidebar item → abrir
     sidebar.addEventListener('click', function (e) {
-      // Si click en el indicador (✓) de un item completed → desmarcar
-      const indicator = e.target.closest('.lesson-tab-item__indicator');
       const btn = e.target.closest('.lesson-tab-item');
       if (!btn) return;
       const idx = Array.from(sidebar.children).indexOf(btn);
       if (idx < 0) return;
-      if (indicator && btn.classList.contains('is-done')) {
-        // Desmarcar
-        unmarkComplete(idx);
-        // Re-render botones del panel si este es el active
-        if (btn.classList.contains('is-active')) openItem(idx, { scroll: false });
-        e.stopPropagation();
-        return;
-      }
-      openItem(idx);
+      openItem(idx, { history: true });
     });
 
     // Botones del footer
@@ -804,11 +1157,11 @@
       const currentIdx = items.findIndex(function (d) { return d.open; });
       if (currentIdx < 0) return;
       if (action.dataset.action === 'prev') {
-        if (currentIdx > 0) openItem(currentIdx - 1);
+        if (currentIdx > 0) openItem(currentIdx - 1, { history: true });
       } else if (action.dataset.action === 'complete') {
         markComplete(currentIdx);
         if (currentIdx < items.length - 1) {
-          openItem(currentIdx + 1);
+          openItem(currentIdx + 1, { history: true });
         } else {
           openItem(currentIdx, { scroll: false });
         }
@@ -817,7 +1170,7 @@
 
     // Reset
     header.querySelector('.lesson-tabs__reset').addEventListener('click', function () {
-      if (!window.confirm('¿Reiniciar tu avance en este capítulo? Esto borra los módulos marcados como completados (solo en este navegador).')) return;
+      if (!window.confirm('¿Reiniciar tu avance en esta unidad? Esto borra los módulos marcados como revisados (solo en este navegador).')) return;
       completed = new Set();
       persist();
       renderProgress();
@@ -836,6 +1189,13 @@
     }
     renderProgress();
     openItem(initialIdx, { scroll: false });
+    window.addEventListener('hashchange', function () {
+      const hashId = decodeURIComponent(window.location.hash.slice(1));
+      const hashIdx = items.findIndex(function (item) { return item.id === hashId; });
+      if (hashIdx >= 0) openItem(hashIdx, { scroll: false });
+    });
+    // Migra arreglos antiguos al formato que declara el total real del capítulo.
+    persist();
   }
 
   // ---------- Glosario rico (índice alfabético + filtro en vivo + contador) ----------
@@ -1051,6 +1411,14 @@
   function initScenarioDecision(container) {
     const data = readJSONScript(container, '.scenario-decision__data');
     if (!data) return;
+    if (data.nodes && data.startNode) {
+      initBranchingScenario(container, data);
+      return;
+    }
+    if (!Array.isArray(data.options)) {
+      console.warn('Escenario sin opciones válidas', container);
+      return;
+    }
     const key = 'mi-compania-scenario::v1::' + (container.dataset.storageKey || 'default');
     let stored = {};
     try { stored = JSON.parse(localStorage.getItem(key) || '{}'); } catch (e) {}
@@ -1127,6 +1495,73 @@
 
     // Restaurar respuesta previa (informa pero permite reintentar)
     if (stored.picked) showOption(stored.picked);
+  }
+
+  function initBranchingScenario(container, data) {
+    const key = 'mi-compania-scenario::v1::' + (container.dataset.storageKey || data.id || 'branching');
+    let state = { nodeId: data.startNode, path: [] };
+    try {
+      const saved = JSON.parse(localStorage.getItem(key) || '{}');
+      if (saved.nodeId && data.nodes[saved.nodeId]) state = saved;
+    } catch (e) {}
+
+    container.innerHTML =
+      '<div class="scenario-decision__inner">' +
+        '<h3 class="scenario-decision__title">' + escapeHTML(data.title || 'Escenario de decisión') + '</h3>' +
+        (data.intro ? '<p class="scenario-decision__context">' + escapeHTML(data.intro) + '</p>' : '') +
+        '<div class="scenario-decision__branch" aria-live="polite"></div>' +
+      '</div>';
+    const branch = container.querySelector('.scenario-decision__branch');
+
+    function save() {
+      try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+    }
+
+    function render() {
+      const node = data.nodes[state.nodeId];
+      if (!node) return;
+      if (node.type === 'question') {
+        const options = Array.isArray(node.options) ? node.options : [];
+        branch.innerHTML =
+          '<p class="scenario-decision__question">' + escapeHTML(node.text) + '</p>' +
+          '<div class="scenario-decision__options" role="group" aria-label="Opciones de decisión">' +
+            options.map(function (option, index) {
+              return '<button type="button" class="scenario-decision__option" data-next="' + escapeHTML(option.next) + '">' +
+                '<span class="scenario-decision__option-id">' + String.fromCharCode(65 + index) + '</span>' +
+                '<span class="scenario-decision__option-label">' + escapeHTML(option.label) + '</span></button>';
+            }).join('') +
+          '</div>' +
+          (state.path.length ? '<button type="button" class="scenario-decision__retry">Reiniciar escenario</button>' : '');
+      } else {
+        const outcome = node.type === 'ok' ? 'ok' : node.type === 'risk' ? 'risk' : node.type === 'wrong' ? 'wrong' : 'ok';
+        const badge = node.type === 'end' ? 'Escenario completado' : node.type === 'ok' ? 'Decisión adecuada' : node.type === 'risk' ? 'Decisión con riesgos' : 'Conviene reconsiderarlo';
+        branch.innerHTML =
+          '<div class="scenario-decision__feedback">' +
+            '<div class="scenario-decision__badge scenario-decision__badge--' + outcome + '">' + badge + '</div>' +
+            '<p class="scenario-decision__explain">' + escapeHTML(node.text) + '</p>' +
+          '</div>' +
+          (node.next ? '<button type="button" class="scenario-decision__retry" data-next="' + escapeHTML(node.next) + '">Continuar</button>' : '') +
+          '<button type="button" class="scenario-decision__retry" data-restart="true">Reiniciar escenario</button>';
+        if (node.type === 'end') recordEvent('scenario', { storageKey: container.dataset.storageKey, outcome: 'completed' });
+      }
+
+      branch.querySelectorAll('[data-next]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          state.path.push(state.nodeId);
+          state.nodeId = button.dataset.next;
+          save();
+          render();
+        });
+      });
+      const restart = branch.querySelector('[data-restart]') || branch.querySelector('.scenario-decision__retry:not([data-next])');
+      if (restart) restart.addEventListener('click', function () {
+        state = { nodeId: data.startNode, path: [] };
+        save();
+        render();
+      });
+    }
+
+    render();
   }
 
   // ---------- Flashcard Deck (con micro-SRS) ----------
@@ -1683,6 +2118,224 @@
     show(0);
   }
 
+  // ---------- Shell de curso: ubicación, mapa, progreso y continuidad ----------
+  function learningStatusFor(page, currentPath) {
+    const progress = readPageProgress(page);
+    const state = readLearningState();
+    if (progress.complete) return { key: 'complete', label: 'Revisado' };
+    if (page.path === currentPath) return { key: 'current', label: 'Estás aquí' };
+    if ((state.visited && state.visited[page.path]) || progress.done > 0) return { key: 'started', label: 'En curso' };
+    return { key: 'pending', label: 'No iniciado' };
+  }
+
+  function initLearningShell() {
+    const entry = currentLearningEntry();
+    if (!document.querySelector('.skip-link')) {
+      const skip = document.createElement('a');
+      skip.className = 'skip-link';
+      skip.href = '#contenido-principal';
+      skip.textContent = 'Saltar al contenido principal';
+      document.body.insertBefore(skip, document.body.firstChild);
+    }
+    const main = document.querySelector('main');
+    if (main && !main.id) main.id = 'contenido-principal';
+    if (main) main.tabIndex = -1;
+    document.querySelectorAll('.site-header nav a, .sub-nav a').forEach(function (link) {
+      if (link.classList.contains('active')) link.setAttribute('aria-current', 'page');
+    });
+
+    if (!entry) return;
+
+    trackLearningVisit();
+    document.body.classList.add('body--learning');
+    document.body.classList.add(entry.page.type === 'inicio' ? 'body--course-home' : 'body--lesson');
+
+    if (entry.course.id !== 'maestro') {
+      const heroEyebrow = document.querySelector('.hero .eyebrow');
+      if (heroEyebrow && !heroEyebrow.querySelector('.hero-proposal-status')) {
+        const proposalStatus = document.createElement('span');
+        proposalStatus.className = 'hero-proposal-status';
+        proposalStatus.setAttribute('aria-label', 'Estado editorial: propuesta no publicada');
+        proposalStatus.textContent = ' · Propuesta no publicada';
+        heroEyebrow.appendChild(proposalStatus);
+      }
+    }
+
+    if (entry.page.type !== 'inicio' && main) {
+      const lessonTabs = main.querySelector('.lesson-tabs');
+      const lessonItems = lessonTabs ? lessonTabs.querySelectorAll('.accordion--modules > details.accordion__item') : [];
+      let estimatedMinutes = 0;
+      let timedModules = 0;
+      lessonItems.forEach(function (item) {
+        const meta = item.querySelector(':scope > summary .accordion__meta');
+        const match = meta && meta.textContent.match(/(\d+)\s*min/i);
+        if (match) {
+          estimatedMinutes += Number(match[1]);
+          timedModules += 1;
+        }
+      });
+      const declaredOutcome = LESSON_OUTCOMES[entry.page.path];
+      const lessonObjective = (lessonTabs && lessonTabs.dataset.lessonObjective) || (declaredOutcome && declaredOutcome[0]);
+      const heroContainer = document.querySelector('.hero .container');
+      const heroDescription = heroContainer && heroContainer.querySelector(':scope > p');
+      if (lessonObjective && heroDescription) {
+        const normalizedObjective = lessonObjective.charAt(0).toLocaleLowerCase('es') + lessonObjective.slice(1);
+        heroDescription.textContent = 'Al terminar esta unidad podrás ' + normalizedObjective;
+      }
+      if (heroContainer && lessonItems.length && !heroContainer.querySelector('.lesson-hero-meta')) {
+        const heroMeta = document.createElement('div');
+        heroMeta.className = 'lesson-hero-meta';
+        heroMeta.setAttribute('aria-label', 'Datos de la unidad');
+        heroMeta.innerHTML =
+          '<span><strong>' + lessonItems.length + '</strong> módulos</span>' +
+          (estimatedMinutes && timedModules === lessonItems.length
+            ? '<span><strong>' + estimatedMinutes + '</strong> min</span>'
+            : '<span><strong>A tu ritmo</strong></span>') +
+        '</div>';
+        heroContainer.appendChild(heroMeta);
+      }
+    }
+
+    if (entry.page.type !== 'inicio' && main) {
+      const mainContainer = main.querySelector(':scope > .container') || main;
+      const lessonTabs = mainContainer.querySelector('.lesson-tabs');
+      if (lessonTabs) {
+        const firstBody = lessonTabs.querySelector('.accordion--modules > details.accordion__item .accordion__body');
+        const prefaceAssets = Array.from(mainContainer.children).filter(function (child) {
+          return child.matches('.img-caso, .audio-narration') &&
+            Boolean(child.compareDocumentPosition(lessonTabs) & Node.DOCUMENT_POSITION_FOLLOWING);
+        });
+        if (firstBody && prefaceAssets.length) {
+          prefaceAssets.reverse().forEach(function (asset) { firstBody.insertBefore(asset, firstBody.firstChild); });
+        }
+      }
+    }
+
+    const oldPosition = document.querySelector('.maestro-progress');
+    if (oldPosition) {
+      oldPosition.setAttribute('aria-label', 'Ubicación dentro del curso');
+      const oldLabel = oldPosition.querySelector('.maestro-progress__label');
+      if (oldLabel && oldLabel.textContent.indexOf('Ubicación') < 0) {
+        oldLabel.textContent = 'Ubicación · ' + oldLabel.textContent;
+      }
+    }
+
+    const courseBar = document.createElement('section');
+    courseBar.className = 'learning-context';
+    courseBar.setAttribute('aria-label', 'Contexto de aprendizaje');
+
+    const dialog = document.createElement('dialog');
+    dialog.className = 'course-map-dialog';
+    dialog.setAttribute('aria-labelledby', 'course-map-title');
+
+    function mapHTML() {
+      const stats = getCourseStats(entry.course);
+      const items = entry.course.pages.map(function (page) {
+        const status = learningStatusFor(page, entry.page.path);
+        const typeLabel = page.type === 'leccion' ? 'Unidad formativa' :
+          page.type === 'evaluacion' ? 'Evaluación' :
+          page.type === 'preparacion' ? 'Preparación' :
+          page.type === 'apoyo' ? 'Apoyo' : 'Inicio del curso';
+        return '<li class="course-map__item course-map__item--' + status.key + '">' +
+          '<a href="' + siteHref(page.path) + '"' + (page.path === entry.page.path ? ' aria-current="page"' : '') + '>' +
+            '<span class="course-map__step" aria-hidden="true">' + (page.index + 1) + '</span>' +
+            '<span class="course-map__copy"><strong>' + escapeHTML(page.title) + '</strong>' +
+              '<small>' + typeLabel + ' · ' + status.label + '</small></span>' +
+          '</a>' +
+        '</li>';
+      }).join('');
+      return '<div class="course-map__header">' +
+          '<div><span class="course-map__eyebrow">Mapa del curso</span><h2 id="course-map-title">' + escapeHTML(entry.course.title) + '</h2></div>' +
+          '<form method="dialog"><button class="course-map__close" type="submit" aria-label="Cerrar mapa del curso">×</button></form>' +
+        '</div>' +
+        '<div class="course-map__summary"><strong>' + stats.required.completed + ' de ' + stats.required.total + ' unidades requeridas revisadas</strong>' +
+          '<span>Formación: ' + stats.formation.completed + ' de ' + stats.formation.total +
+            (stats.preparation.total ? ' · Preparación: ' + stats.preparation.completed + ' de ' + stats.preparation.total : '') +
+            ' · El apoyo opcional no modifica el avance.</span></div>' +
+        '<div class="course-map__search-wrap"><label for="course-map-search">Buscar en este curso</label>' +
+          '<input id="course-map-search" class="course-map__search" type="search" placeholder="Ej. pruebas, evidencia, recursos"></div>' +
+        '<ol class="course-map__list">' + items + '</ol>';
+    }
+
+    function bindMapSearch() {
+      const search = dialog.querySelector('.course-map__search');
+      if (!search) return;
+      search.addEventListener('input', function () {
+        const query = search.value.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        dialog.querySelectorAll('.course-map__item').forEach(function (item) {
+          const haystack = item.textContent.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          item.hidden = Boolean(query) && haystack.indexOf(query) < 0;
+        });
+      });
+    }
+
+    function contextHTML() {
+      const stats = getCourseStats(entry.course);
+      const currentStatus = learningStatusFor(entry.page, entry.page.path);
+      return '<div class="learning-context__inner">' +
+        '<nav class="learning-context__breadcrumb" aria-label="Ruta de navegación">' +
+          '<a href="' + siteHref('index.html') + '">Mi aprendizaje</a><span aria-hidden="true">/</span>' +
+          '<a href="' + siteHref(entry.course.pages[0].path) + '">' + escapeHTML(entry.course.shortTitle) + '</a><span aria-hidden="true">/</span>' +
+          '<span aria-current="page">' + escapeHTML(entry.page.title) + '</span>' +
+        '</nav>' +
+        '<div class="learning-context__main">' +
+          '<div class="learning-context__identity">' +
+            '<span class="learning-context__position">Unidad ' + (entry.page.index + 1) + ' de ' + entry.course.pages.length + '</span>' +
+            '<strong>' + escapeHTML(entry.page.title) + '</strong>' +
+          '</div>' +
+          '<div class="learning-context__progress">' +
+            '<div class="learning-context__progress-label"><span>Ruta esencial</span><strong>' + stats.required.pct + '%</strong></div>' +
+            '<div class="learning-context__bar" role="progressbar" aria-label="Unidades requeridas revisadas" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + stats.required.pct + '"><span style="width:' + stats.required.pct + '%"></span></div>' +
+          '</div>' +
+          '<span class="learning-status learning-status--' + currentStatus.key + '">' + currentStatus.label + '</span>' +
+          '<button type="button" class="learning-context__map-button">Ver mapa del curso</button>' +
+        '</div>' +
+      '</div>';
+    }
+
+    courseBar.innerHTML = contextHTML();
+    dialog.innerHTML = mapHTML();
+    bindMapSearch();
+    const insertionPoint = document.querySelector('.sub-nav') || document.querySelector('.site-header');
+    if (insertionPoint) insertionPoint.insertAdjacentElement('afterend', courseBar);
+    else document.body.insertBefore(courseBar, document.body.firstChild);
+    document.body.appendChild(dialog);
+
+    courseBar.addEventListener('click', function (event) {
+      if (!event.target.closest('.learning-context__map-button')) return;
+      dialog.innerHTML = mapHTML();
+      bindMapSearch();
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', '');
+    });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+
+    if (main) {
+      const container = main.querySelector(':scope > .container') || main;
+      const legacyNavigation = container.querySelector('.lesson-nav');
+      if (legacyNavigation) legacyNavigation.hidden = true;
+      const legacyEnding = container.querySelector('#siguiente');
+      if (legacyEnding) legacyEnding.hidden = true;
+      if (!container.querySelector('.course-pagination')) {
+        const previous = entry.course.pages[entry.page.index - 1];
+        const next = entry.course.pages[entry.page.index + 1];
+        const pagination = document.createElement('nav');
+        pagination.className = 'course-pagination';
+        pagination.setAttribute('aria-label', 'Navegación entre unidades');
+        pagination.innerHTML =
+          (previous ? '<a class="course-pagination__link course-pagination__link--prev" href="' + siteHref(previous.path) + '"><span>Anterior</span><strong>← ' + escapeHTML(previous.title) + '</strong></a>' : '<span></span>') +
+          (next ? '<a class="course-pagination__link course-pagination__link--next" href="' + siteHref(next.path) + '"><span>Siguiente unidad</span><strong>' + escapeHTML(next.title) + ' →</strong></a>' : '<a class="course-pagination__link course-pagination__link--next" href="' + siteHref('index.html') + '"><span>Curso recorrido</span><strong>Volver a Mi aprendizaje →</strong></a>');
+        container.appendChild(pagination);
+      }
+    }
+
+    window.addEventListener('mi-compania:progress-changed', function () {
+      courseBar.innerHTML = contextHTML();
+    });
+  }
+
   // ---------- Progress Skill (Dashboard de progreso) ----------
   // Lee todas las claves mi-compania-* de localStorage y muestra al
   // usuario un panel con su propio recorrido.
@@ -1693,28 +2346,58 @@
   // </div>
   function initProgressSkill(container) {
     const data = collectProgress();
+    const state = readLearningState();
+    const resume = getResumeTarget();
+    const hasHistory = Boolean(state.lastPath);
+    const resumeHref = siteHref(resume.page.path) + (resume.module ? '#' + encodeURIComponent(resume.module) : '');
+    const courseCards = LEARNING_COURSES.map(function (course) {
+      const stats = getCourseStats(course);
+      const nextPage = getCourseResumePage(course, state);
+      const isRecommended = state.diagnostic && state.diagnostic.courseId === course.id;
+      const formationReviewed = stats.formation.total > 0 && stats.formation.completed === stats.formation.total;
+      const preparationPending = stats.preparation.total > 0 && stats.preparation.completed < stats.preparation.total;
+      const stateLabel = stats.total > 0 && stats.completed === stats.total ? 'Ruta esencial revisada' :
+        formationReviewed && preparationPending ? 'Falta preparación' :
+        stats.started ? 'En curso' : 'No iniciada';
+      const courseMeta = 'Formación ' + stats.formation.completed + '/' + stats.formation.total +
+        (stats.preparation.total ? ' · Preparación ' + stats.preparation.completed + '/' + stats.preparation.total : '') +
+        ' · Ruta esencial ' + stats.required.pct + '%';
+      return '<a class="learning-dashboard__course' + (isRecommended ? ' learning-dashboard__course--recommended' : '') + '" href="' + siteHref(nextPage.path) + '">' +
+        '<span class="learning-dashboard__course-top"><strong>' + escapeHTML(course.shortTitle) + '</strong><small>' + stateLabel + '</small></span>' +
+        (isRecommended ? '<span class="learning-dashboard__recommended">Ruta sugerida por tu diagnóstico</span>' : '') +
+        '<span class="learning-dashboard__course-title">' + escapeHTML(course.title) + '</span>' +
+        '<span class="learning-dashboard__course-progress"><span style="width:' + stats.required.pct + '%"></span></span>' +
+        '<span class="learning-dashboard__course-meta">' + courseMeta + '</span>' +
+      '</a>';
+    }).join('');
 
     container.innerHTML =
       '<div class="progress-skill__inner">' +
-        '<h3 class="progress-skill__title">Tu recorrido por Mi CompañIA</h3>' +
-        '<p class="progress-skill__subtitle">Lo que ya completaste en este navegador (solo tú lo ves — no hay backend).</p>' +
-        '<div class="progress-skill__metrics">' +
-          '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.modulesCompleted + '</span><span class="progress-skill__metric-label">módulos completados</span></div>' +
-          '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.quizzesAnswered + '</span><span class="progress-skill__metric-label">quizzes respondidos</span></div>' +
-          '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.firstTryPct + '%</span><span class="progress-skill__metric-label">aciertos al primer intento</span></div>' +
-          '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.scenariosResolved + '</span><span class="progress-skill__metric-label">escenarios resueltos</span></div>' +
+        '<div class="learning-dashboard__heading"><div><span class="learning-dashboard__eyebrow">Mi aprendizaje</span>' +
+          '<h2 class="progress-skill__title">Tu ruta de preparación</h2>' +
+          '<p class="progress-skill__subtitle">Continúa desde donde te quedaste y consulta el avance guardado en este navegador.</p></div>' +
+          '<span class="learning-dashboard__local">Progreso local · no es constancia oficial</span></div>' +
+        '<div class="learning-dashboard__resume">' +
+          '<div><span class="learning-dashboard__resume-label">' + (hasHistory ? 'Continúa donde te quedaste' : 'Tu primer paso recomendado') + '</span>' +
+            '<h3>' + escapeHTML(resume.course.title) + '</h3>' +
+            '<p>' + escapeHTML(resume.page.title) + (resume.module ? ' · retoma el último módulo abierto' : '') + '</p></div>' +
+          '<a class="learning-dashboard__resume-button" href="' + resumeHref + '">' + (hasHistory ? 'Continuar aprendiendo' : 'Comenzar la ruta') + ' →</a>' +
         '</div>' +
-        '<div class="progress-skill__chapters">' +
-          '<h4>Capítulos visitados</h4>' +
-          (data.chapters.length ? '<ul class="progress-skill__chapter-list">' + data.chapters.map(function (c) {
-            const pct = c.total ? Math.round(c.done / c.total * 100) : 0;
-            return '<li class="progress-skill__chapter">' +
-              '<span class="progress-skill__chapter-name">' + escapeHTML(c.label) + '</span>' +
-              '<div class="progress-skill__chapter-bar"><div class="progress-skill__chapter-fill" style="width:' + pct + '%"></div></div>' +
-              '<span class="progress-skill__chapter-pct">' + pct + '%</span>' +
-            '</li>';
-          }).join('') + '</ul>' : '<p class="progress-skill__empty">Aún no visitaste ningún capítulo. Empieza por <a href="' + (location.pathname.indexOf('maestro') >= 0 ? 'que-es.html' : 'maestro/index.html') + '">la bienvenida</a>.</p>') +
+        (state.diagnostic ? '<p class="learning-dashboard__diagnostic">Tu diagnóstico sugiere comenzar por <strong>' + escapeHTML((LEARNING_COURSES.find(function (course) { return course.id === state.diagnostic.courseId; }) || {}).title || 'una ruta formativa') + '</strong>. Es una orientación, no una decisión de certificación.</p>' : '') +
+        '<div class="learning-dashboard__path" aria-label="Ruta recomendada">' +
+          '<div><span>1</span><strong>Diagnóstico</strong><small>Identifica tu perfil</small></div>' +
+          '<div><span>2</span><strong>Curso introductorio</strong><small>Comprende la certificación</small></div>' +
+          '<div><span>3</span><strong>Tu estándar</strong><small>Prepara tus evidencias</small></div>' +
+          '<div><span>4</span><strong>Ruta final</strong><small>Verifica tu preparación</small></div>' +
         '</div>' +
+        '<div class="learning-dashboard__courses"><h3>Mis cursos</h3><div class="learning-dashboard__course-grid">' + courseCards + '</div></div>' +
+        '<details class="learning-dashboard__activity"><summary>Ver actividad de aprendizaje</summary>' +
+          '<div class="progress-skill__metrics">' +
+            '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.modulesCompleted + '</span><span class="progress-skill__metric-label">módulos revisados</span></div>' +
+            '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.quizzesAnswered + '</span><span class="progress-skill__metric-label">quizzes respondidos</span></div>' +
+            '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.firstTryPct + '%</span><span class="progress-skill__metric-label">aciertos al primer intento</span></div>' +
+            '<div class="progress-skill__metric"><span class="progress-skill__metric-value">' + data.scenariosResolved + '</span><span class="progress-skill__metric-label">escenarios resueltos</span></div>' +
+          '</div></details>' +
         '<div class="progress-skill__actions">' +
           '<button type="button" class="progress-skill__export">Exportar mi progreso (JSON)</button>' +
           '<button type="button" class="progress-skill__reset">Borrar mi progreso</button>' +
@@ -1752,41 +2435,16 @@
       scenariosResolved: 0,
       chapters: []
     };
-    // chapters (lesson-tabs progress)
-    const chapterMap = {
-      'maestro-cap1-bienvenida': 'Maestro · Bienvenida',
-      'maestro-cap2-que-es': 'Maestro · Qué es la certificación',
-      'maestro-cap3-como-se-evalua': 'Maestro · Cómo se evalúa',
-      'maestro-cap4-proceso': 'Maestro · Proceso paso a paso',
-      'maestro-cap5-es-para-ti': 'Maestro · ¿Es para ti?',
-      'maestro-cap6-recursos': 'Maestro · Recursos',
-      'estandar-a-bienvenida': 'Implementar IA · Bienvenida',
-      'estandar-a-elemento-1': 'Implementar IA · Elemento 1',
-      'estandar-a-elemento-2': 'Implementar IA · Elemento 2',
-      'estandar-a-elemento-3': 'Implementar IA · Elemento 3',
-      'estandar-a-instrumento': 'Implementar IA · Instrumento',
-      'estandar-a-ruta': 'Implementar IA · Ruta de preparación',
-      'estandar-a-recursos': 'Implementar IA · Recursos'
-    };
     try {
-      for (let i = 0; i < localStorage.length; i++) {
-        const k = localStorage.key(i);
-        if (!k) continue;
-        if (k.indexOf('mi-compania-lessons::') === 0) {
-          try {
-            const v = JSON.parse(localStorage.getItem(k) || '{}');
-            const key = k.replace('mi-compania-lessons::', '');
-            const label = chapterMap[key] || key;
-            const done = Object.keys(v).filter(function (id) { return v[id]; }).length;
-            const total = Object.keys(v).length;
-            if (total > 0) {
-              result.chapters.push({ label: label, done: done, total: total });
-              if (done === total) result.modulesCompleted += total;
-              else result.modulesCompleted += done;
-            }
-          } catch (e) {}
-        }
-      }
+      LEARNING_COURSES.forEach(function (course) {
+        course.pages.forEach(function (page) {
+          const progress = readPageProgress(page);
+          if (progress.done > 0) {
+            result.chapters.push({ label: course.shortTitle + ' · ' + page.title, done: progress.done, total: progress.total });
+            result.modulesCompleted += progress.done;
+          }
+        });
+      });
       // metrics events
       const metrics = JSON.parse(localStorage.getItem('mi-compania-metrics::v1') || '[]');
       const quizEvents = metrics.filter(function (e) { return e.t === 'quiz'; });
@@ -1951,13 +2609,24 @@
 
       const compatibles = ranked.filter(function (c) { return pctAbsolute[c.id] >= threshold; });
       const hasCompatible = compatibles.length > 0;
+      if (hasCompatible && ranked[0]) {
+        const learningState = readLearningState();
+        learningState.diagnostic = {
+          courseId: 'estandar-' + String(ranked[0].id).toLowerCase(),
+          categoryId: ranked[0].id,
+          label: ranked[0].label,
+          score: pctAbsolute[ranked[0].id] || 0,
+          updatedAt: new Date().toISOString()
+        };
+        writeLearningState(learningState);
+      }
 
       html += '<div class="diagnostic-multi__result">';
       html += '<h3>Tu perfil según los 4 estándares</h3>';
 
       if (!hasCompatible) {
         html += '<div class="diagnostic-multi__no-match callout callout--tip">';
-        html += '<p>Tu perfil actual no tiene una coincidencia fuerte con estos 4 estándares. Eso no significa que no puedas certificarte — puede ser que tu trabajo cotidiano aún no incluya el acompañamiento a MiPyMEs, o que estés en una etapa de transición. El <a href="../maestro/index.html">Curso introductorio</a> te ayuda a entender las funciones en detalle.</p>';
+        html += '<p>Tu perfil actual no tiene una coincidencia fuerte con estas cuatro rutas. Puede ser que tu trabajo cotidiano aún no incluya el acompañamiento a MiPyMEs o que estés en una etapa de transición. El <a href="../maestro/index.html">curso introductorio</a> te ayuda a entender las funciones en detalle.</p>';
         html += '</div>';
       }
 
@@ -1978,7 +2647,7 @@
         html += '<div class="diagnostic-multi__match-bar"><div class="diagnostic-multi__match-fill" style="width:' + pct + '%"></div></div>';
         if (cat.summary) html += '<p class="diagnostic-multi__match-summary">' + escapeHTML(cat.summary) + '</p>';
         if (isCompatible && cat.href && cat.available) {
-          html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Ir al manual de ' + escapeHTML(cat.label) + ' →</a>';
+          html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Explorar material de ' + escapeHTML(cat.label) + ' →</a>';
         } else if (!cat.available) {
           html += '<p class="diagnostic-multi__match-coming">Este manual está en construcción. Mientras tanto, conoce el marco general en el <a href="../index.html">listado de manuales</a>.</p>';
         }
@@ -2083,7 +2752,7 @@
           let html = '<div class="diagnostic-multi__inner">';
           if (state.blocked) {
             html += '<div class="diagnostic-multi__result diagnostic-multi__result--blocked">';
-            html += '<h3>Este programa de certificación NO es para tu caso</h3>';
+            html += '<h3>Estas rutas no son prioritarias para tu perfil actual</h3>';
             html += '<p>' + escapeHTML(state.blockReason) + '</p>';
             html += '<button type="button" class="diagnostic-multi__reset">Volver a empezar</button>';
             html += '</div>';
@@ -2174,7 +2843,7 @@
 
         if (state.blocked) {
           html += '<div class="diagnostic-multi__result diagnostic-multi__result--blocked">';
-          html += '<h3>Este programa de certificación NO es para tu caso</h3>';
+          html += '<h3>Estas rutas no son prioritarias para tu perfil actual</h3>';
           html += '<p>' + escapeHTML(state.blockReason) + '</p>';
           html += '<button type="button" class="diagnostic-multi__reset">Volver a empezar</button>';
           html += '</div>';
@@ -2199,7 +2868,7 @@
             html += '<div class="diagnostic-multi__match-bar"><div class="diagnostic-multi__match-fill" style="width:' + pct + '%"></div></div>';
             if (cat.summary) html += '<p class="diagnostic-multi__match-summary">' + escapeHTML(cat.summary) + '</p>';
             if (cat.href && cat.available) {
-              html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Ir al curso de ' + escapeHTML(cat.label) + ' →</a>';
+              html += '<a class="diagnostic-multi__match-cta" href="' + escapeHTML(cat.href) + '">Explorar material de ' + escapeHTML(cat.label) + ' →</a>';
             } else if (!cat.available) {
               html += '<p class="diagnostic-multi__match-coming">Este curso está en construcción. Mientras tanto, conoce el marco general en el <a href="../index.html">listado de manuales</a>.</p>';
             }
@@ -2339,25 +3008,34 @@
   }
 
   // ---------- Inicialización ----------
+  function initEach(selector, initializer) {
+    document.querySelectorAll(selector).forEach(function (container) {
+      try { initializer(container); }
+      catch (error) { console.error('No se pudo iniciar ' + selector, error, container); }
+    });
+  }
+
   function init() {
-    document.querySelectorAll('.tabs').forEach(initTabs);
-    document.querySelectorAll('.checklist').forEach(initChecklist);
-    document.querySelectorAll('.flipcard').forEach(initFlipcard);
-    document.querySelectorAll('.quiz').forEach(initQuiz);
-    document.querySelectorAll('.scenario-decision').forEach(initScenarioDecision);
-    document.querySelectorAll('.flashcard-deck').forEach(initFlashcardDeck);
-    document.querySelectorAll('.swipe-decide').forEach(initSwipeDecide);
-    document.querySelectorAll('.drag-sort').forEach(initDragSort);
-    document.querySelectorAll('.case-lab').forEach(initCaseLab);
-    document.querySelectorAll('.timeline-interactive').forEach(initTimelineInteractive);
-    document.querySelectorAll('.diagram-mermaid').forEach(initDiagramMermaid);
-    document.querySelectorAll('.progress-skill').forEach(initProgressSkill);
-    document.querySelectorAll('.chart-block').forEach(initChartBlock);
-    document.querySelectorAll('.diagnostic-multi').forEach(initDiagnosticMulti);
-    document.querySelectorAll('.audio-narration').forEach(initAudioNarration);
-    document.querySelectorAll('.lesson-tabs').forEach(initLessonTabs);
-    document.querySelectorAll('.glossary--rich').forEach(initGlossaryRich);
-    initPrintChecklist();
+    initEach('.tabs', initTabs);
+    initEach('.checklist', initChecklist);
+    initEach('.flipcard', initFlipcard);
+    initEach('.quiz', initQuiz);
+    initEach('.scenario-decision', initScenarioDecision);
+    initEach('.flashcard-deck', initFlashcardDeck);
+    initEach('.swipe-decide', initSwipeDecide);
+    initEach('.drag-sort', initDragSort);
+    initEach('.case-lab', initCaseLab);
+    initEach('.timeline-interactive', initTimelineInteractive);
+    initEach('.diagram-mermaid', initDiagramMermaid);
+    initEach('.chart-block', initChartBlock);
+    initEach('.diagnostic-multi', initDiagnosticMulti);
+    initEach('.audio-narration', initAudioNarration);
+    initEach('.lesson-tabs', normalizeLessonWorkspace);
+    initEach('.lesson-tabs', initLessonTabs);
+    try { initLearningShell(); } catch (error) { console.error('No se pudo iniciar el entorno LMS', error); }
+    initEach('.progress-skill', initProgressSkill);
+    initEach('.glossary--rich', initGlossaryRich);
+    try { initPrintChecklist(); } catch (error) { console.error('No se pudo iniciar la lista de impresión', error); }
     // Solo aplicar el handler genérico de accordion modules si NO está dentro de lesson-tabs
     initAccordionModules();
   }
