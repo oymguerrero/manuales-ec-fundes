@@ -1260,6 +1260,9 @@ def main():
         print(f"  [ok] {filename}  ({p['format'].upper()})")
 
     print(f"\nGenerados {len(PRODUCTS)} templates en {OUT}/")
+    import subprocess
+    import sys
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "convert-legacy-office.py")], check=True)
 
 
 if __name__ == "__main__":

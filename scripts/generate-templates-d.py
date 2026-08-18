@@ -1647,3 +1647,6 @@ def generate_all():
 if __name__ == "__main__":
     n = generate_all()
     print(f"\nGenerados {n} templates en {OUT}/")
+    import subprocess
+    import sys
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "convert-legacy-office.py")], check=True)
