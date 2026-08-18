@@ -806,7 +806,6 @@ Antes de crear uno nuevo, revisa estos 13 ejemplos canónicos:
 | `estandar-a/elemento-1.html` | Cuadrante impacto/esfuerzo | Cuadrante 2×2 |
 | `estandar-a/elemento-2.html` | 9 componentes informe técnico | Grupos temáticos |
 | `estandar-a/elemento-3.html` | Antes vs Después La Espiga | Barras comparativas |
-| `estandar-a/instrumento.html` | Doble donut IEC | Donut/pie |
 | `estandar-a/ruta-preparacion.html` | Timeline 4 semanas | Timeline horizontal |
 
 > **Cuando agregues un diagrama nuevo, actualiza esta tabla.**
@@ -1117,7 +1116,7 @@ construye dinámicamente el header, sidebar, panel y footer.
 
 ```html
 <div class="lesson-tabs" data-progress-key="manual-X-cap-Y">
-  <div class="accordion accordion--modules" aria-label="Módulos del Capítulo Y">
+  <div class="accordion accordion--modules" aria-label="Módulos del Tema Y">
 
     <details class="accordion__item" id="anchor-1" open>
       <summary>

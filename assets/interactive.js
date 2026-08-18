@@ -554,12 +554,12 @@
     {
       id: 'maestro', title: 'Curso introductorio', shortTitle: 'Introducción',
       pages: [
-        ['maestro/index.html', 'Bienvenida y contexto', 'maestro-cap1-bienvenida', 'inicio'],
+        ['maestro/index.html', 'Sobre este curso', 'maestro-cap1-bienvenida', 'inicio'],
         ['maestro/que-es.html', 'Qué es la certificación', 'maestro-cap2-que-es', 'leccion'],
         ['maestro/como-se-evalua.html', 'Cómo se evalúa', 'maestro-cap3-como-se-evalua', 'leccion'],
         ['maestro/proceso.html', 'Proceso paso a paso', 'maestro-cap4-proceso', 'leccion'],
         ['maestro/es-para-ti.html', '¿Es para ti?', 'maestro-cap5-es-para-ti', 'leccion'],
-        ['maestro/recursos.html', 'Recursos', 'maestro-cap6-recursos', 'apoyo']
+        ['maestro/recursos.html', 'FAQ y recursos', 'maestro-cap6-recursos', 'apoyo']
       ]
     },
     {
@@ -569,7 +569,6 @@
         ['estandar-a/elemento-1.html', 'Elemento 1 · Planear', 'estandar-a-elemento-1', 'leccion'],
         ['estandar-a/elemento-2.html', 'Elemento 2 · Ejecutar', 'estandar-a-elemento-2', 'leccion'],
         ['estandar-a/elemento-3.html', 'Elemento 3 · Evaluar', 'estandar-a-elemento-3', 'leccion'],
-        ['estandar-a/instrumento.html', 'Evaluación propuesta', 'estandar-a-instrumento', 'evaluacion'],
         ['estandar-a/ruta-preparacion.html', 'Ruta de preparación', 'estandar-a-ruta-preparacion', 'preparacion'],
         ['estandar-a/recursos.html', 'FAQ y recursos', 'estandar-a-recursos', 'apoyo']
       ]
@@ -582,7 +581,7 @@
         ['estandar-b/elemento-2.html', 'Elemento 2 · Conceptualizar', 'estandar-b-elemento-2', 'leccion'],
         ['estandar-b/elemento-3.html', 'Elemento 3 · Desarrollar', 'estandar-b-elemento-3', 'leccion'],
         ['estandar-b/elemento-4.html', 'Elemento 4 · Validar', 'estandar-b-elemento-4', 'leccion'],
-        ['estandar-b/instrumento.html', 'Evaluación propuesta', 'estandar-b-instrumento', 'evaluacion'],
+        ['estandar-b/instrumento.html', 'Instrumento de Evaluación', 'estandar-b-instrumento', 'evaluacion'],
         ['estandar-b/ruta-preparacion.html', 'Ruta de preparación', 'estandar-b-ruta', 'preparacion'],
         ['estandar-b/recursos.html', 'FAQ y recursos', 'estandar-b-recursos', 'apoyo']
       ]
@@ -592,12 +591,11 @@
       pages: [
         ['estandar-c/index.html', 'Bienvenida y contexto', 'estandar-c-bienvenida-contexto', 'inicio'],
         ['estandar-c/elemento-1.html', 'Elemento 1 · Planificar', 'estandar-c-elemento-1', 'leccion'],
-        ['estandar-c/elemento-2.html', 'Elemento 2 · Generar contenido', 'estandar-c-elemento-2', 'leccion'],
+        ['estandar-c/elemento-2.html', 'Elemento 2 · Generar', 'estandar-c-elemento-2', 'leccion'],
         ['estandar-c/elemento-3.html', 'Elemento 3 · Implementar', 'estandar-c-elemento-3', 'leccion'],
         ['estandar-c/elemento-4.html', 'Elemento 4 · Optimizar', 'estandar-c-elemento-4', 'leccion'],
-        ['estandar-c/instrumento.html', 'Evaluación propuesta', 'estandar-c-instrumento', 'evaluacion'],
         ['estandar-c/ruta-preparacion.html', 'Ruta de preparación', 'estandar-c-ruta-preparacion', 'preparacion'],
-        ['estandar-c/recursos.html', 'FAQ y recursos', 'estandar-c-recursos', 'apoyo']
+        ['estandar-c/recursos.html', 'Glosario y referencias', 'estandar-c-recursos', 'apoyo']
       ]
     },
     {
@@ -608,7 +606,7 @@
         ['estandar-d/elemento-2.html', 'Elemento 2 · Construir', 'estandar-d-elemento-2', 'leccion'],
         ['estandar-d/elemento-3.html', 'Elemento 3 · Implementar', 'estandar-d-elemento-3', 'leccion'],
         ['estandar-d/elemento-4.html', 'Elemento 4 · Optimizar', 'estandar-d-elemento-4', 'leccion'],
-        ['estandar-d/instrumento.html', 'Evaluación propuesta', 'estandar-d-instrumento', 'evaluacion'],
+        ['estandar-d/instrumento.html', 'Instrumento de Evaluación', 'estandar-d-instrumento', 'evaluacion'],
         ['estandar-d/ruta-preparacion.html', 'Ruta de preparación', 'estandar-d-ruta', 'preparacion'],
         ['estandar-d/recursos.html', 'FAQ y recursos', 'estandar-d-recursos', 'apoyo']
       ]
@@ -629,7 +627,6 @@
     'estandar-a/elemento-1.html': ['Planear una intervención de IA a partir del diagnóstico, la priorización y una hoja de ruta viable.', 'Paquete de planeación conectado con una MiPyME real'],
     'estandar-a/elemento-2.html': ['Ejecutar la implementación de soluciones de IA, probarlas y transferir su operación al equipo.', 'Evidencias de configuración, pruebas y capacitación'],
     'estandar-a/elemento-3.html': ['Evaluar resultados, documentar aprendizajes y cerrar formalmente una implementación de IA.', 'Reporte de resultados y cierre sustentado en indicadores'],
-    'estandar-a/instrumento.html': ['Interpretar la estructura de evaluación descrita en la versión de trabajo y relacionar sus reactivos con las evidencias que debes preparar.', 'Mapa propuesto de reactivos y evidencias de la ruta A'],
     'estandar-a/ruta-preparacion.html': ['Organizar tu preparación en una secuencia realista y detectar qué evidencias de la ruta A requieren refuerzo.', 'Plan personal de preparación para la ruta A'],
     'estandar-a/recursos.html': ['Resolver dudas de la ruta A y localizar referencias, formatos y recursos para continuar tu preparación.', 'Recursos de apoyo de la ruta A localizados'],
     'estandar-b/elemento-1.html': ['Identificar una oportunidad de negocio mediante investigación, entrevistas y análisis de mercado.', 'Problema priorizado con evidencia del usuario y del mercado'],
@@ -643,7 +640,6 @@
     'estandar-c/elemento-2.html': ['Generar piezas de texto, imagen, audio y video con IA aplicando criterios de calidad y uso responsable.', 'Portafolio multiformato con decisiones documentadas'],
     'estandar-c/elemento-3.html': ['Implementar y documentar la publicación de contenido y transferir el proceso al equipo de la MiPyME.', 'Bitácora de implementación y guía operativa'],
     'estandar-c/elemento-4.html': ['Analizar el desempeño del contenido y proponer optimizaciones basadas en datos.', 'Reporte de desempeño y plan de optimización'],
-    'estandar-c/instrumento.html': ['Interpretar la estructura de evaluación descrita en la versión de trabajo y relacionar las piezas, desempeños y conocimientos con tus evidencias de la ruta C.', 'Mapa propuesto de evaluación de la ruta C'],
     'estandar-c/ruta-preparacion.html': ['Organizar la preparación de productos y desempeños de contenido digital e identificar lo que aún debes reforzar.', 'Plan personal de preparación para la ruta C'],
     'estandar-c/recursos.html': ['Resolver dudas de la ruta C y localizar referencias y recursos para producir contenido con IA de forma responsable.', 'Recursos de apoyo de la ruta C localizados'],
     'estandar-d/elemento-1.html': ['Diagnosticar madurez, brechas y oportunidades de transformación digital en una MiPyME.', 'Diagnóstico y propuesta priorizada para una organización real'],
@@ -1091,7 +1087,7 @@
       const isLast = idx === items.length - 1;
       if (completed.has(items[idx].id)) {
         completeBtn.innerHTML = (isLast
-          ? '<span aria-hidden="true">✓</span> Unidad revisada'
+          ? '<span aria-hidden="true">✓</span> Tema revisado'
           : '<span aria-hidden="true">✓</span> Ya revisado · Continuar');
         completeBtn.classList.remove('lesson-tabs__nav-btn--complete');
         completeBtn.classList.add('lesson-tabs__nav-btn--next');
@@ -2232,7 +2228,7 @@
       const stats = getCourseStats(entry.course);
       const items = entry.course.pages.map(function (page) {
         const status = learningStatusFor(page, entry.page.path);
-        const typeLabel = page.type === 'leccion' ? 'Unidad formativa' :
+        const typeLabel = page.type === 'leccion' ? 'Tema formativo' :
           page.type === 'evaluacion' ? 'Evaluación' :
           page.type === 'preparacion' ? 'Preparación' :
           page.type === 'apoyo' ? 'Apoyo' : 'Inicio del curso';
@@ -2248,7 +2244,7 @@
           '<div><span class="course-map__eyebrow">Mapa del curso</span><h2 id="course-map-title">' + escapeHTML(entry.course.title) + '</h2></div>' +
           '<form method="dialog"><button class="course-map__close" type="submit" aria-label="Cerrar mapa del curso">×</button></form>' +
         '</div>' +
-        '<div class="course-map__summary"><strong>' + stats.required.completed + ' de ' + stats.required.total + ' unidades requeridas revisadas</strong>' +
+        '<div class="course-map__summary"><strong>' + stats.required.completed + ' de ' + stats.required.total + ' temas requeridos revisados</strong>' +
           '<span>Formación: ' + stats.formation.completed + ' de ' + stats.formation.total +
             (stats.preparation.total ? ' · Preparación: ' + stats.preparation.completed + ' de ' + stats.preparation.total : '') +
             ' · El apoyo opcional no modifica el avance.</span></div>' +
@@ -2280,12 +2276,12 @@
         '</nav>' +
         '<div class="learning-context__main">' +
           '<div class="learning-context__identity">' +
-            '<span class="learning-context__position">Unidad ' + (entry.page.index + 1) + ' de ' + entry.course.pages.length + '</span>' +
+            '<span class="learning-context__position">Tema ' + (entry.page.index + 1) + ' de ' + entry.course.pages.length + '</span>' +
             '<strong>' + escapeHTML(entry.page.title) + '</strong>' +
           '</div>' +
           '<div class="learning-context__progress">' +
             '<div class="learning-context__progress-label"><span>Ruta esencial</span><strong>' + stats.required.pct + '%</strong></div>' +
-            '<div class="learning-context__bar" role="progressbar" aria-label="Unidades requeridas revisadas" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + stats.required.pct + '"><span style="width:' + stats.required.pct + '%"></span></div>' +
+            '<div class="learning-context__bar" role="progressbar" aria-label="Temas requeridos revisados" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + stats.required.pct + '"><span style="width:' + stats.required.pct + '%"></span></div>' +
           '</div>' +
           '<span class="learning-status learning-status--' + currentStatus.key + '">' + currentStatus.label + '</span>' +
           '<button type="button" class="learning-context__map-button">Ver mapa del curso</button>' +
@@ -2300,6 +2296,13 @@
     if (insertionPoint) insertionPoint.insertAdjacentElement('afterend', courseBar);
     else document.body.insertBefore(courseBar, document.body.firstChild);
     document.body.appendChild(dialog);
+
+    // La barra de puntos del HTML dice lo mismo que esta barra de contexto
+    // ("Tema N de M" + avance), así que sobra en cuanto el shell existe. Se
+    // queda en el HTML a propósito: sin JS sigue siendo la única señal de
+    // posición dentro del curso.
+    const dotProgress = document.querySelector('.maestro-progress');
+    if (dotProgress) dotProgress.remove();
 
     courseBar.addEventListener('click', function (event) {
       if (!event.target.closest('.learning-context__map-button')) return;

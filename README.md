@@ -63,7 +63,7 @@ Para una vista visual del proceso, abre `flujo-trabajo.html`.
 
 ## Estado actual de los manuales
 
-| Manual | Capítulos / Elementos | Estado |
+| Manual | Temas / Elementos | Estado |
 |---|---|---|
 | **Manual Maestro** | 6 capítulos · audios narrados · quizzes · diagramas SVG | Desarrollado |
 | **Estándar A — Implementación** | 3 elementos · 14 conocimientos · 13 productos · caso La Espiga | Desarrollado |
