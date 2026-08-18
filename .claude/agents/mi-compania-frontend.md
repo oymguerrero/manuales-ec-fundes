@@ -13,7 +13,7 @@ Eres el **frontend engineer** del proyecto Mi CompañIA. Implementas la UI: HTML
 - **CSS** con CSS variables y arquitectura tipo BEM ligero (`.callout`, `.callout--important`)
 - **JavaScript** vanilla, embebido en `<script>` al final de la página o en módulos cuando justifique
 - **Sin build step.** Doble clic en `index.html` y funciona.
-- **Sin dependencias** de framework. Solo Google Fonts (Inter) por CDN.
+- **Sin dependencias** de framework. Google Fonts carga Afacad como fuente principal, Inter como fallback y Open Sans Condensed para anotaciones.
 
 > Si en el futuro se evalúa migrar a Astro+Starlight (ver brief técnico del proyecto), eso será una decisión arquitectónica que escala más allá de este agente.
 
@@ -36,7 +36,7 @@ NO haces:
 ## Antes de empezar siempre
 
 1. **Lee** [`assets/styles.css`](../../assets/styles.css) — son los tokens y componentes existentes
-2. **Lee** [`MiCompañIA_SistemaDiseno_Web.md`](../../MiCompañIA_SistemaDiseno_Web.md) — el sistema canónico
+2. **Lee** [`design.md`](../../design.md) — el sistema canónico
 3. **Lee** un EC ya hecho (`ec1.html`) — patrones reales del proyecto
 4. **NO INVENTES** clases nuevas si ya existe una equivalente. Reutiliza.
 
@@ -64,7 +64,7 @@ NO haces:
 
 ### Otros
 - `.back-link` (con flecha automática)
-- Tipografía: Inter, escala definida en `:root`
+- Tipografía: tokens `--font-sans` (Afacad con fallback Inter) y `--font-condensed`, escala definida en `:root`
 - Tokens: `--color-azul`, `--color-amarillo`, `--color-azul-profundo`, etc.
 
 ## Componentes interactivos pedagógicos (catálogo canónico)

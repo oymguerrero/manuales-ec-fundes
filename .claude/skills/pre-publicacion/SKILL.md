@@ -39,17 +39,20 @@ Verifica:
 Verifica con `grep` problemas comunes:
 
 ```bash
-# Imágenes sin alt
-grep -nE '<img[^>]*>' *.html | grep -v 'alt='
+# Obtén primero todos los HTML del sitio, excluyendo extras/
+rg --files -g '*.html' -g '!extras/**'
+
+# Imágenes sin alt (aplica la comprobación a la lista anterior)
+rg -n '<img[^>]*>' -g '*.html' -g '!extras/**' | grep -v 'alt='
 
 # Múltiples h1 por página
-for f in *.html; do
+for f in $(rg --files -g '*.html' -g '!extras/**'); do
   count=$(grep -c '<h1' "$f")
   if [ "$count" -ne 1 ]; then echo "⚠️ $f tiene $count h1"; fi
 done
 
 # Tags abiertos sin cerrar (heurística simple)
-for f in *.html; do
+for f in $(rg --files -g '*.html' -g '!extras/**'); do
   for tag in section article div; do
     open=$(grep -oE "<$tag[^>]*>" "$f" | wc -l)
     close=$(grep -oE "</$tag>" "$f" | wc -l)
@@ -64,7 +67,7 @@ done
 
 ```bash
 # Verifica que cada href interno apunta a un archivo o anchor existente
-for f in *.html; do
+for f in $(rg --files -g '*.html' -g '!extras/**'); do
   grep -oE 'href="[^"]*"' "$f" | while read href; do
     target=$(echo "$href" | sed 's/href="//;s/"//;s/#.*//')
     if [ -n "$target" ] && [[ "$target" != http* ]] && [ ! -f "$target" ]; then
@@ -79,7 +82,7 @@ done
 Invoca la skill `/revisar-marca` (o directamente al agente `mi-compania-brand-reviewer`) sobre todos los HTML + CSS:
 
 ```
-/revisar-marca *.html assets/styles.css
+/revisar-marca <todos los HTML obtenidos recursivamente> assets/styles.css
 ```
 
 Captura el reporte y agrega los bloqueantes/recomendados al sumario final.
@@ -90,13 +93,13 @@ Usa `grep` para confirmar consistencia:
 
 ```bash
 # Todas las páginas deben tener "Mi CompañIA" en el title
-grep -L "Mi CompañIA" *.html
+rg -L "Mi CompañIA" -g '*.html' -g '!extras/**'
 
 # Todas las páginas deben enlazar al logo
-grep -L 'src="img/logo.png"' *.html
+rg -L 'logo[^" ]*\.(png|svg)' -g '*.html' -g '!extras/**'
 
 # Ninguna debe tener referencia al branding viejo
-grep -nE 'Componente 2|Fundes\b' *.html | grep -v 'FUNDES Latinoamérica'
+rg -n 'Componente 2|Fundes\b' -g '*.html' -g '!extras/**' | grep -v 'FUNDES Latinoamérica'
 ```
 
 ### Fase 7 · Reporte final go/no-go

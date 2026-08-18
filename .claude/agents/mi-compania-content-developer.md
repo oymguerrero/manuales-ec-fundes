@@ -24,7 +24,7 @@ NO haces:
 
 ## Antes de empezar siempre
 
-1. **Lee el sistema de diseño:** [`MiCompañIA_SistemaDiseno_Web.md`](../../MiCompañIA_SistemaDiseno_Web.md)
+1. **Lee el sistema de diseño:** [`design.md`](../../design.md)
 2. **Lee el README del proyecto:** [`README.md`](../../README.md)
 3. **Lee un EC ya desarrollado** (`ec1.html`) para ver la estructura HTML real
 4. **Identifica la fuente** que vas a procesar y su ubicación (carpeta `pdfs/`, DOCX, notas)

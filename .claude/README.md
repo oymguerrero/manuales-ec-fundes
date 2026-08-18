@@ -21,13 +21,14 @@ Esta carpeta `.claude/` contiene la configuración de Claude Code específica pa
 
 ## El equipo de agentes
 
-7 agentes con responsabilidades disjuntas. Cada uno conoce solo su dominio para que el routing automático sea preciso.
+El equipo tiene **16 especialistas y 1 orquestador general**. Cada agente conserva un dominio estrecho para que el routing automático sea preciso.
 
 ### Producción de contenido
 
 | Agente | Cuándo se invoca | Dominio |
 |---|---|---|
 | [`mi-compania-content-developer`](agents/mi-compania-content-developer.md) | Hay material fuente (DOCX, tabla de especificaciones, notas) que hay que volver HTML del proyecto | Contenido normativo: elementos, conocimientos, descripciones técnicas |
+| [`mi-compania-learning-content-generator`](agents/mi-compania-learning-content-generator.md) | Hay fuentes y objetivo aprobados y se necesita desarrollar una lección | Explicaciones, ejemplos, casos, guiones y práctica guiada |
 | [`mi-compania-pedagogo`](agents/mi-compania-pedagogo.md) | El contenido factual ya existe → falta el envoltorio pedagógico (ejercicios, callouts, secuencia de aprendizaje, evaluación formativa) | Diseño instruccional CONOCER + andragogía para MiPyMEs |
 | [`mi-compania-copywriter`](agents/mi-compania-copywriter.md) | Hay que escribir copy persuasivo o de UI (CTAs, hero, microcopy, mensajes de error) aplicando voz de marca | Voz, tono, microcopy, español mexicano |
 
@@ -37,25 +38,49 @@ Esta carpeta `.claude/` contiene la configuración de Claude Code específica pa
 |---|---|---|
 | [`mi-compania-frontend`](agents/mi-compania-frontend.md) | Implementar HTML/CSS/JS, responsive, componentes interactivos, performance | Stack actual: HTML+CSS+JS vanilla, mobile-first |
 | [`mi-compania-backend`](agents/mi-compania-backend.md) | Deploy, CI/CD, build pipelines, optimización de assets, integración futura de formularios/API | GitHub Pages, Cloudflare Pages, Vercel, GitHub Actions |
-| [`mi-compania-asset-generator`](agents/mi-compania-asset-generator.md) | Generar imágenes nuevas (hero, sección, ilustraciones) | Higgsfield + compresión + integración CSS |
+| [`mi-compania-image-producer`](agents/mi-compania-image-producer.md) | Producir una imagen individual desde un brief aprobado | Generación, selección, optimización, alt y recortes |
+| [`mi-compania-audio-producer`](agents/mi-compania-audio-producer.md) | Producir una narración o clip desde un guion aprobado | TTS voz Leda, control de calidad, MP3 y transcripción |
+| [`mi-compania-asset-generator`](agents/mi-compania-asset-generator.md) | Producir video o un paquete que combina varios medios | Pipeline multimedia coordinado y optimización |
+
+### Experiencia y diseño
+
+| Agente | Cuándo se invoca | Dominio |
+|---|---|---|
+| [`mi-compania-ux-architect`](agents/mi-compania-ux-architect.md) | Hay que reorganizar recorridos, navegación, jerarquía de información o reducir fricción | UX, arquitectura de información, estados y pruebas de usabilidad |
+| [`mi-compania-elearning-specialist`](agents/mi-compania-elearning-specialist.md) | Hay que diseñar una experiencia asincrónica, ruta, medios, progreso o retorno | Educación en línea, microlearning, feedback y aprendizaje móvil |
+| [`mi-compania-ui-designer`](agents/mi-compania-ui-designer.md) | Una vista o componente necesita especificación visual y responsive | UI, sistema de diseño, tokens, estados y handoff |
+| [`mi-compania-graphic-designer`](agents/mi-compania-graphic-designer.md) | Se requiere dirección de arte, infografía, iconografía, diagrama o brief de imagen | Diseño gráfico, composición y especificación de assets |
 
 ### Calidad
 
 | Agente | Cuándo se invoca | Dominio |
 |---|---|---|
 | [`mi-compania-brand-reviewer`](agents/mi-compania-brand-reviewer.md) | Auditar archivo contra reglas del sistema de diseño antes de commit | Tokens, voz, contraste WCAG AA, accesibilidad básica |
+| [`mi-compania-accessibility-auditor`](agents/mi-compania-accessibility-auditor.md) | Verificar WCAG 2.2 AA, teclado, lector de pantalla, reflow o multimedia | Accesibilidad especializada con evidencia y severidad |
+| [`mi-compania-design-auditor`](agents/mi-compania-design-auditor.md) | Cerrar un cambio visual sustantivo antes de publicar | Auditoría independiente de brief, UI, UX, responsive y calidad |
+
+### Coordinación
+
+| Agente | Cuándo se invoca | Dominio |
+|---|---|---|
+| [`mi-compania-orchestrator`](agents/mi-compania-orchestrator.md) | La petición mezcla dos o más disciplinas o requiere diseño → implementación → auditoría | Alcance, dependencias, propiedad de archivos e integración |
 
 ---
 
 ## Los slash commands
 
-3 skills que el usuario invoca directamente.
+8 skills que el usuario invoca directamente.
 
 | Skill | Sintaxis | Hace |
 |---|---|---|
+| [`orquestar`](skills/orquestar/SKILL.md) | `/orquestar <petición>` | Coordina tareas que mezclan varias disciplinas |
 | [`nueva-seccion-ec`](skills/nueva-seccion-ec/SKILL.md) | `/nueva-seccion-ec <tipo>` | Inserta sección nueva en EC actual (`elemento`, `conocimiento`, `callout`, `stats`) |
+| [`crear-actividad-interactiva`](skills/crear-actividad-interactiva/SKILL.md) | `/crear-actividad-interactiva <tipo>` | Diseña e implementa una actividad pedagógica accesible |
+| [`convertir-muro-de-texto`](skills/convertir-muro-de-texto/SKILL.md) | `/convertir-muro-de-texto <archivo>` | Convierte contenido denso en aprendizaje activo |
 | [`revisar-marca`](skills/revisar-marca/SKILL.md) | `/revisar-marca [archivo]` | Audita archivo contra reglas de marca (delega a brand-reviewer) |
 | [`pre-publicacion`](skills/pre-publicacion/SKILL.md) | `/pre-publicacion` | Checklist completo antes de commit/deploy: tamaño imágenes, links rotos, brand check, HTML válido |
+| [`auditar-experiencia`](skills/auditar-experiencia/SKILL.md) | `/auditar-experiencia [alcance]` | Consolida auditoría de diseño/UX, marca y accesibilidad con dictamen único |
+| [`crear-leccion-multimedia`](skills/crear-leccion-multimedia/SKILL.md) | `/crear-leccion-multimedia <tema>` | Coordina pedagogía, e-learning, contenido, medios, implementación y auditoría |
 
 ---
 
@@ -66,8 +91,9 @@ Esta carpeta `.claude/` contiene la configuración de Claude Code específica pa
 Cada agente es más útil mientras más estrecho es su dominio. El routing automático de Claude Code lee la `description` de cada agente para decidir cuál invocar. Si dos agentes se solapan, el modelo se confunde y termina invocando uno aleatorio. Por eso:
 
 - `content-developer` produce contenido **factual largo** desde fuentes
+- `learning-content-generator` desarrolla la **explicación educativa** desde fuentes y objetivos aprobados
 - `copywriter` produce **microcopy persuasivo** desde voz de marca
-- Ambos escriben texto, pero el verbo y la fuente son distintos.
+- Los tres escriben texto, pero su fuente, escala y propósito son distintos.
 
 ### ¿Por qué `sonnet` en todos?
 
@@ -89,9 +115,9 @@ Cada agente declara explícitamente qué tools puede usar. Principio: mínimo ne
 |---|---|---|
 | `Read`, `Glob`, `Grep` | Casi todos | Investigar el código antes de actuar |
 | `Edit`, `Write` | Productores de contenido / código | Modificar archivos |
-| `Bash` | Frontend, backend, asset-generator, brand-reviewer | Comandos shell (compresión, deploy, validación) |
+| `Bash` | Frontend, backend, asset-generator y auditores | Comandos shell (compresión, deploy, validación) |
 
-`brand-reviewer` puede leer y correr Bash (para validadores como `html-validate`) pero **no puede** escribir — es solo audita. Esto es deliberado: separa responsabilidades.
+Los auditores pueden leer y correr Bash para validaciones, pero **no pueden escribir**. Esto separa diseño/implementación de la aprobación final.
 
 ---
 
@@ -132,7 +158,7 @@ Cada agente declara explícitamente qué tools puede usar. Principio: mínimo ne
 
 ## Recursos del proyecto
 
-- [`MiCompañIA_SistemaDiseno_Web.md`](../MiCompañIA_SistemaDiseno_Web.md) — Sistema de diseño completo (colores, tipografía, voz, componentes)
+- [`design.md`](../design.md) — Sistema de diseño canónico (colores, tipografía, voz, componentes)
 - [`README.md`](../README.md) — README del repo
 - [`assets/styles.css`](../assets/styles.css) — Tokens y componentes CSS implementados
 

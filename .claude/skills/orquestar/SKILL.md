@@ -1,6 +1,6 @@
 ---
 name: orquestar
-description: Delega una petición vaga al agente orquestador (mi-compania-orchestrator), que la descompone, elige qué agentes especializados invocar (content, copywriter, pedagogo, frontend, asset-generator, brand-reviewer, backend), los coordina y reporta un plan + cambios + propuesta de commit. Use cuando la petición mezcla varias disciplinas o no sabes a qué agente único pertenece.
+description: Delega una petición vaga al agente orquestador, que selecciona y coordina especialistas de contenido, pedagogía, e-learning, UX/UI, diseño gráfico, imagen, audio, multimedia, frontend, accesibilidad, marca, auditoría y backend.
 ---
 
 # /orquestar
@@ -33,7 +33,7 @@ Manda una petición vaga al agente orquestador del proyecto. Te ahorra elegir qu
 
 4. **Después del reporte**, propón los siguientes pasos:
    - Si el orquestador propuso un commit: ofrece commitear y pushear.
-   - Si hay 🔴 bloqueantes en la revisión de marca: pregunta al usuario si los arregla antes de commit (delegando al agente correspondiente) o si los deja en backlog.
+   - Si hay 🔴 bloqueantes o un dictamen `BLOQUEADO`: asigna la corrección al agente correspondiente y vuelve a auditar antes de proponer commit.
    - Si quedó pendiente algo (ej. el orquestador detectó que falta un dato externo): márcalo y ofrece guardarlo como TODO.
 
 ## Cuándo NO usar esto

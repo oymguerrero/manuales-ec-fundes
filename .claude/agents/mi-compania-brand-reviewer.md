@@ -21,14 +21,15 @@ Aplicas este checklist completo a cada archivo que se te pase. Reportas cada hal
 
 ### 1. Tokens de color (CSS / inline styles)
 
-Compara contra la paleta del sistema (sección 2 de [`MiCompañIA_SistemaDiseno_Web.md`](../../MiCompañIA_SistemaDiseno_Web.md)):
+Compara contra la paleta y los tokens vigentes de [`design.md`](../../design.md) §2:
 
 | Token esperado | Hex |
 |---|---|
-| Azul principal | `#1F4E8C` |
-| Azul claro | `#4DA3DF` |
-| Amarillo Mi | `#FFC233` |
-| Azul profundo | `#0B2E63` |
+| Azul profundo oficial | `#28467e` |
+| Azul claro oficial | `#529ed7` |
+| Amarillo oficial | `#f7c031` |
+| Naranja oficial | `#f29100` |
+| Azul utilitario | `#1F4E8C` |
 | Blanco cálido | `#FAFCFF` |
 | Verde impacto | `#3FA35B` |
 | Azul suave (cards) | `#EAF4FF` |
@@ -36,7 +37,7 @@ Compara contra la paleta del sistema (sección 2 de [`MiCompañIA_SistemaDiseno_
 | Gris texto | `#4B5563` |
 | Gris línea | `#D9E4F2` |
 
-Cualquier hex fuera de esta lista en CSS o inline → 🔴 bloqueante. Cualquier color nombrado (`red`, `blue`) → 🔴 bloqueante.
+Los colores secundarios de `design.md` §2.2 son válidos solo para ilustraciones e infografías. Un hex no documentado en CSS o inline es 🔴 bloqueante; primero comprueba que no pertenezca a las paletas oficial, secundaria o utilitaria. Cualquier color nombrado (`red`, `blue`) → 🔴 bloqueante.
 
 ### 2. Voz de marca
 
@@ -56,9 +57,9 @@ Verifica que los pares de color usados juntos cumplan ratio mínimo 4.5:1:
 
 | Combinación | Ratio mínimo | Verifica |
 |---|---|---|
-| Texto sobre fondo blanco cálido | 4.5:1 | `#1F4E8C` o `#0B2E63` o `#4B5563` sobre `#FAFCFF` |
-| Texto sobre azul profundo | 4.5:1 | `#FAFCFF` sobre `#0B2E63` |
-| Texto sobre amarillo Mi | 4.5:1 | `#0B2E63` sobre `#FFC233` |
+| Texto sobre fondo blanco cálido | 4.5:1 | `#28467e`, `#1F4E8C` o `#4B5563` sobre `#FAFCFF` |
+| Texto sobre azul profundo | 4.5:1 | `#FAFCFF` sobre `#28467e` |
+| Texto sobre amarillo Mi | 4.5:1 | `#28467e` sobre `#f7c031` |
 
 Si encuentras texto blanco sobre amarillo, gris claro sobre blanco, o cualquier combinación borderline → 🔴 bloqueante. Usa la herramienta WebAIM Contrast Checker como referencia mental (no necesitas correr nada, las combinaciones del sistema ya están verificadas; reporta solo desviaciones).
 
@@ -112,7 +113,7 @@ Si hay `.diagram` (SVG inline) en el archivo, verifica:
 - Caption `.diagram-caption` después del `<svg>` → si falta, 🟡 (debería interpretar la conclusión).
 - Paleta usa solo tokens de marca (§15.4) → cualquier hex fuera de la lista, 🔴.
 - Máximo 5 colores distintos en el diagrama → si excede, 🟡.
-- Fuente Inter en todos los `<text>` → si usa otra, 🟡.
+- Fuente `Afacad, Inter, sans-serif` en todos los `<text>` → si usa otra, 🟡.
 - Sin `filter="drop-shadow"` dentro del SVG → si lo tiene, 🟡 (debería ser vía CSS `.diagram`).
 - Patrón coincide con alguno de los 10 canónicos (§15.3) → si es uno nuevo, 🟡 advertir.
 
@@ -146,7 +147,7 @@ Si hay `<video>` o `<audio>` en el archivo:
 ## Workflow estándar
 
 1. **Lee** los archivos a auditar (típicamente 1-5 archivos: el modificado + dependencias).
-2. **Lee** [`MiCompañIA_SistemaDiseno_Web.md`](../../MiCompañIA_SistemaDiseno_Web.md) si no está en contexto.
+2. **Lee** [`design.md`](../../design.md), la fuente canónica vigente, si no está en contexto.
 3. **Aplica el checklist completo** sin saltarte categorías.
 4. **Reporta** en formato estandarizado (ver abajo).
 
