@@ -3248,11 +3248,10 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 .site-footer .footer-brand {
+  /* Variante "en bloque (claro)" de design.md §18.1: sobre el azul de marca va
+     el logo en blanco, no el logo oscuro dentro de un recuadro blanco. */
   display: inline-flex;
   align-items: center;
-  padding: 7px 10px;
-  background: #fff;
-  border-radius: 10px;
 }
 
 .site-footer .footer-brand img {
@@ -3274,6 +3273,27 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   border: 0;
 }
 
+/* Lockup de apoyo institucional. La imagen ya viene en blanco/color sobre
+   transparencia, asi que no necesita recuadro sobre el azul del footer. */
+.site-footer .footer-support img {
+  height: 42px;
+  width: auto;
+  display: block;
+  max-width: min(220px, 60vw);
+}
+/* Aviso de derechos: renglon aparte, separado por una linea sutil. */
+.site-footer .footer-legal {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(250, 252, 255, 0.22);
+}
+.site-footer .footer-legal p {
+  margin: 0;
+  max-width: 80ch;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: rgba(250, 252, 255, 0.72);
+}
 .site-footer a {
   color: var(--color-amarillo);
 }
