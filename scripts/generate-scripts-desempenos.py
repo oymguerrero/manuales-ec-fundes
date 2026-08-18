@@ -37,6 +37,9 @@ from pptx.util import Inches, Pt
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "scripts" / "guiones-desempenos.json"
+
+# ASSETS y OUTDIR se reasignan en main() segun el archivo de datos que se pase,
+# para poder generar los guiones de mas de un estandar con el mismo generador.
 ASSETS = ROOT / "extras" / "script-assets"
 OUTDIR = ROOT / "extras" / "scripts-desempenos"
 
@@ -64,6 +67,24 @@ def _layout(prs, nombre):
         if lay.name.lower().startswith(nombre.lower()):
             return lay
     return prs.slide_layouts[6]
+
+
+def _asset(base):
+    """Busca <base>.jpg / .png / .jpeg dentro de la carpeta de assets activa."""
+    for ext in (".jpg", ".png", ".jpeg"):
+        ruta = ASSETS / (base + ext)
+        if ruta.exists():
+            return ruta
+    return ASSETS / (base + ".png")
+
+
+def _slug_personaje(nombre):
+    """'Dona Beatriz' -> 'beatriz'; toma la ultima palabra significativa."""
+    limpio = nombre.strip().lower()
+    for a, b in (("á", "a"), ("é", "e"), ("í", "i"), ("ó", "o"), ("ú", "u"), ("ñ", "n")):
+        limpio = limpio.replace(a, b)
+    partes = [w for w in limpio.split() if w not in ("dona", "don", "sra", "sr", "la", "el")]
+    return partes[-1] if partes else limpio
 
 
 def _blank(prs):
@@ -237,7 +258,7 @@ def _notas(prs, g, palabras):
 def _apertura(prs, g, esc, n):
     """Plano general con el rotulo de titulo en pantalla, como el ejemplo."""
     s = _blank(prs)
-    img = ASSETS / esc.get("imagen", "escena-wide.png")
+    img = _asset(esc["imagen"].rsplit(".", 1)[0]) if esc.get("imagen") else _asset("escena-wide")
     if img.exists():
         ancho = 11.79
         with Image.open(img) as im:
@@ -262,9 +283,8 @@ def _escena(prs, esc, n):
     abajo, que es el efecto del guion de referencia."""
     s = _blank(prs)
     hablante = esc["hablante"]
-    img_name = esc.get("imagen") or ("martin.png" if hablante.lower().startswith("mart")
-                                     else "mariana.png")
-    img = ASSETS / img_name
+    img = (_asset(esc["imagen"].rsplit(".", 1)[0]) if esc.get("imagen")
+           else _asset(_slug_personaje(hablante)))
 
     if img.exists():
         alto = 6.00
@@ -332,9 +352,26 @@ def construir(g):
 
 
 def main():
-    if not DATA.exists():
-        sys.exit(f"No encuentro {DATA}")
-    guiones = json.loads(DATA.read_text(encoding="utf-8"))
+    global ASSETS, OUTDIR
+
+    rutas = [a for a in sys.argv[1:] if a.endswith(".json")]
+    datos = Path(rutas[0]) if rutas else DATA
+    if not datos.is_absolute():
+        datos = (ROOT / datos) if not datos.exists() else datos
+    if not datos.exists():
+        sys.exit(f"No encuentro {datos}")
+
+    cargado = json.loads(datos.read_text(encoding="utf-8"))
+    # Formato legado: lista suelta de guiones. Formato nuevo: objeto que ademas
+    # declara de donde salen las imagenes y a donde van los PPTX.
+    if isinstance(cargado, dict):
+        guiones = cargado["guiones"]
+        if cargado.get("assets"):
+            ASSETS = ROOT / cargado["assets"]
+        if cargado.get("salida"):
+            OUTDIR = ROOT / cargado["salida"]
+    else:
+        guiones = cargado
 
     filtro = {int(a) for a in sys.argv[1:] if a.isdigit()}
     if filtro:

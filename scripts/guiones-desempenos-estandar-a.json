@@ -1,0 +1,541 @@
+{
+  "assets": "extras/script-assets-estandar-a",
+  "salida": "extras/scripts-desempenos-estandar-a",
+  "guiones": [
+    {
+      "numero": 1,
+      "elemento": "Elemento 1 · Planear la adopción de soluciones de IA",
+      "titulo": "Presentar la propuesta final de adopción de soluciones de IA",
+      "duracion": "3 mins",
+      "criterios": [
+        "Expone el contexto de la MiPyME y el resultado del diagnóstico, especificando la principal situación a resolver mediante la adopción de soluciones de IA.",
+        "Explica las soluciones de IA recomendadas en función de las áreas de mejora identificadas con las partes involucradas.",
+        "Muestra los pasos a seguir y la secuencia de las actividades por realizar, con base en la hoja de ruta de adopción propuesta.",
+        "Explica los costos y beneficios de la propuesta económica del proyecto.",
+        "Atiende las dudas presentadas por el representante de la MiPyME acerca del alcance y tiempos de adopción."
+      ],
+      "ahv": [
+        "Orden — la manera en que organiza la información obtenida y los resultados de forma clara y estructurada durante la presentación de la propuesta."
+      ],
+      "nota_arte": "Escena en la oficina trasera de la sucursal principal de La Espiga, con laptop y propuesta impresa sobre la mesa. Reutiliza los planos de Andrea, Doña Beatriz y Carlos.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Presentación de la propuesta final",
+          "narrador": "Andrea se reúne con Doña Beatriz, fundadora de la panadería La Espiga, y con su hijo Carlos. Les envió la propuesta dos días antes; hoy la presenta para obtener su autorización. Observa con atención cómo Andrea va cumpliendo cada uno de los criterios del estándar."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Expone el contexto y el resultado del diagnóstico.",
+          "dialogo": "Doña Beatriz, Carlos, gracias por el tiempo. Empiezo recordando de dónde partimos. La Espiga tiene tres sucursales y las tres reciben pedidos por WhatsApp, pero cada una desde un teléfono distinto y sin registro. Del diagnóstico salió una situación principal a resolver: los pedidos se pierden entre mensajes y la cocina se entera tarde.",
+          "facial": "Mirada directa y serena, sonrisa cordial de apertura; expresión de quien tiene el tema dominado.",
+          "postura": "Sentada erguida, gira la laptop hacia Doña Beatriz y coloca la propuesta impresa al centro de la mesa."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "Eso es tal cual. La semana pasada se nos fue un pedido de tres roscas porque quedó enterrado entre mensajes del sábado.",
+          "facial": "Cejas levemente levantadas de reconocimiento, sonrisa resignada al recordar el episodio.",
+          "postura": "Se inclina hacia adelante apoyando los antebrazos en la mesa, acercándose al documento."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Demuestra Orden en la presentación.",
+          "dialogo": "Justo por eso lo medimos. En estas ocho semanas registramos treinta consultas al día entre las tres sucursales y un tiempo promedio de respuesta de ocho minutos. Toda la propuesta sigue ese mismo orden: primero el diagnóstico, luego las soluciones, después el cronograma y al final los costos. Nada sale de la nada.",
+          "facial": "Semblante metódico y claro; mirada que acompaña cada sección del documento conforme la nombra.",
+          "postura": "Recorre con el bolígrafo el índice de la propuesta, marcando las cuatro secciones en orden."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica las soluciones recomendadas según las áreas de mejora.",
+          "dialogo": "De las cinco oportunidades que detectamos, les recomiendo empezar por dos. La primera: un sistema unificado de pedidos por WhatsApp con respuestas automáticas para las preguntas de siempre, horarios y disponibilidad. La segunda: un resumen automatizado de los pedidos del día que le llega a cocina cada mañana.",
+          "facial": "Mirada analítica y entusiasta, énfasis sutil al nombrar cada una de las dos soluciones.",
+          "postura": "Marca las dos opciones con dos dedos en el aire, luego señala la matriz de impacto en pantalla."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "¿Y por qué esas dos y no las otras tres? Porque a mí me interesaba mucho lo del control de inventario.",
+          "facial": "Ceja levantada con interés analítico, mirada evaluadora hacia la pantalla.",
+          "postura": "Deja el teléfono sobre la mesa y se endereza, girando el torso hacia la laptop."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica las soluciones en función de las áreas de mejora.",
+          "dialogo": "Buena pregunta, Carlos, y te la contesto con la matriz. Inventario tiene impacto alto, sí, pero exige que primero estandaricen mermas en las tres sucursales, y eso es un proyecto aparte. Estas dos, en cambio, atacan el problema que ustedes mismos señalaron y se pueden implementar sin cambiar cómo trabajan hoy.",
+          "facial": "Expresión receptiva ante la pregunta, luego mirada firme al fundamentar la priorización.",
+          "postura": "Señala en la matriz el cuadrante de impacto y esfuerzo, contrastando las posiciones con la mano abierta."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Muestra los pasos y la secuencia con base en la hoja de ruta.",
+          "dialogo": "El cronograma son cinco semanas. Semana uno, levantamiento de las preguntas frecuentes reales y configuración del número único. Semanas dos y tres, pruebas con pedidos reales en la sucursal central. Semana cuatro, capacitación al personal. Semana cinco, operación acompañada y ajuste fino antes de soltarlo.",
+          "facial": "Semblante organizado, mirada que sigue el avance del cronograma semana por semana.",
+          "postura": "Recorre la línea de tiempo en pantalla de izquierda a derecha con el dedo índice."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "Cinco semanas... ¿y en esas cinco semanas tenemos que dejar de vender o cómo le hacemos?",
+          "facial": "Ceño preocupado, mirada inquieta calculando el impacto en el negocio.",
+          "postura": "Se lleva la mano al pecho, hombros ligeramente tensos, torso erguido."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Atiende las dudas sobre alcance y tiempos.",
+          "dialogo": "Para nada, y me da gusto que lo pregunte porque es la duda más común. Todo se monta en paralelo a la operación. El número actual sigue funcionando hasta que el nuevo esté probado. No cerramos ni un día, no paramos ni un turno.",
+          "facial": "Rostro sereno y tranquilizador, sonrisa franca que transmite seguridad.",
+          "postura": "Palmas abiertas hacia arriba en gesto de contención, asiente con la cabeza pausadamente."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica los costos y beneficios de la propuesta económica.",
+          "dialogo": "Vamos a los números, que sé que es lo que importa. El proyecto son dos partes: honorarios profesionales por las cinco semanas, que se pagan una sola vez, y las licencias mensuales de las herramientas, que son un gasto fijo mientras las usen. Se los desgloso por separado para que vean qué es inversión y qué es operación.",
+          "facial": "Mirada clara y directa, sin titubeo al entrar al tema económico.",
+          "postura": "Pasa la hoja de la propuesta y la gira hacia Doña Beatriz, señalando las dos columnas."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica los costos y beneficios.",
+          "dialogo": "Y del lado del beneficio: si el asistente atiende las consultas repetidas, las encargadas recuperan tiempo que hoy se les va contestando lo mismo. Ese es el retorno que vamos a medir al final, en horas liberadas y en pedidos que ya no se pierden.",
+          "facial": "Expresión entusiasta y concreta, mirada que conecta el gasto con el resultado esperado.",
+          "postura": "Une las manos marcando la relación entre las dos cifras, gesto de balance."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "¿Y si el asistente contesta una tontería a un cliente? Porque eso sí nos pegaría en la reputación.",
+          "facial": "Mirada seria y algo escéptica, expresión de quien plantea el peor escenario.",
+          "postura": "Cruza levemente los brazos, torso echado hacia atrás en actitud de reserva."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Atiende las dudas sobre el alcance.",
+          "dialogo": "Es la preocupación correcta. Por eso el asistente solo responde un catálogo cerrado de preguntas: horarios, ubicación, disponibilidad y precios. Cualquier cosa fuera de esa lista la pasa a una persona. No improvisa. Y durante las dos semanas de prueba revisamos juntos todas las conversaciones antes de dejarlo suelto.",
+          "facial": "Semblante profesional y calmado, mirada franca sin ponerse a la defensiva.",
+          "postura": "Gesto de límite con ambas manos delimitando el alcance, luego asentimiento afirmativo."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "Ah, ok. Así sí. Yo pensé que le iba a inventar respuestas al cliente.",
+          "facial": "Semblante que se relaja, ligera sonrisa de alivio al entender el límite.",
+          "postura": "Descruza los brazos y vuelve a inclinarse hacia la mesa, retomando el teléfono."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Atiende dudas y cierra la presentación.",
+          "dialogo": "¿Les queda alguna otra duda del alcance o de los tiempos? Prefiero resolverlas ahora y no a medio proyecto. Si están conformes, les dejo la propuesta para su autorización y arrancamos el lunes con el levantamiento de preguntas frecuentes.",
+          "facial": "Mirada atenta e inquisitiva, sonrisa amable de escucha activa, sin presionar.",
+          "postura": "Deja el bolígrafo sobre la mesa y se reclina levemente, cediendo el turno."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "A mí me quedó claro y me gusta que empiece por lo de WhatsApp, que es lo que más nos duele. Cuente con nosotros.",
+          "facial": "Sonrisa amplia y resuelta, mirada confiada que transmite decisión tomada.",
+          "postura": "Asiente con firmeza y desliza la propuesta hacia sí para firmarla, postura relajada."
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "elemento": "Elemento 2 · Ejecutar la adopción de soluciones de IA",
+      "titulo": "Presentar las soluciones de IA implementadas",
+      "duracion": "3 mins",
+      "criterios": [
+        "Explica el funcionamiento de las soluciones implementadas en los procesos de la MiPyME.",
+        "Describe los casos de uso y beneficios operativos de las soluciones implementadas.",
+        "Demuestra el funcionamiento de las soluciones en el entorno real de operación.",
+        "Explica las recomendaciones para el uso adecuado y la continuidad de las soluciones.",
+        "Pregunta si existen comentarios / solicita retroalimentación al representante y responsables del proceso."
+      ],
+      "ahv": [
+        "Responsabilidad — cumple los compromisos de implementación acordados: las soluciones se configuraron, probaron y entregaron conforme al plan.",
+        "Cooperación — interactúa con el personal para adaptar la solución a sus necesidades reales, con apertura para ajustar según la retroalimentación."
+      ],
+      "nota_arte": "Escena en el mostrador de la sucursal central, con laptop conectada y un teléfono de operación a la mano. Reutiliza los planos de Andrea, Doña Beatriz y Carlos.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Presentación de las soluciones implementadas",
+          "narrador": "Terminaron las semanas de configuración y prueba. Andrea presenta a Doña Beatriz y a Carlos las dos soluciones de IA ya operando en La Espiga. Observa con atención cómo va cumpliendo cada uno de los criterios del estándar."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica el funcionamiento de las soluciones implementadas.",
+          "dialogo": "Doña Beatriz, Carlos, las dos soluciones ya están operando. Les explico cómo funcionan. La primera unificó los tres números en uno solo: entre un mensaje de cualquier cliente y el asistente lo lee, identifica si es una pregunta frecuente y responde en segundos. Si no la reconoce, la manda a la encargada en turno.",
+          "facial": "Mirada clara y didáctica, expresión de quien explica algo que ya vio funcionar.",
+          "postura": "De pie junto al mostrador, gira la pantalla de la laptop hacia ambos."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica el funcionamiento de las soluciones implementadas.",
+          "dialogo": "La segunda solución trabaja de noche. A las cinco de la mañana junta todos los pedidos que entraron el día anterior, los agrupa por producto y le manda a cocina una sola lista: tantas roscas, tantos bolillos, tantos pasteles. Ya no hay que revisar mensaje por mensaje.",
+          "facial": "Semblante entusiasta y concreto, mirada que anticipa el alivio operativo.",
+          "postura": "Señala el resumen en pantalla, recorriendo la lista agrupada con el dedo."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "O sea que cuando llego a las seis, ¿ya está la lista hecha? Porque eso es justo lo que hacía yo mientras me tomaba el café.",
+          "facial": "Ojos abiertos de sorpresa grata, sonrisa incrédula que se va ampliando.",
+          "postura": "Se acerca a la pantalla apoyando una mano en el mostrador, cuerpo inclinado con interés."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Describe los casos de uso y beneficios operativos.",
+          "dialogo": "Exactamente, ya está hecha. Y ese es uno de los tres casos de uso que medimos. El segundo: las consultas de horario y disponibilidad, que eran más de la mitad del volumen, ya no las contesta una persona. El tercero: los pedidos quedan registrados con hora y sucursal, así que si algo se reclama, hay con qué revisarlo.",
+          "facial": "Mirada segura y ordenada, enumera con énfasis sutil en cada caso.",
+          "postura": "Marca los tres casos con los dedos de la mano antes de señalarlos en pantalla."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Demuestra el funcionamiento en el entorno real de operación.",
+          "dialogo": "Pero no se los voy a contar nomás, se los voy a mostrar aquí mismo, en operación real. Carlos, mándale un mensaje al número de la panadería desde tu teléfono, como si fueras un cliente. Pregúntale si hay rosca hoy.",
+          "facial": "Sonrisa motivadora y expectante, mirada animada invitando a la participación.",
+          "postura": "Extiende la mano abierta hacia Carlos, retrocediendo un paso para cederle el espacio."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "Va... ya lo mandé. Órale, ya me contestó. Y me dice que sí hay y hasta qué horario cierran.",
+          "facial": "Concentración al teclear que cambia a sorpresa genuina al ver la respuesta llegar.",
+          "postura": "Sostiene el teléfono con ambas manos, luego lo levanta para mostrar la pantalla."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Demuestra el funcionamiento en el entorno real.",
+          "dialogo": "Once segundos. Y fíjense en algo importante: esa conversación quedó registrada aquí, en el panel. Pueden ver cuántas consultas atendió el asistente solo y cuántas tuvo que pasar a una persona. Esto no es una demostración preparada, es el sistema que ya está atendiendo a sus clientes.",
+          "facial": "Semblante satisfecho y profesional, mirada que va del teléfono al panel en pantalla.",
+          "postura": "Señala alternadamente el teléfono de Carlos y el panel de control en la laptop."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "¿Y si un cliente pregunta algo raro? Ayer una señora quería saber si el pastel llevaba nuez, por una alergia.",
+          "facial": "Expresión seria y práctica, mirada de quien piensa en su clientela real.",
+          "postura": "Ladea la cabeza con inquietud legítima, una mano sobre el mandil."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Demuestra Cooperación ante la retroalimentación.",
+          "dialogo": "Ese caso el asistente lo pasa a una persona, porque los ingredientes no están en su catálogo. Pero me parece muy buena observación y vale la pena atenderla: si las preguntas de alergias son frecuentes, podemos agregarlas. Anótelo, que lo revisamos con las encargadas antes del cierre del proyecto.",
+          "facial": "Rostro receptivo y atento, asiente mientras toma nota de la observación.",
+          "postura": "Escribe en su libreta a la vista de Doña Beatriz, mostrándole que el punto queda registrado."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica las recomendaciones de uso adecuado y continuidad.",
+          "dialogo": "Ahora les dejo tres recomendaciones para que esto siga funcionando cuando yo ya no esté. Primera: revisar el panel una vez por semana, para ver qué preguntas se están pasando a persona; ahí les va a decir el sistema qué le falta aprender.",
+          "facial": "Mirada firme y pedagógica, expresión de quien entrega algo que debe durar.",
+          "postura": "Levanta el dedo índice marcando la primera recomendación, postura erguida."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica las recomendaciones de continuidad.",
+          "dialogo": "Segunda: cuando cambien precios o horarios, hay que actualizarlos en el catálogo el mismo día; si no, el asistente va a dar información vieja con toda seguridad. Y tercera: las licencias se renuevan cada mes, así que conviene dejar el pago programado para que no se corte el servicio un fin de semana.",
+          "facial": "Semblante metódico, elevación de cejas al advertir sobre la información desactualizada.",
+          "postura": "Marca la segunda y tercera recomendación con los dedos, gesto firme pero accesible."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "Lo del pago programado lo veo yo, eso me toca. ¿Y lo del panel quién lo revisa, mi mamá o las encargadas?",
+          "facial": "Expresión resolutiva y participativa, mirada de quien ya se está repartiendo tareas.",
+          "postura": "Se endereza y apunta con el teléfono hacia la pantalla, tomando iniciativa."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Demuestra Responsabilidad y Cooperación.",
+          "dialogo": "Eso lo decidimos entre ustedes, y de hecho es la razón de la capacitación que viene. Todo lo que quedó configurado, probado y entregado está en el informe técnico que les dejo hoy, tal como lo acordamos en la propuesta. Nada se quedó a medias.",
+          "facial": "Semblante de compromiso cumplido, orgullo profesional contenido.",
+          "postura": "Coloca el informe técnico impreso sobre el mostrador, empujándolo hacia ellos."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Solicita retroalimentación al representante y responsables.",
+          "dialogo": "Antes de cerrar esta sesión quiero escucharlos: ¿hay algo del funcionamiento que no les convenza, o algo que sientan que sobra o que falta? Es mejor ajustarlo ahora, mientras sigo acompañándolos.",
+          "facial": "Mirada atenta y apacible, sonrisa amable buscando la respuesta genuina.",
+          "postura": "Cierra parcialmente la laptop y entrelaza las manos, en gesto de escucha activa."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "A mí me late. Lo único, lo de las alergias, pero ya quedó anotado. De ahí en fuera, esto nos quita un peso de encima.",
+          "facial": "Sonrisa amplia de satisfacción, mirada tranquila y agradecida.",
+          "postura": "Se recarga en el mostrador con los hombros relajados, asintiendo con la cabeza."
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "elemento": "Elemento 2 · Ejecutar la adopción de soluciones de IA",
+      "titulo": "Capacitar al personal de la MiPyME en el uso de soluciones de IA",
+      "duracion": "3 mins",
+      "criterios": [
+        "Presenta las herramientas/plataformas de IA implementadas y su relación con los procesos de la MiPyME.",
+        "Explica la utilidad de cada herramienta en el contexto operativo con ejercicios prácticos y casos de uso aplicados.",
+        "Sensibiliza al personal acerca de los beneficios, alcance y buenas prácticas de uso de la IA en el negocio.",
+        "Le solicita que ejecute de manera autónoma el proceso con las herramientas/plataformas de IA.",
+        "Resuelve las dudas del personal acerca del uso de las herramientas/plataformas de IA.",
+        "Confirma la comprensión del personal de la MiPyME al aplicar los ejercicios prácticos."
+      ],
+      "ahv": [
+        "Responsabilidad — cumple los compromisos de implementación acordados con el cliente.",
+        "Cooperación — interactúa con el personal operativo con apertura para ajustar la configuración según su retroalimentación."
+      ],
+      "nota_arte": "Sesión de capacitación en la sucursal central, sábado antes de abrir: laptop conectada a una pantalla y teléfonos de operación sobre la mesa. Reutiliza los planos de Andrea, Doña Beatriz y Carlos.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Capacitación del personal",
+          "narrador": "Sábado por la mañana, antes de abrir. Andrea capacita a Doña Beatriz y a Carlos para que operen las soluciones de IA sin depender de ella. Observa con atención cómo va cumpliendo cada uno de los criterios del estándar."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Presenta las herramientas y su relación con los procesos.",
+          "dialogo": "Buenos días. Hoy no vengo a explicarles teoría, vengo a que ustedes lo hagan. Son dos herramientas y cada una se conecta con un proceso que ya tienen. El asistente de WhatsApp se conecta con la atención al cliente; el resumen automático se conecta con la producción de la mañana. No son sistemas aparte, están metidos en su día a día.",
+          "facial": "Sonrisa cálida y enérgica de arranque, mirada que recorre a ambos incluyéndolos.",
+          "postura": "De pie junto a la pantalla, manos abiertas a la altura del pecho en gesto de bienvenida."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica la utilidad de cada herramienta en el contexto operativo.",
+          "dialogo": "Vamos con un caso real de ustedes. Sábado, once de la mañana, entran catorce mensajes en veinte minutos. Antes, la encargada dejaba de despachar para contestar. Ahora el asistente responde las de horario y disponibilidad, y a ella solo le llegan las que necesitan una persona. La utilidad no es la tecnología: es que no dejen de despachar.",
+          "facial": "Expresión concreta y convincente, mirada que aterriza el beneficio en su realidad.",
+          "postura": "Señala la pantalla con el ejemplo del sábado, marcando el flujo con la mano."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "Uy, los sábados sí es un caos. Se juntan la fila del mostrador y los mensajes al mismo tiempo.",
+          "facial": "Gesto expresivo de agobio recordado, cejas levantadas y ligera risa.",
+          "postura": "Se lleva ambas manos a la cabeza en gesto breve y cómico, luego las baja al mandil."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Sensibiliza sobre beneficios, alcance y buenas prácticas.",
+          "dialogo": "Por eso es importante entender qué sí y qué no hace esta herramienta. Sí contesta lo repetitivo. No decide precios, no cierra ventas grandes y no habla de ingredientes. Y una buena práctica que les pido: nunca metan datos personales de un cliente en la herramienta, ni teléfonos ni direcciones, más allá de lo que el pedido necesita.",
+          "facial": "Semblante serio y responsable al marcar los límites, sin alarmar.",
+          "postura": "Gesto de frontera con las manos separando lo que hace de lo que no hace."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "¿Y eso por qué? O sea, ¿qué tiene de malo si es para atender al mismo cliente?",
+          "facial": "Mirada curiosa y directa, cabeza ladeada esperando la razón.",
+          "postura": "Apoya los codos en la mesa, torso hacia adelante en actitud de pregunta genuina."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Sensibiliza sobre buenas prácticas de uso de la IA.",
+          "dialogo": "Porque esa información sale de la panadería y ustedes dejan de controlar dónde queda. El cliente les confió su teléfono para que le avisen de su pedido, no para que viaje a otro lado. Es una regla sencilla: lo mínimo necesario para operar, nada más.",
+          "facial": "Mirada franca y firme, expresión de principio claro sin tono de regaño.",
+          "postura": "Asiente pausadamente, manos quietas sobre la mesa transmitiendo seriedad."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Solicita que ejecute el proceso de manera autónoma.",
+          "dialogo": "Ahora les toca a ustedes. Doña Beatriz, siéntese aquí. No le voy a decir dónde picar: abra el panel, busque las consultas de ayer y dígame cuántas atendió el asistente sin ayuda. Yo la acompaño, pero las manos son suyas.",
+          "facial": "Sonrisa alentadora y paciente, mirada expectante y confiada.",
+          "postura": "Retira sus manos del teclado y da un paso atrás, extendiendo la silla hacia Doña Beatriz."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "Ay, a ver... yo con estas cosas soy bien lenta, eh. ¿Aquí donde dice panel? ... A ver... sesenta y dos. ¿Sesenta y dos atendió solito?",
+          "facial": "Concentración tensa con el ceño fruncido, que se transforma en sonrisa de logro.",
+          "postura": "Se acomoda los lentes, avanza el cursor despacio y luego se endereza con orgullo."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Confirma la comprensión al aplicar los ejercicios.",
+          "dialogo": "Sesenta y dos, exacto. Y lo encontró usted sola, sin que yo le dijera dónde. Eso es justo lo que necesito comprobar hoy: que puedan hacerlo sin mí. Ahora dígame, de esas consultas, ¿cuántas se pasaron a una persona?",
+          "facial": "Mirada aprobatoria y complacida, sonrisa genuina de reconocimiento.",
+          "postura": "Asiente con energía, señalando la cifra en pantalla sin tomar el control del ratón."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "Aquí dice... nueve. Nueve pasaron a persona. Y aquí abajo dice cuáles fueron, mire.",
+          "facial": "Mirada enfocada y ya más suelta, expresión de quien va tomando confianza.",
+          "postura": "Señala la pantalla con el dedo, ahora inclinada hacia adelante sin titubeo."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Resuelve dudas del personal sobre el uso de las herramientas.",
+          "dialogo": "Perfecto, y ahí está la parte más útil del panel. Esas nueve son las que el asistente todavía no sabe contestar. Si ve que se repite la misma, me la agregan al catálogo y deja de pasar. Carlos, ¿alguna duda de cómo se agrega?",
+          "facial": "Expresión didáctica y abierta, mirada que invita a preguntar sin pena.",
+          "postura": "Gira ligeramente hacia Carlos, incluyéndolo con un gesto de la mano."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "Sí, una. Si yo agrego una respuesta mal escrita, ¿se la manda así al cliente? ¿O alguien la revisa antes?",
+          "facial": "Mirada atenta y precavida, expresión de quien anticipa un error propio.",
+          "postura": "Toma el teléfono y lo sostiene señalándolo, torso girado hacia Andrea."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Resuelve dudas del personal.",
+          "dialogo": "Se la manda tal cual, por eso siempre hay que probarla antes desde otro teléfono. Es el mismo ejercicio que hiciste la sesión pasada: la escribes, te la mandas tú mismo como cliente y ves cómo llega. Si te gusta cómo suena, la dejas. Si no, la corriges antes de que la lea nadie.",
+          "facial": "Semblante paciente y claro, sin señal de que la pregunta sea básica.",
+          "postura": "Mima el gesto de escribir y luego el de revisar en el teléfono, secuencia de dos pasos."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Confirma la comprensión del personal.",
+          "dialogo": "Cerramos con un último ejercicio para confirmar que quedó. Carlos, agrega la respuesta de las alergias que nos pidió tu mamá, pruébala desde tu teléfono y muéstrame cómo llegó. Si eso sale, la capacitación está completa.",
+          "facial": "Mirada expectante y motivadora, sonrisa de cierre confiado.",
+          "postura": "Se aparta de la mesa por completo, brazos relajados, dejando el espacio libre."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "Listo... probado. Llegó bien y dice que para temas de alergias hay que confirmar con el mostrador. Quedó justo como lo queríamos.",
+          "facial": "Sonrisa de logro y seguridad, mirada brillante al mostrar el resultado.",
+          "postura": "Levanta el teléfono mostrando la pantalla a Andrea y a su mamá, hombros erguidos."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Demuestra Cooperación y cierra la capacitación.",
+          "dialogo": "Eso es exactamente lo que buscaba. Salió de una observación de Doña Beatriz, lo configuró Carlos y lo probaron ustedes. Les dejo la guía de uso impresa con los pasos y las capturas, pero honestamente ya no la van a necesitar tanto.",
+          "facial": "Orgullo profesional y calidez, amplia sonrisa de cierre satisfactorio.",
+          "postura": "Extiende ambas manos entregando la guía impresa, postura erguida y abierta."
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "elemento": "Elemento 3 · Evaluar la adopción de soluciones de IA",
+      "titulo": "Presentar los resultados de la adopción de soluciones de IA",
+      "duracion": "3 mins",
+      "criterios": [
+        "Muestra la comparación de los indicadores de impacto operativo antes y después de la adopción.",
+        "Explica los resultados obtenidos con relación a los objetivos definidos en la hoja de ruta de adopción.",
+        "Describe el retorno de inversión estimado de las soluciones implementadas.",
+        "Expone las mejoras operativas logradas en los procesos donde se implementaron las soluciones.",
+        "Señala las incidencias presentadas durante la operación y las acciones correctivas aplicadas.",
+        "Propone recomendaciones de mejora continua y optimización de las soluciones implementadas.",
+        "Obtiene la retroalimentación del emprendedor y responsables acerca de los resultados obtenidos.",
+        "Obtiene de manera verbal/escrita la conformidad del emprendedor respecto a los resultados."
+      ],
+      "ahv": [
+        "Tolerancia — la manera en que escucha y atiende la retroalimentación sobre las dificultades presentadas durante la operación.",
+        "Perseverancia — la manera en que da seguimiento continuo a las incidencias y acciones correctivas hasta verificar que las soluciones operen como se esperaba."
+      ],
+      "nota_arte": "Sesión de cierre en la mesa de La Espiga, con el reporte comparativo antes/después en pantalla y el acta de cierre impresa. Reutiliza los planos de Andrea, Doña Beatriz y Carlos.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Presentación de resultados",
+          "narrador": "Ocho semanas después de poner en marcha las soluciones, Andrea vuelve a La Espiga para presentar los resultados y cerrar el proyecto con Doña Beatriz y Carlos. Observa con atención cómo va cumpliendo cada uno de los criterios del estándar."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Muestra la comparación de indicadores antes y después.",
+          "dialogo": "Doña Beatriz, Carlos, cerramos las ocho semanas de operación y traigo los números. Los medí igual que al principio, para que la comparación sea justa. Tiempo de respuesta a una consulta por WhatsApp: antes ocho minutos en promedio, ahora treinta segundos.",
+          "facial": "Mirada profesional y directa, sonrisa contenida de quien trae buenos datos sin exagerarlos.",
+          "postura": "Sentada erguida, gira la laptop con la gráfica comparativa hacia ambos."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "¿Treinta segundos? ¡Ay, Andrea! Si antes yo contestaba a la hora, cuando me acordaba.",
+          "facial": "Ojos muy abiertos de asombro, sonrisa amplia y espontánea de incredulidad.",
+          "postura": "Se lleva una mano al pecho, cuerpo inclinado hacia la pantalla con energía."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Muestra la comparación de indicadores.",
+          "dialogo": "Y hay dos indicadores más. Consultas atendidas por día sumando las tres sucursales: pasaron de treinta a noventa, o sea el triple de capacidad sin contratar a nadie. Y horas semanales que se iban en tareas repetitivas entre las tres encargadas: de veinte horas bajaron a cinco.",
+          "facial": "Semblante claro y medido, énfasis sutil de cejas en cada cifra clave.",
+          "postura": "Recorre las tres barras de la gráfica con el bolígrafo, deteniéndose en cada una."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Explica los resultados con relación a los objetivos de la hoja de ruta.",
+          "dialogo": "Ahora, contra lo que nos propusimos. En la hoja de ruta pusimos dos objetivos: bajar el tiempo de respuesta a menos de dos minutos, y liberar al menos diez horas semanales. El primero se superó con mucho. El segundo también: liberamos quince horas, cinco más de las que prometimos.",
+          "facial": "Mirada satisfecha pero rigurosa, expresión de quien contrasta contra lo pactado.",
+          "postura": "Señala la columna de objetivo contra la de resultado, marcando la comparación."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "¿Y eso en dinero cuánto es? Porque nosotros pagamos honorarios y seguimos pagando licencias cada mes.",
+          "facial": "Ceja levantada con interés analítico, mirada de quien va directo al número.",
+          "postura": "Se endereza y deja el teléfono, girando el torso hacia la laptop."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Describe el retorno de inversión estimado.",
+          "dialogo": "Te lo estimo con cuidado, Carlos, porque aquí hay que ser honesta. Quince horas semanales liberadas son sesenta horas al mes de trabajo de mostrador que ya no se gasta contestando lo mismo. Valuadas al costo por hora de sus encargadas, eso supera la licencia mensual desde el segundo mes.",
+          "facial": "Semblante serio y transparente, mirada franca sin inflar la cifra.",
+          "postura": "Marca el punto de equilibrio en la gráfica con el dedo, gesto pausado."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Describe el retorno de inversión.",
+          "dialogo": "Y hay un retorno que no puedo ponerles en pesos con precisión, pero que existe: los pedidos que ya no se pierden. Antes se caía alguno entre tantos mensajes. En estas ocho semanas, cero pedidos extraviados. Eso también es dinero, aunque no lo pueda calcular exacto.",
+          "facial": "Expresión honesta y matizada, mirada que reconoce el límite de la estimación.",
+          "postura": "Palmas abiertas hacia arriba, gesto que acompaña la salvedad que está haciendo."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Expone las mejoras operativas logradas.",
+          "dialogo": "En lo operativo cambiaron tres cosas concretas. La cocina arranca con la lista lista a las cinco de la mañana. Las encargadas ya no interrumpen el despacho para contestar. Y los pedidos quedan registrados con hora y sucursal, así que cualquier reclamo se revisa en un minuto.",
+          "facial": "Mirada enfocada y práctica, enumera con seguridad las mejoras.",
+          "postura": "Cuenta las tres mejoras con los dedos, gesto firme y ordenado."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Señala las incidencias y las acciones correctivas aplicadas.",
+          "dialogo": "Ahora la parte que también tengo que contarles: lo que falló. Tuvimos tres incidencias. La primera, la segunda semana: el asistente daba un horario viejo de la sucursal del centro. Se corrigió el mismo día actualizando el catálogo, y de ahí salió la recomendación de actualizarlo cuando cambien horarios.",
+          "facial": "Semblante honesto y sereno, mirada franca sin evasión ni justificación.",
+          "postura": "Mantiene la postura abierta, señala la incidencia en el reporte sin minimizarla."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "Esa sí me acuerdo. Llegaron dos señoras a las siete y estaba cerrado. Se fueron bien enojadas, Andrea.",
+          "facial": "Ceño fruncido y mirada seria, gesto de reproche contenido pero real.",
+          "postura": "Cruza los brazos, torso ligeramente hacia atrás en actitud de reclamo."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Demuestra Tolerancia ante la retroalimentación.",
+          "dialogo": "Tiene toda la razón en molestarse, y le pido una disculpa: esa fue mi responsabilidad, el catálogo lo cargué yo. Por eso quedó documentada en el reporte y por eso la recomendación de revisión semanal existe. No quiero que suene a excusa: fue un error nuestro y así está anotado.",
+          "facial": "Rostro sereno y receptivo, mirada sostenida sin defensividad, semblante de quien asume.",
+          "postura": "Manos quietas sobre la mesa, ligera inclinación de cabeza en gesto de reconocimiento."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Demuestra Perseverancia en el seguimiento de incidencias.",
+          "dialogo": "Las otras dos incidencias fueron caídas del servicio de mensajería, ajenas a nosotros, de veinte minutos cada una. En las tres di seguimiento hasta verificar que volviera a operar bien, no las cerré nada más porque dejaron de aparecer. Aquí está la bitácora con la fecha de detección y la de verificación de cada una.",
+          "facial": "Mirada firme y metódica, expresión de rigor en el seguimiento.",
+          "postura": "Pasa la hoja de la bitácora y la desliza hacia ellos, señalando las dos columnas de fechas."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Propone recomendaciones de mejora continua y optimización.",
+          "dialogo": "Para adelante les propongo tres cosas. Una: agregar al catálogo las preguntas de ingredientes y alergias, que son las que más se siguen pasando a persona. Dos: revisar el panel cada lunes, diez minutos. Y tres, cuando estén listos, evaluar el control de inventario, que era la oportunidad que Carlos quería y que ahora sí tiene sentido.",
+          "facial": "Expresión propositiva y entusiasta, mirada que proyecta el siguiente paso.",
+          "postura": "Enumera las tres recomendaciones con los dedos, gesto abierto hacia el futuro."
+        },
+        {
+          "hablante": "Carlos",
+          "dialogo": "Eso del inventario me interesa, pero déjanos digerir esto primero. ¿Lo del catálogo de alergias lo podemos hacer nosotros o necesitamos ayuda?",
+          "facial": "Mirada interesada y realista, expresión de quien mide su propia capacidad.",
+          "postura": "Se inclina hacia adelante apoyando los antebrazos, actitud de planeación."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Obtiene la retroalimentación del emprendedor y responsables.",
+          "dialogo": "Lo pueden hacer ustedes, es exactamente el ejercicio que hiciste en la capacitación. Y antes de cerrar, quiero su opinión de todo esto: ¿los resultados corresponden con lo que ustedes viven a diario en la panadería, o hay algo que en el papel se ve mejor de lo que se siente?",
+          "facial": "Mirada atenta e inquisitiva, sonrisa amable de escucha genuina.",
+          "postura": "Deja el bolígrafo y se reclina, entrelazando las manos, cediendo el turno."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "No, sí se siente. Lo del horario me dolió, no le voy a mentir, pero el sábado ya se trabaja distinto. Y eso de las quince horas es real, se nota en la cara de las muchachas.",
+          "facial": "Semblante sincero, mirada que se suaviza al reconocer la mejora, sonrisa tranquila.",
+          "postura": "Descruza los brazos y apoya las manos sobre la mesa, postura ya distendida."
+        },
+        {
+          "hablante": "Andrea",
+          "criterio": "Obtiene la conformidad del emprendedor sobre los resultados.",
+          "dialogo": "Se lo agradezco, incluida la parte crítica. Entonces, para cerrar formalmente: ¿me dan su conformidad con los resultados de la adopción? Les dejo el acta de cierre para su firma y les mando hoy mismo el reporte completo por correo, para que quede el registro por escrito.",
+          "facial": "Mirada serena y profesional, sonrisa contenida de cierre, sin presionar.",
+          "postura": "Desliza el acta de cierre junto con la pluma hacia Doña Beatriz, movimiento pausado."
+        },
+        {
+          "hablante": "Beatriz",
+          "dialogo": "Claro que sí. Aquí le firmo, Andrea. Y gracias por decirnos también lo que salió mal, eso habla bien de usted.",
+          "facial": "Sonrisa amplia y sincera, mirada agradecida y resuelta.",
+          "postura": "Toma la pluma con decisión y firma; luego se recarga en la silla, satisfecha."
+        }
+      ]
+    }
+  ]
+}
