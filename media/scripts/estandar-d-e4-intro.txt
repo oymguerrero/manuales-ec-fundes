@@ -1,7 +1,5 @@
-Elemento 4: Optimizar. El ciclo cierra con datos reales de operación.
+Elemento 4: Optimizar. El ciclo de transformación digital cierra con la medición y la mejora.
 
-El Elemento 4 produce 3 documentos: el reporte de rendimiento técnico de la solución, el reporte de retroalimentación de los usuarios de la MiPyME y el plan de optimización.
+La versión de trabajo contempla tres productos: el reporte de rendimiento técnico, el reporte de retroalimentación de usuarios y el plan de optimización.
 
-Para El Surtido, después de 4 semanas en producción, los datos mostrarán una disponibilidad del 99.2%, una latencia promedio de 280 milisegundos y una tasa de error del 1.4%. El módulo de predicción de demanda habrá mejorado su precisión del 61% al 78%. Los repartidores reportarán que en zonas sin señal la app no carga la ruta —y eso generará la primera acción del plan de optimización: modo offline para la aplicación.
-
-El Estándar D es el único que certifica el ciclo completo: diagnosticar, construir, implementar y optimizar. Llegar a este elemento significa que tienes una solución funcionando y datos reales con qué mejorarla.
+La actitud, hábito o valor asociado es Iniciativa: proponer mejoras sustentadas en datos y en tendencias relevantes. La propuesta todavía no ha sido aprobada ni publicada y puede cambiar.
