@@ -349,7 +349,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   position: relative;
   opacity: 0.78;
   cursor: not-allowed;
-  background: linear-gradient(135deg, var(--color-azul-suave) 0%, white 100%);
+  background: linear-gradient(135deg, var(--color-azul-suave) 0%, var(--surface-raised) 100%);
   border-style: dashed;
 }
 .ec-card--coming:hover {
