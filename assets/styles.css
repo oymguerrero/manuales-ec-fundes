@@ -366,6 +366,20 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   color: var(--color-gris-texto);
   font-style: italic;
 }
+/* Contenido velado de las rutas que aun no abren. El desenfoque es cosmetico:
+   el texto sigue en el HTML, por eso ademas va aria-hidden en el markup y la
+   tarjeta lleva su propio aria-label. */
+.ec-card__velado {
+  filter: blur(5px);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.75;
+}
+/* Quien pide menos movimiento igual necesita entender que esta velado: se
+   mantiene el desenfoque, que no es animacion. */
+@supports not (filter: blur(5px)) {
+  .ec-card__velado { color: transparent; text-shadow: 0 0 9px rgba(40, 70, 126, 0.55); }
+}
 .ec-badge-coming {
   position: absolute;
   top: 14px;
