@@ -24,6 +24,14 @@
   /* Color de marca literal: NO cambia con el tema. Se usa para fondos, bordes
      y tinta sobre acentos, donde el azul debe seguir siendo el azul del logo. */
   --brand-azul-profundo: #28467e;
+  /* Tinta sobre superficies de marca (azul, verde oscuro). Tampoco cambia:
+     esas superficies siguen siendo oscuras en ambos temas. */
+  --ink-on-brand: #FFFFFF;
+  /* Azul medio como SUPERFICIE (insignias, numeros de modulo). El token
+     --color-azul se aclara en tema oscuro porque ahi hace de enlace, asi que
+     no sirve para pintar fondos con texto blanco encima. */
+  --brand-azul: #1F4E8C;
+  --color-verde-oscuro: #2A7A42;
 
   /* Superficies semanticas. --color-blanco-calido sigue siendo el fondo de
      pagina y --color-azul-profundo la tinta principal; ambos se redefinen en
@@ -408,7 +416,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .element-num {
   background: var(--brand-azul-profundo);
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
   width: 44px;
   height: 44px;
   display: inline-flex;
@@ -455,8 +463,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .conocimientos li::before {
   content: counter(cono);
-  background: var(--color-azul);
-  color: var(--color-blanco-calido);
+  background: var(--brand-azul);
+  color: var(--ink-on-brand);
   font-weight: 700;
   font-size: 0.82rem;
   width: 28px;
@@ -567,7 +575,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .process-step__badge {
   background: var(--brand-azul-profundo);
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
   display: grid;
   place-items: center;
   font-weight: 800;
@@ -635,7 +643,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .process-step__actor--evaluador {
   background: var(--brand-azul-profundo);
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
 }
 
 .process-step__actor--institucional {
@@ -683,7 +691,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .sub-nav a.active {
   background: var(--brand-azul-profundo);
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
 }
 
 /* ---------- Tablas (con encabezado azul profundo) ---------- */
@@ -700,7 +708,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .prose-table thead {
   background: var(--brand-azul-profundo);
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
 }
 
 .prose-table th,
@@ -906,8 +914,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 .glossary-toolkit__letter:hover {
-  background: var(--color-azul);
-  color: #FFFFFF;
+  background: var(--brand-azul);
+  color: var(--ink-on-brand);
   border-color: var(--color-azul);
   transform: scale(1.06);
 }
@@ -1062,7 +1070,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .audio-narration__toggle {
   background: var(--brand-azul-profundo);
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
   border: none;
   border-radius: var(--radius-pill);
   padding: 10px 22px;
@@ -1599,7 +1607,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .quiz__feedback--correct {
   background: var(--color-tag-cono-bg);
   border-left: 4px solid var(--color-verde);
-  color: #1E6B36;
+  color: var(--color-tag-cono-text);
 }
 
 .quiz__feedback--wrong {
@@ -1961,8 +1969,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   padding: 0 10px;
   display: grid;
   place-items: center;
-  background: var(--color-azul);
-  color: #FAFCFF;
+  background: var(--brand-azul);
+  color: var(--ink-on-brand);
   border-radius: var(--radius-pill);
   font-weight: 700;
   font-size: 0.92rem;
@@ -2313,8 +2321,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 .lesson-tab-item.is-active .lesson-tab-item__indicator {
-  background: var(--color-azul);
-  color: #FAFCFF;
+  background: var(--brand-azul);
+  color: var(--ink-on-brand);
   transform: translateY(-50%) scale(1.08);
   box-shadow: 0 0 0 4px rgba(31, 78, 140, 0.18);
 }
@@ -2433,8 +2441,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 .lesson-tabs__nav-btn {
-  background: var(--color-azul);
-  color: #FAFCFF;
+  background: var(--brand-azul);
+  color: var(--ink-on-brand);
   border: 0;
   border-radius: var(--radius-pill);
   padding: 10px 22px;
@@ -2637,7 +2645,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 /* ---------- Indicador de progreso del Manual Maestro ---------- */
 .maestro-progress {
   background: var(--brand-azul-profundo);
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
   padding: 8px 24px;
   font-size: 0.82rem;
   text-align: center;
@@ -2743,7 +2751,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   width: 56px;
   height: 56px;
   background: var(--brand-azul-profundo);
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -2905,7 +2913,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .btn-aliado {
   background: var(--brand-azul-profundo);
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
 }
 
 .hero-actions {
@@ -3777,7 +3785,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   font-size: 0.85rem;
   margin-bottom: 10px;
 }
-.scenario-decision__badge--ok { background: var(--color-verde); color: white; }
+.scenario-decision__badge--ok { background: var(--color-verde-oscuro); color: var(--ink-on-brand); }
 .scenario-decision__badge--risk { background: var(--color-amarillo); color: var(--brand-azul-profundo); }
 .scenario-decision__badge--wrong { background: #DC2626; color: white; }
 .scenario-decision__explain { margin: 0 0 8px; color: var(--color-azul-profundo); line-height: 1.55; }
@@ -3989,7 +3997,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   font-size: 0.85rem;
   margin-bottom: 8px;
 }
-.swipe-decide__badge--ok { background: var(--color-verde); color: white; }
+.swipe-decide__badge--ok { background: var(--color-verde-oscuro); color: var(--ink-on-brand); }
 .swipe-decide__badge--wrong { background: #DC2626; color: white; }
 .swipe-decide__explain {
   margin: 6px 0 12px;
@@ -4212,7 +4220,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .drag-sort__item[data-state="correct"] {
   background: var(--color-tag-cono-bg);
   border-color: var(--color-verde);
-  color: #14532D;
+  color: var(--color-tag-cono-text);
 }
 .drag-sort__item[data-state="wrong"] {
   background: #FEE2E2;
@@ -4347,7 +4355,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 .case-lab__note {
   margin-top: 16px;
-  background: #FFF7D6;
+  background: var(--color-amarillo-suave);
   border-left: 4px solid var(--color-amarillo);
   padding: 12px 16px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
