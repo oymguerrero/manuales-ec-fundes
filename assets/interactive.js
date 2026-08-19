@@ -2268,11 +2268,55 @@
       });
     }
 
-    courseBar.innerHTML = contextHTML();
-    const insertionPoint = document.querySelector('.sub-nav') || document.querySelector('.site-header');
-    if (insertionPoint) insertionPoint.insertAdjacentElement('afterend', courseBar);
-    else document.body.insertBefore(courseBar, document.body.firstChild);
-    marcarSubNav();
+    // En la portada del curso la sub-nav se oculta (ver styles.css) y en su
+    // lugar va este indice, que ademas de enlazar muestra el avance real.
+    function indiceCursoHTML() {
+      const TIPO = { inicio: 'Presentación', leccion: 'Tema', evaluacion: 'Evaluación',
+                     preparacion: 'Preparación', apoyo: 'Consulta' };
+      const filas = entry.course.pages.map(function (page) {
+        const st = learningStatusFor(page, entry.page.path);
+        return '<li class="course-index__item">' +
+          '<a class="course-index__link" href="' + siteHref(page.path) + '"' +
+            (page.path === entry.page.path ? ' aria-current="page"' : '') + '>' +
+            '<span class="course-index__order" aria-hidden="true">' + (page.index + 1) + '</span>' +
+            '<span class="course-index__body">' +
+              '<span class="course-index__title">' + escapeHTML(page.title) + '</span>' +
+              '<span class="course-index__type">' + (TIPO[page.type] || 'Tema') + '</span>' +
+            '</span>' +
+            '<span class="learning-status learning-status--' + st.key + ' course-index__status">' +
+              st.label + '</span>' +
+          '</a></li>';
+      }).join('');
+      const stats = getCourseStats(entry.course);
+      return '<h2 class="course-index__heading">Índice del curso</h2>' +
+        '<p class="course-index__summary">' + entry.course.pages.length + ' temas · ' +
+          stats.required.completed + ' de ' + stats.required.total + ' revisados</p>' +
+        '<ol class="course-index__list">' + filas + '</ol>';
+    }
+
+    function montarIndiceCurso() {
+      if (!main) return;
+      const cont = main.querySelector(':scope > .container') || main;
+      let nav = cont.querySelector('.course-index');
+      if (!nav) {
+        nav = document.createElement('nav');
+        nav.className = 'course-index';
+        nav.setAttribute('aria-label', 'Índice del curso');
+        cont.appendChild(nav);
+      }
+      nav.innerHTML = indiceCursoHTML();
+    }
+
+    const esPortada = entry.page.type === 'inicio';
+    if (esPortada) {
+      montarIndiceCurso();
+    } else {
+      courseBar.innerHTML = contextHTML();
+      const insertionPoint = document.querySelector('.sub-nav') || document.querySelector('.site-header');
+      if (insertionPoint) insertionPoint.insertAdjacentElement('afterend', courseBar);
+      else document.body.insertBefore(courseBar, document.body.firstChild);
+      marcarSubNav();
+    }
 
     // La barra de puntos del HTML dice lo mismo que esta barra de contexto
     // ("Tema N de M" + avance), así que sobra en cuanto el shell existe. Se
@@ -2281,7 +2325,7 @@
     const dotProgress = document.querySelector('.maestro-progress');
     if (dotProgress) dotProgress.remove();
 
-    if (main) {
+    if (main && !esPortada) {
       const container = main.querySelector(':scope > .container') || main;
       const legacyNavigation = container.querySelector('.lesson-nav');
       if (legacyNavigation) legacyNavigation.hidden = true;
@@ -2301,6 +2345,7 @@
     }
 
     window.addEventListener('mi-compania:progress-changed', function () {
+      if (esPortada) { montarIndiceCurso(); return; }
       courseBar.innerHTML = contextHTML();
       marcarSubNav();
     });
