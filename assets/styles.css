@@ -3245,7 +3245,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   /* Franja de marca: azul profundo en ambos temas, por eso usa el token de
      marca literal y no la superficie semantica. */
   background: var(--brand-azul-profundo);
-  color: rgba(250, 252, 255, 0.92);
+  color: #F2F6FC;
   padding: 40px 24px 30px;
   font-size: 0.9rem;
 }
@@ -3315,15 +3315,16 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .site-footer .footer-legal {
   margin-top: 20px;
   padding-top: 16px;
-  border-top: 1px solid rgba(250, 252, 255, 0.22);
+  border-top: 1px solid rgba(250, 252, 255, 0.30);
 }
 .site-footer .footer-legal p {
   margin: 0;
   font-size: 0.84rem;
   line-height: 1.6;
-  /* 0.72 daba 5.55:1: pasa AA pero se leia deslavado en texto chico sobre el
-     azul saturado. A 0.90 sube a 7.67:1. */
-  color: rgba(250, 252, 255, 0.90);
+  /* Color solido, no alpha: el gris translucido se leia deslavado sobre el
+     azul saturado. #DCE6F5 da 7.85:1 y se distingue del blanco del cuerpo
+     sin perder legibilidad. */
+  color: #DCE6F5;
 }
 .site-footer a {
   color: var(--color-amarillo);
@@ -3331,70 +3332,36 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .site-footer a:hover { text-decoration: underline; }
 
-/* ---------- Indice del curso (portada de cada ruta) ---------- */
-.course-index {
-  margin: 52px 0 8px;
-  padding-top: 26px;
-  border-top: 1px solid var(--color-gris-linea);
-}
-.course-index__heading {
-  margin: 0;
-  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-  font-weight: 700;
-  color: var(--color-azul-profundo);
-}
-.course-index__summary {
-  margin: 4px 0 16px;
-  font-size: 0.86rem;
-  color: var(--color-gris-texto);
-}
-.course-index__list { list-style: none; margin: 0; padding: 0; }
-.course-index__item + .course-index__item { border-top: 1px solid var(--color-gris-linea); }
-.course-index__link {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 14px;
-  min-height: 60px;
-  padding: 10px 12px;
-  border-radius: var(--radius-sm);
-  color: inherit;
-  text-decoration: none;
-}
-.course-index__link:hover { background: var(--color-azul-suave); text-decoration: none; }
-.course-index__link:focus-visible { outline: 3px solid var(--color-amarillo); outline-offset: -3px; }
-.course-index__link[aria-current="page"] { background: var(--color-amarillo-suave); }
-.course-index__order {
-  display: grid;
+/* ---------- Conmutador de tema ---------- */
+.theme-toggle {
+  display: inline-grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  border: 2px solid var(--color-gris-linea);
+  width: 40px;
+  height: 40px;
+  margin-left: 6px;
+  padding: 0;
+  border: 1.5px solid var(--color-gris-linea);
   border-radius: 50%;
-  font-weight: 800;
+  background: transparent;
   color: var(--color-azul-profundo);
+  cursor: pointer;
 }
-.course-index__item:has(.learning-status--complete) .course-index__order {
-  border-color: var(--color-verde);
-  background: var(--color-verde);
-  color: #fff;
-}
-.course-index__body { display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
-.course-index__title { font-weight: 600; color: var(--color-azul-profundo); }
-.course-index__type { font-size: 0.78rem; color: var(--color-gris-texto); }
-.course-index__status { white-space: nowrap; }
-@media (max-width: 640px) {
-  .course-index__link { grid-template-columns: 30px minmax(0, 1fr); gap: 10px; padding: 12px 8px; }
-  .course-index__order { width: 30px; height: 30px; }
-  .course-index__status { grid-column: 2; justify-self: start; margin-top: 4px; }
-}
+.theme-toggle:hover { background: var(--color-azul-suave); border-color: var(--color-azul-claro); }
+.theme-toggle:focus-visible { outline: 3px solid var(--color-amarillo); outline-offset: 2px; }
+.theme-toggle__icon { width: 20px; height: 20px; grid-area: 1 / 1; }
+/* Se muestra el icono de la accion disponible, no el del estado actual. */
+.theme-toggle .theme-toggle__icon--sol { display: none; }
+.theme-toggle[aria-pressed="true"] .theme-toggle__icon--sol { display: block; }
+.theme-toggle[aria-pressed="true"] .theme-toggle__icon--luna { display: none; }
 
 /* ---------- Tema oscuro ---------- */
-/* Solo se redefinen tokens: la hoja no duplica reglas. Los colores de marca
-   (amarillo, naranja, verde y --brand-azul-profundo) se mantienen; lo que
-   cambia son superficies, tinta y bordes. */
+/* Tres estados: "auto" sigue al sistema, y la eleccion manual del usuario lo
+   sobreescribe con data-theme en <html>. Los dos bloques de tokens son
+   identicos a proposito; si cambia uno, hay que cambiar el otro. */
+
+/* 1. Automatico: el sistema pide oscuro y el usuario no ha forzado claro. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --color-blanco-calido: #0F1A2E;   /* Fondo de pagina */
     --surface-raised:      #16233D;   /* Tarjetas */
     --surface-muted:       #1C2A44;   /* Recuadros grises */
@@ -3425,6 +3392,38 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   /* Las imagenes de contenido pierden algo de brillo para no deslumbrar. */
   .img-escena, .img-caso img { filter: brightness(0.9); }
 }
+
+/* 2. Manual: el usuario eligio oscuro explicitamente. */
+:root[data-theme="dark"] {
+    --color-blanco-calido: #0F1A2E;   /* Fondo de pagina */
+    --surface-raised:      #16233D;   /* Tarjetas */
+    --surface-muted:       #1C2A44;   /* Recuadros grises */
+    --border-muted:        #475B7C;
+
+    --color-azul-profundo: #E8EEF7;   /* Tinta principal (invertida) */
+    --color-gris-texto:    #B3C4DA;   /* Tinta secundaria */
+    --color-gris-linea:    #2E4162;   /* Bordes suaves */
+
+    --color-azul:          #86B9EC;   /* Enlaces y jerarquia intermedia */
+    --color-azul-claro:    #7FC0F0;
+    --color-azul-suave:    #172642;   /* Paneles suaves */
+    --color-amarillo-suave:     #3A2E12;
+    --color-amarillo-mas-claro: #2A2210;
+
+    --color-tag-comp-bg:   #172642;
+    --color-tag-comp-text: #9CC6F2;
+    --color-tag-apli-bg:   #3A2E12;
+    --color-tag-apli-text: #F0C972;
+    --color-tag-cono-bg:   #14301F;
+    --color-tag-cono-text: #7FCB99;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+/* El header deja de ser una franja blanca y toma la superficie elevada. */
+.site-header { background: var(--surface-raised); }
+/* Las imagenes de contenido pierden algo de brillo para no deslumbrar. */
+.img-escena, .img-caso img { filter: brightness(0.9); }
 
 /* ---------- Back link ---------- */
 .back-link {
@@ -4898,10 +4897,6 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 /* ---------- Composición LMS: lecciones internas compactas ---------- */
-/* En la portada la sub-nav se sustituye por .course-index, que ademas muestra
-   avance. En las paginas internas se conserva: es la unica forma de saltar
-   directo a otro tema sin volver al inicio. */
-.body--learning.body--course-home .sub-nav { display: none; }
 .body--learning.body--lesson .hero {
   min-height: 0;
   padding: 26px 24px 28px;

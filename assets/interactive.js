@@ -2124,6 +2124,85 @@
     return { key: 'pending', label: 'No iniciado' };
   }
 
+  // ---------- Conmutador de tema claro / oscuro ----------
+  // Tres estados: sin eleccion se sigue al sistema; al pulsar se fija claro u
+  // oscuro con data-theme en <html> y se recuerda en este navegador.
+  const THEME_KEY = 'mi-compania-theme::v1';
+
+  function temaGuardado() {
+    try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; }
+  }
+
+  function sistemaEnOscuro() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function temaEfectivo() {
+    return temaGuardado() || (sistemaEnOscuro() ? 'dark' : 'light');
+  }
+
+  function pintarLogos(tema) {
+    // El <picture> del header resuelve por prefers-color-scheme, que no conoce
+    // la eleccion manual. Se alinean <source> e <img> al tema efectivo para que
+    // el resultado sea correcto gane cual gane; sin JS el <source> sigue
+    // sirviendo el comportamiento automatico.
+    document.querySelectorAll('.site-header .brand picture').forEach(function (pic) {
+      const img = pic.querySelector('img');
+      if (!img) return;
+      const base = img.getAttribute('src').replace('-blanco', '').replace(/\.png$/, '');
+      const ruta = base + (tema === 'dark' ? '-blanco' : '') + '.png';
+      img.setAttribute('src', ruta);
+      pic.querySelectorAll('source').forEach(function (src) { src.setAttribute('srcset', ruta); });
+    });
+  }
+
+  function aplicarTema(tema, persistir) {
+    const raiz = document.documentElement;
+    if (tema) raiz.setAttribute('data-theme', tema);
+    else raiz.removeAttribute('data-theme');
+    if (persistir) {
+      try { tema ? localStorage.setItem(THEME_KEY, tema) : localStorage.removeItem(THEME_KEY); } catch (e) {}
+    }
+    pintarLogos(temaEfectivo());
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      const oscuro = temaEfectivo() === 'dark';
+      btn.setAttribute('aria-pressed', String(oscuro));
+      btn.setAttribute('title', oscuro ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+      const etiqueta = btn.querySelector('.theme-toggle__label');
+      if (etiqueta) etiqueta.textContent = oscuro ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro';
+    });
+  }
+
+  const ICONO_SOL = '<svg class="theme-toggle__icon theme-toggle__icon--sol" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.4v2.6M12 19v2.6M4.2 12H1.6M22.4 12h-2.6M6.1 6.1 4.3 4.3M19.7 19.7l-1.8-1.8M17.9 6.1l1.8-1.8M4.3 19.7l1.8-1.8"/></g></svg>';
+  const ICONO_LUNA = '<svg class="theme-toggle__icon theme-toggle__icon--luna" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.6 14.4A8.6 8.6 0 0 1 9.6 3.4a8.8 8.8 0 1 0 11 11Z" fill="currentColor"/></svg>';
+
+  function initThemeToggle() {
+    // Se aplica el tema guardado antes de dibujar el boton, para no parpadear.
+    const guardado = temaGuardado();
+    if (guardado) document.documentElement.setAttribute('data-theme', guardado);
+
+    document.querySelectorAll('.site-header nav[aria-label="Navegación principal"]').forEach(function (nav) {
+      if (nav.querySelector('.theme-toggle')) return;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'theme-toggle';
+      btn.innerHTML = ICONO_SOL + ICONO_LUNA + '<span class="theme-toggle__label visually-hidden"></span>';
+      btn.addEventListener('click', function () {
+        aplicarTema(temaEfectivo() === 'dark' ? 'light' : 'dark', true);
+      });
+      nav.appendChild(btn);
+    });
+
+    if (window.matchMedia) {
+      const mq = window.matchMedia('(prefers-color-scheme: dark)');
+      const alCambiar = function () { if (!temaGuardado()) aplicarTema(null, false); };
+      if (mq.addEventListener) mq.addEventListener('change', alCambiar);
+      else if (mq.addListener) mq.addListener(alCambiar);
+    }
+
+    aplicarTema(guardado, false);
+  }
+
   function initLearningShell() {
     const entry = currentLearningEntry();
     if (!document.querySelector('.skip-link')) {
@@ -2268,54 +2347,17 @@
       });
     }
 
-    // En la portada del curso la sub-nav se oculta (ver styles.css) y en su
-    // lugar va este indice, que ademas de enlazar muestra el avance real.
-    function indiceCursoHTML() {
-      const TIPO = { inicio: 'Presentación', leccion: 'Tema', evaluacion: 'Evaluación',
-                     preparacion: 'Preparación', apoyo: 'Consulta' };
-      const filas = entry.course.pages.map(function (page) {
-        const st = learningStatusFor(page, entry.page.path);
-        return '<li class="course-index__item">' +
-          '<a class="course-index__link" href="' + siteHref(page.path) + '"' +
-            (page.path === entry.page.path ? ' aria-current="page"' : '') + '>' +
-            '<span class="course-index__order" aria-hidden="true">' + (page.index + 1) + '</span>' +
-            '<span class="course-index__body">' +
-              '<span class="course-index__title">' + escapeHTML(page.title) + '</span>' +
-              '<span class="course-index__type">' + (TIPO[page.type] || 'Tema') + '</span>' +
-            '</span>' +
-            '<span class="learning-status learning-status--' + st.key + ' course-index__status">' +
-              st.label + '</span>' +
-          '</a></li>';
-      }).join('');
-      const stats = getCourseStats(entry.course);
-      return '<h2 class="course-index__heading">Índice del curso</h2>' +
-        '<p class="course-index__summary">' + entry.course.pages.length + ' temas · ' +
-          stats.required.completed + ' de ' + stats.required.total + ' revisados</p>' +
-        '<ol class="course-index__list">' + filas + '</ol>';
-    }
-
-    function montarIndiceCurso() {
-      if (!main) return;
-      const cont = main.querySelector(':scope > .container') || main;
-      let nav = cont.querySelector('.course-index');
-      if (!nav) {
-        nav = document.createElement('nav');
-        nav.className = 'course-index';
-        nav.setAttribute('aria-label', 'Índice del curso');
-        cont.appendChild(nav);
-      }
-      nav.innerHTML = indiceCursoHTML();
-    }
 
     const esPortada = entry.page.type === 'inicio';
-    if (esPortada) {
-      montarIndiceCurso();
-    } else {
+    // La sub-nav es la unica navegacion de temas en todas las paginas. En la
+    // portada no se agrega barra de contexto: el propio contenido de la pagina
+    // ya presenta y enlaza los temas del curso.
+    marcarSubNav();
+    if (!esPortada) {
       courseBar.innerHTML = contextHTML();
       const insertionPoint = document.querySelector('.sub-nav') || document.querySelector('.site-header');
       if (insertionPoint) insertionPoint.insertAdjacentElement('afterend', courseBar);
       else document.body.insertBefore(courseBar, document.body.firstChild);
-      marcarSubNav();
     }
 
     // La barra de puntos del HTML dice lo mismo que esta barra de contexto
@@ -2345,9 +2387,9 @@
     }
 
     window.addEventListener('mi-compania:progress-changed', function () {
-      if (esPortada) { montarIndiceCurso(); return; }
-      courseBar.innerHTML = contextHTML();
       marcarSubNav();
+      if (esPortada) return;
+      courseBar.innerHTML = contextHTML();
     });
   }
 
@@ -3047,6 +3089,7 @@
     initEach('.audio-narration', initAudioNarration);
     initEach('.lesson-tabs', normalizeLessonWorkspace);
     initEach('.lesson-tabs', initLessonTabs);
+    try { initThemeToggle(); } catch (error) { console.error('No se pudo iniciar el conmutador de tema', error); }
     try { initLearningShell(); } catch (error) { console.error('No se pudo iniciar el entorno LMS', error); }
     initEach('.progress-skill', initProgressSkill);
     initEach('.glossary--rich', initGlossaryRich);
