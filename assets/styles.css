@@ -3273,10 +3273,19 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   border: 0;
 }
 
-/* Lockup de apoyo institucional. La imagen ya viene en blanco/color sobre
-   transparencia, asi que no necesita recuadro sobre el azul del footer. */
+/* Lockup "with support from Google.org". Va sobre campo claro porque el arte
+   es multicolor con texto gris: sobre el azul del footer daria 1.53:1, y los
+   lineamientos de Google no permiten recolorear la marca. Si mas adelante se
+   consigue la variante monocromatica blanca, se retira el campo. */
+.site-footer .footer-support {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  background: #fff;
+  border-radius: 10px;
+}
 .site-footer .footer-support img {
-  height: 42px;
+  height: 38px;
   width: auto;
   display: block;
   max-width: min(220px, 60vw);
