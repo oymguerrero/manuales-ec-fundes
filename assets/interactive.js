@@ -567,7 +567,7 @@
       pages: [
         ['estandar-a/index.html', 'Bienvenida y contexto', 'estandar-a-bienvenida-contexto', 'inicio'],
         ['estandar-a/elemento-1.html', 'Elemento 1 · Planear', 'estandar-a-elemento-1', 'leccion'],
-        ['estandar-a/elemento-2.html', 'Elemento 2 · Ejecutar', 'estandar-a-elemento-2', 'leccion'],
+        ['estandar-a/elemento-2.html', 'Elemento 2 · Adoptar', 'estandar-a-elemento-2', 'leccion'],
         ['estandar-a/elemento-3.html', 'Elemento 3 · Evaluar', 'estandar-a-elemento-3', 'leccion'],
         ['estandar-a/ruta-preparacion.html', 'Ruta de preparación', 'estandar-a-ruta-preparacion', 'preparacion'],
         ['estandar-a/recursos.html', 'FAQ y recursos', 'estandar-a-recursos', 'apoyo']
