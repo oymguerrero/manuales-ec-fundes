@@ -30,7 +30,7 @@ Hablamos como un amigo que sabe: claro, humano, útil y sin tecnicismos innecesa
 
 ### Atribución institucional
 
-Mi CompañIA es **una iniciativa de FUNDES** (Latinoamérica) con apoyo de Google.org. En materiales formales se usa la variante del logo con atribución "Una iniciativa de FUNDES" (ver §18.2).
+Mi CompañIA es **una iniciativa de FUNDES México** con apoyo de Google.org. En materiales formales se usa la variante del logo con atribución "Una iniciativa de FUNDES" (ver §18.2).
 
 ---
 
@@ -528,7 +528,7 @@ Paso a paso, a tu ritmo, con compañIA.
 ### Contenido
 
 * Logo Mi CompañIA
-* FUNDES Latinoamérica
+* FUNDES México
 * Google.org
 * Contacto
 * Redes sociales
@@ -536,7 +536,7 @@ Paso a paso, a tu ritmo, con compañIA.
 ### Copy final
 
 ```
-Mi CompañIA es una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org.
+Mi CompañIA es una iniciativa de FUNDES México, desarrollada en conjunto con diferentes empresas representativas del sector y con el apoyo de Google.org.
 ```
 
 ---
@@ -1001,6 +1001,10 @@ Estado de la biblioteca compartida en `assets/styles.css` + `assets/interactive.
 | **Diagram Mermaid** (`.diagram-mermaid`) | Comprender | ✅ (flowcharts con tema Mi CompañIA) | Mermaid 10 (~140 KB) |
 | **Chart block** (`.chart-block`) | Analizar | ✅ (paleta brand por default; doughnut, bar, line, radar) | Chart.js 4 (~25 KB) |
 | **Progress skill** (`.progress-skill`) | Gamificación | ✅ (dashboard que lee `mi-compania-*` de localStorage; export JSON; reset) | — |
+| **Conmutador de tema** (`.theme-toggle`) | Preferencia de usuario | ✅ (tres estados: sigue al sistema, o claro/oscuro fijados con `data-theme` y recordados en localStorage) | — |
+| **Barra de contexto de curso** (`.learning-context`) | Orientación | ✅ (migas, "Tema N de M" y avance; solo en páginas internas) | — |
+| **Paginación de curso** (`.course-pagination`) | Orientación | ✅ (tema anterior/siguiente; solo en páginas internas) | — |
+| **Estado de tema en la sub-nav** (`.sub-nav__status`) | Progreso | ✅ (✓ sobre los temas ya revisados; sustituyó al mapa del curso en diálogo) | — |
 | Comparison slider | Analizar | ⏳ pendiente | — |
 | Hotspot diagram | Recordar/Aplicar | ⏳ pendiente | — |
 | Microvideo embed | variable | ⏳ pendiente | — |
@@ -1403,6 +1407,25 @@ Pendiente:
 - [ ] Reemplazar SVG actuales con la versión vectorial oficial del diseñador cuando esté lista.
 
 ---
+
+### 18.6 Co-branding con aliados (lockups de terceros)
+
+Cuando en una misma franja conviven el logo de Mi CompañIA y la marca de un aliado, manda esta regla: **la marca anfitriona nunca pesa menos que la invitada**.
+
+Caso canónico implementado: el lockup "with support from Google.org" en el footer (`.footer-support`).
+
+| Decisión | Valor | Por qué |
+|---|---|---|
+| Alto del logo Mi CompañIA | 46 px | Marca anfitriona, referencia |
+| Alto del bloque del aliado | 50 px (imagen 34 px + 8 px de padding) | Queda a la par, no por encima |
+| Fondo del bloque | `#fff` **fijo, fuera del sistema de temas** | Ver abajo |
+| Radio | `var(--radius-sm)` | Coherencia con el resto |
+
+**Por qué el fondo va en blanco fijo y no en token.** El lockup de Google.org es multicolor y su línea "with support from" es gris `#70767A`. Sobre el azul de marca `#28467e` ese gris da **1.53:1** y el azul de Google **2.60:1**: ilegibles. Sobre blanco da 4.60:1 y pasa AA. Si el fondo usara `--surface-raised`, en tema oscuro volvería a fallar.
+
+**No se recolorea la marca del aliado.** Los lineamientos de Google prohíben teñir su logo. La salida limpia sobre fondo oscuro es su variante monocromática blanca oficial; mientras no se tenga, el campo claro es lo correcto. Lo mismo aplica a cualquier otro aliado: se pide su variante para fondo oscuro antes de improvisar.
+
+**Contraste**: el bloque del aliado no exime de verificar el resto de la franja. Los enlaces y textos alrededor siguen la regla general de ≥4.5:1.
 
 ## 19. Elementos gráficos distintivos
 

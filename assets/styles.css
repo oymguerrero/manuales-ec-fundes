@@ -3354,12 +3354,47 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   line-height: 1.6;
 }
 .site-footer .footer-about strong { color: #fff; font-weight: 700; }
+/* Enlaces institucionales y redes. Van entre la atribucion y el aviso legal,
+   con icono + texto: el icono solo no basta para identificar el destino. */
+.site-footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  margin-top: 20px;
+}
+.site-footer .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: #F2F6FC;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+.site-footer .footer-links a:hover { color: var(--color-amarillo); text-decoration: underline; }
+.site-footer .footer-links svg { width: 19px; height: 19px; flex-shrink: 0; }
 /* Aviso de derechos: renglon aparte, separado por una linea sutil. */
 .site-footer .footer-legal {
   margin-top: 28px;
   padding-top: 16px;
   border-top: 1px solid rgba(250, 252, 255, 0.30);
 }
+.site-footer .footer-legal__enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 22px;
+  margin: 0 0 12px;
+}
+.site-footer .footer-legal__enlaces a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: #DCE6F5;
+  font-size: 0.84rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-footer .footer-legal__enlaces a:hover { color: var(--color-amarillo); }
 .site-footer .footer-legal p {
   margin: 0;
   font-size: 0.84rem;

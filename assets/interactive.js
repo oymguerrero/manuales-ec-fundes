@@ -599,7 +599,7 @@
       ]
     },
     {
-      id: 'estandar-d', title: 'Soluciones de transformación digital', shortTitle: 'Ruta D',
+      id: 'estandar-d', title: 'Transformación digital con IA', shortTitle: 'Ruta D',
       pages: [
         ['estandar-d/index.html', 'Bienvenida y contexto', 'estandar-d-bienvenida-contexto', 'inicio'],
         ['estandar-d/elemento-1.html', 'Elemento 1 · Diagnosticar', 'estandar-d-elemento-1', 'leccion'],
