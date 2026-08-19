@@ -563,7 +563,7 @@
       ]
     },
     {
-      id: 'estandar-a', title: 'Implementar IA', shortTitle: 'Ruta A',
+      id: 'estandar-a', title: 'Adopción de IA en procesos', shortTitle: 'Ruta A',
       pages: [
         ['estandar-a/index.html', 'Bienvenida y contexto', 'estandar-a-bienvenida-contexto', 'inicio'],
         ['estandar-a/elemento-1.html', 'Elemento 1 · Planear', 'estandar-a-elemento-1', 'leccion'],
@@ -574,7 +574,7 @@
       ]
     },
     {
-      id: 'estandar-b', title: 'Desarrollar con IA', shortTitle: 'Ruta B',
+      id: 'estandar-b', title: 'Soluciones comerciales con IA', shortTitle: 'Ruta B',
       pages: [
         ['estandar-b/index.html', 'Bienvenida y contexto', 'estandar-b-bienvenida-contexto', 'inicio'],
         ['estandar-b/elemento-1.html', 'Elemento 1 · Identificar', 'estandar-b-elemento-1', 'leccion'],
@@ -1333,7 +1333,7 @@
           '<div class="print-cover__header">' +
             '<img src="' + logoPath + '" alt="Mi CompañIA" />' +
             '<div>' +
-              '<h1 class="print-cover__title">Lista de verificación · Implementar IA</h1>' +
+              '<h1 class="print-cover__title">Lista de verificación · Adopción de IA en procesos</h1>' +
               '<p class="print-cover__subtitle">' + pageTitle + ' · Manual del Aspirante</p>' +
             '</div>' +
             '<div class="print-cover__date">Generado<br>' + today + '</div>' +
@@ -2574,7 +2574,7 @@
   //   <script type="application/json" class="diagnostic-multi__data">
   //     {
   //       "categories": [
-  //         {"id":"A", "label":"Implementar IA", "href":"...", "available":true,
+  //         {"id":"A", "label":"Adopción de IA en procesos", "href":"...", "available":true,
   //          "summary":"...", "match_label":"alta compatibilidad"},
   //         {"id":"B", "label":"...", "available":false, ...}
   //       ],
