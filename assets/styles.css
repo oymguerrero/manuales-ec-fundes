@@ -3344,35 +3344,41 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   max-width: min(220px, 60vw);
 }
 /* Atribucion institucional. */
-.site-footer .footer-about {
-  margin-top: 26px;
+/* Cuerpo en dos columnas: la atribucion pesa mas que los enlaces, por eso
+   2fr contra 1fr. En movil se apilan. */
+.site-footer .footer-main {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 24px 48px;
+  margin-top: 28px;
+  align-items: start;
 }
-.site-footer .footer-about p {
-  /* Sin max-width: el .container ya limita a 1080px. Un tope en ch sobre texto
-     chico daba una columna de media pagina y se leia como parrafo suelto. */
+.site-footer .footer-about {
   margin: 0;
   line-height: 1.6;
+  max-width: 62ch;
 }
 .site-footer .footer-about strong { color: #fff; font-weight: 700; }
-/* Enlaces institucionales y redes. Van entre la atribucion y el aviso legal,
-   con icono + texto: el icono solo no basta para identificar el destino. */
-.site-footer .footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 26px;
-  margin-top: 20px;
+.site-footer .footer-links__title {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-amarillo);
 }
+.site-footer .footer-links ul { list-style: none; margin: 0; padding: 0; }
 .site-footer .footer-links a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 44px;
+  gap: 9px;
+  min-height: 40px;
   color: #F2F6FC;
   font-size: 0.92rem;
   text-decoration: none;
 }
 .site-footer .footer-links a:hover { color: var(--color-amarillo); text-decoration: underline; }
-.site-footer .footer-links svg { width: 19px; height: 19px; flex-shrink: 0; }
+.site-footer .footer-links svg { width: 18px; height: 18px; flex-shrink: 0; }
 /* Aviso de derechos: renglon aparte, separado por una linea sutil. */
 .site-footer .footer-legal {
   margin-top: 28px;
@@ -3399,9 +3405,6 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   margin: 0;
   font-size: 0.84rem;
   line-height: 1.5;
-  /* Color solido, no alpha: el gris translucido se leia deslavado sobre el
-     azul saturado. #DCE6F5 da 7.85:1 y se distingue del blanco del cuerpo
-     sin perder legibilidad. */
   color: #DCE6F5;
 }
 .site-footer a {
