@@ -3249,6 +3249,15 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   padding: 40px 24px 30px;
   font-size: 0.9rem;
 }
+/* La regla global `p { color: var(--color-gris-texto) }` gana por especificidad
+   sobre el color heredado del footer y dejaba los parrafos en gris oscuro
+   (1.23:1) sobre el azul. Se restituye la herencia para todo el texto del
+   footer; las excepciones declaran su color mas abajo. */
+.site-footer p,
+.site-footer li,
+.site-footer span,
+.site-footer dd,
+.site-footer dt { color: inherit; }
 .site-footer .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -3518,7 +3527,16 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   .element, .ec-card { padding: 22px; }
   .stat .num { font-size: 1.7rem; }
   .site-footer { padding: 28px 20px; }
-  .site-footer .container { flex-direction: column; align-items: flex-start; text-align: left; }
+  /* La regla global `p { color: var(--color-gris-texto) }` gana por especificidad
+   sobre el color heredado del footer y dejaba los parrafos en gris oscuro
+   (1.23:1) sobre el azul. Se restituye la herencia para todo el texto del
+   footer; las excepciones declaran su color mas abajo. */
+.site-footer p,
+.site-footer li,
+.site-footer span,
+.site-footer dd,
+.site-footer dt { color: inherit; }
+.site-footer .container { flex-direction: column; align-items: flex-start; text-align: left; }
 
   /* Lesson tabs ya son responsive — solo refinamientos */
   .lesson-tabs__header {
