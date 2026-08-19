@@ -31,6 +31,15 @@
      --color-azul se aclara en tema oscuro porque ahi hace de enlace, asi que
      no sirve para pintar fondos con texto blanco encima. */
   --brand-azul: #1F4E8C;
+  /* Callouts: marcadores tipologicos. Cada variante conserva su hue en los dos
+     temas (ambar, verde, azul, morado, naranja); lo que cambia es cual de los
+     dos extremos hace de fondo y cual de tinta. */
+  --callout-important-bg: #FFF7E6;  --callout-important-ink: #8A5D00;
+  --callout-tip-bg:       #ECF7EF;  --callout-tip-ink:       #1E6B36;
+  --callout-example-bg:   #EAF4FF;  --callout-example-ink:   #1F4E8C;
+  --callout-template-bg:  #F5EFFB;  --callout-template-ink:  #5B21B6;
+  --callout-reflection-bg:#FFF3E6;  --callout-reflection-ink:#A64F00;
+  --estado-negativo:      #9F2929;
   --color-verde-oscuro: #2A7A42;
 
   /* Superficies semanticas. --color-blanco-calido sigue siendo el fondo de
@@ -157,8 +166,8 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(135deg, var(--color-azul-profundo) 0%, var(--color-azul) 100%);
-  color: var(--color-blanco-calido);
+  background: linear-gradient(135deg, var(--brand-azul-profundo) 0%, var(--brand-azul) 100%);
+  color: var(--ink-on-brand);
   padding: 96px 24px 88px;
   position: relative;
   overflow: hidden;
@@ -373,8 +382,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 /* Variante "Diagnóstico" — card de entrada destacada */
 .ec-card--diagnostic {
-  background: linear-gradient(135deg, var(--color-azul-profundo) 0%, var(--color-azul) 100%);
-  color: #fff;
+  background: linear-gradient(135deg, var(--brand-azul-profundo) 0%, var(--brand-azul) 100%);
+  color: var(--ink-on-brand);
   border-color: var(--color-amarillo);
 }
 .ec-card--diagnostic .ec-num {
@@ -536,30 +545,30 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 /* Variantes pedagógicas (sistema de diseño) */
 .callout--important {
-  background: #FFF7E6;
+  background: var(--callout-important-bg);
   border-left-color: var(--color-amarillo);
 }
-.callout--important .callout__label { color: #B07700; }
+.callout--important .callout__label { color: var(--callout-important-ink); }
 
 .callout--tip {
-  background: var(--color-tag-cono-bg);
+  background: var(--callout-tip-bg);
   border-left-color: var(--color-verde);
 }
-.callout--tip .callout__label { color: #1E6B36; }
-.callout--tip strong { color: #1E6B36; }
+.callout--tip .callout__label { color: var(--callout-tip-ink); }
+.callout--tip strong { color: var(--callout-tip-ink); }
 
 .callout--example {
-  background: var(--color-azul-suave);
+  background: var(--callout-example-bg);
   border-left-color: var(--color-azul);
 }
-.callout--example .callout__label { color: var(--color-azul); }
+.callout--example .callout__label { color: var(--callout-example-ink); }
 
 .callout--template {
-  background: #F5EFFB;
+  background: var(--callout-template-bg);
   border-left-color: #7C3AED;
 }
-.callout--template .callout__label { color: #5B21B6; }
-.callout--template strong { color: #5B21B6; }
+.callout--template .callout__label { color: var(--callout-template-ink); }
+.callout--template strong { color: var(--callout-template-ink); }
 
 /* ---------- ProcessStep (pasos numerados) ---------- */
 .process-step {
@@ -1385,8 +1394,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 .flipcard__face--front {
-  background: linear-gradient(140deg, var(--color-azul-profundo) 0%, var(--color-azul) 100%);
-  color: var(--color-blanco-calido);
+  background: linear-gradient(140deg, var(--brand-azul-profundo) 0%, var(--brand-azul) 100%);
+  color: var(--ink-on-brand);
   justify-content: center;
   align-items: flex-start;
   position: relative;
@@ -1442,7 +1451,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 .flipcard__face--front .flipcard__title {
-  color: var(--color-blanco-calido);
+  color: var(--ink-on-brand);
   font-size: 1.7rem;
 }
 
@@ -1570,7 +1579,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--color-verde);
+  color: var(--color-tag-cono-text);
   font-weight: 800;
   font-size: 1.2rem;
 }
@@ -1586,7 +1595,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  color: #9F2929;
+  color: var(--estado-negativo);
   font-weight: 800;
   font-size: 1.2rem;
 }
@@ -1688,19 +1697,19 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 /* ---------- Reflexión pedagógica (callout especial) ---------- */
 .callout--reflection {
-  background: #FFF3E6;
+  background: var(--callout-reflection-bg);
   border-left-color: #E8771F;
 }
 
 .callout--reflection .callout__label {
-  color: #B85800;
+  color: var(--callout-reflection-ink);
 }
 
-.callout--reflection strong { color: #B85800; }
+.callout--reflection strong { color: var(--callout-reflection-ink); }
 
 /* ---------- Mini-diagnóstico ---------- */
 .diagnostic {
-  background: linear-gradient(135deg, #FFF7E6 0%, var(--color-blanco-calido) 100%);
+  background: linear-gradient(135deg, var(--callout-important-bg) 0%, var(--color-blanco-calido) 100%);
   border: 2px solid var(--color-amarillo);
   border-radius: var(--radius);
   padding: 28px 32px;
@@ -2138,8 +2147,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   gap: 16px;
   padding: 14px 18px;
   margin-bottom: 18px;
-  background: linear-gradient(135deg, var(--color-azul) 0%, var(--color-azul-profundo, #08234D) 100%);
-  color: #FAFCFF;
+  background: linear-gradient(135deg, var(--brand-azul) 0%, var(--color-azul-profundo, #08234D) 100%);
+  color: var(--ink-on-brand);
   border-radius: var(--radius);
   flex-wrap: wrap;
 }
@@ -3400,7 +3409,12 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
     --color-tag-apli-text: #F0C972;
     --color-tag-cono-bg:   #14301F;
     --color-tag-cono-text: #7FCB99;
-
+    --callout-important-bg: #3A2E12;  --callout-important-ink: #F3CE84;
+    --callout-tip-bg:       #14301F;  --callout-tip-ink:       #8AD3A3;
+    --callout-example-bg:   #172642;  --callout-example-ink:   #9CC6F2;
+    --callout-template-bg:  #251743;  --callout-template-ink:  #CBB0F5;
+    --callout-reflection-bg:#3A2614;  --callout-reflection-ink:#F5B98A;
+    --estado-negativo:      #F09A9A;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
     --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.55);
   }
@@ -3433,7 +3447,12 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
     --color-tag-apli-text: #F0C972;
     --color-tag-cono-bg:   #14301F;
     --color-tag-cono-text: #7FCB99;
-
+    --callout-important-bg: #3A2E12;  --callout-important-ink: #F3CE84;
+    --callout-tip-bg:       #14301F;  --callout-tip-ink:       #8AD3A3;
+    --callout-example-bg:   #172642;  --callout-example-ink:   #9CC6F2;
+    --callout-template-bg:  #251743;  --callout-template-ink:  #CBB0F5;
+    --callout-reflection-bg:#3A2614;  --callout-reflection-ink:#F5B98A;
+    --estado-negativo:      #F09A9A;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
     --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.55);
 }
@@ -4045,7 +4064,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   outline-offset: 2px;
 }
 .swipe-decide__btn[disabled] { opacity: 0.5; cursor: not-allowed; }
-.swipe-decide__btn--left { border-color: #f29100; color: #8A5A00; }
+.swipe-decide__btn--left { border-color: #f29100; color: var(--color-tag-apli-text); }
 .swipe-decide__btn--right { border-color: var(--color-azul-claro); }
 .swipe-decide__btn-hint {
   font-size: 0.7rem;
@@ -4562,8 +4581,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 /* ---------- Progress Skill (dashboard) ---------- */
 .progress-skill {
   margin: 28px 0;
-  background: linear-gradient(135deg, var(--color-azul-profundo) 0%, var(--color-azul) 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--brand-azul-profundo) 0%, var(--brand-azul) 100%);
+  color: var(--ink-on-brand);
   border-radius: var(--radius);
   padding: 28px 30px;
   box-shadow: var(--shadow-md);
@@ -4842,7 +4861,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 /* Estado del tema sobre la sub-nav: sustituye al mapa del curso, que repetia
    la misma lista de temas en un dialogo aparte. */
 .sub-nav a[data-learning-status="complete"] { font-weight: 700; }
-.sub-nav__status { color: var(--color-verde); font-weight: 800; }
+.sub-nav__status { color: var(--color-tag-cono-text); font-weight: 800; }
 .sub-nav a.active .sub-nav__status { color: inherit; }
 .course-pagination__link:focus-visible {
   outline: 3px solid var(--color-amarillo);
@@ -5031,7 +5050,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 .diagnostic-multi__progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--color-azul), var(--color-azul-claro));
+  background: linear-gradient(90deg, var(--brand-azul), var(--color-azul-claro));
   transition: width 0.4s;
 }
 .diagnostic-multi__question {
@@ -5096,8 +5115,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .diagnostic-multi__result {
   margin-top: 18px;
   padding: 22px 24px;
-  background: linear-gradient(135deg, var(--color-azul-profundo) 0%, var(--color-azul) 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--brand-azul-profundo) 0%, var(--brand-azul) 100%);
+  color: var(--ink-on-brand);
   border-radius: var(--radius);
 }
 .diagnostic-multi__result h3 {
