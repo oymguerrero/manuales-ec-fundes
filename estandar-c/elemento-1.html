@@ -21,7 +21,10 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <picture>
+        <source srcset="../img/logo-horizontal-blanco.png" media="(prefers-color-scheme: dark)" />
+        <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      </picture>
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -147,10 +150,10 @@
 
           <p>A lo largo de este curso usaremos una MiPyME ficticia como hilo narrativo. El caso está diseñado para que puedas ver los conceptos del estándar aplicados a una situación real y representativa del tejido empresarial mexicano.</p>
 
-          <aside class="callout" role="note" style="background: #F3F4F6; border-left-color: #9CA3AF; display: flex; align-items: flex-start; gap: 12px;">
+          <aside class="callout" role="note" style="background: var(--surface-muted); border-left-color: var(--border-muted); display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/mariana-retrato.jpg" alt="Mariana, dueña de La Cuesta" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
-              <span class="callout__label" style="color: #4B5563;">Perfil de la empresa · Cafetería La Cuesta</span>
+              <span class="callout__label" style="color: var(--color-gris-texto);">Perfil de la empresa · Cafetería La Cuesta</span>
               <div class="callout__body">
                 <ul style="margin: 0; padding-left: 1.2em;">
                   <li><strong>Nombre:</strong> Cafetería La Cuesta</li>
@@ -168,7 +171,7 @@
 
           <h3>Mariana y La Cuesta</h3>
 
-          <aside class="callout callout--with-photo" role="note" style="background: #F3F4F6; border-left-color: #9CA3AF; display: flex; align-items: flex-start; gap: 12px;">
+          <aside class="callout callout--with-photo" role="note" style="background: var(--surface-muted); border-left-color: var(--border-muted); display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/mariana-retrato.jpg" alt="Mariana, dueña de La Cuesta" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
               <span class="callout__label">Mariana · dueña y fundadora de La Cuesta</span>
@@ -278,7 +281,7 @@ Recuerda que la evaluación de competencias, se compone por la valoración de di
         </summary>
         <div class="accordion__body">
 
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; display: flex; align-items: flex-start; gap: 12px;" role="note">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); display: flex; align-items: flex-start; gap: 12px;" role="note">
             <img src="../img/personajes/martin-thinking.jpg" alt="Martín pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
               <span class="callout__label">El caso de la cuesta</span>
@@ -360,7 +363,7 @@ Recuerda que la evaluación de competencias, se compone por la valoración de di
         </summary>
         <div class="accordion__body">
 
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; display: flex; align-items: flex-start; gap: 12px;" role="note">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); display: flex; align-items: flex-start; gap: 12px;" role="note">
             <img src="../img/personajes/martin-thinking.jpg" alt="Martín pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
               <div class="callout__body">
@@ -403,7 +406,7 @@ Recuerda que la evaluación de competencias, se compone por la valoración de di
         </summary>
         <div class="accordion__body">
 
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; color: var(--color-azul-profundo);" role="note">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); color: var(--color-azul-profundo);" role="note">
             <div class="callout__body">
               El estándar exige el dominio de 4 áreas de conocimiento para este elemento, por lo que, además de sus evidencias de producto y desempeño, Martín tendrá que cubrir una evaluación de conocimientos que cubra estas áreas. Conoce cuáles son.
             </div>
@@ -589,17 +592,21 @@ Recuerda que la evaluación de competencias, se compone por la valoración de di
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container footer-top">
     <div class="footer-brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES México" />
       <span class="footer-tag">Marketing digital con IA · Elemento 1 · Planificar</span>
     </div>
     <div class="footer-support">
       <img src="../img/google-org-support.png" alt="Con el apoyo de Google.org" />
     </div>
   </div>
+  <div class="container footer-about">
+    <p>Mi CompañIA es una iniciativa de <strong>FUNDES México</strong>, desarrollada en conjunto con
+       diferentes empresas representativas del sector y con el apoyo de <strong>Google.org</strong>.</p>
+  </div>
   <div class="container footer-legal">
-    <p>© 2026 FUNDES Latinoamérica. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
+    <p>© 2026 FUNDES México. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES México. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES México. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
   </div>
 </footer>
 

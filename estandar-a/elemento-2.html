@@ -14,7 +14,10 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <picture>
+        <source srcset="../img/logo-horizontal-blanco.png" media="(prefers-color-scheme: dark)" />
+        <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      </picture>
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -118,10 +121,10 @@
           <span class="accordion__meta">Tabla resumen de tipos de evidencia · 1 min</span>
         </summary>
         <div class="accordion__body">
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; margin-top: 16px; display: flex; align-items: flex-start; gap: 12px;">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); margin-top: 16px; display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/andrea-thinking.jpg" alt="Andrea pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
-              <span class="callout__label" style="color: #4B5563;">📌 La Espiga · Siguientes actividades</span>
+              <span class="callout__label" style="color: var(--color-gris-texto);">📌 La Espiga · Siguientes actividades</span>
               <div class="callout__body">
                 <p>Con la propuesta firmada y la hoja de ruta aprobada, el trabajo de Andrea se concentra en cuatro actividades:</p>
                 <ul style="margin: 0; padding-left: 20px; color: var(--color-gris-texto);">
@@ -153,10 +156,10 @@
           <span class="accordion__meta">2 desempeños · presentación + capacitación · 8 min</span>
         </summary>
         <div class="accordion__body">
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px;">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); margin: 16px 0; display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/andrea-thinking.jpg" alt="Andrea pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
-              <span class="callout__label" style="color: #4B5563;">📌 La Espiga · Cómo se vería la capacitación a las encargadas</span>
+              <span class="callout__label" style="color: var(--color-gris-texto);">📌 La Espiga · Cómo se vería la capacitación a las encargadas</span>
               <div class="callout__body">
                 <p>Convocas a las tres encargadas a la sucursal central un sábado por la mañana, antes del horario de apertura. Llevas una laptop conectada a una pantalla. Empiezas explicando, con un ejemplo concreto, cómo el asistente de WhatsApp ahora responde automáticamente a las consultas tipo "¿están abiertos?" o "¿tienen rosca?". Les muestras el panel de control donde pueden ver las consultas atendidas por el asistente y las que requieren intervención humana. Luego cada una toma el teléfono asignado y procesa cinco mensajes de prueba. Observas, anotas dificultades, resuelves dudas. Cierras entregando una guía de uso impresa de tres páginas con capturas de pantalla y los pasos a seguir cuando el asistente no resuelve por sí solo.</p>
               </div>
@@ -303,7 +306,7 @@
           <span class="accordion__meta">Implementación · capacitación · verificación · ciberseguridad · 4 min</span>
         </summary>
         <div class="accordion__body">
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; margin-top: 16px;">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); margin-top: 16px;">
             <div class="callout__body" style="color: var(--color-gris-texto);">
               El estándar en el elemento 2 exige el dominio de 4 áreas de conocimiento, por lo que tendrás que cubrir una evaluación de conocimientos que cubra estas áreas. Conoce cuáles son.
             </div>
@@ -417,7 +420,7 @@
         </div>
       </div>
 
-      <hr style="margin: 40px 0; border: 0; border-top: 1px solid var(--border-color, #e2e8f0);" />
+      <hr style="margin: 40px 0; border: 0; border-top: 1px solid var(--border-color, var(--color-gris-linea));" />
 
       <h3>Ordena los pasos del Elemento 2</h3>
       <p>Antes de la sesión real, el aspirante suele confundir el orden óptimo. Ordena la secuencia tú mismo y verifica.</p>
@@ -458,17 +461,21 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container footer-top">
     <div class="footer-brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES México" />
       <span class="footer-tag">Implementar IA · Elemento 2</span>
     </div>
     <div class="footer-support">
       <img src="../img/google-org-support.png" alt="Con el apoyo de Google.org" />
     </div>
   </div>
+  <div class="container footer-about">
+    <p>Mi CompañIA es una iniciativa de <strong>FUNDES México</strong>, desarrollada en conjunto con
+       diferentes empresas representativas del sector y con el apoyo de <strong>Google.org</strong>.</p>
+  </div>
   <div class="container footer-legal">
-    <p>© 2026 FUNDES Latinoamérica. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
+    <p>© 2026 FUNDES México. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES México. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES México. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
   </div>
 </footer>
 

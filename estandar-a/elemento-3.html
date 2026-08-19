@@ -14,7 +14,10 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <picture>
+        <source srcset="../img/logo-horizontal-blanco.png" media="(prefers-color-scheme: dark)" />
+        <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      </picture>
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -124,7 +127,7 @@
           <span class="accordion__meta">Tabla resumen de tipos de evidencia · 1 min</span>
         </summary>
         <div class="accordion__body">
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; margin: 16px 0;">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); margin: 16px 0;">
             <div class="callout__body" style="color: var(--color-gris-texto);">
               El tercer paso del ciclo para la adopción de soluciones de IA es la evaluación de resultados de la adopción de soluciones que corresponde con el Elemento 3 del Estándar de competencia A. Recuerda que la evaluación de competencias, se compone por la valoración de diferentes tipos de evidencias, en esta fase, deberás demostrar lo siguiente:
             </div>
@@ -348,7 +351,7 @@
           <span class="accordion__meta">Todos a nivel Comprensión · 3 min</span>
         </summary>
         <div class="accordion__body">
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; margin-top: 16px;">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); margin-top: 16px;">
             <div class="callout__body" style="color: var(--color-gris-texto);">
               El estándar en el elemento 3 exige el dominio de 3 áreas de conocimiento, por lo que tendrás que cubrir una evaluación de conocimientos que cubra estas áreas. Conoce cuáles son.
             </div>
@@ -478,17 +481,21 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container footer-top">
     <div class="footer-brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES México" />
       <span class="footer-tag">Implementar IA · Elemento 3</span>
     </div>
     <div class="footer-support">
       <img src="../img/google-org-support.png" alt="Con el apoyo de Google.org" />
     </div>
   </div>
+  <div class="container footer-about">
+    <p>Mi CompañIA es una iniciativa de <strong>FUNDES México</strong>, desarrollada en conjunto con
+       diferentes empresas representativas del sector y con el apoyo de <strong>Google.org</strong>.</p>
+  </div>
   <div class="container footer-legal">
-    <p>© 2026 FUNDES Latinoamérica. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
+    <p>© 2026 FUNDES México. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES México. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES México. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
   </div>
 </footer>
 

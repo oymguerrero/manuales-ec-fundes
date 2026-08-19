@@ -21,7 +21,10 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <picture>
+        <source srcset="../img/logo-horizontal-blanco.png" media="(prefers-color-scheme: dark)" />
+        <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      </picture>
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -139,7 +142,7 @@
         </summary>
         <div class="accordion__body">
 
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; color: var(--color-azul-profundo);" role="note">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); color: var(--color-azul-profundo);" role="note">
             <div class="callout__body">
               El segundo paso del ciclo para la gestión de contenido de marketing digital, es la creación de contenido, que corresponde con el Elemento 2 del Estándar de competencia C: Generar contenido de marketing digital con IA. Recuerda que la evaluación de competencias, se compone por la valoración de diferentes tipos de evidencias, en la fase inicial de preparación, deberás demostrar lo siguiente:
             </div>
@@ -180,10 +183,10 @@
           </table>
           </div>
 
-          <aside class="callout" role="note" style="background: #F3F4F6; border-left-color: #9CA3AF; display: flex; align-items: flex-start; gap: 12px;">
+          <aside class="callout" role="note" style="background: var(--surface-muted); border-left-color: var(--border-muted); display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/martin-thinking.jpg" alt="Martín pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
-              <span class="callout__label" style="color: #4B5563;">La Cuesta · Mariana tiene la estrategia aprobada</span>
+              <span class="callout__label" style="color: var(--color-gris-texto);">La Cuesta · Mariana tiene la estrategia aprobada</span>
               <img src="../img/escenas/contenido-creacion.png" alt="Proceso de creación de contenido digital con IA para la estrategia de marketing de la Cafetería La Cuesta" class="img-escena" loading="lazy" />
               <div class="callout__body">
                 <p>La estrategia de La Cuesta está aprobada. Mariana firmó el documento y acordaron 4 semanas de contenido. El plan incluye: Reels del proceso de tueste (Instagram, lunes y jueves), posts estáticos de producto (miércoles), carruseles educativos sobre café de especialidad (viernes), y mensajes de difusión para WhatsApp Business (cada dos semanas para eventos especiales).</p>
@@ -205,7 +208,7 @@
         <div class="accordion__body">
 
           <h3>Desempeños a demostrar</h3>
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; color: var(--color-azul-profundo);" role="note">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); color: var(--color-azul-profundo);" role="note">
             <div class="callout__body">
               Siguiendo con el caso del consultor Martín y la cafetería La Cuesta, para efectos de evaluación, Martín tuvo que demostrar en vivo y con su evaluador observando, que es capaz de crear los siguientes tipos de contenido con herramientas o plataformas de IA:
             </div>
@@ -304,7 +307,7 @@
         </summary>
         <div class="accordion__body">
 
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; color: var(--color-azul-profundo);" role="note">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); color: var(--color-azul-profundo);" role="note">
             <div class="callout__body">
               Después de generar los diferentes tipos de contenido, Martín debe integrar su portafolio de marketing digital, siguiendo los lineamientos del estándar C de CONOCER. A continuación veremos cuáles son los 4 tipos de contenido de marketing digital generado con IA (productos) que integran el portafolio y sus características. Al final de esta sección encontrarás plantillas que te servirán como guía para desarrollarlos.
             </div>
@@ -395,7 +398,7 @@
           <span class="accordion__meta">3 áreas de conocimiento · 6 min</span>
         </summary>
         <div class="accordion__body">
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; color: var(--color-azul-profundo);" role="note">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); color: var(--color-azul-profundo);" role="note">
             <div class="callout__body">
               El estándar en el elemento 2 exige el dominio de 4 áreas de conocimiento, por lo que Martín tendrá que cubrir una evaluación de conocimientos que cubra estas áreas. Conoce cuáles son.
             </div>
@@ -608,17 +611,21 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container footer-top">
     <div class="footer-brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES México" />
       <span class="footer-tag">Marketing digital con IA · Elemento 2 · Generar</span>
     </div>
     <div class="footer-support">
       <img src="../img/google-org-support.png" alt="Con el apoyo de Google.org" />
     </div>
   </div>
+  <div class="container footer-about">
+    <p>Mi CompañIA es una iniciativa de <strong>FUNDES México</strong>, desarrollada en conjunto con
+       diferentes empresas representativas del sector y con el apoyo de <strong>Google.org</strong>.</p>
+  </div>
   <div class="container footer-legal">
-    <p>© 2026 FUNDES Latinoamérica. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
+    <p>© 2026 FUNDES México. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES México. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES México. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
   </div>
 </footer>
 

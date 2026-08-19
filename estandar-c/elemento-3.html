@@ -21,7 +21,10 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <picture>
+        <source srcset="../img/logo-horizontal-blanco.png" media="(prefers-color-scheme: dark)" />
+        <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      </picture>
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -126,10 +129,10 @@
             </div>
           </aside>
 
-          <aside class="callout" role="note" style="background: #F3F4F6; border-left-color: #9CA3AF; display: flex; align-items: flex-start; gap: 12px;">
+          <aside class="callout" role="note" style="background: var(--surface-muted); border-left-color: var(--border-muted); display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/martin-thinking.jpg" alt="Martín pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
-              <span class="callout__label" style="color: #4B5563;">La Cuesta · El portafolio está aprobado</span>
+              <span class="callout__label" style="color: var(--color-gris-texto);">La Cuesta · El portafolio está aprobado</span>
               <div class="callout__body">
                 <p>En el tema anterior vimos que Martín logró que Mariana aprobara el portafolio completo de contenidos. Los Reels del proceso de tueste, los posts estáticos de producto, los carruseles educativos y los mensajes de WhatsApp Business están listos. Ahora empieza la publicación.</p>
                 <p>Martín se encargará de:</p>
@@ -154,7 +157,7 @@
         </summary>
         <div class="accordion__body">
 
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; color: var(--color-azul-profundo);" role="note">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); color: var(--color-azul-profundo);" role="note">
             <div class="callout__body">
               El tercer paso del ciclo para la gestión de contenido de marketing digital, es la implementación que corresponde con el Elemento 3 del Estándar de competencia C: Implementar la estrategia de contenido de marketing digital. Recuerda que la evaluación de competencias, se compone por la valoración de diferentes tipos de evidencias, en la fase de implementación, deberás demostrar lo siguiente:
             </div>
@@ -261,7 +264,7 @@
         </summary>
         <div class="accordion__body">
 
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; color: var(--color-azul-profundo);" role="note">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); color: var(--color-azul-profundo);" role="note">
             <div class="callout__body">
               Después de implementar la estrategia de contenido, se generan dos productos derivados de ello: la bitácora de implementación y la guía operativa de la publicación. Enseguida, veremos qué características deben cumplir. Al final, encontrarás las plantillas que pueden utilizar para la construcción de tus productos.
             </div>
@@ -495,17 +498,21 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container footer-top">
     <div class="footer-brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES México" />
       <span class="footer-tag">Marketing digital con IA · Elemento 3 · Implementar</span>
     </div>
     <div class="footer-support">
       <img src="../img/google-org-support.png" alt="Con el apoyo de Google.org" />
     </div>
   </div>
+  <div class="container footer-about">
+    <p>Mi CompañIA es una iniciativa de <strong>FUNDES México</strong>, desarrollada en conjunto con
+       diferentes empresas representativas del sector y con el apoyo de <strong>Google.org</strong>.</p>
+  </div>
   <div class="container footer-legal">
-    <p>© 2026 FUNDES Latinoamérica. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
+    <p>© 2026 FUNDES México. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES México. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES México. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
   </div>
 </footer>
 

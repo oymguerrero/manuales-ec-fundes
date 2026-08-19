@@ -14,7 +14,10 @@
 <header class="site-header">
   <div class="container">
     <a href="../index.html" class="brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <picture>
+        <source srcset="../img/logo-horizontal-blanco.png" media="(prefers-color-scheme: dark)" />
+        <img src="../img/logo-horizontal.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      </picture>
       <span class="brand-text">Mi CompañIA</span>
     </a>
     <nav aria-label="Navegación principal">
@@ -199,10 +202,10 @@
           <span class="accordion__meta">Mayor volumen documental · 8 entregables · 5 min</span>
         </summary>
         <div class="accordion__body">
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; display: flex; align-items: flex-start; gap: 12px;">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/andrea-thinking.jpg" alt="Andrea pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
-              <span class="callout__label" style="color: #4B5563;">El caso La Espiga</span>
+              <span class="callout__label" style="color: var(--color-gris-texto);">El caso La Espiga</span>
               <div class="callout__body">
                 <p>En la fase de planeación, Andrea, como consultora experta en IA, debe construir 7 productos derivados de la planeación. El estándar A de Adopción de soluciones de IA en los procesos de la MiPyME establece criterios específicos para estos productos, vamos a verlos.</p>
               </div>
@@ -359,7 +362,7 @@
           <span class="accordion__meta">Desempeños y actitudes (AHV) · 10 min</span>
         </summary>
         <div class="accordion__body">
-          <aside class="callout" role="note" style="background: #F3F4F6; border-left-color: #9CA3AF; margin-top: 16px; display: flex; align-items: flex-start; gap: 12px;">
+          <aside class="callout" role="note" style="background: var(--surface-muted); border-left-color: var(--border-muted); margin-top: 16px; display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/andrea-thinking.jpg" alt="Andrea pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
               <span class="callout__label">📌 La Espiga · Presentación de la propuesta final</span>
@@ -384,7 +387,7 @@
 
           <h3 style="margin-top: 28px;">Video sobre el desempeño</h3>
           
-          <aside class="callout" role="note" style="background: #F3F4F6; border-left-color: #9CA3AF; display: flex; align-items: flex-start; gap: 12px;">
+          <aside class="callout" role="note" style="background: var(--surface-muted); border-left-color: var(--border-muted); display: flex; align-items: flex-start; gap: 12px;">
             <img src="../img/personajes/andrea-thinking.jpg" alt="Andrea pensando" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 4px;" />
             <div>
               <span class="callout__label">📌 La Espiga · Presentación de la propuesta final</span>
@@ -410,7 +413,7 @@
           <span class="accordion__meta">Nivel Comprensión y Aplicación · 5 min</span>
         </summary>
         <div class="accordion__body">
-          <aside class="callout" style="background: #F3F4F6; border-left-color: #9CA3AF; margin-top: 16px;">
+          <aside class="callout" style="background: var(--surface-muted); border-left-color: var(--border-muted); margin-top: 16px;">
             <div class="callout__body" style="color: var(--color-gris-texto);">
               El estándar exige el dominio de 7 áreas de conocimiento para este elemento, por lo que, además de sus evidencias de producto y desempeño, Andrea tendrá que cubrir una evaluación de conocimientos que cubra estas áreas. Conoce cuáles son.
             </div>
@@ -581,7 +584,7 @@
         </div>
       </div>
 
-      <hr style="margin: 40px 0; border: 0; border-top: 1px solid var(--border-color, #e2e8f0);" />
+      <hr style="margin: 40px 0; border: 0; border-top: 1px solid var(--border-color, var(--color-gris-linea));" />
 
       <h3>Asigna cada característica estándar a su producto</h3>
       <p>Cada producto del E1 está descrito por características en el estándar oficial. Arrastra cada característica al producto correspondiente. Si prefieres teclado: <kbd>Tab</kbd> enfoca la característica, <kbd>Espacio</kbd> la toma, flechas la mueven, <kbd>Espacio</kbd> la suelta.</p>
@@ -629,17 +632,21 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
+  <div class="container footer-top">
     <div class="footer-brand">
-      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES" />
+      <img src="../img/logo-horizontal-blanco.png" alt="Mi CompañIA, una iniciativa de FUNDES México" />
       <span class="footer-tag">Implementar IA · Elemento 1</span>
     </div>
     <div class="footer-support">
       <img src="../img/google-org-support.png" alt="Con el apoyo de Google.org" />
     </div>
   </div>
+  <div class="container footer-about">
+    <p>Mi CompañIA es una iniciativa de <strong>FUNDES México</strong>, desarrollada en conjunto con
+       diferentes empresas representativas del sector y con el apoyo de <strong>Google.org</strong>.</p>
+  </div>
   <div class="container footer-legal">
-    <p>© 2026 FUNDES Latinoamérica. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
+    <p>© 2026 FUNDES México. Todos los derechos reservados. Este curso y sus materiales fueron desarrollados por FUNDES México. Queda prohibida su reproducción, distribución, comunicación pública o modificación, total o parcial, sin autorización previa y por escrito de FUNDES México. El uso no autorizado puede dar lugar a responsabilidad civil y penal conforme a la Ley Federal del Derecho de Autor.</p>
   </div>
 </footer>
 
