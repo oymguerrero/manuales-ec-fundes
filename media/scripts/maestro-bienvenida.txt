@@ -7,7 +7,7 @@ Mi CompañIA nace de una constatación sencilla y a la vez urgente. El tejido pr
 <break time="600ms"/>
 Las MiPyMEs no requieren consultores que hablen el lenguaje de los grandes corporativos. Tampoco soluciones que asuman recursos que no tienen. Requieren profesionales capaces de mirar su negocio con realismo, identificar dónde la inteligencia artificial puede aportar valor concreto, y acompañarlas paso a paso.
 <break time="800ms"/>
-Por eso Mi CompañIA desarrolló cuatro propuestas de estándares de competencia que todavía no han sido aprobadas ni publicadas oficialmente.
+Por eso Mi CompañIA desarrolló cuatro estándares de competencia.
 <break time="400ms"/>
 La propuesta A contempla implementar soluciones de inteligencia artificial en los procesos de la MiPyME.
 <break time="300ms"/>
@@ -19,7 +19,7 @@ Y el D, el desarrollo de soluciones técnicas a la medida.
 <break time="800ms"/>
 Este Curso introductorio te dará la visión general. Aprenderás qué es la certificación, cómo se evalúa y cuál de las cuatro rutas se relaciona mejor con tu perfil profesional.
 <break time="600ms"/>
-Una vez identifiques una ruta, podrás estudiar su versión de trabajo. Este sitio no acredita competencias, no emite constancias y no garantiza acceso a una evaluación o certificación.
+Una vez identifiques una ruta, podrás estudiar este estándar. 
 <break time="700ms"/>
 Te acompañamos en cada paso. Bienvenido.
 </speak>

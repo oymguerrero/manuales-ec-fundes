@@ -4825,20 +4825,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .body--lesson .hero p { font-size: 1rem; }
 .body--lesson main { padding-top: 36px; }
 
-.draft-notice {
-  margin: 0 0 24px;
-  padding: 14px 18px;
-  border: 1px solid #E2B126;
-  border-left: 4px solid var(--color-amarillo);
-  border-radius: var(--radius-sm);
-  background: var(--color-amarillo-suave);
-  color: var(--color-azul-profundo);
-  line-height: 1.45;
-}
 
-.draft-notice strong {
-  margin-right: 0.25rem;
-}
 
 .learning-context {
   margin: 0;

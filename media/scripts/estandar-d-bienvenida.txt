@@ -1,7 +1,7 @@
 Bienvenido a la ruta D: Desarrollar soluciones de transformación digital con inteligencia artificial para la MiPyME.
 
-La versión de trabajo se ubica en nivel 4 y contempla diagnosticar, construir una solución técnica con IA, implementarla en producción y optimizarla.
+El estándar se ubica en nivel 4 y contempla diagnosticar, construir una solución técnica con IA, implementarla en producción y optimizarla.
 
 A lo largo de la ruta, el caso de la Distribuidora El Surtido, Raúl y su equipo, mostrará un proyecto completo de transformación digital con IA.
 
-La propuesta aún no ha sido aprobada ni publicada y puede cambiar. Usa esta ruta para estudiar y practicar.
+ Usa esta ruta para estudiar y practicar.

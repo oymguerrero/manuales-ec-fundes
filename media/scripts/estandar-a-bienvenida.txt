@@ -6,6 +6,6 @@ La propuesta se dirige a quienes acompañan a MiPyMEs en la incorporación de In
 
 Si has diagnosticado procesos, configurado herramientas, capacitado equipos y medido resultados, esta ruta puede relacionarse con tu práctica.
 
-La versión de trabajo se organiza en tres elementos: planear soluciones de IA alineadas a la MiPyME; ejecutar la implementación; y evaluar resultados e impacto.
+El estándar se organiza en tres elementos: planear soluciones de IA alineadas a la MiPyME; adoptar soluciones de IA en el entorno de la MiPyME; y evaluar resultados e impacto.
 
-Este material te ayuda a practicar los tres elementos. La propuesta aún no ha sido aprobada ni publicada y puede cambiar. Esta plataforma no garantiza acceso a una evaluación o certificación.
+Este material te ayuda a practicar los tres elementos.

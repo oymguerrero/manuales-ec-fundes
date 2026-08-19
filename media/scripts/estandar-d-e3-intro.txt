@@ -1,5 +1,3 @@
 Elemento 3: Implementar. Aquí la solución se lleva al entorno real de la MiPyME.
 
-La versión de trabajo contempla practicar la capacitación del equipo de El Surtido en el uso de la solución. También describe cuatro productos: la solución desplegada, la documentación técnica, el reporte de capacitación y el acta final.
-
-La propuesta aún no ha sido aprobada ni publicada y puede cambiar.
+El estándar contempla practicar la capacitación del equipo de El Surtido en el uso de la solución. También describe cuatro productos: la solución desplegada, la documentación técnica, el reporte de capacitación y el acta final.
