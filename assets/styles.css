@@ -3330,12 +3330,15 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .site-footer .footer-support {
   display: inline-flex;
   align-items: center;
-  padding: 10px 14px;
+  padding: 8px 12px;
+  /* #fff fijo a proposito, fuera del sistema de temas: es la unica forma de que
+     el gris #70767A del lockup pase AA. Con --surface-raised, en tema oscuro
+     volveria a fallar. No sustituir por un token. */
   background: #fff;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
 }
 .site-footer .footer-support img {
-  height: 38px;
+  height: 34px;
   width: auto;
   display: block;
   max-width: min(220px, 60vw);
@@ -3353,14 +3356,14 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 .site-footer .footer-about strong { color: #fff; font-weight: 700; }
 /* Aviso de derechos: renglon aparte, separado por una linea sutil. */
 .site-footer .footer-legal {
-  margin-top: 20px;
+  margin-top: 28px;
   padding-top: 16px;
   border-top: 1px solid rgba(250, 252, 255, 0.30);
 }
 .site-footer .footer-legal p {
   margin: 0;
   font-size: 0.84rem;
-  line-height: 1.6;
+  line-height: 1.5;
   /* Color solido, no alpha: el gris translucido se leia deslavado sobre el
      azul saturado. #DCE6F5 da 7.85:1 y se distingue del blanco del cuerpo
      sin perder legibilidad. */
@@ -3371,6 +3374,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 .site-footer a:hover { text-decoration: underline; }
+.site-footer a:focus-visible { outline: 2px solid var(--color-amarillo); outline-offset: 2px; }
 
 /* ---------- Conmutador de tema ---------- */
 .theme-toggle {
@@ -4948,7 +4952,6 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   .learning-dashboard__local { white-space: normal; }
   .learning-dashboard__path { grid-template-columns: repeat(2, 1fr); }
   .learning-dashboard__resume-button { width: 100%; }
-  .site-footer .footer-top { flex-direction: column; align-items: flex-start; }
 }
 @media print {
   .learning-context, .course-pagination, .skip-link { display: none !important; }
