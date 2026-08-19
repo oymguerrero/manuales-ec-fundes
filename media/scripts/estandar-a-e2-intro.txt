@@ -1,0 +1,5 @@
+Elemento 2: Ejecutar. Aquí implementas en la MiPyME las soluciones de IA que planeaste en el Elemento 1.
+
+Produces los documentos que evidencian la implementación real: minutas, reportes de pruebas, actas de capacitación.
+
+En el caso La Espiga, Carlos pone en marcha el sistema de pedidos por WhatsApp Business con IA y capacita a Doña Beatriz y su equipo.

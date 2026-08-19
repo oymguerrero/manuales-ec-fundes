@@ -3245,7 +3245,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   /* Franja de marca: azul profundo en ambos temas, por eso usa el token de
      marca literal y no la superficie semantica. */
   background: var(--brand-azul-profundo);
-  color: rgba(250, 252, 255, 0.88);
+  color: rgba(250, 252, 255, 0.92);
   padding: 40px 24px 30px;
   font-size: 0.9rem;
 }
@@ -3305,8 +3305,9 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   margin-top: 26px;
 }
 .site-footer .footer-about p {
+  /* Sin max-width: el .container ya limita a 1080px. Un tope en ch sobre texto
+     chico daba una columna de media pagina y se leia como parrafo suelto. */
   margin: 0;
-  max-width: 74ch;
   line-height: 1.6;
 }
 .site-footer .footer-about strong { color: #fff; font-weight: 700; }
@@ -3318,10 +3319,11 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 .site-footer .footer-legal p {
   margin: 0;
-  max-width: 90ch;
-  font-size: 0.78rem;
-  line-height: 1.55;
-  color: rgba(250, 252, 255, 0.72);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  /* 0.72 daba 5.55:1: pasa AA pero se leia deslavado en texto chico sobre el
+     azul saturado. A 0.90 sube a 7.67:1. */
+  color: rgba(250, 252, 255, 0.90);
 }
 .site-footer a {
   color: var(--color-amarillo);
