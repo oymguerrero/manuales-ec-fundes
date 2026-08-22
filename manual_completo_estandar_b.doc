@@ -1,7 +1,7 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
 <head>
 <meta charset='utf-8'>
-<title>Manual del Estándar B: Desarrollar productos y servicios con IA en la MiPyME</title>
+<title>Manual del Estándar B: Crear soluciones comerciales con IA en la MiPyME</title>
 <style>
 body {
     font-family: Calibri, Arial, sans-serif;
@@ -109,7 +109,7 @@ svg.diagram {
 </style>
 </head>
 <body>
-<h1>Manual del Estándar B: Desarrollar productos y servicios con IA en la MiPyME</h1>
+<h1>Manual del Estándar B: Crear soluciones comerciales con IA en la MiPyME</h1>
 <hr style='page-break-before: always; border: 1px solid #ccc;'>
 <main>
 <div class="container">
@@ -125,7 +125,7 @@ svg.diagram {
 <span class="accordion__meta">Carta de inicio · 5 min</span>
 </summary>
 <div class="accordion__body">
-<p>Este manual está dedicado en exclusiva al Estándar de Competencia B: <strong>Desarrollo de productos y servicios con Inteligencia Artificial en la MiPyME</strong>. Es el documento que te acompañará a lo largo de tu preparación y al que volverás una y otra vez hasta el día de tu evaluación.</p>
+<p>Este manual está dedicado en exclusiva al Estándar de Competencia B: <strong>Creación de soluciones comerciales con Inteligencia Artificial en la MiPyME</strong>. Es el documento que te acompañará a lo largo de tu preparación y al que volverás una y otra vez hasta el día de tu evaluación.</p>
 <p>El Estándar B está dirigido a quienes trabajan en el ciclo completo de innovación orientada al usuario: escuchas una necesidad real de alguien, identificas una oportunidad de mercado que nadie ha resuelto bien, conceptualizas una solución con IA, construyes un prototipo funcional y lo llevas a prueba con usuarios reales antes de recomendarlo o lanzarlo.</p>
 <p>Es importante que ubiques bien este estándar dentro del mapa de los cuatro estándares CONOCER de IA para MiPyMEs:</p>
 <ul>
@@ -203,7 +203,7 @@ svg.diagram {
 <tbody>
 <tr>
 <td><strong>Título oficial</strong></td>
-<td>Desarrollo de productos y servicios con Inteligencia Artificial en la MiPyME</td>
+<td>Creación de soluciones comerciales con Inteligencia Artificial en la MiPyME</td>
 </tr>
 <tr>
 <td><strong>Nivel SNC</strong></td>
@@ -861,7 +861,7 @@ svg.diagram {
 </div>
 <div aria-labelledby="tab-e2d1a" class="tabs__panel" id="panel-e2d1a" role="tabpanel">
 <h4>A · Presentación</h4>
-<p><em><strong>Texto del estándar (estándar):</strong> "Presentándose ante cliente/usuario al mencionar su nombre completo y su rol como consultor/asesor/desarrollador de productos y servicios con IA."</em></p>
+<p><em><strong>Texto del estándar (estándar):</strong> "Presentándose ante cliente/usuario al mencionar su nombre completo y su rol como consultor/asesor/desarrollador de soluciones comerciales con IA."</em></p>
 <p><strong>Qué significa:</strong> Establece credibilidad desde el inicio. El cliente y el evaluador saben exactamente quién eres y qué rol juegas en este proceso.</p>
 </div>
 <div aria-labelledby="tab-e2d1b" class="tabs__panel" hidden="" id="panel-e2d1b" role="tabpanel">
@@ -2077,7 +2077,7 @@ flowchart LR
 <h3>¿Puedo presentar evidencias de proyectos anteriores?</h3>
 <p>Sí. Los productos del estándar pueden presentarse como Evidencia Histórica (proyectos previos), siempre que puedas demostrar tu autoría y autenticidad ante el evaluador. Consulta el IEC y a tu Centro de Evaluación para el procedimiento específico.</p>
 <h3>¿Qué es diferente entre el Estándar A y el Estándar B?</h3>
-<p>El Estándar A certifica la implementación de herramientas de IA existentes en los procesos operativos de una MiPyME (configuras, adaptas, capacitas). El Estándar B certifica el desarrollo de productos y servicios nuevos con IA (investigas, conceptualizas, construyes un prototipo, validas con usuarios). Si tu trabajo es configurar herramientas del mercado, tu estándar es el A. Si tu trabajo es crear algo nuevo que antes no existía, tu estándar es el B.</p>
+<p>El Estándar A certifica la implementación de herramientas de IA existentes en los procesos operativos de una MiPyME (configuras, adaptas, capacitas). El Estándar B certifica el creación de soluciones comerciales nuevas con IA (investigas, conceptualizas, construyes un prototipo, validas con usuarios). Si tu trabajo es configurar herramientas del mercado, tu estándar es el A. Si tu trabajo es crear algo nuevo que antes no existía, tu estándar es el B.</p>
 <h3>¿El prototipo tiene que ser un software completamente desarrollado?</h3>
 <p>No. El estándar habla de un "prototipo funcional" — una versión operativa que permite demostrar el funcionamiento de la solución en condiciones reales o simuladas. Puede ser una solución con herramientas de IA de no-código, un flujo construido en una plataforma como Make o Zapier, o incluso una solución con prompts y herramientas de IA generativa que produce los resultados esperados. Lo que importa es que funcione y que puedas demostrarlo.</p>
 <aside class="callout callout--tip" role="note">

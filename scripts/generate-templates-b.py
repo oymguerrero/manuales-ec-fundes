@@ -147,7 +147,7 @@ PRODUCTS = [
             "(d) Incluye las técnicas de ideación utilizadas",
             "(e) Contiene las ideas obtenidas a partir de las preguntas generadoras de ideas",
             "(f) Contiene la reformulación de las ideas que facilitan/impulsan la generación de soluciones",
-            "(g) Contiene las herramientas y los prompts que se utilizaron en la sesión de ideación de soluciones de productos y servicios",
+            "(g) Contiene las herramientas y los prompts que se utilizaron en la sesión de ideación de soluciones comerciales con IA",
             "(h) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos",
         ],
         "tonalli": "Sesión de ideación con Lucía y Diego. Pregunta detonadora: \"¿Cómo podríamos ayudar a que cada pieza única de Tonalli cuente su propia historia para un comprador en línea que nunca ha estado en el taller?\" Técnica: brainwriting + expansión con Claude. Ideas generadas: (1) asistente que describe piezas a partir de foto; (2) QR en cada pieza con historia narrada en audio; (3) video-story generado automáticamente. Idea seleccionada: 1 + elementos de 3 (ficha visual + descripción textual).",

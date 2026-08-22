@@ -11,7 +11,7 @@ Por eso Mi CompañIA desarrolló cuatro estándares de competencia.
 <break time="400ms"/>
 La propuesta A contempla implementar soluciones de inteligencia artificial en los procesos de la MiPyME.
 <break time="300ms"/>
-El B, el desarrollo de productos y servicios nuevos con inteligencia artificial.
+El B, el creación de soluciones comerciales nuevas con inteligencia artificial.
 <break time="300ms"/>
 El C, el contenido de marketing digital con inteligencia artificial.
 <break time="300ms"/>

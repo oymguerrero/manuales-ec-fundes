@@ -1,5 +1,5 @@
 <speak>
-Bienvenida al Manual del Estándar B: Desarrollar productos y servicios con inteligencia artificial en la MiPyME.
+Bienvenida al Manual del Estándar B: Crear soluciones comerciales con inteligencia artificial en la MiPyME.
 <break time="700ms"/>
 Este estándar es para quienes crean algo nuevo. No para quienes optimizan lo que ya existe, sino para quienes investigan una necesidad que aún no tiene solución, conceptualizan una propuesta, construyen un prototipo funcional y lo ponen a prueba con usuarios reales.
 <break time="800ms"/>

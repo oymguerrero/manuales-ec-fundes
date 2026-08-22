@@ -1,5 +1,5 @@
 <speak>
-Elemento uno: <emphasis level="moderate">Identificar oportunidades de desarrollo de productos y servicios con inteligencia artificial.</emphasis>
+Elemento uno: <emphasis level="moderate">Identificar oportunidades de creación de soluciones comerciales con inteligencia artificial.</emphasis>
 <break time="700ms"/>
 Antes de proponer cualquier solución, el consultor necesita entender. Y entender requiere trabajo de campo real: entrevistas con el cliente, análisis del mercado, observación del proceso. Nada de esto puede hacerse desde el escritorio.
 <break time="800ms"/>
