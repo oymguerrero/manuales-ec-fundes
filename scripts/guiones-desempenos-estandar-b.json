@@ -1,0 +1,557 @@
+{
+  "assets": "extras/script-assets-estandar-b",
+  "salida": "extras/scripts-desempenos-estandar-b",
+  "guiones": [
+    {
+      "numero": 1,
+      "elemento": "Elemento 2 · Conceptualizar soluciones comerciales con IA",
+      "titulo": "Facilita la sesión de ideación de soluciones comerciales con IA",
+      "duracion": "3 mins",
+      "criterios": [
+        "Se presenta ante el cliente mencionando su nombre completo y su rol como consultor de soluciones comerciales con IA.",
+        "Presenta el objetivo de la sesión.",
+        "Presenta la metodología a utilizar para la ideación de soluciones comerciales con IA.",
+        "Expone los problemas u oportunidades detectadas durante el diagnóstico.",
+        "Realiza preguntas abiertas que faciliten la generación de ideas.",
+        "Utiliza herramientas/plataformas/prompts para la ideación de preguntas.",
+        "Acuerda con los asistentes una pregunta generadora orientada a resolver la necesidad del cliente.",
+        "Construye con los asistentes las primeras ideas orientadas a resolver esa necesidad.",
+        "Amplía el alcance de la ideación mediante herramientas/plataformas/prompts.",
+        "Clasifica verbalmente o por escrito las ideas en categorías de resultados.",
+        "Selecciona las ideas que favorecen una solución orientada a resolver el problema del cliente."
+      ],
+      "ahv": [
+        "Cooperación — involucra a los asistentes y facilita su participación activa durante la ideación.",
+        "Iniciativa — propone alternativas y amplía el campo de ideas más allá de lo que el cliente trae."
+      ],
+      "nota_arte": "Sesión en el Taller Tonalli, con laptop y piezas de barro sobre la mesa de trabajo. Reutiliza los planos de Diego y Lucía.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Sesión de ideación",
+          "narrador": "Diego terminó el levantamiento de información en Artesanías Tonalli. Hoy facilita la sesión de ideación con Lucía, la fundadora del taller, y con Rosa, que maneja las redes. Observa con atención cómo Diego va cumpliendo cada uno de los criterios del estándar."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Se presenta y enuncia su rol.",
+          "dialogo": "Buenos días. Para quienes no me conocen, soy Diego Herrera, consultor en desarrollo de soluciones comerciales con Inteligencia Artificial. Llevo tres semanas trabajando con Lucía en el levantamiento del taller y hoy vamos a idear juntos.",
+          "facial": "Sonrisa cordial y abierta, mirada que recorre a las dos personas incluyéndolas por igual.",
+          "postura": "De pie junto a la mesa de trabajo, manos abiertas a la altura del pecho en gesto de bienvenida."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Presenta el objetivo de la sesión.",
+          "dialogo": "El objetivo de estas dos horas es concreto: salir con un grupo de ideas de solución para el problema que ustedes mismas identificaron, y elegir cuáles vale la pena prototipar. No vamos a decidir nada técnico hoy. Hoy generamos y clasificamos.",
+          "facial": "Expresión clara y enfocada, mirada firme al delimitar lo que sí y lo que no se hará.",
+          "postura": "Marca con las manos un espacio acotado sobre la mesa, gesto de encuadre."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Presenta la metodología de ideación.",
+          "dialogo": "Trabajamos en cuatro pasos. Primero les recuerdo lo que encontramos en el diagnóstico. Segundo, acordamos una pregunta generadora. Tercero, generamos ideas: primero ustedes, después ampliamos con IA. Y cuarto, las clasificamos y elegimos. Todo queda escrito en este pizarrón.",
+          "facial": "Semblante metódico y didáctico, elevación sutil de cejas al numerar cada paso.",
+          "postura": "Cuenta los cuatro pasos con los dedos y señala el pizarrón donde se irán anotando."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Expone los problemas detectados en el diagnóstico.",
+          "dialogo": "Del levantamiento salieron dos cosas. Describir cada pieza para la tienda en línea les toma cerca de veinte minutos, y son piezas únicas, así que no se puede copiar y pegar. Y la descripción del color no siempre queda precisa, lo que genera devoluciones.",
+          "facial": "Mirada analítica y directa, expresión de quien presenta un hallazgo verificado.",
+          "postura": "Toma una pieza de barro de la mesa y la sostiene mientras describe el problema."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Eso último me duele. La semana pasada una señora devolvió un jarrón porque decía que el color no era el de la foto. Y sí era, nomás que la luz cambia.",
+          "facial": "Ceño de preocupación genuina, mirada que se aparta un momento al recordar el episodio.",
+          "postura": "Se lleva la mano al mandil, hombros ligeramente caídos, torso girado hacia la pieza."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Acuerda la pregunta generadora.",
+          "dialogo": "Entonces propongo esta pregunta para guiarnos: ¿cómo podríamos describir cada pieza única de Tonalli, con su color real, en menos de tres minutos? Antes de escribirla, ¿les hace sentido o la ajustamos?",
+          "facial": "Mirada atenta e inquisitiva, sonrisa amable que invita a corregirlo.",
+          "postura": "Escribe la pregunta en el pizarrón y se aparta para que ambas la lean."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Yo le agregaría algo: que suene a nosotras. Hay descripciones en internet que parecen de fábrica y esto es hecho a mano.",
+          "facial": "Expresión decidida, mirada que sostiene el punto con convicción.",
+          "postura": "Señala el pizarrón con la mano abierta, torso erguido hacia adelante."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Demuestra Cooperación ajustando con los asistentes.",
+          "dialogo": "Excelente, eso cambia la pregunta y la mejora. La reescribo: ¿cómo podríamos describir cada pieza única de Tonalli, con su color real y con la voz del taller, en menos de tres minutos? Esa es la pregunta que nos va a guiar.",
+          "facial": "Sonrisa de reconocimiento sincero, asiente mientras corrige lo escrito.",
+          "postura": "Borra y reescribe en el pizarrón a la vista de ambas, sin apropiarse de la idea."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Realiza preguntas abiertas que facilitan la generación de ideas.",
+          "dialogo": "Empezamos por ustedes, sin filtro. Si mañana desapareciera el problema por completo, ¿cómo se vería su día? ¿Qué harían con esos veinte minutos por pieza? No busquen la respuesta correcta, díganme lo que se les ocurra.",
+          "facial": "Expresión curiosa y alentadora, mirada que espera con paciencia sin apurar.",
+          "postura": "Se sienta en el borde de la mesa, bajando su altura para no dominar la conversación."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Pues yo estaría en el torno, que es lo que sé hacer. Y se me ocurre... ¿y si la descripción saliera de una foto? Uno toma la foto y ya.",
+          "facial": "Mirada que se ilumina al soltar la idea, sonrisa espontánea de quien se sorprende a sí misma.",
+          "postura": "Levanta las manos imitando el gesto de tomar una foto con el teléfono."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Construye las primeras ideas con los asistentes.",
+          "dialogo": "Ahí hay una idea concreta y la anoto tal cual: descripción a partir de la foto. Rosa, tú que subes las piezas todos los días, ¿qué le falta a esa idea para que te funcione a ti?",
+          "facial": "Semblante enérgico y receptivo, mirada que gira para incluir a la segunda persona.",
+          "postura": "Anota en el pizarrón y de inmediato se gira hacia Rosa con la mano abierta."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Amplía el alcance con herramientas de IA.",
+          "dialogo": "Ya tenemos seis ideas de ustedes. Ahora las ampliamos. Le voy a pedir a la herramienta que, tomando nuestra pregunta generadora y estas seis ideas, proponga variantes que no hayamos considerado. Fíjense: no le pido que resuelva, le pido que abra el campo.",
+          "facial": "Mirada enfocada en la pantalla, expresión pedagógica al marcar la distinción.",
+          "postura": "Gira la laptop para que ambas vean lo que escribe, sin ocultar el proceso."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Mire, esa de la ficha con la historia de la pieza no se nos había ocurrido. Y eso sí es Tonalli, cada jarrón tiene su historia.",
+          "facial": "Ojos abiertos de interés, se inclina hacia la pantalla con curiosidad genuina.",
+          "postura": "Apoya una mano en la mesa y acerca el cuerpo a la laptop."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Clasifica las ideas en categorías de resultados.",
+          "dialogo": "Ya tenemos catorce ideas. Ahora las ordenamos por lo que consiguen, no por lo que son. Las que ahorran tiempo van de este lado. Las que mejoran la precisión del color, acá. Y las que refuerzan la voz del taller, en esta tercera columna. Algunas van a caer en dos.",
+          "facial": "Semblante organizado y claro, mirada que recorre el pizarrón al agrupar.",
+          "postura": "Mueve las tarjetas físicamente en el pizarrón, agrupándolas en tres columnas."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Selecciona las ideas que favorecen la solución.",
+          "dialogo": "Para cerrar, elegimos. De las catorce, hay tres que atacan las tres columnas a la vez y se pueden prototipar en dos semanas. Se las propongo, pero la decisión es de ustedes: son quienes van a operar esto todos los días.",
+          "facial": "Mirada serena y profesional, sonrisa contenida de cierre, sin presionar.",
+          "postura": "Se aparta del pizarrón y extiende la mano hacia él, cediendo la decisión."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "A mí me convencen esas tres. Y me gusta que salieron de lo que dijimos nosotras, no de algo que ya traía usted escrito.",
+          "facial": "Sonrisa amplia de satisfacción, mirada confiada y participativa.",
+          "postura": "Asiente con firmeza, brazos relajados, postura abierta hacia el pizarrón."
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "elemento": "Elemento 2 · Conceptualizar soluciones comerciales con IA",
+      "titulo": "Facilita la sesión de presentación de la propuesta del prototipo",
+      "duracion": "2 mins",
+      "criterios": [
+        "Presenta el objetivo de la sesión.",
+        "Expone las características técnicas y funcionales de la propuesta del prototipo.",
+        "Valida la propuesta económica del prototipo con el cliente.",
+        "Solicita retroalimentación y visto bueno verbal o por escrito para el desarrollo del prototipo."
+      ],
+      "ahv": [
+        "Cooperación — facilita la participación del cliente en la decisión sobre el prototipo.",
+        "Iniciativa — propone alternativas fundamentadas en lo acordado durante la ideación."
+      ],
+      "nota_arte": "Misma mesa del taller, con la propuesta impresa y la laptop. Reutiliza los planos de Diego y Lucía.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Presentación de la propuesta del prototipo",
+          "narrador": "Con las ideas seleccionadas en la sesión de ideación, Diego preparó la propuesta del prototipo. Hoy la presenta a Lucía para obtener su visto bueno antes de construirlo. Observa cómo cumple cada criterio del estándar."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Presenta el objetivo de la sesión.",
+          "dialogo": "Lucía, el objetivo de hoy es que usted decida si construimos este prototipo o no. Le voy a explicar qué hace, qué necesita y cuánto cuesta. Al final le pido su visto bueno, o los ajustes que haga falta antes de arrancar.",
+          "facial": "Mirada directa y transparente, expresión de quien viene a que le respondan, no a convencer.",
+          "postura": "Sentado frente a Lucía, coloca la propuesta impresa entre los dos, girada hacia ella."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Expone las características funcionales del prototipo.",
+          "dialogo": "Funciona así: usted toma la foto de la pieza con el teléfono, como ya lo hace. El sistema reconoce forma, textura y color real, y devuelve una descripción escrita con la voz del taller, incluyendo la historia de la técnica. Usted la revisa, corrige lo que quiera y la publica.",
+          "facial": "Expresión clara y concreta, mirada que acompaña cada paso del flujo.",
+          "postura": "Traza el recorrido con el dedo sobre la propuesta, de un paso al siguiente."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "¿Y si la descripción no me gusta? Porque hay palabras que aquí no usamos.",
+          "facial": "Mirada precavida, ceja levantada con una duda concreta y práctica.",
+          "postura": "Se inclina hacia el documento sin tomarlo, actitud de evaluación."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Expone las características técnicas del prototipo.",
+          "dialogo": "Por eso nunca publica solo: usted siempre revisa antes. Y técnicamente, el prototipo aprende de las descripciones que usted misma corrija. Cada corrección lo acerca más a cómo hablan aquí. No es un sistema cerrado, es uno que se ajusta a ustedes.",
+          "facial": "Semblante tranquilizador y preciso, mirada firme al explicar el mecanismo.",
+          "postura": "Gesto circular con la mano que ilustra el ciclo de corrección y aprendizaje."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Expone requerimientos y alcance.",
+          "dialogo": "Lo que necesita de su lado es poco: el teléfono que ya tiene y unas veinte fotos de piezas con su descripción actual, para que el prototipo tome el tono. Y le aclaro el alcance: esto es un prototipo, no el sistema final. Sirve para probar si la idea funciona antes de invertir en construirla completa.",
+          "facial": "Mirada honesta y directa, énfasis sutil al delimitar qué es y qué no es.",
+          "postura": "Separa las manos marcando dos zonas: lo que entra y lo que no entra."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Valida la propuesta económica con el cliente.",
+          "dialogo": "Vamos al costo, que es lo que importa. Son dos semanas de desarrollo con un monto cerrado, más la licencia mensual de la herramienta durante la prueba. Se lo desgloso por separado. Si al final del prototipo decide no seguir, la licencia se cancela y no queda comprometida a nada.",
+          "facial": "Expresión clara y sin titubeo al entrar al tema económico, mirada sostenida.",
+          "postura": "Pasa la hoja y la gira hacia Lucía, señalando las dos columnas del desglose."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Eso último me tranquiliza. Ya me pasó con otro proveedor que quedé amarrada a un pago mensual por algo que nunca usamos.",
+          "facial": "Semblante que se relaja, mirada agradecida con un dejo de experiencia previa.",
+          "postura": "Se recarga en el respaldo, hombros más sueltos, manos sobre la mesa."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Solicita retroalimentación.",
+          "dialogo": "Antes de pedirle una decisión quiero escucharla: de todo lo que le presenté, ¿hay algo que no le convenza, o algo que esperaba y no está? Prefiero ajustarlo ahora que a media construcción.",
+          "facial": "Mirada atenta y apacible, sonrisa amable de escucha genuina.",
+          "postura": "Deja el bolígrafo, entrelaza las manos y se reclina cediendo el turno."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Solo una cosa: quiero que Rosa esté en las pruebas. Ella es la que sube las piezas y si a ella no le sirve, no sirve.",
+          "facial": "Expresión decidida y práctica, mirada firme al poner su condición.",
+          "postura": "Levanta el índice marcando el punto, torso erguido hacia adelante."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Obtiene el visto bueno para el desarrollo.",
+          "dialogo": "Anotado y con toda la razón: Rosa queda en el plan de pruebas desde el primer día. Con ese ajuste, ¿me da su visto bueno para construir el prototipo? Le dejo la hoja de aprobación y se la mando también por correo para que quede por escrito.",
+          "facial": "Semblante receptivo, sonrisa contenida de cierre profesional, sin apurar.",
+          "postura": "Anota el cambio a la vista de ella y desliza la hoja de aprobación con la pluma."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Adelante, aquí le firmo. Y nos vemos en dos semanas con eso funcionando.",
+          "facial": "Sonrisa resuelta y confiada, mirada que sella el acuerdo.",
+          "postura": "Toma la pluma con decisión y firma; luego extiende la mano para cerrar el trato."
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "elemento": "Elemento 3 · Desarrollar el prototipo de la solución comercial con IA",
+      "titulo": "Realiza la presentación del prototipo al cliente",
+      "duracion": "3 mins",
+      "criterios": [
+        "Describe la problemática identificada, la solución propuesta mediante IA y su alcance.",
+        "Expone la operación técnica del prototipo y su lógica operativa.",
+        "Explica los requerimientos técnicos, las herramientas de IA utilizadas y las condiciones de uso.",
+        "Presenta los casos de uso dentro del contexto operativo de la MiPyME.",
+        "Explica los términos técnicos en lenguaje accesible para el cliente.",
+        "Plantea preguntas detonadoras y responde las dudas que se presenten.",
+        "Valida la comprensión y el acuerdo del cliente sobre el plan de experimentación, mediante parafraseo."
+      ],
+      "ahv": [
+        "Responsabilidad — entrega el prototipo configurado y probado conforme a lo acordado en la propuesta."
+      ],
+      "nota_arte": "Taller Tonalli con el prototipo corriendo en la laptop y piezas listas para fotografiar. Reutiliza los planos de Diego y Lucía.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Presentación del prototipo",
+          "narrador": "Pasaron las dos semanas de desarrollo. Diego presenta a Lucía el prototipo terminado y acuerda con ella el plan de experimentación. Observa cómo cumple cada criterio del estándar."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Describe la problemática y la solución propuesta.",
+          "dialogo": "Lucía, arranco recordando de dónde venimos. El problema era que describir cada pieza única les tomaba veinte minutos y el color no siempre quedaba preciso. La solución que construimos genera esa descripción a partir de una foto, con el color real y la voz del taller.",
+          "facial": "Mirada directa y ordenada, expresión de quien retoma un hilo compartido.",
+          "postura": "Sentado frente a la laptop abierta, la gira hacia Lucía antes de empezar."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Describe el alcance de la solución.",
+          "dialogo": "Y le repito el alcance, porque es importante: esto describe piezas. No publica solo, no fija precios y no responde a clientes. Hace una cosa y la hace bien. Lo demás, si funciona, lo vemos después.",
+          "facial": "Semblante honesto y firme al delimitar, sin vender de más.",
+          "postura": "Separa las manos marcando el borde de lo que el prototipo abarca."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Expone la operación técnica y la lógica operativa.",
+          "dialogo": "Se lo muestro funcionando. Tomo la foto de este jarrón. El sistema hace tres cosas en orden: primero identifica forma y técnica; segundo mide el color contra una referencia física, esta tarjeta gris que va en la foto; y tercero redacta usando las veinte descripciones que ustedes me dieron.",
+          "facial": "Concentración didáctica, mirada que sigue cada paso conforme ocurre en pantalla.",
+          "postura": "Toma la foto en vivo con el teléfono y señala cada etapa en la pantalla de la laptop."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "¿Y esa tarjeta gris para qué es? Nunca había visto que se pusiera eso en las fotos.",
+          "facial": "Mirada curiosa y atenta, cabeza ladeada observando el objeto.",
+          "postura": "Toma la tarjeta gris de la mesa y la examina entre los dedos."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Explica los términos técnicos en lenguaje accesible.",
+          "dialogo": "Es una referencia de color. Piénselo así: la luz del taller cambia entre la mañana y la tarde, y eso hace que el mismo barro se vea distinto en la foto. La tarjeta es un color que ya sabemos exactamente cómo es; el sistema lo compara y corrige el resto. Es como afinar un instrumento antes de tocar.",
+          "facial": "Expresión pedagógica y cálida, sonrisa al ofrecer la analogía.",
+          "postura": "Sostiene la tarjeta junto a la pieza mostrando la comparación físicamente."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Ah, ahora sí entendí. Y eso resuelve justo lo de la devolución del jarrón.",
+          "facial": "Semblante que se ilumina al conectar la explicación con su problema real.",
+          "postura": "Asiente repetidamente, señalando la pieza con la mano libre."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Explica requerimientos técnicos y condiciones de uso.",
+          "dialogo": "De requerimientos necesita poco: el teléfono que ya tiene, la tarjeta de referencia y conexión para subir la foto. Dos condiciones de uso: la tarjeta siempre en el encuadre, y la revisión de usted antes de publicar. Si se saltan cualquiera de las dos, el resultado deja de ser confiable.",
+          "facial": "Mirada firme al enunciar las condiciones, semblante responsable.",
+          "postura": "Marca las dos condiciones con dos dedos, gesto claro y pausado."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Presenta los casos de uso en el contexto operativo.",
+          "dialogo": "Y le muestro tres casos de su operación real. Pieza nueva que entra al catálogo: de veinte minutos a dos. Pieza de una serie con variación de color: describe la variación específica, no la genérica. Y pieza de encargo: incorpora el nombre de quien la pidió si ustedes lo agregan.",
+          "facial": "Semblante concreto y enfocado, mirada que enumera con seguridad.",
+          "postura": "Señala tres piezas distintas sobre la mesa, una por caso."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Plantea preguntas detonadoras.",
+          "dialogo": "Le hago una pregunta a propósito: ¿en qué caso creen ustedes que esto se va a equivocar? Prefiero que lo pensemos ahora y lo pongamos a prueba, a que nos sorprenda con un cliente enfrente.",
+          "facial": "Mirada inquisitiva y abierta, expresión que invita a buscar la falla.",
+          "postura": "Se reclina cediendo el turno, manos quietas sobre la mesa."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Con el barro negro. Ese cambia mucho según cómo le pegue la luz, y a veces ni nosotras lo distinguimos del café oscuro.",
+          "facial": "Mirada pensativa que se enfoca, expresión de quien conoce su material.",
+          "postura": "Toma una pieza de barro negro y la gira contra la luz de la ventana."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Responde las dudas y ajusta el plan.",
+          "dialogo": "Esa es exactamente la clase de hallazgo que necesitaba. Lo convierto en la primera prueba del plan: barro negro bajo tres condiciones de luz. Si ahí falla, lo sabemos en la semana uno y no en el mes tres.",
+          "facial": "Expresión de reconocimiento genuino, asiente mientras anota.",
+          "postura": "Escribe en el plan de experimentación a la vista de Lucía."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Valida la comprensión mediante parafraseo.",
+          "dialogo": "Para asegurarme de que quedamos en lo mismo, le repito lo que acordamos: dos semanas de prueba, ustedes fotografían con la tarjeta, Rosa registra cada resultado en la bitácora, y la primera prueba es el barro negro. Dígame usted con sus palabras qué le tocaría hacer.",
+          "facial": "Mirada atenta y paciente, expresión de quien verifica sin examinar.",
+          "postura": "Deja de escribir y gira el cuerpo por completo hacia Lucía, en escucha."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "A ver si entendí: yo tomo la foto con la tarjeta puesta, reviso lo que salga antes de subirlo, y Rosa anota si estuvo bien o mal. Y empezamos con las piezas negras.",
+          "facial": "Concentración al repetir, que da paso a una sonrisa de seguridad al terminar.",
+          "postura": "Cuenta los pasos con los dedos mientras los enumera, postura erguida."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Confirma el acuerdo sobre el plan de experimentación.",
+          "dialogo": "Exactamente eso. Quedamos de acuerdo. Le dejo el plan impreso con la bitácora para Rosa y nos vemos en dos semanas a ver qué encontramos.",
+          "facial": "Sonrisa satisfecha y profesional, mirada de cierre confiado.",
+          "postura": "Entrega el plan impreso con ambas manos, postura erguida y abierta."
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "elemento": "Elemento 3 · Desarrollar el prototipo de la solución comercial con IA",
+      "titulo": "Realiza una prueba funcional del prototipo con un caso de uso",
+      "duracion": "2 mins",
+      "criterios": [
+        "Aplica el caso de uso conforme a los requerimientos y alcances establecidos en el diseño.",
+        "Registra los datos de entrada utilizados y los resultados obtenidos en cada prueba.",
+        "Menciona el resultado de la comparación de los datos obtenidos contra los datos del diseño.",
+        "Registra fallas, limitaciones, desviaciones y hallazgos detectados durante las pruebas.",
+        "Acuerda con el cliente los ajustes necesarios al prototipo con base en los hallazgos."
+      ],
+      "ahv": [
+        "Responsabilidad — ejecuta las pruebas conforme al plan y documenta lo que realmente ocurrió, incluidas las fallas."
+      ],
+      "nota_arte": "Prueba en vivo en el taller: pieza de barro negro, tarjeta de referencia, teléfono y bitácora sobre la mesa. Reutiliza los planos de Diego y Lucía.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Prueba funcional del prototipo",
+          "narrador": "Llegó el día de probar el prototipo con un caso de uso real. Diego y Lucía ejecutan la prueba del barro negro, la que ella misma señaló como la más riesgosa. Observa cómo Diego cumple cada criterio del estándar."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Aplica el caso de uso conforme al diseño.",
+          "dialogo": "Vamos con el caso que acordamos: barro negro bajo tres condiciones de luz. Sigo el diseño tal cual quedó escrito. Pieza uno, luz de mañana junto a la ventana, tarjeta de referencia en el encuadre. Tomo la foto ahora.",
+          "facial": "Semblante metódico y concentrado, mirada que verifica las condiciones antes de disparar.",
+          "postura": "Coloca la pieza y la tarjeta con cuidado, encuadra con el teléfono y dispara."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Registra los datos de entrada y los resultados.",
+          "dialogo": "Y aquí lo importante: cada prueba se anota antes de opinar. Entrada: jarrón de barro negro bruñido, luz natural de mañana, tarjeta incluida. Resultado: el sistema devolvió negro con reflejos grises. Lo escribo tal cual salió, sin corregirlo.",
+          "facial": "Mirada disciplinada, expresión de quien registra sin filtrar.",
+          "postura": "Escribe en la bitácora mostrando lo anotado a Lucía conforme lo hace."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Reflejos grises... pues sí, algo de eso tiene. Pero yo diría que es negro con brillo, no gris.",
+          "facial": "Mirada evaluadora, entrecierra los ojos comparando pantalla y pieza real.",
+          "postura": "Sostiene la pieza junto a la pantalla, alternando la vista entre ambas."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Menciona el resultado de la comparación contra el diseño.",
+          "dialogo": "Guardo su observación literal. Y comparo contra lo que el diseño esperaba: el criterio decía que la descripción del color debía coincidir con la que daría el taller. Aquí no coincide del todo. Así que esta prueba la registro como cumplimiento parcial, no como éxito.",
+          "facial": "Semblante honesto y objetivo, mirada firme al no maquillar el resultado.",
+          "postura": "Señala el criterio escrito en el plan y luego el resultado en la bitácora."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Registra fallas y hallazgos.",
+          "dialogo": "Sigo con las otras dos condiciones. Luz de tarde: describe el mismo jarrón como café oscuro. Eso ya es una falla, no una imprecisión, y así queda anotada. Luz artificial: vuelve a negro correcto. Hallazgo claro: el sistema falla con luz cálida de tarde.",
+          "facial": "Mirada atenta y sistemática, sin gesto de decepción ni de alarma.",
+          "postura": "Repite el procedimiento con cada luz y anota inmediatamente después de cada una."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Entonces sí falla. Yo se lo dije que ese barro iba a dar problema.",
+          "facial": "Expresión entre resignada y algo satisfecha por haber acertado.",
+          "postura": "Cruza los brazos, ceja levantada, torso ligeramente hacia atrás."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Demuestra Responsabilidad ante la falla.",
+          "dialogo": "Falló, y qué bueno que lo encontramos hoy y no con un cliente. Usted lo predijo y por eso lo pusimos primero en el plan. Un prototipo sirve justo para esto: para que las fallas aparezcan cuando todavía son baratas de corregir.",
+          "facial": "Semblante sereno y sin defensividad, mirada franca que asume el resultado.",
+          "postura": "Palmas abiertas hacia arriba, gesto de transparencia, sin retroceder."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Acuerda los ajustes con el cliente.",
+          "dialogo": "Le propongo dos ajustes concretos. Uno: agregar una segunda referencia de color específica para barros oscuros. Dos: que el sistema avise cuando detecte luz cálida, para que ustedes tomen la foto en otro momento. ¿Le hacen sentido, o prefiere otra ruta?",
+          "facial": "Mirada propositiva y abierta, expresión de quien trae solución y no excusa.",
+          "postura": "Marca los dos ajustes con los dedos y luego abre la mano cediendo la decisión."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "El aviso me sirve más. Total, si me dice espérate a mañana, pues me espero. Lo que no quiero es publicar algo mal.",
+          "facial": "Mirada práctica y decidida, semblante que ya evalúa su propia operación.",
+          "postura": "Descruza los brazos y se acerca a la bitácora, retomando participación."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Registra el acuerdo alcanzado.",
+          "dialogo": "Queda anotado como acuerdo: prioridad al aviso de luz, y la segunda referencia de color como mejora posterior. Ambos ajustes con su firma en la bitácora. Con esto cerramos la prueba funcional y pasamos a validar las hipótesis con usuarios.",
+          "facial": "Semblante de cierre ordenado, mirada satisfecha por el registro completo.",
+          "postura": "Desliza la bitácora hacia Lucía con la pluma para que firme el acuerdo."
+        }
+      ]
+    },
+    {
+      "numero": 5,
+      "elemento": "Elemento 4 · Validar el prototipo mediante usuarios con IA",
+      "titulo": "Presenta los resultados de la validación de las hipótesis priorizadas",
+      "duracion": "3 mins",
+      "criterios": [
+        "Expone el contexto y desarrollo de las pruebas realizadas conforme al plan de experimentación.",
+        "Expone los hallazgos de las pruebas realizadas.",
+        "Presenta las métricas de éxito y su comparación con los criterios definidos en el plan.",
+        "Muestra la retroalimentación cualitativa y cuantitativa recopilada de los usuarios.",
+        "Propone los ajustes y mejoras derivados de la validación, priorizados por impacto y factibilidad.",
+        "Acuerda con el cliente los siguientes pasos: implementación, iteración o descarte del prototipo."
+      ],
+      "ahv": [
+        "Perseverancia — da seguimiento a los hallazgos y a los ajustes hasta verificar que el prototipo responde a lo esperado."
+      ],
+      "nota_arte": "Sesión de cierre en el taller, con el reporte de validación en pantalla y la bitácora de pruebas sobre la mesa. Reutiliza los planos de Diego y Lucía.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Resultados de la validación",
+          "narrador": "Terminaron las cuatro semanas de validación con usuarios reales. Diego presenta a Lucía los resultados de las hipótesis priorizadas y acuerda con ella qué sigue. Observa cómo cumple cada criterio del estándar."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Expone el contexto y desarrollo de las pruebas.",
+          "dialogo": "Lucía, cerramos las cuatro semanas. Le cuento primero cómo se hizo, para que juzgue los números con contexto. Probamos con cuarenta piezas reales del catálogo, ustedes tomaron las fotos, y participaron doce compradores que ya les habían comprado antes.",
+          "facial": "Mirada profesional y ordenada, expresión de quien presenta un proceso, no un veredicto.",
+          "postura": "Sentado frente a Lucía, gira la laptop con el reporte hacia ella."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Expone los hallazgos de las pruebas.",
+          "dialogo": "Tres hallazgos. El tiempo de descripción bajó de veinte minutos a tres. El aviso de luz cálida funcionó: en las semanas dos a cuatro no hubo un solo error de color. Y apareció algo que no buscábamos: los compradores preguntaron menos por WhatsApp antes de comprar.",
+          "facial": "Semblante analítico que se enciende al llegar al hallazgo inesperado.",
+          "postura": "Recorre los tres hallazgos en pantalla, deteniéndose más en el tercero."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Eso último es cierto. Rosa me lo comentó, que ya casi no le escriben preguntando de qué tamaño es o de qué color.",
+          "facial": "Ojos abiertos de reconocimiento, sonrisa de quien confirma algo que ya había notado.",
+          "postura": "Se inclina hacia la pantalla apoyando el antebrazo en la mesa."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Presenta las métricas contra los criterios del plan.",
+          "dialogo": "Ahora contra lo que nos propusimos. El plan pedía bajar a menos de cinco minutos: llegamos a tres, se cumple. Pedía cero errores de color en la última semana: se cumple. Y pedía que al menos ocho de doce compradores calificaran la descripción como fiel: calificaron nueve.",
+          "facial": "Mirada rigurosa y clara, énfasis medido en cada cifra sin celebrarla de más.",
+          "postura": "Señala la columna de criterio y la de resultado, marcando la comparación."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Muestra la retroalimentación cuantitativa y cualitativa.",
+          "dialogo": "Y le traigo lo que dijeron, no solo lo que midieron. Nueve de doce calificaron la descripción como fiel. Pero lea esta frase de una compradora: dice que la descripción le hizo entender por qué la pieza cuesta lo que cuesta. Eso no lo estábamos midiendo y vale mucho.",
+          "facial": "Expresión que se entusiasma al leer la cita, mirada que busca la de Lucía.",
+          "postura": "Gira la pantalla por completo hacia Lucía para que lea la frase ella misma."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Ay, eso... eso es lo que llevo años tratando de explicar y no me sale con palabras.",
+          "facial": "Semblante conmovido, mirada que se detiene en la pantalla, sonrisa contenida.",
+          "postura": "Se lleva la mano al pecho, cuerpo quieto, absorta en la lectura."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Expone también lo que no funcionó.",
+          "dialogo": "También le debo lo que no salió. Tres de doce compradores dijeron que la descripción era demasiado larga para leerla en el teléfono. Y en las piezas de serie, las descripciones se parecen mucho entre sí. Eso todavía no está resuelto.",
+          "facial": "Mirada honesta y sostenida, semblante sereno al entregar lo desfavorable.",
+          "postura": "Mantiene la postura abierta, señala el dato bajo sin restarle peso con el gesto."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Propone ajustes priorizados por impacto y factibilidad.",
+          "dialogo": "Le propongo tres ajustes, ordenados por lo que rinden contra lo que cuestan. Primero: una versión corta de la descripción para el teléfono, es lo de mayor impacto y lo más rápido. Segundo: variar el texto en piezas de serie. Tercero, y solo si quiere: extenderlo al catálogo de exportación.",
+          "facial": "Semblante propositivo y claro, mirada que proyecta el siguiente paso.",
+          "postura": "Enumera los tres con los dedos y los señala en la tabla del reporte."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "El primero sí, urgente. El segundo también me interesa. El tercero mejor luego, todavía no vendemos fuera.",
+          "facial": "Mirada decidida y realista, expresión de quien conoce sus tiempos.",
+          "postura": "Marca su elección tocando la tabla con el dedo, uno por uno."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Demuestra Perseverancia en el seguimiento.",
+          "dialogo": "Perfecto. Y le señalo algo del proceso: el error del barro negro que usted predijo se corrigió en la semana dos, pero no lo di por cerrado hasta verificarlo cuatro semanas seguidas sin fallas. Aquí está el registro completo. Un hallazgo no se cierra porque deja de aparecer, se cierra cuando se comprueba.",
+          "facial": "Mirada firme y metódica, expresión de rigor tranquilo.",
+          "postura": "Pasa a la bitácora y recorre las cuatro semanas de verificación con el dedo."
+        },
+        {
+          "hablante": "Diego",
+          "criterio": "Acuerda los siguientes pasos con el cliente.",
+          "dialogo": "Entonces, la decisión es suya y son tres caminos: implementarlo como está, iterarlo con los ajustes que eligió, o descartarlo. Con estos resultados yo recomiendo iterar y luego implementar, pero quiero oírla a usted.",
+          "facial": "Mirada atenta e inquisitiva, sonrisa amable, gesto genuino de escucha.",
+          "postura": "Deja el bolígrafo, entrelaza las manos y se reclina cediendo el turno."
+        },
+        {
+          "hablante": "Lucía",
+          "dialogo": "Iteramos. Con la versión corta y lo de las piezas de serie. Y luego sí, lo dejamos trabajando de planta.",
+          "facial": "Sonrisa amplia y resuelta, mirada confiada que transmite decisión tomada.",
+          "postura": "Asiente con firmeza y toma la pluma para firmar el acuerdo de continuidad."
+        }
+      ]
+    }
+  ]
+}
