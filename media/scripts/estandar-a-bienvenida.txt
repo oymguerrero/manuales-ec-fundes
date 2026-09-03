@@ -1,11 +1,13 @@
-Bienvenido a la ruta A: Implementación de Inteligencia Artificial para MiPyMEs.
+Bienvenida al curso de Adopción de soluciones de IA en los procesos de la MiPyME.
 
-Esta ruta está dedicada a la propuesta A. Puedes usarla para estudiar, practicar y organizar evidencias mientras se define su versión oficial.
+Este curso está dedicado en exclusiva al Estándar de Competencia A. Puedes usarlo para estudiar, practicar y organizar tus evidencias mientras se define su versión oficial.
 
-La propuesta se dirige a quienes acompañan a MiPyMEs en la incorporación de Inteligencia Artificial a sus procesos cotidianos. No se enfoca en desarrollo de software ni en creación de contenido, sino en consultoría e integración.
+El estándar se dirige a quienes acompañan a las MiPyMEs en la incorporación de la inteligencia artificial dentro de sus procesos cotidianos. No es para desarrolladores de software ni para creadores de contenido digital: es para consultores que diagnostican, proponen, implementan y miden.
 
-Si has diagnosticado procesos, configurado herramientas, capacitado equipos y medido resultados, esta ruta puede relacionarse con tu práctica.
+Si has facilitado talleres con personal de MiPyMEs, has configurado herramientas de IA generativa, has capacitado equipos pequeños y has medido el impacto de esas implementaciones, este estándar se relaciona con tu práctica.
 
-El estándar se organiza en tres elementos: planear soluciones de IA alineadas a la MiPyME; adoptar soluciones de IA en el entorno de la MiPyME; y evaluar resultados e impacto.
+El estándar se organiza en tres elementos: planear soluciones de IA alineadas a la MiPyME; adoptar soluciones de IA en el entorno de la MiPyME; y evaluar resultados e impacto de la adopción.
 
-Este material te ayuda a practicar los tres elementos.
+A lo largo del curso te acompañará el caso de la panadería La Espiga. Andrea, consultora, trabaja ahí con Doña Beatriz, la dueña fundadora, y con Carlos, su hijo, recién egresado de administración, que apoya la digitalización del negocio.
+
+Para certificarte necesitas demostrar los tres elementos. No basta con dominar uno o dos. Este material te ayuda a practicarlos.
