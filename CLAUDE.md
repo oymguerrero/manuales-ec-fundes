@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Qué es este repositorio
 
-Manuales web interactivos del proyecto **Mi CompañIA** (FUNDES Latinoamérica + Google.org) para desarrollar competencias en IA aplicada a MiPyMEs mexicanas. Las cuatro propuestas de estándar aún no han sido publicadas oficialmente:
+Manuales web interactivos del proyecto **Mi CompañIA** (FUNDES México + Google.org) para desarrollar competencias en IA aplicada a MiPyMEs mexicanas. Las cuatro propuestas de estándar aún no han sido publicadas oficialmente:
 
 - **Curso introductorio** (`maestro/`): 6 capítulos sobre el sistema CONOCER (qué es, cómo evalúa, proceso, ¿es para ti?, recursos).
 - **Estándar A · Implementar IA** (`estandar-a/`): 3 elementos + instrumento + ruta + recursos, con el caso pedagógico transversal "La Espiga" (panadería ficticia con Doña Beatriz + Carlos).

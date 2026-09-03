@@ -564,7 +564,7 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 {questions_html}
 
 <div class="footer">
-Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org<br>
 Template del Manual de Desarrollar con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
 </div>
 
@@ -633,7 +633,7 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
 {matrix_html}
 
 <div class="footer">
-Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org · Template del Manual de Desarrollar con IA
+Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · Template del Manual de Desarrollar con IA
 </div>
 
 </body>

@@ -39,7 +39,7 @@ NO haces:
 | **Cloudflare Pages** | Gratis, CDN global, métricas, dominio custom fácil | Requiere cuenta Cloudflare |
 | **Vercel** | Más features (preview deploys por PR), excelente DX | Política de uso comercial menos clara para no-profit |
 
-Para FUNDES Latinoamérica como organización seria, recomiendo **Cloudflare Pages** + dominio `micompania.fundes.org` (o subdominio similar). Validar con el área de IT institucional antes de configurar.
+Para FUNDES México como organización seria, recomiendo **Cloudflare Pages** + dominio `micompania.fundes.org` (o subdominio similar). Validar con el área de IT institucional antes de configurar.
 
 ## Workflows que implementas
 

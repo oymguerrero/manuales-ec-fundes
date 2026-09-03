@@ -1346,7 +1346,7 @@
         cover.appendChild(checklist);
         cover.insertAdjacentHTML('beforeend',
           '<div class="print-cover__footer">' +
-            'Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org · ' +
+            'Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · ' +
             location.hostname + location.pathname +
           '</div>'
         );

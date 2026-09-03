@@ -1,6 +1,6 @@
 # Mi CompañIA — Manual Maestro y Estándar A
 
-Manuales interactivos en HTML del proyecto **Mi CompañIA** (iniciativa de FUNDES Latinoamérica con apoyo de Google.org) sobre Inteligencia Artificial aplicada a las MiPyMEs mexicanas. Este repositorio publica por ahora **dos manuales**: el Manual Maestro (general) y el Manual del Estándar A · Implementación.
+Manuales interactivos en HTML del proyecto **Mi CompañIA** (iniciativa de FUNDES México con apoyo de Google.org) sobre Inteligencia Artificial aplicada a las MiPyMEs mexicanas. Este repositorio publica por ahora **dos manuales**: el Manual Maestro (general) y el Manual del Estándar A · Implementación.
 
 ## Estructura
 

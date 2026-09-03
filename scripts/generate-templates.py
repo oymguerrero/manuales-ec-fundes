@@ -503,7 +503,7 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 {questions_html}
 
 <div class="footer">
-Mi CompañIA · Una iniciativa de FUNDES Latinoamérica con el apoyo de Google.org<br>
+Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org<br>
 Template del Curso de Adopción de IA en procesos · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
 </div>
 
@@ -572,7 +572,7 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fffbf0; }}
 {matrix_html}
 
 <div class="footer">
-Mi CompañIA · FUNDES Latinoamérica con el apoyo de Google.org · Template Excel del Curso de Adopción de IA en procesos
+Mi CompañIA · FUNDES México con el apoyo de Google.org · Template Excel del Curso de Adopción de IA en procesos
 </div>
 
 </body>
@@ -664,7 +664,7 @@ def generate_pptx_capacitacion(prod):
 
     def footer_band(slide, page_num=None, total=None):
         filled_shape(slide, MSO_SHAPE.RECTANGLE, 0, Inches(7.15), SW, Inches(0.35), AMARILLO)
-        label = "Mi CompañIA  ·  FUNDES Latinoamérica  ·  AIxMiPyMEs"
+        label = "Mi CompañIA  ·  FUNDES México  ·  AIxMiPyMEs"
         if page_num is not None and total is not None:
             label += f"   ·   {page_num} / {total}"
         textbox(slide, Inches(0), Inches(7.2), SW, Inches(0.3),
@@ -692,7 +692,7 @@ def generate_pptx_capacitacion(prod):
             "Material de capacitación al personal", size=20, italic=True, color=AZUL_CLARO)
     # banda amarilla con autoría
     textbox(s, Inches(0.7), Inches(5.9), Inches(8.5), Inches(0.5),
-            "Mi CompañIA  ·  FUNDES Latinoamérica con el apoyo de Google.org",
+            "Mi CompañIA  ·  FUNDES México con el apoyo de Google.org",
             size=12, bold=True, color=AMARILLO)
     # logo en banda derecha
     badge = filled_shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, Inches(10.1), Inches(3.0),
@@ -938,7 +938,7 @@ def generate_pptx_capacitacion(prod):
             size=14, italic=True, color=AZUL_CLARO, align=PP_ALIGN.CENTER)
     filled_shape(s, MSO_SHAPE.RECTANGLE, 0, Inches(6.85), SW, Inches(0.65), AMARILLO)
     textbox(s, Inches(0), Inches(6.95), SW, Inches(0.5),
-            "Mi CompañIA  ·  FUNDES Latinoamérica con el apoyo de Google.org",
+            "Mi CompañIA  ·  FUNDES México con el apoyo de Google.org",
             size=13, bold=True, color=AZUL, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 
     return prs

@@ -99,7 +99,7 @@ rg -L "Mi CompañIA" -g '*.html' -g '!extras/**'
 rg -L 'logo[^" ]*\.(png|svg)' -g '*.html' -g '!extras/**'
 
 # Ninguna debe tener referencia al branding viejo
-rg -n 'Componente 2|Fundes\b' -g '*.html' -g '!extras/**' | grep -v 'FUNDES Latinoamérica'
+rg -n 'Componente 2|Fundes\b' -g '*.html' -g '!extras/**' | grep -v 'FUNDES México'
 ```
 
 ### Fase 7 · Reporte final go/no-go
