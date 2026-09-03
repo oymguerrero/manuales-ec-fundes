@@ -13,7 +13,9 @@ import re
 from bs4 import BeautifulSoup, NavigableString, Tag
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.shared import Inches, Pt
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.shared import Inches, Pt, RGBColor
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
@@ -21,6 +23,71 @@ from openpyxl.utils import get_column_letter
 
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE_DIRS = [ROOT / f"estandar-{letter}" / "templates" for letter in "abcd"]
+
+# Sistema de diseño Mi CompañIA (design.md §2.1 paleta oficial, §3.1 tipografía).
+# python-docx arranca con el tema por omisión de Office (Calibri + azules
+# #4F81BD), así que hay que fijar tipografía y color a mano o los archivos
+# descargables no se parecen al sitio.
+FUENTE = "Afacad"
+FUENTE_RESPALDO = "Open Sans"
+AZUL_PROFUNDO = "28467E"   # --color-azul-profundo · títulos
+GRIS_TEXTO = "4B5563"      # --color-gris-texto · cuerpo
+AMARILLO = "F7C031"        # --color-amarillo · acento
+
+
+def _fijar_fuente(style, nombre):
+    """style.font.name solo escribe w:ascii; hay que cubrir las demás variantes."""
+    style.font.name = nombre
+    rpr = style.element.get_or_add_rPr()
+    rfonts = rpr.find(qn("w:rFonts"))
+    if rfonts is None:
+        rfonts = OxmlElement("w:rFonts")
+        rpr.append(rfonts)
+    for attr in ("w:ascii", "w:hAnsi", "w:cs", "w:eastAsia"):
+        rfonts.set(qn(attr), nombre)
+
+
+def aplicar_marca(document):
+    """Tipografía y paleta del sistema de diseño sobre los estilos del documento."""
+    normal = document.styles["Normal"]
+    _fijar_fuente(normal, FUENTE)
+    normal.font.size = Pt(10)
+    normal.font.color.rgb = RGBColor.from_string(GRIS_TEXTO)
+    for nombre, tam in (("Title", 20), ("Heading 1", 15), ("Heading 2", 12), ("Heading 3", 11)):
+        try:
+            estilo = document.styles[nombre]
+        except KeyError:
+            continue
+        _fijar_fuente(estilo, FUENTE)
+        estilo.font.size = Pt(tam)
+        estilo.font.bold = True
+        estilo.font.color.rgb = RGBColor.from_string(AZUL_PROFUNDO)
+
+
+def aplicar_marca_excel(workbook):
+    """openpyxl arranca en Calibri; el estilo Normal es lo que hereda todo."""
+    try:
+        workbook._named_styles["Normal"].font = Font(name=FUENTE, size=10, color=GRIS_TEXTO)
+    except (AttributeError, KeyError):
+        pass
+
+
+def sombrear_celda(celda, relleno):
+    shd = OxmlElement("w:shd")
+    shd.set(qn("w:val"), "clear")
+    shd.set(qn("w:color"), "auto")
+    shd.set(qn("w:fill"), relleno)
+    celda._tc.get_or_add_tcPr().append(shd)
+
+
+def encabezar_fila(celdas):
+    """Fila de encabezado: fondo azul profundo y texto blanco, como en el sitio."""
+    for celda in celdas:
+        sombrear_celda(celda, AZUL_PROFUNDO)
+        for parrafo in celda.paragraphs:
+            for run in parrafo.runs:
+                run.bold = True
+                run.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
 
 
 def clean_text(node):
@@ -50,9 +117,7 @@ def convert_doc(source):
     section.bottom_margin = Inches(0.65)
     section.left_margin = Inches(0.7)
     section.right_margin = Inches(0.7)
-    styles = document.styles
-    styles["Normal"].font.name = "Arial"
-    styles["Normal"].font.size = Pt(10)
+    aplicar_marca(document)
     title = soup.find("h1")
     if title:
         paragraph = document.add_heading(clean_text(title), 0)
@@ -81,11 +146,13 @@ def convert_doc(source):
             for row_index, row in enumerate(rows):
                 cells = row.find_all(["th", "td"], recursive=False)
                 target = table.add_row().cells
+                encabezado = False
                 for index, cell in enumerate(cells):
                     target[index].text = clean_text(cell)
                     if row_index == 0 or cell.name == "th":
-                        for run in target[index].paragraphs[0].runs:
-                            run.bold = True
+                        encabezado = True
+                if encabezado:
+                    encabezar_fila(target[: len(cells)])
 
     target = source.with_suffix(".docx")
     document.save(target)
@@ -107,6 +174,7 @@ def safe_sheet_name(name, used):
 def convert_xls(source):
     soup = BeautifulSoup(provisional_language(source.read_text(encoding="utf-8")), "html.parser")
     workbook = Workbook()
+    aplicar_marca_excel(workbook)
     workbook.remove(workbook.active)
     used = set()
     tables = soup.find_all("table")
@@ -120,8 +188,8 @@ def convert_xls(source):
                 target = sheet.cell(row=row_index, column=col_index, value=clean_text(cell))
                 target.alignment = Alignment(vertical="top", wrap_text=True)
                 if row_index == 1 or cell.name == "th":
-                    target.font = Font(bold=True, color="FFFFFF")
-                    target.fill = PatternFill("solid", fgColor="193B69")
+                    target.font = Font(name=FUENTE, bold=True, color="FFFFFF")
+                    target.fill = PatternFill("solid", fgColor="28467E")
         sheet.freeze_panes = "A2"
         for column in range(1, sheet.max_column + 1):
             values = [str(sheet.cell(row=row, column=column).value or "") for row in range(1, sheet.max_row + 1)]
@@ -154,8 +222,7 @@ def update_links(mapping):
 
 def build_checklist(path, title, entries):
     document = Document()
-    document.styles["Normal"].font.name = "Arial"
-    document.styles["Normal"].font.size = Pt(10)
+    aplicar_marca(document)
     document.add_heading(title, 0)
     document.add_paragraph(
         "Material de autoevaluación basado en documentos de trabajo. "
@@ -166,7 +233,7 @@ def build_checklist(path, title, entries):
     headings = ["Criterio o evidencia", "Preparado", "Por reforzar", "Notas / ubicación de evidencia"]
     for index, heading in enumerate(headings):
         table.rows[0].cells[index].text = heading
-        table.rows[0].cells[index].paragraphs[0].runs[0].bold = True
+    encabezar_fila(table.rows[0].cells)
     for entry in entries:
         cells = table.add_row().cells
         cells[0].text = entry
