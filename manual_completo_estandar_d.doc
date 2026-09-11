@@ -125,7 +125,7 @@ svg.diagram {
 <span class="accordion__meta">Carta de inicio · 5 min</span>
 </summary>
 <div class="accordion__body">
-<p>Este manual está dedicado en exclusiva al Estándar de Competencia D: <strong>Desarrollo de soluciones de transformación digital con Inteligencia Artificial en la MiPyME</strong>. Es el documento que te acompañará a lo largo de tu preparación y al que volverás una y otra vez hasta el día de tu evaluación.</p>
+<p>Este manual está dedicado en exclusiva al Estándar de Competencia D: <strong>Creación de soluciones tecnológicas con Inteligencia Artificial en la modernización digital de la MiPyME</strong>. Es el documento que te acompañará a lo largo de tu preparación y al que volverás una y otra vez hasta el día de tu evaluación.</p>
 <p>El Estándar D es el más avanzado de la colección (Nivel 4 del Sistema Nacional de Competencias). Está dirigido a quienes desarrollan soluciones completas de transformación digital con inteligencia artificial para las MiPyMEs, incluyendo la construcción técnica de la solución. No es un estándar para configurar herramientas existentes —ese es el A—, ni para crear productos validados experimentalmente —ese es el B—, ni para contenido de marketing —ese es el C—. Es para desarrolladores de soluciones: profesionales que diagnostican oportunidades de transformación digital, construyen la solución con IA, la implementan en el entorno productivo y la optimizan.</p>
 <p>Si tu trabajo cotidiano se parece a esto —si has diagnosticado oportunidades de transformación digital en empresas, has construido soluciones técnicas con componentes de IA, has desplegado soluciones en entornos productivos con sus credenciales e infraestructura, has capacitado usuarios y optimizado soluciones en operación—, este es tu estándar.</p>
 <aside class="callout callout--important" role="note">
@@ -226,7 +226,7 @@ svg.diagram {
 <tbody>
 <tr>
 <td><strong>Título oficial</strong></td>
-<td>Desarrollo de soluciones de transformación digital con Inteligencia Artificial en la MiPyME</td>
+<td>Creación de soluciones tecnológicas con Inteligencia Artificial en la modernización digital de la MiPyME</td>
 </tr>
 <tr>
 <td><strong>Nivel SNC</strong></td>
@@ -2419,7 +2419,7 @@ svg.diagram {
 <div class="accordion__body">
 <p>Las siguientes fuentes son las que respaldan el contenido normativo de este manual y del estándar de competencia.</p>
 <h3>Fuente normativa principal</h3>
-<p>La fuente de evaluación es el <strong>estándar-COOPYD-01</strong>, documento oficial del Estándar de Competencia publicado por CONOCER: <em>Desarrollo de soluciones de transformación digital con Inteligencia Artificial en la MiPyME</em>. Este documento contiene los criterios de evaluación, las características de cada producto y desempeño, el glosario oficial y la bibliografía del estándar. Es el único documento que manda en caso de discrepancia con este manual.</p>
+<p>La fuente de evaluación es el <strong>estándar-COOPYD-01</strong>, documento oficial del Estándar de Competencia publicado por CONOCER: <em>Creación de soluciones tecnológicas con Inteligencia Artificial en la modernización digital de la MiPyME</em>. Este documento contiene los criterios de evaluación, las características de cada producto y desempeño, el glosario oficial y la bibliografía del estándar. Es el único documento que manda en caso de discrepancia con este manual.</p>
 <aside class="callout callout--important" role="note">
 <span class="callout__label">La fuente normativa es el estándar</span>
 <div class="callout__body">Este manual explica y complementa el estándar-COOPYD-01, pero no lo reemplaza. Ante cualquier duda sobre criterios de evaluación, características requeridas o definiciones de glosario, la versión vigente del estándar es la que determina qué se te evaluará. Puedes solicitarlo a tu Centro de Evaluación.</div>

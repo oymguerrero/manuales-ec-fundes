@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Genera los PPTX de guion (script de video) por desempeno del EC
-"Gestion de contenido de marketing digital con IA en la MiPyME".
+"Gestion de contenido de mercadotecnia digital con IA en la MiPyME".
 
 Replica el formato del entregable de referencia
 `extras/Script para desempeno 7_06082026.pptx`:

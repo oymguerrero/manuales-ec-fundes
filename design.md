@@ -1717,7 +1717,7 @@ Los templates del Estándar B siguen la misma filosofía pedagógica del §23.1 
 
 **Nota:** estos templates no están generados en el repositorio actual. Deben crearse antes de publicar el contenido del Estándar B.
 
-### 23.4 Templates ofimáticos — Estándar C · Desarrollar contenido de marketing digital con IA
+### 23.4 Templates ofimáticos — Estándar C · Prestación de servicios de consultoría en mercadotecnia digital con IA en la MiPyME
 
 **Caso pedagógico**: Cafetería La Cuesta — café de especialidad, zona universitaria, 6 empleados, dueña Mariana. Publican en redes de forma irregular, sin estrategia. Quieren posicionar su café frente a las cadenas atrayendo al público universitario.
 
@@ -1728,7 +1728,7 @@ Los templates del Estándar B siguen la misma filosofía pedagógica del §23.1 
 | # | Producto | Archivo | Formato |
 |---|---|---|---|
 | 1.1 | Expediente de información clave de la MiPyME | `1-1-expediente-informacion.doc` | Word |
-| 1.2 | Estrategia de contenido de marketing digital | `1-2-estrategia-contenido.doc` | Word |
+| 1.2 | Estrategia de contenido de mercadotecnia digital | `1-2-estrategia-contenido.doc` | Word |
 | 2.1 | Portafolio de contenido de texto generado con IA | `2-1-portafolio-texto.doc` | Word |
 | 2.2 | Portafolio de contenido de imagen generado con IA | `2-2-portafolio-imagen.doc` | Word |
 | 2.3 | Portafolio de contenido de audio generado con IA | `2-3-portafolio-audio.doc` | Word |

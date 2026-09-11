@@ -587,7 +587,7 @@
       ]
     },
     {
-      id: 'estandar-c', title: 'Marketing digital con IA', shortTitle: 'Ruta C',
+      id: 'estandar-c', title: 'Mercadotecnia digital con IA', shortTitle: 'Ruta C',
       pages: [
         ['estandar-c/index.html', 'Bienvenida y contexto', 'estandar-c-bienvenida-contexto', 'inicio'],
         ['estandar-c/elemento-1.html', 'Elemento 1 · Planificar', 'estandar-c-elemento-1', 'leccion'],

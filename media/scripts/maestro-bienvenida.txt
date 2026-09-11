@@ -13,7 +13,7 @@ La propuesta A contempla implementar soluciones de inteligencia artificial en lo
 <break time="300ms"/>
 El B, el creación de soluciones comerciales nuevas con inteligencia artificial.
 <break time="300ms"/>
-El C, el contenido de marketing digital con inteligencia artificial.
+El C, el contenido de mercadotecnia digital con inteligencia artificial.
 <break time="300ms"/>
 Y el D, el desarrollo de soluciones técnicas a la medida.
 <break time="800ms"/>

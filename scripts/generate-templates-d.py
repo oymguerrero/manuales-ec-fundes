@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Genera los 14 templates de los productos del Estándar D · Desarrollo de soluciones
-de transformación digital con IA en MiPyMEs.
+Genera los 14 templates de los productos del Estándar D · Creación de soluciones
+tecnológicas con IA en la modernización digital de la MiPyME.
 
 - 13 Word (.doc) como HTML estilizado con MIME Office
 -  1 Excel (.xls) como HTML estilizado con MIME Office

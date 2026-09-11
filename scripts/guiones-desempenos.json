@@ -1,11 +1,11 @@
 [
   {
     "numero": 1,
-    "elemento": "Elemento 1 · Planificar la estrategia de contenido de marketing digital con IA",
-    "titulo": "Valida la estrategia de contenido de marketing digital",
+    "elemento": "Elemento 1 · Planificar la estrategia de contenido de mercadotecnia digital con IA",
+    "titulo": "Valida la estrategia de contenido de mercadotecnia digital",
     "duracion": "3 mins",
     "criterios": [
-      "Presenta la estrategia diseñada ante la persona responsable del marketing digital.",
+      "Presenta la estrategia diseñada ante la persona responsable del mercadotecnia digital.",
       "Utiliza lenguaje claro y acorde a la audiencia, describiendo los tecnicismos de la especialidad.",
       "Aclara las dudas que se presenten / solicita retroalimentación acerca de la propuesta.",
       "Obtiene el visto bueno de validación verbal/por escrito para iniciar la implementación."
@@ -19,7 +19,7 @@
       {
         "tipo": "apertura",
         "titulo_pantalla": "Validación de la estrategia",
-        "narrador": "Martín terminó de diseñar la estrategia de contenido de marketing digital con IA para la cafetería La Cuesta. Hoy la presenta ante Mariana, la dueña, para obtener su validación. Observa con atención cómo Martín va cumpliendo cada uno de los criterios del estándar."
+        "narrador": "Martín terminó de diseñar la estrategia de contenido de mercadotecnia digital con IA para la cafetería La Cuesta. Hoy la presenta ante Mariana, la dueña, para obtener su validación. Observa con atención cómo Martín va cumpliendo cada uno de los criterios del estándar."
       },
       {
         "hablante": "Martín",
@@ -132,7 +132,7 @@
   },
   {
     "numero": 2,
-    "elemento": "Elemento 2 · Generar contenido de marketing digital con IA",
+    "elemento": "Elemento 2 · Generar contenido de mercadotecnia digital con IA",
     "titulo": "Crea contenido de texto con herramientas de IA",
     "duracion": "3 mins",
     "criterios": [
@@ -163,7 +163,7 @@
       {
         "hablante": "Martín",
         "criterio": "Escribe el prompt con rol, contexto y tarea.",
-        "dialogo": "Ahora escribo el prompt, y aquí está la diferencia entre un texto genérico y uno que sirve. Empiezo por el rol: actúa como redactor de marketing digital para cafeterías de especialidad. Luego el contexto: La Cuesta es una cafetería de barrio universitario, tueste propio, ambiente tranquilo. Y la tarea: redacta tres copies para publicaciones de Instagram.",
+        "dialogo": "Ahora escribo el prompt, y aquí está la diferencia entre un texto genérico y uno que sirve. Empiezo por el rol: actúa como redactor de mercadotecnia digital para cafeterías de especialidad. Luego el contexto: La Cuesta es una cafetería de barrio universitario, tueste propio, ambiente tranquilo. Y la tarea: redacta tres copies para publicaciones de Instagram.",
         "facial": "Concentración didáctica, labios en ligero movimiento mientras teclea y narra.",
         "postura": "Ambas manos sobre el teclado, torso inclinado hacia el monitor, mirada fija en el texto que escribe."
       },
@@ -252,7 +252,7 @@
   },
   {
     "numero": 3,
-    "elemento": "Elemento 2 · Generar contenido de marketing digital con IA",
+    "elemento": "Elemento 2 · Generar contenido de mercadotecnia digital con IA",
     "titulo": "Crea contenido de video con herramientas de IA",
     "duracion": "3 mins",
     "criterios": [
@@ -366,7 +366,7 @@
   },
   {
     "numero": 4,
-    "elemento": "Elemento 2 · Generar contenido de marketing digital con IA",
+    "elemento": "Elemento 2 · Generar contenido de mercadotecnia digital con IA",
     "titulo": "Crea contenido de imagen con herramientas de IA",
     "duracion": "3 mins",
     "criterios": [
@@ -479,7 +479,7 @@
   },
   {
     "numero": 5,
-    "elemento": "Elemento 2 · Generar contenido de marketing digital con IA",
+    "elemento": "Elemento 2 · Generar contenido de mercadotecnia digital con IA",
     "titulo": "Crea contenido de audio con herramientas de IA",
     "duracion": "3 mins",
     "criterios": [
@@ -600,7 +600,7 @@
   },
   {
     "numero": 6,
-    "elemento": "Elemento 3 · Implementar la estrategia de contenido de marketing digital",
+    "elemento": "Elemento 3 · Implementar la estrategia de contenido de mercadotecnia digital",
     "titulo": "Publica el contenido de la campaña generado con IA",
     "duracion": "3 mins",
     "criterios": [
@@ -729,7 +729,7 @@
   },
   {
     "numero": 7,
-    "elemento": "Elemento 3 · Implementar la estrategia de contenido de marketing digital",
+    "elemento": "Elemento 3 · Implementar la estrategia de contenido de mercadotecnia digital",
     "titulo": "Habilita al personal de la MiPyME en el proceso operativo",
     "duracion": "3 mins",
     "criterios": [
@@ -738,7 +738,7 @@
       "Explica las restricciones y políticas de contenido de cada plataforma que pueden causar el rechazo de una publicación.",
       "Describe el procedimiento para monitorear las métricas de cada publicación posterior a su lanzamiento.",
       "Aclara las dudas que se presenten / solicita retroalimentación acerca del proceso operativo de publicación y programación.",
-      "Entrega la guía operativa de publicación a la persona responsable del marketing digital en la MiPyME."
+      "Entrega la guía operativa de publicación a la persona responsable del mercadotecnia digital en la MiPyME."
     ],
     "ahv": [
       "Cooperación — involucra a la persona responsable facilitando su participación activa en la publicación.",
@@ -854,11 +854,11 @@
   },
   {
     "numero": 8,
-    "elemento": "Elemento 4 · Optimizar el contenido de marketing digital con IA",
+    "elemento": "Elemento 4 · Optimizar el contenido de mercadotecnia digital con IA",
     "titulo": "Presenta el reporte de resultados y las recomendaciones de optimización",
     "duracion": "3 mins",
     "criterios": [
-      "Expone los resultados del reporte de desempeño del contenido de marketing digital publicado.",
+      "Expone los resultados del reporte de desempeño del contenido de mercadotecnia digital publicado.",
       "Muestra el plan de optimización de contenido con IA para el siguiente periodo.",
       "Aclara las dudas que se presenten / solicita retroalimentación acerca de los resultados y del plan.",
       "Obtiene la validación de las acciones de optimización y del calendario de publicación para el siguiente periodo."

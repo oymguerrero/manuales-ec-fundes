@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Genera los 9 templates de los productos del Estándar C · Implementar marketing digital
-con IA en MiPyMEs (Estándar C · Crear contenido de marketing digital con IA).
+Genera los 9 templates de los productos del Estándar C · Implementar mercadotecnia digital
+con IA en MiPyMEs (Estándar C · Crear contenido de mercadotecnia digital con IA).
 
 - 8 Word (.doc) como HTML estilizado con MIME Office
 - 1 Excel (.xls) como HTML estilizado con MIME Office
@@ -41,7 +41,7 @@ PRODUCTS = [
         "title": "Expediente de información clave de la MiPyME, documentado",
         "intro": (
             "Es el punto de partida del proyecto: un expediente completo con el perfil "
-            "empresarial, datos de contacto del responsable de marketing, productos/servicios "
+            "empresarial, datos de contacto del responsable de mercadotecnia, productos/servicios "
             "a promover, metas comerciales, plataformas digitales activas, métricas de presencia "
             "actual, análisis de contenido existente, perfil de audiencia objetivo y el acuerdo "
             "de confidencialidad firmado."
@@ -49,9 +49,9 @@ PRODUCTS = [
         "f21": [
             "(a) Contiene el perfil empresarial incluyendo: el nombre de la empresa/marca comercial, "
             "giro, misión, visión, valores y ubicación",
-            "(b) Incluye los datos de contacto de la persona responsable del marketing digital en la "
+            "(b) Incluye los datos de contacto de la persona responsable del mercadotecnia digital en la "
             "MiPyME: nombre, cargo, correo electrónico y teléfono",
-            "(c) Incluye el listado de productos/servicios a promover a través del marketing digital",
+            "(c) Incluye el listado de productos/servicios a promover a través del mercadotecnia digital",
             "(d) Especifica las metas comerciales por un periodo de tiempo considerando volumen de "
             "ventas/medio de captación de clientes",
             "(e) Incluye el listado de plataformas digitales en los que tiene presencia actual la MiPyME",
@@ -79,8 +79,8 @@ PRODUCTS = [
                 "de la MiPyME con la que trabajas.",
             ),
             (
-                "Contacto de la persona responsable de marketing",
-                "¿Quién en la MiPyME es responsable del marketing digital? "
+                "Contacto de la persona responsable de mercadotecnia",
+                "¿Quién en la MiPyME es responsable del mercadotecnia digital? "
                 "Nombre completo, cargo, correo y teléfono.",
             ),
             (
@@ -125,13 +125,13 @@ PRODUCTS = [
         "slug": "1-2-estrategia-contenido",
         "format": "word",
         "elemento": "1 · Planificar",
-        "title": "Estrategia de contenido de marketing digital de la MiPyME utilizando IA, diseñada",
+        "title": "Estrategia de contenido de mercadotecnia digital de la MiPyME utilizando IA, diseñada",
         "intro": (
             "Define la voz y personalidad de marca, los lineamientos de tono por plataforma, "
             "los tipos de contenido recomendados por etapa del embudo, el calendario de publicación "
             "para al menos cuatro semanas, los horarios óptimos, las temporadas comerciales relevantes, "
             "los objetivos medibles y el presupuesto de implementación. Debe contar con la aprobación "
-            "documentada de la persona responsable de marketing en la MiPyME."
+            "documentada de la persona responsable de mercadotecnia en la MiPyME."
         ),
         "f21": [
             "(a) Especifica la definición de la voz y personalidad de marca para el contenido digital",
@@ -151,8 +151,8 @@ PRODUCTS = [
             "métricas de seguimiento",
             "(i) Incluye el presupuesto/monto de inversión requerido de implementación, de acuerdo "
             "con el contexto de la MiPyME",
-            "(j) Contiene la evidencia de aprobación de la estrategia de marketing digital planteada "
-            "por parte de la persona responsable del marketing digital en la MiPyME",
+            "(j) Contiene la evidencia de aprobación de la estrategia de mercadotecnia digital planteada "
+            "por parte de la persona responsable del mercadotecnia digital en la MiPyME",
         ],
         "caso": (
             "Voz de marca: 'el café de tu rincón favorito' — cálida, cercana, educativa sobre café "
@@ -227,7 +227,7 @@ PRODUCTS = [
         "slug": "2-1-portafolio-texto",
         "format": "word",
         "elemento": "2 · Generar",
-        "title": "Contenido de texto del portafolio de marketing digital generado con IA, documentado",
+        "title": "Contenido de texto del portafolio de mercadotecnia digital generado con IA, documentado",
         "intro": (
             "Documenta el proceso completo de generación de contenido de texto con IA: "
             "la herramienta utilizada, el prompt estructurado (rol, contexto, tarea, audiencia, "
@@ -248,7 +248,7 @@ PRODUCTS = [
         ],
         "caso": (
             "Herramienta: Claude claude-sonnet-4-6. "
-            "Prompt estructura completa: 'Rol: eres redactor de contenido de marketing digital "
+            "Prompt estructura completa: 'Rol: eres redactor de contenido de mercadotecnia digital "
             "especializado en cafeterías de especialidad. Contexto: Cafetería La Cuesta, zona "
             "universitaria, café tostado en casa. Tarea: escribe el caption para un post de Instagram "
             "del lunes. Audiencia: universitarios 18-28 años. Formato: caption de máximo 150 palabras "
@@ -295,7 +295,7 @@ PRODUCTS = [
         "slug": "2-2-portafolio-imagen",
         "format": "word",
         "elemento": "2 · Generar",
-        "title": "Contenido de imagen del portafolio de marketing digital generado con IA, documentado",
+        "title": "Contenido de imagen del portafolio de mercadotecnia digital generado con IA, documentado",
         "intro": (
             "Documenta el proceso de generación de imágenes con IA: la herramienta, el prompt "
             "o imagen de referencia, la imagen final para cada plataforma, la verificación de "
@@ -361,7 +361,7 @@ PRODUCTS = [
         "slug": "2-3-portafolio-audio",
         "format": "word",
         "elemento": "2 · Generar",
-        "title": "Contenido de audio del portafolio de marketing digital generado con IA, documentado",
+        "title": "Contenido de audio del portafolio de mercadotecnia digital generado con IA, documentado",
         "intro": (
             "Documenta el proceso de generación de audio con IA: la herramienta y voz seleccionada, "
             "el guión o parámetros proporcionados, el audio final y su uso previsto, la verificación "
@@ -418,7 +418,7 @@ PRODUCTS = [
         "slug": "2-4-portafolio-video",
         "format": "word",
         "elemento": "2 · Generar",
-        "title": "Contenido de video del portafolio de marketing digital generado con IA, documentado",
+        "title": "Contenido de video del portafolio de mercadotecnia digital generado con IA, documentado",
         "intro": (
             "Documenta el proceso de generación de video con IA: la herramienta, el prompt "
             "por escena o referencia visual, el video final y su especificación técnica, "
@@ -497,7 +497,7 @@ PRODUCTS = [
         "slug": "3-1-bitacora-implementacion",
         "format": "word",
         "elemento": "3 · Implementar",
-        "title": "Bitácora de implementación del contenido de marketing digital en plataformas digitales, documentada",
+        "title": "Bitácora de implementación del contenido de mercadotecnia digital en plataformas digitales, documentada",
         "intro": (
             "Registro cronológico de todas las publicaciones realizadas durante la campaña: "
             "fecha, hora, plataforma, tipo de contenido y estado de cada pieza. Incluye capturas "
@@ -509,7 +509,7 @@ PRODUCTS = [
             "digital(es), tipo de contenido y estado de publicación: publicado/programado/rechazado",
             "(b) Incluye las capturas de pantalla/enlaces de verificación de cada publicación realizada",
             "(c) Indica la descripción de las especificaciones técnicas de cada medio utilizado "
-            "conforme a la estrategia de marketing digital",
+            "conforme a la estrategia de mercadotecnia digital",
             "(d) Contiene el registro de incidencias técnicas/rechazos de plataforma(s) digital(es) "
             "y los ajustes realizados durante la implementación",
             "(e) Incluye la evidencia de las herramientas de medición y seguimiento en cada "
@@ -626,16 +626,16 @@ PRODUCTS = [
         "slug": "4-1-reporte-optimizacion",
         "format": "excel",
         "elemento": "4 · Optimizar",
-        "title": "Reporte de desempeño del contenido publicado de marketing digital, documentado",
+        "title": "Reporte de desempeño del contenido publicado de mercadotecnia digital, documentado",
         "intro": (
             "Producto integrador que combina el reporte de desempeño de la campaña concluida "
             "con el plan de optimización para el siguiente periodo. Incluye métricas por publicación "
             "y por plataforma, comparativo contra objetivos, análisis de mejor y peor desempeño, "
             "recomendaciones de ajuste y el calendario del siguiente periodo. Debe contar con la "
-            "aprobación de la persona responsable de marketing en la MiPyME."
+            "aprobación de la persona responsable de mercadotecnia en la MiPyME."
         ),
         "f21": [
-            "(a) Está elaborado a partir de una campaña de marketing digital concluida",
+            "(a) Está elaborado a partir de una campaña de mercadotecnia digital concluida",
             "(b) Tiene el resumen ejecutivo con los principales resultados alcanzados en el periodo "
             "analizado y su relación con los objetivos de la estrategia",
             "(c) Incluye las métricas de rendimiento por publicación, por tipo de contenido y por "
@@ -664,7 +664,7 @@ PRODUCTS = [
             "(m) Tiene el calendario de publicación de contenidos para el siguiente periodo",
             "(n) Especifica los nuevos objetivos y métricas de seguimiento para el siguiente periodo",
             "(o) Contiene la evidencia de aprobación del plan de optimización por parte de la(s) "
-            "persona(s) responsable(s) del marketing digital en la MiPyME",
+            "persona(s) responsable(s) del mercadotecnia digital en la MiPyME",
         ],
         "caso": (
             "Campaña: septiembre 2025, 4 semanas. "
@@ -923,7 +923,7 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Manual de Marketing Digital con IA · Producto del Elemento {elemento}</p>
+<p class="subtitle">Manual de Mercadotecnia Digital con IA · Producto del Elemento {elemento}</p>
 </td>
 <td class="meta"><strong>Producto {num}</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
@@ -992,7 +992,7 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Manual de Marketing Digital con IA · Producto del Elemento {elemento} · Excel</p>
+<p class="subtitle">Manual de Mercadotecnia Digital con IA · Producto del Elemento {elemento} · Excel</p>
 </td>
 <td class="meta"><strong>Producto {num}</strong><br>Hoja editable · Excel<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>

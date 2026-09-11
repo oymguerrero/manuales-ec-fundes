@@ -1,5 +1,5 @@
 <speak>
-Elemento uno: <emphasis level="moderate">Planificar la estrategia de contenido de marketing digital con inteligencia artificial.</emphasis>
+Elemento uno: <emphasis level="moderate">Planificar la estrategia de contenido de mercadotecnia digital con inteligencia artificial.</emphasis>
 <break time="700ms"/>
 Antes de generar un solo post, una sola imagen o un solo video, necesitas entender la MiPyME para la que trabajas. No de manera superficial. A fondo. Quién es su cliente, qué plataformas usa hoy, qué está funcionando y qué no. Ese diagnóstico es la base de todo lo que viene.
 <break time="800ms"/>

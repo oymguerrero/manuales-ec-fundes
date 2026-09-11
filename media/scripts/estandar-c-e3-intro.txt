@@ -1,5 +1,5 @@
 <speak>
-Elemento tres: <emphasis level="moderate">Implementar el contenido de marketing digital con inteligencia artificial.</emphasis>
+Elemento tres: <emphasis level="moderate">Implementar el contenido de mercadotecnia digital con inteligencia artificial.</emphasis>
 <break time="700ms"/>
 Tienes la estrategia. Tienes el contenido producido y aprobado. Ahora llega el momento de publicarlo. Pero implementar no es solo darle al botón de publicar. Es hacerlo bien, con registro, con criterio y dejando a la MiPyME en condiciones de seguir sola cuando tú ya no estés.
 <break time="800ms"/>

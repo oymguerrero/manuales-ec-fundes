@@ -1,5 +1,5 @@
 <speak>
-Elemento dos: <emphasis level="moderate">Generar contenido de marketing digital con inteligencia artificial.</emphasis>
+Elemento dos: <emphasis level="moderate">Generar contenido de mercadotecnia digital con inteligencia artificial.</emphasis>
 <break time="700ms"/>
 Este es el elemento más visible del estándar. Es donde la estrategia se convierte en piezas reales: textos, imágenes, audios y videos. Y es donde la inteligencia artificial entra con más fuerza.
 <break time="800ms"/>
