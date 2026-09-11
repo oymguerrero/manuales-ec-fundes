@@ -289,70 +289,6 @@
             <li><strong>(b)</strong> Incluye el VoBo de la persona responsable por parte de la MiPyME.</li>
           </ul>
 
-          <!-- ACTIVIDAD 2: scenario-decision "¿Qué haces en el diagnóstico de El Surtido?" -->
-          <h3>Practica antes de continuar: decisiones en el diagnóstico</h3>
-          <p>Raúl tiene prisa. Decide cómo responderías en la reunión inicial.</p>
-
-          <div class="scenario-decision" data-storage-key="ed1-escenario-diagnostico">
-            <script type="application/json" class="scenario-decision__data">
-            {
-              "actor": "Raúl · Distribuidora El Surtido",
-              "title": "\"No necesitamos tanto papeleo — empecemos ya\"",
-              "context": "En la reunión inicial, Raúl te dice: 'Lo que necesito es ya el sistema funcionando. No necesitamos tanto papeleo. ¿Cuándo empezamos el desarrollo?'",
-              "question": "Raúl quiere saltarse el diagnóstico formal y pasar directo al desarrollo. ¿Qué haces?",
-              "options": [
-                {
-                  "id": "a",
-                  "label": "Le explicas que el diagnóstico es obligatorio según el estándar y que sin él no puedes garantizar que la solución resuelva los problemas reales de El Surtido.",
-                  "outcome": "ok",
-                  "feedback": "Correcto. El diagnóstico formal (Productos 1.1-1.4) es parte integral del Elemento 1. Saltar al desarrollo sin él significa un producto incompleto en tu evaluación — y además es un riesgo técnico real: soluciones sin diagnóstico frecuentemente resuelven el problema equivocado. El Producto 1.3 (propuesta técnica) requiere sustentarse en los diagnósticos previos para ser válido."
-                },
-                {
-                  "id": "b",
-                  "label": "Empiezas el desarrollo y documentas el diagnóstico retroactivamente con base en lo que ya sabes del negocio.",
-                  "outcome": "risk",
-                  "feedback": "Riesgo alto. El diagnóstico retroactivo puede carecer de la firma de Raúl en la propuesta (Producto 1.4), que requiere VoBo previo al desarrollo. Podrías presentarlo como Evidencia Histórica si demuestras que refleja fielmente lo ocurrido, pero es un riesgo evitable. Sin diagnóstico formal, la propuesta tampoco tiene base documental."
-                },
-                {
-                  "id": "c",
-                  "label": "Aceptas empezar el desarrollo sin diagnóstico para no perder el cliente.",
-                  "outcome": "wrong",
-                  "feedback": "Incorrecto. Sin el Producto 1.3 (propuesta autorizada), no tienes base técnica documentada para la arquitectura ni evidencia de los requerimientos acordados. En tu evaluación, quien te evalúa revisará que los Productos 1.1-1.4 existan con todas sus características del estándar. Saltarlos compromete tanto tu evaluación como el éxito del proyecto."
-                }
-              ],
-              "wrapUp": "El diagnóstico es tu respaldo técnico y legal. Le da a Raúl control sobre lo que se construye y te da la base para justificar cada decisión de diseño ante quien te evalúa."
-            }
-            </script>
-          </div>
-
-          <h3>Segunda decisión: los tiempos del diagnóstico</h3>
-          <p>Raúl acepta el diagnóstico pero pregunta cuánto tardará.</p>
-
-          <div class="scenario-decision" data-storage-key="ed1-escenario-tiempos">
-            <script type="application/json" class="scenario-decision__data">
-            {
-              "actor": "Raúl · Distribuidora El Surtido",
-              "title": "\"¿Cuánto va a tardar eso del diagnóstico?\"",
-              "context": "Raúl acepta el diagnóstico pero pregunta directamente: '¿Cuánto tardará eso?' Tiene reunión con sus socios en 3 semanas y quiere mostrar resultados.",
-              "question": "¿Cómo le comunicas los tiempos del diagnóstico?",
-              "options": [
-                {
-                  "id": "a",
-                  "label": "Le explicas que el diagnóstico toma 1-2 semanas: reunión de levantamiento, análisis de procesos, elaboración de la propuesta y su revisión con él.",
-                  "outcome": "ok",
-                  "feedback": "Excelente. Ser transparente con los tiempos desde el inicio genera confianza y establece expectativas reales. El diagnóstico es la primera semana de la ruta: levantamiento (días 1-3), análisis y elaboración de propuesta (días 4-6), presentación y VoBo (día 7). Raúl puede mostrar la propuesta aprobada a sus socios en la semana 2."
-                },
-                {
-                  "id": "b",
-                  "label": "Le dices 'unos días' para no asustarlo y empezar cuanto antes.",
-                  "outcome": "risk",
-                  "feedback": "Riesgo de expectativas mal calibradas. El diagnóstico completo con los 4 productos requiere levantamiento, análisis y elaboración de propuesta — no es solo una reunión. Si tardas más de 'unos días', Raúl sentirá que le incumpliste. Promete tiempos reales desde el inicio."
-                }
-              ]
-            }
-            </script>
-          </div>
-
         </div>
       </details>
 
@@ -551,6 +487,69 @@
                 }
               },
               "startNode": "start"
+            }
+            </script>
+          </div>
+
+          <h3>Decisiones en el diagnóstico</h3>
+          <p>Raúl tiene prisa. Decide cómo responderías en la reunión inicial.</p>
+
+          <div class="scenario-decision" data-storage-key="ed1-escenario-diagnostico">
+            <script type="application/json" class="scenario-decision__data">
+            {
+              "actor": "Raúl · Distribuidora El Surtido",
+              "title": "\"No necesitamos tanto papeleo — empecemos ya\"",
+              "context": "En la reunión inicial, Raúl te dice: 'Lo que necesito es ya el sistema funcionando. No necesitamos tanto papeleo. ¿Cuándo empezamos el desarrollo?'",
+              "question": "Raúl quiere saltarse el diagnóstico formal y pasar directo al desarrollo. ¿Qué haces?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Le explicas que el diagnóstico es obligatorio según el estándar y que sin él no puedes garantizar que la solución resuelva los problemas reales de El Surtido.",
+                  "outcome": "ok",
+                  "feedback": "Correcto. El diagnóstico formal (Productos 1.1-1.4) es parte integral del Elemento 1. Saltar al desarrollo sin él significa un producto incompleto en tu evaluación — y además es un riesgo técnico real: soluciones sin diagnóstico frecuentemente resuelven el problema equivocado. El Producto 1.3 (propuesta técnica) requiere sustentarse en los diagnósticos previos para ser válido."
+                },
+                {
+                  "id": "b",
+                  "label": "Empiezas el desarrollo y documentas el diagnóstico retroactivamente con base en lo que ya sabes del negocio.",
+                  "outcome": "risk",
+                  "feedback": "Riesgo alto. El diagnóstico retroactivo puede carecer de la firma de Raúl en la propuesta (Producto 1.4), que requiere VoBo previo al desarrollo. Podrías presentarlo como Evidencia Histórica si demuestras que refleja fielmente lo ocurrido, pero es un riesgo evitable. Sin diagnóstico formal, la propuesta tampoco tiene base documental."
+                },
+                {
+                  "id": "c",
+                  "label": "Aceptas empezar el desarrollo sin diagnóstico para no perder el cliente.",
+                  "outcome": "wrong",
+                  "feedback": "Incorrecto. Sin el Producto 1.3 (propuesta autorizada), no tienes base técnica documentada para la arquitectura ni evidencia de los requerimientos acordados. En tu evaluación, quien te evalúa revisará que los Productos 1.1-1.4 existan con todas sus características del estándar. Saltarlos compromete tanto tu evaluación como el éxito del proyecto."
+                }
+              ],
+              "wrapUp": "El diagnóstico es tu respaldo técnico y legal. Le da a Raúl control sobre lo que se construye y te da la base para justificar cada decisión de diseño ante quien te evalúa."
+            }
+            </script>
+          </div>
+
+          <h3>Segunda decisión: los tiempos del diagnóstico</h3>
+          <p>Raúl acepta el diagnóstico pero pregunta cuánto tardará.</p>
+
+          <div class="scenario-decision" data-storage-key="ed1-escenario-tiempos">
+            <script type="application/json" class="scenario-decision__data">
+            {
+              "actor": "Raúl · Distribuidora El Surtido",
+              "title": "\"¿Cuánto va a tardar eso del diagnóstico?\"",
+              "context": "Raúl acepta el diagnóstico pero pregunta directamente: '¿Cuánto tardará eso?' Tiene reunión con sus socios en 3 semanas y quiere mostrar resultados.",
+              "question": "¿Cómo le comunicas los tiempos del diagnóstico?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Le explicas que el diagnóstico toma 1-2 semanas: reunión de levantamiento, análisis de procesos, elaboración de la propuesta y su revisión con él.",
+                  "outcome": "ok",
+                  "feedback": "Excelente. Ser transparente con los tiempos desde el inicio genera confianza y establece expectativas reales. El diagnóstico es la primera semana de la ruta: levantamiento (días 1-3), análisis y elaboración de propuesta (días 4-6), presentación y VoBo (día 7). Raúl puede mostrar la propuesta aprobada a sus socios en la semana 2."
+                },
+                {
+                  "id": "b",
+                  "label": "Le dices 'unos días' para no asustarlo y empezar cuanto antes.",
+                  "outcome": "risk",
+                  "feedback": "Riesgo de expectativas mal calibradas. El diagnóstico completo con los 4 productos requiere levantamiento, análisis y elaboración de propuesta — no es solo una reunión. Si tardas más de 'unos días', Raúl sentirá que le incumpliste. Promete tiempos reales desde el inicio."
+                }
+              ]
             }
             </script>
           </div>
