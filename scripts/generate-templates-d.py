@@ -40,11 +40,11 @@ PRODUCTS = [
         "slug": "1-1-diagnostico-oportunidades",
         "format": "word",
         "elemento": "1 · Diagnosticar",
-        "title": "Diagnóstico de oportunidades de transformación digital de la MiPyME, documentado",
+        "title": "Diagnóstico de oportunidades de modernización digital de la MiPyME, documentado",
         "intro": (
             "Es el punto de partida técnico del proyecto: un diagnóstico completo que documenta "
             "el perfil de la MiPyME, el resumen de la sesión de levantamiento con el responsable, "
-            "las necesidades de transformación digital detectadas, el análisis de la infraestructura "
+            "las necesidades de modernización digital detectadas, el análisis de la infraestructura "
             "tecnológica existente y las experiencias previas de la empresa con soluciones digitales."
         ),
         "f21": [
@@ -52,11 +52,11 @@ PRODUCTS = [
             "ubicación, nombre y correo electrónico de la persona de contacto",
             "(b) Incluye el resumen de la sesión sostenida con el responsable de la MiPyME, "
             "especificando día, hora, lugar, asistentes y acuerdos tomados en la reunión",
-            "(c) Tiene las necesidades de transformación digital detectadas correspondientes con "
+            "(c) Tiene las necesidades de modernización digital detectadas correspondientes con "
             "lo expresado por los representantes de la MiPyME",
             "(d) Proporciona el análisis de infraestructura tecnológica existente especificando el "
             "hardware, software y conectividad con la que cuenta la MiPyME",
-            "(e) Refiere las experiencias en implementación de soluciones de transformación digital "
+            "(e) Refiere las experiencias en implementación de soluciones de modernización digital "
             "con las que cuenta la MiPyME",
         ],
         "caso": (
@@ -85,7 +85,7 @@ PRODUCTS = [
                 "¿Cuáles fueron los acuerdos y compromisos establecidos?",
             ),
             (
-                "Necesidades de transformación digital detectadas",
+                "Necesidades de modernización digital detectadas",
                 "¿Cuáles son los procesos que la MiPyME quiere mejorar o digitalizar? "
                 "Lista las necesidades tal como las expresó el responsable, no tu interpretación.",
             ),
@@ -95,7 +95,7 @@ PRODUCTS = [
                 "¿Qué software usa actualmente? ¿Qué tipo de conectividad y velocidad de internet tiene?",
             ),
             (
-                "Experiencias previas con transformación digital",
+                "Experiencias previas con modernización digital",
                 "¿La MiPyME ha intentado antes implementar soluciones digitales? "
                 "¿Qué resultados tuvo? ¿Qué aprendizajes o resistencias dejaron esas experiencias?",
             ),
@@ -111,7 +111,7 @@ PRODUCTS = [
             "Evalúa en qué punto está la MiPyME en su camino de digitalización: el estado "
             "tecnológico actual, la calidad y estructuración de sus activos de información, "
             "la disposición del equipo al cambio, las brechas entre dónde está y dónde necesita "
-            "estar, y la información disponible sobre transformación digital en la organización. "
+            "estar, y la información disponible sobre modernización digital en la organización. "
             "Incluye la identificación formal del documento."
         ),
         "f21": [
@@ -119,8 +119,8 @@ PRODUCTS = [
             "(b) Establece el estado de los activos de información y su grado de estructuración",
             "(c) Tiene el estatus de disposición al cambio de la MiPyME",
             "(d) Indica las brechas digitales/tecnológicas existentes entre el estado actual de "
-            "la MiPyME y la expectativa de transformación digital",
-            "(e) Incluye la información disponible de la MiPyME con relación al tema de transformación digital",
+            "la MiPyME y la expectativa de modernización digital",
+            "(e) Incluye la información disponible de la MiPyME con relación al tema de modernización digital",
             "(f) Menciona la fecha del diagnóstico, el nombre de la MiPyME, a quién va dirigido "
             "y el nombre de la empresa consultora/consultor que lo realizó",
         ],
@@ -158,11 +158,11 @@ PRODUCTS = [
             (
                 "Brechas digitales/tecnológicas",
                 "¿Cuál es la diferencia entre el estado tecnológico actual y lo que necesita "
-                "la MiPyME para lograr sus objetivos de transformación? "
+                "la MiPyME para lograr sus objetivos de modernización? "
                 "Lista las brechas por orden de impacto.",
             ),
             (
-                "Información disponible sobre transformación digital",
+                "Información disponible sobre modernización digital",
                 "¿La MiPyME tiene algún documento, plan o política interna sobre digitalización? "
                 "¿Han recibido capacitaciones o asesorías previas en el tema?",
             ),
@@ -175,23 +175,23 @@ PRODUCTS = [
     },
     {
         "num": "1.3",
-        "slug": "1-3-propuesta-transformacion-digital",
+        "slug": "1-3-propuesta-modernizacion-digital",
         "format": "word",
         "elemento": "1 · Diagnosticar",
-        "title": "Documento de propuesta de transformación digital para la MiPyME, elaborado",
+        "title": "Documento de propuesta de modernización digital para la MiPyME, elaborado",
         "intro": (
             "La propuesta técnica central del proyecto: traduce los diagnósticos en una solución "
-            "concreta con arquitectura definida. Incluye las propuestas priorizadas de transformación, "
+            "concreta con arquitectura definida. Incluye las propuestas priorizadas de modernización, "
             "los requerimientos funcionales y no funcionales, las tecnologías y APIs seleccionadas "
             "con justificación técnica, el diagrama de arquitectura (en este template representado "
             "como un placeholder — el aspirante inserta el diagrama real), el modelo de datos y "
             "flujo de información, los aspectos de ciberseguridad y el presupuesto con calendarización."
         ),
         "f21": [
-            "(a) Contiene las propuestas de transformación digital correspondientes con las necesidades "
+            "(a) Contiene las propuestas de modernización digital correspondientes con las necesidades "
             "detectadas en la MiPyME, por orden de prioridad de atención",
             "(b) Tiene los requerimientos funcionales y no funcionales para la implementación de la "
-            "transformación digital de acuerdo con los diagnósticos realizados",
+            "modernización digital de acuerdo con los diagnósticos realizados",
             "(c) Muestra información sobre las tecnologías, APIs y servicios de inteligencia artificial "
             "seleccionados con su justificación técnica",
             "(d) Incluye el diagrama de arquitectura del sistema propuesto con sus componentes",
@@ -213,7 +213,7 @@ PRODUCTS = [
         ),
         "preguntas": [
             (
-                "Propuestas de transformación digital priorizadas",
+                "Propuestas de modernización digital priorizadas",
                 "¿Cuáles son las soluciones que propones implementar, en qué orden de prioridad "
                 "y por qué ese orden? Vincula cada propuesta con una necesidad detectada en el diagnóstico.",
             ),
@@ -264,7 +264,7 @@ PRODUCTS = [
         "slug": "1-4-propuesta-autorizada",
         "format": "word",
         "elemento": "1 · Diagnosticar",
-        "title": "Propuesta de transformación digital para la MiPyME, autorizada",
+        "title": "Propuesta de modernización digital para la MiPyME, autorizada",
         "intro": (
             "Es la versión final de la propuesta, después de revisión y negociación con el "
             "responsable de la MiPyME. Documenta las modificaciones que se acordaron respecto "
@@ -308,7 +308,7 @@ PRODUCTS = [
         "slug": "2-1-entorno-desarrollo-configurado",
         "format": "word",
         "elemento": "2 · Construir",
-        "title": "Entorno de desarrollo de la solución de transformación digital, configurado",
+        "title": "Entorno de desarrollo de la solución de modernización digital, configurado",
         "intro": (
             "Documenta el repositorio de código y el entorno de desarrollo configurado: "
             "la estructura de carpetas, el archivo de dependencias con versiones fijadas, "
@@ -317,14 +317,14 @@ PRODUCTS = [
             "autorizada y el historial de cambios. Es la base desde la que parte todo el desarrollo."
         ),
         "f21": [
-            "(a) Contiene el repositorio de la solución de transformación digital con la estructura "
+            "(a) Contiene el repositorio de la solución de modernización digital con la estructura "
             "de carpetas organizada según el stack tecnológico seleccionado",
             "(b) Incluye el archivo de dependencias con las versiones especificadas de cada "
             "librería y framework utilizado",
             "(c) Tiene las instrucciones de instalación, configuración y ejecución del proyecto "
             "en el archivo README",
             "(d) Indica la configuración de variables de entorno y credenciales de APIs de IA "
-            "de forma segura, separadas de la solución de transformación digital",
+            "de forma segura, separadas de la solución de modernización digital",
             "(e) Refiere el stack tecnológico seleccionado correspondiente con la arquitectura "
             "definida en la propuesta autorizada",
             "(f) Describe el historial de cambios documentado",
@@ -368,7 +368,7 @@ PRODUCTS = [
             (
                 "Stack tecnológico alineado a la propuesta",
                 "¿El stack configurado coincide exactamente con lo que se aprobó en la propuesta "
-                "de transformación digital? Si hubo cambios, ¿cuáles y por qué?",
+                "de modernización digital? Si hubo cambios, ¿cuáles y por qué?",
             ),
             (
                 "Historial de cambios documentado",
@@ -382,7 +382,7 @@ PRODUCTS = [
         "slug": "2-2-checklist-verificacion-solucion",
         "format": "word",
         "elemento": "2 · Construir",
-        "title": "Checklist de verificación de la solución de transformación digital con IA, desarrollada",
+        "title": "Checklist de verificación de la solución de modernización digital con IA, desarrollada",
         "intro": (
             "NOTA PEDAGÓGICA: El Producto 2.2 es la solución de software en sí misma "
             "(código, repositorio, sistema funcionando), no un documento tradicional. "
@@ -475,7 +475,7 @@ PRODUCTS = [
         "slug": "2-3-reporte-pruebas-tecnicas",
         "format": "word",
         "elemento": "2 · Construir",
-        "title": "Reporte de pruebas técnicas de la solución de transformación digital, elaborado",
+        "title": "Reporte de pruebas técnicas de la solución de modernización digital, elaborado",
         "intro": (
             "Documenta el proceso completo de pruebas de la solución: los casos de prueba "
             "definidos con datos de entrada y resultados esperados, los resultados de pruebas "
@@ -497,7 +497,7 @@ PRODUCTS = [
             "(f) Refiere la validación realizada sobre la calidad y relevancia de las respuestas "
             "generadas por los componentes de IA",
             "(g) Señala la fecha de las pruebas realizadas, el nombre del responsable de aplicarlas "
-            "y la versión de la solución de transformación digital evaluada",
+            "y la versión de la solución de modernización digital evaluada",
         ],
         "caso": (
             "El Surtido — versión v0.8.2 · 12 mayo 2025 · Responsable: Consultoría Digital MX. "
@@ -561,7 +561,7 @@ PRODUCTS = [
         "slug": "2-4-documentacion-tecnica",
         "format": "word",
         "elemento": "2 · Construir",
-        "title": "Documentación técnica de la solución de transformación digital, elaborada",
+        "title": "Documentación técnica de la solución de modernización digital, elaborada",
         "intro": (
             "El manual técnico completo de la solución: la arquitectura implementada con diagrama "
             "actualizado, la referencia de endpoints de la API, las instrucciones de mantenimiento "
@@ -642,7 +642,7 @@ PRODUCTS = [
         "slug": "3-1-checklist-despliegue-produccion",
         "format": "word",
         "elemento": "3 · Implementar",
-        "title": "Checklist de despliegue de la solución de transformación digital en entorno productivo",
+        "title": "Checklist de despliegue de la solución de modernización digital en entorno productivo",
         "intro": (
             "NOTA PEDAGÓGICA: El Producto 3.1 es la solución instalada y operativa en la "
             "infraestructura real de la MiPyME, no un documento. No puede encapsularse en "
@@ -660,7 +660,7 @@ PRODUCTS = [
             "(c) Tiene la base de datos final de producción con los respaldos automatizados configurados",
             "(d) Refiere el procedimiento para monitorear el consumo de tokens/créditos de las APIs de IA",
             "(e) Describe las medidas de seguridad implementadas en el entorno productivo conforme "
-            "a la propuesta de transformación digital autorizada",
+            "a la propuesta de modernización digital autorizada",
         ],
         "caso": (
             "El Surtido — Servidor de producción: DigitalOcean Droplet 2vCPU/4GB RAM, Ubuntu 22.04. "
@@ -797,9 +797,9 @@ PRODUCTS = [
         ),
         "f21": [
             "(a) Contiene los temas cubiertos correspondientes con las funcionalidades de la "
-            "solución de transformación digital implementada",
+            "solución de modernización digital implementada",
             "(b) Incluye los manuales de usuario y de mantenimiento de la solución de "
-            "transformación digital con capturas de pantalla y procedimientos paso a paso",
+            "modernización digital con capturas de pantalla y procedimientos paso a paso",
             "(c) Tiene los procedimientos de resolución de problemas frecuentes que el personal "
             "de la MiPyME puede ejecutar de manera autónoma",
             "(d) Detalla la información sobre los asistentes, fecha, duración y materiales "
@@ -854,7 +854,7 @@ PRODUCTS = [
         "slug": "3-4-acta-final",
         "format": "word",
         "elemento": "3 · Implementar",
-        "title": "Acta final de la solución de transformación digital, elaborada",
+        "title": "Acta final de la solución de modernización digital, elaborada",
         "intro": (
             "El cierre formal del proyecto de implementación: el documento que registra qué "
             "entregaste, en qué estado está funcionando, qué credenciales y documentación "
@@ -920,7 +920,7 @@ PRODUCTS = [
         "slug": "4-1-reporte-rendimiento-tecnico",
         "format": "excel",
         "elemento": "4 · Optimizar",
-        "title": "Reporte de rendimiento técnico de la solución de transformación digital, elaborado",
+        "title": "Reporte de rendimiento técnico de la solución de modernización digital, elaborado",
         "intro": (
             "Producto de medición técnica de la solución en operación real. Registra las métricas "
             "de rendimiento (disponibilidad, latencia, tasa de error, consumo de recursos), "
@@ -931,7 +931,7 @@ PRODUCTS = [
             "y calcular promedios automáticamente."
         ),
         "f21": [
-            "(a) Contiene las métricas de rendimiento de la solución de transformación recolectadas: "
+            "(a) Contiene las métricas de rendimiento de la solución de modernización recolectadas: "
             "disponibilidad, latencia, tasa de error y consumo de recursos",
             "(b) Incluye la comparación de los indicadores técnicos contra los umbrales definidos "
             "en los requerimientos de la propuesta",
@@ -1050,7 +1050,7 @@ PRODUCTS = [
         "slug": "4-3-plan-optimizacion",
         "format": "word",
         "elemento": "4 · Optimizar",
-        "title": "Plan de optimización de la solución de transformación digital, elaborado",
+        "title": "Plan de optimización de la solución de modernización digital, elaborado",
         "intro": (
             "El documento que cierra el ciclo: propone las acciones de optimización con estimación "
             "de esfuerzo y beneficio, define los ajustes a los componentes de IA (calibración, "
@@ -1065,7 +1065,7 @@ PRODUCTS = [
             "(b) Especifica los ajustes a los componentes de IA recomendados, incluyendo "
             "calibración de modelos, ajustes de prompts/cambio de proveedores de servicio",
             "(c) Tiene las lecciones aprendidas y recomendaciones para escalamiento futuro "
-            "de la solución de transformación digital",
+            "de la solución de modernización digital",
             "(d) Propone mejoras y optimizaciones pertinentes y adicionales a las solicitadas "
             "en el plan de mantenimiento con base en el análisis de los datos de rendimiento "
             "realizado y en las tendencias de IA del mercado",
@@ -1298,7 +1298,7 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Manual de Transformación Digital con IA · Producto del Elemento {elemento}</p>
+<p class="subtitle">Manual de Modernización Digital con IA · Producto del Elemento {elemento}</p>
 </td>
 <td class="meta"><strong>Producto {num}</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
@@ -1329,7 +1329,7 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 
 <div class="footer">
 Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org<br>
-Template del Manual de Desarrollo de Soluciones de Transformación Digital con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+Template del Manual de Desarrollo de Soluciones de Modernización Digital con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
 </div>
 
 </body>
@@ -1367,7 +1367,7 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Manual de Transformación Digital con IA · Producto del Elemento {elemento} · Excel</p>
+<p class="subtitle">Manual de Modernización Digital con IA · Producto del Elemento {elemento} · Excel</p>
 </td>
 <td class="meta"><strong>Producto {num}</strong><br>Hoja editable · Excel<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
@@ -1397,7 +1397,7 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
 {matrix_html}
 
 <div class="footer">
-Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · Template del Manual de Desarrollo de Soluciones de Transformación Digital con IA
+Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · Template del Manual de Desarrollo de Soluciones de Modernización Digital con IA
 </div>
 
 </body>
@@ -1543,7 +1543,7 @@ def render_matrix_extra(num):
 
 <h2>Hoja 2 · Comparativo indicadores técnicos vs umbrales de la propuesta</h2>
 <p style="font-size: 10pt; color: #666;">
-  Compara el resultado real del periodo contra el umbral que definiste en la propuesta de transformación digital autorizada.
+  Compara el resultado real del periodo contra el umbral que definiste en la propuesta de modernización digital autorizada.
   Variación % = (Resultado real - Umbral) / Umbral × 100. Positivo = mejor que el umbral; negativo = por debajo.
 </p>
 <table class="matrix">
