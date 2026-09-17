@@ -1,0 +1,78 @@
+{
+  "assets": "extras/script-assets-estandar-d",
+  "salida": "extras/scripts-desempenos-estandar-d",
+  "guiones": [
+    {
+      "numero": 1,
+      "elemento": "Elemento 3 · Implementar la solución tecnológica de modernización digital personalizada en la MiPyME",
+      "titulo": "Capacita al equipo de la MiPyME en el uso y operación de la solución tecnológica implementada",
+      "duracion": "2 min 45 s",
+      "criterios": [
+        "Presentando las funcionalidades principales de la solución tecnológica y su propósito dentro de los procesos de la MiPyME",
+        "Demostrando la operación de la solución tecnológica con casos de uso reales referentes al contexto de la MiPyME",
+        "Explicando las instrucciones estandarizadas para interactuar con los componentes de IA de la solución tecnológica",
+        "Indicando los procedimientos para reportar errores/solicitar soporte técnico, enfatizando que las fallas deben reportarse al momento de ser detectadas",
+        "Mencionando al equipo de la MiPyME acerca de la importancia de validar resultados/procesos críticos a partir de la solución tecnológica de modernización digital implementada"
+      ],
+      "ahv": [
+        "Tolerancia — comprende y atiende las dudas, comentarios y sugerencias del equipo durante la capacitación, adaptándose a su ritmo y a su lenguaje."
+      ],
+      "nota_arte": "Sesión de capacitación en el almacén de Distribuidora El Surtido: mesa de trabajo con laptop abierta, un celular con la app de reparto y la ruta del día proyectada o en pantalla. Al fondo, anaqueles y camionetas. Ana Liz de pie junto a la pantalla; Raúl y tres supervisores de reparto sentados frente a ella.",
+      "escenas": [
+        {
+          "tipo": "apertura",
+          "titulo_pantalla": "Capacita al equipo en el uso de la solución",
+          "narrador": "La solución ya opera en el almacén de Distribuidora El Surtido. Hoy Ana Liz capacita a Raúl y a sus tres supervisores de reparto: cuatro horas para que el equipo opere el sistema sin ayuda. Observa cómo cubre cada criterio del estándar."
+        },
+        {
+          "hablante": "Ana Liz",
+          "dialogo": "Empecemos por lo que hace el sistema y para qué les sirve en su día. Son tres piezas: los pedidos que llegan por WhatsApp se capturan solos, la inteligencia artificial arma el orden de entrega de cada camioneta, y el sistema estima cuánto les van a pedir la próxima semana.",
+          "facial": "Expresión abierta y tranquila, mirada que recorre a los cuatro asegurándose de que la siguen.",
+          "postura": "De pie junto a la pantalla, señala cada módulo con la mano abierta, sin prisa.",
+          "criterio": "Presenta las funcionalidades principales y su propósito en los procesos."
+        },
+        {
+          "hablante": "Ana Liz",
+          "dialogo": "Y veámoslo con un pedido de verdad. Este entró hace veinte minutos por el formulario, de una de las tiendas de la ruta de hoy: producto y cantidad, ya capturados. Y esta es la ruta que el sistema armó para la camioneta dos: catorce paradas ordenadas.",
+          "facial": "Semblante concreto, mirada que va de la pantalla al equipo para confirmar que reconocen el pedido.",
+          "postura": "Gira la laptop hacia ellos y recorre la pantalla con el dedo, parada por parada.",
+          "criterio": "Demuestra la operación con un caso de uso real de la MiPyME."
+        },
+        {
+          "hablante": "Raúl",
+          "dialogo": "Ana Liz, a mí me preocupa una cosa. Mis repartidores no son de computadora, y aquí no tenemos a nadie de sistemas. ¿Qué pasa si le dan mal a algo en la app?",
+          "facial": "Ceño ligeramente fruncido, preocupación genuina más que desconfianza.",
+          "postura": "Se inclina hacia adelante apoyando los antebrazos en la mesa.",
+          "criterio": "AHV · Tolerancia: el equipo plantea una duda real."
+        },
+        {
+          "hablante": "Ana Liz",
+          "dialogo": "Es la pregunta correcta, Raúl, y por eso la vemos ahora. La rutina es siempre la misma: abren la ruta del día y marcan cada entrega en el momento de hacerla, no al final. Así el sistema recalcula lo que falta. Se los dejé en una tarjeta pegada en cada camioneta.",
+          "facial": "Sonrisa breve de reconocimiento; escucha completa la duda antes de responder, sin interrumpir.",
+          "postura": "Se acerca a la mesa y baja el tono, poniéndose a la altura de quien pregunta.",
+          "criterio": "Explica las instrucciones estandarizadas para interactuar con la IA."
+        },
+        {
+          "hablante": "Ana Liz",
+          "dialogo": "Ahora, qué hacer cuando algo falle. Porque va a fallar, y aquí no hay un área de sistemas que lo resuelva. En el menú hay un botón para reportar: describen qué pasó y se envía. Háganlo en el momento, no al final del día: un error de hace seis horas ya no se rastrea igual.",
+          "facial": "Tono firme pero sin alarma, cejas levantadas al subrayar el momento del reporte.",
+          "postura": "Muestra el botón en el celular y se lo pasa a uno de los supervisores para que lo haga él.",
+          "criterio": "Indica cómo reportar errores y pedir soporte, al detectarlos."
+        },
+        {
+          "hablante": "Ana Liz",
+          "dialogo": "Y lo último, que es lo que más les va a servir. La inteligencia artificial propone, ustedes deciden. Antes de que salga una camioneta, revisen la ruta y los pedidos grandes. Si algo no les cuadra con lo que conocen del cliente, háganle caso a su experiencia y corríjanlo.",
+          "facial": "Mirada directa y serena, la de quien entrega una responsabilidad, no una instrucción.",
+          "postura": "Se aparta un paso de la pantalla y abre las manos hacia el equipo.",
+          "criterio": "Menciona la importancia de validar resultados y procesos críticos."
+        },
+        {
+          "hablante": "Raúl",
+          "dialogo": "Eso me deja tranquilo. Lo de la tarjeta en la camioneta les va a servir, y lo de reportar al momento lo entendimos. Mañana salimos con la ruta completa.",
+          "facial": "Gesto distendido, asiente mirando a sus supervisores antes de volver la vista a Ana Liz.",
+          "postura": "Se recarga en el respaldo con los brazos relajados; uno de los supervisores anota."
+        }
+      ]
+    }
+  ]
+}
