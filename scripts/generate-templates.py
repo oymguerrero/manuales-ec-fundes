@@ -312,7 +312,7 @@ BASE_STYLES = """
   margin: 2.2cm 1.8cm;
 }
 body {
-  font-family: 'Afacad', 'Open Sans', 'Calibri', 'Arial', sans-serif;
+  font-family: 'Calibri', 'Arial', sans-serif;
   font-size: 11pt;
   line-height: 1.5;
   color: #4B5563;
@@ -618,7 +618,7 @@ def generate_pptx_capacitacion(prod):
         shape.line.fill.background()
 
     def textbox(slide, x, y, w, h, text, *, size=18, bold=False, italic=False,
-                color=AZUL, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP, font_name="Afacad"):
+                color=AZUL, align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP, font_name="Calibri"):
         tb = slide.shapes.add_textbox(x, y, w, h)
         tf = tb.text_frame
         tf.word_wrap = True
@@ -858,7 +858,7 @@ def generate_pptx_capacitacion(prod):
                 r.font.size = Pt(13)
                 r.font.italic = True
                 r.font.color.rgb = RGBColor(0x28, 0x46, 0x7E)
-                r.font.name = "Consolas"
+                r.font.name = "Courier New"
         elif is_errors:
             # tabla de 4 columnas x 5 filas (1 header + 4 data)
             tbl_shape = s.shapes.add_table(rows=5, cols=4,
