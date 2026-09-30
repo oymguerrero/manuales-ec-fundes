@@ -1843,3 +1843,53 @@ La infraestructura no sustituye el diseño instruccional. Al crear o renovar una
 5. **Verificar y cerrar:** comprobación, puntos clave y siguiente unidad.
 
 No agregar video, audio, imagen o interacción por decoración. Cada medio debe reducir carga, aportar contexto, mejorar práctica o dar una alternativa accesible.
+
+---
+
+## 25. Modo embebido · distribución en un LMS externo
+
+Además del sitio, cada curso se entrega como **bloques embebibles**: un archivo HTML por capítulo, pensado para insertarse con `<iframe>` en un gestor de contenidos ajeno. Los genera `extras/empaquetada/build-curso.py` (con carpeta `_paquete/` compartida) y `build-curso-autonomo.py` (un solo archivo con todo en base64). Esa carpeta está fuera de git; esta sección documenta el contrato para que el sistema de diseño no lo pierda de vista.
+
+### 25.1 El selector `[data-embed="1"]`
+
+El bloque empaquetado lleva `<html data-embed="1">`. Toda diferencia visual respecto al sitio cuelga de ese atributo, sin excepción: ninguna regla del modo embebido puede tocar el sitio público. La capa vive al final de `extras/empaquetada/_modelo/estilos.css`, tras el comentario `Ajustes para paquete embebido`.
+
+### 25.2 Qué se quita y por qué
+
+| Elemento | Qué pasa | Razón |
+|---|---|---|
+| Encabezado, sub-nav, portada y pie del sitio | No se incluyen | Los pone la página anfitriona |
+| `.lesson-tabs__header` (progreso + Reiniciar) | Oculto | El avance lo lleva el LMS; un contador que siempre arranca en cero dentro de un iframe confunde |
+| `.lesson-tabs__sidebar` (menú de módulos) | Plegado tras el botón de índice | Ver 25.3 |
+| `<section id="siguiente">` y `id="cierre">` | Se eliminan | Navegan a otro capítulo, que puede no estar embebido |
+| Enlaces a otro curso o al inicio del sitio | Quedan como texto | No hay a dónde ir; la frase que los menciona se conserva |
+
+### 25.3 Navegación: barra superior con índice plegable
+
+El menú lateral de `.lesson-tabs` (§17) **no se muestra desplegado** en el modo embebido. Se probaron tres disposiciones antes de plegarlo: barra lateral (roba ancho al contenido en un iframe angosto), tira horizontal con scroll (no hay forma honesta de avisar de los módulos que quedan fuera de vista) y filas envueltas (a 375px el menú ocupaba 572px antes de que empezara el contenido).
+
+Lo que queda es una **barra superior** dentro de la tarjeta del módulo:
+
+```
+ (←)    [3.1]  Mapa completo del proceso  (▾)        (→)
+               Módulo 2 de 9 · Vista panorámica · 4 min
+ ─────────────────────────────────────────────────────────
+```
+
+- **Flechas de anterior y siguiente**, redondas, de 44px. La izquierda se desactiva en el primer módulo; la derecha se oculta en el último **conservando su hueco**, para que el título no se descentre al llegar al final.
+- **En el centro, el tema en curso**: pastilla amarilla con el número, título y, debajo, «Módulo N de M» más el metadato. Ese contador es el ancla de posición que antes daba el menú lateral.
+- **Botón de índice (▾)**, más pequeño y en contorno para no competir con las flechas. Despliega bajo la barra la lista completa de temas.
+
+El índice **no es un componente nuevo**: es el mismo `.lesson-tabs__sidebar` que construye `initLessonTabs`, con su indicador de revisado y su lógica de cambio de módulo intactos. La capa de embebido solo lo mueve dentro de `.lesson-tabs__panel-card` —para que caiga justo bajo la barra y no encima ni al final del contenido— y le añade el disparador. Elegir un tema cambia de módulo y cierra el índice; `Escape` también lo cierra y devuelve el foco al botón.
+
+Dos detalles de implementación que conviene no deshacer:
+
+- La barra se arma con `display: contents` sobre `.lesson-tabs__panel-footer`. Los dos botones viven en el pie y la cabecera arriba, y no se puede reordenar el DOM; al dejar de pintar caja, los botones pasan a ser celdas de la rejilla de la tarjeta y se colocan flanqueando la cabecera sin JS ni marcado nuevo.
+- `styles.css` convierte esa lista en tira horizontal por debajo de 900px. En el modo embebido se anula: un índice se lee en vertical a cualquier ancho.
+
+### 25.4 Reglas que conviene respetar al tocar la capa
+
+- **Nada de `position: sticky`.** El bloque publica su altura completa al anfitrión por `postMessage` y este estira el iframe, así que el documento de dentro nunca desborda y no hay scroll propio contra el cual anclarse.
+- **Altura estable.** Cualquier cambio que altere el alto del bloque al navegar entre módulos dispara un reajuste visible del iframe. Los estados se marcan con `box-shadow` interior, no con bordes que sumen tamaño.
+- **Imágenes con tope.** `.img-escena` se limita a 380px (260px por debajo de 640px), el mismo valor que §17 usa en el panel de lección: sin tope, una escena empuja el contenido fuera de la primera pantalla.
+- **Sin `?v=` en las rutas.** El cache-busting del sitio rompe el empaquetado: con `file://` no encuentra el archivo y en base64 la query corrompe el data URI. El empaquetador la limpia.
