@@ -1124,6 +1124,92 @@ PRODUCTS = [
             ),
         ],
     },
+    {
+        "num": "4.4",
+        "slug": "4-4-reporte-cierre-proyecto",
+        "format": "word",
+        "elemento": "4 · Optimizar",
+        "title": "Reporte final de cierre del proyecto de modernización digital, elaborado",
+        "intro": (
+            "El documento con el que el proyecto termina formalmente. No es un resumen de "
+            "cortesía: es la constancia de que entregaste lo que prometiste, de que la MiPyME "
+            "recibió credenciales y documentación, de qué mantenimiento queda comprometido y "
+            "hasta cuándo. Cierra con la firma de conformidad del responsable, que es la "
+            "evidencia de que el cierre ocurrió de común acuerdo y no por abandono."
+        ),
+        "f21": [
+            "(a) Contiene el resumen ejecutivo del proyecto, incluyendo objetivos, alcance "
+            "logrado y resultados obtenidos",
+            "(b) Establece la descripción de los entregables transferidos a la MiPyME con su "
+            "estatus de funcionamiento",
+            "(c) Adjunta el acuse de entrega de la actualización de las credenciales de acceso "
+            "y de la documentación al responsable de la MiPyME",
+            "(d) Tiene los compromisos de mantenimiento y niveles de servicio acordados y "
+            "actualizados con la MiPyME incluyendo vigencia y alcance",
+            "(e) Enlista las recomendaciones para la continuidad y evolución de la solución "
+            "tecnológica implementada en la MiPyME",
+            "(f) Incluye la firma de conformidad del responsable de la MiPyME sobre el cierre "
+            "del proyecto",
+        ],
+        "caso": (
+            "El Surtido — Reporte final de cierre · agosto 2025. "
+            "Resumen ejecutivo: el objetivo era bajar de 5 min a menos de 1 min la confirmación "
+            "de pedidos por WhatsApp y dejar de perder pedidos en hora pico; se logró en las tres "
+            "sucursales, con 94% de confirmaciones bajo 30 segundos y cero pedidos perdidos en "
+            "las últimas cuatro semanas medidas. "
+            "Entregables transferidos: bot de captura de pedidos (operando), tablero de "
+            "inventario (operando), manual de usuario v1.2 (entregado), manual de mantenimiento "
+            "v1.0 (entregado), repositorio de código con documentación técnica (transferido a "
+            "la cuenta de la empresa). "
+            "Acuse de credenciales: Doña Rosa recibió el 12 de agosto el sobre digital con los "
+            "accesos de administrador de la plataforma, del proveedor de IA y del panel de "
+            "hospedaje, con acuse firmado por correo. "
+            "Compromisos de mantenimiento: soporte correctivo por 6 meses (hasta febrero 2026), "
+            "respuesta en 24 h hábiles para fallas que detengan la operación y en 72 h para el "
+            "resto; no incluye desarrollo de funciones nuevas. "
+            "Recomendaciones de continuidad: revisar el costo por consulta del proveedor de IA "
+            "cada trimestre, capacitar a una segunda persona como respaldo de Doña Rosa y "
+            "evaluar la predicción de demanda cuando se cumplan seis meses de historial. "
+            "Firma de conformidad: Rosa Martínez, propietaria, 15 de agosto de 2025."
+        ),
+        "preguntas": [
+            (
+                "Resumen ejecutivo del proyecto",
+                "¿Cuál era el objetivo con el que arrancó el proyecto y qué alcance se logró "
+                "realmente? Compara lo prometido con lo entregado y respalda los resultados con "
+                "las cifras del reporte de rendimiento técnico.",
+            ),
+            (
+                "Entregables transferidos y su estatus",
+                "Enlista todo lo que queda en manos de la MiPyME —solución, manuales, código, "
+                "accesos— y anota junto a cada uno si está operando, operando con "
+                "observaciones o pendiente. Un entregable sin estatus no cuenta como entregado.",
+            ),
+            (
+                "Acuse de credenciales y documentación",
+                "¿Cómo documentaste que el responsable de la MiPyME recibió las credenciales "
+                "actualizadas y la documentación? ¿Quién firmó, en qué fecha y por qué medio? "
+                "Adjunta el acuse.",
+            ),
+            (
+                "Compromisos de mantenimiento y niveles de servicio",
+                "¿Qué mantenimiento queda comprometido, con qué vigencia y con qué tiempos de "
+                "respuesta? Escribe también lo que NO cubre: es la parte que evita malentendidos "
+                "meses después.",
+            ),
+            (
+                "Recomendaciones de continuidad y evolución",
+                "¿Qué debería hacer la MiPyME para que la solución siga sirviendo sin ti? "
+                "Piensa en costos que pueden cambiar, personas que conviene capacitar y mejoras "
+                "que solo tendrán sentido cuando haya más datos.",
+            ),
+            (
+                "Firma de conformidad del cierre",
+                "¿Quién firma el cierre por parte de la MiPyME y con qué cargo? Sin esa firma "
+                "el proyecto queda abierto, por más completo que esté el reporte.",
+            ),
+        ],
+    },
 ]
 
 

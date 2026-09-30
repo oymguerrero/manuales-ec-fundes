@@ -67,7 +67,7 @@
 <section class="hero">
   <div class="container">
     <div class="eyebrow"><svg class="sparkle sparkle--small sparkle--amarillo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0 C13 9, 15 11, 24 12 C15 13, 13 15, 12 24 C11 15, 9 13, 0 12 C9 11, 11 9, 12 0 Z" fill="currentColor"/></svg> Capítulo 4 · La solución en el mundo real</div>
-    <h1>Tema 3. Implementar la Solución en el Entorno Productivo</h1>
+    <h1>Tema 3. Implementar la solución tecnológica de modernización digital en la MiPyME</h1>
     <p>La solución pasa del entorno de desarrollo al entorno real. Despliegas en la infraestructura de la MiPyME, capacitas a su equipo en el uso y operación, y formalizas la entrega con el acta final.</p>
   </div>
 </section>
@@ -517,6 +517,74 @@
 
         </div>
       </details>
+
+      <!-- ===== 3.7 PON A PRUEBA TUS CONOCIMIENTOS ===== -->
+      <details class="accordion__item" id="ponte-prueba-conocimientos">
+        <summary>
+          <span class="accordion__num">3.7</span>
+          <span class="accordion__title-main">Pon a prueba tus conocimientos</span>
+          <span class="accordion__meta">Repaso · 3 preguntas · 3 min</span>
+        </summary>
+        <div class="accordion__body">
+
+          <p>Ponte a prueba, ¿qué tanto sabes sobre los conceptos que debes dominar para implementar la solución y entregar sus manuales? Estos corresponden al elemento 3 del estándar. Responde estas preguntas para saberlo. Este pequeño cuestionario no tiene valor sobre tu calificación del curso, es únicamente un ejercicio para que puedas repasar los conceptos.</p>
+          <p><strong>Instrucciones:</strong> Lee cuidadosamente la pregunta o enunciado, posteriormente selecciona la respuesta que consideres correcta.</p>
+
+          <div class="quiz" data-correct="c" id="quiz-d3-p1">
+            <p class="quiz__label">Pregunta 1 · Componentes del Manual de Usuario</p>
+            <p class="quiz__question">Estás escribiendo el Manual de Usuario para el personal de mostrador de la MiPyME, que no tiene formación técnica. ¿Cuál de estos contenidos <strong>no</strong> corresponde a ese manual?</p>
+            <div class="quiz__options">
+              <button class="quiz__option" data-option="a" type="button">A) Los pasos para realizar cada tarea frecuente, con pantallas de referencia</button>
+              <button class="quiz__option" data-option="b" type="button">B) Qué hacer cuando aparece un mensaje de error y a quién avisar</button>
+              <button class="quiz__option" data-option="c" type="button">C) El procedimiento de respaldo de la base de datos y la rotación de credenciales del servidor</button>
+              <button class="quiz__option" data-option="d" type="button">D) Cómo entrar al sistema y qué puede hacer cada tipo de usuario</button>
+            </div>
+            <div class="quiz__feedback quiz__feedback--correct" hidden>
+              <strong>✓ Correcto.</strong> El respaldo y la rotación de credenciales son tareas de quien mantiene el sistema, no de quien lo usa: van en el Manual de Mantenimiento. El Manual de Usuario se organiza por tareas del día a día: acceso, permisos, procedimientos paso a paso, mensajes de error y a quién escalar.
+            </div>
+            <div class="quiz__feedback quiz__feedback--wrong" hidden>
+              <strong>✗ Incorrecto.</strong> Fíjate a quién le hablas. El personal de mostrador necesita tareas, accesos y qué hacer ante un error; respaldos y credenciales del servidor son del Manual de Mantenimiento.
+              <button class="quiz__retry" type="button">Intentar de nuevo</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-correct="d" id="quiz-d3-p2">
+            <p class="quiz__label">Pregunta 2 · Componentes del Manual de Mantenimiento</p>
+            <p class="quiz__question">Seis meses después del cierre, la solución empieza a responder lento y tú ya no estás en el proyecto. ¿Qué contenido del Manual de Mantenimiento permite que otra persona atienda eso sin empezar de cero?</p>
+            <div class="quiz__options">
+              <button class="quiz__option" data-option="a" type="button">A) El resumen ejecutivo de los objetivos del proyecto</button>
+              <button class="quiz__option" data-option="b" type="button">B) El listado de personas capacitadas durante la implementación</button>
+              <button class="quiz__option" data-option="c" type="button">C) Las capturas de pantalla de las tareas más frecuentes</button>
+              <button class="quiz__option" data-option="d" type="button">D) Las tareas periódicas con su frecuencia, los parámetros ajustables, la guía de diagnóstico de fallas y los datos de contacto de soporte</button>
+            </div>
+            <div class="quiz__feedback quiz__feedback--correct" hidden>
+              <strong>✓ Correcto.</strong> El Manual de Mantenimiento es el que sostiene la solución cuando ya no estás: rutinas y su frecuencia, respaldos, monitoreo, parámetros que se pueden ajustar, diagnóstico de fallas comunes con su solución, dependencias y escalamiento a soporte.
+            </div>
+            <div class="quiz__feedback quiz__feedback--wrong" hidden>
+              <strong>✗ Incorrecto.</strong> Lo que hace falta es operativo y hacia adelante: rutinas periódicas, parámetros, diagnóstico de fallas y escalamiento. Objetivos, listas de asistentes y capturas pertenecen a otros documentos.
+              <button class="quiz__retry" type="button">Intentar de nuevo</button>
+            </div>
+          </div>
+
+          <div class="quiz" data-correct="b" id="quiz-d3-p3">
+            <p class="quiz__label">Pregunta 3 · Diferencia entre los dos manuales</p>
+            <p class="quiz__question">Los dos manuales pueden entregarse como un solo documento, siempre que el índice separe con claridad los apartados de uso y los de mantenimiento.</p>
+            <div class="quiz__options">
+              <button class="quiz__option" data-option="a" type="button">A) Verdadero</button>
+              <button class="quiz__option" data-option="b" type="button">B) Falso</button>
+            </div>
+            <div class="quiz__feedback quiz__feedback--correct" hidden>
+              <strong>✓ Correcto.</strong> Son dos entregables distintos porque tienen dos lectores distintos y dos ciclos de vida distintos: el de usuario cambia cuando cambia la interfaz; el de mantenimiento, cuando cambia la infraestructura. Además, el de mantenimiento contiene información técnica que no conviene poner frente a todo el personal. El estándar los pide por separado.
+            </div>
+            <div class="quiz__feedback quiz__feedback--wrong" hidden>
+              <strong>✗ Incorrecto.</strong> Es falso. El estándar pide dos productos, y con razón: distinto lector, distinta vigencia y, en el de mantenimiento, información técnica que no toca difundir a todos los usuarios.
+              <button class="quiz__retry" type="button">Intentar de nuevo</button>
+            </div>
+          </div>
+
+        </div>
+      </details>
+
 
     </div>
     </div>
