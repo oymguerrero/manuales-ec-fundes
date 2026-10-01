@@ -157,7 +157,7 @@ Fuente canónica: `design.md` (~62k chars). Resumen operativo:
 - **Tokens semánticos de callout** (no son colores brand sino marcadores tipológicos): `.callout--important`, `--tip`, `--example`, `--reflection`, `--template`. Cada uno tiene su paleta consistente — no sustituir por colores brand.
 - **Contraste**: todos los pares texto+fondo pasan WCAG AA ≥ 4.5:1. El reviewer valida en cada audit.
 - **Sparkles** (decorativos): SVG inline en eyebrows de hero, usan `--color-amarillo` o `--color-naranja`.
-- **Hex fuera de paleta con significado pedagógico**: `#9F2929` (rojo "antes/negativo" en SVGs comparativos), `#7C3AED` (morado "categoría distinta"). NO auto-reemplazar — alteran el mensaje visual.
+- **Marcadores semánticos** (decisión cerrada, ver `design.md` §2.3): `--estado-negativo: #9F2929` ("esto está mal") y `--categoria-distinta: #7C3AED` ("esto es de otra categoría"). No son colores de marca y **no se auto-reemplazan**: sustituirlos cambiaría el mensaje, no solo el tono. En CSS se usan por token; en SVG inline van literales porque un atributo de presentación no acepta `var()`.
 
 ## Flujo de trabajo del equipo
 
@@ -199,7 +199,6 @@ Cualquier cosa que vivas en `extras/` queda fuera de git (entrada en `.gitignore
 
 - Los dos empaquetadores (`build-curso.py`, `build-curso-autonomo.py`) y su `_modelo/` viven en `extras/`, que está fuera de git: existen solo en la máquina donde se crearon. Son la única forma de producir los entregables embebibles, así que conviene moverlos a `scripts/`.
 - `manual_completo_estandar_b.doc` y `_d.doc` (con sus gemelos `.docx`) están trackeados en la raíz y ninguna página los enlaza. Parecen exportaciones de revisión; si ya no sirven, borrarlos.
-- Doce imágenes de `img/` pesan más de 300 KB (hasta 788 KB). Pasar los PNG sin transparencia real a JPEG ahorraría unos 4 MB en la carga del sitio.
+- 45 imágenes de `img/` (5.1 MB) no las referencia ninguna página: la mayoría son versiones anteriores de pares `-v2`/`-v3`. Si se confirma que no se van a usar, borrarlas. El resto del peso ya se recomprimió.
 - El Estándar D no publica lista de referencias en su `recursos.html`: por eso sus fichas de conocimientos van sin la línea de fuentes, a diferencia de A, B y C.
-- Hex `#9F2929` y `#7C3AED` en SVGs son decisión editorial pendiente — el brand reviewer los marca cada vez.
 - Cuando agregues un componente interactivo nuevo, actualiza `design.md §16.9` (tabla del catálogo) **en el mismo commit**. El propio §16.9 lo explicita: "*Cuando se implemente un componente nuevo, mueve su fila de pendiente a implementado y actualiza esta tabla.*"

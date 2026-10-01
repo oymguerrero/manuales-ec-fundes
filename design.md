@@ -77,12 +77,16 @@ A partir de la migración de paleta, los tokens críticos coinciden con los HEX 
 | `--color-gris-linea`    | `#D9E4F2` | Utilitario web | 1.21:1 (separador)     | Bordes suaves · separadores |
 | `--color-azul-suave`    | `#EAF4FF` | Utilitario web | 1.07:1 (fondo)         | Fondos de tarjeta · hover |
 | `--color-amarillo-suave`| `#FFF3CC` | Utilitario web | 1.16:1 (fondo)         | Fondos de callout informativo |
+| `--estado-negativo`     | `#9F2929` | Marcador semántico (no brandbook) | 7.24:1 ✓ AAA           | "Esto está mal": respuesta errónea, resultado bloqueado, "antes" en comparativos |
+| `--categoria-distinta`  | `#7C3AED` | Marcador semántico (no brandbook) | 5.54:1 ✓ AA            | "Esto es de otra categoría": callout de plantilla, actor externo, situación emergente |
 
 **Notas:**
 
 - Los tokens "decorativos" (azul claro, amarillo, naranja, verde) **no se usan para texto sobre blanco**. Se usan como fondos, bordes, acentos o textos sobre fondo de contraste alto (ej. azul profundo sobre amarillo en botones CTA pasa 5.53:1).
 - El antes había un `--color-azul-profundo: #0B2E63` (12.89:1) que sobrepasaba ampliamente el AAA. El nuevo `#28467e` brandbook sigue en zona AAA (9.01:1) — más fiel a marca, mismo cumplimiento WCAG.
 - `--color-azul: #1F4E8C` se mantiene como **token utilitario** (no es del brandbook) porque hace de azul medio entre el `--color-azul-claro` y el `--color-azul-profundo`. Útil para hierarchy visual de UI.
+- `--estado-negativo` y `--categoria-distinta` **no son colores de marca sino marcadores tipológicos**, igual que los tokens de callout: el rojo dice "esto está mal" y el morado "esto pertenece a otra categoría". Sustituirlos por un color del brandbook cambiaría el mensaje, no solo el tono, así que **no se auto-reemplazan**. Decisión cerrada: el revisor de marca ya no debe marcarlos mientras aparezcan como token. Sus pares medidos: rojo sobre `#FDECEC` da 6.51:1, blanco sobre rojo 7.44:1, morado sobre `#F5EFFB` 5.05:1 — los tres pasan AA. En tema oscuro los dos tienen variante propia: `#F09A9A` y `#CBB0F5`, con 8.11:1 y 9.17:1 sobre el fondo oscuro `#0F1A2E`.
+- En los SVG inline el valor va literal (`fill="#9F2929"`), porque un atributo de presentación no acepta `var()`. Debe coincidir con el token; ver §15.4 para su uso en diagramas.
 
 ### 2.4 Contraste mínimo (WCAG AA)
 

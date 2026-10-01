@@ -39,7 +39,11 @@
   --callout-example-bg:   #EAF4FF;  --callout-example-ink:   #1F4E8C;
   --callout-template-bg:  #F5EFFB;  --callout-template-ink:  #5B21B6;
   --callout-reflection-bg:#FFF3E6;  --callout-reflection-ink:#A64F00;
+  /* Marcadores semanticos, no colores de marca: el rojo dice "esto esta mal"
+     y el morado "esto es de otra categoria". Sustituirlos por un color del
+     brandbook cambiaria el mensaje, no solo el tono. Ver design.md 2.3 y 15.4. */
   --estado-negativo:      #9F2929;
+  --categoria-distinta:   #7C3AED;
   --color-verde-oscuro: #2A7A42;
 
   /* Superficies semanticas. --color-blanco-calido sigue siendo el fondo de
@@ -579,7 +583,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .callout--template {
   background: var(--callout-template-bg);
-  border-left-color: #7C3AED;
+  border-left-color: var(--categoria-distinta);
 }
 .callout--template .callout__label { color: var(--callout-template-ink); }
 .callout--template strong { color: var(--callout-template-ink); }
@@ -1599,7 +1603,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 
 .quiz__option[data-state="wrong"] {
-  border-color: #9F2929;
+  border-color: var(--estado-negativo);
   background: #FDECEC;
 }
 
@@ -1635,8 +1639,8 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 
 .quiz__feedback--wrong {
   background: #FDECEC;
-  border-left: 4px solid #9F2929;
-  color: #9F2929;
+  border-left: 4px solid var(--estado-negativo);
+  color: var(--estado-negativo);
 }
 
 .quiz__feedback strong {
@@ -3471,6 +3475,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
     --callout-template-bg:  #251743;  --callout-template-ink:  #CBB0F5;
     --callout-reflection-bg:#3A2614;  --callout-reflection-ink:#F5B98A;
     --estado-negativo:      #F09A9A;
+    --categoria-distinta:   #CBB0F5;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
     --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.55);
   }
@@ -3509,6 +3514,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
     --callout-template-bg:  #251743;  --callout-template-ink:  #CBB0F5;
     --callout-reflection-bg:#3A2614;  --callout-reflection-ink:#F5B98A;
     --estado-negativo:      #F09A9A;
+    --categoria-distinta:   #CBB0F5;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
     --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.55);
 }
@@ -5277,7 +5283,7 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
 }
 .diagnostic-multi__reset:hover { background: rgba(247,192,49,0.10); }
 .diagnostic-multi__result--blocked {
-  background: linear-gradient(135deg, #9F2929 0%, #9F2929 100%);
+  background: linear-gradient(135deg, var(--estado-negativo) 0%, var(--estado-negativo) 100%);
 }
 .diagnostic-multi__result--blocked h3 { color: white; }
 
