@@ -1,0 +1,16 @@
+# Vercel publica solo el sitio. Todo lo demás se queda fuera del deploy:
+# documentos fuente de la raíz, configuración de agentes (.claude/, CLAUDE.md,
+# AGENTS.md), design.md, scripts/ y los guiones de narración.
+# Si agregas una carpeta nueva al sitio, súmala aquí con "!".
+/*
+!index.html
+!assets
+!diagnostico
+!estandar-a
+!estandar-b
+!estandar-c
+!estandar-d
+!img
+!maestro
+!media
+media/scripts/
