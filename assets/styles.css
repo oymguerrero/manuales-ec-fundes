@@ -5393,6 +5393,15 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   font-weight: 700;
 }
 
+/* Lo que el estandar enumera dentro de un conocimiento. Va en su propia linea
+   y en menor jerarquia: es el alcance, no la explicacion. */
+.conocimiento__detalle {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: var(--color-gris-texto);
+}
+
 .nota-fuentes {
   margin-top: 20px;
   padding: 12px 16px;
