@@ -7,9 +7,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Manuales web interactivos del proyecto **Mi CompañIA** (FUNDES México + Google.org) para desarrollar competencias en IA aplicada a MiPyMEs mexicanas. Las cuatro propuestas de estándar aún no han sido publicadas oficialmente:
 
 - **Curso introductorio** (`maestro/`): 6 capítulos sobre el sistema CONOCER (qué es, cómo evalúa, proceso, ¿es para ti?, recursos).
-- **Estándar A · Implementar IA** (`estandar-a/`): 3 elementos + instrumento + ruta + recursos, con el caso pedagógico transversal "La Espiga" (panadería ficticia con Doña Beatriz + Carlos).
+- **Estándar A** (`estandar-a/`): Adopción de soluciones de IA en los procesos de la MiPyME. 3 elementos, caso "La Espiga" (panadería, Doña Beatriz + Carlos).
+- **Estándar B** (`estandar-b/`): Creación de soluciones comerciales con IA. 4 elementos, caso "Tonalli".
+- **Estándar C** (`estandar-c/`): Prestación de servicios de consultoría en mercadotecnia digital con IA. 4 elementos, caso "La Cuesta".
+- **Estándar D** (`estandar-d/`): Creación de soluciones tecnológicas de modernización digital con IA. 4 elementos, caso "El Surtido".
+- **Diagnóstico** (`diagnostico/`): el finder que recomienda un estándar según el perfil.
 
-El contenido normativo viene de `Manual_Maestro_v2.pdf` y `Manual_Estandar_A_v2.pdf` (fuentes que NO están en el repo). Si encuentras una inconsistencia entre el manual y la fuente, **la fuente manda**.
+Cada curso tiene `index.html`, un `elemento-N.html` por elemento, `ruta-preparacion.html`, `recursos.html` y `templates/`.
+
+El contenido normativo viene del **F21 (estándar de competencia) de cada propuesta**, que vive en `extras/` y no está en el repo. Si encuentras una inconsistencia entre el manual y la fuente, **la fuente manda**.
+
+El **F22 (instrumento de evaluación) no es fuente de contenido.** Las preguntas de práctica deben medir el mismo conocimiento que el instrumento, pero nunca reproducir su redacción: si el aspirante reconoce la frase exacta, el curso dejó de enseñar y empezó a filtrar.
 
 ## Stack y principio rector
 
@@ -166,15 +174,15 @@ Patrones consolidados que conviene respetar al editar páginas de `maestro/`:
 - **Numeración de módulos restantes**: empieza en `<N>.1` donde N es el número de Tema. Cuando se renumeran capítulos (ej. al eliminar un módulo intermedio), actualizar **todos** los `accordion__num` siguientes y los `id` si vienen referenciados desde otras páginas.
 - **Notas editoriales temporales en rojo**: pueden aparecer como `<p style="color: red;">` o `<span style="background: #fff0f0;">` durante refactors colaborativos. Son trabajo en curso, NO contenido final. El reviewer de marca las marca como bloqueantes; al cierre de un sprint conviene eliminarlas.
 
-## Templates ofimáticos del Estándar A
+## Templates ofimáticos
 
-13 templates descargables (`estandar-a/templates/`) generados con `generate-templates.py`. Distribución elegida por naturaleza del producto, no por uniformidad:
+52 plantillas descargables, una por producto del estándar: 12 en A, 13 en B, 11 en C y 16 en D. Cada curso tiene su generador (`generate-templates.py` para A, `-b`, `-c`, `-d` para los demás) y todos numeran `<elemento>.<consecutivo>`: el campo `num` decide el nombre del archivo, así que cambiarlo renombra y hay que actualizar los `href` del sitio en el mismo paso.
 
-- **9 Word (.docx)**: reportes, informes, propuestas, actas.
-- **3 Excel (.xlsx)**: 1.4.5 matriz impacto/viabilidad (con fórmulas), 1.4.6 hoja de ruta tipo Gantt, 4.4.1 reporte resultados (con variación %).
-- **1 PowerPoint (.pptx)**: 3.4.3 material de capacitación, 16:9, ~12 slides.
+El formato lo elige la naturaleza del producto, no la uniformidad: Word para reportes, informes, propuestas y actas; Excel donde hace falta calcular (matrices de priorización, Gantt, comparativos antes/después); PowerPoint para el material de capacitación de A.
 
-Cada template trae **criterio F21 literal + caso La Espiga (ejemplo) + preguntas guía (no respuestas)** — pedagógicamente, deben ayudar a pasar la evaluación, no resolverla.
+Cada template trae **criterio F21 literal + ejemplo del caso + preguntas guía con su espacio de respuesta** — pedagógicamente, deben ayudar a pasar la evaluación, no resolverla.
+
+**Lo que decide el resultado es `convert-legacy-office.py`, no el CSS del HTML intermedio**, que se descarta por completo. Nunca des por bueno un template porque el generador imprima `[ok]`: ábrelo y comprueba que tiene criterios, preguntas, ejemplo y espacio real para escribir, y que el cuerpo no termina en un encabezado vacío. Dos convenciones vivas en el conversor: una celda cuyo texto empieza con `=` y contiene `{f}` se escribe como fórmula de Excel sustituyendo `{f}` por el número de fila; y un `div` con otro bloque dentro se recorre, mientras uno con solo texto o `span` se dibuja según su clase.
 
 ## Convenciones de commits
 
@@ -189,6 +197,9 @@ Cualquier cosa que vivas en `extras/` queda fuera de git (entrada en `.gitignore
 
 ## Pendientes conocidos
 
-- README.md está desactualizado en algunos puntos (menciona `cuatro-estandares.html`; ahora es `es-para-ti.html`). No es bloqueante pero conviene actualizar al cerrar un sprint.
+- Los dos empaquetadores (`build-curso.py`, `build-curso-autonomo.py`) y su `_modelo/` viven en `extras/`, que está fuera de git: existen solo en la máquina donde se crearon. Son la única forma de producir los entregables embebibles, así que conviene moverlos a `scripts/`.
+- `manual_completo_estandar_b.doc` y `_d.doc` (con sus gemelos `.docx`) están trackeados en la raíz y ninguna página los enlaza. Parecen exportaciones de revisión; si ya no sirven, borrarlos.
+- Doce imágenes de `img/` pesan más de 300 KB (hasta 788 KB). Pasar los PNG sin transparencia real a JPEG ahorraría unos 4 MB en la carga del sitio.
+- El Estándar D no publica lista de referencias en su `recursos.html`: por eso sus fichas de conocimientos van sin la línea de fuentes, a diferencia de A, B y C.
 - Hex `#9F2929` y `#7C3AED` en SVGs son decisión editorial pendiente — el brand reviewer los marca cada vez.
 - Cuando agregues un componente interactivo nuevo, actualiza `design.md §16.9` (tabla del catálogo) **en el mismo commit**. El propio §16.9 lo explicita: "*Cuando se implemente un componente nuevo, mueve su fila de pendiente a implementado y actualiza esta tabla.*"

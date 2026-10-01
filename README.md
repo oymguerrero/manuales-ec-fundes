@@ -1,6 +1,6 @@
-# Mi CompañIA — Manual Maestro y Estándar A
+# Mi CompañIA — Manuales de los cuatro estándares
 
-Manuales interactivos en HTML del proyecto **Mi CompañIA** (iniciativa de FUNDES México con apoyo de Google.org) sobre Inteligencia Artificial aplicada a las MiPyMEs mexicanas. Este repositorio publica por ahora **dos manuales**: el Manual Maestro (general) y el Manual del Estándar A · Implementación.
+Manuales interactivos en HTML del proyecto **Mi CompañIA** (iniciativa de FUNDES México con apoyo de Google.org) sobre Inteligencia Artificial aplicada a las MiPyMEs mexicanas. Este repositorio publica **cinco cursos**: el introductorio sobre el sistema CONOCER y uno por cada una de las cuatro propuestas de estándar, que aún no han sido publicadas oficialmente.
 
 ## Estructura
 
@@ -14,14 +14,19 @@ manuales-ec-fundes/
 │   ├── proceso.html                 Cap 4 · Proceso paso a paso (6 etapas)
 │   ├── es-para-ti.html              Cap 4 · Los 4 estándares + finder
 │   └── recursos.html                Cap 6 · FAQ, glosario y referencias
-├── estandar-a/                      Manual del Estándar A
-│   ├── index.html                   Bienvenida + ficha técnica del Estándar A
+├── diagnostico/                     Finder: qué estándar le corresponde a cada perfil
+├── estandar-a/                      Adopción de soluciones de IA en los procesos
+│   ├── index.html                   Bienvenida + ficha técnica del estándar
 │   ├── elemento-1.html              Elemento 1 · Planear
-│   ├── elemento-2.html              Elemento 2 · Ejecutar
+│   ├── elemento-2.html              Elemento 2 · Adoptar
 │   ├── elemento-3.html              Elemento 3 · Evaluar
-│   ├── instrumento.html             Instrumento de Evaluación de Competencia (IEC)
-│   ├── ruta-preparacion.html        Ruta de preparación de 4 semanas
-│   └── recursos.html                FAQ, glosario y referencias R1-R24
+│   ├── ruta-preparacion.html        Ruta de preparación
+│   ├── recursos.html                FAQ, glosario y referencias R1-R24
+│   └── templates/                   12 plantillas descargables de los productos
+├── estandar-b/                      Creación de soluciones comerciales con IA
+├── estandar-c/                      Consultoría en mercadotecnia digital con IA
+├── estandar-d/                      Soluciones tecnológicas de modernización digital
+│                                    (los tres con 4 elementos, ruta, recursos y templates)
 ├── flujo-trabajo.html               Infografía del flujo de trabajo en equipo
 ├── flujo-trabajo.png                Infografía exportada como imagen
 ├── assets/
@@ -54,7 +59,7 @@ No hay ramas ni Pull Requests. Los demás verán tu aporte la próxima vez que t
 
 ### Para no pisarse
 
-- **Repártanse por archivo**: una persona por `maestro/Xxx.html` o `estandar-a/Xxx.html` a la vez. Si nadie edita el mismo archivo, nunca hay choques.
+- **Repártanse por archivo**: una persona por `maestro/Xxx.html` o `estandar-<x>/Xxx.html` a la vez. Si nadie edita el mismo archivo, nunca hay choques.
 - **Avisen** antes de tocar `index.html`, `assets/styles.css` o `assets/interactive.js` — los comparten todos los manuales.
 - **Suban seguido**, en cambios chicos: mientras menos tiempo pase entre traer y subir, menos posibilidad de cruzarse.
 - Si dos editan el mismo archivo casi a la vez, la IA junta el trabajo sola; solo pedirá ayuda en el caso raro de que dos cambien exactamente la misma línea.
@@ -63,13 +68,19 @@ Para una vista visual del proceso, abre `flujo-trabajo.html`.
 
 ## Estado actual de los manuales
 
-| Manual | Temas / Elementos | Estado |
+Las cifras son las del documento final de cada estándar (el F21), cotejadas
+elemento por elemento con lo que publica el sitio.
+
+| Curso | Elementos y evidencias | Caso |
 |---|---|---|
-| **Manual Maestro** | 6 capítulos · audios narrados · quizzes · diagramas SVG | Desarrollado |
-| **Estándar A — Implementación** | 3 elementos · 14 conocimientos · 13 productos · caso La Espiga | Desarrollado |
-| **Estándar B — Desarrollar con IA** | 4 elementos · 13 productos · 7 desempeños | Propuesta en preparación |
-| Estándar C — Mercadotecnia digital con IA | 4 elementos · 9 productos · 6 desempeños | Propuesta en preparación |
-| **Estándar D — Transformación digital con IA** | 4 elementos · 15 productos · 1 desempeño · caso El Surtido | Propuesta en preparación |
+| **Curso introductorio** | 6 capítulos · audios narrados · quizzes · diagramas SVG | — |
+| **A — Adopción de IA en los procesos** | 3 elementos · 12 productos · 4 desempeños · 14 conocimientos | La Espiga |
+| **B — Creación de soluciones comerciales** | 4 elementos · 14 productos · 5 desempeños · 15 conocimientos | Tonalli |
+| **C — Consultoría en mercadotecnia digital** | 4 elementos · 10 productos · 8 desempeños · 10 conocimientos | La Cuesta |
+| **D — Modernización digital** | 4 elementos · 16 productos · 1 desempeño · 12 conocimientos | El Surtido |
+
+Las cuatro propuestas de estándar **aún no están publicadas por CONOCER**; su
+contenido puede cambiar.
 
 ## Variables de entorno
 
@@ -90,8 +101,11 @@ GitHub Pages (publicar el manual en una URL) requiere un plan de pago para repos
 
 El contenido proviene de los documentos oficiales del proyecto FUNDES Componente 2:
 
-- `Manual_Maestro_v2.pdf` (base del Manual Maestro)
-- `Manual_Estandar_A_v2.pdf` (base del Manual del Estándar A)
-- Tablas de especificaciones, conocimientos y referencias R1-R24
+- El F21 (estándar de competencia) de cada una de las cuatro propuestas
+- `Manual_Maestro_v2.pdf` (base del curso introductorio)
+- Tablas de especificaciones, conocimientos y referencias de cada estándar
+
+El F22 (instrumento de evaluación) **no** se usa como fuente de contenido: los
+materiales deben ayudar a pasar la evaluación, no resolverla.
 
 Si encuentras una inconsistencia entre el manual y la fuente, **la fuente manda**.
