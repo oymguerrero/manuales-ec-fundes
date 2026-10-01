@@ -1584,7 +1584,9 @@ def render_matrix_extra(num):
                 f'<td style="font-weight:bold;">{ind}</td>\n'
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Umbral propuesta
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Resultado real
-                f'<td class="fill" style="text-align:center;color:#999;">=%</td>\n'  # Variación %
+                # Variación calculada: (resultado real - umbral) / umbral
+                f'<td class="fill" style="text-align:center;color:#4B5563;">'
+                f'=IFERROR(ROUND((C{{f}}-B{{f}})/B{{f}}*100,2),"")</td>\n'
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Cumplido S/N
                 f'</tr>\n'
             )

@@ -30,7 +30,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 #   "pptx"  → presentación real generada con python-pptx (capacitación)
 PRODUCTS = [
     {
-        "num": "1.4.1", "slug": "reporte-evaluacion-inicial", "format": "word",
+        "num": "1.1", "slug": "reporte-evaluacion-inicial", "format": "word",
         "elemento": "1 · Planear", "title": "Reporte de evaluación inicial de la MiPyME",
         "intro": "Es el primer producto del proyecto: una foto del estado actual de la MiPyME, sus objetivos y los recursos disponibles.",
         "f21": [
@@ -53,7 +53,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "1.4.2", "slug": "informe-disponibilidad-datos", "format": "word",
+        "num": "1.2", "slug": "informe-disponibilidad-datos", "format": "word",
         "elemento": "1 · Planear", "title": "Informe de disponibilidad y calidad de los datos de la MiPyME",
         "intro": "Documenta qué datos tiene la MiPyME para sostener soluciones de IA y cuál es su calidad.",
         "f21": [
@@ -71,7 +71,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "1.4.3", "slug": "informe-diagnostico-procesos", "format": "word",
+        "num": "1.3", "slug": "informe-diagnostico-procesos", "format": "word",
         "elemento": "1 · Planear", "title": "Informe de diagnóstico de procesos, actividades y áreas de trabajo",
         "intro": "Mapea los procesos operativos y detecta los cuellos de botella + resistencias al cambio.",
         "f21": [
@@ -89,7 +89,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "1.4.4", "slug": "reporte-madurez-digital", "format": "word",
+        "num": "1.4", "slug": "reporte-madurez-digital", "format": "word",
         "elemento": "1 · Planear", "title": "Reporte de madurez digital y disposición al cambio",
         "intro": "Evalúa qué tan preparada está la MiPyME (tecnología) y su personal (cultura) para incorporar IA.",
         "f21": [
@@ -111,7 +111,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "1.4.5", "slug": "matriz-impacto-viabilidad", "format": "excel",
+        "num": "1.5", "slug": "matriz-impacto-viabilidad", "format": "excel",
         "elemento": "1 · Planear", "title": "Matriz de impacto, viabilidad y esfuerzo",
         "intro": "Hoja de cálculo para priorizar las oportunidades de IA detectadas. Asigna puntajes (1-5) por impacto, viabilidad y esfuerzo; la matriz revela cuáles atacar primero.",
         "f21": [
@@ -131,7 +131,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "1.4.6", "slug": "hoja-de-ruta", "format": "excel",
+        "num": "1.6", "slug": "hoja-de-ruta", "format": "excel",
         "elemento": "1 · Planear", "title": "Hoja de ruta de adopción de soluciones de IA",
         "intro": "Cronograma tipo Gantt con las fases, actividades, responsables y recursos del proyecto.",
         "f21": [
@@ -155,7 +155,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "1.4.7", "slug": "propuesta-final-adopcion", "format": "word",
+        "num": "1.7", "slug": "propuesta-final-adopcion", "format": "word",
         "elemento": "1 · Planear", "title": "Propuesta final de adopción de soluciones de IA",
         "intro": "Documento maestro de entrega al emprendedor que integra los productos previos en una narrativa coherente.",
         "f21": [
@@ -182,7 +182,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "3.4.1", "slug": "soluciones-implementadas", "format": "word",
+        "num": "2.1", "slug": "soluciones-implementadas", "format": "word",
         "elemento": "2 · Ejecutar", "title": "Soluciones de IA en la operación, implementadas",
         "intro": "El producto 3.4.1 NO es documental: es la solución MISMA funcionando. Este template sirve como inventario que documenta lo implementado para la evaluación.",
         "f21": [
@@ -204,7 +204,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "3.4.2", "slug": "informe-tecnico-configuracion", "format": "word",
+        "num": "2.2", "slug": "informe-tecnico-configuracion", "format": "word",
         "elemento": "2 · Ejecutar", "title": "Informe técnico de configuración de las soluciones de IA",
         "intro": "Manual técnico para que la MiPyME mantenga las soluciones después de tu consultoría. Es exhaustivo.",
         "f21": [
@@ -232,7 +232,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "3.4.3", "slug": "material-capacitacion", "format": "pptx",
+        "num": "2.3", "slug": "material-capacitacion", "format": "pptx",
         "elemento": "2 · Ejecutar", "title": "Material de capacitación para la adopción de soluciones de IA",
         "intro": "Presentación visual para capacitar al personal de la MiPyME. Una lámina por paso, espacio para captura, prompts destacados y errores frecuentes. El formato PowerPoint te permite usarla en sesión presencial o compartirla para autoestudio.",
         "f21": [
@@ -255,7 +255,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "4.4.1", "slug": "reporte-evaluacion-resultados", "format": "excel",
+        "num": "3.1", "slug": "reporte-evaluacion-resultados", "format": "excel",
         "elemento": "3 · Evaluar", "title": "Reporte de evaluación de resultados de la adopción de soluciones de IA",
         "intro": "Hoja de cálculo con la comparación antes/después de cada indicador + tablero visual + estimación de ROI.",
         "f21": [
@@ -277,7 +277,7 @@ PRODUCTS = [
         ],
     },
     {
-        "num": "4.4.2", "slug": "acta-de-cierre", "format": "word",
+        "num": "3.2", "slug": "acta-de-cierre", "format": "word",
         "elemento": "3 · Evaluar", "title": "Acta de cierre del proyecto de adopción de soluciones de IA",
         "intro": "Documento legal de cierre. CRÍTICO: requiere firmas de ambas partes + contactos de soporte. Sin estos elementos el evaluador NO da por cumplido el producto.",
         "f21": [
@@ -988,8 +988,8 @@ def render_questions_excel(preguntas):
 
 
 def render_matrix_example(num):
-    """Para 1.4.5 (matriz impacto/viabilidad), añade una hoja de cálculo pre-armada."""
-    if num != "1.4.5":
+    """Para la 1.5 (matriz impacto/viabilidad), añade una hoja de cálculo pre-armada."""
+    if num != "1.5":
         return ""
     rows = ""
     for i in range(1, 9):
@@ -1000,7 +1000,10 @@ def render_matrix_example(num):
             f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
             f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
             f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
-            f'<td class="fill" style="text-align:center;color:#4B5563;">=I*V/E</td>\n'
+            # Fórmula real, no el texto "=I*V/E": {f} lo sustituye el conversor
+            # por el número de fila de la hoja.
+            f'<td class="fill" style="text-align:center;color:#4B5563;">'
+            f'=IFERROR(ROUND(D{{f}}*E{{f}}/F{{f}},2),"")</td>\n'
             f'<td class="fill">&nbsp;</td>\n'
             f'</tr>\n'
         )
@@ -1016,8 +1019,8 @@ def render_matrix_example(num):
 
 
 def render_gantt_example(num):
-    """Para 1.4.6 (hoja de ruta), añade un cronograma Gantt vacío."""
-    if num != "1.4.6":
+    """Para la 1.6 (hoja de ruta), añade un cronograma Gantt vacío."""
+    if num != "1.6":
         return ""
     weeks_header = ''.join(f'<th style="width:5%;text-align:center;">S{i}</th>' for i in range(1, 13))
     rows = ""
@@ -1042,8 +1045,8 @@ def render_gantt_example(num):
 
 
 def render_indicators_example(num):
-    """Para 4.4.1 (reporte de evaluación de resultados), añade tabla antes/después."""
-    if num != "4.4.1":
+    """Para la 3.1 (reporte de evaluación de resultados), añade tabla antes/después."""
+    if num != "3.1":
         return ""
     rows = ""
     for i in range(1, 7):
@@ -1053,7 +1056,9 @@ def render_indicators_example(num):
             f'<td class="fill">&nbsp;</td>\n'
             f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
             f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
-            f'<td class="fill" style="text-align:center;color:#4B5563;">=(actual-base)/base</td>\n'
+            # Variación calculada: (valor actual - línea base) / línea base
+            f'<td class="fill" style="text-align:center;color:#4B5563;">'
+            f'=IFERROR(ROUND((D{{f}}-C{{f}})/C{{f}}*100,2),"")</td>\n'
             f'<td class="fill">&nbsp;</td>\n'
             f'</tr>\n'
         )
@@ -1114,11 +1119,12 @@ def main():
             import shutil
             shutil.rmtree(d)
             print(f"  [del legacy dir] {d.name}")
-    # Para el 3.4.3: borrar versión .doc previa si existía (cambia a .pptx)
-    old_343 = OUT / "3-4-3-material-capacitacion.doc"
-    if old_343.exists():
-        old_343.unlink()
-        print(f"  [del legacy] {old_343.name}")
+    # Nombres de la numeración anterior (1-4-x, 3-4-x, 4-4-x) y el .doc que
+    # precedió al .pptx del material de capacitación.
+    for huerfano in list(OUT.glob("1-4-*")) + list(OUT.glob("3-4-*")) + \
+            list(OUT.glob("4-4-*")):
+        huerfano.unlink()
+        print(f"  [del legacy] {huerfano.name}")
 
     for p in PRODUCTS:
         content, ext = render_product(p)

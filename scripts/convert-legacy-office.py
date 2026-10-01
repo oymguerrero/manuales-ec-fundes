@@ -73,6 +73,17 @@ TRAS_BORDES_TABLA = ("w:shd", "w:tblLayout", "w:tblCellMar", "w:tblLook",
                      "w:tblCaption", "w:tblDescription", "w:tblPrChange")
 TRAS_MARGEN_TABLA = ("w:tblLook", "w:tblCaption", "w:tblDescription",
                      "w:tblPrChange")
+TRAS_SHD_PARRAFO = TRAS_PBDR[1:]
+
+NARANJA = "F29100"         # --color-naranja · marco del caso pedagógico
+FONDO_AMARILLO = "FFF3CC"  # fondo de los avisos y del caso
+FONDO_CAPTURA = "FAFCFF"   # fondo del área donde escribe el aspirante
+
+# Elementos que ocupan su propia línea. Un div que contiene alguno de estos es
+# un contenedor y hay que recorrerlo; si solo tiene texto o spans, es una caja
+# de contenido y se dibuja.
+BLOQUES = ("h1", "h2", "h3", "h4", "h5", "h6", "p", "ul", "ol", "table", "div",
+           "dl", "blockquote")
 
 
 def _fijar_fuente(style, nombre):
@@ -305,6 +316,145 @@ def clean_text(node):
     return " ".join(node.get_text(" ", strip=True).split())
 
 
+def _sombrear_parrafo(parrafo, relleno):
+    pPr = parrafo._p.get_or_add_pPr()
+    shd = OxmlElement("w:shd")
+    shd.set(qn("w:val"), "clear")
+    shd.set(qn("w:color"), "auto")
+    shd.set(qn("w:fill"), relleno)
+    pPr.insert_element_before(shd, *TRAS_SHD_PARRAFO)
+
+
+def _alto_minimo(fila, puntos):
+    """Alto de fila que crece con el texto pero nunca baja de ese mínimo."""
+    trPr = fila._tr.get_or_add_trPr()
+    alto = OxmlElement("w:trHeight")
+    alto.set(qn("w:val"), str(int(puntos * 20)))
+    alto.set(qn("w:hRule"), "atLeast")
+    trPr.append(alto)
+
+
+def _clases(nodo):
+    return set(nodo.get("class") or ())
+
+
+def _es_contenedor(nodo):
+    return any(getattr(h, "name", None) in BLOQUES for h in nodo.children)
+
+
+def _escribir_inline(parrafo, nodo, cursiva=False, color=GRIS_TEXTO, tamano=10):
+    """Vuelca el contenido de un nodo conservando negritas y cursivas.
+
+    clean_text aplana el marcado y se pierde la entradilla en negrita con la que
+    abren el aviso y el caso pedagógico, que es la que orienta la lectura.
+    """
+    def bajar(actual, negrita, italica):
+        for hijo in actual.children:
+            if isinstance(hijo, NavigableString):
+                texto = " ".join(str(hijo).split())
+                if not texto:
+                    continue
+                if parrafo.text and not parrafo.text.endswith(" "):
+                    texto = " " + texto
+                run = parrafo.add_run(texto)
+                run.bold = negrita
+                run.italic = italica
+                run.font.name = FUENTE
+                run.font.size = Pt(tamano)
+                run.font.color.rgb = RGBColor.from_string(
+                    AZUL_PROFUNDO if negrita and color == GRIS_TEXTO else color)
+            elif isinstance(hijo, Tag):
+                bajar(hijo,
+                      negrita or hijo.name in ("strong", "b"),
+                      italica or hijo.name in ("em", "i"))
+
+    bajar(nodo, False, cursiva)
+    return parrafo
+
+
+def _caja(document, nodo, relleno, color_filete, cursiva=False):
+    """Aviso en bloque: fondo tenue y filete izquierdo, como en el sitio."""
+    parrafo = document.add_paragraph()
+    formato = parrafo.paragraph_format
+    formato.space_before = Pt(10)
+    formato.space_after = Pt(12)
+    formato.left_indent = Pt(8)
+    formato.right_indent = Pt(4)
+    _escribir_inline(parrafo, nodo, cursiva=cursiva)
+    _sombrear_parrafo(parrafo, relleno)
+    _filete(parrafo, "left", color_filete, grosor=18, espacio=6)
+    return parrafo
+
+
+def _area_de_captura(document, nodo):
+    """El espacio donde el aspirante escribe: una celda con aire y pista dentro.
+
+    Va en tabla y no en párrafo porque la celda dibuja un marco que se ve desde
+    que se abre el documento y crece conforme se escribe.
+    """
+    tabla = document.add_table(rows=1, cols=1)
+    tabla.style = "Table Grid"
+    _rejilla(tabla, BORDE_TABLA)
+    _aire_en_celdas(tabla, horizontal=160, vertical=140)
+    celda = tabla.rows[0].cells[0]
+    sombrear_celda(celda, FONDO_CAPTURA)
+    celda.vertical_alignment = WD_ALIGN_VERTICAL.TOP
+    parrafo = celda.paragraphs[0]
+    run = parrafo.add_run(clean_text(nodo))
+    run.italic = True
+    run.font.name = FUENTE
+    run.font.size = Pt(9.5)
+    run.font.color.rgb = RGBColor.from_string(GRIS_TEXTO)
+    _alto_minimo(tabla.rows[0], 72)
+    document.add_paragraph().paragraph_format.space_after = Pt(6)
+    return tabla
+
+
+def _enunciado_de_pregunta(document, nodo):
+    """'1 · Título de la pregunta', con el número al frente."""
+    numero = nodo.find(class_="question-num")
+    titulo = nodo.find(class_="question-title")
+    parrafo = document.add_paragraph()
+    formato = parrafo.paragraph_format
+    formato.space_before = Pt(16)
+    formato.space_after = Pt(4)
+    formato.keep_with_next = True
+    etiqueta = "%s · " % clean_text(numero) if numero else ""
+    run = parrafo.add_run(etiqueta + (clean_text(titulo) if titulo else clean_text(nodo)))
+    run.bold = True
+    run.font.name = FUENTE
+    run.font.size = Pt(11.5)
+    run.font.color.rgb = RGBColor.from_string(AZUL_PROFUNDO)
+    return parrafo
+
+
+def _ayuda_de_pregunta(document, nodo):
+    parrafo = document.add_paragraph()
+    formato = parrafo.paragraph_format
+    formato.space_after = Pt(6)
+    formato.left_indent = Pt(10)
+    formato.keep_with_next = True
+    _escribir_inline(parrafo, nodo, cursiva=True)
+    return parrafo
+
+
+def _pie_de_documento(document, nodo):
+    parrafo = document.add_paragraph()
+    parrafo.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    parrafo.paragraph_format.space_before = Pt(22)
+    _escribir_inline(parrafo, nodo, cursiva=True, tamano=8)
+    _filete(parrafo, "top", BORDE_TABLA, grosor=4, espacio=6)
+    return parrafo
+
+
+def _deck(document, nodo, tamano=9, color=None):
+    parrafo = document.add_paragraph()
+    parrafo.paragraph_format.space_after = Pt(2)
+    _escribir_inline(parrafo, nodo, tamano=tamano,
+                     color=color or GRIS_TEXTO)
+    return parrafo
+
+
 def provisional_language(markup):
     """Evita presentar los insumos de trabajo como estándares ya publicados."""
     replacements = {
@@ -320,6 +470,85 @@ def provisional_language(markup):
     return markup
 
 
+def _tabla(document, nodo):
+    filas = nodo.find_all("tr")
+    ancho = max((len(f.find_all(["th", "td"], recursive=False)) for f in filas),
+                default=1)
+    tabla = document.add_table(rows=0, cols=ancho)
+    encabezados = []
+    for indice, fila in enumerate(filas):
+        celdas = fila.find_all(["th", "td"], recursive=False)
+        destino = tabla.add_row().cells
+        encabezado = False
+        for i, celda in enumerate(celdas):
+            destino[i].text = clean_text(celda)
+            if indice == 0 or celda.name == "th":
+                encabezado = True
+        if encabezado:
+            encabezar_fila(destino[: len(celdas)])
+            encabezados.append(indice)
+    estilizar_tabla(tabla, encabezados)
+    return tabla
+
+
+def _recorrer(document, nodo):
+    """Vuelca el cuerpo en orden de documento.
+
+    El recorrido anterior buscaba solo h1-h4, p, li y table, así que todo lo que
+    los generadores escriben en div —el aviso inicial, el caso pedagógico, las
+    preguntas guía y su área de respuesta, y el pie— desaparecía: los templates
+    se entregaban cortados en el encabezado 'Tu turno'.
+    """
+    for hijo in nodo.children:
+        if not isinstance(hijo, Tag):
+            continue
+        nombre = hijo.name
+        clases = _clases(hijo)
+
+        if nombre == "table":
+            _tabla(document, hijo)
+            continue
+        if nombre in ("ul", "ol"):
+            for elemento in hijo.find_all("li", recursive=False):
+                texto = clean_text(elemento)
+                if texto:
+                    document.add_paragraph(texto, style="List Bullet")
+            continue
+        if nombre.startswith("h") and len(nombre) == 2 and nombre[1].isdigit():
+            texto = clean_text(hijo)
+            if texto:
+                document.add_heading(texto, level=min(max(int(nombre[1]) - 1, 1), 3))
+            continue
+        if nombre == "p":
+            if clean_text(hijo):
+                _deck(document, hijo, tamano=10.5) if "subtitle" in clases \
+                    else document.add_paragraph(clean_text(hijo))
+            continue
+        if nombre != "div":
+            continue
+
+        # div: contenedor que se recorre, o caja de contenido que se dibuja
+        if "fill-area" in clases:
+            _area_de_captura(document, hijo)
+        elif "question-help" in clases:
+            _ayuda_de_pregunta(document, hijo)
+        elif "intro" in clases:
+            _caja(document, hijo, FONDO_AMARILLO, AMARILLO)
+        elif clases & {"espiga-box", "caso-box", "tonalli-box"}:
+            _caja(document, hijo, FONDO_AMARILLO, NARANJA, cursiva=True)
+        elif "footer" in clases:
+            _pie_de_documento(document, hijo)
+        elif any(isinstance(h, Tag) and "question-num" in _clases(h)
+                 for h in hijo.children):
+            # Solo el div que lleva el número pegado al título; el
+            # question-block que los envuelve tiene que recorrerse.
+            _enunciado_de_pregunta(document, hijo)
+        elif _es_contenedor(hijo):
+            _recorrer(document, hijo)
+        elif clean_text(hijo):
+            document.add_paragraph(clean_text(hijo))
+
+
 def convert_doc(source):
     soup = BeautifulSoup(provisional_language(source.read_text(encoding="utf-8")), "html.parser")
     document = Document()
@@ -331,37 +560,19 @@ def convert_doc(source):
         portada(document, clean_text(title), antetitulo(source))
 
     body = soup.body or soup
-    handled = {id(title)} if title else set()
-    for node in body.find_all(["h1", "h2", "h3", "h4", "p", "li", "table"], recursive=True):
-        if id(node) in handled or node.find_parent("table"):
-            continue
-        text = clean_text(node)
-        if not text and node.name != "table":
-            continue
-        if node.name.startswith("h"):
-            level = min(max(int(node.name[1]) - 1, 1), 3)
-            document.add_heading(text, level=level)
-        elif node.name == "li":
-            document.add_paragraph(text, style="List Bullet")
-        elif node.name == "p":
-            document.add_paragraph(text)
-        elif node.name == "table":
-            rows = node.find_all("tr")
-            width = max((len(row.find_all(["th", "td"], recursive=False)) for row in rows), default=1)
-            table = document.add_table(rows=0, cols=width)
-            encabezados = []
-            for row_index, row in enumerate(rows):
-                cells = row.find_all(["th", "td"], recursive=False)
-                target = table.add_row().cells
-                encabezado = False
-                for index, cell in enumerate(cells):
-                    target[index].text = clean_text(cell)
-                    if row_index == 0 or cell.name == "th":
-                        encabezado = True
-                if encabezado:
-                    encabezar_fila(target[: len(cells)])
-                    encabezados.append(row_index)
-            estilizar_tabla(table, encabezados)
+    cabecera = body.find(class_="brand-header")
+    if cabecera:
+        # El título, el subtítulo y la referencia del producto ya los pone
+        # portada(); la tabla de cabecera los repetiría.
+        meta = cabecera.find(class_="meta")
+        subtitulo = cabecera.find(class_="subtitle")
+        if meta:
+            _deck(document, meta, tamano=9, color=AZUL_PROFUNDO)
+        if subtitulo:
+            _deck(document, subtitulo)
+        cabecera.decompose()
+
+    _recorrer(document, body)
 
     target = source.with_suffix(".docx")
     document.save(target)
@@ -380,16 +591,71 @@ def safe_sheet_name(name, used):
     return candidate
 
 
+def _hoja_de_guia(workbook, soup, source):
+    """Primera hoja con lo que el libro no puede perder.
+
+    convert_xls solo vuelca tablas, asi que el aviso inicial, los criterios del
+    F21 y el caso pedagogico se quedaban fuera: el aspirante abria una matriz
+    vacia sin saber contra que se le va a evaluar ni como se ve llena.
+    """
+    titulo = soup.find("h1")
+    intro = soup.find(class_="intro")
+    caja = soup.find(class_="f21-box")
+    caso = soup.find(class_=lambda c: c in ("espiga-box", "caso-box", "tonalli-box"))
+    if not any((titulo, intro, caja, caso)):
+        return
+
+    hoja = workbook.create_sheet("Guía")
+    fila = 1
+
+    def escribir(texto, tamano=10.5, negrita=False, color=GRIS_TEXTO, alto=None):
+        nonlocal fila
+        celda = hoja.cell(row=fila, column=1, value=texto)
+        celda.font = Font(name=FUENTE, size=tamano, bold=negrita, color=color)
+        celda.alignment = Alignment(vertical="top", wrap_text=True)
+        if alto:
+            hoja.row_dimensions[fila].height = alto
+        fila += 1
+
+    escribir(antetitulo(source).upper(), tamano=8, negrita=True, color=AZUL_CLARO)
+    if titulo:
+        escribir(clean_text(titulo), tamano=16, negrita=True, color=AZUL_PROFUNDO)
+    fila += 1
+    if intro:
+        escribir(clean_text(intro), alto=58)
+        fila += 1
+    if caja:
+        encabezado = caja.find(["h2", "h3", "h4"])
+        escribir(clean_text(encabezado) if encabezado else "Referencia de trabajo del F21",
+                 tamano=11, negrita=True, color=AZUL_PROFUNDO)
+        for punto in caja.find_all("li"):
+            escribir("•  " + clean_text(punto), alto=28)
+        fila += 1
+    if caso:
+        escribir(clean_text(caso), alto=72)
+    hoja.column_dimensions["A"].width = 112
+    hoja.sheet_view.showGridLines = False
+
+
 def convert_xls(source):
     soup = BeautifulSoup(provisional_language(source.read_text(encoding="utf-8")), "html.parser")
     workbook = Workbook()
     aplicar_marca_excel(workbook)
     workbook.remove(workbook.active)
+    _hoja_de_guia(workbook, soup, source)
     used = set()
+    cabecera = soup.find(class_="brand-header")
+    if cabecera:
+        # Su contenido ya está en la hoja Guía; como tabla solo aportaba una
+        # hoja de una fila llamada "Tabla 1".
+        cabecera.decompose()
     tables = soup.find_all("table")
     for index, table in enumerate(tables, 1):
-        heading = table.find_previous(["h1", "h2", "h3", "h4"])
-        name = clean_text(heading) if heading else f"Tabla {index}"
+        if table.find_parent(class_="product-data"):
+            name = "Datos del documento"
+        else:
+            heading = table.find_previous(["h1", "h2", "h3", "h4"])
+            name = clean_text(heading) if heading else f"Tabla {index}"
         sheet = workbook.create_sheet(safe_sheet_name(name, used))
         filete = Side(style="thin", color=BORDE_TABLA)
         rejilla = Border(left=filete, right=filete, top=filete, bottom=filete)
@@ -397,7 +663,13 @@ def convert_xls(source):
         for row_index, row in enumerate(table.find_all("tr"), 1):
             cells = row.find_all(["th", "td"], recursive=False)
             for col_index, cell in enumerate(cells, 1):
-                target = sheet.cell(row=row_index, column=col_index, value=clean_text(cell))
+                contenido = clean_text(cell)
+                # Convención: una celda que empieza con '=' es fórmula, y {f} es
+                # el número de su fila. Sin esto el texto llegaba literal y
+                # Excel mostraba #NAME? en la columna de score.
+                if contenido.startswith("=") and "{f}" in contenido:
+                    contenido = contenido.replace("{f}", str(row_index))
+                target = sheet.cell(row=row_index, column=col_index, value=contenido)
                 target.alignment = Alignment(vertical="top", wrap_text=True)
                 target.border = rejilla
                 if row_index == 1 or cell.name == "th":

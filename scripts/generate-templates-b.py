@@ -693,7 +693,10 @@ def render_matrix_extra(num):
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
-                f'<td class="fill" style="text-align:center;color:#999;">VI×I/R</td>\n'
+                # Fórmula real en vez del texto "VI×I/R": {f} lo sustituye el
+                # conversor por el número de fila de la hoja.
+                f'<td class="fill" style="text-align:center;color:#4B5563;">'
+                f'=IFERROR(ROUND(C{{f}}*D{{f}}/E{{f}},2),"")</td>\n'
                 f'<td class="fill">&nbsp;</td>\n'
                 f'</tr>\n'
             )
@@ -719,13 +722,15 @@ def render_matrix_extra(num):
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
-                f'<td class="fill" style="text-align:center;color:#999;">&nbsp;</td>\n'
+                # Score total = suma de los tres criterios de 1 a 5.
+                f'<td class="fill" style="text-align:center;color:#4B5563;">'
+                f'=IF(COUNT(D{{f}}:F{{f}})=3,SUM(D{{f}}:F{{f}}),"")</td>\n'
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'
                 f'</tr>\n'
             )
         return f"""
 <h2>Matriz de ideas · evaluación y selección</h2>
-<p style="font-size: 10pt; color: #666;">Una fila por idea. Evalúa cada una con los tres criterios (1-5). La última columna marca si fue seleccionada por el cliente.</p>
+<p style="font-size: 10pt; color: #666;">Una fila por idea. Evalúa cada una con los tres criterios (1-5); el score total los suma, de 3 a 15. La última columna marca si fue seleccionada por el cliente.</p>
 <table class="matrix">
 <tr><th style="width:4%;">#</th><th style="width:22%;">Idea</th><th style="width:18%;">Descripción breve</th><th style="width:9%;">Novedad (1-5)</th><th style="width:9%;">Utilidad (1-5)</th><th style="width:9%;">Factibilidad (1-5)</th><th style="width:9%;">Score total</th><th>Seleccionada por el cliente</th></tr>
 {rows}

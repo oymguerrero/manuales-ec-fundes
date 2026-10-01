@@ -1107,7 +1107,11 @@ def render_matrix_extra(num):
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Comentarios
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Compartidos
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Guardados
-                f'<td class="fill" style="text-align:center;color:#999;">=%</td>\n'  # Tasa interacción
+                # Tasa de interacción calculada: (me gusta + comentarios +
+                # compartidos + guardados) / alcance. {f} lo sustituye el
+                # conversor por el número de fila.
+                f'<td class="fill" style="text-align:center;color:#4B5563;">'
+                f'=IFERROR(ROUND((F{{f}}+G{{f}}+H{{f}}+I{{f}})/D{{f}}*100,2),"")</td>\n'
                 f'<td class="fill">&nbsp;</td>\n'                              # Estado
                 f'</tr>\n'
             )
@@ -1120,7 +1124,9 @@ def render_matrix_extra(num):
                 f'<td class="fill">&nbsp;</td>\n'                              # Objetivo
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Meta definida
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Resultado real
-                f'<td class="fill" style="text-align:center;color:#999;">=%</td>\n'  # Variación %
+                # Variación calculada: (resultado real - meta) / meta
+                f'<td class="fill" style="text-align:center;color:#4B5563;">'
+                f'=IFERROR(ROUND((C{{f}}-B{{f}})/B{{f}}*100,2),"")</td>\n'
                 f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Cumplido S/N
                 f'</tr>\n'
             )
