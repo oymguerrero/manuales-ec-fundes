@@ -42,7 +42,7 @@ PRODUCTS = [
             "Indica los recursos, tiempos y entregas esperadas de acuerdo con el alcance planteado",
             "Se presenta de forma digital/físico sin errores ortográficos",
         ],
-        "espiga": "Panadería La Espiga (caso pedagógico del manual): 3 sucursales en una ciudad media, 12 empleados, vende pan tradicional. Doña Beatriz (dueña) y Carlos (hijo, apoyo administrativo) quieren reducir el tiempo que las encargadas pasan respondiendo consultas repetitivas por WhatsApp.",
+        "espiga": "3 sucursales en una ciudad media, 12 empleados, vende pan tradicional. Doña Beatriz (dueña) y Carlos (hijo, apoyo administrativo) quieren reducir el tiempo que las encargadas pasan respondiendo consultas repetitivas por WhatsApp.",
         "preguntas": [
             ("Perfil empresarial", "¿Cómo describirías a la MiPyME en 2-3 líneas? Giro, número de empleados, antigüedad."),
             ("Datos de contacto", "Nombre legal, ubicación, persona responsable, correo y teléfono."),
