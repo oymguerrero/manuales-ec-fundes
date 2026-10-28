@@ -5417,3 +5417,9 @@ p { margin: 0 0 14px; color: var(--color-gris-texto); }
   font-size: 0.9rem;
   color: var(--color-gris-texto);
 }
+
+/* Modo embebido (assets/embed.js): una sola pieza dentro de una cápsula del LMS. */
+.is-embed .embed-pieza { padding-block: 1rem; }
+.is-embed .embed-pieza > .container > details.accordion__item { border: 0; background: transparent; }
+.is-embed .embed-pieza .audio-narration { display: none; } /* el audio va como lección nativa */
+.is-embed .learning-context { display: none; }
