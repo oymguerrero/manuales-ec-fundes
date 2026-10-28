@@ -2692,7 +2692,7 @@
         const isCompatible = pct >= threshold;
         html += '<div class="diagnostic-multi__match' + (isCompatible ? ' diagnostic-multi__match--top' : ' diagnostic-multi__match--weak') + '">';
         html += '<div class="diagnostic-multi__match-header">';
-        html += '<span class="diagnostic-multi__match-label">' + escapeHTML(cat.label) + '</span>';
+        html += '<span class="diagnostic-multi__match-label">Ruta ' + escapeHTML(cat.id) + ' · ' + escapeHTML(cat.label) + '</span>';
         if (isCompatible) {
           html += '<span class="diagnostic-multi__match-badge">Compatible</span>';
         } else {
@@ -2750,7 +2750,9 @@
           new window.Chart(canvas.getContext('2d'), {
             type: 'radar',
             data: {
-              labels: radarPayload.ranked.map(function (c) { return c.label; }),
+              // Etiqueta corta: los nombres completos de los estándares no caben
+              // alrededor del radar y se cortan; el nombre largo ya está en las tarjetas.
+              labels: radarPayload.ranked.map(function (c) { return 'Ruta ' + c.id; }),
               datasets: [{
                 label: 'Tu perfil',
                 data: radarPayload.ranked.map(function (c) { return radarPayload.pctAbsolute[c.id] || 0; }),
@@ -2764,6 +2766,9 @@
             },
             options: {
               responsive: true,
+              // Sin animación: dentro de un iframe de otro dominio (cápsula del LMS)
+              // el navegador puede pausar requestAnimationFrame y el radar se queda en cero.
+              animation: false,
               scales: {
                 r: {
                   min: 0,

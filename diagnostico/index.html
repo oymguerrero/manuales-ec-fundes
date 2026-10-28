@@ -21,9 +21,17 @@
   .is-embed #diagnostico > h2,
   .is-embed main > .container > .callout,
   .is-embed #siguiente,
-  .is-embed .site-footer,
-  .is-embed .diagnostic-multi__match-cta { display: none; }
+  .is-embed .site-footer { display: none; }
   .is-embed main { padding-top: 1rem; padding-bottom: 1rem; }
+  /* En celular la cápsula mide ~360x200 px: se ofrece abrir el cuestionario completo. */
+  .embed-fullscreen { display: none; }
+  @media (max-height: 360px) {
+    .is-embed a.embed-fullscreen {
+      display: block; position: sticky; top: 0; z-index: 10; margin: 0;
+      padding: .6rem 1rem; text-align: center; font-weight: 600;
+      background: var(--color-amarillo); color: var(--brand-azul-profundo);
+    }
+  }
 </style>
 </head>
 <body>
@@ -231,6 +239,11 @@
   // Dentro del LMS, cualquier enlace que quede visible abre en otra pestaña
   // para no sacar al aspirante de la cápsula.
   if (document.documentElement.classList.contains('is-embed')) {
+    var full = document.createElement('a');
+    full.className = 'embed-fullscreen';
+    full.href = location.href;
+    full.textContent = 'Abrir el cuestionario en pantalla completa ↗';
+    document.body.insertBefore(full, document.body.firstChild);
     document.addEventListener('click', function (e) {
       var a = e.target.closest && e.target.closest('a[href]');
       if (a && a.getAttribute('href').charAt(0) !== '#') { a.target = '_blank'; a.rel = 'noopener'; }
