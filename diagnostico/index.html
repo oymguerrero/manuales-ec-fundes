@@ -8,6 +8,23 @@
 <link rel="icon" type="image/png" href="../img/logo.png" />
 <link rel="stylesheet" href="../assets/styles.css" />
 <script src="../assets/interactive.js" defer></script>
+<script>
+  // Modo embebido (?embed=1): el LMS de FUNDES muestra el cuestionario dentro de
+  // una cápsula y ya pone la bienvenida, la interpretación y la navegación.
+  if (/[?&]embed=1(&|$)/.test(location.search)) document.documentElement.classList.add('is-embed');
+</script>
+<style>
+  .is-embed .skip-link,
+  .is-embed .site-header,
+  .is-embed .hero,
+  .is-embed .back-link,
+  .is-embed #diagnostico > h2,
+  .is-embed main > .container > .callout,
+  .is-embed #siguiente,
+  .is-embed .site-footer,
+  .is-embed .diagnostic-multi__match-cta { display: none; }
+  .is-embed main { padding-top: 1rem; padding-bottom: 1rem; }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
@@ -209,6 +226,17 @@
 
   </div>
 </main>
+
+<script>
+  // Dentro del LMS, cualquier enlace que quede visible abre en otra pestaña
+  // para no sacar al aspirante de la cápsula.
+  if (document.documentElement.classList.contains('is-embed')) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (a && a.getAttribute('href').charAt(0) !== '#') { a.target = '_blank'; a.rel = 'noopener'; }
+    });
+  }
+</script>
 
 <footer class="site-footer">
   <div class="container footer-top">
