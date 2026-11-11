@@ -4,14 +4,14 @@ Si tu experiencia con evaluaciones se parece a la de la mayoría, posiblemente a
 
 Esta diferencia tiene dos consecuencias prácticas importantes.
 
-Primera: para prepararte, estudiar el contenido del estándar no será suficiente. Necesitarás también demostrar que has aplicado ese contenido en una situación profesional concreta. Tu preparación combina dos rutas: consolidar conocimientos, y documentar tu ejercicio reciente con una MiPyME real.
+Primera: para prepararte, estudiar el contenido del estándar no será suficiente. Necesitarás también demostrar que has aplicado ese contenido en una situación profesional concreta. Tu preparación combina tres frentes: consolidar conocimientos, practicar los desempeños y documentar tu ejercicio con una MiPyME.
 
 Segunda: tu evaluador no actuará como un interrogador que pregunta sobre teoría. Actuará, sobre todo, como un observador que constata si ejecutas la función conforme al estándar. Lo que sabes importa. Pero lo que haces, y lo que produces, es decisivo.
 
 La evaluación se construye recopilando cinco tipos de evidencia: desempeños observables, productos entregables, conocimientos aplicados, actitudes durante el proceso, y situaciones emergentes que el evaluador puede plantear. No todos los estándares usan los cinco. Cada estándar especifica los que aplican.
 
-Al final del proceso, dos resultados son posibles: competente, o todavía no competente. En ambos casos recibes una cédula de evaluación con retroalimentación detallada. Si tu resultado es competente y el dictamen es procedente, la Entidad de Certificación y Evaluación tramita tu certificado ante el CONOCER, y la Secretaría de Educación Pública lo expide a través del CONOCER.
+Al final del proceso, dos resultados son posibles: competente, o todavía no competente. En ambos casos recibes una cédula de evaluación con retroalimentación detallada. Si tu resultado es competente y el dictamen es procedente, la Entidad de Certificación y Evaluación u Organismo Certificador tramita tu certificado ante el CONOCER, y la Secretaría de Educación Pública lo expide a través del CONOCER.
 
-Una recomendación clave: <break time="0.5s"/> sin experiencia práctica reciente con una MiPyME real, la evaluación no puede salir bien. Si careces por completo de esa experiencia, ese es tu primer paso. Solo después tiene sentido inscribirte.
+Una recomendación clave: <break time="0.5s"/> sin práctica con una MiPyME, difícilmente podrás demostrar la competencia. Si careces por completo de esa experiencia, ese es tu primer paso. Solo después tiene sentido inscribirte.
 
-Más adelante, en el caso La Espiga, verás las cinco evidencias aplicadas en un proyecto real.
+Más adelante, en el caso La Espiga, verás cómo se ven esas evidencias en un proyecto real.

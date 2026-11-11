@@ -9,7 +9,7 @@ Tu evaluador te aplica un instrumento corto que estima tus probabilidades de éx
 <break time="700ms"/>
 Paso dos: el plan de evaluación.
 <break time="400ms"/>
-El evaluador te entrega un documento donde te explica con precisión qué se te pedirá demostrar, cuándo y cómo. Es tu última oportunidad para hacer preguntas operativas. Aprovéchala.
+El evaluador te entrega un documento donde te explica con precisión qué se te pedirá demostrar, cuándo y cómo. Es el mejor momento para hacer tus preguntas operativas; también puedes hacerlas el día de la evaluación, antes de que empiece.
 <break time="700ms"/>
 Paso tres: las sesiones de evaluación.
 <break time="400ms"/>
