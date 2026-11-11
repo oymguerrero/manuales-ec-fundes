@@ -1,6 +1,6 @@
 # Mi CompañIA — Manuales de los cuatro estándares
 
-Manuales interactivos en HTML del proyecto **Mi CompañIA** (iniciativa de FUNDES México con apoyo de Google.org) sobre Inteligencia Artificial aplicada a las MiPyMEs mexicanas. Este repositorio publica **cinco cursos**: el introductorio sobre el sistema CONOCER y uno por cada una de las cuatro propuestas de estándar, que aún no han sido publicadas oficialmente.
+Manuales interactivos en HTML del proyecto **Mi CompañIA** (iniciativa de FUNDES México con apoyo de Google.org) sobre Inteligencia Artificial aplicada a las MiPyMEs mexicanas. Este repositorio publica **cinco cursos**: el introductorio sobre el sistema CONOCER y uno por cada uno de los cuatro estándares de competencia, que el CONOCER publicó en el Diario Oficial de la Federación el 28 de octubre de 2026: EC1830 (A), EC1835 (B), EC1848 (C) y EC1836 (D).
 
 ## Estructura
 
@@ -79,8 +79,9 @@ elemento por elemento con lo que publica el sitio.
 | **C — Consultoría en mercadotecnia digital** | 4 elementos · 10 productos · 8 desempeños · 10 conocimientos | La Cuesta |
 | **D — Modernización digital** | 4 elementos · 16 productos · 1 desempeño · 12 conocimientos | El Surtido |
 
-Las cuatro propuestas de estándar **aún no están publicadas por CONOCER**; su
-contenido puede cambiar.
+Los cuatro estándares **se publicaron en el DOF el 28 de octubre de 2026** (EC1830, EC1835,
+EC1848 y EC1836). Los cursos se prepararon con sus versiones de trabajo (F21): si
+algún dato difiere del estándar publicado, manda el estándar.
 
 ## Variables de entorno
 

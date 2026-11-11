@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Qué es este repositorio
 
-Manuales web interactivos del proyecto **Mi CompañIA** (FUNDES México + Google.org) para desarrollar competencias en IA aplicada a MiPyMEs mexicanas. Las cuatro propuestas de estándar aún no han sido publicadas oficialmente:
+Manuales web interactivos del proyecto **Mi CompañIA** (FUNDES México + Google.org) para desarrollar competencias en IA aplicada a MiPyMEs mexicanas. Los cuatro estándares se publicaron en el Diario Oficial de la Federación el 28 de octubre de 2026 (A = EC1830, B = EC1835, C = EC1848, D = EC1836):
 
 - **Curso introductorio** (`maestro/`): 6 capítulos sobre el sistema CONOCER (qué es, cómo evalúa, proceso, ¿es para ti?, recursos).
 - **Estándar A** (`estandar-a/`): Adopción de soluciones de IA en los procesos de la MiPyME. 3 elementos, caso "La Espiga" (panadería, Doña Beatriz + Carlos).

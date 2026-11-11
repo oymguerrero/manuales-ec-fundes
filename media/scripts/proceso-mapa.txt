@@ -17,19 +17,19 @@ Aquí pasa lo importante. Aquí demuestras tu competencia en todos sus frentes: 
 <break time="700ms"/>
 Paso cuatro: el cierre de evaluación.
 <break time="400ms"/>
-El evaluador integra tu portafolio, recolecta firmas y agenda contigo la entrega de resultados. Hasta aquí tu evaluador conduce el proceso.
-<break time="800ms"/>
-Importante saber: a partir del paso cinco, el actor cambia. Ya no es tu evaluador sino la cadena institucional.
-<break time="500ms"/>
+El evaluador integra tu portafolio, recolecta firmas y agenda contigo la entrega de resultados.
+<break time="700ms"/>
 Paso cinco: la entrega de resultados.
 <break time="400ms"/>
-Recibes tu cédula de evaluación con la retroalimentación detallada. Tu evaluador te explica qué se logró y qué áreas de oportunidad quedan.
-<break time="600ms"/>
+Recibes tu cédula de evaluación con la retroalimentación detallada. Tu evaluador te explica qué se logró y qué áreas de oportunidad quedan. Hasta aquí tu evaluador conduce el proceso.
+<break time="800ms"/>
+Importante saber: en el paso seis, el actor cambia. Ya no es tu evaluador sino la cadena institucional.
+<break time="500ms"/>
 Paso seis: el dictamen y la emisión del Certificado.
 <break time="400ms"/>
-La Entidad de Certificación revisa la calidad de tu evaluación. Si todo está en orden, el CONOCER tramita y la Secretaría de Educación Pública emite tu Certificado oficial.
+La Entidad de Certificación y Evaluación, u Organismo Certificador, revisa la calidad de tu evaluación y dictamina. Si todo está en orden, tramita tu certificado ante el CONOCER, y la Secretaría de Educación Pública lo expide a través del CONOCER.
 <break time="600ms"/>
-El plazo administrativo aproximado son noventa días naturales desde la entrega de tu cédula.
+El tiempo para recibirlo varía según el prestador. Confírmalo antes de iniciar.
 <break time="800ms"/>
-Seis pasos. Cuatro los conduce tu evaluador. Dos los conduce la institución. Ahora puedes profundizar en cada uno con tranquilidad.
+Seis pasos. Cinco los conduce tu evaluador. El sexto, la institución. Ahora puedes profundizar en cada uno con tranquilidad.
 </speak>

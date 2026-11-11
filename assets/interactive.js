@@ -563,7 +563,7 @@
       ]
     },
     {
-      id: 'estandar-a', title: 'Adopción de IA en procesos', shortTitle: 'Ruta A',
+      id: 'estandar-a', title: 'Adopción de IA en procesos', shortTitle: 'Ruta A', code: 'EC1830',
       pages: [
         ['estandar-a/index.html', 'Bienvenida y contexto', 'estandar-a-bienvenida-contexto', 'inicio'],
         ['estandar-a/elemento-1.html', 'Elemento 1 · Planear', 'estandar-a-elemento-1', 'leccion'],
@@ -574,7 +574,7 @@
       ]
     },
     {
-      id: 'estandar-b', title: 'Soluciones comerciales con IA', shortTitle: 'Ruta B',
+      id: 'estandar-b', title: 'Soluciones comerciales con IA', shortTitle: 'Ruta B', code: 'EC1835',
       pages: [
         ['estandar-b/index.html', 'Bienvenida y contexto', 'estandar-b-bienvenida-contexto', 'inicio'],
         ['estandar-b/elemento-1.html', 'Elemento 1 · Identificar', 'estandar-b-elemento-1', 'leccion'],
@@ -587,7 +587,7 @@
       ]
     },
     {
-      id: 'estandar-c', title: 'Mercadotecnia digital con IA', shortTitle: 'Ruta C',
+      id: 'estandar-c', title: 'Mercadotecnia digital con IA', shortTitle: 'Ruta C', code: 'EC1848',
       pages: [
         ['estandar-c/index.html', 'Bienvenida y contexto', 'estandar-c-bienvenida-contexto', 'inicio'],
         ['estandar-c/elemento-1.html', 'Elemento 1 · Planificar', 'estandar-c-elemento-1', 'leccion'],
@@ -599,7 +599,7 @@
       ]
     },
     {
-      id: 'estandar-d', title: 'Transformación digital con IA', shortTitle: 'Ruta D',
+      id: 'estandar-d', title: 'Soluciones tecnológicas con IA', shortTitle: 'Ruta D', code: 'EC1836',
       pages: [
         ['estandar-d/index.html', 'Bienvenida y contexto', 'estandar-d-bienvenida-contexto', 'inicio'],
         ['estandar-d/elemento-1.html', 'Elemento 1 · Diagnosticar', 'estandar-d-elemento-1', 'leccion'],
@@ -643,7 +643,7 @@
     'estandar-c/ruta-preparacion.html': ['Organizar la preparación de productos y desempeños de contenido digital e identificar lo que aún debes reforzar.', 'Plan personal de preparación para la ruta C'],
     'estandar-c/recursos.html': ['Resolver dudas de la ruta C y localizar referencias y recursos para producir contenido con IA de forma responsable.', 'Recursos de apoyo de la ruta C localizados'],
     'estandar-d/elemento-1.html': ['Diagnosticar madurez, brechas y oportunidades de transformación digital en una MiPyME.', 'Diagnóstico y propuesta priorizada para una organización real'],
-    'estandar-d/elemento-2.html': ['Construir y verificar una solución de transformación digital con IA.', 'Solución probada con documentación técnica suficiente'],
+    'estandar-d/elemento-2.html': ['Construir y verificar una solución tecnológica de modernización digital con IA.', 'Solución probada con documentación técnica suficiente'],
     'estandar-d/elemento-3.html': ['Desplegar la solución, capacitar a las personas usuarias y documentar la implementación.', 'Evidencias de despliegue y transferencia operativa'],
     'estandar-d/elemento-4.html': ['Medir el rendimiento técnico y convertir retroalimentación en un plan de mejora.', 'Reporte de rendimiento y optimización priorizada'],
     'estandar-d/instrumento.html': ['Interpretar la estructura de evaluación descrita en la versión de trabajo y vincular la solución técnica, sus productos y desempeños con la evidencia requerida.', 'Mapa propuesto de evaluación de la ruta D'],
@@ -2225,14 +2225,15 @@
     document.body.classList.add('body--learning');
     document.body.classList.add(entry.page.type === 'inicio' ? 'body--course-home' : 'body--lesson');
 
-    if (entry.course.id !== 'maestro') {
+    // Cada ruta muestra en el eyebrow del hero el código con el que el CONOCER
+    // publicó su estándar en el DOF (28-oct-2026).
+    if (entry.course.code) {
       const heroEyebrow = document.querySelector('.hero .eyebrow');
-      if (heroEyebrow && !heroEyebrow.querySelector('.hero-proposal-status')) {
-        const proposalStatus = document.createElement('span');
-        proposalStatus.className = 'hero-proposal-status';
-        proposalStatus.setAttribute('aria-label', 'Estado editorial: propuesta no publicada');
-        proposalStatus.textContent = ' · Propuesta no publicada';
-        heroEyebrow.appendChild(proposalStatus);
+      if (heroEyebrow && !heroEyebrow.querySelector('.hero-ec-code')) {
+        const ecCode = document.createElement('span');
+        ecCode.className = 'hero-ec-code';
+        ecCode.textContent = ' · ' + entry.course.code;
+        heroEyebrow.appendChild(ecCode);
       }
     }
 

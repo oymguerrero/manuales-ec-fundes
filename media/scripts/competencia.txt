@@ -1,11 +1,11 @@
 <speak>
-Bienvenido a la sección sobre qué es una competencia laboral.
+Hablemos de qué es una competencia laboral.
 <break time="600ms"/>
 La palabra competencia tiene muchos usos cotidianos.
 <break time="300ms"/>
 Pero en el sistema mexicano de certificación, tiene un significado preciso.
 <break time="700ms"/>
-Conforme el CONOCER, una competencia laboral es el conjunto de conocimientos, habilidades y actitudes que requiere una persona para realizar actividades en el mercado de trabajo. Sus resultados deben ser medibles, observables y aplicables en diversos contextos, bajo criterios de calidad específicos.
+Según el CONOCER, una competencia laboral es el conjunto de conocimientos, habilidades y actitudes que requiere una persona para realizar actividades en el mercado de trabajo. Sus resultados deben ser medibles, observables y aplicables en diversos contextos, bajo criterios de calidad específicos.
 <break time="800ms"/>
 Tres palabras de esa definición son clave.
 <break time="500ms"/>
@@ -31,5 +31,5 @@ Y actitudes, hábitos y valores: cómo te conduces durante el desempeño.
 <break time="700ms"/>
 Los tres componentes se evalúan juntos. Es lo que hace especial al modelo de CONOCER: no se trata solo de saber, sino de demostrar que sabes hacer, con calidad, en una función real.
 <break time="500ms"/>
-Continúa con la sección siguiente para entender cómo funciona el sistema en México.
+Más adelante verás cómo funciona este sistema en México.
 </speak>

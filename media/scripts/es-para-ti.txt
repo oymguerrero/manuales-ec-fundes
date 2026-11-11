@@ -1,5 +1,5 @@
-La propuesta Implementar IA contempla a personas que acompañan a MiPyMEs en la planeación, ejecución y evaluación de soluciones de Inteligencia Artificial. Se enfoca en consultores e integradores que aplican herramientas existentes, no en programación a medida ni en producción de contenido.
+Mi CompañIA presenta cuatro rutas formativas para profesionales que llevan IA a las MiPyMEs mexicanas, una por cada estándar de competencia que el CONOCER publicó en el Diario Oficial de la Federación el 28 de octubre de 2026. Cada una aborda un perfil distinto.
 
-Tres preguntas ayudan a orientarte. Primera: ¿trabajas directamente con MiPyMEs? Segunda: ¿configuras y aplicas herramientas de IA que ya existen, como ChatGPT, Claude, Zapier o plataformas con módulos de IA? Tercera: ¿tu práctica cubre los tres momentos: planear, ejecutar y evaluar?
+El cuestionario de esta sección te hace seis preguntas sobre tu práctica: quién es tu cliente principal, qué tipo de soluciones de IA implementas o desarrollas, el alcance de tu intervención, el problema que resuelves más seguido, tu fortaleza técnica y la frase que mejor describe tu trabajo.
 
-El resultado indica qué ruta se relaciona mejor con tu experiencia. Es una orientación formativa, no un diagnóstico oficial ni una promesa de certificación. Las cuatro propuestas todavía no han sido aprobadas ni publicadas y pueden cambiar.
+El resultado indica qué ruta se relaciona mejor con tu experiencia. Es una orientación formativa, no un diagnóstico oficial ni una promesa de certificación. Puedes estudiar más de una ruta.
