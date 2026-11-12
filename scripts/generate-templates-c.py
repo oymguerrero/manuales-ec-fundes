@@ -933,7 +933,7 @@ table.matrix th { background: #28467e; color: white; font-weight: bold; text-ali
 # La caja de criterios conserva la clase f21-box: convert-legacy-office.py, común a
 # los cuatro estándares, la busca por ese nombre para la hoja «Guía» de Excel.
 PIE = ("Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · "
-       "Plantilla de trabajo del Estándar C (EC1848)")
+       "Plantilla de trabajo del EC1848")
 
 WORD_TEMPLATE = """<!DOCTYPE html>
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
