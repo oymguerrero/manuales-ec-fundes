@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 """
-Genera los 12 templates de los productos del estándar Adopción de soluciones de IA en los procesos de la MiPyME:
-- 9 Word (.doc) + 3 Excel (.xls) como HTML estilizado (Office los abre
-  nativamente con warning una sola vez por archivo).
+Genera las 12 plantillas de los productos del EC1830 · Adopción de soluciones
+de inteligencia artificial en los procesos de la MiPyME (Ruta A, caso La Espiga):
+- 8 Word (.doc) + 3 Excel (.xls) como HTML estilizado, que
+  convert-legacy-office.py convierte después a .docx/.xlsx (OOXML real).
 - 1 PowerPoint (.pptx) real generado con python-pptx — porque
   PowerPoint moderno NO abre HTML como .ppt, hay que generar OOXML.
 
-Filosofía pedagógica: NO darle la solución al aspirante. Cada template
-muestra el criterio F21 oficial + un ejemplo breve del caso La Espiga
-(solo para ilustrar el TIPO de contenido) + preguntas guía que el
-aspirante responde con datos de SU MiPyME real.
+Filosofía pedagógica: NO darle la solución al aspirante. Cada plantilla
+muestra los criterios literales del EC1830 publicado en el DOF (28-oct-2026)
++ un ejemplo breve del caso La Espiga (solo para ilustrar el TIPO de
+contenido) + preguntas guía que el aspirante responde con los datos de su
+proyecto (en el lugar de trabajo o simulado).
 
 Uso:
     python3 scripts/generate-templates.py
 
-Salida: estandar-a/templates/<num>-<slug>.{doc|xls|ppt}
+Salida: estandar-a/templates/<num>-<slug>.{doc|xls|pptx}; al final corre
+convert-legacy-office.py.
 """
 
 import os
@@ -29,274 +32,320 @@ OUT.mkdir(parents=True, exist_ok=True)
 #   "excel" → matrices, cronogramas, tablas comparativas (HTML en .xls)
 #   "pptx"  → presentación real generada con python-pptx (capacitación)
 PRODUCTS = [
+    # 'title' y 'f21' son el título y los criterios literales del EC1830 publicado en el DOF.
+    # La clave 'f21' y la clase CSS f21-box conservan su nombre histórico: convert-legacy-office.py
+    # busca la caja por esa clase. No renombrar sin cambiar el conversor.
     {
-        "num": "1.1", "slug": "reporte-evaluacion-inicial", "format": "word",
-        "elemento": "1 · Planear", "title": "Reporte de evaluación inicial de la MiPyME",
-        "intro": "Es el primer producto del proyecto: una foto del estado actual de la MiPyME, sus objetivos y los recursos disponibles.",
-        "f21": [
-            "Contiene el perfil empresarial de la MiPyME considerando nombre comercial/razón social, giro y número de empleados",
-            "Incluye la ubicación, correo electrónico, teléfono y nombre de la persona de contacto por parte de la MiPyME",
-            "Contiene los antecedentes/resultados de las acciones de mejora aplicadas previamente por el cliente en materia tecnológica",
-            "Contiene las áreas de mejora/problemas a resolver desde la perspectiva del representante de la MiPyME y antigüedad de ello",
-            "Incluye los objetivos, indicadores de impacto operativo y metas",
-            "Indica los recursos, tiempos y entregas esperadas de acuerdo con el alcance planteado",
-            "Se presenta de forma digital/físico sin errores ortográficos",
+        'num': '1.1',
+        'slug': 'reporte-evaluacion-inicial',
+        'format': 'word',
+        'elemento': '1 · E5809 · Planear soluciones de Inteligencia Artificial alineadas a la MiPyME',
+        'title': 'El reporte de evaluación inicial de la MiPyME, elaborado',
+        'intro': 'Es el primer producto del proyecto: una foto del estado actual de la MiPyME, sus objetivos y los recursos disponibles.',
+        'f21': [
+            'Contiene el perfil empresarial de la MiPyME considerando nombre comercial/razón social, giro y número de empleados',
+            'Incluye la ubicación, correo electrónico, teléfono y nombre de la persona de contacto por parte de la MiPyME',
+            'Contiene los antecedentes/resultados de las acciones de mejora aplicadas previamente por el cliente en materia tecnológica',
+            'Contiene las áreas de mejora/problemas a resolver desde la perspectiva del representante de la MiPyME y antigüedad de ello',
+            'Incluye los objetivos, indicadores de impacto operativo y metas',
+            'Indica los recursos, tiempos y entregas esperadas de acuerdo con el alcance planteado',
+            'Se presenta de forma digital/físico sin errores ortográficos',
         ],
-        "espiga": "3 sucursales en una ciudad media, 12 empleados, vende pan tradicional. Doña Beatriz (dueña) y Carlos (hijo, apoyo administrativo) quieren reducir el tiempo que las encargadas pasan respondiendo consultas repetitivas por WhatsApp.",
-        "preguntas": [
-            ("Perfil empresarial", "¿Cómo describirías a la MiPyME en 2-3 líneas? Giro, número de empleados, antigüedad."),
-            ("Datos de contacto", "Nombre legal, ubicación, persona responsable, correo y teléfono."),
-            ("Acciones previas del cliente", "¿Qué ha intentado hacer la MiPyME antes para resolver estos problemas? ¿Con qué resultados?"),
-            ("Áreas de mejora desde la perspectiva del cliente", "¿Qué problemas u oportunidades identifica la MiPyME? ¿Desde cuándo arrastran cada uno?"),
-            ("Objetivos · indicadores · metas", "¿Qué quiere lograr la MiPyME con este proyecto? Para cada objetivo, ¿qué indicador lo mide y cuál es la meta?"),
-            ("Recursos · tiempos · entregas esperadas", "¿Con qué presupuesto, equipo humano y tiempos cuenta? ¿Qué entregables espera al cierre?"),
+        'espiga': 'Tres sucursales en una ciudad de tamaño medio, doce empleados; pan tradicional y repostería, venta en mostrador y pedidos por WhatsApp. Doña Beatriz (dueña fundadora) y su hijo Carlos (recién egresado de administración, apoya la digitalización) quieren reducir el tiempo que las tres encargadas pasan respondiendo consultas repetitivas por WhatsApp.',
+        'preguntas': [
+            ('Perfil empresarial', 'Nombre comercial o razón social, giro y número de empleados. ¿Cómo describirías a la MiPyME en dos o tres líneas?'),
+            ('Datos de contacto', 'Ubicación, correo electrónico, teléfono y nombre de la persona de contacto por parte de la MiPyME.'),
+            ('Acciones previas del cliente', '¿Qué acciones de mejora en materia tecnológica ha aplicado antes la MiPyME? ¿Con qué resultados?'),
+            ('Áreas de mejora desde la perspectiva del cliente', '¿Qué problemas o áreas de mejora identifica quien representa a la MiPyME? ¿Desde cuándo arrastran cada uno?'),
+            ('Objetivos · indicadores · metas', '¿Qué quiere lograr la MiPyME con este proyecto? Para cada objetivo, ¿qué indicador de impacto operativo lo mide y cuál es la meta?'),
+            ('Recursos · tiempos · entregas esperadas', 'De acuerdo con el alcance planteado: ¿con qué presupuesto, equipo humano y tiempos cuenta la MiPyME? ¿Qué entregas espera?'),
+            ('Presentación y revisión final', '¿Lo entregarás en formato digital o físico? Antes de entregarlo, revisa que la redacción sea clara y que no tenga errores ortográficos; si puedes, pídele a otra persona que lo lea.'),
         ],
     },
     {
-        "num": "1.2", "slug": "informe-disponibilidad-datos", "format": "word",
-        "elemento": "1 · Planear", "title": "Informe de disponibilidad y calidad de los datos de la MiPyME",
-        "intro": "Documenta qué datos tiene la MiPyME para sostener soluciones de IA y cuál es su calidad.",
-        "f21": [
-            "Contiene las fuentes de información existentes en los procesos operativos",
-            "Indica que la información requerida está completa y disponible en tiempo y forma",
-            "Incluye las necesidades de optimización/estructuración de los datos existentes previo a la adopción",
-            "Contiene los hallazgos detectados en la disponibilidad y calidad de los datos",
+        'num': '1.2',
+        'slug': 'informe-disponibilidad-datos',
+        'format': 'word',
+        'elemento': '1 · E5809 · Planear soluciones de Inteligencia Artificial alineadas a la MiPyME',
+        'title': 'El informe de disponibilidad y calidad de los datos de la MiPyME, elaborado',
+        'intro': 'Documenta qué datos tiene la MiPyME para sostener soluciones de IA y cuál es su calidad.',
+        'f21': [
+            'Contiene las fuentes de información existentes en los procesos operativos',
+            'Indica que la información requerida está completa y disponible en tiempo y forma',
+            'Incluye las necesidades de optimización/estructuración de los datos existentes previo a la adopción',
+            'Contiene los hallazgos detectados en la disponibilidad y calidad de los datos',
         ],
-        "espiga": "En La Espiga: pedidos por WhatsApp (sin estructura), libretas de papel por sucursal, contabilidad externa en Excel, ningún CRM. Datos dispersos, sin estandarización entre sucursales.",
-        "preguntas": [
-            ("Fuentes de información existentes", "¿Dónde viven los datos relevantes para el proceso a intervenir? CRM, ERP, hojas de cálculo, mensajes, correos, papel…"),
-            ("Completitud y disponibilidad en tiempo", "Por cada fuente: ¿los datos están completos? ¿se actualizan a tiempo? ¿qué frecuencia?"),
-            ("Necesidades de optimización/estructuración", "¿Qué hay que limpiar, estandarizar, deduplicar o estructurar antes de poder usarlos con IA?"),
-            ("Hallazgos relevantes", "Lo más notable que descubriste sobre la calidad de los datos. ¿Qué obstáculos representa esto para las soluciones que quieres implementar?"),
-        ],
-    },
-    {
-        "num": "1.3", "slug": "informe-diagnostico-procesos", "format": "word",
-        "elemento": "1 · Planear", "title": "Informe de diagnóstico de procesos, actividades y áreas de trabajo",
-        "intro": "Mapea los procesos operativos y detecta los cuellos de botella + resistencias al cambio.",
-        "f21": [
-            "Contiene el mapa de los procesos analizados",
-            "Incluye la clasificación de los procesos por área funcional",
-            "Contiene los cuellos de botella y los principales puntos de dolor identificados",
-            "Incluye las resistencias al cambio detectadas durante el diagnóstico",
-        ],
-        "espiga": "Mapa de La Espiga: 6 procesos analizados (recepción de pedidos, producción, venta en mostrador, control de inventario, cobro, contabilidad). Cuello clave: las encargadas pierden 4-5 horas/semana atendiendo consultas repetitivas en WhatsApp. Resistencia: dos panaderos veteranos desconfían de 'que la máquina les diga qué hornear'.",
-        "preguntas": [
-            ("Mapa de procesos analizados", "Dibuja o describe los procesos que analizaste. Indica qué hace cada uno y cómo se conectan. (Inserta una imagen del mapa si lo dibujaste en Miro/Lucidchart/papel)."),
-            ("Clasificación por área funcional", "Agrupa los procesos: ventas, operación, administración, soporte, atención a cliente… ¿Cuál concentra más procesos críticos?"),
-            ("Cuellos de botella y puntos de dolor", "Por cada proceso analizado: ¿dónde se atasca? ¿cuánto tiempo se pierde? ¿qué errores ocurren? ¿quién sufre el impacto?"),
-            ("Resistencias al cambio detectadas", "Durante el diagnóstico, ¿qué personas mostraron resistencia? ¿Qué temen perder o no entienden? Es información valiosa para la fase de capacitación."),
+        'espiga': 'En La Espiga: pedidos por WhatsApp sin estructura, una libreta de pedidos por sucursal, contabilidad que lleva un despacho externo con archivos en papel y ningún CRM. Datos dispersos y sin estandarizar entre sucursales.',
+        'preguntas': [
+            ('Fuentes de información existentes', '¿Dónde viven los datos relevantes para el proceso a intervenir? CRM, ERP, hojas de cálculo, mensajes, correos, papel…'),
+            ('Completitud y disponibilidad en tiempo', 'Por cada fuente: ¿los datos están completos? ¿se actualizan a tiempo? ¿qué frecuencia?'),
+            ('Necesidades de optimización/estructuración', '¿Qué hay que limpiar, estandarizar, deduplicar o estructurar antes de poder usarlos con IA?'),
+            ('Hallazgos relevantes', 'Lo más notable que descubriste sobre la calidad de los datos. ¿Qué obstáculos representa esto para las soluciones que quieres implementar?'),
         ],
     },
     {
-        "num": "1.4", "slug": "reporte-madurez-digital", "format": "word",
-        "elemento": "1 · Planear", "title": "Reporte de madurez digital y disposición al cambio",
-        "intro": "Evalúa qué tan preparada está la MiPyME (tecnología) y su personal (cultura) para incorporar IA.",
-        "f21": [
-            "Incluye la descripción de la metodología y la(s) herramienta(s) utilizada(s)",
-            "Contiene los resultados del test de madurez digital y disposición al cambio aplicado",
-            "Incluye la descripción del nivel de madurez digital por dimensión evaluada",
-            "Contiene comentarios sobre la disposición al cambio por parte del personal",
-            "Incluye las soluciones de IA recomendadas con base en los resultados obtenidos",
-            "Incluye un tablero base de indicadores para el seguimiento de la transformación digital",
+        'num': '1.3',
+        'slug': 'informe-diagnostico-procesos',
+        'format': 'word',
+        'elemento': '1 · E5809 · Planear soluciones de Inteligencia Artificial alineadas a la MiPyME',
+        'title': 'El informe de diagnóstico de procesos, actividades y áreas de trabajo, acordado',
+        'intro': 'Mapea los procesos operativos y detecta los cuellos de botella + resistencias al cambio.',
+        'f21': [
+            'Contiene el mapa de los procesos analizados',
+            'Incluye la clasificación de los procesos por área funcional',
+            'Contiene los cuellos de botella y los principales puntos de dolor identificados',
+            'Incluye las resistencias al cambio detectadas durante el diagnóstico',
         ],
-        "espiga": "La Espiga obtuvo nivel 2 de 5 en madurez digital (uso de WhatsApp sí, CRM no, datos integrados no). Disposición al cambio: alta en Carlos (28 años), media en las 3 encargadas (40-55), baja en Doña Beatriz al inicio del proyecto (se 'destrabó' tras ver el primer piloto del chatbot).",
-        "preguntas": [
-            ("Metodología y herramienta usada", "¿Qué instrumento aplicaste para medir madurez digital? (Cuestionario, entrevistas, observación, test estandarizado). ¿Por qué lo elegiste?"),
-            ("Resultados del test aplicado", "Resultados crudos por dimensión: infraestructura, procesos, personas, datos, cultura. Apóyate de una tabla."),
-            ("Nivel de madurez digital por dimensión", "Clasificación (inicial, en desarrollo, intermedio, avanzado) por cada dimensión. ¿Cuál es la dimensión más débil? ¿Cuál es la fortaleza?"),
-            ("Disposición al cambio del personal", "Por persona o grupo: ¿qué tan abierta está al cambio? ¿Qué evidencia observaste durante el diagnóstico?"),
-            ("Recomendaciones basadas en resultados", "Acciones específicas para mejorar la madurez en las dimensiones bajas + estrategia para destrabar las resistencias detectadas."),
-            ("Tablero base de indicadores", "¿Qué indicadores propondrás seguir mes a mes? Define mínimo 3-5 indicadores con su línea base actual + meta esperada a 6/12 meses."),
-        ],
-    },
-    {
-        "num": "1.5", "slug": "matriz-impacto-viabilidad", "format": "excel",
-        "elemento": "1 · Planear", "title": "Matriz de impacto, viabilidad y esfuerzo",
-        "intro": "Hoja de cálculo para priorizar las oportunidades de IA detectadas. Asigna puntajes (1-5) por impacto, viabilidad y esfuerzo; la matriz revela cuáles atacar primero.",
-        "f21": [
-            "Contiene el listado de las soluciones de IA que mejor se interrelacionen respecto del impacto, la viabilidad y el esfuerzo en los procesos de la MiPyME",
-            "Contiene la priorización de las oportunidades de soluciones de IA",
-            "Incluye los beneficios esperados para la MiPyME y la viabilidad de la adopción",
-        ],
-        "espiga": "En La Espiga se identificaron 5 oportunidades. Las dos con mayor impacto + viabilidad (chatbot WhatsApp para FAQ + reporte automatizado de pedidos a cocina) fueron las recomendadas para primera fase.",
-        "preguntas": [
-            ("Oportunidades detectadas", "Lista todas las oportunidades de IA que detectaste en el diagnóstico. Una por fila."),
-            ("Herramienta/plataforma sugerida", "Por cada oportunidad: ¿qué herramienta de IA existente la resolvería? (ChatGPT, Claude, Zapier, Make, CRM con módulo de IA, etc.)"),
-            ("Puntaje de IMPACTO (1-5)", "¿Cuánto valor genera? (Tiempo ahorrado, ingresos adicionales, errores reducidos, mejor experiencia). 5 = alto."),
-            ("Puntaje de VIABILIDAD (1-5)", "¿Qué tan fácil es de implementar dados los recursos actuales de la MiPyME? 5 = muy viable."),
-            ("Puntaje de ESFUERZO (1-5)", "¿Cuánto trabajo cuesta? (Tiempo + personas + costo). 5 = poco esfuerzo, 1 = mucho esfuerzo."),
-            ("Beneficios esperados", "Breve frase por oportunidad: ¿qué mejora medible esperas?"),
-            ("Priorización final", "Las 2-3 oportunidades recomendadas para primera fase, y por qué."),
+        'espiga': 'Mapa de La Espiga: 6 procesos analizados (recepción de pedidos, producción, venta en mostrador, control de inventario, cobro y contabilidad). Cuello de botella principal: las tres encargadas suman unas 20 horas a la semana en tareas repetitivas, sobre todo responder las mismas consultas por WhatsApp. Resistencia: dos panaderos veteranos desconfían de «que la máquina les diga qué hornear».',
+        'preguntas': [
+            ('Mapa de procesos analizados', 'Dibuja o describe los procesos que analizaste. Indica qué hace cada uno y cómo se conectan. (Inserta una imagen del mapa si lo dibujaste en Miro/Lucidchart/papel).'),
+            ('Clasificación por área funcional', 'Agrupa los procesos: ventas, operación, administración, soporte, atención a cliente… ¿Cuál concentra más procesos críticos?'),
+            ('Cuellos de botella y puntos de dolor', 'Por cada proceso analizado: ¿dónde se atasca? ¿cuánto tiempo se pierde? ¿qué errores ocurren? ¿quién sufre el impacto?'),
+            ('Resistencias al cambio detectadas', 'Durante el diagnóstico, ¿qué personas mostraron resistencia? ¿Qué temen perder o no entienden? Es información valiosa para la fase de capacitación.'),
         ],
     },
     {
-        "num": "1.6", "slug": "hoja-de-ruta", "format": "excel",
-        "elemento": "1 · Planear", "title": "Hoja de ruta de adopción de soluciones de IA",
-        "intro": "Cronograma tipo Gantt con las fases, actividades, responsables y recursos del proyecto.",
-        "f21": [
-            "Contiene el listados de la(s) solución(es) de IA seleccionada(s) para la MiPyME",
-            "Contiene descritas las mejoras en la operación de los procesos con la solución de IA",
-            "Incluye las fases/etapas de adopción del proyecto",
-            "Incluye las actividades y responsables de cada etapa",
-            "Contiene el cronograma con las actividades de adopción para cada etapa del proyecto",
-            "Incluye los recursos tecnológicos, humanos y financieros requeridos",
-            "Incluye indicadores de impacto operativo para evaluar el avance de la adopción y dar seguimiento al proyecto",
+        'num': '1.4',
+        'slug': 'reporte-madurez-digital',
+        'format': 'word',
+        'elemento': '1 · E5809 · Planear soluciones de Inteligencia Artificial alineadas a la MiPyME',
+        'title': 'El reporte de madurez digital y disposición al cambio, elaborado',
+        'intro': 'Evalúa qué tan preparada está la MiPyME (tecnología) y su personal (cultura) para incorporar IA.',
+        'f21': [
+            'Incluye la descripción de la metodología y la(s) herramienta(s) utilizada(s)',
+            'Contiene los resultados del test de madurez digital y disposición al cambio aplicado',
+            'Incluye la descripción del nivel de madurez digital por dimensión evaluada',
+            'Contiene comentarios sobre la disposición al cambio por parte del personal',
+            'Incluye las soluciones de IA recomendadas con base en los resultados obtenidos',
+            'Incluye un tablero base de indicadores para el seguimiento de la transformación digital',
         ],
-        "espiga": "En La Espiga: 4 fases en 5 semanas. S1 configuración del chatbot + plantillas de respuestas FAQ; S2 configuración del reporte automatizado de pedidos; S3 piloto con sucursal principal; S4 expansión a las 3 sucursales + capacitación; S5 evaluación y ajustes.",
-        "preguntas": [
-            ("Soluciones seleccionadas (de la matriz 1.4.5)", "Lista las soluciones que efectivamente vas a implementar."),
-            ("Operación del proceso CON la solución", "Por cada solución: descripción de cómo quedará el proceso después de implementada."),
-            ("Fases del proyecto", "¿Cuántas fases tendrá el proyecto? Para cada una: nombre + objetivo + tiempo estimado."),
-            ("Actividades y responsables por fase", "Lista granular de actividades. Quién hace qué de tu lado + del lado de la MiPyME."),
-            ("Cronograma (Gantt)", "Tabla con actividades en filas y semanas/quincenas en columnas. Marca con X cuándo se ejecuta cada actividad."),
-            ("Recursos tecnológicos / humanos / financieros", "Equipo, suscripciones, plataformas, equipo humano, presupuesto desglosado por fase."),
-            ("Indicadores de seguimiento", "¿Cómo sabrás semana a semana si vas en tiempo y con calidad? Define indicadores de proceso."),
-        ],
-    },
-    {
-        "num": "1.7", "slug": "propuesta-final-adopcion", "format": "word",
-        "elemento": "1 · Planear", "title": "Propuesta final de adopción de soluciones de IA",
-        "intro": "Documento maestro de entrega al emprendedor que integra los productos previos en una narrativa coherente.",
-        "f21": [
-            "Contiene el informe de diagnóstico de procesos, actividades y áreas de trabajo",
-            "Incluye el reporte de madurez digital y disposición al cambio",
-            "Contiene la matriz de impacto, viabilidad y esfuerzo",
-            "Incluye la hoja de ruta de adopción de soluciones de IA, considerando el cronograma, actividades y áreas de trabajo",
-            "Contiene la propuesta económica de consultoría, considerando la aplicación del diagnóstico y del test de madurez digital y disposición al cambio",
-            "Incluye la evidencia escrita/digital del visto bueno por parte de la persona responsable de la MiPyME",
-            "Incluye el acuerdo de confidencialidad firmado por ambas partes",
-            "Se presenta en formato digital / físico, con redacción clara y sin errores ortográficos",
-        ],
-        "espiga": "Para La Espiga: documento maestro de 18-25 páginas. Resumen ejecutivo de 1 pág → diagnóstico → madurez → matriz → hoja de ruta → propuesta económica → anexos. Pensado para que Doña Beatriz lo lea en 20 minutos y entienda exactamente qué pasará.",
-        "preguntas": [
-            ("Resumen ejecutivo (1 pág)", "Página única que sintetiza: contexto + oportunidades priorizadas + propuesta + inversión + resultados esperados. Si el cliente solo lee esta página, debe entender qué va a pasar."),
-            ("Diagnóstico integrado (referencia a 1.4.3)", "Incorpora el informe de diagnóstico o haz un resumen + adjunta el original como anexo."),
-            ("Madurez digital y disposición al cambio (referencia a 1.4.4)", "Incluye el reporte o resumen + tablero base."),
-            ("Matriz de oportunidades (referencia a 1.4.5)", "Incluye la matriz priorizada — destaca las oportunidades recomendadas para primera fase."),
-            ("Hoja de ruta (referencia a 1.4.6)", "Cronograma maestro visible + recursos requeridos."),
-            ("Propuesta económica de consultoría", "Honorarios profesionales + costos de licencias/herramientas + otros costos, considerando la aplicación del diagnóstico y del test de madurez digital. Total, forma de pago e hitos de cobro si aplica."),
-            ("Visto bueno POR ESCRITO del responsable", "¿Cómo obtuviste el visto bueno? (Firma autógrafa, electrónica, correo de aprobación explícita, acuse). Adjunta o describe el documento: sin esta evidencia el evaluador no da el producto por cumplido."),
-            ("Acuerdo de confidencialidad firmado", "Convenio firmado por ambas partes. Adjunta o describe el acuerdo y sus firmas."),
-            ("Anexos", "Documentos de soporte: instrumentos del diagnóstico, capturas, evidencias."),
+        'espiga': 'La Espiga obtuvo nivel 2 de 5 en madurez digital: usan WhatsApp, pero no tienen CRM ni datos integrados. Disposición al cambio: alta en Carlos, media en las tres encargadas y baja al inicio en Doña Beatriz, que pidió ver resultados antes de invertir.',
+        'preguntas': [
+            ('Metodología y herramienta usada', '¿Qué instrumento aplicaste para medir madurez digital? (Cuestionario, entrevistas, observación, test estandarizado). ¿Por qué lo elegiste?'),
+            ('Resultados del test aplicado', 'Resultados del test de madurez digital y disposición al cambio que aplicaste, por dimensión: infraestructura, procesos, personas, datos, cultura. Apóyate en una tabla.'),
+            ('Nivel de madurez digital por dimensión', 'Clasificación (inicial, en desarrollo, intermedio, avanzado) por cada dimensión. ¿Cuál es la dimensión más débil? ¿Cuál es la fortaleza?'),
+            ('Disposición al cambio del personal', 'Por persona o grupo: ¿qué tan abierta está al cambio? ¿Qué evidencia observaste durante el diagnóstico?'),
+            ('Soluciones de IA recomendadas según los resultados', 'Con base en los resultados, ¿qué soluciones de IA le recomiendas a la MiPyME? Explica por qué encajan con su nivel de madurez y con la disposición al cambio de su personal.'),
+            ('Tablero base de indicadores', '¿Qué indicadores propones seguir mes a mes para dar seguimiento a la transformación digital? Por ejemplo, de tres a cinco, cada uno con su línea base actual y la meta esperada a 6 o 12 meses.'),
         ],
     },
     {
-        "num": "2.1", "slug": "soluciones-implementadas", "format": "word",
-        "elemento": "2 · Ejecutar", "title": "Soluciones de IA en la operación, implementadas",
-        "intro": "El producto 3.4.1 NO es documental: es la solución MISMA funcionando. Este template sirve como inventario que documenta lo implementado para la evaluación.",
-        "f21": [
-            "Se encuentran configuradas en el entorno tecnológico de la MiPyME conforme al plan de adopción definido",
-            "Operan en al menos un proceso administrativo/operativo/comercial del negocio de la MiPyME",
-            "Incluyen la descripción del caso de uso para el cual fueron implementadas",
-            "Muestran la evidencia de mejora en el funcionamiento y en condiciones reales de operación",
-            "Especifican las herramientas/plataformas de IA utilizadas",
-            "Indican el nombre del usuario responsable de la operación dentro de la MiPyME",
+        'num': '1.5',
+        'slug': 'matriz-impacto-viabilidad',
+        'format': 'excel',
+        'elemento': '1 · E5809 · Planear soluciones de Inteligencia Artificial alineadas a la MiPyME',
+        'title': 'La matriz de impacto, viabilidad y esfuerzo, propuesta',
+        'intro': 'Hoja de cálculo para priorizar las oportunidades de IA detectadas. Asigna puntajes (1-5) por impacto, viabilidad y esfuerzo; la matriz revela cuáles atacar primero.',
+        'f21': [
+            'Contiene el listado de las soluciones de IA que mejor se interrelacionen respecto del impacto, la viabilidad y el esfuerzo en los procesos de la MiPyME',
+            'Contiene la priorización de las oportunidades de soluciones de IA',
+            'Incluye los beneficios esperados para la MiPyME y la viabilidad de la adopción',
         ],
-        "espiga": "Inventario para La Espiga: 2 soluciones operando. (1) Chatbot WhatsApp para FAQ desde el 1 de abril, atiende ~80 consultas/día. (2) Reporte automatizado de pedidos del día desde el 5 de abril, ahorra 30 min/día.",
-        "preguntas": [
-            ("Solución implementada · nombre y proceso intervenido", "Por cada solución: nombre comercial + proceso operativo donde funciona ahora."),
-            ("Caso de uso documentado", "¿Para qué se implementó? ¿Qué problema concreto resuelve?"),
-            ("Evidencia de funcionamiento", "Capturas, registros de uso, métricas de las últimas 2-4 semanas. (Adjunta como anexos si son muchas)."),
-            ("Herramienta/plataforma de IA utilizada", "Nombre comercial exacto + módulo o versión."),
-            ("Usuario responsable de la operación", "Quién en la MiPyME opera cada solución (nombre + cargo)."),
-            ("Cumplimiento del plan de implementación (1.4.6)", "Cada solución, ¿se desplegó conforme al cronograma? Si hubo desviaciones, ¿por qué?"),
-        ],
-    },
-    {
-        "num": "2.2", "slug": "informe-tecnico-configuracion", "format": "word",
-        "elemento": "2 · Ejecutar", "title": "Informe técnico de configuración de las soluciones de IA",
-        "intro": "Manual técnico para que la MiPyME mantenga las soluciones después de tu consultoría. Es exhaustivo.",
-        "f21": [
-            "Contiene la descripción de las herramientas/plataformas de IA configuradas y su propósito dentro de los procesos de la MiPyME",
-            "Incluye los parámetros de configuración aplicados en cada herramienta de IA",
-            "Contiene especificadas las integraciones realizadas con los sistemas, plataformas o procesos existentes de la MiPyME",
-            "Incluye los requisitos técnicos necesarios para el funcionamiento de las soluciones implementadas en la MiPyME",
-            "Incluye los elementos de ciberseguridad considerados para la operación del sistema, así como las leyes y normas aplicables",
-            "Contiene los accesos y permisos configurados para los usuarios de la MiPyME que operan las soluciones",
-            "Contiene los resultados de las pruebas funcionales ejecutadas para verificar el funcionamiento de la solución en el entorno de la MiPyME, Pruebas de funcionamiento/Pruebas de integración/Pruebas de uso en condiciones reales",
-            "Contiene especificados los indicadores de impacto operativo obtenidos durante la fase de pruebas",
-            "Se presenta en formato digital, con redacción clara y sin errores ortográficos",
-        ],
-        "espiga": "Informe técnico de La Espiga: 14 páginas que documentan cada parámetro del chatbot WhatsApp, la integración con Google Sheets para registrar pedidos, los permisos de las 3 encargadas + Carlos, y los resultados de 15 pruebas funcionales ejecutadas antes del go-live.",
-        "preguntas": [
-            ("Resumen ejecutivo", "Una página: qué se implementó, en qué entorno, con qué arquitectura general."),
-            ("Arquitectura general", "Diagrama de cómo se conectan las herramientas entre sí y con los procesos de la MiPyME."),
-            ("Herramientas + propósito + parámetros", "Por cada herramienta: nombre comercial, propósito en la MiPyME, todos los parámetros de configuración aplicados."),
-            ("Integraciones realizadas", "¿Con qué sistemas existentes se conectó cada herramienta? (CRM, hojas de cálculo, plataformas de mensajería, etc.)"),
-            ("Requisitos técnicos", "Conectividad, navegadores, sistemas operativos, suscripciones que la MiPyME necesita mantener."),
-            ("Ciberseguridad + normativa aplicable", "Medidas de seguridad implementadas + cumplimiento LFPDPPP (mínimo Arts. 5-12 principios + 7,8,14 aviso de privacidad + 36-37 transferencias + 22-34 ARCO + 63-68 sanciones)."),
-            ("Accesos y permisos configurados", "Tabla con cada usuario + rol + nivel de acceso por herramienta."),
-            ("Pruebas funcionales ejecutadas", "Lista de pruebas (funcionamiento, integración, uso en condiciones reales) + resultados de cada una."),
-            ("Indicadores de desempeño en pruebas", "Métricas obtenidas durante las pruebas: tiempo de respuesta, precisión, errores, etc."),
+        'espiga': 'En La Espiga se identificaron 5 oportunidades. Las dos de mayor impacto y viabilidad fueron las recomendadas para la primera fase: el sistema unificado de pedidos por WhatsApp con respuestas automáticas y el resumen automatizado de los pedidos del día para cocina.',
+        'preguntas': [
+            ('Oportunidades detectadas', 'Lista todas las oportunidades de IA que detectaste en el diagnóstico. Una por fila.'),
+            ('Herramienta/plataforma sugerida', 'Por cada oportunidad: ¿qué herramienta de IA existente la resolvería? (ChatGPT, Claude, Zapier, Make, CRM con módulo de IA, etc.)'),
+            ('Puntaje de IMPACTO (1-5)', '¿Cuánto valor genera? (Tiempo ahorrado, ingresos adicionales, errores reducidos, mejor experiencia). 5 = alto.'),
+            ('Puntaje de VIABILIDAD (1-5)', '¿Qué tan fácil es de implementar dados los recursos actuales de la MiPyME? 5 = muy viable.'),
+            ('Puntaje de ESFUERZO (1-5)', '¿Cuánto trabajo cuesta? (Tiempo + personas + costo). 5 = poco esfuerzo, 1 = mucho esfuerzo.'),
+            ('Beneficios esperados', 'Breve frase por oportunidad: ¿qué mejora medible esperas?'),
+            ('Priorización final', 'Las 2-3 oportunidades recomendadas para primera fase, y por qué.'),
         ],
     },
     {
-        "num": "2.3", "slug": "material-capacitacion", "format": "pptx",
-        "elemento": "2 · Ejecutar", "title": "Material de capacitación para la adopción de soluciones de IA",
-        "intro": "Presentación visual para capacitar al personal de la MiPyME. Una lámina por paso, espacio para captura, prompts destacados y errores frecuentes. El formato PowerPoint te permite usarla en sesión presencial o compartirla para autoestudio.",
-        "f21": [
-            "Contiene las instrucciones paso a paso para operar cada herramienta de IA implementada",
-            "Incluye ejemplos de uso aplicados al contexto específico de la MiPyME",
-            "Especifica los prompts o instrucciones recomendadas para cada herramienta de IA",
-            "Incluye las buenas prácticas de uso y las acciones a realizar ante errores frecuentes en la operación de la solución",
-            "Está adaptado al nivel de alfabetización digital del personal capacitado",
-            "Se presenta en formato digital, accesible y comprensible para el personal de la MiPyME",
+        'num': '1.6',
+        'slug': 'hoja-de-ruta',
+        'format': 'excel',
+        'elemento': '1 · E5809 · Planear soluciones de Inteligencia Artificial alineadas a la MiPyME',
+        'title': 'La hoja de ruta de adopción de soluciones de IA, elaborada',
+        'intro': 'Cronograma tipo Gantt con las fases, actividades, responsables y recursos del proyecto.',
+        'f21': [
+            'Contiene el listado de la(s) solución(es) de IA seleccionada(s) para la MiPyME',
+            'Contiene descritas las mejoras en la operación de los procesos con la solución de IA',
+            'Incluye las fases/etapas de adopción del proyecto',
+            'Incluye las actividades y responsables de cada etapa',
+            'Contiene el cronograma con las actividades de adopción para cada etapa del proyecto',
+            'Incluye los recursos tecnológicos, humanos y financieros requeridos',
+            'Incluye indicadores de impacto operativo para evaluar el avance de la adopción y dar seguimiento al proyecto',
         ],
-        "espiga": "Material de La Espiga: presentación de 12 láminas + 3 prompts pre-cargados. Pensada para encargadas con uso intermedio de smartphone pero sin experiencia previa con asistentes de IA. Lenguaje sencillo, capturas grandes, lista de 'qué hacer si algo no funciona'.",
-        "preguntas": [
-            ("Lámina 1 · Bienvenida y objetivos del material", "¿Qué van a aprender? ¿Cuánto tiempo tomará? ¿Para qué les servirá en su día a día?"),
-            ("Láminas 2-N · Instrucciones paso a paso por herramienta", "Por cada herramienta: capturas numeradas con el flujo completo de uso. Si la herramienta tiene 5 botones importantes, dedica 1 lámina por botón. Visual antes que texto."),
-            ("Ejemplos aplicados al contexto de la MiPyME", "Por cada herramienta: 2-3 ejemplos REALES de la MiPyME (no ejemplos genéricos). El personal debe poder decir 'ah, eso lo hago yo el lunes en la mañana'."),
-            ("Prompts recomendados", "Lista de 5-10 prompts que ya funcionan para los casos típicos. El personal los copia/pega; no se les pide redactar prompts desde cero."),
-            ("Errores frecuentes y qué hacer", "Tabla con: error común → cómo identificarlo → cómo resolverlo → cuándo escalar al consultor o a Carlos/Doña Beatriz."),
-            ("Adaptación al nivel digital del personal", "Si el personal no maneja tecnicismos, usa lenguaje cotidiano. Si están acostumbrados a apps, puedes ir más rápido."),
-            ("Lámina final · Recursos y soporte", "¿A quién acudir si algo falla? ¿Dónde encontrar este material después? ¿Cuándo se actualiza?"),
-        ],
-    },
-    {
-        "num": "3.1", "slug": "reporte-evaluacion-resultados", "format": "excel",
-        "elemento": "3 · Evaluar", "title": "Reporte de evaluación de resultados de la adopción de soluciones de IA",
-        "intro": "Hoja de cálculo con la comparación antes/después de cada indicador + tablero visual + estimación de ROI.",
-        "f21": [
-            "Contiene la comparación de los indicadores de impacto operativo de los procesos antes y después de la adopción, mostranto la eficiencia lograda/retorno de inversión",
-            "Incluye los resultados y hallazgo cualitativos en los procesos intervenidos",
-            "Incluye el registro de incidencias presentadas durante la operación y las acciones correctivas aplicadas",
-            "Contiene descrito el nivel de adopción de las soluciones de IA por parte del personal de la MiPyME",
-            "Se presenta en formato digital / físico, con redacción clara y sin errores ortográficos",
-        ],
-        "espiga": "Reporte de La Espiga: tabla comparativa de 5 indicadores (tiempo de respuesta WhatsApp, consultas atendidas/día, horas semanales en tareas repetitivas, errores en pedidos, ventas online). Resultado: ROI estimado 280% a 6 meses. 1 incidencia mayor (caída del chatbot 2 horas el 18 de abril) con su acción correctiva documentada.",
-        "preguntas": [
-            ("Indicadores · línea base · valor actual · variación", "Tabla con cada indicador del proyecto, su valor antes de la adopción, su valor actual, y la variación porcentual."),
-            ("Tablero de indicadores integrado", "Visualización gráfica (puedes generar gráficas con Excel mismo) con resultados cuantitativos + cualitativos."),
-            ("Impacto operativo", "Tiempo ahorrado, ingresos adicionales, errores reducidos. Cuantifica todo lo cuantificable."),
-            ("Cálculo del ROI", "Beneficios obtenidos / costo total del proyecto × 100. Documenta los supuestos."),
-            ("Registro de incidencias + acciones correctivas", "Tabla con cada incidencia: fecha, qué ocurrió, qué hiciste para corregirla, qué se aprendió."),
-            ("Nivel de adopción del personal", "¿Cuántas personas operan cada solución activamente? ¿Qué porcentaje del personal capacitado la usa? Evidencia: logs, encuesta a usuarios."),
-            ("Lecciones y recomendaciones", "Resumen ejecutivo de lo que funcionó, lo que no, y recomendaciones de mejora continua."),
+        'espiga': 'En La Espiga: cinco semanas, una etapa por semana. S1 configurar el asistente de WhatsApp y sus respuestas a preguntas frecuentes; S2 configurar el resumen automático de pedidos; S3 piloto en la sucursal principal; S4 extender a las tres sucursales y capacitar; S5 evaluar y ajustar.',
+        'preguntas': [
+            ('Soluciones seleccionadas (de la matriz 1.5)', 'Lista las soluciones de IA seleccionadas para la MiPyME: las que efectivamente vas a implementar.'),
+            ('Mejoras en la operación con la solución', 'Por cada solución: ¿cómo quedará el proceso después de implementarla y qué mejora en su operación?'),
+            ('Fases del proyecto', '¿Cuántas fases tendrá el proyecto? Para cada una: nombre + objetivo + tiempo estimado.'),
+            ('Actividades y responsables por fase', 'Lista granular de actividades. Quién hace qué de tu lado + del lado de la MiPyME.'),
+            ('Cronograma (Gantt)', 'Tabla con actividades en filas y semanas/quincenas en columnas. Marca con X cuándo se ejecuta cada actividad.'),
+            ('Recursos tecnológicos / humanos / financieros', 'Equipo, suscripciones, plataformas, equipo humano, presupuesto desglosado por fase.'),
+            ('Indicadores de impacto operativo', '¿Qué indicadores de impacto operativo usarás para evaluar el avance de la adopción y dar seguimiento al proyecto? Por cada uno: cómo se mide y cada cuándo.'),
         ],
     },
     {
-        "num": "3.2", "slug": "acta-de-cierre", "format": "word",
-        "elemento": "3 · Evaluar", "title": "Acta de cierre del proyecto de adopción de soluciones de IA",
-        "intro": "Documento legal de cierre. CRÍTICO: requiere firmas de ambas partes + contactos de soporte. Sin estos elementos el evaluador NO da por cumplido el producto.",
-        "f21": [
-            "Contiene el resumen ejecutivo del proyecto: alcance, objetivos y resultados obtenidos",
-            "Incluye el listado de las soluciones de IA implementadas y su estado operativo al cierre",
-            "Incluye las lecciones aprendidas durante el proyecto de adopción",
-            "Contiene descritos los compromisos pendientes y próximos pasos acordados entre ambas partes",
-            "Contiene los datos de contacto: nombre, correo y teléfono para el soporte técnico en incidencias futuras",
-            "Incluye nombre completo y firmas del consultor y del representante de la MiPyME",
-            "Se presenta en formato digital/físico, sin errores ortográficos",
+        'num': '1.7',
+        'slug': 'propuesta-final-adopcion',
+        'format': 'word',
+        'elemento': '1 · E5809 · Planear soluciones de Inteligencia Artificial alineadas a la MiPyME',
+        'title': 'La propuesta final de adopción de soluciones de IA, integrada',
+        'intro': 'Documento maestro de entrega al emprendedor que integra los productos previos en una narrativa coherente.',
+        'f21': [
+            'Contiene el informe de diagnóstico de procesos, actividades y áreas de trabajo',
+            'Incluye el reporte de madurez digital y disposición al cambio',
+            'Contiene la matriz de impacto, viabilidad y esfuerzo',
+            'Incluye la hoja de ruta de adopción de soluciones de IA, considerando el cronograma, actividades y áreas de trabajo',
+            'Contiene la propuesta económica de consultoría, considerando la aplicación del diagnóstico y del test de madurez digital y disposición al cambio',
+            'Incluye la evidencia escrita/digital del visto bueno por parte de la persona responsable de la MiPyME',
+            'Incluye el acuerdo de confidencialidad firmado por ambas partes',
+            'Se presenta en formato digital / físico, con redacción clara y sin errores ortográficos',
         ],
-        "espiga": "Acta de La Espiga firmada el 30 de mayo por Doña Beatriz y por el consultor. Compromisos pendientes: revisar el chatbot en julio para añadir 10 nuevas FAQ. Contacto de soporte: correo + WhatsApp del consultor. Lección clave registrada: 'capacitar PRIMERO a las personas más abiertas al cambio, luego ellas convencen a las escépticas'.",
-        "preguntas": [
-            ("Resumen ejecutivo del proyecto", "Alcance original, objetivos planteados, resultados obtenidos. Una página."),
-            ("Soluciones implementadas + estado al cierre", "Lista de cada solución + estado: operando / operando con incidencias / pausada / cancelada."),
-            ("Lecciones aprendidas", "Lo que funcionó, lo que no, lo que harías diferente. 5-7 lecciones específicas."),
-            ("Compromisos pendientes y próximos pasos", "Si quedó algo a futuro: qué, cuándo, responsable. Si no quedó nada pendiente, decláralo explícitamente."),
-            ("Contactos de soporte técnico (REQUISITO TAXATIVO)", "Datos completos del consultor para incidencias futuras: nombre, correo, teléfono, horario de respuesta esperado."),
-            ("Firmas (REQUISITO TAXATIVO)", "Firma del consultor + firma del representante legal o emprendedor de la MiPyME. Físicas o digitales con valor legal."),
+        'espiga': 'Para La Espiga: documento de 18 a 25 páginas. Resumen ejecutivo de 1 página → diagnóstico → madurez → matriz → hoja de ruta → propuesta económica (honorarios profesionales y licencias mensuales, por separado) → anexos. Pensado para que Doña Beatriz lo lea en 20 minutos y entienda exactamente qué pasará. Andrea, la consultora, le envía la propuesta dos días antes y la presenta en la oficina trasera de la sucursal principal.',
+        'preguntas': [
+            ('Resumen ejecutivo (1 pág)', 'Página única que sintetiza: contexto + oportunidades priorizadas + propuesta + inversión + resultados esperados. Si el cliente solo lee esta página, debe entender qué va a pasar.'),
+            ('Diagnóstico integrado (producto 1.3)', 'Incorpora el informe de diagnóstico de procesos, actividades y áreas de trabajo, o un resumen con el original como anexo.'),
+            ('Madurez digital y disposición al cambio (producto 1.4)', 'Incluye el reporte de madurez digital y disposición al cambio, o un resumen con el tablero base.'),
+            ('Matriz de oportunidades (producto 1.5)', 'Incluye la matriz de impacto, viabilidad y esfuerzo; destaca las oportunidades recomendadas para la primera fase.'),
+            ('Hoja de ruta (producto 1.6)', 'Incluye la hoja de ruta de adopción con el cronograma, las actividades y las áreas de trabajo.'),
+            ('Propuesta económica de consultoría', 'Honorarios profesionales + costos de licencias/herramientas + otros costos, considerando la aplicación del diagnóstico y del test de madurez digital. Total, forma de pago e hitos de cobro si aplica.'),
+            ('Evidencia escrita o digital del visto bueno', '¿Cómo obtuviste el visto bueno de la persona responsable de la MiPyME? (Firma autógrafa, electrónica, correo de aprobación explícita, acuse). Adjunta o describe esa evidencia: sin ella el producto no cumple este criterio.'),
+            ('Acuerdo de confidencialidad firmado', 'Convenio firmado por ambas partes. Adjunta o describe el acuerdo y sus firmas.'),
+            ('Anexos', 'Documentos de soporte: instrumentos del diagnóstico, capturas, evidencias.'),
+            ('Presentación y revisión final', '¿La entregarás en formato digital o físico? Antes de entregarla, revisa que la redacción sea clara y que no tenga errores ortográficos; si puedes, pídele a otra persona que la lea.'),
+        ],
+    },
+    {
+        'num': '2.1',
+        'slug': 'soluciones-implementadas',
+        'format': 'word',
+        'elemento': '2 · E5810 · Adoptar soluciones de Inteligencia Artificial en el entorno de la MiPyME',
+        'title': 'Las soluciones de IA en la operación, implementadas',
+        'intro': 'El producto 2.1 NO es documental: es la solución MISMA funcionando. Esta plantilla sirve como inventario que documenta lo implementado para la evaluación.',
+        'f21': [
+            'Se encuentran configuradas en el entorno tecnológico de la MiPyME conforme al plan de adopción definido',
+            'Operan en al menos un proceso administrativo/operativo/comercial del negocio de la MiPyME',
+            'Incluyen la descripción del caso de uso para el cual fueron implementadas',
+            'Muestran la evidencia de mejora en el funcionamiento y en condiciones reales de operación',
+            'Especifican las herramientas/plataformas de IA utilizadas',
+            'Indican el nombre del usuario responsable de la operación dentro de la MiPyME',
+        ],
+        'espiga': 'Inventario de La Espiga: dos soluciones operando. (1) El asistente de WhatsApp que responde las preguntas frecuentes, desde el 1 de abril. (2) El resumen de los pedidos del día para cocina, desde el 5 de abril; ahorra unos 30 minutos diarios. Responsables de la operación: las tres encargadas y Carlos.',
+        'preguntas': [
+            ('Solución implementada · nombre y proceso intervenido', 'Por cada solución: su nombre y el proceso administrativo, operativo o comercial de la MiPyME donde funciona ahora.'),
+            ('Caso de uso documentado', '¿Para qué se implementó? ¿Qué problema concreto resuelve?'),
+            ('Evidencia de mejora en condiciones reales', '¿Qué muestra que el proceso funciona mejor con la solución operando en condiciones reales? Capturas, registros de uso o métricas de las últimas 2-4 semanas, comparadas con cómo funcionaba antes. (Adjúntalas como anexos si son muchas).'),
+            ('Herramienta/plataforma de IA utilizada', 'Nombre comercial exacto + módulo o versión.'),
+            ('Usuario responsable de la operación', 'Quién en la MiPyME opera cada solución (nombre + cargo).'),
+            ('Configuración conforme al plan de adopción (1.6)', '¿Dónde quedó configurada cada solución dentro del entorno tecnológico de la MiPyME? ¿Se configuró conforme a la hoja de ruta? Si hubo desviaciones, ¿por qué?'),
+        ],
+    },
+    {
+        'num': '2.2',
+        'slug': 'informe-tecnico-configuracion',
+        'format': 'word',
+        'elemento': '2 · E5810 · Adoptar soluciones de Inteligencia Artificial en el entorno de la MiPyME',
+        'title': 'El informe técnico de configuración de las soluciones de IA, elaborado',
+        'intro': 'Manual técnico para que la MiPyME mantenga las soluciones después de tu consultoría. Es exhaustivo.',
+        'f21': [
+            'Contiene la descripción de las herramientas/plataformas de IA configuradas y su propósito dentro de los procesos de la MiPyME',
+            'Incluye los parámetros de configuración aplicados en cada herramienta de IA',
+            'Contiene especificadas las integraciones realizadas con los sistemas, plataformas o procesos existentes de la MiPyME',
+            'Incluye los requisitos técnicos necesarios para el funcionamiento de las soluciones implementadas en la MiPyME',
+            'Incluye los elementos de ciberseguridad considerados para la operación del sistema, así como las leyes y normas aplicables',
+            'Contiene los accesos y permisos configurados para los usuarios de la MiPyME que operan las soluciones',
+            'Contiene los resultados de las pruebas funcionales ejecutadas para verificar el funcionamiento de la solución en el entorno de la MiPyME, Pruebas de funcionamiento/Pruebas de integración/Pruebas de uso en condiciones reales',
+            'Contiene especificados los indicadores de impacto operativo obtenidos durante la fase de pruebas',
+            'Se presenta en formato digital, con redacción clara y sin errores ortográficos',
+        ],
+        'espiga': 'Informe técnico de La Espiga: unas 14 páginas que documentan los parámetros del asistente de WhatsApp, la integración con una hoja de cálculo en la nube para registrar los pedidos, los permisos de las tres encargadas y de Carlos, y los resultados de 15 pruebas funcionales antes de ponerlo en marcha.',
+        'preguntas': [
+            ('Resumen ejecutivo', 'Una página: qué se implementó, en qué entorno, con qué arquitectura general.'),
+            ('Arquitectura general', 'Diagrama de cómo se conectan las herramientas entre sí y con los procesos de la MiPyME.'),
+            ('Herramientas + propósito + parámetros', 'Por cada herramienta: nombre comercial, propósito en la MiPyME, todos los parámetros de configuración aplicados.'),
+            ('Integraciones realizadas', '¿Con qué sistemas existentes se conectó cada herramienta? (CRM, hojas de cálculo, plataformas de mensajería, etc.)'),
+            ('Requisitos técnicos', 'Conectividad, navegadores, sistemas operativos, suscripciones que la MiPyME necesita mantener.'),
+            ('Ciberseguridad + normativa aplicable', 'Medidas de ciberseguridad consideradas para operar el sistema, y las leyes y normas aplicables. Por ejemplo, la LFPDPPP: principios (Arts. 5 a 12), consentimiento y aviso de privacidad (Arts. 7, 8 y 14), transferencias (Arts. 36 y 37), derechos ARCO (Arts. 22 a 34) y sanciones (Arts. 63 a 68).'),
+            ('Accesos y permisos configurados', 'Tabla con cada usuario + rol + nivel de acceso por herramienta.'),
+            ('Pruebas funcionales ejecutadas', 'Lista de pruebas (funcionamiento, integración, uso en condiciones reales) + resultados de cada una.'),
+            ('Indicadores de impacto operativo en las pruebas', '¿Qué indicadores de impacto operativo obtuviste durante la fase de pruebas? Por ejemplo: tiempo de respuesta, consultas atendidas o errores, con el valor que mediste.'),
+            ('Presentación y revisión final', 'Entrégalo en formato digital. Antes de entregarlo, revisa que la redacción sea clara y que no tenga errores ortográficos; si puedes, pídele a otra persona que lo lea.'),
+        ],
+    },
+    {
+        'num': '2.3',
+        'slug': 'material-capacitacion',
+        'format': 'pptx',
+        'elemento': '2 · E5810 · Adoptar soluciones de Inteligencia Artificial en el entorno de la MiPyME',
+        'title': 'El material de capacitación para la adopción de soluciones de IA, elaborado',
+        'intro': 'Presentación visual para capacitar al personal de la MiPyME. Una lámina por paso, espacio para captura, prompts destacados y errores frecuentes. El formato PowerPoint te permite usarla en sesión presencial o compartirla para autoestudio.',
+        'f21': [
+            'Contiene las instrucciones paso a paso para operar cada herramienta de IA implementada',
+            'Incluye ejemplos de uso aplicados al contexto específico de la MiPyME',
+            'Especifica los prompts o instrucciones recomendadas para cada herramienta de IA',
+            'Incluye las buenas prácticas de uso y las acciones a realizar ante errores frecuentes en la operación de la solución',
+            'Está adaptado al nivel de alfabetización digital del personal capacitado',
+            'Se presenta en formato digital, accesible y comprensible para el personal de la MiPyME',
+        ],
+        'espiga': 'Material de La Espiga: presentación de 12 láminas con 3 prompts recomendados, más una guía impresa de tres páginas para consulta rápida. Pensado para encargadas que usan el celular a diario pero nunca han usado un asistente de IA: lenguaje sencillo, capturas grandes y una lista de «qué hacer si algo no funciona».',
+        'preguntas': [
+            ('Lámina 1 · Bienvenida y objetivos del material', '¿Qué van a aprender? ¿Cuánto tiempo tomará? ¿Para qué les servirá en su día a día?'),
+            ('Láminas 2-N · Instrucciones paso a paso por herramienta', 'Por cada herramienta: capturas numeradas con el flujo completo de uso. Si la herramienta tiene 5 botones importantes, dedica 1 lámina por botón. Visual antes que texto.'),
+            ('Ejemplos aplicados al contexto de la MiPyME', "Por cada herramienta: 2-3 ejemplos REALES de la MiPyME (no ejemplos genéricos). El personal debe poder decir 'ah, eso lo hago yo el lunes en la mañana'."),
+            ('Prompts recomendados', 'Por cada herramienta, los prompts o instrucciones que ya funcionan para los casos típicos. El personal los copia y pega; no se le pide redactar prompts desde cero.'),
+            ('Buenas prácticas de uso', '¿Qué conviene hacer siempre al usar cada herramienta? Por ejemplo: revisar la respuesta antes de enviarla o cuidar los datos personales de los clientes.'),
+            ('Errores frecuentes y qué hacer', 'Tabla con: error común → cómo identificarlo → cómo resolverlo → cuándo escalar a quien da soporte o a la persona responsable de la MiPyME.'),
+            ('Adaptación al nivel digital y formato accesible', 'Si el personal no maneja tecnicismos, usa lenguaje cotidiano; si está acostumbrado a las apps, puedes ir más rápido. Entrega el material en formato digital que el personal pueda abrir y entender: letra grande, buen contraste y capturas claras.'),
+            ('Lámina final · Recursos y soporte', '¿A quién acudir si algo falla? ¿Dónde encontrar este material después? ¿Cuándo se actualiza?'),
+        ],
+    },
+    {
+        'num': '3.1',
+        'slug': 'reporte-evaluacion-resultados',
+        'format': 'excel',
+        'elemento': '3 · E5811 · Evaluar resultados e impacto de la adopción de soluciones de Inteligencia Artificial en la MiPyME',
+        'title': 'El reporte de evaluación de resultados de la adopción de soluciones de IA, elaborado',
+        'intro': 'Hoja de cálculo con la comparación antes/después de cada indicador + tablero visual + estimación de ROI.',
+        'f21': [
+            'Contiene la comparación de los indicadores de impacto operativo de los procesos antes y después de la adopción, mostrando la eficiencia lograda/retorno de inversión',
+            'Incluye los resultados y hallazgos cualitativos en los procesos intervenidos',
+            'Incluye el registro de incidencias presentadas durante la operación y las acciones correctivas aplicadas',
+            'Contiene descrito el nivel de adopción de las soluciones de IA por parte del personal de la MiPyME',
+            'Se presenta en formato digital / físico, con redacción clara y sin errores ortográficos',
+        ],
+        'espiga': 'Reporte de La Espiga: 8 semanas antes contra 8 semanas operando, con 3 indicadores. Tiempo de respuesta en WhatsApp: de 8 minutos a 30 segundos en promedio. Consultas atendidas al día (las tres sucursales): de 30 a 90. Horas semanales en tareas repetitivas (las tres encargadas): de 20 a 5. ROI estimado de 280 % a seis meses. Una incidencia mayor (el asistente dejó de responder 2 horas el 18 de abril) con su acción correctiva documentada.',
+        'preguntas': [
+            ('Indicadores · línea base · valor actual · variación', 'Tabla con cada indicador del proyecto, su valor antes de la adopción, su valor actual, y la variación porcentual.'),
+            ('Tablero de indicadores integrado', 'Visualización gráfica (puedes generar gráficas con Excel mismo) con resultados cuantitativos + cualitativos.'),
+            ('Impacto operativo', 'Tiempo ahorrado, ingresos adicionales, errores reducidos. Cuantifica todo lo cuantificable.'),
+            ('Resultados y hallazgos cualitativos', '¿Qué cambió en los procesos intervenidos que no se ve en los números? Por ejemplo, lo que opinan el personal y los clientes, o cambios en la forma de trabajar.'),
+            ('Cálculo del ROI', 'ROI = (beneficios obtenidos − costo total del proyecto) / costo total del proyecto × 100. Documenta los supuestos y de dónde sale cada cifra.'),
+            ('Registro de incidencias + acciones correctivas', 'Tabla con cada incidencia: fecha, qué ocurrió, qué hiciste para corregirla, qué se aprendió.'),
+            ('Nivel de adopción del personal', '¿Cuántas personas operan cada solución activamente? ¿Qué porcentaje del personal capacitado la usa? Evidencia: logs, encuesta a usuarios.'),
+            ('Lecciones y recomendaciones', 'Resumen ejecutivo de lo que funcionó, lo que no, y recomendaciones de mejora continua.'),
+            ('Presentación y revisión final', '¿Lo entregarás en formato digital o físico? Antes de entregarlo, revisa que la redacción sea clara y que no tenga errores ortográficos; si puedes, pídele a otra persona que lo lea.'),
+        ],
+    },
+    {
+        'num': '3.2',
+        'slug': 'acta-de-cierre',
+        'format': 'word',
+        'elemento': '3 · E5811 · Evaluar resultados e impacto de la adopción de soluciones de Inteligencia Artificial en la MiPyME',
+        'title': 'El acta de cierre del proyecto de adopción de soluciones de IA, documentada',
+        'intro': 'Documento que formaliza el cierre del proyecto: resume lo logrado, deja por escrito los compromisos pendientes y los datos de contacto para soporte, y lo firman quien hizo la consultoría y el representante de la MiPyME.',
+        'f21': [
+            'Contiene el resumen ejecutivo del proyecto: alcance, objetivos y resultados obtenidos',
+            'Incluye el listado de las soluciones de IA implementadas y su estado operativo al cierre',
+            'Incluye las lecciones aprendidas durante el proyecto de adopción',
+            'Contiene descritos los compromisos pendientes y próximos pasos acordados entre ambas partes',
+            'Contiene los datos de contacto: nombre, correo y teléfono para el soporte técnico en incidencias futuras',
+            'Incluye nombre completo y firmas del consultor y del representante de la MiPyME',
+            'Se presenta en formato digital/físico, sin errores ortográficos',
+        ],
+        'espiga': 'Acta de La Espiga firmada el 30 de mayo por Doña Beatriz y por Andrea, la consultora. Compromiso pendiente: revisar el asistente en julio para agregar 10 preguntas frecuentes nuevas. Contacto de soporte: correo y WhatsApp de Andrea. Lección aprendida: capacitar primero a las personas más abiertas al cambio; después ellas convencen a las demás.',
+        'preguntas': [
+            ('Resumen ejecutivo del proyecto', 'Alcance original, objetivos planteados, resultados obtenidos. Una página.'),
+            ('Soluciones implementadas + estado al cierre', 'Lista de cada solución + estado: operando / operando con incidencias / pausada / cancelada.'),
+            ('Lecciones aprendidas', 'Lo que funcionó, lo que no, lo que harías diferente. 5-7 lecciones específicas.'),
+            ('Compromisos pendientes y próximos pasos', 'Si quedó algo a futuro: qué, cuándo, responsable. Si no quedó nada pendiente, decláralo explícitamente.'),
+            ('Contactos de soporte técnico', 'Nombre, correo y teléfono de quien dará soporte técnico ante incidencias futuras. Puedes agregar el horario de atención.'),
+            ('Nombres completos y firmas', 'Nombre completo y firma de quien hizo la consultoría y del representante de la MiPyME, en papel o con firma electrónica.'),
+            ('Presentación y revisión final', '¿La entregarás en formato digital o físico? Antes de entregarla, revisa que la redacción sea clara y que no tenga errores ortográficos; si puedes, pídele a otra persona que la lea.'),
         ],
     },
 ]
@@ -473,17 +522,17 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Curso de Adopción de IA en procesos · Producto del Elemento {elemento}</p>
+<p class="subtitle">Curso EC1830 · Producto del Elemento {elemento}</p>
 </td>
-<td class="meta"><strong>Producto {num}</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+<td class="meta"><strong>Producto {num}</strong><br>Plantilla editable<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
 </table>
 </div>
 
-<div class="intro"><strong>Sobre este template.</strong> {intro} Tu evaluador no busca que llenes el template — busca que respondas con datos de TU MiPyME real. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+<div class="intro"><strong>Sobre esta plantilla.</strong> {intro} Quien te evalúa no busca que llenes la plantilla: busca que tu producto cumpla cada criterio del EC1830 con los datos de tu proyecto con una MiPyME, en tu lugar de trabajo o en una situación simulada. Las preguntas guía te orientan; las respuestas son tuyas.</div>
 
 <div class="f21-box">
-<h3>Qué evalúa el F21 oficial</h3>
+<h3>Qué pide el EC1830 (criterios literales)</h3>
 <ul>{f21_html}</ul>
 </div>
 
@@ -504,7 +553,7 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 
 <div class="footer">
 Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org<br>
-Template del Curso de Adopción de IA en procesos · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+Plantilla del curso EC1830 · Para que la llenes con los datos de tu proyecto con una MiPyME
 </div>
 
 </body>
@@ -542,17 +591,17 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fffbf0; }}
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Curso de Adopción de IA en procesos · Producto del Elemento {elemento} · Excel</p>
+<p class="subtitle">Curso EC1830 · Producto del Elemento {elemento} · Excel</p>
 </td>
 <td class="meta"><strong>Producto {num}</strong><br>Hoja editable · Excel<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
 </table>
 </div>
 
-<div class="intro"><strong>Sobre este template.</strong> {intro} Excel es el formato natural para esta clase de producto: te permite añadir filas conforme detectes más oportunidades, ordenar por puntaje y generar gráficas. <strong>Llénalo con datos de TU MiPyME real.</strong></div>
+<div class="intro"><strong>Sobre esta plantilla.</strong> {intro} Excel es el formato natural para esta clase de producto: te permite añadir filas conforme detectes más oportunidades, ordenar por puntaje y generar gráficas. <strong>Llénala con los datos de tu proyecto.</strong></div>
 
 <div class="f21-box">
-<h3>Qué evalúa el F21 oficial</h3>
+<h3>Qué pide el EC1830 (criterios literales)</h3>
 <ul>{f21_html}</ul>
 </div>
 
@@ -572,7 +621,7 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fffbf0; }}
 {matrix_html}
 
 <div class="footer">
-Mi CompañIA · FUNDES México con el apoyo de Google.org · Template Excel del Curso de Adopción de IA en procesos
+Mi CompañIA · FUNDES México con el apoyo de Google.org · Plantilla Excel del curso EC1830
 </div>
 
 </body>
@@ -580,12 +629,12 @@ Mi CompañIA · FUNDES México con el apoyo de Google.org · Template Excel del 
 """
 
 # ===========================================================================
-# GENERADOR PPTX REAL (3.4.3 material de capacitación)
+# GENERADOR PPTX REAL (2.3 material de capacitación)
 # ===========================================================================
 #
 # python-pptx solo se importa si hay productos con format="pptx".
 # La estética: 16:9, marca Mi CompañIA arriba, layout consistente con los
-# otros 12 templates HTML (mismo azul, mismo amarillo, mismas cajas).
+# otras 11 plantillas HTML (mismo azul, mismo amarillo, mismas cajas).
 
 def generate_pptx_capacitacion(prod):
     from pptx import Presentation
@@ -671,7 +720,7 @@ def generate_pptx_capacitacion(prod):
                 label, size=10, bold=True, color=AZUL, align=PP_ALIGN.CENTER,
                 anchor=MSO_ANCHOR.MIDDLE)
 
-    # cuántas slides totales calcularemos: portada + datos + F21 + Espiga + N preguntas + cierre
+    # cuántas slides totales calcularemos: portada + datos + criterios del EC + Espiga + N preguntas + cierre
     total = 4 + len(prod["preguntas"]) + 1
     page = 1
 
@@ -736,15 +785,15 @@ def generate_pptx_capacitacion(prod):
                 "________________________________________", size=13, color=GRIS, anchor=MSO_ANCHOR.MIDDLE)
     footer_band(s, page, total)
 
-    # ---- Slide 3: criterio F21 ----
+    # ---- Slide 3: criterios del EC1830 ----
     page += 1
     s = prs.slides.add_slide(blank)
     header_bar(s, prod)
     textbox(s, Inches(0.5), Inches(1.0), Inches(12.3), Inches(0.8),
-            "Criterio F21 · qué evalúa el verificador",
+            "Qué pide el EC1830 · criterios literales",
             size=28, bold=True, color=AZUL)
     textbox(s, Inches(0.5), Inches(1.8), Inches(12.3), Inches(0.5),
-            "Texto literal del F21 oficial. Tu material debe cubrir explícitamente cada punto.",
+            "Texto literal del EC1830 publicado en el DOF. Tu material debe cubrir cada criterio.",
             size=12, italic=True, color=GRIS)
     box = filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(0.5), Inches(2.4),
                       Inches(12.3), Inches(4.5), AZUL_CLARO)
@@ -753,22 +802,14 @@ def generate_pptx_capacitacion(prod):
     tf.margin_left = Inches(0.4)
     tf.margin_top = Inches(0.3)
     tf.margin_right = Inches(0.4)
+    # Criterios literales del EC1830; el EC no marca requisitos taxativos.
     for i, crit in enumerate(prod["f21"]):
-        is_tax = "REQUISITO TAXATIVO" in crit
-        clean = crit.replace("(REQUISITO TAXATIVO)", "").strip()
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
         p.space_after = Pt(8)
         r = p.add_run()
-        r.text = "•  " + clean
+        r.text = "•  " + crit
         r.font.size = Pt(14)
-        r.font.color.rgb = AZUL if not is_tax else ROJO
-        r.font.bold = is_tax
-        if is_tax:
-            r2 = p.add_run()
-            r2.text = "   ⚠ REQUISITO TAXATIVO"
-            r2.font.size = Pt(11)
-            r2.font.bold = True
-            r2.font.color.rgb = ROJO
+        r.font.color.rgb = AZUL
     footer_band(s, page, total)
 
     # ---- Slide 4: caso La Espiga ----
@@ -931,7 +972,7 @@ def generate_pptx_capacitacion(prod):
             "¿Dudas durante la operación?", size=42, bold=True, color=AMARILLO,
             align=PP_ALIGN.CENTER)
     textbox(s, Inches(0.5), Inches(4.0), Inches(12.3), Inches(0.8),
-            "Tu consultor sigue disponible. Datos de contacto en el Acta de cierre (producto 4.4.2).",
+            "El soporte sigue disponible: los datos de contacto están en el acta de cierre del proyecto.",
             size=18, color=BLANCO, align=PP_ALIGN.CENTER)
     textbox(s, Inches(0.5), Inches(5.0), Inches(12.3), Inches(0.6),
             "Este material puede actualizarse cuando se añadan nuevas FAQ o flujos.",
@@ -949,14 +990,10 @@ def generate_pptx_capacitacion(prod):
 # ===========================================================================
 
 def render_f21(criterios):
+    # Criterios literales del EC1830; el EC no marca requisitos taxativos.
     html = ""
     for c in criterios:
-        is_tax = "REQUISITO TAXATIVO" in c
-        text = c.replace(" (REQUISITO TAXATIVO)", "")
-        if is_tax:
-            html += f'<li>{text} <span class="taxativo">REQUISITO TAXATIVO</span></li>\n'
-        else:
-            html += f'<li>{text}</li>\n'
+        html += f'<li>{c}</li>\n'
     return html
 
 
@@ -967,14 +1004,14 @@ def render_questions_word(preguntas):
             f'<div class="question-block">\n'
             f'<div><span class="question-num">{i}</span><span class="question-title">{title}</span></div>\n'
             f'<div class="question-help">{help_text}</div>\n'
-            f'<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>\n'
+            f'<div class="fill-area">[Escribe aquí tu respuesta con los datos de tu proyecto. Borra esta línea cuando empieces.]</div>\n'
             f'</div>\n'
         )
     return html
 
 
 def render_questions_excel(preguntas):
-    html = '<table class="matrix">\n<tr><th style="width: 4%;">#</th><th style="width: 28%;">Pregunta guía</th><th>Tu respuesta (llena con datos de TU MiPyME)</th></tr>\n'
+    html = '<table class="matrix">\n<tr><th style="width: 4%;">#</th><th style="width: 28%;">Pregunta guía</th><th>Tu respuesta (con los datos de tu proyecto)</th></tr>\n'
     for i, (title, help_text) in enumerate(preguntas, 1):
         html += (
             f'<tr>\n'
@@ -1064,7 +1101,7 @@ def render_indicators_example(num):
         )
     return f"""
 <h2>Tabla antes/después de indicadores</h2>
-<p style="font-size: 10pt; color: #4B5563;">Por cada indicador del proyecto, registra la línea base, el valor actual y la variación. Cumple con el primer criterio del F21 explícitamente.</p>
+<p style="font-size: 10pt; color: #4B5563;">Por cada indicador del proyecto, registra la línea base, el valor actual y la variación. Así cubres de forma explícita el primer criterio del EC1830.</p>
 <table class="matrix">
 <tr><th style="width:4%;">#</th><th style="width:30%;">Indicador</th><th style="width:14%;">Línea base</th><th style="width:14%;">Valor actual</th><th style="width:14%;">Variación %</th><th>Observación</th></tr>
 {rows}
@@ -1135,7 +1172,7 @@ def main():
         else:
             filepath.write_text(content, encoding="utf-8")
         print(f"  [ok] {filename}  ({p['format'].upper()})")
-    print(f"\nGenerados {len(PRODUCTS)} templates en {OUT}/")
+    print(f"\nGeneradas {len(PRODUCTS)} plantillas en {OUT}/")
     import subprocess
     import sys
     subprocess.run([sys.executable, str(ROOT / "scripts" / "convert-legacy-office.py")], check=True)
