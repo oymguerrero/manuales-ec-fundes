@@ -303,13 +303,19 @@ def estilizar_tabla(table, filas_encabezado=(0,)):
 CLAVE_OFICIAL = {"a": "EC1830", "b": "EC1835", "c": "EC1848", "d": "EC1836"}
 
 
-def antetitulo(ruta):
-    """'Plantilla de trabajo · EC1830', deducido de la carpeta contenedora."""
+def codigo_ec(ruta):
+    """'EC1835' para estandar-b/templates/..., o '' si la ruta no es de un estándar."""
     carpeta = ruta.parent.parent.name
     if carpeta.startswith("estandar-") and len(carpeta) == len("estandar-x"):
-        clave = CLAVE_OFICIAL.get(carpeta[-1].lower())
-        if clave:
-            return "Plantilla de trabajo · %s" % clave
+        return CLAVE_OFICIAL.get(carpeta[-1].lower(), "")
+    return ""
+
+
+def antetitulo(ruta):
+    """'Plantilla de trabajo · EC1830', deducido de la carpeta contenedora."""
+    clave = codigo_ec(ruta)
+    if clave:
+        return "Plantilla de trabajo · %s" % clave
     return "Plantilla de trabajo"
 
 
@@ -465,17 +471,10 @@ def _deck(document, nodo, tamano=9, color=None):
 
 
 def provisional_language(markup):
-    """Evita presentar los insumos de trabajo como estándares ya publicados."""
-    replacements = {
-        "Qué evalúa el F21 oficial": "Referencia de trabajo del F21",
-        "F21 oficial": "versión de trabajo del F21",
-        "documento oficial del estándar": "documento de trabajo de la propuesta",
-        "documento oficial": "documento de trabajo",
-        "glosario oficial": "glosario de trabajo",
-        "estándar publicado por CONOCER": "propuesta de estándar aún no publicada",
-    }
-    for original, replacement in replacements.items():
-        markup = markup.replace(original, replacement)
+    """Ya no reescribe nada: los cuatro estándares se publicaron en el DOF el 28-oct-2026.
+
+    Antes convertía, por ejemplo, «estándar publicado por CONOCER» en «propuesta de estándar
+    aún no publicada». Se conserva la función para no tocar a quien la llama."""
     return markup
 
 
@@ -635,7 +634,7 @@ def _hoja_de_guia(workbook, soup, source):
         fila += 1
     if caja:
         encabezado = caja.find(["h2", "h3", "h4"])
-        escribir(clean_text(encabezado) if encabezado else "Referencia de trabajo del F21",
+        escribir(clean_text(encabezado) if encabezado else "Criterios del %s" % (codigo_ec(source) or "estándar"),
                  tamano=11, negrita=True, color=AZUL_PROFUNDO)
         for punto in caja.find_all("li"):
             escribir("•  " + clean_text(punto), alto=28)
