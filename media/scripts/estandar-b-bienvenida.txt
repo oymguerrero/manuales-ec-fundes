@@ -1,17 +1,13 @@
-<speak>
-Bienvenida al Manual del Estándar B: Crear soluciones comerciales con inteligencia artificial en la MiPyME.
-<break time="700ms"/>
-Este estándar es para quienes crean algo nuevo. No para quienes optimizan lo que ya existe, sino para quienes investigan una necesidad que aún no tiene solución, conceptualizan una propuesta, construyen un prototipo funcional y lo ponen a prueba con usuarios reales.
-<break time="800ms"/>
-Es un estándar de innovación con metodología. Y como toda innovación que vale, comienza por escuchar, antes de construir.
-<break time="700ms"/>
-A lo largo de este manual te acompañará el caso de Artesanías Tonalli. Un negocio familiar dirigido por Lucía, artesana oaxaqueña con veinte años de oficio, que enfrenta el reto de vender en línea piezas únicas que son casi imposibles de describir con palabras. Diego, consultor en innovación, será quien aplique el proceso completo del estándar con ella.
-<break time="800ms"/>
-En cada elemento verás cómo Diego y Lucía avanzan juntos, desde la primera entrevista de campo hasta la recomendación final de implementar o ajustar.
-<break time="600ms"/>
-Hay cuatro elementos en este estándar. Identificar. Conceptualizar. Desarrollar. Y validar. Cada uno tiene sus documentos, sus desempeños observables y su lógica propia.
-<break time="700ms"/>
-Cuando termines de recorrer este manual, sabrás exactamente qué se te pedirá en tu evaluación y tendrás las herramientas para demostrarlo con confianza.
-<break time="500ms"/>
+Te damos la bienvenida al curso EC1835: Creación de soluciones comerciales con Inteligencia Artificial en la MiPyME.
+
+Este estándar es para quienes crean algo nuevo para una MiPyME. No se limita a optimizar lo que ya existe: pide investigar una necesidad, conceptualizar una solución comercial, construir un prototipo con inteligencia artificial y validarlo con usuarios.
+
+Es innovación con método. Y como toda innovación que vale, empieza por escuchar antes de construir.
+
+En todo el curso te acompaña el caso de Artesanías Tonalli, un taller familiar de barro bruñido. Lucía, su fundadora y maestra alfarera, quiere vender en línea piezas únicas que son difíciles de describir con palabras. Rosa, que maneja las redes sociales del taller, trabaja con ella. Y Diego, consultor en innovación, aplica con ambas el proceso completo del estándar.
+
+El EC1835 tiene cuatro elementos: identificar necesidades y oportunidades de mercado, conceptualizar la solución, desarrollar el prototipo y validarlo con usuarios. Los cuatro piden productos y conocimientos; los tres últimos, además, desempeños que se observan en vivo.
+
+Al terminar, sabrás qué se te pedirá en tu evaluación y tendrás plantillas y prácticas para prepararte con confianza.
+
 Empecemos.
-</speak>

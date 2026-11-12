@@ -1,15 +1,13 @@
-<speak>
-Elemento tres: <emphasis level="moderate">Desarrollar el prototipo del producto o servicio con inteligencia artificial.</emphasis>
-<break time="700ms"/>
-El concepto aprobado por el cliente ahora se vuelve tangible. El consultor construye el prototipo funcional usando herramientas de inteligencia artificial disponibles en el mercado, lo presenta al cliente y realiza una prueba funcional con un caso de uso real.
-<break time="800ms"/>
-Este elemento produce dos documentos. El prototipo funcional documentado y el reporte de prueba funcional.
-<break time="700ms"/>
-Hay dos desempeños observables. Primero, la presentación formal del prototipo al cliente, con demostración en vivo. Segundo, la ejecución de la prueba funcional: el sistema corre con datos o imágenes reales, no con ejemplos de laboratorio.
-<break time="800ms"/>
-Esta distinción importa. Un prototipo que solo funciona con casos perfectos no es suficiente para la evaluación. Lo que importa es que puedas demostrar que probaste el sistema en condiciones cercanas a las reales y documentaste los resultados, incluyendo lo que no funcionó como se esperaba.
-<break time="700ms"/>
-En Artesanías Tonalli, Diego construye el asistente en cuatro días usando una API de visión y un modelo de lenguaje. Lo presenta a Lucía con tres piezas reales del taller. Dos descripciones salen excelentes. Una requiere ajuste en el prompt. Todo queda registrado.
-<break time="600ms"/>
-El prototipo está en pie. Ahora viene la pregunta más importante: ¿funciona para los usuarios reales?
-</speak>
+Elemento tres: Desarrollar el prototipo de la solución comercial con inteligencia artificial en la MiPyME.
+
+El concepto que aprobó el cliente se vuelve tangible. El consultor construye un prototipo funcional con herramientas de inteligencia artificial, lo documenta y prepara cómo se va a validar.
+
+Este elemento pide dos productos: la documentación del prototipo funcional y el plan de experimentación, con hipótesis que el cliente selecciona en cuatro categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad.
+
+Y dos desempeños observables. Primero, presentar el prototipo al cliente: explicar la solución, su operación técnica y las herramientas que usa, en un lenguaje que el cliente entienda. Segundo, hacer con él una prueba funcional con un caso de uso.
+
+Importa probar en condiciones parecidas al uso cotidiano y registrar también lo que no salió como esperabas. La actitud que se observa es la responsabilidad: cumplir íntegramente con los requisitos de calidad del diseño del prototipo.
+
+En Artesanías Tonalli, Diego construye el asistente en dos semanas, con un modelo de inteligencia artificial que analiza la foto y otro que redacta la ficha. Lo presenta a Lucía con tres piezas del taller: dos fichas salen correctas y una con el color impreciso, que Diego corrige ajustando el prompt.
+
+El prototipo ya funciona. Ahora viene la pregunta más importante: ¿les sirve a los usuarios?

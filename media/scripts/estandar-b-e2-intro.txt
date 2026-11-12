@@ -1,5 +1,11 @@
-Elemento 2: Conceptualizar. Con las necesidades claras, comienza la fase creativa: ideación, propuesta de valor y modelo de negocio del producto.
+Elemento dos: Conceptualizar soluciones comerciales con inteligencia artificial en la MiPyME.
 
-El estándar contempla tres documentos y dos desempeños observables: facilitar una sesión de ideación con el cliente y presentar la propuesta de prototipo.
+Con las necesidades claras, empieza la fase creativa: generar ideas con el cliente, elegir la mejor, definir su modelo de negocio y diseñar cómo va a funcionar el prototipo.
 
-En Tonalli, Diego practica esta función con Lucía para generar ideas sobre cómo resolver la descripción de piezas únicas con Inteligencia Artificial.
+Este elemento pide cuatro productos: el informe del proceso de ideación, la matriz de ideas de solución validada por el cliente, el modelo de negocio y el diseño del modelo de funcionamiento del prototipo.
+
+Y dos desempeños que se observan en vivo: facilitar la sesión de ideación con el cliente y facilitar la sesión en la que le presentas la propuesta del prototipo.
+
+Aquí cuentan dos actitudes: la cooperación, para integrar las propuestas del cliente, y la iniciativa, para proponer alternativas y herramientas adecuadas a su contexto.
+
+En Artesanías Tonalli, Diego facilita una sesión de ideación de dos horas con Lucía y Rosa. De ahí sale la idea ganadora: un asistente que convierte la foto de una pieza en su ficha de producto.
