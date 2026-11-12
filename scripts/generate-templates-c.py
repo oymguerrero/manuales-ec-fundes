@@ -1,122 +1,131 @@
 #!/usr/bin/env python3
 """
-Genera los 9 templates de los productos del Estándar C · Implementar mercadotecnia digital
-con IA en MiPyMEs (Estándar C · Crear contenido de mercadotecnia digital con IA).
+Genera las 10 plantillas de los productos del EC1848 · Prestación de servicios de
+consultoría en mercadotecnia digital con Inteligencia Artificial en la MiPyME (Ruta C).
 
-- 8 Word (.doc) como HTML estilizado con MIME Office
-- 1 Excel (.xls) como HTML estilizado con MIME Office
+- 9 Word (.doc) como HTML estilizado con MIME Office
+- 1 Excel (.xls) como HTML estilizado con MIME Office (el reporte 4.1, que calcula)
 
-Caso pedagógico: Cafetería La Cuesta — café de especialidad en zona universitaria,
-6 empleados, dueña Mariana (tuesta su propio café). Publican en redes sociales de
-forma irregular y sin estrategia. Quieren atraer al público universitario y posicionar
-el café de especialidad frente a las cadenas.
+convert-legacy-office.py las convierte después a .docx/.xlsx reales.
 
-Filosofía pedagógica: NO darle la solución al aspirante. Cada template muestra:
-  (1) el criterio F21 literal
-  (2) ejemplo breve del caso La Cuesta (solo ilustrativo)
-  (3) preguntas guía que el aspirante responde con datos de SU MiPyME real
+Caso pedagógico: Cafetería La Cuesta, café de especialidad en zona universitaria que
+tuesta su propio café (6 empleados). Mariana, dueña y fundadora, es la persona
+responsable de la mercadotecnia digital; Martín es el consultor. Los datos del caso
+salen de la ficha única del caso del curso y no se inventan aquí.
+
+Filosofía pedagógica: no darle la solución al aspirante. Cada plantilla muestra:
+  (1) los criterios literales del EC1848 publicado en el DOF (28-oct-2026)
+  (2) un ejemplo breve del caso La Cuesta (solo ilustrativo)
+  (3) preguntas guía que el aspirante responde con los datos de la MiPyME con la
+      que trabaja
+
+Los criterios se copian tal cual del EC; solo se quitan la coma y la «y»/«e» con que
+el EC encadena cada criterio con el siguiente, porque aquí van en lista con letra.
 
 Uso:
-    python3 scripts/generate-templates-c.py
+    python -X utf8 scripts/generate-templates-c.py
 
-Salida: estandar-c/templates/<num_con_guiones>-<slug>.{doc|xls}
+Salida: estandar-c/templates/<num_con_guiones>-<slug>.{docx|xlsx}
 """
 
-import os
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
 OUT = ROOT / "estandar-c" / "templates"
 OUT.mkdir(parents=True, exist_ok=True)
 
+EC = "EC1848"
+
 PRODUCTS = [
     # -----------------------------------------------------------------------
-    # ELEMENTO 1 · PLANIFICAR
+    # ELEMENTO 1 · E5881 · PLANIFICAR
     # -----------------------------------------------------------------------
     {
         "num": "1.1",
         "slug": "1-1-expediente-informacion",
         "format": "word",
-        "elemento": "1 · Planificar",
-        "title": "Expediente de información clave de la MiPyME, documentado",
+        "elemento": "1 · E5881",
+        "title": "El expediente de información clave de la MiPyME, documentado",
         "intro": (
-            "Es el punto de partida del proyecto: un expediente completo con el perfil "
-            "empresarial, datos de contacto del responsable de mercadotecnia, productos/servicios "
-            "a promover, metas comerciales, plataformas digitales activas, métricas de presencia "
-            "actual, análisis de contenido existente, perfil de audiencia objetivo y el acuerdo "
-            "de confidencialidad firmado."
+            "Es el punto de partida del servicio: reúne lo que necesitas saber de la MiPyME "
+            "antes de diseñar la estrategia. Perfil empresarial, persona responsable de la "
+            "mercadotecnia digital, productos o servicios a promover, metas comerciales, "
+            "plataformas y métricas actuales, análisis del contenido existente, audiencia "
+            "objetivo y el acuerdo de confidencialidad firmado."
         ),
-        "f21": [
-            "(a) Contiene el perfil empresarial incluyendo: el nombre de la empresa/marca comercial, "
-            "giro, misión, visión, valores y ubicación",
-            "(b) Incluye los datos de contacto de la persona responsable del mercadotecnia digital en la "
-            "MiPyME: nombre, cargo, correo electrónico y teléfono",
-            "(c) Incluye el listado de productos/servicios a promover a través del mercadotecnia digital",
-            "(d) Especifica las metas comerciales por un periodo de tiempo considerando volumen de "
-            "ventas/medio de captación de clientes",
+        "criterios": [
+            "(a) Contiene el perfil empresarial incluyendo: el nombre de la empresa/marca comercial, giro, misión, visión, valores y ubicación",
+            "(b) Incluye los datos de contacto de la persona responsable de la mercadotecnia digital en la MiPyME: nombre, cargo, correo electrónico y teléfono",
+            "(c) Incluye el listado de productos/servicios a promover a través de la mercadotecnia digital",
+            "(d) Especifica las metas comerciales por un periodo de tiempo considerando volumen de ventas/medio de captación de clientes",
             "(e) Incluye el listado de plataformas digitales en los que tiene presencia actual la MiPyME",
-            "(f) Detalla las métricas de presencia digital con las que cuenta la MiPyME",
-            "(g) Cuenta con el análisis del contenido existente, especificando tipo, frecuencia y nivel "
-            "de interacción por cada plataforma digital",
-            "(h) Contiene descrito el perfil de la audiencia objetivo, considerando al menos tres "
-            "variables de segmentación: características demográficas, intereses y comportamiento digital",
-            "(i) Tiene el acuerdo de confidencialidad firmado por la persona responsable de la "
-            "información y el proveedor de servicios",
+            "(f) Contiene descritas y organizadas por tipo las métricas de presencia digital con las que cuenta la MiPyME",
+            "(g) Cuenta con el análisis del contenido existente, especificando tipo, frecuencia y nivel de interacción por cada plataforma digital",
+            "(h) Contiene descrito el perfil de la audiencia objetivo, considerando al menos tres variables de segmentación: características demográficas, intereses y comportamiento digital",
+            "(i) Tiene el acuerdo de confidencialidad firmado por la persona responsable de la información y el proveedor de servicios",
         ],
         "caso": (
-            "Cafetería La Cuesta · zona universitaria · café de especialidad. "
-            "Mariana (dueña): mariana@lacuesta.mx / 55-1234-5678. "
-            "Plataformas activas: Instagram (890 seguidores, 3 posts/semana), "
-            "Facebook (420 seguidores, 1-2 posts/semana). "
-            "Contenido actual: fotos sin edición de cafés, textos improvisados, sin hashtags estratégicos. "
-            "Audiencia: universitarios 18-28 años que buscan espacios de estudio + café de calidad. "
-            "Meta: +200 seguidores/mes y +15% de visitas al local en 3 meses."
+            "Cafetería La Cuesta: café de especialidad en zona universitaria, México; tuesta su "
+            "propio café y tiene 6 empleados. Responsable de la mercadotecnia digital: Mariana, "
+            "dueña y fundadora desde hace 7 años (en el expediente van su cargo, correo y "
+            "teléfono). Plataformas con presencia actual: Instagram, con 1,240 seguidores y "
+            "publicaciones irregulares, cuando «hay tiempo»; WhatsApp Business, que a veces "
+            "atiende Sonia, la empleada de turno, y Google My Business, sin actualizar desde que "
+            "cambiaron el horario hace dos años. No había misión escrita, ni perfil de audiencia, "
+            "ni lineamientos de tono o de colores: el expediente es el primer lugar donde quedan "
+            "por escrito. Audiencia objetivo: universitarios de 18 a 25 años que buscan un lugar "
+            "para estudiar o reunirse. Reto comercial: atraer al público universitario y "
+            "posicionar el café de especialidad frente a las cadenas."
         ),
         "preguntas": [
             (
-                "Perfil empresarial completo",
-                "Nombre de la empresa, marca comercial, giro, misión, visión, valores y ubicación "
-                "de la MiPyME con la que trabajas.",
+                "Perfil empresarial",
+                "Escribe el nombre de la empresa o marca comercial, su giro, misión, visión, "
+                "valores y ubicación. Si la MiPyME no tiene misión, visión o valores por escrito, "
+                "redáctalos con la persona responsable y anota que los acordaron juntos.",
             ),
             (
-                "Contacto de la persona responsable de mercadotecnia",
-                "¿Quién en la MiPyME es responsable del mercadotecnia digital? "
-                "Nombre completo, cargo, correo y teléfono.",
+                "Persona responsable de la mercadotecnia digital",
+                "Nombre, cargo, correo electrónico y teléfono de la persona responsable de la "
+                "mercadotecnia digital en la MiPyME con la que trabajas.",
             ),
             (
-                "Productos y servicios a promover",
-                "¿Qué productos o servicios vas a promover con el contenido digital? "
-                "Lista al menos 3 con una descripción breve de cada uno.",
+                "Productos o servicios a promover",
+                "¿Qué productos o servicios va a promover la MiPyME con la mercadotecnia digital? "
+                "Haz el listado con una descripción breve de cada uno.",
             ),
             (
                 "Metas comerciales",
-                "¿Qué quiere lograr la MiPyME en los próximos 3-6 meses? "
-                "Define metas en términos de seguidores, alcance, clientes o ventas.",
+                "¿Qué quiere lograr la MiPyME y en qué periodo? Exprésalo en volumen de ventas o "
+                "en el medio por el que capta a sus clientes, por ejemplo pedidos por mensajería "
+                "o visitas al local.",
             ),
             (
-                "Plataformas digitales actuales",
-                "¿En qué plataformas digitales tiene presencia la MiPyME hoy? "
-                "Lista todas: redes sociales, sitio web, marketplace, WhatsApp Business.",
+                "Plataformas digitales con presencia actual",
+                "Haz el listado de las plataformas digitales donde la MiPyME tiene presencia hoy: "
+                "redes sociales, mensajería, ficha de negocio, sitio web o tienda en línea.",
             ),
             (
-                "Métricas de presencia digital actual",
-                "Por cada plataforma: ¿cuántos seguidores tiene? ¿Cuál es su tasa de interacción "
-                "promedio? ¿Con qué frecuencia publica?",
+                "Métricas de presencia digital, organizadas por tipo",
+                "Agrupa por tipo las métricas con las que cuenta la MiPyME: comunidad (seguidores, "
+                "contactos), alcance e impresiones, interacción y conversión (clics, mensajes, "
+                "pedidos). Anota la plataforma y la fecha de cada dato.",
             ),
             (
                 "Análisis del contenido existente",
-                "¿Qué tipo de contenido publica actualmente la MiPyME? ¿Con qué frecuencia? "
-                "¿Qué publicaciones han funcionado mejor y por qué?",
+                "Por cada plataforma: ¿qué tipo de contenido publica la MiPyME, con qué "
+                "frecuencia y qué nivel de interacción tiene?",
             ),
             (
                 "Perfil de la audiencia objetivo",
-                "¿A quién quiere llegar la MiPyME? Describe al menos 3 variables: "
-                "características demográficas, intereses y comportamiento digital.",
+                "¿A quién quiere llegar la MiPyME? Descríbelo con al menos tres variables de "
+                "segmentación: características demográficas, intereses y comportamiento digital.",
             ),
             (
                 "Acuerdo de confidencialidad",
-                "¿Firmaste el acuerdo de confidencialidad con la MiPyME? "
-                "Adjunta la evidencia o describe las condiciones acordadas.",
+                "¿Quién firmó el acuerdo de confidencialidad por parte de la MiPyME y en qué "
+                "fecha? Anexa el acuerdo firmado por la persona responsable de la información y "
+                "por ti, como proveedor de servicios.",
             ),
         ],
     },
@@ -124,169 +133,171 @@ PRODUCTS = [
         "num": "1.2",
         "slug": "1-2-estrategia-contenido",
         "format": "word",
-        "elemento": "1 · Planificar",
-        "title": "Estrategia de contenido de mercadotecnia digital de la MiPyME utilizando IA, diseñada",
+        "elemento": "1 · E5881",
+        "title": "La estrategia de contenido de mercadotecnia digital de la MiPyME utilizando IA, diseñada",
         "intro": (
-            "Define la voz y personalidad de marca, los lineamientos de tono por plataforma, "
-            "los tipos de contenido recomendados por etapa del embudo, el calendario de publicación "
-            "para al menos cuatro semanas, los horarios óptimos, las temporadas comerciales relevantes, "
-            "los objetivos medibles y el presupuesto de implementación. Debe contar con la aprobación "
-            "documentada de la persona responsable de mercadotecnia en la MiPyME."
+            "Define cómo va a comunicar la MiPyME en sus plataformas digitales durante al menos "
+            "cuatro semanas: voz y tono de la marca, contenido por etapa del embudo de ventas, "
+            "tabla de análisis por plataforma, horarios, temporadas, objetivos medibles, "
+            "presupuesto y la evidencia de que la persona responsable la aprobó."
         ),
-        "f21": [
+        "criterios": [
             "(a) Especifica la definición de la voz y personalidad de marca para el contenido digital",
             "(b) Incluye los lineamientos de tono y estilo por plataforma digital",
-            "(c) Precisa los tipos de contenido digital de texto/imagen/audio/video recomendados "
-            "por etapa del embudo de ventas de acuerdo con la información clave recabada en el levantamiento",
-            "(d) Contiene la tabla de análisis conformada por: la justificación de la(s) plataforma(s) "
-            "digital(es) a utilizar por audiencia, el tipo de formato con especificaciones técnicas, "
-            "las herramientas/plataformas de IA recomendadas por tipo de contenido digital y la "
-            "frecuencia de publicación acorde a la capacidad operativa",
-            "(e) Indica los horarios de publicación sugeridos por plataforma digital conforme a las "
-            "recomendaciones de la IA y a los hábitos del público objetivo",
+            "(c) Precisa los tipos de contenido digital de texto/imagen/audio/video recomendados por etapa del embudo de ventas de acuerdo con la información clave recabada en el levantamiento",
+            "(d) Contiene la tabla de análisis conformada por: la justificación de la(s) plataforma(s) digital(es) a utilizar por audiencia, el tipo de formato con especificaciones técnicas, las herramientas/plataformas de IA recomendadas por tipo de contenido digital y la frecuencia de publicación acorde a la capacidad operativa",
+            "(e) Indica los horarios de publicación sugeridos por plataforma digital conforme a las recomendaciones de la IA y a los hábitos del público objetivo",
             "(f) Incluye la vinculación a las temporadas comerciales relevantes para el sector del negocio",
-            "(g) Especifica la distribución de los tipos de contenido digital a lo largo del periodo, "
-            "considerando al menos cuatro semanas de planificación",
-            "(h) Incluye al menos dos objetivos medibles vinculados al negocio y sus respectivas "
-            "métricas de seguimiento",
-            "(i) Incluye el presupuesto/monto de inversión requerido de implementación, de acuerdo "
-            "con el contexto de la MiPyME",
-            "(j) Contiene la evidencia de aprobación de la estrategia de mercadotecnia digital planteada "
-            "por parte de la persona responsable del mercadotecnia digital en la MiPyME",
+            "(g) Especifica la distribución de los tipos de contenido digital a lo largo del periodo, considerando al menos cuatro semanas de planificación",
+            "(h) Incluye al menos dos objetivos medibles vinculados al negocio y sus respectivas métricas de seguimiento",
+            "(i) Incluye el presupuesto/monto de inversión requerido de implementación, de acuerdo con las necesidades de la MiPyME",
+            "(j) Contiene la evidencia de aprobación de la estrategia de mercadotecnia digital planteada por parte de la persona responsable de la mercadotecnia digital en la MiPyME",
         ],
         "caso": (
-            "Voz de marca: 'el café de tu rincón favorito' — cálida, cercana, educativa sobre café "
-            "de especialidad, con orgullo local. Tono por plataforma: Instagram (aspiracional + visual); "
-            "Facebook (informativo + comunitario). Semana tipo: 5 posts semanales entre ambas plataformas "
-            "— lunes receta/tip; miércoles origen del café de temporada; viernes invitación al local. "
-            "Herramientas IA recomendadas: ChatGPT/Claude para copy de texto; Midjourney/Canva IA para "
-            "imágenes; ElevenLabs para reels con narración. Temporada clave: inicio de semestre (agosto "
-            "y enero), exámenes finales (noviembre y mayo). Objetivo 1: +200 seguidores/mes en Instagram. "
-            "Objetivo 2: +15% de visitas al local desde redes en 3 meses."
+            "Mariana eligió la ruta con Instagram y WhatsApp Business porque le importa el "
+            "cliente que regresa. Distribución de 4 semanas: Reels del proceso de tueste en "
+            "Instagram los lunes y jueves; posts estáticos de producto los martes; carruseles "
+            "educativos sobre café de especialidad los viernes, y mensajes de difusión en "
+            "WhatsApp Business cada semana. Herramientas: una herramienta de IA generativa de "
+            "texto, una de imagen, una de audio y una de video, según el tipo de contenido. "
+            "Temporadas vinculadas: regreso a clases, Día de Muertos, temporada navideña y Día "
+            "de las Madres. Objetivos medibles: subir 20 % la interacción en Instagram y sumar "
+            "50 contactos nuevos a la lista de WhatsApp, cada uno con su métrica y su "
+            "presupuesto. Mariana pidió bajar la frecuencia en temporada alta a dos "
+            "publicaciones más una historia; Martín ajustó la estrategia, ella firmó la hoja de "
+            "aprobación y él se la envió también por correo."
         ),
         "preguntas": [
             (
                 "Voz y personalidad de marca",
-                "¿Cómo describe la MiPyME su personalidad de marca? ¿Con qué adjetivos se identifica? "
-                "¿A qué marcas aspira parecerse en tono?",
+                "¿Cómo habla la marca y qué personalidad quiere transmitir en su contenido "
+                "digital? Defínela con tres o cuatro rasgos y escribe una frase que la marca sí "
+                "diría y otra que no.",
             ),
             (
                 "Tono y estilo por plataforma",
-                "¿Cómo varía el tono en Instagram vs Facebook vs TikTok? "
-                "¿Qué restricciones de estilo aplican en cada plataforma?",
+                "¿Cómo se ajustan el tono y el estilo en cada plataforma digital que vas a usar? "
+                "Escribe los lineamientos de cada una.",
             ),
             (
-                "Tipos de contenido por etapa del embudo",
-                "¿Qué contenido vas a usar para que te descubran (reconocimiento)? "
-                "¿Para que te consideren (consideración)? ¿Para que te compren (conversión)? "
-                "¿Para que te recomienden (fidelización)?",
+                "Tipos de contenido por etapa del embudo de ventas",
+                "Con base en el expediente, ¿qué tipos de contenido de texto, imagen, audio o "
+                "video recomiendas para cada etapa del embudo: reconocimiento, consideración, "
+                "compra y fidelización?",
             ),
             (
-                "Tabla de análisis de plataformas",
-                "Por cada plataforma elegida: justifica por qué ese público está ahí, qué formato "
-                "usarás (feed/story/reel/post), qué herramienta IA usarás y con qué frecuencia publicarás.",
+                "Tabla de análisis por plataforma",
+                "Llena la «Tabla de análisis por plataforma» al final de esta plantilla: por qué "
+                "usar cada plataforma con esa audiencia, el formato con sus especificaciones "
+                "técnicas, la herramienta de IA por tipo de contenido y la frecuencia que la "
+                "MiPyME puede sostener. Aquí anota lo que no quepa en la tabla.",
             ),
             (
                 "Horarios de publicación",
-                "¿A qué horas publicas en cada plataforma? ¿Qué te dice la IA o las analíticas "
-                "sobre los mejores horarios para tu audiencia?",
+                "¿Qué horarios sugieres en cada plataforma? Explica cómo combinaste la "
+                "recomendación de la IA con los hábitos de la audiencia objetivo.",
             ),
             (
-                "Temporadas comerciales relevantes",
-                "¿Qué fechas o eventos del año son clave para el negocio? "
-                "¿Cómo los integras al calendario de contenido?",
+                "Temporadas comerciales",
+                "¿Qué temporadas comerciales son relevantes para el sector de la MiPyME y qué "
+                "contenido se vincula con cada una?",
             ),
             (
-                "Distribución de contenido (al menos 4 semanas)",
-                "Elabora el calendario de publicación para las primeras 4 semanas: "
-                "fecha, plataforma, tipo de contenido, tema.",
+                "Distribución del contenido en al menos cuatro semanas",
+                "Llena la tabla «Distribución del contenido» al final de esta plantilla, semana "
+                "por semana: día, plataforma, tipo de contenido y tema.",
             ),
             (
                 "Objetivos medibles",
-                "Define al menos 2 objetivos con número, plazo y métrica. "
-                "Ejemplo: 'Crecer 200 seguidores en Instagram en 90 días, medido con las analíticas nativas.'",
+                "Escribe al menos dos objetivos medibles vinculados al negocio, cada uno con su "
+                "métrica de seguimiento.",
             ),
             (
-                "Presupuesto de implementación",
-                "¿Cuánto propones invertir? Detalla: herramientas de IA (costo mensual), "
-                "publicidad pagada (presupuesto por semana), horas de trabajo estimadas.",
+                "Presupuesto o monto de inversión",
+                "¿Cuánto se requiere invertir para implementar la estrategia? Desglosa "
+                "herramientas de IA, promoción pagada y otros costos, de acuerdo con las "
+                "necesidades de la MiPyME.",
             ),
             (
                 "Evidencia de aprobación",
-                "¿Cómo documentarás que la persona responsable aprobó la estrategia? "
-                "Correo de confirmación, firma en el documento, captura de pantalla de mensaje.",
+                "¿Cómo queda documentada la aprobación de la persona responsable de la "
+                "mercadotecnia digital? Usa la tabla «Aprobación de la estrategia» o anexa el "
+                "correo o mensaje con que la aprobó.",
             ),
         ],
     },
 
     # -----------------------------------------------------------------------
-    # ELEMENTO 2 · GENERAR
+    # ELEMENTO 2 · E5882 · GENERAR
     # -----------------------------------------------------------------------
     {
         "num": "2.1",
         "slug": "2-1-portafolio-texto",
         "format": "word",
-        "elemento": "2 · Generar",
-        "title": "Contenido de texto del portafolio de mercadotecnia digital generado con IA, documentado",
+        "elemento": "2 · E5882",
+        "title": "El contenido de texto del portafolio de mercadotecnia digital generado con IA, documentado",
         "intro": (
-            "Documenta el proceso completo de generación de contenido de texto con IA: "
-            "la herramienta utilizada, el prompt estructurado (rol, contexto, tarea, audiencia, "
-            "formato, tono, restricciones), la versión final lista para publicar y la verificación "
-            "de originalidad, coherencia de marca, beneficios y llamados a la acción."
+            "Documenta una pieza de texto generada con IA: la herramienta y por qué la elegiste, "
+            "la estructura del prompt, la versión final para la plataforma de destino y cómo "
+            "cumple los criterios de calidad, redacción, beneficios y llamado a la acción."
         ),
-        "f21": [
-            "(a) Especifica la herramienta de IA utilizada para la generación contenido de texto",
-            "(b) Incluye la estructura del prompt/contenido de referencia para generación de contenido "
-            "de texto que incluya al menos el rol, el contexto, la tarea, la audiencia, el formato, "
-            "el tono de comunicación y las restricciones",
-            "(c) Contiene la versión final del texto generada con apoyo de la herramienta/plataforma "
-            "de IA para la(s) plataforma(s) digital(es) de destino",
-            "(d) Cumple con los criterios de calidad en cuanto a originalidad y coherencia con la marca",
+        "criterios": [
+            "(a) Especifica la herramienta de IA utilizada para la generación contenido de texto y la justificación de su elección",
+            "(b) Incluye la estructura del prompt/contenido de referencia para generación de contenido de texto que incluya al menos el rol, el contexto, la tarea, la audiencia, el formato, el tono de comunicación y las restricciones",
+            "(c) Contiene la versión final del texto generada con apoyo de la herramienta/plataforma de IA para la(s) plataforma(s) digital(es) de destino",
+            "(d) Cumple con los criterios de calidad en cuanto a coherencia con la marca, así como congruencia con la estrategia de mercadotecnia digital aprobada",
             "(e) Está redactado de forma clara, precisa y con apego a reglas de redacción y ortografía",
             "(f) Contiene los beneficios y llamados a la acción",
             "(g) Se adapta al formato de la(s) plataforma(s) digital(es) de destino",
         ],
         "caso": (
-            "Herramienta: Claude claude-sonnet-4-6. "
-            "Prompt estructura completa: 'Rol: eres redactor de contenido de mercadotecnia digital "
-            "especializado en cafeterías de especialidad. Contexto: Cafetería La Cuesta, zona "
-            "universitaria, café tostado en casa. Tarea: escribe el caption para un post de Instagram "
-            "del lunes. Audiencia: universitarios 18-28 años. Formato: caption de máximo 150 palabras "
-            "+ 5 hashtags. Tono: cálido, cercano, con dato de origen del café. Restricciones: sin "
-            "emojis excesivos, no usar la palabra «delicioso».' "
-            "Versión final: 'Hoy tostamos el Oaxaqueño de temporada. Notas de chocolate oscuro, "
-            "ciruela y un final largo. Ven a probarlo entre clases — de 8 a 8. ☕ "
-            "#CaféDeEspecialidad #LaCuesta #CaféOaxaqueño #ZonaUniversitaria #CaféTostado'"
+            "Herramienta: una herramienta de IA generativa de texto, elegida porque redacta en "
+            "español con el tono de la estrategia y permite iterar el prompt. Prompt: «Rol: eres "
+            "redactor de mercadotecnia digital de una cafetería de especialidad. Contexto: "
+            "Cafetería La Cuesta, en zona universitaria, tuesta su propio café. Tarea: escribe el "
+            "texto del carrusel educativo del viernes sobre qué es el café de especialidad. "
+            "Audiencia: universitarios de 18 a 25 años que buscan un lugar para estudiar o "
+            "reunirse. Formato: texto para Instagram de máximo 120 palabras, con los hashtags de "
+            "la cafetería. Tono: cálido, cercano y claro. Restricciones: sin datos de origen que "
+            "no estén verificados y sin mencionar a otras marcas.» Iteración: la primera versión "
+            "sonaba a anuncio; Martín pidió frases más cortas y una invitación a pasar a "
+            "estudiar. Versión final (inicio): «¿Qué hace especial a un café de especialidad? "
+            "Empieza en cómo se tuesta, y en La Cuesta lo tostamos aquí mismo.» El mensaje se "
+            "adaptó después como texto breve para la difusión semanal de WhatsApp Business."
         ),
         "preguntas": [
             (
-                "Herramienta de IA usada",
-                "¿Qué herramienta usaste para generar el texto? ¿Qué versión o modelo?",
+                "Herramienta de IA y por qué la elegiste",
+                "¿Qué herramienta de IA usaste para generar el texto y por qué es la adecuada "
+                "para este contenido?",
             ),
             (
-                "Estructura del prompt completo",
-                "Escribe el prompt exacto que usaste, con todos sus elementos: "
-                "rol, contexto, tarea, audiencia, formato, tono, restricciones.",
+                "Estructura del prompt",
+                "Escribe el prompt completo, o el contenido de referencia, con al menos rol, "
+                "contexto, tarea, audiencia, formato, tono de comunicación y restricciones.",
             ),
             (
                 "Versión final del texto",
-                "Copia aquí el texto final, ya editado y listo para publicar, "
-                "indicando para qué plataforma es.",
+                "Copia la versión final, ya revisada, e indica para qué plataforma digital es. "
+                "Anota qué cambiaste entre la primera versión y la final.",
             ),
             (
-                "Validación de originalidad y coherencia de marca",
-                "¿Cómo verificaste que el texto es original? "
-                "¿Cómo comprobaste que refleja la voz de la marca?",
+                "Coherencia con la marca y con la estrategia aprobada",
+                "¿Cómo comprobaste que el texto respeta la voz de la marca y lo que pide la "
+                "estrategia aprobada?",
+            ),
+            (
+                "Redacción y ortografía",
+                "¿Revisaste que el texto sea claro, preciso y sin faltas? Anota qué corregiste.",
             ),
             (
                 "Beneficios y llamados a la acción",
-                "¿Qué beneficio comunica el texto al lector? "
-                "¿Cuál es el llamado a la acción y dónde aparece?",
+                "¿Qué beneficio comunica el texto y cuál es su llamado a la acción?",
             ),
             (
                 "Adaptación al formato de la plataforma",
-                "¿Cumple con los límites de caracteres de la plataforma? "
-                "¿Incluye hashtags, menciones u otros elementos propios del medio?",
+                "¿Cómo adaptaste el texto a cada plataforma de destino: extensión, hashtags, "
+                "enlaces y saltos de línea?",
             ),
         ],
     },
@@ -294,65 +305,62 @@ PRODUCTS = [
         "num": "2.2",
         "slug": "2-2-portafolio-imagen",
         "format": "word",
-        "elemento": "2 · Generar",
-        "title": "Contenido de imagen del portafolio de mercadotecnia digital generado con IA, documentado",
+        "elemento": "2 · E5882",
+        "title": "El contenido de imagen del portafolio de mercadotecnia digital generado con IA, documentado",
         "intro": (
-            "Documenta el proceso de generación de imágenes con IA: la herramienta, el prompt "
-            "o imagen de referencia, la imagen final para cada plataforma, la verificación de "
-            "coherencia visual con la marca, la coherencia anatómica y física, y la relación de "
-            "aspecto correcta para la plataforma de destino."
+            "Documenta una imagen generada con IA: la herramienta y su justificación, el prompt "
+            "o la imagen de referencia, la versión final y la revisión de coherencia visual, "
+            "anatómica y física, de congruencia con la realidad y de relación de aspecto."
         ),
-        "f21": [
-            "(a) Especifica la herramienta de IA utilizada para la generación del contenido de imagen",
-            "(b) Incluye la estructura del prompt/imagen de referencia para la generación de contenido "
-            "de imagen",
-            "(c) Contiene la versión final de imagen generada con la herramienta/plataforma de IA "
-            "para la(s) plataforma(s) digital(es) de destino",
-            "(d) Cumple con los criterios de calidad en cuanto a la coherencia visual con la marca, "
-            "coherencia anatómica y física",
+        "criterios": [
+            "(a) Especifica la herramienta de IA utilizada para la generación del contenido de imagen y la justificación de su elección",
+            "(b) Incluye la estructura del prompt/imagen de referencia para la generación de contenido de imagen",
+            "(c) Contiene la versión final de imagen generada con la herramienta/plataforma de IA para la(s) plataforma(s) digital(es) de destino",
+            "(d) Cumple con los criterios de calidad en cuanto a la coherencia visual con la marca, coherencia anatómica y física",
             "(e) Es congruente con el requerimiento y el contexto/realidad",
             "(f) Tiene la relación de aspecto acorde con la(s) plataforma(s) digital(es) de destino",
         ],
         "caso": (
-            "Herramienta: Midjourney v6. "
-            "Prompt: 'A warm specialty coffee shop interior, latte art close-up, wooden bar, "
-            "glass jars with roasted coffee beans, warm golden lighting, cozy university neighborhood "
-            "atmosphere, Instagram square format --ar 1:1 --style raw'. Iteraciones: 3. "
-            "Imagen final: cuadrada 1:1, colores cálidos terracota y madera, sin texto sobreimpuesto "
-            "(el copy va en el caption). Verificación: la imagen no muestra logos de otras marcas, "
-            "el café latte art es proporcional y anatómicamente correcto, los granos son reconocibles "
-            "como café."
+            "Herramienta: una herramienta de IA generativa de imagen, elegida porque acepta una "
+            "foto de referencia y genera en formato cuadrado. Prompt: «Fotografía de producto: "
+            "taza de café de especialidad sobre una barra de madera, luz cálida de mañana, granos "
+            "recién tostados al fondo, estilo natural, formato cuadrado 1:1, sin texto y sin "
+            "logotipos de otras marcas.» Imagen final: cuadrada de 1080 × 1080 para el post de "
+            "producto de los martes en Instagram. Revisión: proporciones de la taza y del plato, "
+            "vapor y reflejos creíbles, y nada que La Cuesta no venda. En el Elemento 4, estos "
+            "posts sin persona fueron los de menor alcance, y el plan ajustó el prompt para "
+            "incluir personas."
         ),
         "preguntas": [
             (
-                "Herramienta de IA para imágenes",
-                "¿Qué herramienta usaste? (Midjourney, DALL-E, Adobe Firefly, Canva IA, "
-                "Imagen de Google...) ¿Qué versión?",
+                "Herramienta de IA y por qué la elegiste",
+                "¿Qué herramienta de IA usaste para generar la imagen y por qué es la adecuada "
+                "para el tipo de imagen que pide la estrategia?",
             ),
             (
-                "Prompt o parámetros de imagen",
-                "Escribe el prompt completo. Si usaste una imagen de referencia, descríbela. "
-                "¿Qué parámetros configuraste: estilo, relación de aspecto, nivel de detalle?",
+                "Prompt o imagen de referencia",
+                "Escribe el prompt completo, con sujeto, estilo, formato y restricciones, o "
+                "describe la imagen de referencia que usaste.",
             ),
             (
-                "Imagen final y plataforma de destino",
-                "Describe la imagen final o adjunta la captura. "
-                "¿Para qué plataforma está optimizada y en qué formato?",
+                "Versión final de la imagen",
+                "Inserta la imagen final o su enlace e indica la plataforma digital de destino.",
             ),
             (
-                "Coherencia visual con la marca",
-                "¿Cómo verificaste que la imagen es coherente con la identidad visual de la MiPyME? "
-                "¿Los colores, el estilo y el ambiente coinciden?",
+                "Coherencia visual, anatómica y física",
+                "¿La imagen respeta los colores y el estilo de la marca? ¿Revisaste manos, "
+                "rostros, objetos, sombras y reflejos? Anota qué corregiste.",
             ),
             (
-                "Coherencia anatómica y física",
-                "¿Revisaste que no haya distorsiones, objetos imposibles o personas con fisionomía "
-                "incorrecta? ¿Cómo lo corregiste si fue necesario?",
+                "Congruencia con el requerimiento y con la realidad",
+                "¿La imagen muestra lo que pidió la estrategia y algo que la MiPyME sí ofrece, "
+                "sin nada que pueda confundir al cliente?",
             ),
             (
-                "Relación de aspecto correcta",
-                "¿Usaste la relación de aspecto correcta para la plataforma? "
-                "(1:1 para feed de Instagram; 9:16 para stories y Reels; 16:9 para Facebook).",
+                "Relación de aspecto",
+                "¿Qué relación de aspecto usaste y por qué corresponde a la plataforma de "
+                "destino? Por ejemplo, 1:1 para una publicación cuadrada y 9:16 para historias y "
+                "Reels.",
             ),
         ],
     },
@@ -360,56 +368,53 @@ PRODUCTS = [
         "num": "2.3",
         "slug": "2-3-portafolio-audio",
         "format": "word",
-        "elemento": "2 · Generar",
-        "title": "Contenido de audio del portafolio de mercadotecnia digital generado con IA, documentado",
+        "elemento": "2 · E5882",
+        "title": "El contenido de audio del portafolio de mercadotecnia digital generado con IA, documentado",
         "intro": (
-            "Documenta el proceso de generación de audio con IA: la herramienta y voz seleccionada, "
-            "el guión o parámetros proporcionados, el audio final y su uso previsto, la verificación "
-            "de calidad de voz (claridad, dicción, naturalidad) y la coherencia con la personalidad "
-            "de marca de la MiPyME."
+            "Documenta un audio generado con IA, de narración por voz o de música: la "
+            "herramienta y su justificación, el prompt o los parámetros, la versión final y la "
+            "revisión de claridad, dicción, ritmo, naturalidad y coherencia con la marca."
         ),
-        "f21": [
-            "(a) Especifica la herramienta de IA utilizada para la generación del contenido de audio",
-            "(b) Incluye el prompt/los parámetros de contenido de audio de narración por voz/música "
-            "en la herramienta de IA elegida",
-            "(c) Contiene la versión final de audio generada con la herramienta/plataforma de IA "
-            "para la(s) plataforma(s) digital(es) de destino",
-            "(d) Cumple con los criterios de calidad en cuanto a la claridad de voz/sonido, "
-            "dicción/ritmo y la naturalidad de voz/sonido",
+        "criterios": [
+            "(a) Especifica la herramienta de IA utilizada para la generación del contenido de audio, y la justificación de su elección",
+            "(b) Incluye el prompt/los parámetros de contenido de audio de narración por voz/música en la herramienta de IA elegida",
+            "(c) Contiene la versión final de audio generada con la herramienta/plataforma de IA para la(s) plataforma(s) digital(es) de destino",
+            "(d) Cumple con los criterios de calidad en cuanto a la claridad de voz/sonido, dicción/ritmo y la naturalidad de voz/sonido",
             "(e) Tiene coherencia con la marca",
         ],
         "caso": (
-            "Herramienta: ElevenLabs (voz 'Rachel', español neutro). "
-            "Parámetros: stability 0.65, similarity_boost 0.75, modelo eleven_multilingual_v2. "
-            "Guión: 'En La Cuesta tostamos nuestro propio café. Ven a descubrir el sabor del café "
-            "de especialidad hecho con cuidado, en tu zona universitaria.' Duración: 12 segundos. "
-            "Uso: narración de fondo para Reel de Instagram. Verificación: se escuchó en auriculares "
-            "— dicción clara, sin pausas artificiales, tono cálido y coincide con la voz de marca."
+            "Herramienta: una herramienta de IA generativa de audio con voces en español de "
+            "México, elegida porque deja ajustar ritmo, tono y emoción. Parámetros: narración por "
+            "voz, tono cálido, ritmo pausado, 15 segundos, sin música con derechos de autor. "
+            "Guion: «En La Cuesta tostamos nuestro propio café. Ven a estudiar, a platicar o nada "
+            "más a probarlo.» Uso: narración para las Stories de Instagram. Revisión: Martín la "
+            "escuchó en el celular, con y sin audífonos; en la segunda generación ajustó el ritmo "
+            "para que el nombre de la cafetería se entendiera bien."
         ),
         "preguntas": [
             (
-                "Herramienta de IA para audio",
-                "¿Qué herramienta usaste para generar el audio? ¿Qué voz o modelo seleccionaste?",
+                "Herramienta de IA y por qué la elegiste",
+                "¿Qué herramienta de IA usaste para generar el audio y por qué es la adecuada "
+                "para narración por voz o para música, según lo que pide la estrategia?",
             ),
             (
-                "Prompt o parámetros de audio",
-                "¿Qué guión o instrucciones proporcionaste? ¿Qué parámetros configuraste: "
-                "tipo de voz, tono, ritmo, emoción?",
+                "Prompt o parámetros",
+                "Escribe el prompt o los parámetros que configuraste: tipo de voz, guion, "
+                "género, tono, ritmo, emoción, letra, duración y restricciones, según aplique.",
             ),
             (
-                "Audio final y uso previsto",
-                "¿Para qué plataforma y formato es el audio? "
-                "(narración de reel, podcast, jingle...) ¿Cuánto dura?",
+                "Versión final del audio",
+                "Anexa el archivo o su enlace e indica la plataforma de destino, el uso y la "
+                "duración.",
             ),
             (
-                "Calidad de voz y sonido",
-                "¿Verificaste la claridad, la dicción y la naturalidad? "
-                "¿Hubo que hacer ajustes de velocidad, pausas o entonación?",
+                "Claridad, dicción, ritmo y naturalidad",
+                "¿Cómo verificaste la claridad de la voz o del sonido, la dicción y el ritmo, y "
+                "que suene natural? Anota qué ajustaste entre una generación y otra.",
             ),
             (
                 "Coherencia con la marca",
-                "¿El tono y estilo del audio refleja la personalidad de la MiPyME? "
-                "¿La voz elegida es coherente con cómo quiere percibirse la marca?",
+                "¿Por qué la voz o la música corresponden a la personalidad de la marca?",
             ),
         ],
     },
@@ -417,138 +422,138 @@ PRODUCTS = [
         "num": "2.4",
         "slug": "2-4-portafolio-video",
         "format": "word",
-        "elemento": "2 · Generar",
-        "title": "Contenido de video del portafolio de mercadotecnia digital generado con IA, documentado",
+        "elemento": "2 · E5882",
+        "title": "El contenido de video del portafolio de mercadotecnia digital generado con IA, documentado",
         "intro": (
-            "Documenta el proceso de generación de video con IA: la herramienta, el prompt "
-            "por escena o referencia visual, el video final y su especificación técnica, "
-            "la coherencia narrativa (inicio-desarrollo-cierre y llamado a la acción), "
-            "la consistencia visual entre escenas y la calidad de audio integrado."
+            "Documenta un video generado con IA: la herramienta y su justificación, el prompt o "
+            "la referencia, la versión final y la revisión de narrativa, consistencia entre "
+            "escenas, calidad técnica, audio, originalidad y coherencia con la marca."
         ),
-        "f21": [
-            "(a) Especifica la herramienta de IA utilizada para la generación de contenido de video",
-            "(b) Incluye la estructura del prompt/video/imagen de referencia para la generación "
-            "de contenido de imagen",
-            "(c) Contiene la versión final de video generada con la herramienta/plataforma de IA "
-            "para la(s) plataforma(s) digital(es) de destino",
-            "(d) Tiene coherencia narrativa con inicio, desarrollo y cierre definidos, así como "
-            "claridad del mensaje e inclusión de llamado a la acción",
-            "(e) Tiene consistencia visual y física de los elementos entre escenas y coherencia "
-            "con la identidad de la marca",
-            "(f) Cumple con la calidad técnica con respecto a la resolución, formato y duración "
-            "adecuados a la plataforma digital",
+        "criterios": [
+            "(a) Especifica la herramienta de IA utilizada para la generación de contenido de video, y la justificación de su elección",
+            "(b) Incluye la estructura del prompt/video/imagen de referencia para la generación de contenido de imagen",
+            "(c) Contiene la versión final de video generada con la herramienta/plataforma de IA para la(s) plataforma(s) digital(es) de destino",
+            "(d) Tiene coherencia narrativa con inicio, desarrollo y cierre definidos, así como claridad del mensaje e inclusión de llamado a la acción",
+            "(e) Tiene consistencia visual y física de los elementos entre escenas y coherencia con la identidad de la marca",
+            "(f) Cumple con la calidad técnica con respecto a la resolución, formato y duración adecuados a la plataforma digital",
             "(g) Tiene calidad de audio con respecto a la pronunciación/entonación/sonido(s) y claridad",
             "(h) Cumple con los criterios de calidad en cuanto a originalidad y coherencia con la marca",
         ],
         "caso": (
-            "Herramienta: Higgsfield / RunwayML gen-3. "
-            "Prompt por escena: 'Inicio: manos de barista moliendo café en molino manual, luz cálida "
-            "de mañana, cámara lenta; Desarrollo: espresso cayendo sobre taza de cerámica artesanal, "
-            "vapor ascendente, fondo café oscuro; Cierre: manos sosteniendo taza de latte art, campus "
-            "universitario de fondo desenfocado, texto sobreimpuesto: «Tu café de siempre, de "
-            "especialidad» 9:16, 15 segundos'. Verificación: 3 iteraciones. Video final: .mp4, "
-            "1080x1920, 15 segundos, sin distorsiones temporales en el café. Audio: música de fondo "
-            "ambiental suave generada con Suno, sin letra, 72 BPM."
+            "Herramienta: una herramienta de IA generativa de video, elegida porque genera clips "
+            "verticales a partir de imágenes de referencia. Prompt por escena: inicio, granos "
+            "cayendo en el tostador con luz cálida; desarrollo, el café recién tostado "
+            "enfriándose en la charola; cierre, una taza servida en la barra con el texto "
+            "«Tostado aquí, en La Cuesta» y el llamado a la acción «Ven a probarlo». Video final: "
+            "Reel vertical 9:16 de 1080 × 1920 y 15 segundos, para Instagram los lunes y jueves. "
+            "Audio: narración generada con IA, sin música con derechos de autor. Revisión: en la "
+            "primera versión el tostador cambiaba de forma entre escenas; con una segunda "
+            "iteración del prompt quedó consistente."
         ),
         "preguntas": [
             (
-                "Herramienta de IA para video",
-                "¿Qué herramienta usaste para generar el video? "
-                "(Higgsfield, RunwayML, Kling, Sora, Pika, CapCut IA...)",
+                "Herramienta de IA y por qué la elegiste",
+                "¿Qué herramienta de IA usaste para generar el video y por qué es la adecuada "
+                "para el tipo de video que pide la estrategia?",
             ),
             (
-                "Prompt o referencia de video",
-                "Describe el prompt completo por escena. ¿Usaste imagen o video de referencia? "
-                "¿Qué instrucciones diste sobre movimiento, iluminación, estilo visual?",
+                "Prompt o referencia",
+                "Escribe el prompt por escena (escena, sujeto, ambiente, estilo visual, "
+                "iluminación, duración, restricciones y formato) e indica si usaste video o "
+                "imagen de referencia.",
             ),
             (
-                "Video final",
-                "¿Para qué plataforma es? ¿Cuánto dura? ¿Qué resolución y formato tiene? "
-                "¿Cómo lo vas a publicar?",
+                "Versión final del video",
+                "Anexa el video o su enlace e indica la plataforma digital de destino.",
             ),
             (
                 "Coherencia narrativa",
-                "¿El video tiene inicio, desarrollo y cierre claros? ¿El mensaje central es evidente? "
-                "¿Dónde está el llamado a la acción?",
+                "¿Cuál es el inicio, el desarrollo y el cierre? ¿Qué mensaje queda claro y dónde "
+                "está el llamado a la acción?",
             ),
             (
-                "Consistencia visual entre escenas",
-                "¿Los personajes, objetos y colores son consistentes entre escenas? "
-                "¿Hay saltos o distorsiones que corregiste?",
+                "Consistencia visual y física entre escenas",
+                "¿Los objetos, las personas y los colores se mantienen entre escenas y respetan "
+                "la identidad de la marca? Anota qué corregiste.",
             ),
             (
                 "Calidad técnica",
-                "Resolución, formato de archivo, duración. "
-                "¿Cumple con las especificaciones técnicas de la plataforma destino?",
+                "¿La resolución, el formato y la duración corresponden a la plataforma de "
+                "destino?",
             ),
             (
                 "Calidad de audio",
-                "¿El audio (música, narración, efectos) es claro y coherente con el video? "
-                "¿Se escucha bien sin auriculares?",
+                "¿La pronunciación, la entonación, los sonidos y la claridad del audio son "
+                "correctos?",
+            ),
+            (
+                "Originalidad y coherencia con la marca",
+                "¿Cómo verificaste que el video es original, que no usa contenido de terceros "
+                "sin permiso y que es coherente con la marca?",
             ),
         ],
     },
 
     # -----------------------------------------------------------------------
-    # ELEMENTO 3 · IMPLEMENTAR
+    # ELEMENTO 3 · E5883 · IMPLEMENTAR
     # -----------------------------------------------------------------------
     {
         "num": "3.1",
         "slug": "3-1-bitacora-implementacion",
         "format": "word",
-        "elemento": "3 · Implementar",
-        "title": "Bitácora de implementación del contenido de mercadotecnia digital en plataformas digitales, documentada",
+        "elemento": "3 · E5883",
+        "title": "La bitácora de implementación del contenido de mercadotecnia digital en plataformas digitales, documentada",
         "intro": (
-            "Registro cronológico de todas las publicaciones realizadas durante la campaña: "
-            "fecha, hora, plataforma, tipo de contenido y estado de cada pieza. Incluye capturas "
-            "de pantalla o enlaces de verificación, especificaciones técnicas aplicadas, incidencias "
-            "y rechazos de plataforma, y evidencia de las herramientas de medición configuradas."
+            "Registro de la implementación en las plataformas digitales de la MiPyME: cada "
+            "publicación con su fecha, hora, plataforma, tipo de contenido y estado, sus "
+            "capturas o enlaces, las especificaciones técnicas aplicadas, las incidencias y "
+            "ajustes, y la evidencia de las herramientas de medición."
         ),
-        "f21": [
-            "(a) Contiene el listado de publicaciones realizadas con fecha, hora, plataforma(s) "
-            "digital(es), tipo de contenido y estado de publicación: publicado/programado/rechazado",
+        "criterios": [
+            "(a) Contiene el listado de publicaciones realizadas con fecha, hora, plataforma(s) digital(es), tipo de contenido y estado de publicación: publicado/programado/rechazado",
             "(b) Incluye las capturas de pantalla/enlaces de verificación de cada publicación realizada",
-            "(c) Indica la descripción de las especificaciones técnicas de cada medio utilizado "
-            "conforme a la estrategia de mercadotecnia digital",
-            "(d) Contiene el registro de incidencias técnicas/rechazos de plataforma(s) digital(es) "
-            "y los ajustes realizados durante la implementación",
-            "(e) Incluye la evidencia de las herramientas de medición y seguimiento en cada "
-            "plataforma digital utilizada",
+            "(c) Indica la descripción de las especificaciones técnicas de cada medio utilizado conforme a la estrategia de mercadotecnia digital",
+            "(d) Contiene el registro de incidencias técnicas/rechazos de plataforma(s) digital(es) y los ajustes realizados durante la implementación",
+            "(e) Incluye la evidencia gráfica de las herramientas de medición y seguimiento en cada plataforma digital utilizada",
         ],
         "caso": (
-            "Semana 1: lunes 9:00 → Instagram feed (imagen café, caption texto IA) → publicado; "
-            "miércoles 10:00 → Facebook post (mismo contenido adaptado) → publicado; "
-            "viernes 18:00 → Instagram Reel (video 15s) → programado. "
-            "Incidencia: el reel del martes fue rechazado por Meta por audio con derechos de autor "
-            "— se reemplazó con pista de Suno sin licencia. "
-            "Herramientas de seguimiento: Meta Business Suite para ambas plataformas, "
-            "Google Analytics UTM para links al menú."
+            "Semana 1 en Instagram y WhatsApp Business: lunes, Reel del proceso de tueste para "
+            "las 12:00, el horario de mayor tráfico en el campus → publicado; martes, post "
+            "estático de producto en imagen cuadrada de 1080 × 1080 → programado; viernes, "
+            "carrusel educativo → programado; mensaje de difusión semanal en WhatsApp Business "
+            "→ publicado. Cada fila lleva su captura o su enlace. Incidencia y ajuste: Mariana "
+            "quería publicar el Reel sin configurar los UTM del enlace al menú en línea; Martín le "
+            "explicó para qué sirven, los configuraron juntos y el Reel salió un poco después de "
+            "las 12:00, ya con seguimiento. Publicaciones promocionadas: 18 a 35 años, 5 km a la "
+            "redonda, intereses en café de especialidad y postres artesanales, 200 pesos diarios. "
+            "Evidencia de medición: capturas de las estadísticas de Instagram y de la lista de "
+            "difusión de WhatsApp Business."
         ),
         "preguntas": [
             (
-                "Registro de publicaciones",
-                "Por cada publicación: fecha, hora exacta, plataforma, tipo de contenido "
-                "(imagen, video, texto, audio), estado (publicado / programado / rechazado).",
+                "Listado de publicaciones",
+                "Por cada publicación: fecha, hora, plataforma digital, tipo de contenido y "
+                "estado (publicado, programado o rechazado).",
             ),
             (
-                "Capturas de pantalla o enlaces",
-                "Para cada publicación realizada: adjunta la captura de pantalla o el enlace "
-                "público que confirma que se publicó.",
+                "Capturas de pantalla o enlaces de verificación",
+                "Inserta la captura o el enlace que confirma cada publicación realizada.",
             ),
             (
-                "Especificaciones técnicas aplicadas",
-                "¿Verificaste que cada pieza cumplía con las especificaciones técnicas de la "
-                "plataforma antes de publicar? ¿Qué dimensiones, formatos y pesos usaste?",
+                "Especificaciones técnicas de cada medio",
+                "¿Qué especificaciones técnicas aplicaste en cada medio, según la estrategia: "
+                "dimensiones, relación de aspecto, formato de archivo, peso y duración?",
             ),
             (
-                "Incidencias y ajustes",
-                "¿Tuviste rechazos, errores o problemas durante la publicación? "
-                "¿Cuáles fueron y cómo los resolviste?",
+                "Incidencias, rechazos y ajustes",
+                "¿Qué incidencias técnicas o rechazos tuviste en cada plataforma y qué ajuste "
+                "hiciste en cada caso?",
             ),
             (
-                "Herramientas de medición instaladas",
-                "¿Configuraste píxeles de seguimiento, UTMs o cualquier herramienta de analítica? "
-                "¿En qué plataformas y para qué métricas?",
+                "Evidencia gráfica de las herramientas de medición y seguimiento",
+                "Inserta las capturas de las herramientas de medición configuradas en cada "
+                "plataforma: estadísticas de la plataforma, enlaces con UTM, píxeles de "
+                "seguimiento o vinculación con herramientas analíticas.",
             ),
         ],
     },
@@ -556,195 +561,216 @@ PRODUCTS = [
         "num": "3.2",
         "slug": "3-2-guia-operativa",
         "format": "word",
-        "elemento": "3 · Implementar",
-        "title": "Guía operativa de publicación para la MiPyME, documentada",
+        "elemento": "3 · E5883",
+        "title": "La guía operativa de publicación para la MiPyME, documentada",
         "intro": (
-            "Manual práctico que le queda a la MiPyME para publicar de manera autónoma "
-            "después del proyecto: procedimiento paso a paso por plataforma, especificaciones "
-            "técnicas de formato, horarios recomendados, restricciones y políticas de contenido, "
-            "y accesos a las herramientas de programación y gestión de redes utilizadas."
+            "Es la guía que queda en manos de la MiPyME para publicar por su cuenta: el "
+            "procedimiento paso a paso por plataforma, las especificaciones técnicas de "
+            "formato, los horarios recomendados, las restricciones y políticas de contenido, y "
+            "los accesos a las herramientas de programación y gestión de redes. Debe ser tan "
+            "clara que la persona responsable la siga sin llamarte."
         ),
-        "f21": [
-            "(a) Contiene el procedimiento paso a paso de carga, programación y publicación de "
-            "contenido por cada plataforma digital activa de la MiPyME",
-            "(b) Incluye las especificaciones técnicas de formato por cada plataforma digital "
-            "activa de la MiPyME",
-            "(c) Enlista los horarios recomendados de publicación por cada plataforma digital "
-            "activa de la MiPyME conforme a la estrategia",
-            "(d) Contiene descritas las restricciones y políticas de contenido de cada plataforma "
-            "digital activa de la MiPyME",
-            "(e) Incluye los accesos y credenciales de las herramientas de programación y gestión "
-            "de redes utilizadas",
+        "criterios": [
+            "(a) Contiene el procedimiento paso a paso de carga, programación y publicación de contenido por cada plataforma digital activa de la MiPyME",
+            "(b) Incluye las especificaciones técnicas de formato por cada plataforma digital activa de la MiPyME",
+            "(c) Enlista los horarios recomendados de publicación por cada plataforma digital activa de la MiPyME conforme a la estrategia",
+            "(d) Contiene descritas las restricciones y políticas de contenido de cada plataforma digital activa de la MiPyME",
+            "(e) Incluye los accesos y credenciales de las herramientas de programación y gestión de redes utilizadas",
         ],
         "caso": (
-            "Procedimiento Instagram: 1) Abrir Meta Business Suite → seleccionar La Cuesta; "
-            "2) «Crear publicación» → elegir tipo (feed/reel/historia); "
-            "3) cargar el archivo (JPG ≤ 30 MB para imagen, MP4 ≤ 4 GB para video); "
-            "4) agregar caption, hashtags y ubicación; 5) programar fecha y hora; "
-            "6) verificar vista previa multidispositivo; 7) publicar/programar. "
-            "Especificaciones técnicas: Feed cuadrado 1:1 (1080×1080), Feed horizontal 1.91:1 "
-            "(1080×566), Reels 9:16 (1080×1920), Stories 9:16 (1080×1920). "
-            "Restricciones clave: sin marcas de agua de competidores, sin afirmaciones de salud "
-            "sin sustento, sin contenido de derechos reservados en el audio."
+            "Procedimiento para Instagram: crear la publicación, elegir el tipo (post, carrusel, "
+            "Reel o historia), cargar el archivo, pegar el texto complementario con los hashtags "
+            "de la cafetería, revisar la vista previa y programar fecha y hora; en las "
+            "promocionadas, segmentación de 18 a 35 años a 5 km a la redonda, con intereses en "
+            "café de especialidad y postres artesanales, y 200 pesos diarios. Para WhatsApp "
+            "Business: cómo preparar y enviar el mensaje de difusión semanal. Horario: los Reels "
+            "a las 12:00, cuando hay más tráfico en el campus. Revisión previa: imagen cuadrada "
+            "de 1080 × 1080 y texto complementario sin faltas. Políticas: nada de música con "
+            "derechos de autor sin permiso, imágenes explícitas ni concursos sin reglas claras; "
+            "la foto de un cliente con su perrito, solo con su permiso. Métricas: a las 24 horas, "
+            "en «Estadísticas», revisar alcance e interacciones. Martín habilitó a Mariana con la "
+            "guía en la mano y se la entregó impresa y en digital, con capturas."
         ),
         "preguntas": [
             (
                 "Procedimiento paso a paso por plataforma",
-                "Para cada plataforma activa de la MiPyME: escribe los pasos exactos para cargar, "
-                "programar y publicar contenido. Debe ser suficientemente claro para que alguien "
-                "sin experiencia lo siga.",
+                "Para cada plataforma activa de la MiPyME, escribe los pasos para cargar, "
+                "programar y publicar contenido. Que alguien sin experiencia los pueda seguir.",
             ),
             (
-                "Especificaciones técnicas por plataforma",
-                "Tabla de formatos: tipo de contenido, dimensiones recomendadas, peso máximo del "
-                "archivo, duración máxima, formatos admitidos.",
+                "Especificaciones técnicas de formato por plataforma",
+                "Por cada plataforma y tipo de contenido: dimensiones, relación de aspecto, "
+                "formato de archivo, peso máximo y duración.",
             ),
             (
-                "Horarios recomendados",
-                "Por plataforma: ¿a qué horas publicas? ¿Qué días? Basa esto en los datos de "
-                "analítica o en las recomendaciones de la IA.",
+                "Horarios recomendados de publicación",
+                "Por cada plataforma: días y horas recomendados, tal como quedaron en la "
+                "estrategia.",
             ),
             (
                 "Restricciones y políticas de contenido",
-                "¿Qué tipo de contenido rechaza cada plataforma? ¿Cuáles son las principales "
-                "causas de que una publicación sea rechazada o penalizada?",
+                "¿Qué contenido restringe o rechaza cada plataforma activa de la MiPyME? "
+                "Describe las políticas que más pueden afectar a este negocio.",
             ),
             (
-                "Accesos y herramientas",
-                "Lista las herramientas de programación que usas (Meta Business Suite, Buffer, "
-                "Hootsuite, Later...) con los datos de acceso — sin contraseñas aquí, pero indica "
-                "dónde están guardadas de forma segura.",
+                "Accesos y credenciales",
+                "Haz el listado de las herramientas de programación y gestión de redes, con el "
+                "usuario o correo de acceso y quién lo administra. Acuerda con la MiPyME una "
+                "forma segura de entregar las contraseñas, por ejemplo un anexo que se entrega "
+                "aparte, y anota en la guía dónde quedan.",
             ),
         ],
     },
 
     # -----------------------------------------------------------------------
-    # ELEMENTO 4 · OPTIMIZAR
+    # ELEMENTO 4 · E5884 · OPTIMIZAR
     # -----------------------------------------------------------------------
     {
         "num": "4.1",
-        "slug": "4-1-reporte-optimizacion",
+        "slug": "4-1-reporte-desempeno",
         "format": "excel",
-        "elemento": "4 · Optimizar",
-        "title": "Reporte de desempeño del contenido publicado de mercadotecnia digital, documentado",
+        "elemento": "4 · E5884",
+        "title": "El reporte de desempeño del contenido publicado de mercadotecnia digital, documentado",
+        # Corta a propósito: en Excel va en una celda de alto fijo de la hoja «Guía».
         "intro": (
-            "Producto integrador que combina el reporte de desempeño de la campaña concluida "
-            "con el plan de optimización para el siguiente periodo. Incluye métricas por publicación "
-            "y por plataforma, comparativo contra objetivos, análisis de mejor y peor desempeño, "
-            "recomendaciones de ajuste y el calendario del siguiente periodo. Debe contar con la "
-            "aprobación de la persona responsable de mercadotecnia en la MiPyME."
+            "Documenta los resultados de una campaña concluida: resumen ejecutivo, métricas por "
+            "publicación, tipo y plataforma, comparativo contra la línea base y los objetivos, "
+            "mayor y menor rendimiento, evidencias y fuente de los datos."
         ),
-        "f21": [
+        "criterios": [
             "(a) Está elaborado a partir de una campaña de mercadotecnia digital concluida",
-            "(b) Tiene el resumen ejecutivo con los principales resultados alcanzados en el periodo "
-            "analizado y su relación con los objetivos de la estrategia",
-            "(c) Incluye las métricas de rendimiento por publicación, por tipo de contenido y por "
-            "plataforma digital, así como el comparativo respecto a la línea base de la MiPyME/"
-            "indicadores de referencia de mercado",
-            "(d) Especifica el comparativo de resultados contra los objetivos medibles establecidos "
-            "en la estrategia aprobada",
-            "(e) Contiene el análisis de mayor y menor rendimiento de los contenidos por tipo, "
-            "formato, horario y plataforma digital, con la identificación de patrones de "
-            "comportamiento y metas establecidas",
-            "(f) Incluye las capturas de pantalla/evidencias de los datos reportados por las "
-            "herramientas de medición y seguimiento de las plataformas digitales",
-            "(g) Especifica la fecha del periodo de análisis, la fuente de los datos presentados "
-            "y la frecuencia de medición",
-            "(h) Contiene las recomendaciones de continuidad/ajuste a los tipos de contenido/"
-            "formatos/frecuencia de publicación por plataforma digital, con base en el análisis "
-            "de resultados",
-            "(i) Indica la(s) propuesta(s) de pruebas de optimización a realizar, considerando "
-            "la hipótesis a validar y la métrica de éxito",
-            "(j) Incluye la recomendación de continuidad/ajuste a horarios de publicación con base "
-            "en los datos de rendimiento por plataforma digital y por tipo de contenido",
-            "(k) Contiene la recomendación de continuidad/modificación a la segmentación de audiencia "
-            "y al presupuesto de promoción de acuerdo con los resultados obtenidos",
-            "(l) Incluye la propuesta de continuidad/ajuste a los prompts e instrucciones de "
-            "generación de contenido con IA, considerando de los resultados de la campaña que concluyó",
-            "(m) Tiene el calendario de publicación de contenidos para el siguiente periodo",
-            "(n) Especifica los nuevos objetivos y métricas de seguimiento para el siguiente periodo",
-            "(o) Contiene la evidencia de aprobación del plan de optimización por parte de la(s) "
-            "persona(s) responsable(s) del mercadotecnia digital en la MiPyME",
+            "(b) Tiene el resumen ejecutivo con los principales resultados alcanzados en el periodo analizado y su relación con los objetivos de la estrategia",
+            "(c) Incluye las métricas de rendimiento por publicación, por tipo de contenido y por plataforma digital, así como el comparativo respecto a la línea base de la MiPyME/indicadores de referencia de mercado",
+            "(d) Especifica el comparativo de resultados contra los objetivos medibles establecidos en la estrategia aprobada",
+            "(e) Contiene el análisis de mayor y menor rendimiento de los contenidos por tipo, formato, horario y plataforma digital, con la identificación de patrones de comportamiento y metas establecidas",
+            "(f) Incluye las capturas de pantalla/evidencias de los datos reportados por las herramientas de medición y seguimiento de las plataformas digitales",
+            "(g) Especifica la fecha del periodo de análisis, la fuente de los datos presentados y la frecuencia de medición",
         ],
+        # También corta: la celda del caso en la hoja «Guía» mide 72 pt fijos (unas 5
+        # líneas); con más texto, Excel la recorta.
         "caso": (
-            "Campaña: septiembre 2025, 4 semanas. "
-            "Resultados: Instagram +187 seguidores (meta: +200, -6.5%); "
-            "Engagement rate promedio 4.2% (referencia mercado cafeterías: 2.8%); "
-            "Alcance total: 8,420 personas. "
-            "Mejor contenido: video Reel del origen del café (487 likes, 23 comentarios, 156 guardados). "
-            "Peor contenido: imagen de menú con texto (12 likes, 0 comentarios). "
-            "Patrón: el contenido educativo sobre café de especialidad tiene 3x más engagement que "
-            "el contenido promocional directo. "
-            "Plan de optimización: reducir posts de menú en un 50%, aumentar contenido educativo/"
-            "origen del café, probar Reels de 30s (vs 15s actuales), publicar jueves 7pm en vez "
-            "de viernes 6pm."
+            "4 semanas en Instagram y WhatsApp Business. Alcance: 11,000 personas. Interacción: "
+            "+23 % (meta 20 %). Contactos nuevos en WhatsApp: 68 (meta 50). Reels del tueste: 5 "
+            "veces el alcance de los posts estáticos. Carrusel educativo: la tasa de interacción "
+            "más alta (4.8 %). Sábados a mediodía, mejor que martes; posts de producto sin "
+            "persona, lo más bajo. WhatsApp: 78 % de apertura y CTR al menú bajo."
         ),
         "preguntas": [
             (
-                "Periodo analizado y fuente de datos",
-                "¿Cuándo fue la campaña que estás analizando? ¿Qué fuentes usaste para obtener "
-                "los datos (Meta Insights, Google Analytics, Hootsuite)? ¿Con qué frecuencia los mediste?",
+                "Campaña concluida",
+                "¿Qué campaña concluida analizas? Plataformas, fecha de inicio y fecha de cierre.",
             ),
             (
                 "Resumen ejecutivo",
-                "En 3-5 líneas: ¿qué pasó en el periodo? ¿Qué lograste vs qué esperabas?",
+                "En pocas líneas: los principales resultados del periodo y su relación con los "
+                "objetivos de la estrategia.",
             ),
             (
                 "Métricas por publicación, tipo de contenido y plataforma",
-                "Tabla completa: por cada publicación (o por tipo de contenido agrupado), muestra "
-                "alcance, impresiones, interacciones, tasa de interacción y otros KPIs relevantes.",
+                "Llena las hojas «Métricas por publicación» y «Resumen por tipo y plataforma», "
+                "con el comparativo contra la línea base de la MiPyME o contra indicadores de "
+                "referencia de mercado.",
             ),
             (
-                "Comparativo contra objetivos de la estrategia",
-                "¿Qué objetivos habías definido? ¿Los cumpliste, los superaste o quedaste por debajo? "
-                "Tabla de objetivo vs resultado real.",
+                "Comparativo contra los objetivos de la estrategia",
+                "Llena la hoja «Objetivos contra resultados» con cada objetivo medible de la "
+                "estrategia aprobada.",
             ),
             (
-                "Análisis de mejor y peor desempeño",
-                "¿Qué publicaciones o tipos de contenido funcionaron mejor? ¿Cuáles funcionaron peor? "
-                "¿Qué patrones de horario, formato o tema explican los resultados?",
+                "Mayor y menor rendimiento",
+                "Llena la hoja «Mayor y menor rendimiento»: por tipo, formato, horario y "
+                "plataforma, ¿qué rindió más, qué rindió menos y qué patrón de comportamiento lo "
+                "explica?",
             ),
             (
                 "Capturas de pantalla o evidencias",
-                "Adjunta o describe las capturas de las herramientas de analítica que respaldan "
-                "los datos del reporte.",
+                "Registra en la hoja «Evidencias de medición» cada captura o evidencia de las "
+                "herramientas de medición y seguimiento, y anéxalas al reporte.",
             ),
             (
-                "Recomendaciones de ajuste (tipos, formatos, frecuencia)",
-                "Con base en los resultados: ¿qué tipos de contenido vas a continuar? "
-                "¿Cuáles vas a eliminar o reducir? ¿Cambias la frecuencia?",
+                "Periodo, fuente y frecuencia de medición",
+                "Fecha del periodo de análisis, fuente de cada dato y frecuencia con la que "
+                "mediste.",
+            ),
+        ],
+    },
+    {
+        "num": "4.2",
+        "slug": "4-2-plan-optimizacion",
+        # Word y no Excel: el plan es sobre todo recomendaciones justificadas, ajustes de
+        # prompts y una aprobación firmada; no hay nada que calcular, y sus dos tablas
+        # (pruebas y calendario) caben en el documento.
+        "format": "word",
+        "elemento": "4 · E5884",
+        "title": "El plan de optimización del contenido de mercadotecnia digital con IA para el siguiente periodo, documentado",
+        "intro": (
+            "Con base en el reporte de desempeño, define qué se mantiene y qué se ajusta en el "
+            "siguiente periodo: tipos de contenido, formatos, frecuencia y horarios, pruebas de "
+            "optimización con su hipótesis y métrica de éxito, segmentación y presupuesto de "
+            "promoción, prompts, calendario, nuevos objetivos y la evidencia de aprobación de la "
+            "persona responsable."
+        ),
+        "criterios": [
+            "(a) Contiene las recomendaciones de continuidad/ajuste a los tipos de contenido/formatos/frecuencia de publicación por plataforma digital, con base en el análisis de resultados",
+            "(b) Indica la(s) propuesta(s) de pruebas de optimización a realizar, considerando la hipótesis a validar y la métrica de éxito",
+            "(c) Incluye la recomendación de continuidad/ajuste a horarios de publicación con base en los datos de rendimiento por plataforma digital y por tipo de contenido",
+            "(d) Contiene la recomendación de continuidad/modificación a la segmentación de audiencia y al presupuesto de promoción de acuerdo con los resultados obtenidos",
+            "(e) Incluye la propuesta de continuidad/ajuste a los prompts e instrucciones de generación de contenido con IA, considerando de los resultados de la campaña que concluyó",
+            "(f) Tiene el calendario de publicación de contenidos para el siguiente periodo",
+            "(g) Especifica los nuevos objetivos y métricas de seguimiento para el siguiente periodo",
+            "(h) Contiene la evidencia de aprobación del plan de optimización por parte de la(s) persona(s) responsable(s) de la mercadotecnia digital en la MiPyME",
+        ],
+        "caso": (
+            "Para el siguiente mes: 60 % Reels, 25 % carruseles educativos y 15 % posts de "
+            "producto. Pruebas: (1) posts de producto el sábado a mediodía en vez del martes; "
+            "hipótesis: el alcance sube al menos 40 %; métrica: personas alcanzadas. (2) "
+            "Carruseles de proceso contra carruseles educativos, para medir cuál sostiene mejor "
+            "la interacción. Segmentación y presupuesto: radio de 5 a 3 km y los mismos 200 "
+            "pesos diarios, concentrados en los días de Reel. Prompts: ajustar el prompt de "
+            "imagen para incluir personas. Mariana pidió contenido de temporada navideña: Martín "
+            "agregó dos semanas dentro del 60 % de Reels y ajustó el calendario; ella firmó la "
+            "hoja de validación y él se la envió por correo."
+        ),
+        "preguntas": [
+            (
+                "Tipos de contenido, formatos y frecuencia",
+                "Con base en el reporte, ¿qué continúa y qué se ajusta en tipos de contenido, "
+                "formatos y frecuencia de publicación en cada plataforma? Justifica cada "
+                "recomendación con un dato del reporte.",
             ),
             (
-                "Pruebas de optimización propuestas",
-                "¿Qué pruebas A/B o multivariables propones para el siguiente periodo? "
-                "Por cada una: qué hipótesis validas y con qué métrica.",
+                "Pruebas de optimización",
+                "Llena la tabla «Pruebas de optimización» al final de esta plantilla: por cada "
+                "prueba, qué cambia, la hipótesis a validar y la métrica de éxito.",
             ),
             (
-                "Ajuste de horarios",
-                "¿Cambias los horarios de publicación? ¿Por qué? ¿Qué datos respaldan el cambio?",
+                "Horarios de publicación",
+                "¿Qué horarios continúan y cuáles se ajustan, por plataforma y por tipo de "
+                "contenido? ¿Qué datos de rendimiento lo respaldan?",
             ),
             (
-                "Ajuste de segmentación y presupuesto",
-                "¿Modificas la audiencia a la que llegas? ¿Ajustas el presupuesto de publicidad "
-                "pagada? ¿Por qué?",
+                "Segmentación de audiencia y presupuesto de promoción",
+                "¿Se mantienen o se modifican la segmentación de audiencia y el presupuesto de "
+                "promoción? ¿Por qué, según los resultados?",
             ),
             (
-                "Ajuste de prompts de IA",
-                "¿Qué cambios harás en los prompts que usas para generar contenido? "
-                "¿Qué aprendiste sobre qué tipos de prompts funcionan mejor para esta MiPyME?",
+                "Prompts e instrucciones de generación con IA",
+                "¿Qué prompts e instrucciones se mantienen y cuáles ajustas? Escribe el cambio y "
+                "el resultado de la campaña que lo motiva.",
             ),
             (
                 "Calendario del siguiente periodo",
-                "Elabora el calendario de publicación para el siguiente mes o periodo.",
+                "Llena la tabla «Calendario del siguiente periodo» al final de esta plantilla, "
+                "con las temporadas comerciales que caigan en ese periodo.",
             ),
             (
-                "Nuevos objetivos",
-                "¿Qué objetivos y métricas defines para el siguiente periodo, basándote en lo aprendido?",
+                "Nuevos objetivos y métricas de seguimiento",
+                "¿Qué objetivos y métricas de seguimiento quedan para el siguiente periodo?",
             ),
             (
                 "Evidencia de aprobación",
-                "¿Cómo documenta la persona responsable que aprobó el plan? "
-                "Correo, firma, captura.",
+                "¿Cómo queda documentada la aprobación del plan? Usa la tabla «Aprobación del "
+                "plan» o anexa el correo o mensaje con que la persona responsable lo aprobó.",
             ),
         ],
     },
@@ -753,8 +779,8 @@ PRODUCTS = [
 
 # ===========================================================================
 # PLANTILLAS POR FORMATO
-# (mismo sistema visual que los Estándares A y B; solo cambia la caja de caso
-#  pedagógico y los textos de footer/subtitle)
+# (mismo sistema visual que los otros estándares; convert-legacy-office.py
+#  descarta este CSS y redibuja con la marca)
 # ===========================================================================
 
 BASE_STYLES = """
@@ -889,6 +915,9 @@ h2 {
   font-style: italic;
   font-size: 10pt;
 }
+table.matrix { border-collapse: collapse; width: 100%; margin: 10pt 0; font-size: 10pt; }
+table.matrix th, table.matrix td { border: 1pt solid #999; padding: 6pt 8pt; vertical-align: top; }
+table.matrix th { background: #28467e; color: white; font-weight: bold; text-align: left; }
 
 .footer {
   margin-top: 36pt;
@@ -900,6 +929,11 @@ h2 {
   font-style: italic;
 }
 """
+
+# La caja de criterios conserva la clase f21-box: convert-legacy-office.py, común a
+# los cuatro estándares, la busca por ese nombre para la hoja «Guía» de Excel.
+PIE = ("Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · "
+       "Plantilla de trabajo del Estándar C (EC1848)")
 
 WORD_TEMPLATE = """<!DOCTYPE html>
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
@@ -923,27 +957,27 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Manual de Mercadotecnia Digital con IA · Producto del Elemento {elemento}</p>
+<p class="subtitle">Curso {ec} · Producto del Elemento {elemento}</p>
 </td>
-<td class="meta"><strong>Producto {num}</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+<td class="meta"><strong>Producto {num}</strong><br>Plantilla editable<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
 </table>
 </div>
 
-<div class="intro"><strong>Sobre este template.</strong> {intro} Tu evaluador no busca que llenes el template — busca que respondas con datos de TU MiPyME real. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+<div class="intro"><strong>Sobre esta plantilla.</strong> {intro} Quien te evalúa no busca que llenes la plantilla: busca que tu producto cumpla cada criterio del {ec} con los datos de la MiPyME con la que trabajas. Las preguntas guía te orientan; las respuestas son tuyas.</div>
 
 <div class="f21-box">
-<h3>Qué evalúa el F21 oficial</h3>
-<ul>{f21_html}</ul>
+<h3>Criterios del {ec}</h3>
+<ul>{criterios_html}</ul>
 </div>
 
-<div class="caso-box"><strong>Caso pedagógico Cafetería La Cuesta (ilustrativo, NO es tu solución):</strong> {caso}</div>
+<div class="caso-box"><strong>Caso pedagógico Cafetería La Cuesta (ilustrativo, no es tu solución):</strong> {caso}</div>
 
 <div class="product-data">
 <table>
 <tr><td>MiPyME (razón social)</td><td><span class="blank">&nbsp;</span></td></tr>
-<tr><td>Persona responsable</td><td><span class="blank">&nbsp;</span></td></tr>
-<tr><td>Consultor responsable</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Persona responsable de la mercadotecnia digital</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor o consultora</td><td><span class="blank">&nbsp;</span></td></tr>
 <tr><td>Fecha del documento</td><td><span class="blank">&nbsp;</span></td></tr>
 </table>
 </div>
@@ -952,10 +986,9 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 
 {questions_html}
 
-<div class="footer">
-Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org<br>
-Template del Manual de Marketing Digital con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
-</div>
+{extra_html}
+
+<div class="footer">{pie}</div>
 
 </body>
 </html>
@@ -975,14 +1008,7 @@ EXCEL_TEMPLATE = """<!DOCTYPE html>
 <x:ExcelWorksheet><x:Name>{num}</x:Name><x:WorksheetOptions><x:Panes><x:Pane><x:Number>3</x:Number></x:Pane></x:Panes></x:WorksheetOptions></x:ExcelWorksheet>
 </x:ExcelWorksheets></x:ExcelWorkbook></xml>
 <![endif]-->
-<style>{base_styles}
-table.matrix {{ border-collapse: collapse; width: 100%; margin: 10pt 0; font-size: 10pt; }}
-table.matrix th, table.matrix td {{ border: 1pt solid #999; padding: 6pt 8pt; vertical-align: top; }}
-table.matrix th {{ background: #28467e; color: white; font-weight: bold; text-align: left; }}
-table.matrix tr.score th {{ background: #f7c031; color: #28467e; }}
-table.matrix td.fill {{ background: #fffbe6; min-height: 22pt; height: 22pt; color: #aaa; font-style: italic; }}
-table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
-</style>
+<style>{base_styles}</style>
 </head>
 <body>
 
@@ -992,26 +1018,26 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Manual de Mercadotecnia Digital con IA · Producto del Elemento {elemento} · Excel</p>
+<p class="subtitle">Curso {ec} · Producto del Elemento {elemento} · Excel</p>
 </td>
 <td class="meta"><strong>Producto {num}</strong><br>Hoja editable · Excel<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
 </table>
 </div>
 
-<div class="intro"><strong>Sobre este template.</strong> {intro} Excel es el formato natural para esta clase de producto: te permite añadir filas conforme registres más publicaciones, ordenar por métricas y generar gráficas. <strong>Llénalo con datos de TU MiPyME real.</strong></div>
+<div class="intro"><strong>Sobre esta plantilla.</strong> {intro} Excel calcula las tasas y el avance contra cada meta, y te deja añadir filas. Llénala con los datos de la MiPyME con la que trabajas.</div>
 
 <div class="f21-box">
-<h3>Qué evalúa el F21 oficial</h3>
-<ul>{f21_html}</ul>
+<h3>Criterios del {ec}</h3>
+<ul>{criterios_html}</ul>
 </div>
 
-<div class="caso-box"><strong>Caso pedagógico Cafetería La Cuesta (ilustrativo):</strong> {caso}</div>
+<div class="caso-box"><strong>Caso pedagógico Cafetería La Cuesta (ilustrativo, no es tu solución):</strong> {caso}</div>
 
 <div class="product-data">
 <table>
 <tr><td>MiPyME</td><td><span class="blank">&nbsp;</span></td><td>Fecha</td><td><span class="blank">&nbsp;</span></td></tr>
-<tr><td>Consultor</td><td><span class="blank">&nbsp;</span></td><td>Responsable MiPyME</td><td><span class="blank">&nbsp;</span></td></tr>
+<tr><td>Consultor o consultora</td><td><span class="blank">&nbsp;</span></td><td>Responsable en la MiPyME</td><td><span class="blank">&nbsp;</span></td></tr>
 </table>
 </div>
 
@@ -1019,11 +1045,9 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
 
 {questions_html}
 
-{matrix_html}
+{extra_html}
 
-<div class="footer">
-Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · Template del Manual de Marketing Digital con IA
-</div>
+<div class="footer">{pie}</div>
 
 </body>
 </html>
@@ -1034,16 +1058,13 @@ Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · T
 # RENDERIZADORES
 # ===========================================================================
 
-def render_f21(criterios):
-    """Genera la lista HTML de criterios F21 literales."""
-    html = ""
-    for c in criterios:
-        html += f'<li>{c}</li>\n'
-    return html
+def render_criterios(criterios):
+    """Lista HTML con los criterios literales del EC."""
+    return "".join(f"<li>{c}</li>\n" for c in criterios)
 
 
 def render_questions_word(preguntas):
-    """Genera los bloques de preguntas guía para templates Word."""
+    """Bloques de preguntas guía, cada uno con su área de respuesta."""
     html = ""
     for i, (title, help_text) in enumerate(preguntas, 1):
         html += (
@@ -1051,21 +1072,21 @@ def render_questions_word(preguntas):
             f'<div><span class="question-num">{i}</span>'
             f'<span class="question-title">{title}</span></div>\n'
             f'<div class="question-help">{help_text}</div>\n'
-            f'<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. '
-            f'Borra esta línea cuando empieces.]</div>\n'
+            f'<div class="fill-area">[Escribe aquí tu respuesta con los datos de la MiPyME '
+            f'con la que trabajas. Borra esta línea cuando empieces.]</div>\n'
             f'</div>\n'
         )
     return html
 
 
 def render_questions_excel(preguntas):
-    """Genera la tabla de preguntas guía para templates Excel."""
+    """Tabla de preguntas guía con una columna para responder."""
     html = (
         '<table class="matrix">\n'
         '<tr>'
         '<th style="width: 4%;">#</th>'
         '<th style="width: 28%;">Pregunta guía</th>'
-        '<th>Tu respuesta (llena con datos de TU MiPyME)</th>'
+        '<th>Tu respuesta (con los datos de la MiPyME con la que trabajas)</th>'
         '</tr>\n'
     )
     for i, (title, help_text) in enumerate(preguntas, 1):
@@ -1081,172 +1102,134 @@ def render_questions_excel(preguntas):
     return html
 
 
-def render_matrix_extra(num):
+def tabla(titulo, encabezados, filas, nota=""):
+    """Tabla para llenar con su encabezado de sección.
+
+    filas: número de filas vacías, o lista de filas donde cada celda es texto fijo,
+    "" (celda vacía) o una fórmula de Excel que empieza con "=" y usa {f} para el
+    número de fila (convención de convert-legacy-office.py).
+
+    En Excel el título es el nombre de la hoja: debe caber en 31 caracteres.
     """
-    Matrices estructuradas adicionales para el producto 4.1 (Excel).
+    if isinstance(filas, int):
+        filas = [[""] * len(encabezados) for _ in range(filas)]
+    th = "".join(f"<th>{e}</th>" for e in encabezados)
+    cuerpo = ""
+    for fila in filas:
+        cuerpo += "<tr>" + "".join(
+            f'<td class="fill">{c or "&nbsp;"}</td>' for c in fila) + "</tr>\n"
+    parrafo = f'<p style="font-size: 10pt; color: #666;">{nota}</p>\n' if nota else ""
+    return (f"<h2>{titulo}</h2>\n{parrafo}"
+            f'<table class="matrix">\n<tr>{th}</tr>\n{cuerpo}</table>\n')
 
-    Genera tres tablas:
-      - Hoja 1: métricas por publicación (10 filas)
-      - Hoja 2: comparativo objetivo vs resultado (5 filas)
-      - Hoja 3: calendario del siguiente periodo (7 semanas x 7 días)
-    """
 
-    # 4.1 · Reporte de desempeño y plan de optimización
-    if num == "4.1":
-        # --- Hoja 1: métricas por publicación ---
-        metricas_rows = ""
-        for i in range(1, 11):
-            metricas_rows += (
-                f'<tr>\n'
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Fecha
-                f'<td class="fill">&nbsp;</td>\n'                              # Plataforma
-                f'<td class="fill">&nbsp;</td>\n'                              # Tipo de contenido
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Alcance
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Impresiones
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Me gusta
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Comentarios
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Compartidos
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Guardados
-                # Tasa de interacción calculada: (me gusta + comentarios +
-                # compartidos + guardados) / alcance. {f} lo sustituye el
-                # conversor por el número de fila.
-                f'<td class="fill" style="text-align:center;color:#4B5563;">'
-                f'=IFERROR(ROUND((F{{f}}+G{{f}}+H{{f}}+I{{f}})/D{{f}}*100,2),"")</td>\n'
-                f'<td class="fill">&nbsp;</td>\n'                              # Estado
-                f'</tr>\n'
-            )
+def aprobacion(titulo):
+    return tabla(
+        titulo,
+        ["Persona responsable de la mercadotecnia digital", "Cargo", "Fecha", "Firma"],
+        1,
+        "Firma de la persona responsable de la mercadotecnia digital en la MiPyME. Si aprobó "
+        "por correo o mensaje, anexa la captura.",
+    )
 
-        # --- Hoja 2: comparativo objetivo vs resultado ---
-        comparativo_rows = ""
-        for i in range(1, 6):
-            comparativo_rows += (
-                f'<tr>\n'
-                f'<td class="fill">&nbsp;</td>\n'                              # Objetivo
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Meta definida
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Resultado real
-                # Variación calculada: (resultado real - meta) / meta
-                f'<td class="fill" style="text-align:center;color:#4B5563;">'
-                f'=IFERROR(ROUND((C{{f}}-B{{f}})/B{{f}}*100,2),"")</td>\n'
-                f'<td class="fill" style="text-align:center;">&nbsp;</td>\n'  # Cumplido S/N
-                f'</tr>\n'
-            )
 
-        # --- Hoja 3: calendario del siguiente periodo (7 semanas x 7 días) ---
-        dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
-        encabezado_dias = "".join(
-            f'<th style="width: 12%;">{d}</th>' for d in dias
+def render_extra(num):
+    """Tablas propias de cada producto, después de las preguntas guía."""
+    if num == "1.2":
+        return (
+            tabla("Tabla de análisis por plataforma",
+                  ["Plataforma digital", "Justificación por audiencia",
+                   "Tipo de formato y especificaciones técnicas",
+                   "Herramienta de IA por tipo de contenido",
+                   "Frecuencia de publicación"], 4)
+            + tabla("Distribución del contenido",
+                    ["Semana", "Día y horario", "Plataforma", "Tipo de contenido",
+                     "Tema o mensaje"],
+                    [[f"Semana {s}", "", "", "", ""] for s in (1, 1, 2, 2, 3, 3, 4, 4)],
+                    "Al menos cuatro semanas. Agrega las filas que necesites.")
+            + aprobacion("Aprobación de la estrategia")
         )
-        calendario_rows = ""
-        for semana in range(1, 8):
-            calendario_rows += f'<tr><td style="font-weight:bold;color:#28467e;text-align:center;background:#f0f7ff;">Semana {semana}</td>'
-            for _ in dias:
-                calendario_rows += '<td class="fill">&nbsp;</td>'
-            calendario_rows += '</tr>\n'
 
-        return f"""
-<h2>Hoja 1 · Métricas por publicación</h2>
-<p style="font-size: 10pt; color: #666;">
-  Registra una fila por publicación. Añade filas según el volumen de tu campaña.
-  La columna «Tasa de interacción %» se calcula como (Me gusta + Comentarios + Compartidos + Guardados) / Alcance × 100.
-</p>
-<table class="matrix">
-<tr>
-  <th style="width: 8%;">Fecha</th>
-  <th style="width: 10%;">Plataforma</th>
-  <th style="width: 14%;">Tipo de contenido</th>
-  <th style="width: 7%;">Alcance</th>
-  <th style="width: 8%;">Impresiones</th>
-  <th style="width: 7%;">Me gusta</th>
-  <th style="width: 8%;">Comentarios</th>
-  <th style="width: 8%;">Compartidos</th>
-  <th style="width: 8%;">Guardados</th>
-  <th style="width: 10%;">Tasa de interacción %</th>
-  <th>Estado</th>
-</tr>
-{metricas_rows}
-</table>
-<p style="font-size:9pt;color:#999;margin-top:6pt;font-style:italic;">
-  Fuente de datos recomendada: Meta Business Suite Insights / Google Analytics / herramienta de gestión de redes.
-</p>
+    if num == "4.1":
+        # Interacciones = me gusta + comentarios + compartidos + guardados (o
+        # respuestas, en mensajería). Las fórmulas las escribe el conversor.
+        metricas = [["", "", "", "", "", "", "", "", "",
+                     '=IFERROR(ROUND(H{f}/F{f}*100,2),"")',
+                     '=IFERROR(ROUND(I{f}/G{f}*100,2),"")'] for _ in range(10)]
+        resumen = [["", "", "", "", "", "", "",
+                    '=IF(OR(E{f}="",F{f}=""),"",E{f}-F{f})'] for _ in range(6)]
+        objetivos = [["", "", "", "",
+                      '=IFERROR(ROUND(D{f}/C{f}*100,1),"")',
+                      '=IF(E{f}="","",IF(E{f}>=100,"Sí","No"))'] for _ in range(4)]
+        dimensiones = [[d, "", "", "", ""] for d in
+                       ("Tipo de contenido", "Formato", "Horario", "Plataforma digital")]
+        return (
+            tabla("Métricas por publicación",
+                  ["Fecha", "Hora", "Plataforma", "Tipo de contenido", "Formato",
+                   "Alcance", "Impresiones",
+                   "Interacciones (me gusta, comentarios, compartidos y guardados)",
+                   "Clics",
+                   "Tasa de interacción % (interacciones ÷ alcance × 100)",
+                   "Tasa de clics (CTR) % (clics ÷ impresiones × 100)"], metricas)
+            + tabla("Resumen por tipo y plataforma",
+                    ["Plataforma", "Tipo de contenido", "Publicaciones",
+                     "Alcance promedio", "Tasa de interacción promedio %",
+                     "Línea base de la MiPyME %", "Referencia de mercado %",
+                     "Diferencia contra la línea base (puntos)"], resumen)
+            + tabla("Objetivos contra resultados",
+                    ["Objetivo medible de la estrategia", "Métrica de seguimiento", "Meta",
+                     "Resultado", "Avance contra la meta % (resultado ÷ meta × 100)",
+                     "¿Se cumplió?"], objetivos)
+            + tabla("Mayor y menor rendimiento",
+                    ["Dimensión", "Mayor rendimiento", "Menor rendimiento",
+                     "Patrón de comportamiento identificado", "Meta relacionada"],
+                    dimensiones)
+            + tabla("Evidencias de medición",
+                    ["Evidencia (captura o enlace)", "Herramienta de medición y seguimiento",
+                     "Plataforma", "Dato que respalda", "Fecha de corte"], 6)
+        )
 
-<h2>Hoja 2 · Comparativo objetivo vs resultado</h2>
-<p style="font-size: 10pt; color: #666;">
-  Registra cada objetivo que definiste en la estrategia aprobada y compáralo con el resultado real.
-</p>
-<table class="matrix">
-<tr>
-  <th style="width: 28%;">Objetivo</th>
-  <th style="width: 18%;">Meta definida</th>
-  <th style="width: 18%;">Resultado real</th>
-  <th style="width: 12%;">Variación %</th>
-  <th style="width: 12%;">Cumplido (S/N)</th>
-</tr>
-{comparativo_rows}
-</table>
-<p style="font-size:9pt;color:#999;margin-top:6pt;font-style:italic;">
-  Variación % = (Resultado real - Meta definida) / Meta definida × 100. Positivo = superado; negativo = por debajo.
-</p>
+    if num == "4.2":
+        return (
+            tabla("Pruebas de optimización",
+                  ["Prueba", "Qué cambia", "Hipótesis a validar", "Métrica de éxito",
+                   "Plataforma y duración"], 3)
+            + tabla("Calendario del siguiente periodo",
+                    ["Semana", "Día y horario", "Plataforma", "Tipo de contenido y formato",
+                     "Tema o mensaje"],
+                    [[f"Semana {s}", "", "", "", ""] for s in (1, 1, 2, 2, 3, 3, 4, 4)],
+                    "Agrega las filas y semanas que necesites.")
+            + aprobacion("Aprobación del plan")
+        )
 
-<h2>Hoja 3 · Calendario del siguiente periodo</h2>
-<p style="font-size: 10pt; color: #666;">
-  Planifica el contenido del siguiente periodo. Por cada celda anota: plataforma / tipo de contenido / tema.
-  Añade o elimina semanas según la duración del periodo planificado.
-</p>
-<table class="matrix">
-<tr>
-  <th style="width: 8%;">Semana</th>
-  {encabezado_dias}
-</tr>
-{calendario_rows}
-</table>
-<p style="font-size:9pt;color:#999;margin-top:6pt;font-style:italic;">
-  Complementa este calendario con las fechas clave de temporada comercial definidas en la estrategia.
-</p>
-"""
-
-    # Otros productos no tienen matriz extra
     return ""
 
 
 def render_product(p):
     """Devuelve (contenido HTML, extensión de archivo)."""
-    f21_html = render_f21(p["f21"])
-
+    campos = dict(
+        num=p["num"],
+        title=p["title"],
+        elemento=p["elemento"],
+        intro=p["intro"],
+        caso=p["caso"],
+        criterios_html=render_criterios(p["criterios"]),
+        extra_html=render_extra(p["num"]),
+        ec=EC,
+        pie=PIE,
+        base_styles=BASE_STYLES,
+    )
     if p["format"] == "word":
-        questions_html = render_questions_word(p["preguntas"])
-        html = WORD_TEMPLATE.format(
-            num=p["num"],
-            title=p["title"],
-            elemento=p["elemento"],
-            intro=p["intro"],
-            caso=p["caso"],
-            f21_html=f21_html,
-            questions_html=questions_html,
-            base_styles=BASE_STYLES,
-        )
-        return html, "doc"
-
-    elif p["format"] == "excel":
-        questions_html = render_questions_excel(p["preguntas"])
-        matrix_html = render_matrix_extra(p["num"])
-        html = EXCEL_TEMPLATE.format(
-            num=p["num"],
-            title=p["title"],
-            elemento=p["elemento"],
-            intro=p["intro"],
-            caso=p["caso"],
-            f21_html=f21_html,
-            questions_html=questions_html,
-            matrix_html=matrix_html,
-            base_styles=BASE_STYLES,
-        )
-        return html, "xls"
-
+        return WORD_TEMPLATE.format(
+            questions_html=render_questions_word(p["preguntas"]), **campos), "doc"
+    if p["format"] == "excel":
+        return EXCEL_TEMPLATE.format(
+            questions_html=render_questions_excel(p["preguntas"]), **campos), "xls"
     raise ValueError(f"Formato desconocido: {p['format']}")
 
 
 def main():
-    # Limpiar archivos legacy con extensiones OOXML si los hubiera
+    # Limpiar archivos OOXML anteriores: el conversor los vuelve a generar
     for ext in (".docx", ".xlsx"):
         for f in OUT.glob(f"*{ext}"):
             f.unlink()
@@ -1259,13 +1242,11 @@ def main():
 
     for p in PRODUCTS:
         content, ext = render_product(p)
-        # Slug de archivo: usa el slug explícito del producto (ya tiene formato num-num-slug)
         filename = f"{p['slug']}.{ext}"
-        filepath = OUT / filename
-        filepath.write_text(content, encoding="utf-8")
+        (OUT / filename).write_text(content, encoding="utf-8")
         print(f"  [ok] {filename}  ({p['format'].upper()})")
 
-    print(f"\nGenerados {len(PRODUCTS)} templates en {OUT}/")
+    print(f"\nGeneradas {len(PRODUCTS)} plantillas en {OUT}/")
     import subprocess
     import sys
     subprocess.run([sys.executable, str(ROOT / "scripts" / "convert-legacy-office.py")], check=True)
