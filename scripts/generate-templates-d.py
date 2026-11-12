@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Genera los 14 templates de los productos del Estándar D · Creación de soluciones
+Genera los templates de los productos del EC1836 · Creación de soluciones
 tecnológicas con IA en la modernización digital de la MiPyME.
 
 - 13 Word (.doc) como HTML estilizado con MIME Office
@@ -792,7 +792,7 @@ PRODUCTS = [
             "mantenimiento con capturas de pantalla y procedimientos paso a paso, los procedimientos "
             "de resolución de problemas frecuentes que el personal puede ejecutar de forma autónoma, "
             "y los datos de la sesión (asistentes, fecha, duración, materiales entregados). "
-            "RECUERDA: la capacitación es el único desempeño observable del Estándar D — "
+            "RECUERDA: la capacitación es el único desempeño observable del EC1836 — "
             "el evaluador te observará impartirla."
         ),
         "f21": [

@@ -683,7 +683,7 @@ def generate_pptx_capacitacion(prod):
     filled_shape(s, MSO_SHAPE.RECTANGLE, Inches(9.5), 0, Inches(0.12), SH, AMARILLO)
     # cuadro central
     textbox(s, Inches(0.7), Inches(2.0), Inches(8.5), Inches(0.6),
-            f"PRODUCTO {prod['num']}  ·  ELEMENTO {prod['elemento']}",
+            f"EC1830  ·  PRODUCTO {prod['num']}  ·  ELEMENTO {prod['elemento']}",
             size=15, bold=True, color=AMARILLO)
     textbox(s, Inches(0.7), Inches(2.7), Inches(8.5), Inches(2.0),
             prod["title"], size=44, bold=True, color=BLANCO)

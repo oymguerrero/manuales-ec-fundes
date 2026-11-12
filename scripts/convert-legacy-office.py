@@ -296,11 +296,20 @@ def estilizar_tabla(table, filas_encabezado=(0,)):
         _repetir_encabezado(table.rows[0])
 
 
+# Clave oficial de cada estandar publicado. La letra de la carpeta es una
+# etiqueta interna del proyecto: no le dice nada a quien recibe la plantilla,
+# y la clave es con la que va a buscar el estandar. Cuidado con el orden: la
+# carpeta c corresponde a EC1848 y la d a EC1836.
+CLAVE_OFICIAL = {"a": "EC1830", "b": "EC1835", "c": "EC1848", "d": "EC1836"}
+
+
 def antetitulo(ruta):
-    """'Plantilla de trabajo · Estándar A', deducido de la carpeta contenedora."""
+    """'Plantilla de trabajo · EC1830', deducido de la carpeta contenedora."""
     carpeta = ruta.parent.parent.name
     if carpeta.startswith("estandar-") and len(carpeta) == len("estandar-x"):
-        return "Plantilla de trabajo · Estándar %s" % carpeta[-1].upper()
+        clave = CLAVE_OFICIAL.get(carpeta[-1].lower())
+        if clave:
+            return "Plantilla de trabajo · %s" % clave
     return "Plantilla de trabajo"
 
 
@@ -760,11 +769,11 @@ def generate_c_checklists():
         "Desempeño 3.2 · Habilitar al personal responsable para operar el proceso",
         "Desempeño 4.1 · Presentar resultados, recomendaciones y obtener validación",
     ]
-    eyebrow = "Plantilla de trabajo · Estándar C"
+    eyebrow = "Plantilla de trabajo · %s" % CLAVE_OFICIAL["c"]
     build_checklist(directory / "checklist-productos.docx",
-                    "Checklist de productos · Ruta C", product_entries, eyebrow)
+                    "Checklist de productos · %s" % CLAVE_OFICIAL["c"], product_entries, eyebrow)
     build_checklist(directory / "checklist-desempenos.docx",
-                    "Checklist de desempeños · Ruta C", performance_entries, eyebrow)
+                    "Checklist de desempeños · %s" % CLAVE_OFICIAL["c"], performance_entries, eyebrow)
 
 
 def main():
