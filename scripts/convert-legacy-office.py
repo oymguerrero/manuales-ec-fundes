@@ -751,28 +751,140 @@ def build_checklist(path, title, entries, eyebrow="Plantilla de trabajo"):
 
 
 def generate_c_checklists():
+    """Listas de verificación del EC1848: 10 productos y 8 desempeños, en el orden del EC.
+
+    Cada uno lleva su título y sus criterios literales del EC publicado en el DOF
+    (28-oct-2026). Los productos se leen del generador de las plantillas de C, para que
+    lista y plantillas no se separen; los desempeños no tienen plantilla y van aquí.
+    Antes los productos salían de las etiquetas de ruta-preparacion.html, que añadían
+    contenidos que el EC no pide. No usa build_checklist(), cuyo aviso inicial es de
+    cuando los estándares aún no se publicaban.
+    """
+    import importlib.util
+
     directory = ROOT / "estandar-c" / "templates"
-    route = BeautifulSoup((ROOT / "estandar-c" / "ruta-preparacion.html").read_text(encoding="utf-8"), "html.parser")
-    product_entries = []
-    for label in route.select('.printable-checklist label'):
-        value = clean_text(label)
-        if value.startswith("Producto "):
-            product_entries.append(value)
-    performance_entries = [
-        "Desempeño 1.1 · Validar la estrategia de contenido con la persona responsable de la MiPyME",
-        "Desempeño 2.1 · Generar contenido de texto con IA",
-        "Desempeño 2.2 · Generar contenido de imagen con IA",
-        "Desempeño 2.3 · Generar contenido de audio con IA",
-        "Desempeño 2.4 · Generar contenido de video con IA",
-        "Desempeño 3.1 · Publicar contenido en plataformas y documentar la implementación",
-        "Desempeño 3.2 · Habilitar al personal responsable para operar el proceso",
-        "Desempeño 4.1 · Presentar resultados, recomendaciones y obtener validación",
+    spec = importlib.util.spec_from_file_location(
+        "plantillas_c", ROOT / "scripts" / "generate-templates-c.py")
+    plantillas = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(plantillas)
+    productos = [("Producto %s" % p["num"], p["title"], p["criterios"])
+                 for p in plantillas.PRODUCTS]
+
+    # Criterios literales; solo se quitan la coma y la «y» con que el EC encadena cada
+    # criterio con el siguiente. Las erratas del EC se conservan.
+    desempenos = [
+        ("1.1", "Valida la estrategia de contenido de mercadotecnia digital en la MiPyME utilizando IA", [
+            "(a) Presentando la estrategia diseñada ante la(s) persona(s) responsable(s) de la mercadotecnia digital en la MiPyME",
+            "(b) Utilizando un lenguaje claro y acorde a la audiencia que describa los tecnicismos de la especialidad",
+            "(c) Aclarando las dudas que se presenten/solicitando retroalimentación acerca de la propuesta presentada",
+            "(d) Obteniendo el visto bueno de validación verbal/por escrito por parte de la(s) persona(s) responsable(s) de la mercadotecnia digital en la MiPyME para iniciar la implementación",
+        ]),
+        ("2.1", "Crea contenido de texto de mercadotecnia digital con herramientas/plataformas de IA", [
+            "(a) Justificando la selección de la(s) herramienta(s)/plataforma(s) de IA de acuerdo al contenido de texto por generar",
+            "(b) Escribiendo el prompt de contenido de texto que incluya al menos el rol, el contexto, la tarea, la audiencia, el formato, el tono de comunicación y las restricciones",
+            "(c) Realizando la pruebas de validación del contenido de texto generado y eliminación de sesgos",
+            "(d) Efectuando los ajustes al contenido de texto generado mediante al menos una iteración de prompts/las iteraciones requeridas hasta cumplir los criterios de calidad establecidos en la estrategia/a petición de la/s persona/s responsable/s del mercadotecnia digital en la MiPyME",
+            "(e) Explicando cómo el contenido generado es coherente con la identidad de marca, los lineamientos de la estrategia aprobada y respeta los derechos de propiedad intelectual de terceros",
+        ]),
+        ("2.2", "Crea contenido de video de mercadotecnia digital con la(s) herramienta(s)/plataforma(s) de IA", [
+            "(a) Seleccionado la(s) herramienta(s)/plataforma(s) de IA correspondiente(s) al tipo de contenido de video requerido por la estrategia",
+            "(b) Elaborando el prompt con instrucciones específicas que incluyan al menos la escena, el sujeto, el ambiente, el estilo visual, la iluminación, la duración, restricciones y el formato",
+            "(c) Realizando la pruebas de validación del contenido de video generado y eliminación de sesgos/errores/incoherencias",
+            "(d) Ajustando el contenido de video generado mediante al menos una iteración de prompts/ las iteraciones requeridas hasta cumplir los criterios de calidad establecidos/a petición de la/s persona/s responsable/s de la mercadotecnia digital en la MiPyME",
+            "(e) Verificando que el contenido de video generado sea coherente con la identidad de marca, los lineamientos de la estrategia aprobada y respeta los derechos de propiedad intelectual de terceros",
+        ]),
+        ("2.3", "Crea contenido de imagen de mercadotecnia digital con herramientas/plataformas de IA", [
+            "(a) Justificando la selección de la(s) herramienta(s)/plataforma(s) de IA de acuerdo al tipo de contenido de imagen requerido por la estrategia",
+            "(b) Elaborando el prompt de contenido de imagen con los parámetros de sujeto, estilo, formato y restricciones",
+            "(c) Realizando la pruebas de validación del contenido de imagen generado y eliminación de sesgos/errores/incoherencias",
+            "(d) Ajustando el contenido de imagen generado mediante al menos una iteración de prompts/las iteraciones requeridas hasta cumplir los criterios de calidad establecidos en la estrategia/a petición de la/s persona/s responsable/s de la mercadotecnia digital en la MiPyME",
+            "(e) Verificando que el contenido de imagen generado sea coherente con la identidad de marca, los lineamientos de la estrategia aprobada y respeta los derechos de propiedad intelectual de terceros",
+        ]),
+        ("2.4", "Crea contenido de audio de mercadotecnia digital con la(s) herramienta(s)/plataforma(s) de IA", [
+            "(a) Seleccionando la(s) herramienta(s)/plataforma(s) de IA correspondiente(s) al tipo de contenido de audio para narración por voz/música de acuerdo con lo requerido por la estrategia",
+            "(b) Elaborando el prompt/Configurando en la herramienta de IA para narración por voz/música los parámetros de tipo/guión/género/tono/ritmo/emoción/letra/duración/restricciones/referencia de acuerdo con los requerimientos de la estrategia/a petición de la/s persona/s responsable/s de la mercadotecnia digital en la MiPyME",
+            "(c) Realizando la pruebas de validación del contenido de audio generado y eliminación de sesgos/errores/incoherencias",
+            "(d) Repitiendo el proceso de generación de audio hasta obtener el resultado que cumpla con los criterios de calidad establecidos en la estrategia",
+            "(e) Verificando que el contenido de audio generado sea coherente con la identidad de marca, los lineamientos de la estrategia aprobada y respeta los derechos de propiedad intelectual de terceros",
+        ]),
+        ("3.1", "Publica el contenido de la campaña de mercadotecnia digital generado con IA", [
+            "(a) De acuerdo con los tipos de contenido digital de texto/imagen/audio/video aprobados en la estrategia",
+            "(b) Utilizando al menos dos plataforma(s) digital(es) con las que cuenta la MiPyME",
+            "(c) Verificando que la configuración de perfil(es) y cuenta(s) de la(s) plataforma(s) digital(es) corresponda con los lineamientos de identidad de marca establecidos en la estrategia",
+            "(d) Cargando los contenidos aprobados y los elementos complementarios en la(s) plataforma(s) digital(es) de acuerdo con las especificaciones técnicas de cada medio",
+            "(e) Configurando los elementos complementarios de cada publicación, conforme al contenido aprobado",
+            "(f) Programando las publicaciones conforme al calendario de contenidos, horarios y frecuencia definidos en la estrategia aprobada",
+            "(g) Configurando la segmentación de audiencia y el presupuesto de promoción en las publicaciones pagadas de acuerdo con la estrategia",
+            "(h) Comprobando que los enlaces, etiquetas y llamados a la acción incluidos en cada publicación sean visibles y funcionales en multidispositivos",
+        ]),
+        ("3.2", "Habilita a la(s) persona(s) responsable(s) de la mercadotecnia digital en la MiPyME en el proceso operativo de publicación y programación de contenido", [
+            "(a) Explicando las configuraciones de segmentación de audiencia y presupuesto de promoción disponibles en la(s) plataforma(s) digital(es)",
+            "(b) Indicando los criterios de verificación previos a la publicación: formato, especificaciones técnicas y textos complementarios",
+            "(c) Explicando las restricciones y políticas de contenido de cada plataforma digital que pueden causar el rechazo de una publicación",
+            "(d) Describiendo el procedimiento para monitorear las métricas de cada publicación posterior a su lanzamiento",
+            "(e) Aclarando las dudas que se presenten/solicitando retroalimentación acerca del proceso operativo de publicación y programación de contenido por parte de la(s) persona(s) responsable(s) de marketing digital en la MiPyME",
+            "(f) Entregando la guía operativa de publicación a la(s) persona(s) responsable(s) de la mercadotecnia digital en la MiPyME",
+        ]),
+        ("4.1", "Presenta el reporte de resultados y las recomendaciones de optimización del contenido de mercadotecnia digital con IA a la(s) persona(s) responsable(s) en la MiPyME", [
+            "(a) Exponiendo los resultados del reporte de desempeño de contenido de mercadotecnia digital publicado",
+            "(b) Mostrando el plan de optimización de contenido de mercadotecnia digital con IA para el siguiente periodo",
+            "(c) Aclarando las dudas que se presenten/solicitando retroalimentación acerca de los resultados y plan de optimización parte de la(s) persona(s) responsable(s) de marketing digital en la MiPyME",
+            "(d) Obteniendo la validación de las acciones de optimización y del calendario de publicación de contenidos para el siguiente periodo",
+        ]),
     ]
+    desempenos = [("Desempeño %s" % num, titulo, criterios)
+                  for num, titulo, criterios in desempenos]
+
     eyebrow = "Plantilla de trabajo · %s" % CLAVE_OFICIAL["c"]
-    build_checklist(directory / "checklist-productos.docx",
-                    "Checklist de productos · %s" % CLAVE_OFICIAL["c"], product_entries, eyebrow)
-    build_checklist(directory / "checklist-desempenos.docx",
-                    "Checklist de desempeños · %s" % CLAVE_OFICIAL["c"], performance_entries, eyebrow)
+    publicado = "del %s, publicado en el Diario Oficial de la Federación el 28 de octubre de 2026" % CLAVE_OFICIAL["c"]
+
+    def lista(path, titulo, aviso, grupos):
+        document = Document()
+        preparar_pagina(document)
+        aplicar_marca(document)
+        pie_de_pagina(document)
+        portada(document, titulo, eyebrow)
+        document.add_paragraph(aviso)
+        for etiqueta, nombre, criterios in grupos:
+            document.add_heading("%s · %s" % (etiqueta, nombre), level=2)
+            table = document.add_table(rows=1, cols=4)
+            for index, heading in enumerate(("Criterio del %s" % CLAVE_OFICIAL["c"], "Preparado", "Por reforzar",
+                                             "Notas / ubicación de la evidencia")):
+                table.rows[0].cells[index].text = heading
+            encabezar_fila(table.rows[0].cells)
+            for criterio in criterios:
+                cells = table.add_row().cells
+                cells[0].text = criterio
+                cells[1].text = "☐"
+                cells[2].text = "☐"
+                cells[3].text = ""
+            estilizar_tabla(table)
+            fijar_anchos(table, [Inches(3.6), Inches(0.85), Inches(0.95), Inches(1.5)])
+            # Que el título y el encabezado no se queden solos al pie de la página.
+            for celda in table.rows[0].cells:
+                for parrafo in celda.paragraphs:
+                    parrafo.paragraph_format.keep_with_next = True
+            for fila in table.rows[1:]:
+                for celda in fila.cells[1:3]:
+                    celda.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+                # Un criterio partido entre dos páginas deja sus casillas lejos del texto.
+                no_partir = OxmlElement("w:cantSplit")
+                no_partir.set(qn("w:val"), "true")
+                fila._tr.get_or_add_trPr().append(no_partir)
+        document.save(path)
+
+    lista(directory / "checklist-productos.docx",
+          "Lista de verificación de productos · %s" % CLAVE_OFICIAL["c"],
+          "Autoevaluación de tus %d productos con los criterios literales %s. Marca "
+          "«Preparado» cuando tu producto cumpla el criterio y anota dónde está la evidencia; "
+          "marca «Por reforzar» si todavía le falta." % (len(productos), publicado),
+          productos)
+    lista(directory / "checklist-desempenos.docx",
+          "Lista de verificación de desempeños · %s" % CLAVE_OFICIAL["c"],
+          "Autoevaluación de los %d desempeños con los criterios literales %s. Los "
+          "desempeños se demuestran frente a quien te evalúa: ensaya cada uno y marca "
+          "«Preparado» cuando cumplas todos sus criterios." % (len(desempenos), publicado),
+          desempenos)
 
 
 def main():
