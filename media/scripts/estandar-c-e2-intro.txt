@@ -1,17 +1,15 @@
-<speak>
-Elemento dos: <emphasis level="moderate">Generar contenido de mercadotecnia digital con inteligencia artificial.</emphasis>
-<break time="700ms"/>
-Este es el elemento más visible del estándar. Es donde la estrategia se convierte en piezas reales: textos, imágenes, audios y videos. Y es donde la inteligencia artificial entra con más fuerza.
-<break time="800ms"/>
-Vas a preparar cuatro portafolios de contenido. Uno de texto: publicaciones, captions, artículos, correos. Uno de imagen: gráficos, fotografías generadas o editadas con IA, materiales visuales para redes. Uno de audio: narraciones, jingles, podcasts cortos. Y uno de video: reels, stories animadas, contenido en movimiento.
-<break time="700ms"/>
-Cada portafolio demuestra algo distinto. El de texto muestra tu manejo del tono de marca y tu habilidad para construir mensajes relevantes. El de imagen muestra coherencia visual. El de audio y video muestran que puedes producir formatos de alto impacto con herramientas accesibles.
-<break time="800ms"/>
-Ahora, el detalle que más importa para tu evaluación: en el Elemento 2 hay cuatro desempeños que se observan en vivo. Esto significa que te van a ver trabajar. Vas a generar contenido frente al evaluador, en tiempo real. No es una presentación de lo que hiciste antes. Es una demostración de tu proceso.
-<break time="700ms"/>
-Por eso la práctica importa. El flujo que necesitas dominar es este: construir el prompt inicial, revisar el resultado, hacer iteraciones hasta que refleje la marca, y validar que el contenido final cumple con los objetivos de la estrategia.
-<break time="800ms"/>
-En La Cuesta, el reto es claro. Mariana tiene una identidad muy definida: café artesanal, luz cálida, ambiente de barrio universitario. El contenido generado con IA tiene que sentirse como si Mariana lo hubiera hecho ella misma. Eso no pasa con el primer prompt. Pasa con práctica y criterio.
-<break time="600ms"/>
+Elemento dos: Generar contenido de mercadotecnia digital con inteligencia artificial en la MiPyME.
+
+Este es el elemento más visible del EC1848. Es donde la estrategia aprobada se convierte en piezas reales: textos, videos, imágenes y audios. Y es donde la inteligencia artificial entra con más fuerza.
+
+Vas a preparar un portafolio de contenidos con cuatro contenidos documentados. Uno de texto: publicaciones y captions. Uno de imagen: fotografías o gráficos generados con IA. Uno de audio: narraciones por voz o música. Y uno de video: Reels y otros contenidos en movimiento.
+
+Cada contenido demuestra algo distinto. El de texto muestra que tu mensaje es claro y coherente con la marca. El de imagen, que lo visual se ve real y respeta la identidad de la marca. El de audio, que la voz es clara y natural. Y el de video, que cuenta una historia con inicio, desarrollo y cierre.
+
+Ahora, el detalle que más importa para tu evaluación: en el Elemento 2 hay cuatro desempeños, uno por cada tipo de contenido, y tu evaluador te observa mientras los realizas. Va a ver cómo justificas la herramienta, cómo escribes el prompt, cómo validas el resultado y cómo lo ajustas.
+
+Por eso la práctica importa. El flujo que necesitas dominar es este: construir el prompt inicial, revisar el resultado, hacer las iteraciones necesarias hasta que refleje la marca, y verificar que el contenido final cumple con la estrategia aprobada y respeta la propiedad intelectual de terceros.
+
+En La Cuesta, el reto es claro. Mariana tiene la estrategia aprobada para cuatro semanas: Reels del tueste los lunes y jueves, publicaciones de producto los martes, carruseles educativos los viernes y mensajes de WhatsApp Business cada semana. El contenido generado con IA tiene que sentirse como si Mariana lo hubiera hecho ella misma. Eso no pasa con el primer prompt. Pasa con práctica y criterio.
+
 Dominar ese proceso es lo que este elemento evalúa.
-</speak>
