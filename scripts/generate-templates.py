@@ -802,9 +802,11 @@ def generate_pptx_capacitacion(prod):
     tf.margin_left = Inches(0.4)
     tf.margin_top = Inches(0.3)
     tf.margin_right = Inches(0.4)
+    tf.vertical_anchor = MSO_ANCHOR.TOP  # la forma centra por omisión; la lista va arriba
     # Criterios literales del EC1830; el EC no marca requisitos taxativos.
     for i, crit in enumerate(prod["f21"]):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        p.alignment = PP_ALIGN.LEFT  # el primer párrafo de la forma hereda el centrado
         p.space_after = Pt(8)
         r = p.add_run()
         r.text = "•  " + crit
@@ -1045,7 +1047,7 @@ def render_matrix_example(num):
             f'</tr>\n'
         )
     return f"""
-<h2>Hoja de matriz · oportunidades de IA priorizadas</h2>
+<h2>Matriz de oportunidades de IA</h2>
 <p style="font-size: 10pt; color: #4B5563;">Añade tantas filas como oportunidades hayas detectado. Llena impacto (I), viabilidad (V) y esfuerzo (E) con valores 1-5. El score relativo (I × V / E) te orienta sobre cuál priorizar.</p>
 <table class="matrix">
 <tr><th style="width:4%;">#</th><th style="width:22%;">Oportunidad</th><th style="width:16%;">Herramienta sugerida</th><th style="width:9%;">Impacto (1-5)</th><th style="width:9%;">Viabilidad (1-5)</th><th style="width:9%;">Esfuerzo (1-5)</th><th style="width:9%;">Score</th><th>Beneficio esperado</th></tr>
@@ -1072,7 +1074,7 @@ def render_gantt_example(num):
             f'</tr>\n'
         )
     return f"""
-<h2>Cronograma Gantt · semanas del proyecto</h2>
+<h2>Cronograma Gantt por semana</h2>
 <p style="font-size: 10pt; color: #4B5563;">Marca con X (o con un color en Excel) las semanas en las que se ejecuta cada actividad. Adapta el número de semanas a tu proyecto.</p>
 <table class="matrix">
 <tr><th style="width:4%;">#</th><th style="width:24%;">Actividad</th><th style="width:14%;">Responsable</th>{weeks_header}</tr>
@@ -1100,7 +1102,7 @@ def render_indicators_example(num):
             f'</tr>\n'
         )
     return f"""
-<h2>Tabla antes/después de indicadores</h2>
+<h2>Indicadores antes y después</h2>
 <p style="font-size: 10pt; color: #4B5563;">Por cada indicador del proyecto, registra la línea base, el valor actual y la variación. Así cubres de forma explícita el primer criterio del EC1830.</p>
 <table class="matrix">
 <tr><th style="width:4%;">#</th><th style="width:30%;">Indicador</th><th style="width:14%;">Línea base</th><th style="width:14%;">Valor actual</th><th style="width:14%;">Variación %</th><th>Observación</th></tr>
