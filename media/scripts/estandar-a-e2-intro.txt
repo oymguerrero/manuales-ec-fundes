@@ -1,5 +1,5 @@
 Elemento 2: Adoptar soluciones de IA en el entorno de la MiPyME. Aquí implementas las soluciones que planeaste en el Elemento 1.
 
-Se te observarán dos desempeños: cómo presentas al emprendedor las soluciones implementadas y cómo capacitas al personal para adoptarlas. Y entregas tres productos: las soluciones implementadas, el informe técnico de configuración y el material de capacitación.
+Se te observarán dos desempeños: cómo presentas las soluciones implementadas a quien representa a la MiPyME y cómo capacitas al personal para usarlas. Y entregas tres productos: las soluciones implementadas, el informe técnico de configuración y el material de capacitación.
 
-En el caso La Espiga, Andrea pone en marcha el sistema unificado de pedidos por WhatsApp con respuestas automáticas, y capacita a Doña Beatriz y a su equipo para operarlo sin ayuda.
+En el caso La Espiga, Andrea pone en marcha el sistema unificado de pedidos por WhatsApp con respuestas automáticas y el resumen de pedidos para cocina. Se los presenta a Doña Beatriz y capacita a las tres encargadas para operarlos sin ayuda.

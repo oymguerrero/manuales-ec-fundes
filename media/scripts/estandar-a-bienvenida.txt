@@ -1,8 +1,8 @@
-Bienvenida al curso de Adopción de soluciones de Inteligencia Artificial en los procesos de la MiPyME.
+Bienvenida al curso de Adopción de soluciones de inteligencia artificial en los procesos de la MiPyME.
 
-Este curso está dedicado en exclusiva al Estándar de Competencia A, el EC1830, que el CONOCER publicó en el Diario Oficial de la Federación el 28 de octubre de 2026. Puedes usarlo para estudiar, practicar y organizar tus evidencias.
+Este curso está dedicado a la Ruta A: el estándar EC1830, que el CONOCER publicó en el Diario Oficial de la Federación el 28 de octubre de 2026. Puedes usarlo para estudiar, practicar y organizar tus evidencias.
 
-El estándar se dirige a quienes acompañan a las MiPyMEs en la incorporación de la inteligencia artificial dentro de sus procesos cotidianos. No es para desarrolladores de software ni para creadores de contenido digital: es para consultores que diagnostican, proponen, implementan y miden.
+El estándar se dirige a quienes acompañan a las MiPyMEs en la incorporación de la inteligencia artificial dentro de sus procesos cotidianos. No certifica el desarrollo de software a la medida ni la creación de contenido digital: es para consultores que diagnostican, proponen, implementan y miden.
 
 Si has facilitado talleres con personal de MiPyMEs, has configurado herramientas de IA generativa, has capacitado equipos pequeños y has medido el impacto de esas implementaciones, este estándar se relaciona con tu práctica.
 
