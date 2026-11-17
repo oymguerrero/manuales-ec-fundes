@@ -95,13 +95,7 @@
       <details class="audio-narration__transcript">
         <summary>Ver transcripción</summary>
         <div class="audio-narration__transcript-body">
-            <p>Elemento tres: Desarrollar el prototipo de la solución comercial con inteligencia artificial en la MiPyME.</p>
-            <p>El concepto que aprobó el cliente se vuelve tangible. El consultor construye un prototipo funcional con herramientas de inteligencia artificial, lo documenta y prepara cómo se va a validar.</p>
-            <p>Este elemento pide dos productos: la documentación del prototipo funcional y el plan de experimentación, con hipótesis que el cliente selecciona en cuatro categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad.</p>
-            <p>Y dos desempeños observables. Primero, presentar el prototipo al cliente: explicar la solución, su operación técnica y las herramientas que usa, en un lenguaje que el cliente entienda. Segundo, hacer con él una prueba funcional con un caso de uso.</p>
-            <p>Importa probar en condiciones parecidas al uso cotidiano y registrar también lo que no salió como esperabas. La actitud que se observa es la responsabilidad: cumplir íntegramente con los requisitos de calidad del diseño del prototipo.</p>
-            <p>En Artesanías Tonalli, Diego construye el asistente en dos semanas, con un modelo de inteligencia artificial que analiza la foto y otro que redacta la ficha. Lo presenta a Lucía con tres piezas del taller: dos fichas salen correctas y una con el color impreciso, que Diego corrige ajustando el prompt.</p>
-            <p>El prototipo ya funciona. Ahora viene la pregunta más importante: ¿les sirve a los usuarios?</p>
+            <p>Elemento tres: Desarrollar el prototipo de la solución comercial con inteligencia artificial en la MiPyME. El concepto que aprobó el cliente se vuelve tangible. El consultor construye un prototipo funcional con herramientas de inteligencia artificial, lo documenta y prepara cómo se va a validar. Este elemento pide dos productos: la documentación del prototipo funcional y el plan de experimentación, con hipótesis que el cliente selecciona en cuatro categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad. Y dos desempeños observables. Primero, presentar el prototipo al cliente: explicar la solución, su operación técnica y las herramientas que usa, en un lenguaje que el cliente entienda. Segundo, hacer con él una prueba funcional con un caso de uso. Importa probar en condiciones parecidas al uso cotidiano y registrar también lo que no salió como esperabas. La actitud que se observa es la responsabilidad: cumplir íntegramente con los requisitos de calidad del diseño del prototipo. En Artesanías Tonalli, Diego construye el asistente en dos semanas. Se lo presenta a Lucía con un jarrón y una tarjeta gris que sirve de referencia de color, y le pregunta a propósito en qué caso cree que se va a equivocar. Lucía señala el barro negro, y esa se vuelve la primera prueba: el sistema falla con la luz cálida de la tarde, y acuerdan que avise cuando la detecte. El prototipo ya funciona. Ahora viene la pregunta más importante: ¿les sirve a los usuarios?</p>
           </div>
       </details>
     </div>
@@ -150,12 +144,12 @@
           <aside class="callout callout--example" role="note">
             <span class="callout__label">Artesanías Tonalli · Diego construye el asistente</span>
             <div class="callout__body">
-              <p>Diego toma las especificaciones de la fase de conceptualización de la solución y construye en dos semanas el asistente de IA: un flujo donde:</p>
+              <p>Diego toma las especificaciones de la fase de conceptualización de la solución y construye en dos semanas el asistente de IA, que funciona así:</p>
               <ol style="margin: 0; padding-left: 1.2em;">
-                <li>Lucía o Rosa fotografían una pieza con el celular</li>
-                <li>Luego, un modelo de IA con visión analiza la imagen y un modelo de lenguaje redacta la ficha con un prompt diseñado por Diego. El sistema genera: nombre sugerido, técnica y materiales, medidas aproximadas, descripción y una sugerencia de precio que Lucía revisa antes de publicar.</li>
+                <li>Lucía o Rosa fotografían una pieza con el celular, con una tarjeta gris de referencia en el encuadre</li>
+                <li>Luego, el asistente identifica forma y técnica, mide el color contra la tarjeta gris y redacta la descripción usando las 20 descripciones que el taller le dio como ejemplo de su voz. Lucía la revisa antes de publicarla: el asistente no publica solo, no fija precios y no responde a clientes.</li>
               </ol>
-              <p>Diego presenta a Lucía el prototipo con tres piezas del taller: dos fichas salen correctas y una con el color impreciso, que Diego ajusta. Después recoge la retroalimentación de Lucía.</p>
+              <p>Diego presenta a Lucía el prototipo con tres casos de uso: una pieza nueva que entra al catálogo (de 20 minutos a dos), una pieza de una serie con variación de color y una pieza de encargo. Después le pregunta en qué caso cree que se va a equivocar: Lucía dice que con el barro negro, y esa es la primera prueba del plan.</p>
             </div>
           </aside>
 
@@ -285,14 +279,14 @@ flowchart LR
               <p>Diego documenta el plan de experimentación con Lucía. Este extracto muestra una hipótesis por categoría; el plan completo lleva al menos tres de cada una.</p>
               <p><strong>Hipótesis seleccionadas por Lucía:</strong></p>
               <ul style="margin: 0 0 12px; padding-left: 1.2em;">
-                <li><strong>Adaptabilidad</strong> (el entorno externo del negocio): si la plataforma de venta en línea que elija Tonalli cambia los datos que pide en cada ficha, el asistente se ajusta sin rehacerlo.</li>
-                <li><strong>Deseabilidad:</strong> los compradores en línea deciden con más confianza cuando la ficha transmite que la pieza es única.</li>
-                <li><strong>Factibilidad:</strong> Lucía genera una ficha en 60 segundos o menos, sin ayuda.</li>
-                <li><strong>Viabilidad:</strong> el costo mensual de uso del asistente cabe en el margen de las ventas en línea esperadas.</li>
+                <li><strong>Adaptabilidad</strong> (el entorno externo del negocio): si la tienda en línea cambia el formato o los datos que pide en cada descripción, el asistente se ajusta sin rehacerlo.</li>
+                <li><strong>Deseabilidad:</strong> al menos 8 de 12 compradores califican la descripción como fiel a la pieza.</li>
+                <li><strong>Factibilidad:</strong> el asistente baja el tiempo de descripción por pieza a menos de 5 minutos, con cero errores de color en la última semana.</li>
+                <li><strong>Viabilidad:</strong> el costo mensual de la licencia cabe en lo que el taller ahorra en tiempo y devoluciones.</li>
               </ul>
-              <p><strong>Diseño de una prueba priorizada (factibilidad):</strong> nombre: «Ficha en 60 segundos». Métrica: tiempo por ficha. Criterio de éxito: promedio de 60 segundos o menos, sin pedir ayuda. Nivel de criticidad: alto. Nivel de confianza: medio. Costo: horas de Diego y de Lucía, sin gasto adicional. Tiempo: sesión de 45 minutos en la que Lucía fotografía 10 piezas. Responsable: Diego. Tiempo de duración: una sesión.</p>
-              <p><strong>Perfil de los usuarios participantes:</strong> Lucía (maestra alfarera, usuaria básica de smartphone, sin experiencia previa con IA), que usa el asistente junto con Rosa; y compradores de artesanías en línea, que evalúan las fichas generadas.</p>
-              <p><strong>Plan de ejecución:</strong> actividad, responsable y temporalidad de cada prueba, en un calendario de tres semanas.</p>
+              <p><strong>Diseño de una prueba priorizada (factibilidad):</strong> nombre: «Barro negro bajo tres luces». Métrica: coincidencia entre el color que describe el asistente y el que daría el taller. Criterio de éxito: la descripción del color coincide con la que daría el taller en las tres condiciones de luz (mañana junto a la ventana, tarde y luz artificial). Nivel de criticidad: alto. Nivel de confianza: medio. Costo: horas de Diego y de Lucía, sin gasto adicional. Tiempo: una sesión con el mismo jarrón de barro negro fotografiado con la tarjeta gris bajo las tres luces. Responsable: Diego. Tiempo de duración: una sesión.</p>
+              <p><strong>Perfil de los usuarios participantes:</strong> Lucía (maestra alfarera), que usa el asistente junto con Rosa; y compradores que ya habían comprado antes en el taller, que evalúan las descripciones generadas.</p>
+              <p><strong>Plan de ejecución:</strong> actividad, responsable y temporalidad de cada prueba, en un calendario de cuatro semanas.</p>
             </div>
           </aside>
 
@@ -334,7 +328,7 @@ flowchart LR
 
           <aside class="callout callout--example" role="note">
             <span class="callout__label">Tonalli · Presentación de prototipo al cliente</span>
-            <div class="callout__body">Primero, Diego presentó a Lucía el prototipo para generar fichas de producto desde fotos y demostró su funcionamiento con tres piezas del taller, confirmando que ya contaban con los requisitos necesarios (celular e internet). Después, solicitó retroalimentación y, ante la observación de Lucía sobre descripciones de color imprecisas, propuso e integró una prueba específica de color dentro del plan de experimentación con la aprobación de ella. Vamos a ver cuáles son los criterios específicos que debe cumplir según el EC1835.</div>
+            <div class="callout__body">Primero, Diego presentó a Lucía el prototipo que genera la descripción de cada pieza a partir de una foto y demostró su funcionamiento con un jarrón y tres casos de uso, confirmando que ya contaban con los requisitos necesarios (celular, tarjeta de referencia y conexión). Después, preguntó en qué caso creía Lucía que se iba a equivocar y, ante su respuesta sobre el barro negro, integró una prueba específica de ese caso (barro negro bajo tres condiciones de luz) como la primera prueba del plan de experimentación, con la aprobación de ella. Vamos a ver cuáles son los criterios específicos que debe cumplir según el EC1835.</div>
           </aside>
 
           <h3>Desempeño 3.1 · Realiza la presentación del prototipo al cliente</h3>
@@ -372,7 +366,7 @@ flowchart LR
 
           <aside class="callout callout--example" role="note">
             <span class="callout__label">Tonalli · Prueba funcional</span>
-            <div class="callout__body">Primero, Diego ejecutó una serie de casos de uso fotografiando distintas piezas, registrando para cada una la imagen de entrada, la ficha generada de salida y el tiempo transcurrido. A continuación, comparó los resultados obtenidos con los del diseño. Posteriormente, detectó y registró fallas en la precisión del color en algunas de las pruebas. Finalmente, acordó con Lucía ajustar las instrucciones del sistema para requerir confirmación del color antes de dar por terminada la ficha.</div>
+            <div class="callout__body">Primero, Diego ejecutó una serie de casos de uso fotografiando el mismo jarrón de barro negro bajo tres condiciones de luz, registrando para cada una la entrada, el resultado del sistema y la observación de Lucía antes de opinar. A continuación, comparó los resultados obtenidos con los del diseño. Posteriormente, detectó y registró fallas: cumplimiento parcial con la luz de la mañana y falla con la luz cálida de la tarde. Finalmente, acordó con Lucía dar prioridad a un aviso de luz cálida, dejando una segunda referencia de color para barros oscuros como mejora posterior, con la firma de ella en la bitácora.</div>
           </aside>
 
           <h3>Desempeño 3.2 · Realiza una prueba funcional del prototipo con un caso de uso con el cliente/usuario</h3>
@@ -387,7 +381,7 @@ flowchart LR
           <h3>La Actitud, hábito o valor de Responsabilidad</h3>
           <p>Este elemento evalúa una sola AHV: <strong>Responsabilidad</strong>.</p>
           <p>Según el estándar es <em>"la manera en que presenta el prototipo funcional y cumple íntegramente con los requisitos de calidad descritos en el diseño del prototipo."</em></p>
-          <p>La Responsabilidad en el Elemento 3 tiene dos dimensiones. La primera: el prototipo que presentas debe cumplir lo que prometiste en el diseño del Elemento 2. Si el diseño decía que el asistente genera una ficha en 60 segundos y en la prueba tarda 4 minutos, la Responsabilidad implica reportarlo con honestidad, no disimularlo. La segunda: la presentación al cliente no puede hacerse de cualquier manera; debe cumplir los criterios del desempeño y los requisitos de calidad del diseño del prototipo.</p>
+          <p>La Responsabilidad en el Elemento 3 tiene dos dimensiones. La primera: el prototipo que presentas debe cumplir lo que prometiste en el diseño del Elemento 2. Si el diseño decía que el asistente describe cada pieza en menos de 5 minutos y en la prueba tarda 8, la Responsabilidad implica reportarlo con honestidad, no disimularlo. La segunda: la presentación al cliente no puede hacerse de cualquier manera; debe cumplir los criterios del desempeño y los requisitos de calidad del diseño del prototipo.</p>
 
           <aside class="callout callout--tip" role="note">
             <span class="callout__label">Cómo demostrar Responsabilidad</span>
@@ -395,14 +389,14 @@ flowchart LR
           </aside>
 
           <h3>Aplica el Elemento 3 · ¿Cómo presenta Diego el prototipo?</h3>
-          <p>Diego tiene listo el prototipo del asistente de IA para Tonalli. Llegó el momento de mostrárselo a Lucía y a Rosa. Elige cómo conduce la presentación.</p>
+          <p>Diego tiene listo el prototipo del asistente de IA para Tonalli. Llegó el momento de mostrárselo a Lucía. Elige cómo conduce la presentación.</p>
 
           <div class="scenario-decision" data-storage-key="eb3-presenta-prototipo-tonalli">
             <script type="application/json" class="scenario-decision__data">
             {
               "actor": "Diego · Artesanías Tonalli",
               "title": "\"Lucía, te quiero mostrar lo que construí\"",
-              "context": "Diego terminó el prototipo del asistente tras dos semanas de trabajo y se lo presenta a Lucía, que será su usuaria principal, y a Rosa, quien maneja las redes sociales del taller. Falta decidir cómo conduce la sesión.",
+              "context": "Diego terminó el prototipo del asistente tras dos semanas de trabajo y se lo presenta a Lucía, que será su usuaria principal. Falta decidir cómo conduce la sesión.",
               "question": "¿Qué hace Diego?",
               "options": [
                 {
@@ -503,7 +497,7 @@ flowchart LR
           <!-- PREGUNTA 1 -->
           <div class="quiz" data-correct="a" id="quiz-e3-p1">
             <p class="quiz__label">Pregunta 1 · Concepto y ejemplos: adaptabilidad, deseabilidad, factibilidad y viabilidad</p>
-            <p class="quiz__question">Antes de construir el asistente, Diego muestra fichas de prueba a compradores de artesanía en línea para saber si les ayudan a decidir su compra. ¿Qué categoría de hipótesis está probando?</p>
+            <p class="quiz__question">Durante la validación, Diego pide a compradores que ya le compraron a Tonalli que califiquen si las descripciones son fieles a la pieza. ¿Qué categoría de hipótesis está probando?</p>
             <div class="quiz__options">
               <button class="quiz__option" data-option="a" type="button">A) Deseabilidad: si a las personas a las que va dirigida les interesa y les sirve.</button>
               <button class="quiz__option" data-option="b" type="button">B) Viabilidad: si el taller ganaría dinero después de cubrir sus costos de operación.</button>
@@ -516,9 +510,9 @@ flowchart LR
             <div class="quiz__feedback quiz__feedback--wrong" hidden>
               <strong>✗ Incorrecto.</strong> Por qué no son las otras opciones:
               <ul>
-                <li><strong>B)</strong> La viabilidad revisa si el negocio se sostiene: si los ingresos cubren los costos y dejan ganancia. Diego no está preguntando por dinero, sino por si las fichas le sirven a quien compra.</li>
+                <li><strong>B)</strong> La viabilidad revisa si el negocio se sostiene: si los ingresos cubren los costos y dejan ganancia. Diego no está preguntando por dinero, sino por si las descripciones le parecen fieles a quien compra.</li>
                 <li><strong>C)</strong> La factibilidad se pregunta si el equipo puede construir y mantener la solución con lo que tiene. Aquí nadie está evaluando las capacidades técnicas del taller.</li>
-                <li><strong>D)</strong> La adaptabilidad mira si la solución y el negocio pueden ajustarse a cambios del entorno externo, como las reglas de una plataforma de venta. Diego no explora eso, sino si las fichas ayudan a decidir la compra.</li>
+                <li><strong>D)</strong> La adaptabilidad mira si la solución y el negocio pueden ajustarse a cambios del entorno externo, como las reglas de una plataforma de venta. Diego no explora eso, sino si las descripciones le parecen fieles a quien compra.</li>
               </ul>
               <button class="quiz__retry" type="button">Intentar de nuevo</button>
             </div>
@@ -530,12 +524,12 @@ flowchart LR
             <p class="quiz__question">Diego quiere dejar por escrito una hipótesis para probar con Lucía. ¿Cuál está bien formulada, es decir, se puede comprobar con datos?</p>
             <div class="quiz__options">
               <button class="quiz__option" data-option="a" type="button">A) Si el taller usa IA, tendrá mucho más éxito en internet que toda su competencia.</button>
-              <button class="quiz__option" data-option="b" type="button">B) Si el asistente es moderno, a Lucía le va a encantar y lo recomendará a otros.</button>
-              <button class="quiz__option" data-option="c" type="button">C) Si Tonalli publica fichas, el taller tendrá una mejor imagen en el mercado nacional.</button>
-              <button class="quiz__option" data-option="d" type="button">D) Si Lucía usa el asistente, generará cada ficha en 60 segundos o menos, sin ayuda.</button>
+              <button class="quiz__option" data-option="b" type="button">B) Si el asistente es moderno, a Lucía le va a encantar y se lo recomendará a otros.</button>
+              <button class="quiz__option" data-option="c" type="button">C) Si Tonalli publica más descripciones, el taller tendrá mejor imagen en el mercado nacional.</button>
+              <button class="quiz__option" data-option="d" type="button">D) Si Lucía usa el asistente, describirá cada pieza en menos de 5 minutos y sin ayuda.</button>
             </div>
             <div class="quiz__feedback quiz__feedback--correct" hidden>
-              <strong>✓ Correcto.</strong> Si Lucía usa el asistente, generará cada ficha en 60 segundos o menos, sin ayuda.
+              <strong>✓ Correcto.</strong> Si Lucía usa el asistente, describirá cada pieza en menos de 5 minutos y sin ayuda.
             </div>
             <div class="quiz__feedback quiz__feedback--wrong" hidden>
               <strong>✗ Incorrecto.</strong> Por qué no son las otras opciones:
@@ -551,7 +545,7 @@ flowchart LR
           <!-- PREGUNTA 3 -->
           <div class="quiz" data-correct="b" id="quiz-e3-p3">
             <p class="quiz__label">Pregunta 3 · Pruebas y verificación del funcionamiento de soluciones tecnológicas</p>
-            <p class="quiz__question">Diego quiere comprobar que lo que detecta el modelo de visión en la foto de una pieza llegue bien al modelo que redacta la ficha, sin perderse en el camino. ¿Qué tipo de prueba aplica?</p>
+            <p class="quiz__question">Diego quiere comprobar que lo que el asistente identifica en la foto de una pieza (forma, técnica y color) llegue bien al paso que redacta la descripción, sin perderse en el camino. ¿Qué tipo de prueba aplica?</p>
             <div class="quiz__options">
               <button class="quiz__option" data-option="a" type="button">A) Pruebas de funcionamiento, que revisan si la solución hace lo que dice su diseño.</button>
               <button class="quiz__option" data-option="b" type="button">B) Pruebas de integración, que revisan si las partes de la solución funcionan bien juntas.</button>
@@ -564,9 +558,9 @@ flowchart LR
             <div class="quiz__feedback quiz__feedback--wrong" hidden>
               <strong>✗ Incorrecto.</strong> Por qué no son las otras opciones:
               <ul>
-                <li><strong>A)</strong> Las pruebas de funcionamiento comprueban si la solución hace lo que dice su diseño, por ejemplo que entregue todos los campos de la ficha. Lo que Diego revisa es la conexión entre dos partes, no el resultado completo contra el diseño.</li>
+                <li><strong>A)</strong> Las pruebas de funcionamiento comprueban si la solución hace lo que dice su diseño, por ejemplo que la descripción traiga todas sus partes. Lo que Diego revisa es la conexión entre dos partes, no el resultado completo contra el diseño.</li>
                 <li><strong>C)</strong> Las pruebas en condiciones reales dejan que las personas para quienes se hizo la solución la usen en su trabajo. Diego todavía está verificando que las partes se comuniquen entre sí, un paso previo.</li>
-                <li><strong>D)</strong> Las pruebas A/B comparan dos versiones entre dos grupos para ver cuál funciona mejor. Aquí hay una sola versión y lo que se revisa es el recorrido técnico entre dos modelos.</li>
+                <li><strong>D)</strong> Las pruebas A/B comparan dos versiones entre dos grupos para ver cuál funciona mejor. Aquí hay una sola versión y lo que se revisa es el recorrido técnico entre dos pasos del asistente.</li>
               </ul>
               <button class="quiz__retry" type="button">Intentar de nuevo</button>
             </div>
@@ -575,21 +569,21 @@ flowchart LR
           <!-- PREGUNTA 4 -->
           <div class="quiz" data-correct="c" id="quiz-e3-p4">
             <p class="quiz__label">Pregunta 4 · Protección de datos en el desarrollo y prueba de prototipos con IA</p>
-            <p class="quiz__question">Diego quiere añadir al asistente una función que base la sugerencia de precio en los pedidos anteriores del taller. Para probarla necesita 200 pedidos, pero Tonalli solo tiene 30, con nombre y teléfono reales de sus clientes. ¿Cuál es la mejor forma de proteger a los clientes sin detener la prueba?</p>
+            <p class="quiz__question">Supón que Diego quisiera probar una función que anticipe en la descripción las dudas más frecuentes de los compradores, y que para eso necesitara muchas más conversaciones de WhatsApp de las que el taller tiene guardadas, que además traen nombre y teléfono reales. ¿Cuál es la mejor forma de proteger a los compradores sin detener la prueba?</p>
             <div class="quiz__options">
-              <button class="quiz__option" data-option="a" type="button">A) Usar los 30 pedidos tal como están, porque la prueba es interna y nadie fuera del taller los verá.</button>
-              <button class="quiz__option" data-option="b" type="button">B) Completar hasta 200 copiando los 30 pedidos reales varias veces, con sus mismos nombres y teléfonos.</button>
-              <button class="quiz__option" data-option="c" type="button">C) Quitar lo que identifica a cada cliente y completar hasta 200 con pedidos inventados y realistas.</button>
-              <button class="quiz__option" data-option="d" type="button">D) Pedirle a Lucía que prometa de palabra que los datos se usarán solo para la prueba y nada más.</button>
+              <button class="quiz__option" data-option="a" type="button">A) Usar las conversaciones reales tal como están, porque la prueba es interna y nadie fuera del taller las verá.</button>
+              <button class="quiz__option" data-option="b" type="button">B) Completar las que faltan copiando varias veces las conversaciones reales, con sus mismos nombres y teléfonos.</button>
+              <button class="quiz__option" data-option="c" type="button">C) Quitar lo que identifica a cada comprador y completar las que faltan con conversaciones inventadas.</button>
+              <button class="quiz__option" data-option="d" type="button">D) Pedirle a Lucía que prometa de palabra que los datos se usarán solo para la prueba y para nada más.</button>
             </div>
             <div class="quiz__feedback quiz__feedback--correct" hidden>
-              <strong>✓ Correcto.</strong> Quitar lo que identifica a cada cliente y completar hasta 200 con pedidos inventados y realistas.
+              <strong>✓ Correcto.</strong> Quitar lo que identifica a cada comprador y completar las que faltan con conversaciones inventadas.
             </div>
             <div class="quiz__feedback quiz__feedback--wrong" hidden>
               <strong>✗ Incorrecto.</strong> Por qué no son las otras opciones:
               <ul>
-                <li><strong>A)</strong> Que la prueba sea interna no elimina el riesgo: los datos reales siguen en las herramientas y en los archivos de la prueba, y cualquier fuga expondría a los clientes. Para probar no se necesitan sus nombres ni sus teléfonos.</li>
-                <li><strong>B)</strong> Copiar los pedidos reales resuelve la cantidad, pero multiplica los datos personales que circulan y aumenta el riesgo de fuga. Lo que protege es quitar lo que identifica a las personas y usar datos sintéticos.</li>
+                <li><strong>A)</strong> Que la prueba sea interna no elimina el riesgo: los datos reales siguen en las herramientas y en los archivos de la prueba, y cualquier fuga expondría a los compradores. Para probar no se necesitan sus nombres ni sus teléfonos.</li>
+                <li><strong>B)</strong> Copiar las conversaciones reales resuelve la cantidad, pero multiplica los datos personales que circulan y aumenta el riesgo de fuga. Lo que protege es quitar lo que identifica a las personas y usar datos sintéticos.</li>
                 <li><strong>D)</strong> Una promesa verbal no protege los datos ni sustituye medidas de protección. El control tiene que estar en los datos mismos (que no identifiquen a nadie), no en una declaración.</li>
               </ul>
               <button class="quiz__retry" type="button">Intentar de nuevo</button>
