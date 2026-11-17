@@ -1,11 +1,6 @@
 Elemento uno: Identificar necesidades del usuario y oportunidades de mercado de soluciones comerciales en la MiPyME mediante inteligencia artificial.
-
 Antes de proponer cualquier solución, el consultor necesita entender: conversar con el cliente, investigar el mercado y escuchar a los usuarios.
-
 Este elemento se demuestra con cuatro productos: el reporte inicial del levantamiento de información con el cliente, el análisis de mercado de la MiPyME, el reporte de entrevistas de necesidades del usuario y la matriz de priorización de oportunidades. No tiene desempeños observables.
-
 La priorización es el momento decisivo. Siempre hay más oportunidades de las que se pueden desarrollar, y el estándar pide ordenarlas con criterios de viabilidad comercial, impacto y recursos.
-
-En Artesanías Tonalli, Diego empieza con una sesión en el taller. Lucía le cuenta cuánto le cuesta describir cada pieza para venderla en línea. Después, Diego entrevista a compradores de artesanía en línea y confirma que una descripción pobre es lo que más frena la compra.
-
+En Artesanías Tonalli, Diego dedica tres semanas al levantamiento de información. Lucía le cuenta que describir cada pieza para la tienda en línea le toma cerca de veinte minutos y que, cuando el color no queda preciso, los compradores devuelven piezas. Después, Diego entrevista a compradores de artesanía en línea para entender qué necesitan saber de una pieza antes de comprarla.
 Al terminar este elemento tendrás la base que justifica todo lo demás: la diferencia entre construir algo que el cliente necesita y construir algo que nadie va a usar.

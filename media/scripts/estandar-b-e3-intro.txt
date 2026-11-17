@@ -1,13 +1,7 @@
 Elemento tres: Desarrollar el prototipo de la solución comercial con inteligencia artificial en la MiPyME.
-
 El concepto que aprobó el cliente se vuelve tangible. El consultor construye un prototipo funcional con herramientas de inteligencia artificial, lo documenta y prepara cómo se va a validar.
-
 Este elemento pide dos productos: la documentación del prototipo funcional y el plan de experimentación, con hipótesis que el cliente selecciona en cuatro categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad.
-
 Y dos desempeños observables. Primero, presentar el prototipo al cliente: explicar la solución, su operación técnica y las herramientas que usa, en un lenguaje que el cliente entienda. Segundo, hacer con él una prueba funcional con un caso de uso.
-
 Importa probar en condiciones parecidas al uso cotidiano y registrar también lo que no salió como esperabas. La actitud que se observa es la responsabilidad: cumplir íntegramente con los requisitos de calidad del diseño del prototipo.
-
-En Artesanías Tonalli, Diego construye el asistente en dos semanas, con un modelo de inteligencia artificial que analiza la foto y otro que redacta la ficha. Lo presenta a Lucía con tres piezas del taller: dos fichas salen correctas y una con el color impreciso, que Diego corrige ajustando el prompt.
-
+En Artesanías Tonalli, Diego construye el asistente en dos semanas. Se lo presenta a Lucía con un jarrón y una tarjeta gris que sirve de referencia de color, y le pregunta a propósito en qué caso cree que se va a equivocar. Lucía señala el barro negro, y esa se vuelve la primera prueba: el sistema falla con la luz cálida de la tarde, y acuerdan que avise cuando la detecte.
 El prototipo ya funciona. Ahora viene la pregunta más importante: ¿les sirve a los usuarios?

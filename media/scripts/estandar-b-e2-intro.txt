@@ -1,11 +1,6 @@
 Elemento dos: Conceptualizar soluciones comerciales con inteligencia artificial en la MiPyME.
-
 Con las necesidades claras, empieza la fase creativa: generar ideas con el cliente, elegir la mejor, definir su modelo de negocio y diseñar cómo va a funcionar el prototipo.
-
 Este elemento pide cuatro productos: el informe del proceso de ideación, la matriz de ideas de solución validada por el cliente, el modelo de negocio y el diseño del modelo de funcionamiento del prototipo.
-
 Y dos desempeños que se observan en vivo: facilitar la sesión de ideación con el cliente y facilitar la sesión en la que le presentas la propuesta del prototipo.
-
 Aquí cuentan dos actitudes: la cooperación, para integrar las propuestas del cliente, y la iniciativa, para proponer alternativas y herramientas adecuadas a su contexto.
-
-En Artesanías Tonalli, Diego facilita una sesión de ideación de dos horas con Lucía y Rosa. De ahí sale la idea ganadora: un asistente que convierte la foto de una pieza en su ficha de producto.
+En Artesanías Tonalli, Diego facilita una sesión de ideación de dos horas con Lucía y Rosa. Acuerdan la pregunta generadora, reúnen catorce ideas, primero las suyas y después las que propone la inteligencia artificial, y Lucía y Rosa eligen tres. De ahí sale la propuesta: un asistente que, a partir de la foto de una pieza, escribe su descripción con el color real y la voz del taller.

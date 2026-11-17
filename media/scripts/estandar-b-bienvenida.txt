@@ -1,13 +1,7 @@
 Te damos la bienvenida al curso EC1835: Creación de soluciones comerciales con Inteligencia Artificial en la MiPyME.
-
 Este estándar es para quienes crean algo nuevo para una MiPyME. No se limita a optimizar lo que ya existe: pide investigar una necesidad, conceptualizar una solución comercial, construir un prototipo con inteligencia artificial y validarlo con usuarios.
-
 Es innovación con método. Y como toda innovación que vale, empieza por escuchar antes de construir.
-
-En todo el curso te acompaña el caso de Artesanías Tonalli, un taller familiar de barro bruñido. Lucía, su fundadora y maestra alfarera, quiere vender en línea piezas únicas que son difíciles de describir con palabras. Rosa, que maneja las redes sociales del taller, trabaja con ella. Y Diego, consultor en innovación, aplica con ambas el proceso completo del estándar.
-
+En todo el curso te acompaña el caso de Artesanías Tonalli, un taller familiar de barro bruñido. Lucía, su fundadora y maestra alfarera, ya vende en línea, pero describir cada pieza única le toma cerca de veinte minutos, y cuando el color no queda preciso, le devuelven piezas. Rosa, que maneja las redes y sube las piezas a la tienda, trabaja con ella. Y Diego, consultor en desarrollo de soluciones comerciales con inteligencia artificial, aplica con ambas el proceso completo del estándar.
 El EC1835 tiene cuatro elementos: identificar necesidades y oportunidades de mercado, conceptualizar la solución, desarrollar el prototipo y validarlo con usuarios. Los cuatro piden productos y conocimientos; los tres últimos, además, desempeños que se observan en vivo.
-
 Al terminar, sabrás qué se te pedirá en tu evaluación y tendrás plantillas y prácticas para prepararte con confianza.
-
 Empecemos.
