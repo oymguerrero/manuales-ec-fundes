@@ -176,7 +176,7 @@ Patrones consolidados que conviene respetar al editar páginas de `maestro/`:
 
 ## Templates ofimáticos
 
-52 plantillas descargables, una por producto del estándar: 12 en A, 13 en B, 11 en C y 16 en D. Cada curso tiene su generador (`generate-templates.py` para A, `-b`, `-c`, `-d` para los demás) y todos numeran `<elemento>.<consecutivo>`: el campo `num` decide el nombre del archivo, así que cambiarlo renombra y hay que actualizar los `href` del sitio en el mismo paso.
+53 plantillas descargables, una por producto del estándar: 12 en A, 13 en B, 12 en C y 16 en D. Cada curso tiene su generador (`generate-templates.py` para A, `-b`, `-c`, `-d` para los demás) y todos numeran `<elemento>.<consecutivo>`: el campo `num` decide el nombre del archivo, así que cambiarlo renombra y hay que actualizar los `href` del sitio en el mismo paso.
 
 El formato lo elige la naturaleza del producto, no la uniformidad: Word para reportes, informes, propuestas y actas; Excel donde hace falta calcular (matrices de priorización, Gantt, comparativos antes/después); PowerPoint para el material de capacitación de A.
 
