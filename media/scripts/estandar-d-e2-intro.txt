@@ -1,7 +1,7 @@
-Elemento 2: Construir. Aquí la solución toma forma técnica.
+Elemento 2: construir la solución tecnológica de modernización digital con Inteligencia Artificial. Aquí la solución toma forma técnica.
 
-El Elemento 2 produce 4 documentos: el entorno de desarrollo configurado, la solución de modernización digital con IA desarrollada, el reporte de pruebas técnicas y la documentación técnica completa.
+Este elemento pide cuatro productos: el entorno de desarrollo configurado, la solución tecnológica con IA desarrollada, el reporte de pruebas técnicas y la documentación técnica.
 
-Para El Surtido, la solución integrará tres componentes de IA: un módulo de captura y procesamiento de pedidos desde WhatsApp, un módulo de predicción de demanda basado en los datos históricos de 3 años, y un módulo de optimización de rutas para las tres camionetas. El stack tecnológico será Python, FastAPI, PostgreSQL y una interfaz en Vue.js para que los repartidores vean su ruta en el celular.
+Para El Surtido, la solución tiene tres componentes de IA: la captura de pedidos por WhatsApp y un formulario web, la optimización de rutas para las tres camionetas y la predicción de demanda con los tres años de pedidos. El stack es Python con FastAPI, una base de datos PostgreSQL y una interfaz web en React que los repartidores consultan en el celular.
 
-El criterio central de este elemento es que la solución funcione —no solo que compile. Al día de la evaluación, deberás poder demostrar cada componente operando con datos reales.
+Lo central de este elemento es que la solución funcione y quede documentada: que el backend opere, que las integraciones con IA respondan y que las pruebas lo demuestren. El despliegue en el entorno productivo de la MiPyME viene después, en el Elemento 3.

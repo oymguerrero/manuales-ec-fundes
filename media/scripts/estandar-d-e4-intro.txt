@@ -1,5 +1,5 @@
-Elemento 4: Optimizar. El ciclo de modernización digital cierra con la medición y la mejora.
+Elemento 4: optimizar la solución tecnológica de modernización digital implementada en la MiPyME. El ciclo cierra con la medición y la mejora.
 
-El estándar contempla cuatro productos: el reporte de rendimiento técnico, el reporte de retroalimentación de usuarios, el plan de optimización y el reporte final de cierre del proyecto.
+Este elemento pide cuatro productos: el reporte de rendimiento técnico, el reporte de retroalimentación de usuarios, el plan de optimización y el reporte final de cierre del proyecto.
 
-La actitud, hábito o valor asociado es Iniciativa: proponer mejoras sustentadas en datos y en tendencias relevantes.
+La actitud que se observa aquí es la Iniciativa: proponer mejoras adicionales a las solicitadas en el plan de mantenimiento, con base en los datos de rendimiento y en las tendencias de IA del mercado.
