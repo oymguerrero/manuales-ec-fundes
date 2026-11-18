@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """
-Genera los 13 templates de los productos del estándar Desarrollar con IA
-(Estándar B · Desarrollar productos/servicios con IA en MiPyMEs).
+Genera las 14 plantillas de los productos del EC1835 · Creación de soluciones
+comerciales con Inteligencia Artificial en la MiPyME (Ruta B).
 
-- 9 Word (.doc) como HTML estilizado con MIME Office
+- 10 Word (.doc) como HTML estilizado con MIME Office
 - 4 Excel (.xls) como HTML estilizado con MIME Office
 - Sin PowerPoint en este estándar
 
 Caso pedagógico: Artesanías Tonalli (taller familiar de cerámica de barro
-bruñido, Lucía + Diego). El caso ilustra el TIPO de contenido; el aspirante
-responde con datos de SU proyecto real.
+bruñido: Lucía, Diego y Rosa). El caso ilustra el TIPO de contenido; el aspirante
+responde con los datos de SU proyecto (en el lugar de trabajo o simulado).
 
 Filosofía pedagógica: NO darle la solución al aspirante. Cada template muestra:
-  (1) el criterio F21 literal
+  (1) los criterios literales del EC1835 publicado en el DOF (28-oct-2026)
   (2) ejemplo breve del caso Tonalli (solo ilustrativo)
-  (3) preguntas guía que el aspirante responde con su MiPyME real
+  (3) preguntas guía que el aspirante responde con los datos de su proyecto
 
 Uso:
     python3 scripts/generate-templates-b.py
@@ -30,333 +30,372 @@ OUT = ROOT / "estandar-b" / "templates"
 OUT.mkdir(parents=True, exist_ok=True)
 
 PRODUCTS = [
-    # -----------------------------------------------------------------------
-    # ELEMENTO 1 · IDENTIFICAR
-    # -----------------------------------------------------------------------
     {
-        "num": "1.1", "slug": "reporte-inicial", "format": "word",
-        "elemento": "1 · Identificar", "title": "Reporte inicial documentado del levantamiento de información con el cliente",
-        "intro": "Es el primer producto del proyecto: documentación de la sesión inicial con el emprendedor, el perfil de la empresa, los problemas identificados y la sentencia del problema/oportunidad.",
-        "f21": [
-            "(a) Contiene el resumen de la sesión inicial realizada con el emprendedor o persona responsable de la empresa/contexto empresarial y tecnológico actual de la empresa",
-            "(b) Incluye el perfil empresarial: nombre de la empresa, ubicación, giro o actividad económica, número de empleados, datos de contacto de la persona responsable",
-            "(c) Contiene la descripción de los problemas, necesidades/oportunidades de mejora identificadas desde la perspectiva del cliente",
-            "(d) Contiene la descripción de los procesos, actividades/áreas donde se identifican oportunidades de mejora/innovación",
-            "(e) Contiene la definición del alcance preliminar del proyecto",
-            "(f) Contiene la definición de la sentencia del problema/oportunidad en un párrafo que considera el origen del problema/oportunidad, el perfil del afectado/involucrado, el contexto de aparición y el mecanismo de resolución vigente",
-            "(g) Contiene la(s) fuente(s) de información consultada(s)",
-            "(h) Indica la metodología de recolección aplicada",
-            "(i) Se presenta en formato digital/físico, con redacción clara, estructurada y sin errores ortográficos",
+        'num': '1.1',
+        'slug': 'reporte-inicial',
+        'format': 'word',
+        'elemento': '1 · E5825',
+        'title': 'El reporte inicial del levantamiento de información con el cliente, documentado',
+        'intro': 'Es el primer producto del proyecto: documentación de la sesión inicial con el emprendedor, el perfil de la empresa, los problemas identificados y la sentencia del problema/oportunidad.',
+        'f21': [
+            '(a) Contiene el resumen de la sesión inicial realizada con el emprendedor o persona responsable de la empresa/contexto empresarial y tecnológico actual de la empresa',
+            '(b) Incluye el perfil empresarial, considerando el nombre de la empresa, ubicación, giro o actividad económica, número de empleados, datos de contacto de la persona responsable',
+            '(c) Contiene la descripción de los problemas, necesidades/oportunidades de mejora identificadas desde la perspectiva del cliente',
+            '(d) Contiene la descripción de los procesos, actividades/áreas donde se identifican oportunidades de mejora/innovación',
+            '(e) Contiene la definición del alcance preliminar del proyecto',
+            '(f) Contiene la definición de la sentencia del problema/oportunidad en un párrafo que considera el origen del problema/oportunidad, el perfil del afectado/involucrado, el contexto de aparición y el mecanismo de resolución vigente',
+            '(g) Contiene el nombre/autoría, fecha, origen y tipo de datos recopilados por cada fuente de información consultada',
+            '(h) Indica la metodología de recolección aplicada',
+            '(i) Contiene la declaración bajo protesta de que cuenta con el acuerdo de confidencialidad y protección de los datos personales',
+            '(j) Se presenta en formato digital/físico, con redacción clara, estructurada y sin errores ortográficos',
         ],
-        "tonalli": "Sesión inicial en el taller de Lucía. Artesanías Tonalli: taller familiar, cerámica barro bruñido, 8 personas, venta a turistas y tiendas. Problema: cada pieza es única, describirla para catálogo digital toma 45 min por pieza (Lucía no sabe cómo redactar para e-commerce). Sentencia: \"Los artesanos del taller Tonalli invierten hasta 45 minutos por pieza para redactar descripciones de venta digital, sin un modelo de referencia ni apoyo tecnológico, lo que retrasa la apertura del canal en línea y reduce la capacidad de mostrar su catálogo completo.\"",
-        "preguntas": [
-            ("Resumen de la sesión inicial", "¿Cómo fue tu primera sesión con el emprendedor? ¿Qué planteó como su situación actual? ¿Qué recursos tecnológicos tiene disponibles hoy?"),
-            ("Perfil empresarial", "Nombre legal, ubicación, giro, número de empleados, persona responsable y datos de contacto."),
-            ("Problemas y oportunidades desde la perspectiva del cliente", "¿Qué te dijo el emprendedor que le duele más? ¿Qué oportunidad ve él/ella para su negocio?"),
-            ("Procesos o áreas con oportunidades", "¿En qué parte del negocio identificaste el mayor potencial de mejora con IA? ¿Por qué?"),
-            ("Alcance preliminar del proyecto", "¿Qué incluirá el proyecto y qué no? ¿Cuáles son las fronteras de tu intervención?"),
-            ("Sentencia del problema/oportunidad", "Escribe en 1 párrafo: origen del problema, perfil del afectado, contexto en que aparece, mecanismo de resolución vigente (si lo hay)."),
-            ("Fuentes de información consultadas", "¿Qué documentos, sistemas o personas consultaste para entender el contexto?"),
-            ("Metodología de recolección", "¿Cómo levantaste la información? Entrevista abierta, cuestionario, observación directa, revisión documental…"),
+        'tonalli': 'Levantamiento de tres semanas con Lucía en el taller. Artesanías Tonalli: taller familiar de cerámica de barro bruñido, 8 personas, venta en el taller y tienda en línea. Problema: como cada pieza es única no se puede copiar y pegar, y describirla para la tienda en línea toma cerca de 20 minutos por pieza; además, la descripción del color no siempre queda precisa y eso provoca devoluciones (una compradora devolvió un jarrón porque, según ella, el color no era el de la foto; sí lo era, pero la luz cambia). Lucía quiere que las descripciones suenen al taller y no a fábrica. Sentencia: "Los artesanos del taller Tonalli invierten cerca de 20 minutos por pieza en redactar la descripción de venta en línea, y el color no siempre queda preciso, lo que provoca devoluciones y descripciones que no suenan a la voz del taller." Diego firmó con Lucía el acuerdo de confidencialidad antes de levantar la información.',
+        'preguntas': [
+            ('Resumen de la sesión inicial', '¿Cómo fue tu primera sesión con el emprendedor? ¿Qué planteó como su situación actual? ¿Qué recursos tecnológicos tiene disponibles hoy?'),
+            ('Perfil empresarial', 'Nombre legal, ubicación, giro, número de empleados, persona responsable y datos de contacto.'),
+            ('Problemas y oportunidades desde la perspectiva del cliente', '¿Qué te dijo el emprendedor que le duele más? ¿Qué oportunidad ve él/ella para su negocio?'),
+            ('Procesos o áreas con oportunidades', '¿En qué parte del negocio identificaste el mayor potencial de mejora con IA? ¿Por qué?'),
+            ('Alcance preliminar del proyecto', '¿Qué incluirá el proyecto y qué no? ¿Cuáles son las fronteras de tu intervención?'),
+            ('Sentencia del problema/oportunidad', 'Escribe en 1 párrafo: origen del problema, perfil del afectado, contexto en que aparece, mecanismo de resolución vigente (si lo hay).'),
+            ('Fuentes de información consultadas', 'Por cada fuente que consultaste: nombre o autoría, fecha, origen y tipo de datos que recopilaste.'),
+            ('Metodología de recolección', '¿Cómo levantaste la información? Entrevista abierta, cuestionario, observación directa, revisión documental…'),
+            ('Declaración bajo protesta', 'Escribe la declaración bajo protesta de que cuentas con el acuerdo de confidencialidad y de protección de los datos personales con la empresa, e indica dónde está ese acuerdo.'),
         ],
     },
     {
-        "num": "1.2", "slug": "analisis-mercado", "format": "word",
-        "elemento": "1 · Identificar", "title": "Análisis de mercado de la MiPyME elaborado",
-        "intro": "Documenta el macroentorno del sector, el comparativo de competidores y las oportunidades de diferenciación con IA. Alimenta las hipótesis que se validarán en las entrevistas de usuario.",
-        "f21": [
-            "(a) Contiene el análisis del macroentorno y tendencias del mercado del sector de la MiPyME: tendencias de consumo, cambios tecnológicos, comportamientos del cliente y dinámicas del mercado",
-            "(b) Incluye un comparativo de competidores directos e indirectos: propuesta de valor, posicionamiento, uso de tecnología y capacidades digitales presentes en el mercado",
-            "(c) Contiene la descripción de las oportunidades identificadas de diferenciación mediante IA, derivadas del análisis de tendencias, brechas competitivas y necesidades emergentes del usuario",
-            "(d) Incluye información del entorno de la MiPyME para orientar las entrevistas con usuarios y partes interesadas, permitiendo precisar la hipótesis de problemas, necesidades y oportunidades a validar",
-            "(e) Contiene el listado de herramientas y prompts de análisis con IA utilizados",
-            "(f) Incluye las fuentes de información consultadas: reportes sectoriales, estudios de mercado, bases de datos, plataformas digitales y herramientas de análisis con IA",
-            "(g) Se presenta en formato digital/físico, con redacción clara, estructurada y sin errores ortográficos",
+        'num': '1.2',
+        'slug': 'analisis-mercado',
+        'format': 'word',
+        'elemento': '1 · E5825',
+        'title': 'El análisis de mercado de la MiPyME, elaborado',
+        'intro': 'Documenta el macroentorno del sector, el comparativo de competidores y las oportunidades de diferenciación con IA. Alimenta las hipótesis que se validarán en las entrevistas de usuario.',
+        'f21': [
+            '(a) Contiene el análisis del macroentorno y tendencias del mercado del sector de la MiPyME, que contemplan las tendencias de consumo del mercado identificadas, cambios tecnológicos, comportamientos del cliente y dinámicas del mercado que impactan el proceso o servicio analizado',
+            '(b) Incluye un comparativo de competidores directos e indirectos, considerando propuesta de valor, posicionamiento, uso de tecnología y capacidades digitales presentes en el mercado',
+            '(c) Contiene la descripción de las oportunidades identificadas de diferenciación mediante el uso IA, derivadas del análisis de tendencias, brechas competitivas y necesidades emergentes del usuario',
+            '(d) Incluye información del entorno de la MiPyME para orientar las entrevistas con usuarios y partes interesadas permitiendo precisar la hipótesis de problemas, necesidades y oportunidades a validar',
+            '(e) Contiene el listado de herramientas y prompts de análisis con IA utilizados',
+            '(f) Incluye las fuentes de información consultadas/reportes sectoriales/estudios de mercado/bases de datos/plataformas digitales y herramientas de análisis con IA',
+            '(g) Se presenta en formato digital/físico, con redacción clara, estructurada y sin errores ortográficos',
         ],
-        "tonalli": "Análisis del sector artesanías mexicanas + e-commerce de productos únicos/handmade. Tendencia: crecimiento de plataformas como Etsy MX, Amazon Handmade, Instagram Shopping. Brecha: la mayoría de artesanos en Tonalá carecen de presencia digital estructurada. Herramienta IA usada: Claude para análisis de tendencias, prompt: \"Analiza las tendencias de e-commerce para artesanías mexicanas únicas dirigidas a turismo doméstico e internacional en 2025.\"",
-        "preguntas": [
-            ("Análisis del macroentorno y tendencias", "¿Qué está pasando en el sector de tu MiPyME que sea relevante para el proyecto? Tendencias de consumo, cambios tecnológicos, regulatorios o sociales."),
-            ("Comparativo de competidores", "¿Quiénes son los competidores directos e indirectos? ¿Cómo usan tecnología o IA? ¿Cuál es su propuesta de valor vs la de tu MiPyME?"),
-            ("Oportunidades de diferenciación con IA", "A partir del análisis: ¿qué puede hacer tu MiPyME con IA que sus competidores no hacen? ¿Dónde hay brecha real?"),
-            ("Información para orientar entrevistas", "¿Qué hipótesis de problema/oportunidad tienes ahora, que vas a confirmar o refutar con las entrevistas de usuario?"),
-            ("Herramientas y prompts IA usados", "Lista las herramientas que usaste para el análisis de mercado + los prompts que resultaron más útiles."),
-            ("Fuentes consultadas", "Reportes sectoriales, estudios de mercado, plataformas de datos, artículos de tendencias. Cita con detalle suficiente para que el evaluador pueda verificarlas."),
-        ],
-    },
-    {
-        "num": "1.3", "slug": "reporte-entrevistas", "format": "word",
-        "elemento": "1 · Identificar", "title": "Reporte de entrevistas de necesidades del usuario, elaborado",
-        "intro": "Documenta las entrevistas realizadas con usuarios y partes interesadas, el perfil de usuario construido, el análisis de causas raíz y las oportunidades de mejora identificadas.",
-        "f21": [
-            "(a) Contiene el registro de la(s) entrevista(s) realizada(s): objetivo de cada entrevista, perfil del entrevistado y medio utilizado",
-            "(b) Especifica las herramientas/plataformas de IA utilizadas como apoyo en la investigación cualitativa, incluyendo propósito de uso y prompts aplicados",
-            "(c) Incluye la descripción de los problemas/necesidades/experiencias y contexto de uso del usuario relacionados con el proceso analizado",
-            "(d) Contiene la descripción del perfil del usuario integrado por sus necesidades, emociones, perspectiva, acciones y resultados esperados",
-            "(e) Incluye el análisis del propósito de uso: cronología del proceso, cuatro fuerzas del progreso y narrativa de necesidad (situación, motivación, resultado esperado)",
-            "(f) Contiene los hallazgos obtenidos durante las entrevistas: patrones de comportamiento y necesidades identificadas como prioritarias",
-            "(g) Incluye la descripción de los problemas actuales del usuario y su impacto en el proceso o servicio analizado",
-            "(h) Incluye el análisis de causa raíz mediante árbol de problema/causa-efecto",
-            "(i) Incluye la descripción de las oportunidades de mejora y oportunidades de mercado mediante el uso de IA en la MiPyME",
-            "(j) Contiene el listado de herramientas y prompts de análisis con IA utilizados",
-            "(k) Se presenta en formato digital/físico, con redacción clara, estructurada y sin errores ortográficos",
-        ],
-        "tonalli": "4 entrevistas: Lucía (dueña), Diego (sobrino/apoyo), 2 clientes regulares que compran en el taller. Herramienta IA: Claude para síntesis de entrevistas y generación de user persona. Hallazgos principales: los clientes buscan \"la historia detrás de la pieza\" + \"saber que es única\" + \"poder regalarla con una descripción lista\". Cuatro fuerzas: Push = catálogo físico agotador; Pull = ver tiendas con fotos y descripciones atractivas en línea; Anxiety = miedo a que IA \"no capture la esencia artesanal\"; Habit = seguir vendiendo solo presencialmente.",
-        "preguntas": [
-            ("Registro de entrevistas", "Por cada entrevista: objetivo, perfil del entrevistado (quién es, qué hace, cómo se relaciona con el problema), medio utilizado (presencial, videollamada, etc.)."),
-            ("Herramientas IA en investigación cualitativa", "¿Usaste IA para sintetizar entrevistas, generar user personas o explorar hipótesis? ¿Qué herramienta, con qué propósito y con qué prompt?"),
-            ("Problemas, necesidades y contexto de uso", "¿Qué problemas concretos tiene el usuario en su vida diaria relacionados con el proceso que interviene tu solución?"),
-            ("Perfil del usuario (necesidades, emociones, perspectiva, acciones, resultados esperados)", "Construye el perfil completo del usuario tipo. ¿Qué siente? ¿Qué hace hoy? ¿Qué quiere lograr?"),
-            ("Análisis del propósito de uso (cuatro fuerzas + narrativa de necesidad)", "¿Qué empuja al usuario a buscar un cambio (Push)? ¿Qué le atrae de la solución propuesta (Pull)? ¿Qué le genera ansiedad (Anxiety)? ¿Qué hábito mantiene la situación actual (Habit)? Escribe la narrativa: \"Cuando [situación], quiero [motivación], para poder [resultado esperado].\""),
-            ("Hallazgos (patrones y necesidades prioritarias)", "Resume los patrones que emergieron de las entrevistas. ¿Cuáles necesidades son las más frecuentes y las de mayor impacto?"),
-            ("Problemas del usuario e impacto", "Por cada problema identificado: ¿cuánto le cuesta al usuario (tiempo, dinero, estrés)? ¿Qué consecuencias tiene si no se resuelve?"),
-            ("Análisis de causa raíz (árbol de problema/causa-efecto)", "Dibuja o describe el árbol: problema central → causas raíz → efectos en el negocio y en el usuario."),
-            ("Oportunidades de mejora y de mercado con IA", "A partir del análisis: ¿qué oportunidades concretas de mejora identificaste que podrían resolverse con IA?"),
-            ("Herramientas y prompts IA usados", "Lista completa de herramientas + prompts aplicados en todo el proceso de investigación."),
+        'tonalli': 'Análisis del sector de artesanías mexicanas y del comercio en línea de piezas únicas hechas a mano. Tendencia: crecen las tiendas en línea y las ventas por redes sociales de productos artesanales. Brecha: la mayoría de los talleres de la región no tienen una presencia digital estructurada. Diego usó una herramienta de IA generativa con el prompt: "Analiza las tendencias de comercio en línea para artesanías mexicanas únicas dirigidas a compradores en México."',
+        'preguntas': [
+            ('Análisis del macroentorno y tendencias', '¿Qué está pasando en el sector de tu MiPyME que sea relevante para el proyecto? Tendencias de consumo, cambios tecnológicos, regulatorios o sociales.'),
+            ('Comparativo de competidores', '¿Quiénes son los competidores directos e indirectos? ¿Cómo usan tecnología o IA? ¿Cuál es su propuesta de valor vs la de tu MiPyME?'),
+            ('Oportunidades de diferenciación con IA', 'A partir del análisis: ¿qué puede hacer tu MiPyME con IA que sus competidores no hacen? ¿Dónde hay brecha real?'),
+            ('Información para orientar entrevistas', '¿Qué hipótesis de problema/oportunidad tienes ahora, que vas a confirmar o refutar con las entrevistas de usuario?'),
+            ('Herramientas y prompts IA usados', 'Lista las herramientas que usaste para el análisis de mercado + los prompts que resultaron más útiles.'),
+            ('Fuentes consultadas', 'Reportes sectoriales, estudios de mercado, plataformas de datos, artículos de tendencias. Cita con detalle suficiente para que el evaluador pueda verificarlas.'),
         ],
     },
     {
-        "num": "1.4", "slug": "matriz-priorizacion", "format": "excel",
-        "elemento": "1 · Identificar", "title": "Matriz de priorización de oportunidades elaborada",
-        "intro": "Hoja de cálculo para priorizar las oportunidades detectadas. Evalúa viabilidad comercial, impacto y recursos necesarios para decidir cuál desarrollar primero.",
-        "f21": [
-            "(a) Contiene los criterios de evaluación de viabilidad comercial, impacto y recursos definidos",
-            "(b) Contiene las oportunidades clasificadas y ordenadas por prioridad",
-            "(c) Contiene la recomendación de oportunidades seleccionadas para desarrollo",
-            "(d) Se presenta en formato digital/físico, con redacción clara, estructura profesional y sin errores ortográficos",
+        'num': '1.3',
+        'slug': 'reporte-entrevistas',
+        'format': 'word',
+        'elemento': '1 · E5825',
+        'title': 'El reporte de entrevistas de necesidades del usuario, elaborado',
+        'intro': 'Documenta las entrevistas realizadas con usuarios y partes interesadas, el perfil de usuario construido, el análisis de causas raíz y las oportunidades de mejora identificadas.',
+        'f21': [
+            '(a) Contiene el registro de la(s) entrevista(s) realizada(s) a(l) usuario(s), cliente(s)/parte(s) interesada(s)/usuario(s) sintético(s) de la MiPyME, incluyendo el objetivo de cada entrevista, el perfil del entrevistado y el medio utilizado para su realización',
+            '(b) Especifica las herramientas/plataformas de IA utilizadas como apoyo en la investigación cualitativa, incluyendo el propósito de uso y los prompts aplicados',
+            '(c) Incluye la descripción de los problemas/necesidades/experiencias y contexto de uso del usuario relacionados con el proceso analizado',
+            '(d) Contiene la descripción del perfil del usuario integrado por sus necesidades, emociones, perspectiva, acciones y resultados esperados',
+            '(e) Incluye el análisis del propósito de uso, considerando la cronología del proceso, las cuatro fuerzas del progreso y la narrativa de necesidad que describe la situación, la motivación y el resultado esperado',
+            '(f) Contiene los hallazgos obtenidos durante las entrevistas, identificando patrones de comportamiento y necesidades identificadas como prioritarias',
+            '(g) Incluye la descripción de los problemas actuales del usuario y su impacto en el proceso o servicio analizado',
+            '(h) Incluye el análisis de causa raíz mediante árbol de problema/causa-efecto, identificando causas y efectos asociados',
+            '(i) Incluye la descripción de las oportunidades de mejora y oportunidades de mercado mediante el uso de IA en la MiPyME',
+            '(j) Contiene el listado de herramientas y prompts de análisis con IA utilizados',
+            '(k) Se presenta en formato digital/físico, con redacción clara, estructurada y sin errores ortográficos',
         ],
-        "tonalli": "3 oportunidades detectadas: (1) Asistente generador de descripciones y fichas a partir de foto (impacto alto, viabilidad alta, recursos bajos → SELECCIONADA); (2) Asistente de atención a turistas por WhatsApp (impacto medio, viabilidad media); (3) Análisis predictivo de inventario (impacto bajo en corto plazo, viabilidad baja → descartada). Se seleccionó la oportunidad 1.",
-        "preguntas": [
-            ("Criterios de evaluación definidos", "¿Qué criterios usaste para evaluar las oportunidades? Define qué significa \"alto/medio/bajo\" para viabilidad comercial, impacto y recursos en el contexto de tu MiPyME."),
-            ("Oportunidades identificadas y su puntaje", "Por cada oportunidad: descripción breve + puntaje en cada criterio. Usa la tabla."),
-            ("Clasificación y orden por prioridad", "Ordena las oportunidades de mayor a menor prioridad resultante del análisis."),
-            ("Recomendación de oportunidades a desarrollar", "¿Cuál o cuáles seleccionaste? ¿Por qué? ¿Qué factores fueron determinantes en la decisión?"),
-        ],
-    },
-
-    # -----------------------------------------------------------------------
-    # ELEMENTO 2 · CONCEPTUALIZAR
-    # -----------------------------------------------------------------------
-    {
-        "num": "2.1", "slug": "informe-ideacion", "format": "word",
-        "elemento": "2 · Conceptualizar", "title": "Informe del proceso de ideación de soluciones documentado con el cliente/usuario",
-        "intro": "Documenta la sesión de ideación: las preguntas generadoras, las técnicas aplicadas, las ideas obtenidas y cómo se refinaron para orientar el desarrollo.",
-        "f21": [
-            "(a) Contiene las preguntas generadoras de ideas formuladas a partir del problema priorizado",
-            "(b) Contiene las preguntas sobre oportunidades de mejora o innovación en procesos, productos/servicios",
-            "(c) Contiene la/s pregunta/s detonadora/s seleccionadas para la generación de ideas",
-            "(d) Incluye las técnicas de ideación utilizadas",
-            "(e) Contiene las ideas obtenidas a partir de las preguntas generadoras de ideas",
-            "(f) Contiene la reformulación de las ideas que facilitan/impulsan la generación de soluciones",
-            "(g) Contiene las herramientas y los prompts que se utilizaron en la sesión de ideación de soluciones comerciales con IA",
-            "(h) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos",
-        ],
-        "tonalli": "Sesión de ideación con Lucía y Diego. Pregunta detonadora: \"¿Cómo podríamos ayudar a que cada pieza única de Tonalli cuente su propia historia para un comprador en línea que nunca ha estado en el taller?\" Técnica: brainwriting + expansión con Claude. Ideas generadas: (1) asistente que describe piezas a partir de foto; (2) QR en cada pieza con historia narrada en audio; (3) video-story generado automáticamente. Idea seleccionada: 1 + elementos de 3 (ficha visual + descripción textual).",
-        "preguntas": [
-            ("Preguntas generadoras de ideas a partir del problema priorizado", "Antes de la sesión: ¿qué preguntas preparaste para detonar ideas alrededor del problema central?"),
-            ("Preguntas sobre oportunidades de mejora/innovación", "¿Qué preguntas exploraron oportunidades de innovar en procesos o en el producto/servicio mismo?"),
-            ("Pregunta(s) detonadora(s) seleccionada(s)", "¿Cuál fue la pregunta \"¿Cómo podríamos…?\" que guio la sesión? ¿Cómo la construiste?"),
-            ("Técnicas de ideación utilizadas", "¿Usaste brainwriting, SCAMPER, mapas mentales, Design Sprint, otra técnica? Describe cómo la aplicaste."),
-            ("Ideas obtenidas", "Lista todas las ideas que surgieron en la sesión. Cantidad > calidad en esta etapa."),
-            ("Reformulación de ideas", "¿Cómo refinaste o combinaste las ideas para acercarlas a una solución viable? ¿Cuáles se descartaron y por qué?"),
-            ("Herramientas y prompts IA en la sesión", "¿Usaste IA para generar, expandir o filtrar ideas? ¿Qué herramienta y con qué prompt?"),
+        'tonalli': 'Entrevistas con compradores de artesanía en línea, además de las conversaciones con Lucía y Rosa, del taller. Diego usó una herramienta de IA generativa para sintetizar las entrevistas y construir el perfil del usuario. Hallazgos principales: los compradores buscan "la historia detrás de la pieza", "saber que es única" y "que el color sea el de la foto". Cuatro fuerzas del comprador: Push = el color de la foto no le permite decidir; Pull = una descripción que cuente la pieza y su color real; Anxiety = miedo de que la pieza no sea como la foto; Habit = preguntar por WhatsApp o comprar donde puede ver la pieza antes de pagar.',
+        'preguntas': [
+            ('Registro de entrevistas', 'Por cada entrevista: objetivo, perfil del entrevistado (quién es, qué hace, cómo se relaciona con el problema), medio utilizado (presencial, videollamada, etc.). Si trabajaste con usuarios sintéticos (perfiles simulados con IA), indícalo y explica cómo los construiste.'),
+            ('Herramientas IA en investigación cualitativa', '¿Usaste IA para sintetizar entrevistas, generar user personas o explorar hipótesis? ¿Qué herramienta, con qué propósito y con qué prompt?'),
+            ('Problemas, necesidades y contexto de uso', '¿Qué problemas concretos tiene el usuario en su vida diaria relacionados con el proceso que interviene tu solución?'),
+            ('Perfil del usuario (necesidades, emociones, perspectiva, acciones, resultados esperados)', 'Construye el perfil completo del usuario tipo. ¿Qué siente? ¿Qué hace hoy? ¿Qué quiere lograr?'),
+            ('Análisis del propósito de uso (cuatro fuerzas + narrativa de necesidad)', '¿Qué empuja al usuario a buscar un cambio (Push)? ¿Qué le atrae de la solución propuesta (Pull)? ¿Qué le genera ansiedad (Anxiety)? ¿Qué hábito mantiene la situación actual (Habit)? Escribe la narrativa: "Cuando [situación], quiero [motivación], para poder [resultado esperado]."'),
+            ('Hallazgos (patrones y necesidades prioritarias)', 'Resume los patrones que emergieron de las entrevistas. ¿Cuáles necesidades son las más frecuentes y las de mayor impacto?'),
+            ('Problemas del usuario e impacto', 'Por cada problema identificado: ¿cuánto le cuesta al usuario (tiempo, dinero, estrés)? ¿Qué consecuencias tiene si no se resuelve?'),
+            ('Análisis de causa raíz (árbol de problema/causa-efecto)', 'Dibuja o describe el árbol: problema central → causas raíz → efectos en el negocio y en el usuario.'),
+            ('Oportunidades de mejora y de mercado con IA', 'A partir del análisis: ¿qué oportunidades concretas de mejora identificaste que podrían resolverse con IA?'),
+            ('Herramientas y prompts IA usados', 'Lista completa de herramientas + prompts aplicados en todo el proceso de investigación.'),
         ],
     },
     {
-        "num": "2.2", "slug": "matriz-ideas-solucion", "format": "excel",
-        "elemento": "2 · Conceptualizar", "title": "Matriz de ideas de solución validada por el cliente/usuario",
-        "intro": "Tabla comparativa de todas las ideas generadas, evaluadas por novedad, utilidad y factibilidad, con la selección final documentada y validada por el cliente.",
-        "f21": [
-            "(a) Contiene el listado de ideas generadas durante el proceso de ideación",
-            "(b) Contiene la descripción breve de cada idea de producto o servicio propuesto",
-            "(c) Incluye una clasificación preliminar de las ideas según criterios de novedad, utilidad y factibilidad",
-            "(d) Especifica las oportunidades de implementación de tecnologías digitales/IA identificadas y validadas por el cliente/usuario",
-            "(e) Especifica la(s) idea(s) seleccionada(s) por el cliente",
-            "(f) Se presenta en formato de matriz/tabla de análisis, en formato digital/físico, con redacción clara y sin errores ortográficos",
+        'num': '1.4',
+        'slug': 'matriz-priorizacion',
+        'format': 'excel',
+        'elemento': '1 · E5825',
+        'title': 'La matriz de priorización de oportunidades, elaborada',
+        'intro': 'Hoja de cálculo para priorizar las oportunidades detectadas. Evalúa viabilidad comercial, impacto y recursos necesarios para decidir cuál desarrollar primero.',
+        'f21': [
+            '(a) Contiene los criterios de evaluación de viabilidad comercial, impacto y recursos definidos',
+            '(b) Contiene las oportunidades clasificadas y ordenadas por prioridad',
+            '(c) Contiene la recomendación de oportunidades seleccionadas para desarrollo',
+            '(d) Se presenta en formato digital/físico, con redacción clara, estructura profesional y sin errores ortográficos',
         ],
-        "tonalli": "Matriz con 6 ideas evaluadas por Lucía y Diego. Criterios: novedad (1-5), utilidad para el negocio (1-5), factibilidad técnica (1-5). Ganadora: \"Asistente IA que genera descripción + ficha de producto desde foto\" → novedad 4, utilidad 5, factibilidad 4. Segunda: \"QR con historia narrada\" → descartada por costo de implementación por pieza.",
-        "preguntas": [
-            ("Listado de ideas con descripción breve", "Una fila por idea. Describe brevemente qué es y cómo funcionaría."),
-            ("Clasificación por novedad, utilidad y factibilidad", "Puntúa cada idea en los tres criterios. Define qué significa cada nivel (1-5) en el contexto de tu MiPyME."),
-            ("Oportunidades IA validadas por el cliente", "¿Qué tecnologías o herramientas de IA vio el cliente como aplicables y deseables para cada idea? ¿Hubo alguna que el cliente rechazó?"),
-            ("Idea(s) seleccionada(s) por el cliente", "¿Cuál eligió el cliente? ¿Fue una sola idea o una combinación? Documenta el proceso de selección."),
-        ],
-    },
-    {
-        "num": "2.3", "slug": "modelo-negocio", "format": "word",
-        "elemento": "2 · Conceptualizar", "title": "Modelo de negocio documentado",
-        "intro": "Documento integrador que combina la propuesta de valor comercial (canvas) con el diseño del modelo de funcionamiento del prototipo: arquitectura, flujos, herramientas IA seleccionadas y consideraciones éticas.",
-        "f21": [
-            "(a) Incluye la descripción del valor diferencial de la idea respecto a soluciones convencionales",
-            "(b) Contiene la descripción de la propuesta de valor comercial en el contexto de la MiPyME, en una frase",
-            "(c) Contiene descritos los segmentos de clientes",
-            "(d) Contiene definidas las formas de relación con el cliente y los canales de comunicación/distribución",
-            "(e) Contiene los recursos y actividades clave necesarias para la operación",
-            "(f) Contiene las fuentes de ingresos asociadas al producto o servicio",
-            "(g) Contiene los costos de desarrollo, operación y mantenimiento",
-            "(h) Contiene las alianzas clave para la operación y desarrollo del producto/servicio",
-            "(i) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos",
-            "(j) Especifica las funcionalidades clave del prototipo de la solución propuesta",
-            "(k) Contiene la definición de los datos de entrada requeridos y los resultados esperados del componente de IA",
-            "(l) Contiene las herramientas/plataformas de IA aplicables al desarrollo del prototipo",
-            "(m) Contiene la justificación de la selección de las herramientas/plataformas de IA alineadas a las necesidades y recursos de la MiPyME",
-            "(n) Describe los flujos de interacción de usuario con el prototipo",
-            "(o) Describe la arquitectura del prototipo",
-            "(p) Contiene la representación visual y la descripción de los requerimientos de diseño gráfico",
-            "(q) Contiene los costos de desarrollo y operación del prototipo",
-            "(r) Contiene la definición de los requerimientos técnicos mínimos del prototipo",
-            "(s) Incluye las consideraciones de protección de datos personales y uso ético de IA aplicables al prototipo",
-            "(t) Incluye las consideraciones de propiedad intelectual aplicables al producto",
-            "(u) Incluye los términos de servicio de las herramientas/plataformas de IA utilizadas y la legislación mexicana de derecho de autor",
-            "(v) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos",
-        ],
-        "tonalli": "Propuesta de valor: \"Cada pieza de Tonalli contará su historia en línea en menos de 2 minutos.\" Segmentos: turistas culturales que compran en línea + tiendas de decoración. Canal: Instagram Shopping + sitio web propio. Prototipo: workflow en Make.com que recibe foto de pieza → Claude Vision genera descripción poética + técnica → output formateado para Wix/tienda.",
-        "preguntas": [
-            ("Valor diferencial", "¿En qué es diferente tu solución respecto a lo que el emprendedor haría sin IA? ¿Cuál es la ventaja competitiva real?"),
-            ("Propuesta de valor en una frase", "Escribe: \"Para [segmento], [nombre de la solución] es [categoría] que [beneficio clave], a diferencia de [alternativa convencional] que [limitación].\""),
-            ("Segmentos de clientes", "¿A quién sirve esta solución? ¿Hay más de un segmento? Descríbelos."),
-            ("Relación con el cliente y canales", "¿Cómo llegará la solución a los clientes? ¿Cómo se comunicarán y distribuirán? ¿Qué tipo de relación (autoservicio, asistida, comunidad)?"),
-            ("Recursos y actividades clave", "¿Qué necesita tener y hacer el emprendedor para que la solución opere? Personas, herramientas, datos, habilidades."),
-            ("Fuentes de ingresos", "¿Cómo generará dinero el emprendedor con esta solución? ¿Directa o indirectamente?"),
-            ("Costos de desarrollo, operación y mantenimiento", "¿Qué costará desarrollar y mantener la solución? Desglosa suscripciones, tiempo, servicio del consultor."),
-            ("Alianzas clave", "¿Hay proveedores, plataformas o personas externas que sean esenciales para que la solución funcione?"),
-            ("Funcionalidades clave del prototipo", "¿Qué hace exactamente el prototipo? Lista las funciones mínimas que debe tener para ser viable."),
-            ("Datos de entrada y resultados esperados del componente IA", "¿Qué le entra al componente de IA? ¿Qué debe salir? Define el contrato de datos de entrada y salida."),
-            ("Herramientas/plataformas de IA seleccionadas y justificación", "¿Qué herramientas usarás? ¿Por qué estas y no otras? Considera el contexto y los recursos de la MiPyME."),
-            ("Flujos de interacción del usuario con el prototipo", "¿Cómo interactúa el usuario con el prototipo paso a paso? Dibuja o describe el flujo."),
-            ("Arquitectura del prototipo", "¿Cuáles son los componentes técnicos? ¿Cómo se conectan entre sí?"),
-            ("Diseño gráfico y requerimientos visuales", "¿Qué aspecto visual tendrá el prototipo? ¿Hay requerimientos de interfaz?"),
-            ("Costos de desarrollo y operación del prototipo", "¿Cuánto costará construirlo? ¿Cuánto costará mantenerlo por mes?"),
-            ("Requerimientos técnicos mínimos", "¿Qué necesita tener la MiPyME para que el prototipo funcione? (Conexión, dispositivos, cuentas, etc.)"),
-            ("Protección de datos y ética de IA", "¿Qué datos personales maneja el prototipo? ¿Cómo se protegen? ¿Hay riesgos de sesgo o uso indebido de IA?"),
-            ("Propiedad intelectual y términos de servicio", "¿Quién es dueño de las descripciones generadas? ¿Los términos de la herramienta de IA permiten el uso comercial?"),
-        ],
-    },
-
-    # -----------------------------------------------------------------------
-    # ELEMENTO 3 · DESARROLLAR
-    # -----------------------------------------------------------------------
-    {
-        "num": "3.1", "slug": "documentacion-prototipo", "format": "word",
-        "elemento": "3 · Desarrollar", "title": "Documentación del prototipo funcional desarrollado",
-        "intro": "Documenta el prototipo funcionando: alcances, restricciones, casos de uso probados, resultados de pruebas funcionales y manual de usuario para que el emprendedor opere de manera autónoma.",
-        "f21": [
-            "(a) Contiene los alcances y restricciones del prototipo funcional",
-            "(b) Contiene la descripción de la operación del prototipo funcional, datos de entrada y parámetros de uso",
-            "(c) Contiene los prompts y ajustes en las herramientas que se utilizan para la construcción del prototipo",
-            "(d) Contiene la descripción de los casos de uso del prototipo funcional",
-            "(e) Contiene el resultado de las pruebas funcionales y retroalimentación de los casos de uso",
-            "(f) Incluye el manual de usuario que describe las instrucciones de operación del prototipo",
-            "(g) Se presenta en formato digital/físico, con redacción clara, estructura profesional y sin errores ortográficos",
-        ],
-        "tonalli": "Prototipo funcionando: workflow en Make.com + Claude Vision. Alcance: genera descripción en español para piezas de cerámica. Restricción: no funciona bien con fotos con fondo muy desordenado. Caso de uso principal: Lucía toma foto con iPhone → la sube al workflow → en 90 segundos recibe descripción lista para copiar a la tienda en línea. Pruebas: 12 piezas piloto, 10 con resultado aceptable, 2 con problemas de iluminación.",
-        "preguntas": [
-            ("Alcances y restricciones del prototipo", "¿Qué SÍ hace el prototipo? ¿Qué NO hace? ¿Qué condiciones necesita para funcionar correctamente? (Tipo de foto, formato de datos, condiciones de red, etc.)"),
-            ("Descripción de la operación (datos de entrada y parámetros)", "¿Cómo opera el prototipo paso a paso? ¿Qué le entra exactamente? ¿Qué parámetros puede configurar el usuario?"),
-            ("Prompts y ajustes en las herramientas", "Lista los prompts que usaste para construir el prototipo. Incluye versiones previas y por qué los ajustaste."),
-            ("Casos de uso documentados", "Por cada caso de uso: nombre, descripción, actor(es) involucrados, pasos, resultado esperado, resultado obtenido."),
-            ("Resultados de pruebas funcionales y retroalimentación", "¿Cuántas pruebas hiciste? ¿Qué salió bien? ¿Qué falló? ¿Qué retroalimentación te dio el usuario?"),
-            ("Manual de usuario", "Instrucciones paso a paso para que el emprendedor opere el prototipo de manera autónoma. Lenguaje simple, orientado a alguien sin experiencia técnica."),
+        'tonalli': '3 oportunidades detectadas: (1) Describir cada pieza única con ayuda de IA, con su color real y la voz del taller, en mucho menos tiempo (impacto alto, viabilidad comercial alta, recursos al alcance del taller → SELECCIONADA); (2) Mejorar la fotografía de las piezas (impacto medio, viabilidad media); (3) Posicionar el taller frente a otros competidores en línea (impacto bajo en corto plazo, viabilidad baja → no seleccionada por ahora). Se seleccionó la oportunidad 1.',
+        'preguntas': [
+            ('Criterios de evaluación definidos', '¿Qué criterios usaste para evaluar las oportunidades? Define qué significa "alto/medio/bajo" para viabilidad comercial, impacto y recursos en el contexto de tu MiPyME.'),
+            ('Oportunidades identificadas y su puntaje', 'Por cada oportunidad: descripción breve + puntaje en cada criterio. Usa la tabla.'),
+            ('Clasificación y orden por prioridad', 'Ordena las oportunidades de mayor a menor prioridad resultante del análisis.'),
+            ('Recomendación de oportunidades a desarrollar', '¿Cuál o cuáles seleccionaste? ¿Por qué? ¿Qué factores fueron determinantes en la decisión?'),
         ],
     },
     {
-        "num": "3.2", "slug": "plan-experimentacion", "format": "excel",
-        "elemento": "3 · Desarrollar", "title": "Plan de experimentación documentado",
-        "intro": "Hoja de cálculo con las hipótesis por categoría (adaptabilidad, deseabilidad, factibilidad, viabilidad), el diseño de las pruebas priorizadas y el cronograma de ejecución.",
-        "f21": [
-            "(a) Contiene al menos tres hipótesis seleccionadas por el cliente de cada una de las siguientes categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad",
-            "(b) Contiene el diseño de las pruebas priorizadas: hipótesis, métricas, criterios de éxito, nivel de criticidad, nivel de confianza, costo, tiempo, nombre de la prueba, nombre del responsable y tiempo de duración",
-            "(c) Incluye la descripción del perfil de los usuarios participantes en las pruebas",
-            "(d) Contiene el plan de ejecución de las pruebas considerando la actividad, responsable y temporalidad",
-            "(e) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos",
+        'num': '2.1',
+        'slug': 'informe-ideacion',
+        'format': 'word',
+        'elemento': '2 · E5826',
+        'title': 'El informe del proceso de ideación de soluciones con el cliente/usuario, documentado',
+        'intro': 'Documenta la sesión de ideación: las preguntas generadoras, las técnicas aplicadas, las ideas obtenidas y cómo se refinaron para orientar el desarrollo.',
+        'f21': [
+            '(a) Contiene las preguntas generadoras de ideas formuladas a partir del problema priorizado',
+            '(b) Contiene las preguntas sobre oportunidades de mejora o innovación en soluciones comerciales de bienes/servicios',
+            '(c) Contiene la/s pregunta/s detonadora/s seleccionadas para la generación de ideas',
+            '(d) Incluye las técnicas de ideación utilizadas',
+            '(e) Contiene las ideas obtenidas a partir de las preguntas generadoras de ideas',
+            '(f) Contiene la reformulación de las ideas que facilitan/impulsan la generación de soluciones',
+            '(g) Contiene las herramientas y los prompts que se utilizaron en la sesión de ideación de soluciones comerciales de bienes/servicios',
+            '(h) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos',
         ],
-        "tonalli": "12 hipótesis en total (3 por categoría). Ejemplos: Deseabilidad — \"Los clientes de Tonalli preferirán comprar en línea si la descripción de cada pieza transmite su unicidad artesanal\". Factibilidad — \"Lucía puede operar el asistente de manera autónoma con una sola sesión de capacitación\". Pruebas: 5 priorizadas, 10 usuarios participantes (4 clientes regulares, 3 clientes nuevos, 3 compradores potenciales vía Instagram).",
-        "preguntas": [
-            ("Hipótesis por categoría (mínimo 3 por cada una)", "Define al menos 3 hipótesis por categoría: adaptabilidad (¿la solución se adapta al contexto de la MiPyME?), deseabilidad (¿los usuarios la quieren?), factibilidad (¿es posible construirla y operarla?), viabilidad (¿genera valor económico?)."),
-            ("Diseño de pruebas priorizadas", "Por cada prueba: hipótesis que valida, métricas de éxito, criterio de éxito (umbral), nivel de criticidad (alta/media/baja), nivel de confianza necesario, costo estimado, tiempo estimado, nombre de la prueba, responsable."),
-            ("Perfil de usuarios participantes", "¿Quiénes participarán en las pruebas? Describe el perfil de cada tipo de usuario: características, nivel de experiencia digital, relación con la MiPyME."),
-            ("Plan de ejecución", "Cronograma de las pruebas: qué se ejecuta cuándo, quién es el responsable, cuánto tiempo toma cada sesión."),
-        ],
-    },
-
-    # -----------------------------------------------------------------------
-    # ELEMENTO 4 · VALIDAR
-    # -----------------------------------------------------------------------
-    {
-        "num": "4.1", "slug": "bitacora-pruebas", "format": "word",
-        "elemento": "4 · Validar", "title": "Bitácora de ejecución de pruebas del plan de experimentación, elaborada",
-        "intro": "Registro cronológico de cada sesión de prueba: quiénes participaron, qué hipótesis se evaluó, qué se observó, incidencias y evidencia documental.",
-        "f21": [
-            "(a) Contiene el registro cronológico de cada experimento ejecutado: fecha, duración, perfil del usuario participante y condiciones de prueba",
-            "(b) Contiene la(s) hipótesis seleccionada(s) para ser evaluada(s) en cada sesión y los datos recopilados conforme a las métricas definidas",
-            "(c) Incluye el registro de observaciones, incidencias técnicas y ajustes realizados durante la ejecución de cada prueba",
-            "(d) Contiene la retroalimentación cualitativa del usuario documentada para cada caso de uso probado",
-            "(e) Incluye la evidencia documental de las pruebas: capturas de pantalla/registros de interacción/grabaciones/transcripciones",
-            "(f) Se presenta en formato digital/físico, con redacción clara, estructura cronológica y sin errores ortográficos",
-        ],
-        "tonalli": "Bitácora de 5 sesiones, 10 usuarios. Sesión 1 (12 mayo, 60 min, 2 clientes regulares): hipótesis de deseabilidad. Resultado: los dos usuarios quisieron comprar en línea cuando vieron la descripción generada. Incidencia: la foto de la sesión tenía luz fluorescente → descripción confundió textura. Ajuste: agregar instrucción de foto con luz natural al manual de usuario.",
-        "preguntas": [
-            ("Registro cronológico por sesión", "Por cada sesión de prueba: fecha y hora, duración, quiénes participaron (perfil), dónde se realizó, condiciones del entorno (dispositivo, conectividad, iluminación si aplica)."),
-            ("Hipótesis evaluada y datos recopilados", "¿Qué hipótesis se validó en cada sesión? ¿Qué datos mediste? ¿Qué métricas obtuviste?"),
-            ("Observaciones, incidencias y ajustes", "¿Qué observaste que no estaba previsto? ¿Qué fallo técnico ocurrió? ¿Qué ajuste hiciste en el momento o para la siguiente sesión?"),
-            ("Retroalimentación cualitativa del usuario", "Citas textuales de lo que dijeron los usuarios. Expresiones faciales o corporales si los observaste presencialmente. Lo que NO dijeron pero comunicaron con su comportamiento."),
-            ("Evidencia documental", "¿Tienes capturas de pantalla, grabaciones, transcripciones? Adjúntalas o describe dónde están. El evaluador necesita ver que el experimento ocurrió."),
+        'tonalli': 'Sesión de ideación de 2 horas que Diego facilitó con Lucía y Rosa, frente a un pizarrón. Pregunta generadora acordada: "¿Cómo podríamos describir cada pieza única de Tonalli con su color real y con la voz del taller en menos de tres minutos?" (Diego propuso la primera versión y Lucía agregó que suene a ellas). Técnica: primero las ideas de Lucía y Rosa, sin filtro, y después ampliadas con una herramienta de IA generativa a partir de la pregunta y de esas ideas. Ideas generadas: 6 de ellas y 14 en total tras la ampliación con IA (entre ellas, una descripción a partir de una foto, de Lucía, y una descripción con la historia de la pieza, que propuso la IA). Clasificación en tres bloques: ahorran tiempo, mejoran la precisión del color y refuerzan la voz del taller. De las 14, 3 atacan los tres bloques a la vez y se pueden prototipar en dos semanas; Lucía y Rosa las eligieron.',
+        'preguntas': [
+            ('Preguntas generadoras de ideas a partir del problema priorizado', 'Antes de la sesión: ¿qué preguntas preparaste para detonar ideas alrededor del problema central?'),
+            ('Preguntas sobre oportunidades de mejora/innovación', '¿Qué preguntas exploraron oportunidades de mejora o innovación en soluciones comerciales de bienes o servicios?'),
+            ('Pregunta(s) detonadora(s) seleccionada(s)', '¿Cuál fue la pregunta "¿Cómo podríamos…?" que guio la sesión? ¿Cómo la construiste?'),
+            ('Técnicas de ideación utilizadas', '¿Usaste brainwriting, SCAMPER, mapas mentales, Design Sprint, otra técnica? Describe cómo la aplicaste.'),
+            ('Ideas obtenidas', 'Lista todas las ideas que surgieron en la sesión. Cantidad > calidad en esta etapa.'),
+            ('Reformulación de ideas', '¿Cómo refinaste o combinaste las ideas para acercarlas a una solución viable? ¿Cuáles se descartaron y por qué?'),
+            ('Herramientas y prompts IA en la sesión', '¿Usaste IA para generar, expandir o filtrar ideas? ¿Qué herramienta y con qué prompt?'),
         ],
     },
     {
-        "num": "4.2", "slug": "reporte-resultados-validacion", "format": "word",
-        "elemento": "4 · Validar", "title": "Reporte de resultados de validación de las pruebas, elaborado",
-        "intro": "Sintetiza los hallazgos de todas las sesiones de prueba: perfil de participantes, resultados por hipótesis, comparativo contra criterios de éxito y patrones emergentes.",
-        "f21": [
-            "(a) Incluye el perfil de los participantes en las pruebas de validación de la(s) hipótesis",
-            "(b) Contiene la descripción de los resultados obtenidos por cada hipótesis evaluada",
-            "(c) Incluye el comparativo de resultados contra los criterios de éxito definidos en el plan de experimentación",
-            "(d) Contiene los hallazgos de usabilidad, funcionalidad y aceptación del usuario derivados de la bitácora de experimentación",
-            "(e) Contiene el análisis de patrones y tendencias identificados a partir de los datos recopilados",
-            "(f) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos",
+        'num': '2.2',
+        'slug': 'matriz-ideas-solucion',
+        'format': 'excel',
+        'elemento': '2 · E5826',
+        'title': 'La matriz de ideas de solución, validada por el cliente/usuario',
+        'intro': 'Tabla comparativa de todas las ideas generadas, evaluadas por novedad, utilidad y factibilidad, con la selección final documentada y validada por el cliente.',
+        'f21': [
+            '(a) Contiene el listado de ideas generadas durante el proceso de ideación',
+            '(b) Contiene la descripción breve de cada idea de bienes/servicios propuestos',
+            '(c) Incluye una clasificación preliminar de las ideas según criterios de novedad, utilidad y factibilidad',
+            '(d) Especifica las oportunidades de implementación de tecnologías digitales/IA identificadas y validadas por el cliente/usuario',
+            '(e) Especifica la(s) idea(s) seleccionada(s) por el cliente',
+            '(f) Se presenta en formato de matriz/tabla de análisis, en formato digital/físico, con redacción clara y sin errores ortográficos',
         ],
-        "tonalli": "10 participantes (4 clientes regulares Tonalli, 3 clientes nuevos, 3 compradores potenciales Instagram). Resultado por hipótesis: deseabilidad → 9/10 usuarios querían comprar; factibilidad → Lucía logró operar sola tras 45 min de capacitación; viabilidad → estimación: 3 ventas adicionales/semana si canal en línea activo. Hallazgo de usabilidad: el paso de subir la foto al workflow resultó confuso para Lucía (requiere ajuste de UX).",
-        "preguntas": [
-            ("Perfil de participantes", "Resume quiénes participaron en todas las sesiones: cantidad, características relevantes, cómo se reclutaron."),
-            ("Resultados por hipótesis", "Por cada hipótesis evaluada: ¿se validó o refutó? ¿Qué datos lo sustentan?"),
-            ("Comparativo contra criterios de éxito", "Tabla: hipótesis → criterio de éxito definido → resultado obtenido → ¿se cumplió?"),
-            ("Hallazgos de usabilidad, funcionalidad y aceptación", "¿Qué encontraste sobre la facilidad de uso, el funcionamiento técnico y la aceptación del usuario? Sé específico."),
-            ("Patrones y tendencias", "¿Qué se repitió en múltiples sesiones? ¿Qué tendencia emerge de los datos?"),
-        ],
-    },
-    {
-        "num": "4.3", "slug": "resultados-por-hipotesis", "format": "excel",
-        "elemento": "4 · Validar", "title": "Descripción de los resultados obtenidos por cada hipótesis, documentada",
-        "intro": "Hoja de cálculo con una fila por hipótesis: metodología utilizada, contexto de la prueba y condiciones de aplicación conforme al plan de experimentación.",
-        "f21": [
-            "(a) Incluye la metodología utilizada en la realización de la prueba",
-            "(b) Contiene la descripción del contexto de la realización de la prueba",
-            "(c) Contiene las condiciones de aplicación de las pruebas conforme al plan de experimentación",
-            "(d) Se presenta en formato digital/físico, con redacción clara, estructura profesional y sin errores ortográficos",
-        ],
-        "tonalli": "Hoja por hipótesis. Hipótesis 1 (deseabilidad · \"los clientes prefieren comprar si la descripción transmite unicidad\"): metodología → entrevista + observación con prototipo en vivo; contexto → sesión en el taller; condiciones → 2 clientes regulares, 30 min, prototipo con 5 piezas reales; resultado → validada (2/2 expresaron intención de compra).",
-        "preguntas": [
-            ("Metodología por hipótesis", "¿Qué método usaste para probar cada hipótesis? (Entrevista con prototipo, cuestionario, prueba A/B, observación directa, otro)"),
-            ("Descripción del contexto de la prueba", "¿Dónde se realizó? ¿Cuándo? ¿Qué dispositivos o materiales se usaron? ¿Qué condiciones del entorno afectaron los resultados?"),
-            ("Condiciones de aplicación conforme al plan", "¿Se ejecutó la prueba exactamente como estaba planeada? Si hubo desviaciones, ¿cuáles y por qué?"),
+        'tonalli': 'Matriz con las 14 ideas, clasificadas por lo que consiguen: ahorran tiempo, mejoran la precisión del color o refuerzan la voz del taller (algunas caen en dos bloques). Criterio de selección: que ataque los tres bloques a la vez y se pueda prototipar en dos semanas. Elegidas por Lucía y Rosa: 3 ideas, entre ellas "Asistente de IA que genera la descripción de la pieza a partir de una foto".',
+        'preguntas': [
+            ('Listado de ideas con descripción breve', 'Una fila por idea. Describe brevemente qué es y cómo funcionaría.'),
+            ('Clasificación por novedad, utilidad y factibilidad', 'Puntúa cada idea en los tres criterios. Define qué significa cada nivel (1-5) en el contexto de tu MiPyME.'),
+            ('Oportunidades IA validadas por el cliente', '¿Qué tecnologías o herramientas de IA vio el cliente como aplicables y deseables para cada idea? ¿Hubo alguna que el cliente rechazó?'),
+            ('Idea(s) seleccionada(s) por el cliente', '¿Cuál eligió el cliente? ¿Fue una sola idea o una combinación? Documenta el proceso de selección.'),
         ],
     },
     {
-        "num": "4.4", "slug": "recomendaciones-prototipo", "format": "word",
-        "elemento": "4 · Validar", "title": "Documento de recomendaciones al prototipo/pruebas, elaborado",
-        "intro": "Sintetiza los ajustes recomendados al prototipo, la decisión de pivoteo/iteración/escalamiento y la hoja de ruta con próximos pasos, responsables y tiempos.",
-        "f21": [
-            "(a) Contiene las recomendaciones de ajuste al prototipo basadas en los hallazgos de validación",
-            "(b) Incluye la decisión documentada y justificada de pivoteo/iteración/escalamiento del producto o servicio",
-            "(c) Contiene la hoja de ruta con los siguientes pasos, responsables y tiempos estimados para la siguiente fase",
-            "(d) Incluye los requerimientos técnicos y de recursos necesarios para la implementación/escalamiento",
-            "(e) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos",
+        'num': '2.3',
+        'slug': 'modelo-negocio',
+        'format': 'word',
+        'elemento': '2 · E5826',
+        'title': 'El modelo de negocio, documentado',
+        'intro': 'Documenta el modelo de negocio de la solución: valor diferencial, propuesta de valor en una frase, segmentos de clientes, relación y canales, recursos y actividades clave, fuentes de ingresos, costos y alianzas clave.',
+        'f21': [
+            '(a) Incluye la descripción del valor diferencial de la idea respecto a soluciones convencionales',
+            '(b) Contiene la descripción de la propuesta de valor comercial en el contexto de la MiPyME, en una frase',
+            '(c) Contiene descritos los segmentos de clientes',
+            '(d) Contiene definidas las formas de relación con el cliente y los canales de comunicación/distribución del modelo de negocio',
+            '(e) Contiene los recursos y actividades clave necesarias para la operación',
+            '(f) Contiene las fuentes de ingresos asociadas al bien/servicio',
+            '(g) Contiene los costos de desarrollo, operación y mantenimiento',
+            '(h) Contiene las alianzas clave para la operación y desarrollo del bien/servicio',
+            '(i) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos',
         ],
-        "tonalli": "Decisión: ITERAR (no pivotar, no escalar aún). Ajustes recomendados: (1) simplificar la interfaz para subir fotos → integrar botón directo en WhatsApp en lugar del workflow de Make; (2) añadir campos editables a la descripción generada antes de publicar. Hoja de ruta: 3 semanas para ajustes técnicos + 1 semana de re-validación con los mismos 10 usuarios.",
-        "preguntas": [
-            ("Recomendaciones de ajuste al prototipo", "Por cada hallazgo negativo de la validación: ¿qué cambio específico recomiendas? ¿Por qué ese cambio y no otro?"),
-            ("Decisión de pivoteo/iteración/escalamiento (justificada)", "¿Cuál es tu recomendación? ¿Iterar (ajustar el prototipo actual), pivotar (cambiar la dirección), o escalar (implementar a mayor escala)? ¿En qué evidencia de la validación basas esa decisión?"),
-            ("Hoja de ruta para la siguiente fase", "¿Qué se hace primero, qué después? Actividades, responsable de cada una y tiempo estimado."),
-            ("Requerimientos técnicos y de recursos para la siguiente fase", "¿Qué necesitará la MiPyME en términos de herramientas, personas, presupuesto y tiempo para ejecutar la siguiente fase?"),
+        'tonalli': 'Propuesta de valor: "Descripciones con el color real, la voz y la historia de cada pieza, para que decidas tu compra con confianza." Segmentos: compradores de artesanía en línea, incluidos quienes ya le han comprado al taller. Canales: la tienda en línea, a la que Rosa sube las piezas todos los días, y las redes del taller. Ingresos: venta en línea de piezas, con menos devoluciones por el color. Costos: dos semanas de desarrollo con un monto cerrado, la licencia mensual de la herramienta de IA y, para mantenerlo, el tiempo de Diego para ajustar el asistente con las correcciones de Lucía. Alianza clave: el proveedor de la herramienta de IA.',
+        'preguntas': [
+            ('Valor diferencial', '¿En qué es diferente tu solución respecto a lo que el emprendedor haría sin IA? ¿Cuál es la ventaja competitiva real?'),
+            ('Propuesta de valor en una frase', 'Escribe: "Para [segmento], [nombre de la solución] es [categoría] que [beneficio clave], a diferencia de [alternativa convencional] que [limitación]."'),
+            ('Segmentos de clientes', '¿A quién sirve esta solución? ¿Hay más de un segmento? Descríbelos.'),
+            ('Relación con el cliente y canales', '¿Cómo llegará la solución a los clientes? ¿Cómo se comunicarán y distribuirán? ¿Qué tipo de relación (autoservicio, asistida, comunidad)?'),
+            ('Recursos y actividades clave', '¿Qué necesita tener y hacer el emprendedor para que la solución opere? Personas, herramientas, datos, habilidades.'),
+            ('Fuentes de ingresos', '¿Cómo generará dinero el emprendedor con esta solución? ¿Directa o indirectamente?'),
+            ('Costos de desarrollo, operación y mantenimiento', '¿Qué costará desarrollar y mantener la solución? Desglosa suscripciones, tiempo, servicio del consultor.'),
+            ('Alianzas clave', '¿Hay proveedores, plataformas o personas externas que sean esenciales para que la solución funcione?'),
+        ],
+    },
+    {
+        'num': '2.4',
+        'slug': 'diseno-modelo-funcionamiento',
+        'format': 'word',
+        'elemento': '2 · E5826',
+        'title': 'El diseño del modelo de funcionamiento del prototipo de la solución con IA, documentado',
+        'intro': 'Documenta cómo va a funcionar el prototipo: funcionalidades clave, datos de entrada y resultados del componente de IA, herramientas y su justificación, flujos de interacción, arquitectura, diseño gráfico, costos, requerimientos técnicos y las consideraciones de datos personales, ética, propiedad intelectual y términos de servicio.',
+        'f21': [
+            '(a) Especifica las funcionalidades clave del prototipo de la solución propuesta',
+            '(b) Contiene la definición de los datos de entrada requeridos y los resultados esperados del componente de IA',
+            '(c) Contiene las herramientas/plataformas de IA aplicables al desarrollo del prototipo de la solución',
+            '(d) Contiene la justificación de la selección de las herramientas/plataformas de IA alineadas a las necesidades y recursos de la MiPyME',
+            '(e) Describe los flujos de interacción de usuario con el prototipo de la solución',
+            '(f) Describe la arquitectura del prototipo de la solución',
+            '(g) Contiene la representación visual y la descripción de los requerimientos de diseño gráfico',
+            '(h) Contiene los costos de desarrollo y operación del prototipo de la solución',
+            '(i) Contiene la definición de los requerimientos técnicos mínimos del prototipo de la solución para su operación en el contexto de la MiPyME',
+            '(j) Incluye las consideraciones de protección de datos personales y uso ético de IA aplicables al prototipo',
+            '(k) Incluye las consideraciones de propiedad intelectual aplicables al bien/servicio',
+            '(l) Incluye los términos de servicio de las herramientas/plataformas de IA utilizadas y la legislación mexicana de derecho de autor',
+            '(m) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos',
+        ],
+        'tonalli': 'Funcionamiento: Lucía o Rosa toman la foto de la pieza con el celular; el asistente identifica forma y técnica, mide el color contra una referencia de color y redacta la descripción usando las 20 descripciones que el taller le dio como ejemplo de tono. Lucía la revisa antes de publicarla. Alcance: no publica solo, no fija precios y no responde a clientes. Requerimiento mínimo: el teléfono que ya tienen y unas 20 fotos de piezas con su descripción actual. Datos: las fotos son de piezas, no de personas, y los datos de los compradores se guardan aparte. Propiedad intelectual: el taller revisa y aprueba cada descripción antes de publicarla y Diego verificó los términos de servicio de la herramienta.',
+        'preguntas': [
+            ('Funcionalidades clave del prototipo', '¿Qué hace exactamente el prototipo? Lista las funciones mínimas que debe tener para ser viable.'),
+            ('Datos de entrada y resultados esperados del componente IA', '¿Qué le entra al componente de IA? ¿Qué debe salir? Define el contrato de datos de entrada y salida.'),
+            ('Herramientas/plataformas de IA seleccionadas y justificación', '¿Qué herramientas usarás? ¿Por qué estas y no otras? Considera el contexto y los recursos de la MiPyME.'),
+            ('Flujos de interacción del usuario con el prototipo', '¿Cómo interactúa el usuario con el prototipo paso a paso? Dibuja o describe el flujo.'),
+            ('Arquitectura del prototipo', '¿Cuáles son los componentes técnicos? ¿Cómo se conectan entre sí?'),
+            ('Diseño gráfico y requerimientos visuales', '¿Qué aspecto visual tendrá el prototipo? ¿Hay requerimientos de interfaz?'),
+            ('Costos de desarrollo y operación del prototipo', '¿Cuánto costará construirlo? ¿Cuánto costará mantenerlo por mes?'),
+            ('Requerimientos técnicos mínimos', '¿Qué necesita tener la MiPyME para que el prototipo funcione? (Conexión, dispositivos, cuentas, etc.)'),
+            ('Protección de datos y ética de IA', '¿Qué datos personales maneja el prototipo? ¿Cómo se protegen? ¿Hay riesgos de sesgo o uso indebido de IA?'),
+            ('Propiedad intelectual y términos de servicio', '¿Quién es dueño de las descripciones que genera la solución? ¿Los términos de servicio de la herramienta de IA permiten el uso comercial? ¿Qué dice la legislación mexicana de derecho de autor sobre los contenidos generados con IA?'),
+        ],
+    },
+    {
+        'num': '3.1',
+        'slug': 'documentacion-prototipo',
+        'format': 'word',
+        'elemento': '3 · E5827',
+        'title': 'La documentación del prototipo funcional, desarrollado',
+        'intro': 'Documenta el prototipo funcionando: alcances, restricciones, casos de uso probados, resultados de pruebas funcionales y manual de usuario para que el emprendedor opere de manera autónoma.',
+        'f21': [
+            '(a) Contiene los alcances y restricciones del prototipo funcional',
+            '(b) Contiene la descripción de la operación del prototipo funcional, datos de entrada y parámetros de uso',
+            '(c) Contiene los prompts y ajustes en las herramientas que se utilizan para la construcción del prototipo',
+            '(d) Contiene la descripción de los casos de uso del prototipo funcional',
+            '(e) Contiene el resultado de las pruebas funcionales y retroalimentación de los casos de uso',
+            '(f) Incluye el manual de usuario que describe las instrucciones de operación del prototipo',
+            '(g) Se presenta en formato digital/físico, con redacción clara, estructura profesional y sin errores ortográficos',
+        ],
+        'tonalli': 'Prototipo construido en dos semanas. Alcance: genera la descripción de piezas de cerámica a partir de una foto con tarjeta gris de referencia; no publica solo, no fija precios y no responde a clientes. Condiciones de uso: la tarjeta siempre en el encuadre y la revisión de Lucía antes de publicar; si se salta cualquiera, el resultado deja de ser confiable. Casos de uso: pieza nueva que entra al catálogo (de 20 minutos a 2), pieza de una serie con variación de color (describe la variación específica) y pieza de encargo (incorpora el nombre de quien la pidió si lo agregan). Pruebas funcionales: barro negro bajo tres condiciones de luz, anotando cada resultado antes de opinar. Mañana junto a la ventana: "negro con reflejos grises" (cumplimiento parcial); tarde: "café oscuro" (falla); luz artificial: negro correcto. Hallazgo: falla con luz cálida de tarde. Acuerdo con Lucía: prioridad al aviso de luz cálida y, como mejora posterior, una segunda referencia de color para barros oscuros, ambos con su firma en la bitácora.',
+        'preguntas': [
+            ('Alcances y restricciones del prototipo', '¿Qué SÍ hace el prototipo? ¿Qué NO hace? ¿Qué condiciones necesita para funcionar correctamente? (Tipo de foto, formato de datos, condiciones de red, etc.)'),
+            ('Descripción de la operación (datos de entrada y parámetros)', '¿Cómo opera el prototipo paso a paso? ¿Qué le entra exactamente? ¿Qué parámetros puede configurar el usuario?'),
+            ('Prompts y ajustes en las herramientas', 'Lista los prompts que usaste para construir el prototipo. Incluye versiones previas y por qué los ajustaste.'),
+            ('Casos de uso documentados', 'Por cada caso de uso: nombre, descripción, actor(es) involucrados, pasos, resultado esperado, resultado obtenido.'),
+            ('Resultados de pruebas funcionales y retroalimentación', '¿Cuántas pruebas hiciste? ¿Qué salió bien? ¿Qué falló? ¿Qué retroalimentación te dio el usuario?'),
+            ('Manual de usuario', 'Instrucciones paso a paso para que el emprendedor opere el prototipo de manera autónoma. Lenguaje simple, orientado a alguien sin experiencia técnica.'),
+        ],
+    },
+    {
+        'num': '3.2',
+        'slug': 'plan-experimentacion',
+        'format': 'excel',
+        'elemento': '3 · E5827',
+        'title': 'El plan de experimentación, documentado',
+        'intro': 'Hoja de cálculo con las hipótesis por categoría (adaptabilidad, deseabilidad, factibilidad y viabilidad), el diseño de las pruebas priorizadas, el perfil de los usuarios participantes y el plan de ejecución.',
+        'f21': [
+            '(a) Contiene al menos tres hipótesis seleccionadas por el cliente de cada una de las siguientes categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad',
+            '(b) Contiene el diseño de las pruebas priorizadas, conformadas por hipótesis, métricas, criterios de éxito, nivel de criticidad, nivel de confianza, costo, tiempo, nombre de la prueba, nombre del responsable y tiempo de duración',
+            '(c) Incluye la descripción del perfil de los usuarios participantes en las pruebas',
+            '(d) Contiene el plan de ejecución de las pruebas considerando la actividad, responsable y temporalidad',
+            '(e) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos',
+        ],
+        'tonalli': 'Hipótesis de las cuatro categorías, seleccionadas con Lucía; el plan completo lleva al menos tres de cada una. Ejemplos: Adaptabilidad — "Si la tienda en línea cambia el formato o los datos que pide en cada descripción, el asistente se ajusta sin rehacerlo." Deseabilidad — "Al menos 8 de 12 compradores califican la descripción como fiel a la pieza." Factibilidad — "El asistente baja el tiempo de descripción por pieza a menos de 5 minutos, con cero errores de color en la última semana." Viabilidad — "El costo mensual de la licencia cabe en lo que el taller ahorra en tiempo y devoluciones." Pruebas priorizadas: (1) Barro negro bajo tres luces: una sesión con un jarrón de barro negro y la tarjeta gris, con Lucía, en la primera semana; criterio de éxito: la descripción del color coincide con la que daría el taller en las tres. (2) Validación con 40 piezas reales y 12 compradores que ya habían comprado, durante cuatro semanas, con Rosa registrando cada resultado en la bitácora.',
+        'preguntas': [
+            ('Hipótesis por categoría', 'Escribe las hipótesis que el cliente seleccionó en cada categoría: adaptabilidad (¿la solución y el negocio pueden adaptarse a cambios del entorno, como la competencia, la tecnología, las reglas de las plataformas, la regulación o las tendencias?), deseabilidad (¿los usuarios la quieren?), factibilidad (¿es posible construirla y operarla?) y viabilidad (¿genera valor económico?). El EC1835 pide «al menos tres hipótesis seleccionadas por el cliente de cada una de las siguientes categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad»: son 12 como mínimo, tres de cada categoría.'),
+            ('Diseño de pruebas priorizadas', 'Por cada prueba: hipótesis que valida, métricas de éxito, criterio de éxito (umbral), nivel de criticidad (alta/media/baja), nivel de confianza necesario, costo estimado, tiempo estimado, nombre de la prueba, responsable.'),
+            ('Perfil de usuarios participantes', '¿Quiénes participarán en las pruebas? Describe el perfil de cada tipo de usuario: características, nivel de experiencia digital, relación con la MiPyME.'),
+            ('Plan de ejecución', 'Cronograma de las pruebas: qué se ejecuta cuándo, quién es el responsable, cuánto tiempo toma cada sesión.'),
+        ],
+    },
+    {
+        'num': '4.1',
+        'slug': 'bitacora-pruebas',
+        'format': 'word',
+        'elemento': '4 · E5828',
+        'title': 'La bitácora de ejecución de pruebas del plan de experimentación, elaborada',
+        'intro': 'Registro cronológico de cada sesión de prueba: quiénes participaron, qué hipótesis se evaluó, qué se observó, incidencias y evidencia documental.',
+        'f21': [
+            '(a) Contiene el registro cronológico de cada experimento ejecutado, incluyendo fecha, duración, perfil del usuario participante y condiciones de prueba',
+            '(b) Contiene la(s) hipótesis seleccionada(s) para ser evaluada(s) en cada sesión y los datos recopilados conforme a las métricas definidas en el plan de experimentación',
+            '(c) Incluye el registro de observaciones, incidencias técnicas y ajustes realizados durante la ejecución de cada prueba',
+            '(d) Contiene la retroalimentación cualitativa del usuario documentada para cada caso de uso probado',
+            '(e) Incluye la evidencia documental de las pruebas realizadas: capturas de pantalla/registros de interacción/grabaciones/transcripciones',
+            '(f) Se presenta en formato digital/físico, con redacción clara, estructura cronológica y sin errores ortográficos',
+        ],
+        'tonalli': 'Bitácora de las 4 semanas de validación con 40 piezas reales del catálogo y 12 compradores que ya habían comprado antes en el taller. Rosa registra cada resultado antes de opinar. Incidencia: el error de color del barro negro con luz cálida de tarde, detectado en la prueba funcional, se corrigió en la semana 2 con el aviso de luz; de la semana 2 a la 4 no hubo ningún error de color. Ajuste: fotografiar con el aviso de luz activo y con la tarjeta siempre en el encuadre. Hallazgo no buscado: los compradores preguntaron menos por WhatsApp antes de comprar.',
+        'preguntas': [
+            ('Registro cronológico por sesión', 'Por cada sesión de prueba: fecha y hora, duración, quiénes participaron (perfil), dónde se realizó, condiciones del entorno (dispositivo, conectividad, iluminación si aplica).'),
+            ('Hipótesis evaluada y datos recopilados', '¿Qué hipótesis se validó en cada sesión? ¿Qué datos mediste? ¿Qué métricas obtuviste?'),
+            ('Observaciones, incidencias y ajustes', '¿Qué observaste que no estaba previsto? ¿Qué fallo técnico ocurrió? ¿Qué ajuste hiciste en el momento o para la siguiente sesión?'),
+            ('Retroalimentación cualitativa del usuario', 'Citas textuales de lo que dijeron los usuarios. Expresiones faciales o corporales si los observaste presencialmente. Lo que NO dijeron pero comunicaron con su comportamiento.'),
+            ('Evidencia documental', '¿Tienes capturas de pantalla, grabaciones, transcripciones? Adjúntalas o describe dónde están. El evaluador necesita ver que el experimento ocurrió.'),
+        ],
+    },
+    {
+        'num': '4.2',
+        'slug': 'reporte-resultados-validacion',
+        'format': 'word',
+        'elemento': '4 · E5828',
+        'title': 'El reporte de resultados de validación de las pruebas, elaborado',
+        'intro': 'Sintetiza los hallazgos de todas las sesiones de prueba: perfil de participantes, resultados por hipótesis, comparativo contra criterios de éxito y patrones emergentes.',
+        'f21': [
+            '(a) Incluye el perfil de los participantes en las pruebas de validación de la(s) hipótesi(s)',
+            '(b) Contiene la descripción de los resultados obtenidos por cada hipótesis evaluada',
+            '(c) Incluye el comparativo de resultados contra los criterios de éxito definidos en el plan de experimentación',
+            '(d) Contiene los hallazgos de usabilidad, funcionalidad y aceptación del usuario derivados de la bitácora de experimentación',
+            '(e) Contiene el análisis de patrones y tendencias identificados a partir de los datos recopilados',
+            '(f) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos',
+        ],
+        'tonalli': '40 piezas reales y 12 compradores que ya habían comprado antes, durante 4 semanas. Tiempo de descripción: 3 minutos (antes 20), contra una meta de menos de 5 → cumplida. Errores de color: ninguno de la semana 2 a la 4, contra una meta de cero en la última semana → cumplida (el aviso de luz cálida funcionó). Deseabilidad: 9 de 12 calificaron la descripción como fiel, contra una meta de al menos 8 → validada. Lo que no salió: 3 de 12 la encontraron demasiado larga para leerla en el teléfono, y en las piezas de serie las descripciones se parecen mucho entre sí. Patrón cualitativo: una compradora dijo que la descripción le hizo entender por qué la pieza cuesta lo que cuesta.',
+        'preguntas': [
+            ('Perfil de participantes', 'Resume quiénes participaron en todas las sesiones: cantidad, características relevantes, cómo se reclutaron.'),
+            ('Resultados por hipótesis', 'Por cada hipótesis evaluada: ¿se validó o refutó? ¿Qué datos lo sustentan?'),
+            ('Comparativo contra criterios de éxito', 'Tabla: hipótesis → criterio de éxito definido → resultado obtenido → ¿se cumplió?'),
+            ('Hallazgos de usabilidad, funcionalidad y aceptación', '¿Qué encontraste sobre la facilidad de uso, el funcionamiento técnico y la aceptación del usuario? Sé específico.'),
+            ('Patrones y tendencias', '¿Qué se repitió en múltiples sesiones? ¿Qué tendencia emerge de los datos?'),
+        ],
+    },
+    {
+        'num': '4.3',
+        'slug': 'resultados-por-hipotesis',
+        'format': 'excel',
+        'elemento': '4 · E5828',
+        'title': 'La descripción de los resultados obtenidos por cada hipótesis, documentada',
+        'intro': 'Hoja de cálculo con una fila por hipótesis: metodología utilizada, contexto de la prueba y condiciones de aplicación conforme al plan de experimentación.',
+        'f21': [
+            '(a) Incluye la metodología utilizada en la realización de la prueba',
+            '(b) Contiene la descripción del contexto de la realización de la prueba',
+            '(c) Contiene las condiciones de aplicación de las pruebas conforme al plan de experimentación',
+            '(d) Se presenta en formato digital/físico, con redacción clara, estructura profesional y sin errores ortográficos',
+        ],
+        'tonalli': 'Una fila por hipótesis. Hipótesis de deseabilidad ("al menos 8 de 12 compradores califican la descripción como fiel a la pieza"): metodología → los compradores califican la descripción de piezas reales; contexto → validación de cuatro semanas con compradores que ya habían comprado antes; condiciones → 12 compradores y 40 piezas reales del catálogo, fotografiadas por el taller, como lo marcaba el plan; resultado → validada (9 de 12).',
+        'preguntas': [
+            ('Metodología por hipótesis', '¿Qué método usaste para probar cada hipótesis? (Entrevista con prototipo, cuestionario, prueba A/B, observación directa, otro)'),
+            ('Descripción del contexto de la prueba', '¿Dónde se realizó? ¿Cuándo? ¿Qué dispositivos o materiales se usaron? ¿Qué condiciones del entorno afectaron los resultados?'),
+            ('Condiciones de aplicación conforme al plan', '¿Se ejecutó la prueba exactamente como estaba planeada? Si hubo desviaciones, ¿cuáles y por qué?'),
+        ],
+    },
+    {
+        'num': '4.4',
+        'slug': 'recomendaciones-prototipo',
+        'format': 'word',
+        'elemento': '4 · E5828',
+        'title': 'El documento de recomendaciones al prototipo/pruebas, elaborado',
+        'intro': 'Sintetiza los ajustes recomendados al prototipo, la decisión de pivoteo/iteración/escalamiento y la hoja de ruta con próximos pasos, responsables y tiempos.',
+        'f21': [
+            '(a) Contiene las recomendaciones de ajuste al prototipo basadas en los hallazgos de validación',
+            '(b) Incluye la decisión documentada y justificada de pivoteo/iteración/escalamiento del bien/servicio',
+            '(c) Contiene la hoja de ruta con los siguientes pasos, responsables y tiempos estimados para la siguiente fase',
+            '(d) Incluye los requerimientos técnicos y de recursos necesarios para la implementación/escalamiento',
+            '(e) Se presenta en formato digital/físico, con redacción clara y sin errores ortográficos',
+        ],
+        'tonalli': 'Decisión: ITERAR Y LUEGO IMPLEMENTAR (Diego recomendó; Lucía decidió; las otras opciones eran implementar tal cual o descartar). Ajustes recomendados, ordenados por lo que rinden contra lo que cuestan: (1) versión corta de la descripción para el teléfono, de mayor impacto y la más rápida; (2) variar el texto en las piezas de serie; (3) solo si Lucía quiere, extenderlo al catálogo de exportación (todavía no venden fuera: mejor después). Hoja de ruta: aplicar los ajustes 1 y 2 y luego dejar el asistente trabajando de planta.',
+        'preguntas': [
+            ('Recomendaciones de ajuste al prototipo', 'Por cada hallazgo negativo de la validación: ¿qué cambio específico recomiendas? ¿Por qué ese cambio y no otro?'),
+            ('Decisión de pivoteo/iteración/escalamiento (justificada)', '¿Cuál es tu recomendación? ¿Iterar (ajustar el prototipo actual), pivotar (cambiar la dirección), o escalar (implementar a mayor escala)? ¿En qué evidencia de la validación basas esa decisión?'),
+            ('Hoja de ruta para la siguiente fase', '¿Qué se hace primero, qué después? Actividades, responsable de cada una y tiempo estimado.'),
+            ('Requerimientos técnicos y de recursos para la siguiente fase', '¿Qué necesitará la MiPyME en términos de herramientas, personas, presupuesto y tiempo para ejecutar la siguiente fase?'),
         ],
     },
 ]
@@ -534,17 +573,17 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Manual de Desarrollar con IA · Producto del Elemento {elemento}</p>
+<p class="subtitle">Curso EC1835 · Producto del Elemento {elemento}</p>
 </td>
-<td class="meta"><strong>Producto {num}</strong><br>Template editable<br><em>Mi CompañIA · FUNDES</em></td>
+<td class="meta"><strong>Producto {num}</strong><br>Plantilla editable<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
 </table>
 </div>
 
-<div class="intro"><strong>Sobre este template.</strong> {intro} Tu evaluador no busca que llenes el template — busca que respondas con datos de TU MiPyME real. Las preguntas guía te orientan; las respuestas son tuyas.</div>
+<div class="intro"><strong>Sobre esta plantilla.</strong> {intro} Quien te evalúa no busca que llenes la plantilla: busca que tu producto cumpla cada criterio del EC1835 con los datos de tu proyecto con una MiPyME, en tu lugar de trabajo o en una situación simulada. Las preguntas guía te orientan; las respuestas son tuyas.</div>
 
 <div class="f21-box">
-<h3>Qué evalúa el F21 oficial</h3>
+<h3>Qué pide el EC1835 (criterios literales)</h3>
 <ul>{f21_html}</ul>
 </div>
 
@@ -565,7 +604,7 @@ WORD_TEMPLATE = """<!DOCTYPE html>
 
 <div class="footer">
 Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org<br>
-Template del Manual de Desarrollar con IA · Para ser llenado por el aspirante con datos de su proyecto real con una MiPyME
+Plantilla del curso EC1835 · Para que la llenes con los datos de tu proyecto con una MiPyME
 </div>
 
 </body>
@@ -603,17 +642,17 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
 <td style="width: 80pt;"><div class="brand-block">Mi<br>CompañIA</div></td>
 <td style="padding-left: 14pt;">
 <h1>{title}</h1>
-<p class="subtitle">Manual de Desarrollar con IA · Producto del Elemento {elemento} · Excel</p>
+<p class="subtitle">Curso EC1835 · Producto del Elemento {elemento} · Excel</p>
 </td>
 <td class="meta"><strong>Producto {num}</strong><br>Hoja editable · Excel<br><em>Mi CompañIA · FUNDES</em></td>
 </tr>
 </table>
 </div>
 
-<div class="intro"><strong>Sobre este template.</strong> {intro} Excel es el formato natural para esta clase de producto: te permite añadir filas conforme detectes más elementos, ordenar por puntaje y generar gráficas. <strong>Llénalo con datos de TU MiPyME real.</strong></div>
+<div class="intro"><strong>Sobre esta plantilla.</strong> {intro} Excel es el formato natural para esta clase de producto: te permite añadir filas conforme detectes más elementos, ordenar por puntaje y generar gráficas. <strong>Llénala con los datos de tu proyecto.</strong></div>
 
 <div class="f21-box">
-<h3>Qué evalúa el F21 oficial</h3>
+<h3>Qué pide el EC1835 (criterios literales)</h3>
 <ul>{f21_html}</ul>
 </div>
 
@@ -633,7 +672,7 @@ table.matrix tr:nth-child(even) td.fill {{ background: #fefbf0; }}
 {matrix_html}
 
 <div class="footer">
-Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · Template del Manual de Desarrollar con IA
+Mi CompañIA · Una iniciativa de FUNDES México con el apoyo de Google.org · Plantilla del curso EC1835
 </div>
 
 </body>
@@ -659,14 +698,14 @@ def render_questions_word(preguntas):
             f'<div class="question-block">\n'
             f'<div><span class="question-num">{i}</span><span class="question-title">{title}</span></div>\n'
             f'<div class="question-help">{help_text}</div>\n'
-            f'<div class="fill-area">[Escribe aquí tu respuesta con datos reales de tu MiPyME. Borra esta línea cuando empieces.]</div>\n'
+            f'<div class="fill-area">[Escribe aquí tu respuesta con los datos de tu proyecto. Borra esta línea cuando empieces.]</div>\n'
             f'</div>\n'
         )
     return html
 
 
 def render_questions_excel(preguntas):
-    html = '<table class="matrix">\n<tr><th style="width: 4%;">#</th><th style="width: 28%;">Pregunta guía</th><th>Tu respuesta (llena con datos de TU MiPyME)</th></tr>\n'
+    html = '<table class="matrix">\n<tr><th style="width: 4%;">#</th><th style="width: 28%;">Pregunta guía</th><th>Tu respuesta (con los datos de tu proyecto)</th></tr>\n'
     for i, (title, help_text) in enumerate(preguntas, 1):
         html += (
             f'<tr>\n'
@@ -779,15 +818,15 @@ def render_matrix_extra(num):
             )
 
         return f"""
-<h2>Hoja de hipótesis · mínimo 3 por categoría</h2>
-<p style="font-size: 10pt; color: #666;">Escribe al menos 3 hipótesis por cada categoría. El cliente debe haber participado en su selección.</p>
+<h2>Hoja de hipótesis por categoría</h2>
+<p style="font-size: 10pt; color: #666;">Escribe las hipótesis que el cliente seleccionó en cada categoría; agrega las filas que necesites. El EC1835 pide «al menos tres hipótesis seleccionadas por el cliente de cada una de las siguientes categorías: adaptabilidad, deseabilidad, factibilidad y viabilidad».</p>
 <table class="matrix">
 <tr><th style="width:6%;">ID</th><th style="width:30%;">Hipótesis</th><th style="width:24%;">Métrica de validación</th><th style="width:10%;">Criterio de éxito</th><th>Seleccionada por el cliente</th></tr>
 {hipotesis_rows}
 </table>
 
 <h2 style="margin-top:24pt;">Diseño de pruebas priorizadas</h2>
-<p style="font-size: 10pt; color: #666;">Por cada prueba que ejecutarás: detalla todos los campos que pide el F21.</p>
+<p style="font-size: 10pt; color: #666;">Por cada prueba que ejecutarás: detalla todos los campos que pide el EC1835.</p>
 <table class="matrix">
 <tr><th style="width:4%;">#</th><th style="width:18%;">Nombre de la prueba</th><th style="width:14%;">Hipótesis que valida</th><th style="width:14%;">Métricas y criterio de éxito</th><th style="width:8%;">Criticidad</th><th style="width:8%;">Confianza</th><th style="width:8%;">Costo est.</th><th style="width:8%;">Duración</th><th>Responsable</th></tr>
 {prueba_rows}
