@@ -176,7 +176,7 @@ Patrones consolidados que conviene respetar al editar páginas de `maestro/`:
 
 ## Templates ofimáticos
 
-53 plantillas descargables, una por producto del estándar: 12 en A, 13 en B, 12 en C y 16 en D. Cada curso tiene su generador (`generate-templates.py` para A, `-b`, `-c`, `-d` para los demás) y todos numeran `<elemento>.<consecutivo>`: el campo `num` decide el nombre del archivo, así que cambiarlo renombra y hay que actualizar los `href` del sitio en el mismo paso.
+54 plantillas descargables, una por producto del estándar: 12 en A, 14 en B, 12 en C y 16 en D. Cada curso tiene su generador (`generate-templates.py` para A, `-b`, `-c`, `-d` para los demás) y todos numeran `<elemento>.<consecutivo>`: el campo `num` decide el nombre del archivo, así que cambiarlo renombra y hay que actualizar los `href` del sitio en el mismo paso.
 
 El formato lo elige la naturaleza del producto, no la uniformidad: Word para reportes, informes, propuestas y actas; Excel donde hace falta calcular (matrices de priorización, Gantt, comparativos antes/después); PowerPoint para el material de capacitación de A.
 
@@ -200,5 +200,4 @@ Cualquier cosa que vivas en `extras/` queda fuera de git (entrada en `.gitignore
 - Los dos empaquetadores (`build-curso.py`, `build-curso-autonomo.py`) y su `_modelo/` viven en `extras/`, que está fuera de git: existen solo en la máquina donde se crearon. Son la única forma de producir los entregables embebibles, así que conviene moverlos a `scripts/`.
 - `manual_completo_estandar_b.doc` y `_d.doc` (con sus gemelos `.docx`) están trackeados en la raíz y ninguna página los enlaza. Parecen exportaciones de revisión; si ya no sirven, borrarlos.
 - 45 imágenes de `img/` (5.1 MB) no las referencia ninguna página: la mayoría son versiones anteriores de pares `-v2`/`-v3`. Si se confirma que no se van a usar, borrarlas. El resto del peso ya se recomprimió.
-- El Estándar D no publica lista de referencias en su `recursos.html`: por eso sus fichas de conocimientos van sin la línea de fuentes, a diferencia de A, B y C.
 - Cuando agregues un componente interactivo nuevo, actualiza `design.md §16.9` (tabla del catálogo) **en el mismo commit**. El propio §16.9 lo explicita: "*Cuando se implemente un componente nuevo, mueve su fila de pendiente a implementado y actualiza esta tabla.*"
