@@ -1697,68 +1697,70 @@ pip install beautifulsoup4 python-docx openpyxl python-pptx  # solo primera vez
 python scripts/generate-templates.py
 ```
 
-Re-ejecuta cuando: cambia la versión de trabajo del F21, se ajusta el caso La Espiga, se agregan preguntas guía o cambia el branding. Cada generador produce su contenido intermedio y ejecuta `convert-legacy-office.py`, que entrega archivos OOXML reales (`.docx`/`.xlsx`) y actualiza los enlaces del sitio.
+Re-ejecuta cuando: cambia el texto del EC publicado, se ajusta el caso La Espiga, se agregan preguntas guía o cambia el branding. Cada generador produce su contenido intermedio y ejecuta `convert-legacy-office.py`, que entrega archivos OOXML reales (`.docx`/`.xlsx`) y actualiza los enlaces del sitio.
 
-### 23.3 Templates del Estándar B — Generados
+### 23.3 Templates del Estándar B (EC1835)
 
-Los templates del Estándar B siguen la misma filosofía pedagógica del §23.1 (criterio de trabajo + caso orientativo + preguntas guía). Se generan en `estandar-b/templates/` con `scripts/generate-templates-b.py` y se convierten automáticamente a OOXML real:
-
-| Productos | Formato | Contenido |
-|---|---|---|
-| 1.1 · Reporte de levantamiento de necesidades | **Word (.docx)** | Entrevistas, observación y análisis del contexto del negocio |
-| 1.2 · Análisis de mercado y benchmarking | **Word (.docx)** | Comparativa de soluciones existentes y oportunidades de diferenciación |
-| 1.3 · Reporte de entrevistas con usuarios | **Word (.docx)** | Síntesis de hallazgos cualitativos por segmento de usuario |
-| 1.4 · Matriz de priorización de necesidades | **Word (.docx)** | Criterios de impacto, viabilidad y urgencia |
-| 2.1 · Informe de ideación | **Word (.docx)** | Descripción de sesión creativa, ideas generadas y selección razonada |
-| 2.2 · Matriz de ideas de solución | **Excel (.xlsx)** | Puntaje por criterio (impacto, factibilidad, novedad) con fórmulas |
-| 2.3 · Modelo de negocio preliminar | **Word (.docx)** | Canvas simplificado: propuesta de valor, segmento, canales, costos |
-| 3.1 · Documentación del prototipo funcional | **Word (.docx)** | Descripción técnica, capturas, flujos y limitaciones del prototipo |
-| 3.2 · Plan de experimentación | **Excel (.xlsx)** | Hipótesis, métricas de éxito, criterios de validación y cronograma |
-| 4.1 · Bitácora de sesiones de validación | **Word (.docx)** | Registro cronológico de pruebas con usuarios reales |
-| 4.2 · Reporte de validación | **Word (.docx)** | Hallazgos, patrones de feedback y grado de cumplimiento de hipótesis |
-| 4.3 · Descripción de resultados | **Word (.docx)** | Métricas alcanzadas vs. metas del plan de experimentación |
-| 4.4 · Documento de recomendaciones | **Word (.docx)** | Próximos pasos, iteraciones sugeridas y decisión de escalamiento |
-
-**Nota:** estos templates no están generados en el repositorio actual. Deben crearse antes de publicar el contenido del Estándar B.
-
-### 23.4 Templates ofimáticos — Estándar C · Prestación de servicios de consultoría en mercadotecnia digital con IA en la MiPyME
-
-**Caso pedagógico**: Cafetería La Cuesta — café de especialidad, zona universitaria, 6 empleados, dueña Mariana. Publican en redes de forma irregular, sin estrategia. Quieren posicionar su café frente a las cadenas atrayendo al público universitario.
-
-**Script generador**: `scripts/generate-templates-c.py`  
-**Directorio de salida**: `estandar-c/templates/`  
-**Total de templates**: 9
+14 templates en `estandar-b/templates/`, generados con `scripts/generate-templates-b.py`: 10 Word y 4 Excel. Siguen la filosofía del §23.1: criterio literal del EC, el caso Tonalli como ejemplo y preguntas guía para la MiPyME real del aspirante.
 
 | # | Producto | Archivo | Formato |
 |---|---|---|---|
-| 1.1 | Expediente de información clave de la MiPyME | `1-1-expediente-informacion.doc` | Word |
-| 1.2 | Estrategia de contenido de mercadotecnia digital | `1-2-estrategia-contenido.doc` | Word |
-| 2.1 | Portafolio de contenido de texto generado con IA | `2-1-portafolio-texto.doc` | Word |
-| 2.2 | Portafolio de contenido de imagen generado con IA | `2-2-portafolio-imagen.doc` | Word |
-| 2.3 | Portafolio de contenido de audio generado con IA | `2-3-portafolio-audio.doc` | Word |
-| 2.4 | Portafolio de contenido de video generado con IA | `2-4-portafolio-video.doc` | Word |
-| 3.1 | Bitácora de implementación del contenido digital | `3-1-bitacora-implementacion.doc` | Word |
-| 3.2 | Guía operativa de publicación para la MiPyME | `3-2-guia-operativa.doc` | Word |
-| 4.1 | Reporte de desempeño y plan de optimización | `4-1-reporte-optimizacion.xls` | Excel |
+| 1.1 | El reporte inicial del levantamiento de información con el cliente, documentado | `1-1-reporte-inicial.docx` | Word |
+| 1.2 | El análisis de mercado de la MiPyME, elaborado | `1-2-analisis-mercado.docx` | Word |
+| 1.3 | El reporte de entrevistas de necesidades del usuario, elaborado | `1-3-reporte-entrevistas.docx` | Word |
+| 1.4 | La matriz de priorización de oportunidades, elaborada | `1-4-matriz-priorizacion.xlsx` | Excel |
+| 2.1 | El informe del proceso de ideación de soluciones con el cliente/usuario, documentado | `2-1-informe-ideacion.docx` | Word |
+| 2.2 | La matriz de ideas de solución, validada por el cliente/usuario | `2-2-matriz-ideas-solucion.xlsx` | Excel |
+| 2.3 | El modelo de negocio, documentado | `2-3-modelo-negocio.docx` | Word |
+| 2.4 | El diseño del modelo de funcionamiento del prototipo de la solución con IA, documentado | `2-4-diseno-modelo-funcionamiento.docx` | Word |
+| 3.1 | La documentación del prototipo funcional, desarrollado | `3-1-documentacion-prototipo.docx` | Word |
+| 3.2 | El plan de experimentación, documentado | `3-2-plan-experimentacion.xlsx` | Excel |
+| 4.1 | La bitácora de ejecución de pruebas del plan de experimentación, elaborada | `4-1-bitacora-pruebas.docx` | Word |
+| 4.2 | El reporte de resultados de validación de las pruebas, elaborado | `4-2-reporte-resultados-validacion.docx` | Word |
+| 4.3 | La descripción de los resultados obtenidos por cada hipótesis, documentada | `4-3-resultados-por-hipotesis.xlsx` | Excel |
+| 4.4 | El documento de recomendaciones al prototipo/pruebas, elaborado | `4-4-recomendaciones-prototipo.docx` | Word |
 
-**Distribución de formatos**: 8 Word + 1 Excel. Sin PowerPoint en este estándar.
+### 23.4 Templates del Estándar C (EC1848)
 
-**Decisión de formato por naturaleza del producto**:
-- **Word (8 productos)**: todos los portafolios de contenido (2.1–2.4), los documentos estratégicos del E1 (1.1–1.2), los documentos de implementación del E3 (3.1–3.2) — documentos narrativos con secciones de texto y tablas descriptivas.
-- **Excel (1 producto)**: el 4.1 integra el reporte de desempeño (métricas por publicación, comparativo objetivo vs resultado) y el calendario del siguiente periodo — tres tablas estructuradas que se benefician del formato tabular y de las fórmulas.
+12 archivos en `estandar-c/templates/`, generados con `scripts/generate-templates-c.py`: uno por cada uno de los 10 productos (9 Word y 1 Excel) y 2 listas de cotejo, `checklist-desempenos.docx` y `checklist-productos.docx`. El caso es la cafetería La Cuesta: café de especialidad en una zona universitaria, con 6 empleados y Mariana como dueña.
 
-**Especificidad del Excel 4.1**: A diferencia de los Excel del B (que son matrices de priorización/evaluación), el 4.1 del C combina análisis retrospectivo (¿qué funcionó?) con planificación prospectiva (¿qué haremos el siguiente mes?). Contiene tres tablas: métricas por publicación (10 filas × 11 columnas), comparativo objetivo vs resultado (5 filas), calendario del siguiente periodo (7 semanas × 7 días).
+| # | Producto | Archivo | Formato |
+|---|---|---|---|
+| 1.1 | El expediente de información clave de la MiPyME, documentado | `1-1-expediente-informacion.docx` | Word |
+| 1.2 | La estrategia de contenido de mercadotecnia digital de la MiPyME utilizando IA, diseñada | `1-2-estrategia-contenido.docx` | Word |
+| 2.1 | El contenido de texto del portafolio de mercadotecnia digital generado con IA, documentado | `2-1-portafolio-texto.docx` | Word |
+| 2.2 | El contenido de imagen del portafolio de mercadotecnia digital generado con IA, documentado | `2-2-portafolio-imagen.docx` | Word |
+| 2.3 | El contenido de audio del portafolio de mercadotecnia digital generado con IA, documentado | `2-3-portafolio-audio.docx` | Word |
+| 2.4 | El contenido de video del portafolio de mercadotecnia digital generado con IA, documentado | `2-4-portafolio-video.docx` | Word |
+| 3.1 | La bitácora de implementación del contenido de mercadotecnia digital en plataformas digitales, documentada | `3-1-bitacora-implementacion.docx` | Word |
+| 3.2 | La guía operativa de publicación para la MiPyME, documentada | `3-2-guia-operativa.docx` | Word |
+| 4.1 | El reporte de desempeño del contenido publicado de mercadotecnia digital, documentado | `4-1-reporte-desempeno.xlsx` | Excel |
+| 4.2 | El plan de optimización del contenido de mercadotecnia digital con IA para el siguiente periodo, documentado | `4-2-plan-optimizacion.docx` | Word |
 
-**Filosofía pedagógica** (idéntica al A y B): criterio F21 literal + caso La Cuesta (solo ilustrativo) + preguntas guía que el aspirante responde con su MiPyME real. Los templates NO dan la solución — orientan el proceso del aspirante.
+El Excel 4.1 combina lo que ya pasó (métricas por publicación y objetivo contra resultado) con lo que sigue (calendario del siguiente periodo). El plan de optimización va aparte, en el Word 4.2.
 
-### 23.5 Templates ofimáticos del Estándar D
+### 23.5 Templates del Estándar D (EC1836)
 
-15 templates descargables (`estandar-d/templates/`) generados con `scripts/generate-templates-d.py`. Distribución elegida por naturaleza del producto:
+16 templates en `estandar-d/templates/`, generados con `scripts/generate-templates-d.py`: 15 Word y 1 Excel. El caso es El Surtido.
 
-- **14 Word (.doc)**: diagnóstico de oportunidades, diagnóstico de madurez digital, propuesta de transformación digital, propuesta autorizada (E1); entorno de desarrollo, checklist de verificación de la solución, reporte de pruebas técnicas, documentación técnica (E2); checklist de despliegue a producción, documentación técnica de implementación, reporte de capacitación, acta final (E3); reporte de retroalimentación de usuarios, plan de optimización (E4).
-- **1 Excel (.xls)**: 4.1 reporte de rendimiento técnico (con columnas de métricas comparativas: Objetivo vs Real por período).
-
-Cada template contiene el criterio F21 literal + ejemplo breve del caso El Surtido (solo ilustrativo) + preguntas guía que el aspirante responde con datos de SU proyecto real.
+| # | Producto | Archivo | Formato |
+|---|---|---|---|
+| 1.1 | El diagnóstico de oportunidades de modernización digital de la MiPyME documentado | `1-1-diagnostico-oportunidades.docx` | Word |
+| 1.2 | El diagnóstico de madurez digital y disposición al cambio de la MiPyME elaborado | `1-2-diagnostico-madurez-digital.docx` | Word |
+| 1.3 | El documento de propuesta de modernización digital para la MiPyME elaborado | `1-3-propuesta-modernizacion-digital.docx` | Word |
+| 1.4 | La propuesta de modernización digital para la MiPyME autorizada | `1-4-propuesta-autorizada.docx` | Word |
+| 2.1 | El entorno de desarrollo de la solución tecnológica de modernización digital configurado | `2-1-entorno-desarrollo-configurado.docx` | Word |
+| 2.2 | La solución tecnológica de modernización digital con IA desarrollada | `2-2-checklist-verificacion-solucion.docx` | Word |
+| 2.3 | El reporte de pruebas técnicas de la solución tecnológica de modernización digital elaborado | `2-3-reporte-pruebas-tecnicas.docx` | Word |
+| 2.4 | La documentación técnica de la solución tecnológica de modernización digital elaborada | `2-4-documentacion-tecnica.docx` | Word |
+| 3.1 | La solución tecnológica de modernización digital desplegada en el entorno productivo de la MiPyME | `3-1-checklist-despliegue-produccion.docx` | Word |
+| 3.2 | La documentación técnica de implementación elaborada | `3-2-documentacion-tecnica-implementacion.docx` | Word |
+| 3.3 | El reporte de capacitación/transferencia de conocimiento al personal de la MiPyME elaborado | `3-3-reporte-capacitacion.docx` | Word |
+| 3.4 | El acta final de la solución tecnológica de modernización digital elaborada | `3-4-acta-final.docx` | Word |
+| 4.1 | El reporte de rendimiento técnico de la solución tecnológica de modernización digital elaborado | `4-1-reporte-rendimiento-tecnico.xlsx` | Excel |
+| 4.2 | El reporte de retroalimentación de usuarios de la MiPyME elaborado | `4-2-reporte-retroalimentacion.docx` | Word |
+| 4.3 | El plan de optimización de la solución tecnológica de modernización digital elaborado | `4-3-plan-optimizacion.docx` | Word |
+| 4.4 | El reporte final de cierre del proyecto de modernización digital elaborado | `4-4-reporte-cierre-proyecto.docx` | Word |
 
 ---
 

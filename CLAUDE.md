@@ -15,7 +15,7 @@ Manuales web interactivos del proyecto **Mi CompañIA** (FUNDES México + Google
 
 Cada curso tiene `index.html`, un `elemento-N.html` por elemento, `ruta-preparacion.html`, `recursos.html` y `templates/`.
 
-El contenido normativo viene del **F21 (estándar de competencia) de cada propuesta**, que vive en `extras/` y no está en el repo. Si encuentras una inconsistencia entre el manual y la fuente, **la fuente manda**.
+El contenido normativo viene del **EC publicado en el DOF el 28 de octubre de 2026** (EC1830, EC1835, EC1848 y EC1836). Sus PDF no están en el repo. El F21 de cada propuesta fue la versión de trabajo con la que se prepararon los cursos y queda como antecedente. Si encuentras una inconsistencia entre el manual y el EC publicado, **manda el EC publicado**.
 
 El **F22 (instrumento de evaluación) no es fuente de contenido.** Las preguntas de práctica deben medir el mismo conocimiento que el instrumento, pero nunca reproducir su redacción: si el aspirante reconoce la frase exacta, el curso dejó de enseñar y empezó a filtrar.
 
@@ -69,7 +69,7 @@ print('JSON OK' if errs == 0 else f'{errs} errores')
 |---|---|
 | `tts-elevenlabs.ps1` | Genera MP3 de narración con ElevenLabs (voz Alice, modelo `eleven_multilingual_v2`). Lee `media/scripts/<nombre>.txt` y escribe `media/audio-<nombre>.mp3`. ElevenLabs free tier limita 10k chars/mes. |
 | `tts-generate.ps1` | Variante con Google Cloud TTS Neural2 (fallback si ElevenLabs no disponible). |
-| `generate-templates.py` | Genera los 13 templates descargables del Estándar A y ejecuta `convert-legacy-office.py` para entregar `.docx`/`.xlsx` OOXML reales; conserva el `.pptx` nativo. |
+| `generate-templates.py` | Genera los 12 templates descargables del Estándar A y ejecuta `convert-legacy-office.py` para entregar `.docx`/`.xlsx` OOXML reales; conserva el `.pptx` nativo. |
 | `higgsfield` (CLI) | Imágenes del caso La Espiga. Modelo barato: `text2image_soul_v2` (0.12 créditos). Rate limit free tier: 4 jobs concurrentes. Después de generar, comprimir PNG → JPEG con PIL (típicamente 27 MB → 867 KB, 97% reducción) y actualizar referencias `.png` → `.jpg` en HTML. |
 
 ## Arquitectura de componentes interactivos (`assets/interactive.js`)
@@ -83,7 +83,7 @@ Componentes pedagógicos (ordenados por nivel Bloom que tocan):
 | `.flashcard-deck` | Recordar/Comprender | JSON inline (mazo con micro-SRS) | — |
 | `.flipcard` | Comprender | data-attrs en buttons | — |
 | `.quiz` con `data-type=mc/vf/order/cloze` | Comprender/Aplicar | data-attrs + markup | — |
-| `.case-lab` | Aplicar/Analizar | JSON inline (tabs F21 ↔ La Espiga) | — |
+| `.case-lab` | Aplicar/Analizar | JSON inline (tabs EC ↔ La Espiga) | — |
 | `.timeline-interactive` | Comprender/Aplicar | JSON inline (hitos clicables) | — |
 | `.drag-sort` | Aplicar/Analizar | markup (zonas + banco) | SortableJS |
 | `.diagram-mermaid` | Comprender | `<pre class="mermaid">` | Mermaid |
@@ -176,11 +176,11 @@ Patrones consolidados que conviene respetar al editar páginas de `maestro/`:
 
 ## Templates ofimáticos
 
-54 plantillas descargables, una por producto del estándar: 12 en A, 14 en B, 12 en C y 16 en D. Cada curso tiene su generador (`generate-templates.py` para A, `-b`, `-c`, `-d` para los demás) y todos numeran `<elemento>.<consecutivo>`: el campo `num` decide el nombre del archivo, así que cambiarlo renombra y hay que actualizar los `href` del sitio en el mismo paso.
+54 plantillas descargables: una por producto del estándar (12 en A, 14 en B, 10 en C y 16 en D), más 2 listas de cotejo en C. Cada curso tiene su generador (`generate-templates.py` para A, `-b`, `-c`, `-d` para los demás) y todos numeran `<elemento>.<consecutivo>`: el campo `num` decide el nombre del archivo, así que cambiarlo renombra y hay que actualizar los `href` del sitio en el mismo paso.
 
 El formato lo elige la naturaleza del producto, no la uniformidad: Word para reportes, informes, propuestas y actas; Excel donde hace falta calcular (matrices de priorización, Gantt, comparativos antes/después); PowerPoint para el material de capacitación de A.
 
-Cada template trae **criterio F21 literal + ejemplo del caso + preguntas guía con su espacio de respuesta** — pedagógicamente, deben ayudar a pasar la evaluación, no resolverla.
+Cada template trae **criterio literal del EC publicado + ejemplo del caso + preguntas guía con su espacio de respuesta** — pedagógicamente, deben ayudar a pasar la evaluación, no resolverla.
 
 **Lo que decide el resultado es `convert-legacy-office.py`, no el CSS del HTML intermedio**, que se descarta por completo. Nunca des por bueno un template porque el generador imprima `[ok]`: ábrelo y comprueba que tiene criterios, preguntas, ejemplo y espacio real para escribir, y que el cuerpo no termina en un encabezado vacío. Dos convenciones vivas en el conversor: una celda cuyo texto empieza con `=` y contiene `{f}` se escribe como fórmula de Excel sustituyendo `{f}` por el número de fila; y un `div` con otro bloque dentro se recorre, mientras uno con solo texto o `span` se dibuja según su clase.
 

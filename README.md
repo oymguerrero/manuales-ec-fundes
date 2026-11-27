@@ -68,8 +68,8 @@ Para una vista visual del proceso, abre `flujo-trabajo.html`.
 
 ## Estado actual de los manuales
 
-Las cifras son las del documento final de cada estándar (el F21), cotejadas
-elemento por elemento con lo que publica el sitio.
+Las cifras se cotejaron elemento por elemento con lo que publica el sitio, a partir del
+documento final de cada estándar (el F21).
 
 | Curso | Elementos y evidencias | Caso |
 |---|---|---|
@@ -102,7 +102,7 @@ GitHub Pages (publicar el manual en una URL) requiere un plan de pago para repos
 
 El contenido proviene de los documentos oficiales del proyecto FUNDES Componente 2:
 
-- El F21 (estándar de competencia) de cada una de las cuatro propuestas
+- Los estándares publicados en el DOF el 28 de octubre de 2026 (EC1830, EC1835, EC1848 y EC1836) y, como antecedente, el F21 con el que se prepararon los cursos
 - `Manual_Maestro_v2.pdf` (base del curso introductorio)
 - Tablas de especificaciones, conocimientos y referencias de cada estándar
 
